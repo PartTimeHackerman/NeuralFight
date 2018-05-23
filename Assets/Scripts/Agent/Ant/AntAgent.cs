@@ -42,6 +42,7 @@ internal class AntAgent : Agent
         if (resetStepsElapsed > resetWaitSteps && !velReset)
         {
             resetPos.resetVel();
+            resetPos.resetJointForces();
             velReset = true;
         }
 

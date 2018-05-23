@@ -30,7 +30,7 @@ public class AntReward : MonoBehaviour
 
     private float getXVelReward()
     {
-        return Mathf.Clamp(root.velocity.x / 10f, -1f, 1f);
+        return root.velocity.x;
     }
 
     public float getReward()

@@ -96,7 +96,6 @@ public class ResetPos : MonoBehaviour
 
     private void resetTransform()
     {
-        resetVel();
         foreach (KeyValuePair<GameObject, Vector3> objPos in defaultPos) objPos.Key.transform.position = objPos.Value;
         foreach (KeyValuePair<GameObject, Quaternion> objRot in defaultRot)
             objRot.Key.transform.rotation = objRot.Value;
@@ -169,7 +168,29 @@ public class ResetPos : MonoBehaviour
             //jointInfo.joint.transform.rotation = Quaternion.Euler(angRot);
             jointInfo.joint.targetRotation = Quaternion.Euler(angRot);
 
+            /*
+            jointSlerpDrive = jointInfo.joint.slerpDrive;
+            jointSlerpDrive.positionSpring = jointInfo.maxPosSpring;
+            jointSlerpDrive.positionDamper = jointInfo.maxPosDamper;
+            jointInfo.joint.slerpDrive = jointSlerpDrive;
+            */
             //if(jointInfo.joint.name == "rthigh") Debug.Log(angRot);
+        }
+    }
+
+    public void resetJointForces()
+    {
+        foreach (JointInfo jointInfo in jointInfos)
+        {
+            bool[] movableAxis = jointInfo.movableAxis;
+
+            if (!movableAxis.Contains(true))
+                continue;
+
+            JointDrive jointSlerpDrive = jointInfo.joint.slerpDrive;
+            jointSlerpDrive.positionSpring = jointInfo.maxPosSpring;
+            jointSlerpDrive.positionDamper = jointInfo.maxPosDamper;
+            jointInfo.joint.slerpDrive = jointSlerpDrive;
         }
     }
 
