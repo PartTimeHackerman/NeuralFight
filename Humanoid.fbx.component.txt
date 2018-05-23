@@ -1,0 +1,1858 @@
+ComponentCount,17
+Humanoid_smallXY 1
+{
+	HumanoidSAgent
+	BinaryPosition,0
+	Field {
+		System.Single actionMultipler,1000
+		System.Int32 episodes,0
+		Epoch epoch,Epoch
+		System.Int64 startTime,0
+		AgentParameters agentParameters,AgentParameters
+		System.Int32 stepCount,0
+	}
+	Property {
+		Boolean useGUILayout,True
+		Boolean runInEditMode,False
+		Boolean enabled,True
+		Boolean isActiveAndEnabled,True
+		UnityEngine.GameObject gameObject,Humanoid_smallXY 1 (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,Humanoid_smallXY 1
+		UnityEngine.HideFlags hideFlags,None
+	}
+	BodyPartsSmallXY
+	BinaryPosition,4735
+	Field {
+		System.Int32 jointsTotal,12
+		System.Collections.Generic.Dictionary`2[System.String,UnityEngine.GameObject] namedParts,System.Collections.Generic.Dictionary`2[System.String,UnityEngine.GameObject]
+		System.Collections.Generic.List`1[UnityEngine.GameObject] parts,System.Collections.Generic.List`1[UnityEngine.GameObject]
+		System.Int32 partsTotal,13
+		System.Int32 rigidsTotal,13
+	}
+	Property {
+		Boolean useGUILayout,True
+		Boolean runInEditMode,False
+		Boolean enabled,True
+		Boolean isActiveAndEnabled,True
+		UnityEngine.GameObject gameObject,Humanoid_smallXY 1 (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,Humanoid_smallXY 1
+		UnityEngine.HideFlags hideFlags,None
+	}
+	ObservationsSmallXY
+	BinaryPosition,9280
+	Field {
+		System.Single maxPos,100
+		System.Single maxVel,100
+		System.Single minPos,-100
+		System.Single minVel,-100
+		System.Int32 actionsSpace,8
+		BodyParts bodyParts,Humanoid_smallXY 1 (BodyPartsSmallXY)
+		System.Collections.Generic.List`1[System.Single] observations,System.Collections.Generic.List`1[System.Single]
+		System.Int32 observationsSpace,82
+	}
+	Property {
+		Boolean useGUILayout,True
+		Boolean runInEditMode,False
+		Boolean enabled,True
+		Boolean isActiveAndEnabled,True
+		UnityEngine.GameObject gameObject,Humanoid_smallXY 1 (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,Humanoid_smallXY 1
+		UnityEngine.HideFlags hideFlags,None
+	}
+	StandingReward
+	BinaryPosition,14763
+	Field {
+		System.Boolean debug,False
+		System.Single baseDistanceFeetsTorso,1,253
+		BodyParts bodyParts,Humanoid_smallXY 1 (BodyPartsSmallXY)
+		System.Single COMOverMeanOfFeetsXZReward,0
+		System.Int32 epoch,0
+		System.Boolean epochTerminated,False
+		System.Single headGroundDistReward,0
+		System.Single headStraightReward,0
+		System.Int32 maxEpochs,25
+		System.Single minimizeTorsoXZVelocityReward,0
+		System.Collections.Generic.Dictionary`2[System.String,UnityEngine.GameObject] namedParts,System.Collections.Generic.Dictionary`2[System.String,UnityEngine.GameObject]
+		PhysicsUtils physics,PhysicsUtils
+		System.Single reward,0
+		System.Single lastReward,0
+		System.Int32 penaltyCount,0
+		System.Int32 rewards,6
+		System.Single torsoFromBaseOverMeanOfFeetsYReward,0
+		System.Single torsoOverCOMXZReward,0
+	}
+	Property {
+		Boolean useGUILayout,True
+		Boolean runInEditMode,False
+		Boolean enabled,True
+		Boolean isActiveAndEnabled,True
+		UnityEngine.GameObject gameObject,Humanoid_smallXY 1 (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,Humanoid_smallXY 1
+		UnityEngine.HideFlags hideFlags,None
+	}
+	ApplyActions
+	BinaryPosition,23596
+	Field {
+		System.Int32 actionSpace,8
+		BodyParts bodyParts,Humanoid_smallXY 1 (BodyPartsSmallXY)
+		System.Collections.Generic.List`1[UnityEngine.ConfigurableJoint] joints,System.Collections.Generic.List`1[UnityEngine.ConfigurableJoint]
+		Observations observations,Humanoid_smallXY 1 (ObservationsSmallXY)
+	}
+	Property {
+		Boolean useGUILayout,True
+		Boolean runInEditMode,False
+		Boolean enabled,True
+		Boolean isActiveAndEnabled,True
+		UnityEngine.GameObject gameObject,Humanoid_smallXY 1 (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,Humanoid_smallXY 1
+		UnityEngine.HideFlags hideFlags,None
+	}
+	PausePos
+	BinaryPosition,27711
+	Field {
+		BodyParts bodyParts,Humanoid_smallXY 1 (BodyPartsSmallXY)
+		System.Collections.Generic.Dictionary`2[UnityEngine.GameObject,UnityEngine.Vector3] defaultPos,System.Collections.Generic.Dictionary`2[UnityEngine.GameObject,UnityEngine.Vector3]
+		System.Collections.Generic.Dictionary`2[UnityEngine.GameObject,UnityEngine.Quaternion] defaultRot,System.Collections.Generic.Dictionary`2[UnityEngine.GameObject,UnityEngine.Quaternion]
+		System.Collections.Generic.Dictionary`2[UnityEngine.Rigidbody,UnityEngine.Vector3] defaultVel,System.Collections.Generic.Dictionary`2[UnityEngine.Rigidbody,UnityEngine.Vector3]
+		System.Collections.Generic.List`1[UnityEngine.GameObject] parts,System.Collections.Generic.List`1[UnityEngine.GameObject]
+		System.Boolean pause,False
+		System.Boolean paused,False
+		System.Collections.Generic.List`1[UnityEngine.Rigidbody] rigids,System.Collections.Generic.List`1[UnityEngine.Rigidbody]
+	}
+	Property {
+		Boolean useGUILayout,True
+		Boolean runInEditMode,False
+		Boolean enabled,True
+		Boolean isActiveAndEnabled,True
+		UnityEngine.GameObject gameObject,Humanoid_smallXY 1 (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,Humanoid_smallXY 1
+		UnityEngine.HideFlags hideFlags,None
+	}
+	ResetPos
+	BinaryPosition,33260
+	Field {
+		System.Boolean backupped,False
+		BodyParts bodyParts,Humanoid_smallXY 1 (BodyPartsSmallXY)
+		System.Collections.Generic.Dictionary`2[UnityEngine.GameObject,UnityEngine.Vector3] defaultPos,System.Collections.Generic.Dictionary`2[UnityEngine.GameObject,UnityEngine.Vector3]
+		System.Collections.Generic.Dictionary`2[UnityEngine.GameObject,UnityEngine.Quaternion] defaultRot,System.Collections.Generic.Dictionary`2[UnityEngine.GameObject,UnityEngine.Quaternion]
+		System.Collections.Generic.Dictionary`2[UnityEngine.Rigidbody,UnityEngine.Vector3] defaultVel,System.Collections.Generic.Dictionary`2[UnityEngine.Rigidbody,UnityEngine.Vector3]
+		UnityEngine.Vector3 defRotation,(0,0, 90,0, 0,0)
+		System.Collections.Generic.List`1[UnityEngine.GameObject] parts,System.Collections.Generic.List`1[UnityEngine.GameObject]
+		System.Boolean reset,False
+		System.Collections.Generic.List`1[UnityEngine.Rigidbody] rigids,System.Collections.Generic.List`1[UnityEngine.Rigidbody]
+	}
+	Property {
+		Boolean useGUILayout,True
+		Boolean runInEditMode,False
+		Boolean enabled,True
+		Boolean isActiveAndEnabled,True
+		UnityEngine.GameObject gameObject,Humanoid_smallXY 1 (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,Humanoid_smallXY 1
+		UnityEngine.HideFlags hideFlags,None
+	}
+	StandingAgentTest
+	BinaryPosition,39139
+	Field {
+		System.Single actionMultipler,100
+		System.Int32 actionsTaken,0
+		System.Int32 episodes,0
+		Epoch epoch,Epoch
+		System.Int32 hash,0
+		System.Single highestReward,0
+		System.Int64 startTime,0
+		System.Single timeReward,0
+	}
+	Property {
+		Boolean useGUILayout,True
+		Boolean runInEditMode,False
+		Boolean enabled,False
+		Boolean isActiveAndEnabled,False
+		UnityEngine.GameObject gameObject,Humanoid_smallXY 1 (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,Humanoid_smallXY 1
+		UnityEngine.HideFlags hideFlags,None
+	}
+}
+torso
+{
+	UnityEngine.CapsuleCollider
+	BinaryPosition,44553
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 center,(0,0, 0,0, 0,0)
+		Single radius,0,07
+		Single height,0,28
+		Int32 direction,0
+		Boolean enabled,True
+		UnityEngine.Rigidbody attachedRigidbody,torso (UnityEngine.Rigidbody)
+		Boolean isTrigger,False
+		Single contactOffset,0,01
+		UnityEngine.PhysicMaterial material,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.PhysicMaterial sharedMaterial,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.Bounds bounds,Center: (0,0, 1,3, 0,0), Extents: (0,1, 0,1, 0,1)
+		UnityEngine.GameObject gameObject,torso (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,torso
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.Rigidbody
+	BinaryPosition,50178
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 velocity,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 angularVelocity,(0,0, 0,0, 0,0)
+		Single drag,0
+		Single angularDrag,5
+		Single mass,12
+		Boolean useGravity,True
+		Single maxDepenetrationVelocity,1E+32
+		Boolean isKinematic,False
+		Boolean freezeRotation,False
+		UnityEngine.RigidbodyConstraints constraints,104
+		UnityEngine.CollisionDetectionMode collisionDetectionMode,Discrete
+		UnityEngine.Vector3 centerOfMass,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 worldCenterOfMass,(0,0, 1,3, 0,0)
+		UnityEngine.Quaternion inertiaTensorRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 inertiaTensor,(0,0, 0,0, 0,0)
+		Boolean detectCollisions,True
+		Boolean useConeFriction,False
+		UnityEngine.Vector3 position,(0,0, 1,3, 0,0)
+		UnityEngine.Quaternion rotation,(0,0, 0,7, 0,0, 0,7)
+		UnityEngine.RigidbodyInterpolation interpolation,None
+		Int32 solverIterations,12
+		Int32 solverIterationCount,12
+		Int32 solverVelocityIterations,1
+		Int32 solverVelocityIterationCount,1
+		Single sleepVelocity,0
+		Single sleepAngularVelocity,0
+		Single sleepThreshold,0,005
+		Single maxAngularVelocity,7
+		UnityEngine.GameObject gameObject,torso (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,torso
+		UnityEngine.HideFlags hideFlags,None
+	}
+}
+head
+{
+	UnityEngine.SphereCollider
+	BinaryPosition,62449
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 center,(0,0, 0,0, 0,0)
+		Single radius,0,09
+		Boolean enabled,True
+		UnityEngine.Rigidbody attachedRigidbody,head (UnityEngine.Rigidbody)
+		Boolean isTrigger,False
+		Single contactOffset,0,01
+		UnityEngine.PhysicMaterial material,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.PhysicMaterial sharedMaterial,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.Bounds bounds,Center: (0,0, 1,4, 0,0), Extents: (0,1, 0,1, 0,1)
+		UnityEngine.GameObject gameObject,head (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,head
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.Rigidbody
+	BinaryPosition,67344
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 velocity,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 angularVelocity,(0,0, 0,0, 0,0)
+		Single drag,0
+		Single angularDrag,5
+		Single mass,5,3
+		Boolean useGravity,True
+		Single maxDepenetrationVelocity,1E+32
+		Boolean isKinematic,False
+		Boolean freezeRotation,False
+		UnityEngine.RigidbodyConstraints constraints,None
+		UnityEngine.CollisionDetectionMode collisionDetectionMode,Discrete
+		UnityEngine.Vector3 centerOfMass,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 worldCenterOfMass,(0,0, 1,4, 0,0)
+		UnityEngine.Quaternion inertiaTensorRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 inertiaTensor,(0,0, 0,0, 0,0)
+		Boolean detectCollisions,True
+		Boolean useConeFriction,False
+		UnityEngine.Vector3 position,(0,0, 1,4, 0,0)
+		UnityEngine.Quaternion rotation,(0,0, 0,7, 0,0, 0,7)
+		UnityEngine.RigidbodyInterpolation interpolation,None
+		Int32 solverIterations,12
+		Int32 solverIterationCount,12
+		Int32 solverVelocityIterations,1
+		Int32 solverVelocityIterationCount,1
+		Single sleepVelocity,0
+		Single sleepAngularVelocity,0
+		Single sleepThreshold,0,005
+		Single maxAngularVelocity,7
+		UnityEngine.GameObject gameObject,head (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,head
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.ConfigurableJoint
+	BinaryPosition,79615
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 secondaryAxis,(0,0, 1,0, 0,0)
+		UnityEngine.ConfigurableJointMotion xMotion,Locked
+		UnityEngine.ConfigurableJointMotion yMotion,Locked
+		UnityEngine.ConfigurableJointMotion zMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularXMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularYMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularZMotion,Locked
+		UnityEngine.SoftJointLimitSpring linearLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularXLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularYZLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimit linearLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit lowAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit highAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularYLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularZLimit,UnityEngine.SoftJointLimit
+		UnityEngine.Vector3 targetPosition,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 targetVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.JointDrive xDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive yDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive zDrive,UnityEngine.JointDrive
+		UnityEngine.Quaternion targetRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 targetAngularVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.RotationDriveMode rotationDriveMode,Slerp
+		UnityEngine.JointDrive angularXDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive angularYZDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive slerpDrive,UnityEngine.JointDrive
+		UnityEngine.JointProjectionMode projectionMode,PositionAndRotation
+		Single projectionDistance,0,1
+		Single projectionAngle,180
+		Boolean configuredInWorldSpace,False
+		Boolean swapBodies,False
+		UnityEngine.Rigidbody connectedBody,torso (UnityEngine.Rigidbody)
+		UnityEngine.Vector3 axis,(1,0, 0,0, 0,0)
+		UnityEngine.Vector3 anchor,(0,0, -0,1, 0,0)
+		UnityEngine.Vector3 connectedAnchor,(0,0, 0,1, 0,0)
+		Boolean autoConfigureConnectedAnchor,True
+		Single breakForce,+nieskończoność
+		Single breakTorque,+nieskończoność
+		Boolean enableCollision,False
+		Boolean enablePreprocessing,True
+		UnityEngine.Vector3 currentForce,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 currentTorque,(0,0, 0,0, 0,0)
+		Single massScale,1
+		Single connectedMassScale,1
+		UnityEngine.GameObject gameObject,head (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,head
+		UnityEngine.HideFlags hideFlags,None
+	}
+}
+uwaist
+{
+	UnityEngine.CapsuleCollider
+	BinaryPosition,98861
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 center,(0,0, 0,0, 0,0)
+		Single radius,0,06
+		Single height,0,24
+		Int32 direction,0
+		Boolean enabled,True
+		UnityEngine.Rigidbody attachedRigidbody,uwaist (UnityEngine.Rigidbody)
+		Boolean isTrigger,False
+		Single contactOffset,0,01
+		UnityEngine.PhysicMaterial material,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.PhysicMaterial sharedMaterial,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.Bounds bounds,Center: (0,0, 1,1, 0,0), Extents: (0,1, 0,1, 0,1)
+		UnityEngine.GameObject gameObject,uwaist (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,uwaist
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.Rigidbody
+	BinaryPosition,104486
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 velocity,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 angularVelocity,(0,0, 0,0, 0,0)
+		Single drag,0
+		Single angularDrag,5
+		Single mass,11
+		Boolean useGravity,True
+		Single maxDepenetrationVelocity,1E+32
+		Boolean isKinematic,False
+		Boolean freezeRotation,False
+		UnityEngine.RigidbodyConstraints constraints,None
+		UnityEngine.CollisionDetectionMode collisionDetectionMode,Discrete
+		UnityEngine.Vector3 centerOfMass,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 worldCenterOfMass,(0,0, 1,1, 0,0)
+		UnityEngine.Quaternion inertiaTensorRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 inertiaTensor,(0,0, 0,0, 0,0)
+		Boolean detectCollisions,True
+		Boolean useConeFriction,False
+		UnityEngine.Vector3 position,(0,0, 1,1, 0,0)
+		UnityEngine.Quaternion rotation,(0,0, 0,7, 0,0, 0,7)
+		UnityEngine.RigidbodyInterpolation interpolation,None
+		Int32 solverIterations,12
+		Int32 solverIterationCount,12
+		Int32 solverVelocityIterations,1
+		Int32 solverVelocityIterationCount,1
+		Single sleepVelocity,0
+		Single sleepAngularVelocity,0
+		Single sleepThreshold,0,005
+		Single maxAngularVelocity,7
+		UnityEngine.GameObject gameObject,uwaist (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,uwaist
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.ConfigurableJoint
+	BinaryPosition,116757
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 secondaryAxis,(0,0, 1,0, 0,0)
+		UnityEngine.ConfigurableJointMotion xMotion,Locked
+		UnityEngine.ConfigurableJointMotion yMotion,Locked
+		UnityEngine.ConfigurableJointMotion zMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularXMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularYMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularZMotion,Locked
+		UnityEngine.SoftJointLimitSpring linearLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularXLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularYZLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimit linearLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit lowAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit highAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularYLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularZLimit,UnityEngine.SoftJointLimit
+		UnityEngine.Vector3 targetPosition,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 targetVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.JointDrive xDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive yDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive zDrive,UnityEngine.JointDrive
+		UnityEngine.Quaternion targetRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 targetAngularVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.RotationDriveMode rotationDriveMode,Slerp
+		UnityEngine.JointDrive angularXDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive angularYZDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive slerpDrive,UnityEngine.JointDrive
+		UnityEngine.JointProjectionMode projectionMode,PositionAndRotation
+		Single projectionDistance,0,1
+		Single projectionAngle,180
+		Boolean configuredInWorldSpace,False
+		Boolean swapBodies,False
+		UnityEngine.Rigidbody connectedBody,torso (UnityEngine.Rigidbody)
+		UnityEngine.Vector3 axis,(1,0, 0,0, 0,0)
+		UnityEngine.Vector3 anchor,(0,0, 0,1, 0,0)
+		UnityEngine.Vector3 connectedAnchor,(0,0, -0,1, 0,0)
+		Boolean autoConfigureConnectedAnchor,True
+		Single breakForce,+nieskończoność
+		Single breakTorque,+nieskończoność
+		Boolean enableCollision,False
+		Boolean enablePreprocessing,True
+		UnityEngine.Vector3 currentForce,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 currentTorque,(0,0, 0,0, 0,0)
+		Single massScale,1
+		Single connectedMassScale,1
+		UnityEngine.GameObject gameObject,uwaist (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,uwaist
+		UnityEngine.HideFlags hideFlags,None
+	}
+}
+lwaist
+{
+	UnityEngine.CapsuleCollider
+	BinaryPosition,136003
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 center,(0,0, 0,0, 0,0)
+		Single radius,0,06
+		Single height,0,24
+		Int32 direction,0
+		Boolean enabled,True
+		UnityEngine.Rigidbody attachedRigidbody,lwaist (UnityEngine.Rigidbody)
+		Boolean isTrigger,False
+		Single contactOffset,0,01
+		UnityEngine.PhysicMaterial material,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.PhysicMaterial sharedMaterial,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.Bounds bounds,Center: (0,0, 1,0, 0,0), Extents: (0,1, 0,1, 0,1)
+		UnityEngine.GameObject gameObject,lwaist (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,lwaist
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.Rigidbody
+	BinaryPosition,141628
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 velocity,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 angularVelocity,(0,0, 0,0, 0,0)
+		Single drag,0
+		Single angularDrag,5
+		Single mass,10
+		Boolean useGravity,True
+		Single maxDepenetrationVelocity,1E+32
+		Boolean isKinematic,False
+		Boolean freezeRotation,False
+		UnityEngine.RigidbodyConstraints constraints,None
+		UnityEngine.CollisionDetectionMode collisionDetectionMode,Discrete
+		UnityEngine.Vector3 centerOfMass,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 worldCenterOfMass,(0,0, 1,0, 0,0)
+		UnityEngine.Quaternion inertiaTensorRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 inertiaTensor,(0,0, 0,0, 0,0)
+		Boolean detectCollisions,True
+		Boolean useConeFriction,False
+		UnityEngine.Vector3 position,(0,0, 1,0, 0,0)
+		UnityEngine.Quaternion rotation,(0,0, 0,7, 0,0, 0,7)
+		UnityEngine.RigidbodyInterpolation interpolation,None
+		Int32 solverIterations,12
+		Int32 solverIterationCount,12
+		Int32 solverVelocityIterations,1
+		Int32 solverVelocityIterationCount,1
+		Single sleepVelocity,0
+		Single sleepAngularVelocity,0
+		Single sleepThreshold,0,005
+		Single maxAngularVelocity,7
+		UnityEngine.GameObject gameObject,lwaist (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,lwaist
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.ConfigurableJoint
+	BinaryPosition,153899
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 secondaryAxis,(0,0, 1,0, 0,0)
+		UnityEngine.ConfigurableJointMotion xMotion,Locked
+		UnityEngine.ConfigurableJointMotion yMotion,Locked
+		UnityEngine.ConfigurableJointMotion zMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularXMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularYMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularZMotion,Locked
+		UnityEngine.SoftJointLimitSpring linearLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularXLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularYZLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimit linearLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit lowAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit highAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularYLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularZLimit,UnityEngine.SoftJointLimit
+		UnityEngine.Vector3 targetPosition,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 targetVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.JointDrive xDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive yDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive zDrive,UnityEngine.JointDrive
+		UnityEngine.Quaternion targetRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 targetAngularVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.RotationDriveMode rotationDriveMode,Slerp
+		UnityEngine.JointDrive angularXDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive angularYZDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive slerpDrive,UnityEngine.JointDrive
+		UnityEngine.JointProjectionMode projectionMode,PositionAndRotation
+		Single projectionDistance,0,1
+		Single projectionAngle,180
+		Boolean configuredInWorldSpace,False
+		Boolean swapBodies,False
+		UnityEngine.Rigidbody connectedBody,uwaist (UnityEngine.Rigidbody)
+		UnityEngine.Vector3 axis,(1,0, 0,0, 0,0)
+		UnityEngine.Vector3 anchor,(0,0, 0,1, 0,0)
+		UnityEngine.Vector3 connectedAnchor,(0,0, -0,1, 0,0)
+		Boolean autoConfigureConnectedAnchor,True
+		Single breakForce,+nieskończoność
+		Single breakTorque,+nieskończoność
+		Boolean enableCollision,False
+		Boolean enablePreprocessing,True
+		UnityEngine.Vector3 currentForce,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 currentTorque,(0,0, 0,0, 0,0)
+		Single massScale,1
+		Single connectedMassScale,1
+		UnityEngine.GameObject gameObject,lwaist (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,lwaist
+		UnityEngine.HideFlags hideFlags,None
+	}
+}
+butt
+{
+	UnityEngine.CapsuleCollider
+	BinaryPosition,173145
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 center,(0,0, 0,0, 0,0)
+		Single radius,0,09
+		Single height,0,32
+		Int32 direction,0
+		Boolean enabled,True
+		UnityEngine.Rigidbody attachedRigidbody,butt (UnityEngine.Rigidbody)
+		Boolean isTrigger,False
+		Single contactOffset,0,01
+		UnityEngine.PhysicMaterial material,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.PhysicMaterial sharedMaterial,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.Bounds bounds,Center: (0,0, 0,8, 0,0), Extents: (0,1, 0,1, 0,2)
+		UnityEngine.GameObject gameObject,butt (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,butt
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.Rigidbody
+	BinaryPosition,178770
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 velocity,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 angularVelocity,(0,0, 0,0, 0,0)
+		Single drag,0
+		Single angularDrag,5
+		Single mass,8
+		Boolean useGravity,True
+		Single maxDepenetrationVelocity,1E+32
+		Boolean isKinematic,False
+		Boolean freezeRotation,False
+		UnityEngine.RigidbodyConstraints constraints,None
+		UnityEngine.CollisionDetectionMode collisionDetectionMode,Discrete
+		UnityEngine.Vector3 centerOfMass,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 worldCenterOfMass,(0,0, 0,8, 0,0)
+		UnityEngine.Quaternion inertiaTensorRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 inertiaTensor,(0,0, 0,1, 0,1)
+		Boolean detectCollisions,True
+		Boolean useConeFriction,False
+		UnityEngine.Vector3 position,(0,0, 0,8, 0,0)
+		UnityEngine.Quaternion rotation,(0,0, 0,7, 0,0, 0,7)
+		UnityEngine.RigidbodyInterpolation interpolation,None
+		Int32 solverIterations,12
+		Int32 solverIterationCount,12
+		Int32 solverVelocityIterations,1
+		Int32 solverVelocityIterationCount,1
+		Single sleepVelocity,0
+		Single sleepAngularVelocity,0
+		Single sleepThreshold,0,005
+		Single maxAngularVelocity,7
+		UnityEngine.GameObject gameObject,butt (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,butt
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.ConfigurableJoint
+	BinaryPosition,191041
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 secondaryAxis,(0,0, 1,0, 0,0)
+		UnityEngine.ConfigurableJointMotion xMotion,Locked
+		UnityEngine.ConfigurableJointMotion yMotion,Locked
+		UnityEngine.ConfigurableJointMotion zMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularXMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularYMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularZMotion,Locked
+		UnityEngine.SoftJointLimitSpring linearLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularXLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularYZLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimit linearLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit lowAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit highAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularYLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularZLimit,UnityEngine.SoftJointLimit
+		UnityEngine.Vector3 targetPosition,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 targetVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.JointDrive xDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive yDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive zDrive,UnityEngine.JointDrive
+		UnityEngine.Quaternion targetRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 targetAngularVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.RotationDriveMode rotationDriveMode,Slerp
+		UnityEngine.JointDrive angularXDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive angularYZDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive slerpDrive,UnityEngine.JointDrive
+		UnityEngine.JointProjectionMode projectionMode,PositionAndRotation
+		Single projectionDistance,0,1
+		Single projectionAngle,180
+		Boolean configuredInWorldSpace,False
+		Boolean swapBodies,False
+		UnityEngine.Rigidbody connectedBody,lwaist (UnityEngine.Rigidbody)
+		UnityEngine.Vector3 axis,(1,0, 0,0, 0,0)
+		UnityEngine.Vector3 anchor,(0,0, 0,1, 0,0)
+		UnityEngine.Vector3 connectedAnchor,(0,0, -0,1, 0,0)
+		Boolean autoConfigureConnectedAnchor,True
+		Single breakForce,+nieskończoność
+		Single breakTorque,+nieskończoność
+		Boolean enableCollision,False
+		Boolean enablePreprocessing,True
+		UnityEngine.Vector3 currentForce,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 currentTorque,(0,0, 0,0, 0,0)
+		Single massScale,1
+		Single connectedMassScale,1
+		UnityEngine.GameObject gameObject,butt (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,butt
+		UnityEngine.HideFlags hideFlags,None
+	}
+}
+rthigh
+{
+	UnityEngine.CapsuleCollider
+	BinaryPosition,210287
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 center,(0,0, 0,0, 0,0)
+		Single radius,0,06
+		Single height,0,48
+		Int32 direction,1
+		Boolean enabled,True
+		UnityEngine.Rigidbody attachedRigidbody,rthigh (UnityEngine.Rigidbody)
+		Boolean isTrigger,False
+		Single contactOffset,0,01
+		UnityEngine.PhysicMaterial material,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.PhysicMaterial sharedMaterial,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.Bounds bounds,Center: (0,0, 0,6, -0,1), Extents: (0,1, 0,2, 0,1)
+		UnityEngine.GameObject gameObject,rthigh (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,rthigh
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.Rigidbody
+	BinaryPosition,215912
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 velocity,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 angularVelocity,(0,0, 0,0, 0,0)
+		Single drag,0
+		Single angularDrag,5
+		Single mass,6,5
+		Boolean useGravity,True
+		Single maxDepenetrationVelocity,1E+32
+		Boolean isKinematic,False
+		Boolean freezeRotation,False
+		UnityEngine.RigidbodyConstraints constraints,None
+		UnityEngine.CollisionDetectionMode collisionDetectionMode,Discrete
+		UnityEngine.Vector3 centerOfMass,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 worldCenterOfMass,(0,0, 0,6, -0,1)
+		UnityEngine.Quaternion inertiaTensorRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 inertiaTensor,(0,1, 0,0, 0,1)
+		Boolean detectCollisions,True
+		Boolean useConeFriction,False
+		UnityEngine.Vector3 position,(0,0, 0,6, -0,1)
+		UnityEngine.Quaternion rotation,(0,0, 0,7, 0,0, 0,7)
+		UnityEngine.RigidbodyInterpolation interpolation,None
+		Int32 solverIterations,12
+		Int32 solverIterationCount,12
+		Int32 solverVelocityIterations,1
+		Int32 solverVelocityIterationCount,1
+		Single sleepVelocity,0
+		Single sleepAngularVelocity,0
+		Single sleepThreshold,0,005
+		Single maxAngularVelocity,7
+		UnityEngine.GameObject gameObject,rthigh (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,rthigh
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.ConfigurableJoint
+	BinaryPosition,228183
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 secondaryAxis,(0,0, 0,0, 0,0)
+		UnityEngine.ConfigurableJointMotion xMotion,Locked
+		UnityEngine.ConfigurableJointMotion yMotion,Locked
+		UnityEngine.ConfigurableJointMotion zMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularXMotion,Limited
+		UnityEngine.ConfigurableJointMotion angularYMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularZMotion,Locked
+		UnityEngine.SoftJointLimitSpring linearLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularXLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularYZLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimit linearLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit lowAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit highAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularYLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularZLimit,UnityEngine.SoftJointLimit
+		UnityEngine.Vector3 targetPosition,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 targetVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.JointDrive xDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive yDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive zDrive,UnityEngine.JointDrive
+		UnityEngine.Quaternion targetRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 targetAngularVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.RotationDriveMode rotationDriveMode,Slerp
+		UnityEngine.JointDrive angularXDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive angularYZDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive slerpDrive,UnityEngine.JointDrive
+		UnityEngine.JointProjectionMode projectionMode,PositionAndRotation
+		Single projectionDistance,0,1
+		Single projectionAngle,180
+		Boolean configuredInWorldSpace,False
+		Boolean swapBodies,False
+		UnityEngine.Rigidbody connectedBody,butt (UnityEngine.Rigidbody)
+		UnityEngine.Vector3 axis,(1,0, 0,0, 0,0)
+		UnityEngine.Vector3 anchor,(0,0, 0,2, 0,0)
+		UnityEngine.Vector3 connectedAnchor,(0,1, 0,0, 0,0)
+		Boolean autoConfigureConnectedAnchor,True
+		Single breakForce,+nieskończoność
+		Single breakTorque,+nieskończoność
+		Boolean enableCollision,False
+		Boolean enablePreprocessing,True
+		UnityEngine.Vector3 currentForce,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 currentTorque,(0,0, 0,0, 0,0)
+		Single massScale,1
+		Single connectedMassScale,1
+		UnityEngine.GameObject gameObject,rthigh (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,rthigh
+		UnityEngine.HideFlags hideFlags,None
+	}
+}
+rshin
+{
+	UnityEngine.CapsuleCollider
+	BinaryPosition,247429
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 center,(0,0, 0,0, 0,0)
+		Single radius,0,049
+		Single height,0,4
+		Int32 direction,1
+		Boolean enabled,True
+		UnityEngine.Rigidbody attachedRigidbody,rshin (UnityEngine.Rigidbody)
+		Boolean isTrigger,False
+		Single contactOffset,0,01
+		UnityEngine.PhysicMaterial material,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.PhysicMaterial sharedMaterial,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.Bounds bounds,Center: (0,0, 0,2, -0,1), Extents: (0,0, 0,2, 0,0)
+		UnityEngine.GameObject gameObject,rshin (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,rshin
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.Rigidbody
+	BinaryPosition,253054
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 velocity,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 angularVelocity,(0,0, 0,0, 0,0)
+		Single drag,0
+		Single angularDrag,5
+		Single mass,3
+		Boolean useGravity,True
+		Single maxDepenetrationVelocity,1E+32
+		Boolean isKinematic,False
+		Boolean freezeRotation,False
+		UnityEngine.RigidbodyConstraints constraints,None
+		UnityEngine.CollisionDetectionMode collisionDetectionMode,Discrete
+		UnityEngine.Vector3 centerOfMass,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 worldCenterOfMass,(0,0, 0,2, -0,1)
+		UnityEngine.Quaternion inertiaTensorRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 inertiaTensor,(0,0, 0,0, 0,0)
+		Boolean detectCollisions,True
+		Boolean useConeFriction,False
+		UnityEngine.Vector3 position,(0,0, 0,2, -0,1)
+		UnityEngine.Quaternion rotation,(0,0, 0,7, 0,0, 0,7)
+		UnityEngine.RigidbodyInterpolation interpolation,None
+		Int32 solverIterations,12
+		Int32 solverIterationCount,12
+		Int32 solverVelocityIterations,1
+		Int32 solverVelocityIterationCount,1
+		Single sleepVelocity,0
+		Single sleepAngularVelocity,0
+		Single sleepThreshold,0,005
+		Single maxAngularVelocity,7
+		UnityEngine.GameObject gameObject,rshin (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,rshin
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.ConfigurableJoint
+	BinaryPosition,265325
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 secondaryAxis,(0,0, 1,0, 0,0)
+		UnityEngine.ConfigurableJointMotion xMotion,Locked
+		UnityEngine.ConfigurableJointMotion yMotion,Locked
+		UnityEngine.ConfigurableJointMotion zMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularXMotion,Limited
+		UnityEngine.ConfigurableJointMotion angularYMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularZMotion,Locked
+		UnityEngine.SoftJointLimitSpring linearLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularXLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularYZLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimit linearLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit lowAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit highAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularYLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularZLimit,UnityEngine.SoftJointLimit
+		UnityEngine.Vector3 targetPosition,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 targetVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.JointDrive xDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive yDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive zDrive,UnityEngine.JointDrive
+		UnityEngine.Quaternion targetRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 targetAngularVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.RotationDriveMode rotationDriveMode,Slerp
+		UnityEngine.JointDrive angularXDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive angularYZDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive slerpDrive,UnityEngine.JointDrive
+		UnityEngine.JointProjectionMode projectionMode,PositionAndRotation
+		Single projectionDistance,0,1
+		Single projectionAngle,180
+		Boolean configuredInWorldSpace,False
+		Boolean swapBodies,False
+		UnityEngine.Rigidbody connectedBody,rthigh (UnityEngine.Rigidbody)
+		UnityEngine.Vector3 axis,(-360,0, 0,0, 0,0)
+		UnityEngine.Vector3 anchor,(0,0, 0,2, 0,0)
+		UnityEngine.Vector3 connectedAnchor,(0,0, -0,2, 0,0)
+		Boolean autoConfigureConnectedAnchor,True
+		Single breakForce,+nieskończoność
+		Single breakTorque,+nieskończoność
+		Boolean enableCollision,False
+		Boolean enablePreprocessing,True
+		UnityEngine.Vector3 currentForce,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 currentTorque,(0,0, 0,0, 0,0)
+		Single massScale,1
+		Single connectedMassScale,1
+		UnityEngine.GameObject gameObject,rshin (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,rshin
+		UnityEngine.HideFlags hideFlags,None
+	}
+}
+rfoot
+{
+}
+lthigh
+{
+	UnityEngine.CapsuleCollider
+	BinaryPosition,284571
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 center,(0,0, 0,0, 0,0)
+		Single radius,0,06
+		Single height,0,48
+		Int32 direction,1
+		Boolean enabled,True
+		UnityEngine.Rigidbody attachedRigidbody,lthigh (UnityEngine.Rigidbody)
+		Boolean isTrigger,False
+		Single contactOffset,0,01
+		UnityEngine.PhysicMaterial material,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.PhysicMaterial sharedMaterial,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.Bounds bounds,Center: (0,0, 0,6, 0,1), Extents: (0,1, 0,2, 0,1)
+		UnityEngine.GameObject gameObject,lthigh (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,lthigh
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.Rigidbody
+	BinaryPosition,290196
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 velocity,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 angularVelocity,(0,0, 0,0, 0,0)
+		Single drag,0
+		Single angularDrag,5
+		Single mass,6,5
+		Boolean useGravity,True
+		Single maxDepenetrationVelocity,1E+32
+		Boolean isKinematic,False
+		Boolean freezeRotation,False
+		UnityEngine.RigidbodyConstraints constraints,None
+		UnityEngine.CollisionDetectionMode collisionDetectionMode,Discrete
+		UnityEngine.Vector3 centerOfMass,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 worldCenterOfMass,(0,0, 0,6, 0,1)
+		UnityEngine.Quaternion inertiaTensorRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 inertiaTensor,(0,1, 0,0, 0,1)
+		Boolean detectCollisions,True
+		Boolean useConeFriction,False
+		UnityEngine.Vector3 position,(0,0, 0,6, 0,1)
+		UnityEngine.Quaternion rotation,(0,0, 0,7, 0,0, 0,7)
+		UnityEngine.RigidbodyInterpolation interpolation,None
+		Int32 solverIterations,12
+		Int32 solverIterationCount,12
+		Int32 solverVelocityIterations,1
+		Int32 solverVelocityIterationCount,1
+		Single sleepVelocity,0
+		Single sleepAngularVelocity,0
+		Single sleepThreshold,0,005
+		Single maxAngularVelocity,7
+		UnityEngine.GameObject gameObject,lthigh (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,lthigh
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.ConfigurableJoint
+	BinaryPosition,302467
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 secondaryAxis,(0,0, 0,0, 0,0)
+		UnityEngine.ConfigurableJointMotion xMotion,Locked
+		UnityEngine.ConfigurableJointMotion yMotion,Locked
+		UnityEngine.ConfigurableJointMotion zMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularXMotion,Limited
+		UnityEngine.ConfigurableJointMotion angularYMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularZMotion,Locked
+		UnityEngine.SoftJointLimitSpring linearLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularXLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularYZLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimit linearLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit lowAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit highAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularYLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularZLimit,UnityEngine.SoftJointLimit
+		UnityEngine.Vector3 targetPosition,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 targetVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.JointDrive xDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive yDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive zDrive,UnityEngine.JointDrive
+		UnityEngine.Quaternion targetRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 targetAngularVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.RotationDriveMode rotationDriveMode,Slerp
+		UnityEngine.JointDrive angularXDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive angularYZDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive slerpDrive,UnityEngine.JointDrive
+		UnityEngine.JointProjectionMode projectionMode,PositionAndRotation
+		Single projectionDistance,0,1
+		Single projectionAngle,180
+		Boolean configuredInWorldSpace,False
+		Boolean swapBodies,False
+		UnityEngine.Rigidbody connectedBody,butt (UnityEngine.Rigidbody)
+		UnityEngine.Vector3 axis,(1,0, 0,0, 0,0)
+		UnityEngine.Vector3 anchor,(0,0, 0,2, 0,0)
+		UnityEngine.Vector3 connectedAnchor,(-0,1, 0,0, 0,0)
+		Boolean autoConfigureConnectedAnchor,True
+		Single breakForce,+nieskończoność
+		Single breakTorque,+nieskończoność
+		Boolean enableCollision,False
+		Boolean enablePreprocessing,True
+		UnityEngine.Vector3 currentForce,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 currentTorque,(0,0, 0,0, 0,0)
+		Single massScale,1
+		Single connectedMassScale,1
+		UnityEngine.GameObject gameObject,lthigh (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,lthigh
+		UnityEngine.HideFlags hideFlags,None
+	}
+}
+lshin
+{
+	UnityEngine.CapsuleCollider
+	BinaryPosition,321713
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 center,(0,0, 0,0, 0,0)
+		Single radius,0,049
+		Single height,0,4
+		Int32 direction,1
+		Boolean enabled,True
+		UnityEngine.Rigidbody attachedRigidbody,lshin (UnityEngine.Rigidbody)
+		Boolean isTrigger,False
+		Single contactOffset,0,01
+		UnityEngine.PhysicMaterial material,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.PhysicMaterial sharedMaterial,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.Bounds bounds,Center: (0,0, 0,2, 0,1), Extents: (0,0, 0,2, 0,0)
+		UnityEngine.GameObject gameObject,lshin (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,lshin
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.Rigidbody
+	BinaryPosition,327338
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 velocity,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 angularVelocity,(0,0, 0,0, 0,0)
+		Single drag,0
+		Single angularDrag,5
+		Single mass,3
+		Boolean useGravity,True
+		Single maxDepenetrationVelocity,1E+32
+		Boolean isKinematic,False
+		Boolean freezeRotation,False
+		UnityEngine.RigidbodyConstraints constraints,None
+		UnityEngine.CollisionDetectionMode collisionDetectionMode,Discrete
+		UnityEngine.Vector3 centerOfMass,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 worldCenterOfMass,(0,0, 0,2, 0,1)
+		UnityEngine.Quaternion inertiaTensorRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 inertiaTensor,(0,0, 0,0, 0,0)
+		Boolean detectCollisions,True
+		Boolean useConeFriction,False
+		UnityEngine.Vector3 position,(0,0, 0,2, 0,1)
+		UnityEngine.Quaternion rotation,(0,0, 0,7, 0,0, 0,7)
+		UnityEngine.RigidbodyInterpolation interpolation,None
+		Int32 solverIterations,12
+		Int32 solverIterationCount,12
+		Int32 solverVelocityIterations,1
+		Int32 solverVelocityIterationCount,1
+		Single sleepVelocity,0
+		Single sleepAngularVelocity,0
+		Single sleepThreshold,0,005
+		Single maxAngularVelocity,7
+		UnityEngine.GameObject gameObject,lshin (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,lshin
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.ConfigurableJoint
+	BinaryPosition,339609
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 secondaryAxis,(0,0, 1,0, 0,0)
+		UnityEngine.ConfigurableJointMotion xMotion,Locked
+		UnityEngine.ConfigurableJointMotion yMotion,Locked
+		UnityEngine.ConfigurableJointMotion zMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularXMotion,Limited
+		UnityEngine.ConfigurableJointMotion angularYMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularZMotion,Locked
+		UnityEngine.SoftJointLimitSpring linearLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularXLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularYZLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimit linearLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit lowAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit highAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularYLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularZLimit,UnityEngine.SoftJointLimit
+		UnityEngine.Vector3 targetPosition,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 targetVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.JointDrive xDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive yDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive zDrive,UnityEngine.JointDrive
+		UnityEngine.Quaternion targetRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 targetAngularVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.RotationDriveMode rotationDriveMode,Slerp
+		UnityEngine.JointDrive angularXDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive angularYZDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive slerpDrive,UnityEngine.JointDrive
+		UnityEngine.JointProjectionMode projectionMode,PositionAndRotation
+		Single projectionDistance,0,1
+		Single projectionAngle,180
+		Boolean configuredInWorldSpace,False
+		Boolean swapBodies,False
+		UnityEngine.Rigidbody connectedBody,lthigh (UnityEngine.Rigidbody)
+		UnityEngine.Vector3 axis,(-360,0, 0,0, 0,0)
+		UnityEngine.Vector3 anchor,(0,0, 0,2, 0,0)
+		UnityEngine.Vector3 connectedAnchor,(0,0, -0,2, 0,0)
+		Boolean autoConfigureConnectedAnchor,True
+		Single breakForce,+nieskończoność
+		Single breakTorque,+nieskończoność
+		Boolean enableCollision,False
+		Boolean enablePreprocessing,True
+		UnityEngine.Vector3 currentForce,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 currentTorque,(0,0, 0,0, 0,0)
+		Single massScale,1
+		Single connectedMassScale,1
+		UnityEngine.GameObject gameObject,lshin (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,lshin
+		UnityEngine.HideFlags hideFlags,None
+	}
+}
+lfoot
+{
+}
+lupperarm
+{
+	UnityEngine.CapsuleCollider
+	BinaryPosition,358855
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 center,(0,0, 0,0, 0,0)
+		Single radius,0,04
+		Single height,0,36
+		Int32 direction,0
+		Boolean enabled,True
+		UnityEngine.Rigidbody attachedRigidbody,lupperarm (UnityEngine.Rigidbody)
+		Boolean isTrigger,False
+		Single contactOffset,0,01
+		UnityEngine.PhysicMaterial material,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.PhysicMaterial sharedMaterial,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.Bounds bounds,Center: (0,0, 1,2, 0,2), Extents: (0,0, 0,2, 0,0)
+		UnityEngine.GameObject gameObject,lupperarm (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,lupperarm
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.Rigidbody
+	BinaryPosition,364480
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 velocity,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 angularVelocity,(0,0, 0,0, 0,0)
+		Single drag,0
+		Single angularDrag,5
+		Single mass,2,1
+		Boolean useGravity,True
+		Single maxDepenetrationVelocity,1E+32
+		Boolean isKinematic,False
+		Boolean freezeRotation,False
+		UnityEngine.RigidbodyConstraints constraints,None
+		UnityEngine.CollisionDetectionMode collisionDetectionMode,Discrete
+		UnityEngine.Vector3 centerOfMass,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 worldCenterOfMass,(0,0, 1,2, 0,2)
+		UnityEngine.Quaternion inertiaTensorRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 inertiaTensor,(0,0, 0,0, 0,0)
+		Boolean detectCollisions,True
+		Boolean useConeFriction,False
+		UnityEngine.Vector3 position,(0,0, 1,2, 0,2)
+		UnityEngine.Quaternion rotation,(0,5, 0,5, 0,5, 0,5)
+		UnityEngine.RigidbodyInterpolation interpolation,None
+		Int32 solverIterations,12
+		Int32 solverIterationCount,12
+		Int32 solverVelocityIterations,1
+		Int32 solverVelocityIterationCount,1
+		Single sleepVelocity,0
+		Single sleepAngularVelocity,0
+		Single sleepThreshold,0,005
+		Single maxAngularVelocity,7
+		UnityEngine.GameObject gameObject,lupperarm (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,lupperarm
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.ConfigurableJoint
+	BinaryPosition,376751
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 secondaryAxis,(0,0, 0,0, 0,0)
+		UnityEngine.ConfigurableJointMotion xMotion,Locked
+		UnityEngine.ConfigurableJointMotion yMotion,Locked
+		UnityEngine.ConfigurableJointMotion zMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularXMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularYMotion,Limited
+		UnityEngine.ConfigurableJointMotion angularZMotion,Locked
+		UnityEngine.SoftJointLimitSpring linearLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularXLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularYZLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimit linearLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit lowAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit highAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularYLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularZLimit,UnityEngine.SoftJointLimit
+		UnityEngine.Vector3 targetPosition,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 targetVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.JointDrive xDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive yDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive zDrive,UnityEngine.JointDrive
+		UnityEngine.Quaternion targetRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 targetAngularVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.RotationDriveMode rotationDriveMode,Slerp
+		UnityEngine.JointDrive angularXDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive angularYZDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive slerpDrive,UnityEngine.JointDrive
+		UnityEngine.JointProjectionMode projectionMode,PositionAndRotation
+		Single projectionDistance,0,1
+		Single projectionAngle,180
+		Boolean configuredInWorldSpace,False
+		Boolean swapBodies,False
+		UnityEngine.Rigidbody connectedBody,torso (UnityEngine.Rigidbody)
+		UnityEngine.Vector3 axis,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 anchor,(0,2, 0,0, 0,0)
+		UnityEngine.Vector3 connectedAnchor,(-0,2, 0,1, 0,0)
+		Boolean autoConfigureConnectedAnchor,True
+		Single breakForce,+nieskończoność
+		Single breakTorque,+nieskończoność
+		Boolean enableCollision,False
+		Boolean enablePreprocessing,True
+		UnityEngine.Vector3 currentForce,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 currentTorque,(0,0, 0,0, 0,0)
+		Single massScale,1
+		Single connectedMassScale,1
+		UnityEngine.GameObject gameObject,lupperarm (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,lupperarm
+		UnityEngine.HideFlags hideFlags,None
+	}
+}
+llowerarm
+{
+	UnityEngine.CapsuleCollider
+	BinaryPosition,395997
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 center,(0,0, 0,0, 0,0)
+		Single radius,0,03
+		Single height,0,32
+		Int32 direction,0
+		Boolean enabled,True
+		UnityEngine.Rigidbody attachedRigidbody,llowerarm (UnityEngine.Rigidbody)
+		Boolean isTrigger,False
+		Single contactOffset,0,01
+		UnityEngine.PhysicMaterial material,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.PhysicMaterial sharedMaterial,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.Bounds bounds,Center: (0,0, 0,8, 0,2), Extents: (0,0, 0,2, 0,0)
+		UnityEngine.GameObject gameObject,llowerarm (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,llowerarm
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.Rigidbody
+	BinaryPosition,401622
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 velocity,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 angularVelocity,(0,0, 0,0, 0,0)
+		Single drag,0
+		Single angularDrag,5
+		Single mass,1,2
+		Boolean useGravity,True
+		Single maxDepenetrationVelocity,1E+32
+		Boolean isKinematic,False
+		Boolean freezeRotation,False
+		UnityEngine.RigidbodyConstraints constraints,None
+		UnityEngine.CollisionDetectionMode collisionDetectionMode,Discrete
+		UnityEngine.Vector3 centerOfMass,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 worldCenterOfMass,(0,0, 0,8, 0,2)
+		UnityEngine.Quaternion inertiaTensorRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 inertiaTensor,(0,0, 0,0, 0,0)
+		Boolean detectCollisions,True
+		Boolean useConeFriction,False
+		UnityEngine.Vector3 position,(0,0, 0,8, 0,2)
+		UnityEngine.Quaternion rotation,(0,5, 0,5, 0,5, 0,5)
+		UnityEngine.RigidbodyInterpolation interpolation,None
+		Int32 solverIterations,12
+		Int32 solverIterationCount,12
+		Int32 solverVelocityIterations,1
+		Int32 solverVelocityIterationCount,1
+		Single sleepVelocity,0
+		Single sleepAngularVelocity,0
+		Single sleepThreshold,0,005
+		Single maxAngularVelocity,7
+		UnityEngine.GameObject gameObject,llowerarm (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,llowerarm
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.ConfigurableJoint
+	BinaryPosition,413893
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 secondaryAxis,(0,0, 0,0, 0,0)
+		UnityEngine.ConfigurableJointMotion xMotion,Locked
+		UnityEngine.ConfigurableJointMotion yMotion,Locked
+		UnityEngine.ConfigurableJointMotion zMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularXMotion,Limited
+		UnityEngine.ConfigurableJointMotion angularYMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularZMotion,Locked
+		UnityEngine.SoftJointLimitSpring linearLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularXLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularYZLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimit linearLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit lowAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit highAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularYLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularZLimit,UnityEngine.SoftJointLimit
+		UnityEngine.Vector3 targetPosition,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 targetVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.JointDrive xDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive yDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive zDrive,UnityEngine.JointDrive
+		UnityEngine.Quaternion targetRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 targetAngularVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.RotationDriveMode rotationDriveMode,Slerp
+		UnityEngine.JointDrive angularXDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive angularYZDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive slerpDrive,UnityEngine.JointDrive
+		UnityEngine.JointProjectionMode projectionMode,PositionAndRotation
+		Single projectionDistance,0,1
+		Single projectionAngle,180
+		Boolean configuredInWorldSpace,False
+		Boolean swapBodies,False
+		UnityEngine.Rigidbody connectedBody,lupperarm (UnityEngine.Rigidbody)
+		UnityEngine.Vector3 axis,(0,0, 1,0, 0,0)
+		UnityEngine.Vector3 anchor,(0,2, 0,0, 0,0)
+		UnityEngine.Vector3 connectedAnchor,(-0,2, 0,0, 0,0)
+		Boolean autoConfigureConnectedAnchor,True
+		Single breakForce,+nieskończoność
+		Single breakTorque,+nieskończoność
+		Boolean enableCollision,False
+		Boolean enablePreprocessing,True
+		UnityEngine.Vector3 currentForce,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 currentTorque,(0,0, 0,0, 0,0)
+		Single massScale,1
+		Single connectedMassScale,1
+		UnityEngine.GameObject gameObject,llowerarm (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,llowerarm
+		UnityEngine.HideFlags hideFlags,None
+	}
+}
+rupperarm
+{
+	UnityEngine.CapsuleCollider
+	BinaryPosition,433139
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 center,(0,0, 0,0, 0,0)
+		Single radius,0,04
+		Single height,0,36
+		Int32 direction,0
+		Boolean enabled,True
+		UnityEngine.Rigidbody attachedRigidbody,rupperarm (UnityEngine.Rigidbody)
+		Boolean isTrigger,False
+		Single contactOffset,0,01
+		UnityEngine.PhysicMaterial material,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.PhysicMaterial sharedMaterial,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.Bounds bounds,Center: (0,0, 1,2, -0,2), Extents: (0,0, 0,2, 0,0)
+		UnityEngine.GameObject gameObject,rupperarm (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,rupperarm
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.Rigidbody
+	BinaryPosition,438764
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 velocity,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 angularVelocity,(0,0, 0,0, 0,0)
+		Single drag,0
+		Single angularDrag,5
+		Single mass,2,1
+		Boolean useGravity,True
+		Single maxDepenetrationVelocity,1E+32
+		Boolean isKinematic,False
+		Boolean freezeRotation,False
+		UnityEngine.RigidbodyConstraints constraints,None
+		UnityEngine.CollisionDetectionMode collisionDetectionMode,Discrete
+		UnityEngine.Vector3 centerOfMass,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 worldCenterOfMass,(0,0, 1,2, -0,2)
+		UnityEngine.Quaternion inertiaTensorRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 inertiaTensor,(0,0, 0,0, 0,0)
+		Boolean detectCollisions,True
+		Boolean useConeFriction,False
+		UnityEngine.Vector3 position,(0,0, 1,2, -0,2)
+		UnityEngine.Quaternion rotation,(-0,5, 0,5, -0,5, 0,5)
+		UnityEngine.RigidbodyInterpolation interpolation,None
+		Int32 solverIterations,12
+		Int32 solverIterationCount,12
+		Int32 solverVelocityIterations,1
+		Int32 solverVelocityIterationCount,1
+		Single sleepVelocity,0
+		Single sleepAngularVelocity,0
+		Single sleepThreshold,0,005
+		Single maxAngularVelocity,7
+		UnityEngine.GameObject gameObject,rupperarm (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,rupperarm
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.ConfigurableJoint
+	BinaryPosition,451035
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 secondaryAxis,(0,0, 0,0, 0,0)
+		UnityEngine.ConfigurableJointMotion xMotion,Locked
+		UnityEngine.ConfigurableJointMotion yMotion,Locked
+		UnityEngine.ConfigurableJointMotion zMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularXMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularYMotion,Limited
+		UnityEngine.ConfigurableJointMotion angularZMotion,Locked
+		UnityEngine.SoftJointLimitSpring linearLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularXLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularYZLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimit linearLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit lowAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit highAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularYLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularZLimit,UnityEngine.SoftJointLimit
+		UnityEngine.Vector3 targetPosition,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 targetVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.JointDrive xDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive yDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive zDrive,UnityEngine.JointDrive
+		UnityEngine.Quaternion targetRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 targetAngularVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.RotationDriveMode rotationDriveMode,Slerp
+		UnityEngine.JointDrive angularXDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive angularYZDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive slerpDrive,UnityEngine.JointDrive
+		UnityEngine.JointProjectionMode projectionMode,PositionAndRotation
+		Single projectionDistance,0,1
+		Single projectionAngle,180
+		Boolean configuredInWorldSpace,False
+		Boolean swapBodies,False
+		UnityEngine.Rigidbody connectedBody,torso (UnityEngine.Rigidbody)
+		UnityEngine.Vector3 axis,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 anchor,(-0,2, 0,0, 0,0)
+		UnityEngine.Vector3 connectedAnchor,(0,2, 0,1, 0,0)
+		Boolean autoConfigureConnectedAnchor,True
+		Single breakForce,+nieskończoność
+		Single breakTorque,+nieskończoność
+		Boolean enableCollision,False
+		Boolean enablePreprocessing,True
+		UnityEngine.Vector3 currentForce,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 currentTorque,(0,0, 0,0, 0,0)
+		Single massScale,1
+		Single connectedMassScale,1
+		UnityEngine.GameObject gameObject,rupperarm (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,rupperarm
+		UnityEngine.HideFlags hideFlags,None
+	}
+}
+rlowerarm
+{
+	UnityEngine.CapsuleCollider
+	BinaryPosition,470281
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 center,(0,0, 0,0, 0,0)
+		Single radius,0,03
+		Single height,0,32
+		Int32 direction,0
+		Boolean enabled,True
+		UnityEngine.Rigidbody attachedRigidbody,rlowerarm (UnityEngine.Rigidbody)
+		Boolean isTrigger,False
+		Single contactOffset,0,01
+		UnityEngine.PhysicMaterial material,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.PhysicMaterial sharedMaterial,Body (Instance) (UnityEngine.PhysicMaterial)
+		UnityEngine.Bounds bounds,Center: (0,0, 0,8, -0,2), Extents: (0,0, 0,2, 0,0)
+		UnityEngine.GameObject gameObject,rlowerarm (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,rlowerarm
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.Rigidbody
+	BinaryPosition,475906
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 velocity,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 angularVelocity,(0,0, 0,0, 0,0)
+		Single drag,0
+		Single angularDrag,5
+		Single mass,1,2
+		Boolean useGravity,True
+		Single maxDepenetrationVelocity,1E+32
+		Boolean isKinematic,False
+		Boolean freezeRotation,False
+		UnityEngine.RigidbodyConstraints constraints,None
+		UnityEngine.CollisionDetectionMode collisionDetectionMode,Discrete
+		UnityEngine.Vector3 centerOfMass,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 worldCenterOfMass,(0,0, 0,8, -0,2)
+		UnityEngine.Quaternion inertiaTensorRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 inertiaTensor,(0,0, 0,0, 0,0)
+		Boolean detectCollisions,True
+		Boolean useConeFriction,False
+		UnityEngine.Vector3 position,(0,0, 0,8, -0,2)
+		UnityEngine.Quaternion rotation,(-0,5, 0,5, -0,5, 0,5)
+		UnityEngine.RigidbodyInterpolation interpolation,None
+		Int32 solverIterations,12
+		Int32 solverIterationCount,12
+		Int32 solverVelocityIterations,1
+		Int32 solverVelocityIterationCount,1
+		Single sleepVelocity,0
+		Single sleepAngularVelocity,0
+		Single sleepThreshold,0,005
+		Single maxAngularVelocity,7
+		UnityEngine.GameObject gameObject,rlowerarm (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,rlowerarm
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.ConfigurableJoint
+	BinaryPosition,488177
+	Field {
+	}
+	Property {
+		UnityEngine.Vector3 secondaryAxis,(0,0, 0,0, 0,0)
+		UnityEngine.ConfigurableJointMotion xMotion,Locked
+		UnityEngine.ConfigurableJointMotion yMotion,Locked
+		UnityEngine.ConfigurableJointMotion zMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularXMotion,Limited
+		UnityEngine.ConfigurableJointMotion angularYMotion,Locked
+		UnityEngine.ConfigurableJointMotion angularZMotion,Locked
+		UnityEngine.SoftJointLimitSpring linearLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularXLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimitSpring angularYZLimitSpring,UnityEngine.SoftJointLimitSpring
+		UnityEngine.SoftJointLimit linearLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit lowAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit highAngularXLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularYLimit,UnityEngine.SoftJointLimit
+		UnityEngine.SoftJointLimit angularZLimit,UnityEngine.SoftJointLimit
+		UnityEngine.Vector3 targetPosition,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 targetVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.JointDrive xDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive yDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive zDrive,UnityEngine.JointDrive
+		UnityEngine.Quaternion targetRotation,(0,0, 0,0, 0,0, 1,0)
+		UnityEngine.Vector3 targetAngularVelocity,(0,0, 0,0, 0,0)
+		UnityEngine.RotationDriveMode rotationDriveMode,Slerp
+		UnityEngine.JointDrive angularXDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive angularYZDrive,UnityEngine.JointDrive
+		UnityEngine.JointDrive slerpDrive,UnityEngine.JointDrive
+		UnityEngine.JointProjectionMode projectionMode,PositionAndRotation
+		Single projectionDistance,0,1
+		Single projectionAngle,180
+		Boolean configuredInWorldSpace,False
+		Boolean swapBodies,False
+		UnityEngine.Rigidbody connectedBody,rupperarm (UnityEngine.Rigidbody)
+		UnityEngine.Vector3 axis,(0,0, 1,0, 0,0)
+		UnityEngine.Vector3 anchor,(-0,2, 0,0, 0,0)
+		UnityEngine.Vector3 connectedAnchor,(0,2, 0,0, 0,0)
+		Boolean autoConfigureConnectedAnchor,True
+		Single breakForce,+nieskończoność
+		Single breakTorque,+nieskończoność
+		Boolean enableCollision,False
+		Boolean enablePreprocessing,True
+		UnityEngine.Vector3 currentForce,(0,0, 0,0, 0,0)
+		UnityEngine.Vector3 currentTorque,(0,0, 0,0, 0,0)
+		Single massScale,1
+		Single connectedMassScale,1
+		UnityEngine.GameObject gameObject,rlowerarm (UnityEngine.GameObject)
+		System.String tag,Untagged
+		System.String name,rlowerarm
+		UnityEngine.HideFlags hideFlags,None
+	}
+}
+Main Camera
+{
+	UnityEngine.Camera
+	BinaryPosition,507423
+	Field {
+	}
+	Property {
+		Single fov,60
+		Single near,0,3
+		Single far,1000
+		Single fieldOfView,60
+		Single nearClipPlane,0,3
+		Single farClipPlane,1000
+		UnityEngine.RenderingPath renderingPath,UsePlayerSettings
+		UnityEngine.RenderingPath actualRenderingPath,Forward
+		Boolean allowHDR,True
+		Boolean hdr,True
+		Boolean forceIntoRenderTexture,False
+		Boolean allowMSAA,True
+		Boolean allowDynamicResolution,False
+		Single orthographicSize,5
+		Boolean orthographic,False
+		UnityEngine.Rendering.OpaqueSortMode opaqueSortMode,Default
+		UnityEngine.TransparencySortMode transparencySortMode,Default
+		UnityEngine.Vector3 transparencySortAxis,(0,0, 0,0, 1,0)
+		Single depth,-1
+		Single aspect,2,06
+		Int32 cullingMask,-1
+		Int32 PreviewCullingLayer,31
+		UnityEngine.SceneManagement.Scene scene,UnityEngine.SceneManagement.Scene
+		Int32 eventMask,-1
+		UnityEngine.Color backgroundColor,RGBA(0,192, 0,302, 0,475, 0,000)
+		UnityEngine.Rect rect,(x:0,00, y:0,00, width:1,00, height:1,00)
+		UnityEngine.Rect pixelRect,(x:0,00, y:0,00, width:309,00, height:150,00)
+		Int32 pixelWidth,309
+		Int32 pixelHeight,150
+		Int32 scaledPixelWidth,309
+		Int32 scaledPixelHeight,150
+		UnityEngine.Matrix4x4 cameraToWorldMatrix,1,00000	0,00000	0,00000	0,00000
+0,00000	1,00000	0,00000	1,00000
+0,00000	0,00000	-1,00000	-10,00000
+0,00000	0,00000	0,00000	1,00000
+
+		UnityEngine.Matrix4x4 worldToCameraMatrix,1,00000	0,00000	0,00000	0,00000
+0,00000	1,00000	0,00000	-1,00000
+0,00000	0,00000	-1,00000	-10,00000
+0,00000	0,00000	0,00000	1,00000
+
+		UnityEngine.Matrix4x4 projectionMatrix,0,84080	0,00000	0,00000	0,00000
+0,00000	1,73205	0,00000	0,00000
+0,00000	0,00000	-1,00060	-0,60018
+0,00000	0,00000	-1,00000	0,00000
+
+		UnityEngine.Matrix4x4 nonJitteredProjectionMatrix,0,84080	0,00000	0,00000	0,00000
+0,00000	1,73205	0,00000	0,00000
+0,00000	0,00000	-1,00060	-0,60018
+0,00000	0,00000	-1,00000	0,00000
+
+		Boolean useJitteredProjectionMatrixForTransparentRendering,True
+		UnityEngine.Matrix4x4 previousViewProjectionMatrix,0,84080	0,00000	0,00000	0,00000
+0,00000	-1,73205	0,00000	1,73205
+0,00000	0,00000	-0,00030	0,29709
+0,00000	0,00000	1,00000	10,00000
+
+		UnityEngine.Vector3 velocity,(0,0, 0,0, 0,0)
+		UnityEngine.CameraClearFlags clearFlags,Skybox
+		Boolean stereoEnabled,False
+		Single stereoSeparation,0,022
+		Single stereoConvergence,10
+		UnityEngine.CameraType cameraType,Game
+		Boolean stereoMirrorMode,False
+		UnityEngine.StereoTargetEyeMask stereoTargetEye,Both
+		Boolean areVRStereoViewMatricesWithinSingleCullTolerance,False
+		MonoOrStereoscopicEye stereoActiveEye,Mono
+		Int32 targetDisplay,0
+		UnityEngine.Camera main,Main Camera (UnityEngine.Camera)
+		UnityEngine.Camera[] allCameras,UnityEngine.Camera[]
+		Int32 allCamerasCount,1
+		Boolean useOcclusionCulling,True
+		UnityEngine.Matrix4x4 cullingMatrix,0,84080	0,00000	0,00000	0,00000
+0,00000	1,73205	0,00000	-1,73205
+0,00000	0,00000	1,00060	9,40582
+0,00000	0,00000	1,00000	10,00000
+
+		Single[] layerCullDistances,System.Single[]
+		Boolean layerCullSpherical,False
+		UnityEngine.DepthTextureMode depthTextureMode,None
+		Boolean clearStencilAfterLightingPass,False
+		Int32 commandBufferCount,0
+		Boolean isOrthoGraphic,False
+		Boolean enabled,True
+		Boolean isActiveAndEnabled,True
+		UnityEngine.GameObject gameObject,Main Camera (UnityEngine.GameObject)
+		System.String tag,MainCamera
+		System.String name,Main Camera
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.FlareLayer
+	BinaryPosition,532050
+	Field {
+	}
+	Property {
+		Boolean enabled,True
+		Boolean isActiveAndEnabled,True
+		UnityEngine.GameObject gameObject,Main Camera (UnityEngine.GameObject)
+		System.String tag,MainCamera
+		System.String name,Main Camera
+		UnityEngine.HideFlags hideFlags,None
+	}
+	UnityEngine.AudioListener
+	BinaryPosition,534243
+	Field {
+	}
+	Property {
+		Single volume,1
+		Boolean pause,False
+		UnityEngine.AudioVelocityUpdateMode velocityUpdateMode,Auto
+		Boolean enabled,True
+		Boolean isActiveAndEnabled,True
+		UnityEngine.GameObject gameObject,Main Camera (UnityEngine.GameObject)
+		System.String tag,MainCamera
+		System.String name,Main Camera
+		UnityEngine.HideFlags hideFlags,None
+	}
+	FBXExporterForUnity
+	BinaryPosition,537599
+	Field {
+		System.Boolean bTrialMode,True
+		System.Boolean bDebugLog,False
+		System.String strFilename,Humanoid
+		System.String strFilenameEXT,.fbx
+		FBXExporterForUnity+EFBXExportToolTarget eExportToolTarget,eCustom
+		FBXExporterForUnity+EFileFormat eFileFormat,eFBX
+		FBXExporterForUnity+EFBXExportFileVersion eFBXExportFileVersion,eDefault
+		FBXExporterForUnity+EFBXFileFormat eFBXFileFormat,eDefault
+		FBXExporterForUnity+EFBXUpVector eUpVector,eInit
+		FBXExporterForUnity+EFBXFrontVector eFrontVector,eInit
+		FBXExporterForUnity+EFBXCoordSystem eCoordSystem,eInit
+		FBXExporterForUnity+EFBXSystemUnit eSystemUnit,eInit
+		System.Boolean bOutDirectControlPointsMode,True
+		System.Boolean bOutNormalSmoothing,True
+		System.Boolean bOutRootBoneInverseMode,True
+		System.Single fGlobalScale,100
+		System.Boolean bOutRootNode,False
+		System.String strOutRootNodeName,
+		System.Boolean bObjectRename,True
+		System.String strObjectRenameFormat,{0}_{1}
+		System.String[] strNoOutputInHierarchyObjectNames,System.String[]
+		FBXExporterForUnity+EFBXImportTextrureMode eImportTextrureMode,eAutoImportAssets
+		System.Boolean bImportEmbedMediaTexturePath,True
+		System.String strLocalEmbedMediaTexturePath,
+		System.String strLocalProjectTexturePath,InputTextures/
+		System.String strLocalStreamingAssetsTexturePath,InputTextures/
+		System.String strLocalAssetsTexturePath,Assets/InputTextures/
+		System.String strLocalFullPathTexturePath,
+		System.Boolean bEmbedMedia,True
+		System.Boolean bOutMesh,True
+		System.Boolean bOutBlendShape,True
+		System.Boolean bOutShader,True
+		System.Boolean bOutShaderCGFX,True
+		System.Boolean bOutComponent,True
+		System.Boolean bOutAnimation,True
+		System.Boolean bOutAnimationCustomFrame,False
+		System.Boolean bAnimationBufferRecMode,True
+		System.Boolean bEditorAutoStop,False
+		System.String strStack,Take0
+		System.String strLayer,Layer0
+		System.Int32 iFrame,0
+		System.Single fTime,0
+		System.Single fTimeStart,0
+		System.Single fTimeRecStart,0
+		System.Single fTimeRecEnd,5
+		System.Boolean bFixedUpdateMode,True
+		System.Int32 iFrameRate,30
+		System.Boolean bEnableSync,True
+		System.Int32 iFixedFrameRate,30
+		System.Int32 iTargetFrameRate,30
+		System.Int32 iVSyncCount,1
+		System.Boolean bOutRealTime,False
+		System.Boolean bOutTexture,True
+		System.Boolean bConvertAllPNG,True
+		System.Boolean bOverWriteTexture,True
+		System.String strOutputTexturePath,OutputTextures/
+		System.String strShaderTextureAmbientParameter,
+		System.String strShaderTextureDiffuseParameter,_MainTex
+		System.String strShaderTextureEmissiveParameter,
+		System.String strShaderTextureNormalMapParameter,
+		System.String strShaderTextureBumpMapParameter,
+		System.String strShaderTextureTransparentParameter,
+		System.String strShaderTextureDisplacementParameter,
+		System.String strShaderTextureReflectionParameter,
+		System.Boolean bFirst,False
+		System.Boolean bStartupFBX,True
+		System.Boolean bNowFBX,False
+		System.Boolean bEndFBX,False
+		System.Boolean bSave,False
+		UnityEngine.GameObject[] goRoot,UnityEngine.GameObject[]
+		System.Collections.Generic.Dictionary`2[System.String,System.String] dicOutputTextureNames,System.Collections.Generic.Dictionary`2[System.String,System.String]
+		System.Collections.Generic.Dictionary`2[System.String,FBXExporterForUnity+SAnimBufferTRS] dicAnimBufferTRSs,System.Collections.Generic.Dictionary`2[System.String,FBXExporterForUnity+SAnimBufferTRS]
+		System.IO.StreamWriter sw_shader,System.IO.StreamWriter
+		System.Int32 iSW_ShaderCount,0
+		System.IO.FileStream sw_component_bin,System.IO.FileStream
+		System.Runtime.Serialization.Formatters.Binary.BinaryFormatter bf_component_bin,System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+		System.IO.StreamWriter sw_component,System.IO.StreamWriter
+		System.Int32 iSW_ComponentCount,16
+		System.Collections.Generic.Dictionary`2[System.String,System.String] dicObjectNames,System.Collections.Generic.Dictionary`2[System.String,System.String]
+	}
+	Property {
+		Boolean useGUILayout,True
+		Boolean runInEditMode,False
+		Boolean enabled,True
+		Boolean isActiveAndEnabled,True
+		UnityEngine.GameObject gameObject,Main Camera (UnityEngine.GameObject)
+		System.String tag,MainCamera
+		System.String name,Main Camera
+		UnityEngine.HideFlags hideFlags,None
+	}
+}

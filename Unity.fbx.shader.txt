@@ -1,0 +1,71 @@
+ShaderCount,2
+Sphere
+{
+	MaterialCount,1
+	MaterialName,Default-Material (Instance)
+	ShaderName,Standard
+	{
+		Color,_Color,1,0,0,1
+		TexEnv,_MainTex,
+		Range,_Cutoff,0,5
+		Range,_Glossiness,0,5
+		Range,_GlossMapScale,1
+		Float,_SmoothnessTextureChannel,0
+		Range,_Metallic,0
+		TexEnv,_MetallicGlossMap,
+		Float,_SpecularHighlights,1
+		Float,_GlossyReflections,1
+		Float,_BumpScale,1
+		TexEnv,_BumpMap,
+		Range,_Parallax,0,02
+		TexEnv,_ParallaxMap,
+		Range,_OcclusionStrength,1
+		TexEnv,_OcclusionMap,
+		Color,_EmissionColor,0,0,0,0,9999999
+		TexEnv,_EmissionMap,
+		TexEnv,_DetailMask,
+		TexEnv,_DetailAlbedoMap,
+		Float,_DetailNormalMapScale,1
+		TexEnv,_DetailNormalMap,
+		Float,_UVSec,0
+		Float,_Mode,0
+		Float,_SrcBlend,1
+		Float,_DstBlend,0
+		Float,_ZWrite,1
+	}
+}
+Plane
+{
+	MaterialCount,1
+	MaterialName,Plane (Instance)
+	ShaderName,Standard
+	{
+		Color,_Color,0,04282007,0,2647059,0,07189479,1
+		TexEnv,_MainTex,
+		Range,_Cutoff,0,5
+		Range,_Glossiness,0,5
+		Range,_GlossMapScale,1
+		Float,_SmoothnessTextureChannel,0
+		Range,_Metallic,0
+		TexEnv,_MetallicGlossMap,
+		Float,_SpecularHighlights,1
+		Float,_GlossyReflections,1
+		Float,_BumpScale,1
+		TexEnv,_BumpMap,
+		Range,_Parallax,0,02
+		TexEnv,_ParallaxMap,
+		Range,_OcclusionStrength,1
+		TexEnv,_OcclusionMap,
+		Color,_EmissionColor,0,0,0,1
+		TexEnv,_EmissionMap,
+		TexEnv,_DetailMask,
+		TexEnv,_DetailAlbedoMap,
+		Float,_DetailNormalMapScale,1
+		TexEnv,_DetailNormalMap,
+		Float,_UVSec,0
+		Float,_Mode,0
+		Float,_SrcBlend,1
+		Float,_DstBlend,0
+		Float,_ZWrite,1
+	}
+}
