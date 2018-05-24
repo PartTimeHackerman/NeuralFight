@@ -20,7 +20,7 @@ class LinuxBuilder : MonoBehaviour
 
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
         buildPlayerOptions.scenes = new[] { "Assets/ant.unity"};
-        buildPlayerOptions.locationPathName = "build/sumo_x64";
+        buildPlayerOptions.locationPathName = "build/sumo.x86_64";
         buildPlayerOptions.target = BuildTarget.StandaloneLinux;
         buildPlayerOptions.options = BuildOptions.EnableHeadlessMode;
         BuildPipeline.BuildPlayer(buildPlayerOptions);
