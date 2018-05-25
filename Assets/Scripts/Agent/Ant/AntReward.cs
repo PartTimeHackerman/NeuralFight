@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Collections;
 
@@ -10,6 +11,7 @@ public class AntReward : MonoBehaviour
     private BodyParts bodyParts;
     private Dictionary<string, GameObject> namedParts;
     private PhysicsUtils physics;
+    public int upperLegsSurfaceCols = 0;
 
     private Rigidbody root;
     public float reward;
@@ -36,6 +38,10 @@ public class AntReward : MonoBehaviour
     public float getReward()
     {
         reward = getXVelReward();
+        
+        float or = reward;
+        reward -= (upperLegsSurfaceCols / 100f) * Mathf.Abs(reward);
+        Debug.Log(reward + " " + or + " " + upperLegsSurfaceCols);
         return reward;
     }
 
@@ -45,6 +51,10 @@ public class AntReward : MonoBehaviour
     {
         this.step = step;
         bool terminated = step >= maxStep || root.transform.up.y < 0 ;
+        if (terminated)
+        {
+            upperLegsSurfaceCols = 0;
+        }
         return terminated;
     }
 

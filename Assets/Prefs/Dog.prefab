@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 54282595007510148}
   - component: {fileID: 153518846764123012}
   - component: {fileID: 114785269486557188}
+  - component: {fileID: 114938467127219156}
   m_Layer: 0
   m_Name: bru_leg
   m_TagString: Untagged
@@ -80,6 +81,7 @@ GameObject:
   - component: {fileID: 54070463778383236}
   - component: {fileID: 153497040862770386}
   - component: {fileID: 114703371276301682}
+  - component: {fileID: 114259601391945070}
   m_Layer: 0
   m_Name: flu_leg
   m_TagString: Untagged
@@ -139,6 +141,7 @@ GameObject:
   - component: {fileID: 54249819589726940}
   - component: {fileID: 153712191076557048}
   - component: {fileID: 114170163462385658}
+  - component: {fileID: 114555138880640700}
   m_Layer: 0
   m_Name: fru_leg
   m_TagString: Untagged
@@ -158,6 +161,7 @@ GameObject:
   - component: {fileID: 54278062062976254}
   - component: {fileID: 153835038261205826}
   - component: {fileID: 114642584902381602}
+  - component: {fileID: 114666639294478812}
   m_Layer: 0
   m_Name: blu_leg
   m_TagString: Untagged
@@ -481,7 +485,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1633162225394914}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44ba23ec2fe902f45b7cdf029079ed5b, type: 3}
   m_Name: 
@@ -567,6 +571,19 @@ MonoBehaviour:
   conAxis: -1
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
+--- !u!114 &114259601391945070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1392050125735462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22a3f00e80348d4b9da67feee7ba186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  antReward: {fileID: 114363288431003278}
+  id: 0
 --- !u!114 &114325633418879090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -627,10 +644,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
+  upperLegsSurfaceCols: 0
   reward: 0
   step: 0
   maxStep: 1000
   up: 0
+--- !u!114 &114555138880640700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1799455061253642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22a3f00e80348d4b9da67feee7ba186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  antReward: {fileID: 114363288431003278}
+  id: 1
 --- !u!114 &114642584902381602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -662,6 +693,19 @@ MonoBehaviour:
   conAxis: -1
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
+--- !u!114 &114666639294478812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1933787899836532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22a3f00e80348d4b9da67feee7ba186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  antReward: {fileID: 114363288431003278}
+  id: 2
 --- !u!114 &114703371276301682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -829,6 +873,19 @@ MonoBehaviour:
   conAxis: -1
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
+--- !u!114 &114938467127219156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1362612691739906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22a3f00e80348d4b9da67feee7ba186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  antReward: {fileID: 114363288431003278}
+  id: 3
 --- !u!136 &136017241534015620
 CapsuleCollider:
   m_ObjectHideFlags: 1
