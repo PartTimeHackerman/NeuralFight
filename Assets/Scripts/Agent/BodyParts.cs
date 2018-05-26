@@ -11,11 +11,14 @@ public class BodyParts : MonoBehaviour
     protected Dictionary<string, GameObject> namedParts = new Dictionary<string, GameObject>();
     private readonly Dictionary<string, Rigidbody> namedRigids = new Dictionary<string, Rigidbody>();
     protected List<GameObject> parts = new List<GameObject>();
+    private readonly List<Rigidbody> rigids = new List<Rigidbody>();
+    private readonly List<Rigidbody> observableRigids = new List<Rigidbody>();
+
+    public List<Rigidbody> ObservableRigids => observableRigids;
 
     public Rigidbody root;
     public int jointsTotal;
     public int partsTotal;
-    private readonly List<Rigidbody> rigids = new List<Rigidbody>();
     public int rigidsTotal;
     private Vector3 COM { get; set; }
     public float totalRigidsMass;
@@ -58,6 +61,13 @@ public class BodyParts : MonoBehaviour
                 movableJoints[joint] = movableAxis;
         }
         totalRigidsMass = rigids.Sum(r => r.mass);
+
+        foreach (Rigidbody rigid in rigids)
+        {
+            if(rigid.GetComponent<JointInfo>() != null || rigid.name.Contains("_end"))
+                observableRigids.Add(rigid);
+        }
+        observableRigids.Add(root);
     }
     
 

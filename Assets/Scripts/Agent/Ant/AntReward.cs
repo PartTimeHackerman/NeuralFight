@@ -41,7 +41,7 @@ public class AntReward : MonoBehaviour
         
         float or = reward;
         reward -= (upperLegsSurfaceCols / 100f) * Mathf.Abs(reward);
-        Debug.Log(reward + " " + or + " " + upperLegsSurfaceCols);
+        //Debug.Log(reward + " " + or + " " + upperLegsSurfaceCols);
         return reward;
     }
 

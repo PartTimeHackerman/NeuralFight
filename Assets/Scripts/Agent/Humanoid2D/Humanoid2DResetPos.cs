@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class ResetPos : MonoBehaviour
+public class Hunmanoid2DResetPos : MonoBehaviour
 {
     private bool backupped = false;
     private BodyParts bodyParts;
@@ -75,7 +75,7 @@ public class ResetPos : MonoBehaviour
         resetTransform();
         resetTransform();
         resetTransform();
-
+        
 
         scale = resets < resetsBoundary ? resets / (float) resetsBoundary + .3f : 1f;
 
