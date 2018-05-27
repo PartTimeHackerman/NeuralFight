@@ -21,7 +21,7 @@ internal class Humanoid2DAgent : Agent
     private bool velReset = false;
     public int steps = 0;
     public int maxSteps = 0;
-    public int decisionFrequency = 5;
+    //public int decisionFrequency = 5;
 
     public override void InitializeAgent()
     {
@@ -84,12 +84,13 @@ internal class Humanoid2DAgent : Agent
 
     public override void AgentReset()
     {
+
+        //decisionFrequency = (decisionFrequency + 1 > 10) ? 5 : decisionFrequency + 1;
+        //agentParameters.numberOfActionsBetweenDecisions = decisionFrequency;
+        //observations.decisionFrequency = decisionFrequency;
         resetPos.ResetPosition();
         resetStepsElapsed = 0;
         velReset = false;
-        decisionFrequency = (decisionFrequency + 1 > 10) ? 1 : decisionFrequency + 1;
-        agentParameters.numberOfActionsBetweenDecisions = decisionFrequency;
-        observations.decisionFrequency = decisionFrequency;
     }
 
     private bool getTerminated(int step)

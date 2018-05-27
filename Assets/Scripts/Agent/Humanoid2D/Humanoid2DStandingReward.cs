@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Collections;
+using Random = UnityEngine.Random;
 
 public class Humanoid2DStandingReward : MonoBehaviour
 {
@@ -146,7 +147,11 @@ public class Humanoid2DStandingReward : MonoBehaviour
         this.step = step;
         bool terminated = step >= maxStep;
         if (terminated)
+        {
             penaltyCount = 0;
+            maxStep = Random.Range(500, 1000);
+        }
+
         return terminated;
     }
 
