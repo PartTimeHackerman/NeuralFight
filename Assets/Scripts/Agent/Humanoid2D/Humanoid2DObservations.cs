@@ -17,6 +17,7 @@ public class Humanoid2DObservations : MonoBehaviour
     private readonly List<Quaternion> rotations = new List<Quaternion>();
     private readonly List<Vector3> velocity = new List<Vector3>();
     private readonly List<Vector3> angVel = new List<Vector3>();
+    public int decisionFrequency = 0;
 
     private readonly float maxPos = 100;
     private readonly float maxVel = 100;
@@ -75,7 +76,8 @@ public class Humanoid2DObservations : MonoBehaviour
         rotations.Clear();
         foreach (var gameObject in observableRigids)
         {
-            rotations.Add(gameObject.transform.localRotation);
+            if (!gameObject.name.Contains("_end"))
+                rotations.Add(gameObject.transform.localRotation);
         }
         return rotations;
     }
@@ -90,7 +92,11 @@ public class Humanoid2DObservations : MonoBehaviour
     public List<Vector3> getObjectsAngVels()
     {
         angVel.Clear();
-        foreach (var rigidbody in observableRigids) angVel.Add(rigidbody.angularVelocity);
+        foreach (var rigidbody in observableRigids)
+        {
+            if (!rigidbody.name.Contains("_end"))
+                angVel.Add(rigidbody.angularVelocity);
+        }
         return angVel;
     }
     
@@ -126,6 +132,8 @@ public class Humanoid2DObservations : MonoBehaviour
         {
             addRootPos(angVel);
         }
+
+        observations.Add(decisionFrequency);
 
         return observations;
     }

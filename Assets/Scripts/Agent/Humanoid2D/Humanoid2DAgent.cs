@@ -12,7 +12,7 @@ internal class Humanoid2DAgent : Agent
 
     private Humanoid2DObservations observations;
     private PausePos pausePos;
-    private ResetPos resetPos;
+    private Humanoid2DResetPos resetPos;
     private Humanoid2DStandingReward standingReward;
     private long startTime;
 
@@ -21,14 +21,16 @@ internal class Humanoid2DAgent : Agent
     private bool velReset = false;
     public int steps = 0;
     public int maxSteps = 0;
+    public int decisionFrequency = 5;
 
     public override void InitializeAgent()
     {
         observations = GetComponent<Humanoid2DObservations>();
         standingReward = GetComponent<Humanoid2DStandingReward>();
         actions = GetComponent<Humanoid2DActionsAngPos>();
-        resetPos = GetComponent<ResetPos>();
+        resetPos = GetComponent<Humanoid2DResetPos>();
         pausePos = GetComponent<PausePos>();
+        observations.decisionFrequency = agentParameters.numberOfActionsBetweenDecisions;
     }
 
     public override void CollectObservations()
@@ -71,9 +73,7 @@ internal class Humanoid2DAgent : Agent
             actionsClamped.Add(Mathf.Clamp(var, -1f, 1f));
 
         this.actions.applyActions(actionsClamped);
-
         SetReward(standingReward.getReward());
-
         if (getTerminated(stepCount))
         {
             Done();
@@ -87,6 +87,9 @@ internal class Humanoid2DAgent : Agent
         resetPos.ResetPosition();
         resetStepsElapsed = 0;
         velReset = false;
+        decisionFrequency = (decisionFrequency + 1 > 10) ? 1 : decisionFrequency + 1;
+        agentParameters.numberOfActionsBetweenDecisions = decisionFrequency;
+        observations.decisionFrequency = decisionFrequency;
     }
 
     private bool getTerminated(int step)

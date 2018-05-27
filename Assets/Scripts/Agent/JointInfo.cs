@@ -22,6 +22,9 @@ public class JointInfo : MonoBehaviour
 
     public bool setPos = false;
     public Vector3 posDoc = new Vector3(0, 0, 0);
+
+    public bool debug;
+    public float springMult = .1f;
     
 
     void Reset()
@@ -35,11 +38,7 @@ public class JointInfo : MonoBehaviour
         init();
         if (setSettings)
         {
-            JointDrive jointSlerpDrive = joint.slerpDrive;
-            jointSlerpDrive.positionSpring = maxForce * totalMass;
-            jointSlerpDrive.positionDamper = maxForce * .1f * totalMass;
-            joint.slerpDrive = jointSlerpDrive;
-            //joint.massScale = totalMass;
+            SetSettings();
         }
     }
 
@@ -53,8 +52,6 @@ public class JointInfo : MonoBehaviour
          */
         //maxForce = 100;
         setJointInfo();
-        maxPosSpring = maxForce * totalMass;
-        maxPosDamper = maxPosSpring * .1f;
     }
     
     void Update()
@@ -70,9 +67,25 @@ public class JointInfo : MonoBehaviour
             joint.targetRotation = Quaternion.Euler(posDoc);
         }
 
+        if (debug)
+        {
+            SetSettings();
+            debug = false;
+        }
+
         
     }
-    
+
+    public void SetSettings()
+    {
+        maxPosSpring = maxForce * totalMass;
+        maxPosDamper = maxPosSpring * springMult;
+        JointDrive jointSlerpDrive = joint.slerpDrive;
+        jointSlerpDrive.positionSpring = maxPosSpring;
+        jointSlerpDrive.positionDamper = maxPosDamper;
+        joint.slerpDrive = jointSlerpDrive;
+        //joint.massScale = totalMass;
+    }
 
     public void setJointInfo()
     {

@@ -41,6 +41,7 @@ public class Humanoid2DStandingReward : MonoBehaviour
 
     private readonly int rewards = 6;
 
+    public int step = 0;
     public int maxStep = 300;
 
     private void Start()
@@ -87,25 +88,25 @@ public class Humanoid2DStandingReward : MonoBehaviour
         return reward;
     }
 
-    public Vector3 meanOfFeets()
+    public float feetsDist()
     {
-        return (namedParts["rfoot"].transform.position + namedParts["lfoot"].transform.position) / 2;
+        float maxDist = 1.7f;
+        float rfootZ = namedParts["rfoot_end"].transform.position.z;
+        float lfootZ = namedParts["lfoot_end"].transform.position.z;
+        float distance = Mathf.Clamp(Mathf.Abs(Mathf.Abs(rfootZ - lfootZ) / maxDist - 1)+.2f, 0, 1);
+        return distance;
     }
-
-    public float distanceFeetsTorso()
-    {
-        return Math.Abs((meanOfFeets() - namedParts["torso"].transform.position).y);
-    }
-
-
+    
     public float getReward()
     {
-        minimizeTorsoXVelocity();
         headGroundDist();
+        minimizeTorsoXVelocity();
+        float feetsDistReward = feetsDist() * headGroundDistReward;
         clearReward = (
-                  minimizeTorsoXZVelocityReward +
+                  minimizeTorsoXZVelocityReward * headGroundDistReward +
+                  feetsDistReward +
                   headGroundDistReward * 3
-                                ) / 4;
+                                ) / 5;
 
         calcPenalty(clearReward);
         return reward;
@@ -142,7 +143,8 @@ public class Humanoid2DStandingReward : MonoBehaviour
 
     public bool terminated(int step)
     {
-        bool terminated = step >= maxStep || (this.terminated() && penaltyCount >= maxPenaltyCount);
+        this.step = step;
+        bool terminated = step >= maxStep;
         if (terminated)
             penaltyCount = 0;
         return terminated;

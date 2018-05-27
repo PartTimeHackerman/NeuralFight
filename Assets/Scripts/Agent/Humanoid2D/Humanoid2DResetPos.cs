@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class Hunmanoid2DResetPos : MonoBehaviour
+public class Humanoid2DResetPos : MonoBehaviour
 {
     private bool backupped = false;
     private BodyParts bodyParts;
@@ -117,7 +117,7 @@ public class Hunmanoid2DResetPos : MonoBehaviour
 
     public void resetRandomXRot(float min, float max)
     {
-        Quaternion quaternion = Quaternion.Euler(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max));
+        Quaternion quaternion = Quaternion.Euler(Random.Range(min, max), 0, 0);
         transform.rotation = quaternion;
     }
 
@@ -132,9 +132,9 @@ public class Hunmanoid2DResetPos : MonoBehaviour
             if ( gotcha > scale * 20)
                 continue;
             rn++;
-            float yVel = Random.Range(min, max);
-            yVel = yVel < 0 ? yVel * .3f : yVel * 1.5f;
-            Vector3 vel = new Vector3(Random.Range(min, max) * .6f, yVel, Random.Range(min, max) * .6f);
+            //float yVel = Random.Range(min, max);
+            //yVel = yVel < 0 ? yVel * .3f : yVel * 1.5f;
+            Vector3 vel = new Vector3(0, Random.Range(min, max) * .6f, Random.Range(min, max));
             rigidbody.AddForce(vel * rigidbody.mass);
         }
     }
