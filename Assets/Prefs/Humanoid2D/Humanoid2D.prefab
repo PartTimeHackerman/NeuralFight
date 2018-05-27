@@ -1327,7 +1327,7 @@ MonoBehaviour:
   reward: 0
   clearReward: 0
   penalty: 0
-  maxPenaltyCount: 100
+  maxPenaltyCount: 300
   maxPenalty: 0.3
   penaltySpeed: 1
   penaltyThreshold: 0.1
@@ -1346,7 +1346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resets: 0
-  resetsBoundary: 1
+  resetsBoundary: 10000000
   scale: 0
   minRot: -180
   maxRot: 180
@@ -1880,7 +1880,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.9189885e-13, y: -0.44000036, z: 0.000000013038516}
+  m_ConnectedAnchor: {x: 0.000000029802186, y: -0.48000002, z: -0.00000046379864}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -2538,7 +2538,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000008756388, y: -0.44000036, z: 0.00000017532409}
+  m_ConnectedAnchor: {x: -0.000000001424354, y: -0.48000002, z: -0.00000015671469}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0

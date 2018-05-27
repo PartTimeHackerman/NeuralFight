@@ -145,11 +145,10 @@ public class Humanoid2DStandingReward : MonoBehaviour
     public bool terminated(int step)
     {
         this.step = step;
-        bool terminated = step >= maxStep;
+        bool terminated = step >= maxStep || (this.terminated() && penaltyCount >= maxPenaltyCount) ;
         if (terminated)
         {
             penaltyCount = 0;
-            maxStep = Random.Range(500, 1000);
         }
 
         return terminated;

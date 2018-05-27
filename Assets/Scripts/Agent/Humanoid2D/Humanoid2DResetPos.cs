@@ -77,7 +77,7 @@ public class Humanoid2DResetPos : MonoBehaviour
         resetTransform();
         
 
-        scale = resets < resetsBoundary ? resets / (float) resetsBoundary + .3f : 1f;
+        scale = resets < resetsBoundary ? resets / (float) resetsBoundary : 1f;
 
         minRotScaled = minRot * scale;
         maxRotScaled = maxRot * scale;

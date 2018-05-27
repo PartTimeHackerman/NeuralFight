@@ -133,7 +133,7 @@ public class Humanoid2DObservations : MonoBehaviour
             addRootPos(angVel);
         }
 
-        observations.Add(decisionFrequency);
+        //observations.Add(decisionFrequency);
 
         return observations;
     }
