@@ -25,6 +25,10 @@ public class JointInfo : MonoBehaviour
 
     public bool debug;
     public float springMult = .1f;
+
+    public bool setVelSettings = false;
+    public float maxVel = 30;
+    public float force = 1000;
     
 
     void Reset()
@@ -78,8 +82,18 @@ public class JointInfo : MonoBehaviour
 
     public void SetSettings()
     {
+        if (setVelSettings)
+        {
+            maxPosSpring = force;
+            maxPosDamper = force;
+        }
+        else
+        {
+
         maxPosSpring = maxForce * totalMass;
         maxPosDamper = maxPosSpring * springMult;
+        }
+
         JointDrive jointSlerpDrive = joint.slerpDrive;
         jointSlerpDrive.positionSpring = maxPosSpring;
         jointSlerpDrive.positionDamper = maxPosDamper;

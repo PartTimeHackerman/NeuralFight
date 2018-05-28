@@ -195,6 +195,21 @@ public class Humanoid2DResetPos : MonoBehaviour
         }
     }
 
+    public void resetJointPositions()
+    {
+        Vector3 zeros = new Vector3(0, 0, 0);
+        foreach (JointInfo jointInfo in jointInfos)
+        {
+            bool[] movableAxis = jointInfo.movableAxis;
+
+            if (!movableAxis.Contains(true))
+                continue;
+
+            
+            jointInfo.joint.targetRotation = Quaternion.Euler(zeros);
+        }
+    }
+
 
     public void resetJointsPos()
     {

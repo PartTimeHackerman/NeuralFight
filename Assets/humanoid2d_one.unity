@@ -156,9 +156,24 @@ Prefab:
       propertyPath: m_Name
       value: Humanoid2DAcademy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114062382130816268, guid: 77a676e19f5d4614d820824de6fff3d3,
+        type: 2}
+      propertyPath: inferenceConfiguration.timeScale
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523056437703016, guid: 77a676e19f5d4614d820824de6fff3d3, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77a676e19f5d4614d820824de6fff3d3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &588811177 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114724879922472310, guid: 77a676e19f5d4614d820824de6fff3d3,
+    type: 2}
+  m_PrefabInternal: {fileID: 588811176}
+  m_Script: {fileID: 11500000, guid: c676a8ddf5a5f4f64b35e9ed5028679d, type: 3}
 --- !u!1001 &746010176
 Prefab:
   m_ObjectHideFlags: 0
@@ -252,17 +267,7 @@ Prefab:
         type: 2}
       propertyPath: brain
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114526953138176786, guid: a41656fff197c254488dbbfa9de37632,
-        type: 2}
-      propertyPath: maxStep
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 114362904805847952, guid: a41656fff197c254488dbbfa9de37632,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 588811177}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a41656fff197c254488dbbfa9de37632, type: 2}
   m_IsPrefabParent: 0

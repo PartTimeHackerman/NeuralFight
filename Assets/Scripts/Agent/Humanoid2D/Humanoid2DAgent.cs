@@ -46,6 +46,7 @@ internal class Humanoid2DAgent : Agent
         {
             resetPos.resetVel();
             resetPos.resetJointForces();
+            resetPos.resetJointPositions();
             velReset = true;
         }
 
