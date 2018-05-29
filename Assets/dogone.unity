@@ -113,6 +113,29 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &55012578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b23992c8eb17439887f5e944bf04a40, type: 3}
+  m_Name: (Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  ActionPlaceholderName: action
+  BatchSizePlaceholderName: batch_size
+  brain: {fileID: 0}
+  broadcast: 1
+  graphModel: {fileID: 0}
+  graphPlaceholders: []
+  graphScope: 
+  PreviousActionPlaceholderName: prev_action
+  RecurrentInPlaceholderName: recurrent_in
+  RecurrentOutPlaceholderName: recurrent_out
+  VectorObservationPlacholderName: vector_observation
+  VisualObservationPlaceholderName: []
 --- !u!1001 &198653988
 Prefab:
   m_ObjectHideFlags: 0
@@ -160,10 +183,30 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 23106956278900084, guid: 8f1136e1ab6144b43a9bb8c60de17919,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23106956278900084, guid: 8f1136e1ab6144b43a9bb8c60de17919,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 23106956278900084, guid: 8f1136e1ab6144b43a9bb8c60de17919,
+        type: 2}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f1136e1ab6144b43a9bb8c60de17919, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &238660301
+--- !u!4 &407429379 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4419974757956938, guid: 8f1136e1ab6144b43a9bb8c60de17919,
+    type: 2}
+  m_PrefabInternal: {fileID: 198653988}
+--- !u!114 &907379159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -171,12 +214,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 943466ab374444748a364f9d6c3e2fe2, type: 3}
-  m_Name: (Clone)(Clone)
+  m_Script: {fileID: 11500000, guid: 41e9bda8f3cf1492fa74926a530f6f70, type: 3}
+  m_Name: (Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   brain: {fileID: 0}
   broadcast: 1
---- !u!114 &547893188
+  continuousPlayerActions: []
+  defaultAction: 0
+  discretePlayerActions: []
+--- !u!114 &912173977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -185,10 +231,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35813a1be64e144f887d7d5f15b963fa, type: 3}
-  m_Name: (Clone)(Clone)
+  m_Name: (Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  brain: {fileID: 0}
---- !u!114 &1498486481
+  brain: {fileID: 2107712976}
+--- !u!114 &1231500115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -196,21 +242,82 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b23992c8eb17439887f5e944bf04a40, type: 3}
-  m_Name: (Clone)(Clone)
+  m_Script: {fileID: 11500000, guid: 943466ab374444748a364f9d6c3e2fe2, type: 3}
+  m_Name: (Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  ActionPlaceholderName: action
-  BatchSizePlaceholderName: batch_size
   brain: {fileID: 0}
   broadcast: 1
-  graphModel: {fileID: 0}
-  graphPlaceholders: []
-  graphScope: 
-  PreviousActionPlaceholderName: prev_action
-  RecurrentInPlaceholderName: recurrent_in
-  RecurrentOutPlaceholderName: recurrent_out
-  VectorObservationPlacholderName: vector_observation
-  VisualObservationPlaceholderName: []
+--- !u!1 &1464612611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1464612612}
+  - component: {fileID: 1464612614}
+  - component: {fileID: 1464612613}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1464612612
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1464612611}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0.001}
+  m_Children: []
+  m_Father: {fileID: 407429379}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1464612613
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1464612611}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 051d320cf3f507d45a5808cc2764c5da, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1464612614
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1464612611}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1557417587
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +377,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1557417587}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 2.22, y: 8.29, z: -3.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -320,6 +427,236 @@ Prefab:
       propertyPath: brain
       value: 
       objectReference: {fileID: 2107712976}
+    - target: {fileID: 153712191076557048, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: m_AngularXMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 153835038261205826, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: m_AngularXMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 153518846764123012, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: m_AngularXMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 153497040862770386, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: m_AngularXMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114081886224201326, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114703371276301682, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxPosSpring
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114703371276301682, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxPosDamper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114703371276301682, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: movableAxis.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114703371276301682, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: setSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114703371276301682, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: xMinMax.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114703371276301682, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: xMinMax.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114804755831634038, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxForce
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 114804755831634038, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxPosSpring
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114804755831634038, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxPosDamper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114804755831634038, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: setSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114170163462385658, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxPosSpring
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114170163462385658, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxPosDamper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114170163462385658, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: movableAxis.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114170163462385658, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: setSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114170163462385658, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: xMinMax.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114170163462385658, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: xMinMax.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114325633418879090, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxForce
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 114325633418879090, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxPosSpring
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114325633418879090, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxPosDamper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114325633418879090, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: setSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114929741969267196, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxPosSpring
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114929741969267196, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxPosDamper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114929741969267196, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: setSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114785269486557188, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxForce
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 114785269486557188, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxPosSpring
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114785269486557188, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxPosDamper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114785269486557188, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: movableAxis.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114785269486557188, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: setSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114785269486557188, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: xMinMax.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114785269486557188, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: xMinMax.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836299233754600, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxPosSpring
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836299233754600, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxPosDamper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836299233754600, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: setSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114642584902381602, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxForce
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 114642584902381602, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxPosSpring
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114642584902381602, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: maxPosDamper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114642584902381602, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: movableAxis.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114642584902381602, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: setSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114642584902381602, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: xMinMax.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114642584902381602, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: xMinMax.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54174170269369152, guid: 7d40d66a169498b4b84cf44ae75a5c9d,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 56
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d40d66a169498b4b84cf44ae75a5c9d, type: 2}
   m_IsPrefabParent: 0
@@ -377,22 +714,6 @@ MonoBehaviour:
     qualityLevel: 0
     timeScale: 1
     targetFrameRate: -1
---- !u!114 &2015990318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41e9bda8f3cf1492fa74926a530f6f70, type: 3}
-  m_Name: (Clone)(Clone)
-  m_EditorClassIdentifier: 
-  brain: {fileID: 0}
-  broadcast: 1
-  continuousPlayerActions: []
-  defaultAction: 0
-  discretePlayerActions: []
 --- !u!1 &2107712975
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,21 +753,17 @@ MonoBehaviour:
     - 
     - 
     - 
-    - 
-    - 
-    - 
-    - 
-    vectorActionSize: 12
+    vectorActionSize: 8
     vectorActionSpaceType: 1
     vectorObservationSize: 108
     vectorObservationSpaceType: 1
   brainType: 2
   CoreBrains:
-  - {fileID: 2015990318}
-  - {fileID: 238660301}
-  - {fileID: 547893188}
-  - {fileID: 1498486481}
-  instanceID: -73654
+  - {fileID: 907379159}
+  - {fileID: 1231500115}
+  - {fileID: 912173977}
+  - {fileID: 55012578}
+  instanceID: 12108
 --- !u!4 &2107712977
 Transform:
   m_ObjectHideFlags: 0

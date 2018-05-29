@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Collections;
 using Random = UnityEngine.Random;
 
-public class Humanoid2DStandingReward : MonoBehaviour, IReward
+public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
 {
     public bool debug = false;
     private float baseDistanceFeetsTorso;
@@ -58,59 +58,92 @@ public class Humanoid2DStandingReward : MonoBehaviour, IReward
         penaltyAdd = penaltySpeed * maxPenaltyCount / maxPenaltyCount;
         unpenaltyAdd = unpenaltySpeed / maxPenaltyCount;
 
+        baseDistanceFeetsTorso =
+            Math.Abs((namedParts["rfoot_end"].transform.position - namedParts["torso"].transform.position).y);
+
         if (debug)
             InvokeRepeating("log", 0.0f, .1f);
     }
-    
-    public float minimizeTorsoXVelocity()
-    {
-        // vel = 0, reward = 1000; dist = 1, reward = 0
-        float reward = 0;
-        var torsoRigid = bodyParts.getNamedRigids()["torso"];
 
-        reward = (int) (-0.9872102 + 1000.987 * Math.Pow(Math.E, -6.921614 * torsoRigid.velocity.x));
-        if (reward < 0) reward = 0;
-        if (reward > 1000) reward = 1000;
-        reward /= 1000f;
+
+    public float COMOverMeanOfFeetsXZ()
+    {
+        // dist = 0, reward = 1000; dist = 1, reward = 0
+        float reward = 0;
+        var COM = physics.getCenterOfMass(bodyParts.getRigids());
+        var COMXY = new Vector2(COM.x, COM.y);
+        var feetsMean = meanOfFeets();
+        if (COM.y < feetsMean.y)
+            return 0;
+        var feetsMeanXY = new Vector2(feetsMean.x, feetsMean.y);
+        var distance = Vector2.Distance(COMXY, feetsMeanXY);
+
+        reward = distance;
+        COMOverMeanOfFeetsXZReward = reward;
+        return reward;
+    }
+
+    public float torsoOverCOMXZ()
+    {
+        // dist = 0, reward = 1000; dist = 1, reward = 0
+        float reward = 0;
+        var COM = physics.getCenterOfMass(bodyParts.getRigids());
+        var COMXY = new Vector2(COM.x, COM.y);
+        var torso = namedParts["torso"].transform.position;
+        if (COM.y > torso.y)
+            return 0;
+        var torsoXY = new Vector2(torso.x, torso.y);
+        var distance = Vector2.Distance(COMXY, torsoXY);
+
+        reward = distance;
+        torsoOverCOMXZReward = reward;
+        return reward;
+    }
+
+    public float torsoFromBaseOverMeanOfFeetsY()
+    {
+        // dist = 1, reward = 1000; dist = 0, reward = 0
+        float reward = 0;
+        var distPrec = distanceFeetsTorso() / baseDistanceFeetsTorso;
+
+        reward = distPrec;
+        torsoFromBaseOverMeanOfFeetsYReward = reward;
+        return reward;
+    }
+
+    public float minimizeTorsoXZVelocity()
+    {
+        
+        var torsoRigid = bodyParts.getNamedRigids()["torso"];
+        var sumVelX = torsoRigid.velocity.x;
+
+        reward = -Mathf.Abs(sumVelX);
         minimizeTorsoXZVelocityReward = reward;
         return reward;
     }
 
-    public float headGroundDist()
+    public Vector3 meanOfFeets()
     {
-        float reward = 0;
-        var headYPos = namedParts["head"].transform.position.y;
-        var headFromGroundPrec = headYPos / 1.62f;
-
-        reward = (int) (-39.04754 + 39.04754 * Math.Pow(Math.E, 3.28128 * headFromGroundPrec));
-        if (reward < 0) reward = 0;
-        if (reward > 1000) reward = 1000;
-        reward /= 1000f;
-        headGroundDistReward = reward;
-        return reward;
+        Vector3 rfootPos = namedParts["rfoot_end"].transform.position;
+        Vector2 rfoot= new Vector2(rfootPos.x, rfootPos.y);
+        Vector3 lfootPos = namedParts["lfoot_end"].transform.position;
+        Vector2 lfoot= new Vector2(lfootPos.x, lfootPos.y);
+        return (rfoot + lfoot) / 2;
     }
 
-    public float feetsDist()
+    public float distanceFeetsTorso()
     {
-        float maxDist = 1.7f;
-        float rfootZ = namedParts["rfoot_end"].transform.position.z;
-        float lfootZ = namedParts["lfoot_end"].transform.position.z;
-        float distance = Mathf.Clamp(Mathf.Abs(Mathf.Abs(rfootZ - lfootZ) / maxDist - 1)+.2f, 0, 1);
-        return distance;
+        return Math.Abs((meanOfFeets() - namedParts["torso"].transform.position).y);
     }
-    
+
     public float getReward()
     {
-        headGroundDist();
-        minimizeTorsoXVelocity();
-        float feetsDistReward = feetsDist() * headGroundDistReward;
-        clearReward = (
-                  minimizeTorsoXZVelocityReward * headGroundDistReward +
-                  feetsDistReward +
-                  headGroundDistReward * 3
-                                ) / 5;
-
-        calcPenalty(clearReward);
+        COMOverMeanOfFeetsXZ();
+        torsoOverCOMXZ();
+        torsoFromBaseOverMeanOfFeetsY();
+        minimizeTorsoXZVelocity();
+        reward = COMOverMeanOfFeetsXZReward + torsoOverCOMXZReward + torsoFromBaseOverMeanOfFeetsYReward +
+                 minimizeTorsoXZVelocityReward;
         return reward;
     }
 

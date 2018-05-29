@@ -80,10 +80,13 @@ public class Humanoid2DActionsAngPos : MonoBehaviour, IActions
 
             if (!movableAxis.Contains(true))
                 continue;
-
+            
             Vector3 angVel = new Vector3(0, 0, 0);
             if (movableAxis[0])
+            {
                 angVel.x = actions[actionIdx++] * jointInfo.maxVel;
+            }
+
             if (movableAxis[1])
                 angVel.y = actions[actionIdx++] * jointInfo.maxVel;
             if (movableAxis[2])

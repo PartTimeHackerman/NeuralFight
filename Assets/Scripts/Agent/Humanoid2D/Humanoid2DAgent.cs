@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.Agent;
 using UnityEngine;
 
 internal class Humanoid2DAgent : Agent
@@ -13,7 +14,7 @@ internal class Humanoid2DAgent : Agent
     private Humanoid2DObservations observations;
     private PausePos pausePos;
     private Humanoid2DResetPos resetPos;
-    private Humanoid2DStandingReward standingReward;
+    private IReward standingReward;
     private long startTime;
 
     public int resetWaitSteps = 5;
@@ -26,7 +27,7 @@ internal class Humanoid2DAgent : Agent
     public override void InitializeAgent()
     {
         observations = GetComponent<Humanoid2DObservations>();
-        standingReward = GetComponent<Humanoid2DStandingReward>();
+        standingReward = GetComponent<Humanoid2DStandingRewardComplicated>();
         actions = GetComponent<Humanoid2DActionsAngPos>();
         resetPos = GetComponent<Humanoid2DResetPos>();
         pausePos = GetComponent<PausePos>();

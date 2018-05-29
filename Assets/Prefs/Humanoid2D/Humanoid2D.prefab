@@ -45,8 +45,8 @@ GameObject:
   - component: {fileID: 114769924249378220}
   - component: {fileID: 114483719085169826}
   - component: {fileID: 114962715672960926}
-  - component: {fileID: 114526953138176786}
   - component: {fileID: 114530772836165316}
+  - component: {fileID: 114982301965003722}
   m_Layer: 0
   m_Name: Humanoid_Armature
   m_TagString: Untagged
@@ -1333,28 +1333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe3dd125d9e2884a9bcac0dfb7240c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114526953138176786
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1153389945127488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30bec32a1545f724da33a278e8940e75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: 0
-  reward: 0
-  clearReward: 0
-  penalty: 0
-  maxPenaltyCount: 300
-  maxPenalty: 0.3
-  penaltySpeed: 1
-  penaltyThreshold: 0.1
-  penaltyStart: 0.5
-  step: 0
-  maxStep: 1000
 --- !u!114 &114530772836165316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1484,6 +1462,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionsSpace: 0
   VelPos: 1
+--- !u!114 &114982301965003722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1153389945127488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96a306f638a7254d93d4de23c3769fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  reward: 0
+  clearReward: 0
+  penalty: 0
+  maxPenaltyCount: 100
+  maxPenalty: 0.3
+  penaltySpeed: 1
+  penaltyThreshold: 0.1
+  penaltyStart: 0.5
+  step: 0
+  maxStep: 300
 --- !u!135 &135061461015761780
 SphereCollider:
   m_ObjectHideFlags: 1
