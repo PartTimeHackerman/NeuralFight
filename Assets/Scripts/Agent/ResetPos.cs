@@ -148,11 +148,8 @@ public class ResetPos : MonoBehaviour
             if (!movableAxis.Contains(true))
                 continue;
 
-            
-            JointDrive jointSlerpDrive = jointInfo.joint.slerpDrive;
-            jointSlerpDrive.positionSpring = randomJointsPosForce * jointInfo.maxPosSpring;
-            jointSlerpDrive.positionDamper = 0;
-            jointInfo.joint.slerpDrive = jointSlerpDrive;
+
+            float force = randomJointsPosForce * jointInfo.maxPosSpring;
 
             Vector3 angRot = new Vector3(0, 0, 0);
             if (movableAxis[0])
@@ -166,16 +163,7 @@ public class ResetPos : MonoBehaviour
             angRot.x = Mathf.Clamp(angRot.x, jointInfo.angularLimits[0][0], jointInfo.angularLimits[0][1]);
             angRot.y = Mathf.Clamp(angRot.y, jointInfo.angularLimits[1][0], jointInfo.angularLimits[1][1]);
             angRot.z = Mathf.Clamp(angRot.z, jointInfo.angularLimits[2][0], jointInfo.angularLimits[2][1]);
-            //jointInfo.joint.transform.rotation = Quaternion.Euler(angRot);
-            jointInfo.joint.targetRotation = Quaternion.Euler(angRot);
-
-            /*
-            jointSlerpDrive = jointInfo.joint.slerpDrive;
-            jointSlerpDrive.positionSpring = jointInfo.maxPosSpring;
-            jointSlerpDrive.positionDamper = jointInfo.maxPosDamper;
-            jointInfo.joint.slerpDrive = jointSlerpDrive;
-            */
-            //if(jointInfo.joint.name == "rthigh") Debug.Log(angRot);
+            jointInfo.setConfigurableForceAndRot(force, angRot);
         }
     }
 
@@ -188,16 +176,14 @@ public class ResetPos : MonoBehaviour
             if (!movableAxis.Contains(true))
                 continue;
 
-            JointDrive jointSlerpDrive = jointInfo.joint.slerpDrive;
-            jointSlerpDrive.positionSpring = jointInfo.maxPosSpring;
-            jointSlerpDrive.positionDamper = jointInfo.maxPosDamper;
-            jointInfo.joint.slerpDrive = jointSlerpDrive;
+            jointInfo.resetJointForces();
+
         }
     }
 
-
-    public void resetJointsPos()
+    public void resetJointPositions()
     {
+        Vector3 zeros = new Vector3(0, 0, 0);
         foreach (JointInfo jointInfo in jointInfos)
         {
             bool[] movableAxis = jointInfo.movableAxis;
@@ -205,12 +191,7 @@ public class ResetPos : MonoBehaviour
             if (!movableAxis.Contains(true))
                 continue;
 
-            float force = 0f;
-            JointDrive jointSlerpDrive = jointInfo.joint.slerpDrive;
-            jointSlerpDrive.positionSpring = force * jointInfo.maxPosSpring;
-            jointSlerpDrive.positionDamper = force * jointInfo.maxPosDamper;
-            jointInfo.joint.slerpDrive = jointSlerpDrive;
-            
+            jointInfo.resetJointPositions(zeros);
         }
     }
 

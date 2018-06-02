@@ -3,8 +3,8 @@
 public static class ConfigurableJointExtensions
 {
     /// <summary>
-    /// Sets a joint's targetRotation to match a given local rotation.
-    /// The joint transform's local rotation must be cached on Start and passed into this method.
+    /// Sets a configurableJoint's targetRotation to match a given local rotation.
+    /// The configurableJoint transform's local rotation must be cached on Start and passed into this method.
     /// </summary>
     public static void SetTargetRotationLocal(this ConfigurableJoint joint, Quaternion targetLocalRotation, Quaternion startLocalRotation)
     {
@@ -16,8 +16,8 @@ public static class ConfigurableJointExtensions
     }
 
     /// <summary>
-    /// Sets a joint's targetRotation to match a given world rotation.
-    /// The joint transform's world rotation must be cached on Start and passed into this method.
+    /// Sets a configurableJoint's targetRotation to match a given world rotation.
+    /// The configurableJoint transform's world rotation must be cached on Start and passed into this method.
     /// </summary>
     public static void SetTargetRotation(this ConfigurableJoint joint, Quaternion targetWorldRotation, Quaternion startWorldRotation)
     {
@@ -30,7 +30,7 @@ public static class ConfigurableJointExtensions
 
     static void SetTargetRotationInternal(ConfigurableJoint joint, Quaternion targetRotation, Quaternion startRotation, Space space)
     {
-        // Calculate the rotation expressed by the joint's axis and secondary axis
+        // Calculate the rotation expressed by the configurableJoint's axis and secondary axis
         var right = joint.axis;
         var forward = Vector3.Cross(joint.axis, joint.secondaryAxis).normalized;
         var up = Vector3.Cross(forward, right).normalized;
@@ -50,7 +50,7 @@ public static class ConfigurableJointExtensions
             resultRotation *= Quaternion.Inverse(targetRotation) * startRotation;
         }
 
-        // Transform back into joint space
+        // Transform back into configurableJoint space
         resultRotation *= worldToJointSpace;
 
         // Set target rotation to our newly calculated rotation

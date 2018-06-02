@@ -39,26 +39,33 @@ public class Humanoid2DActionsAngPos : MonoBehaviour, IActions
 
         foreach (JointInfo jointInfo in jointInfos)
         {
-            bool[] movableAxis = jointInfo.movableAxis;
+            if (jointInfo.hinge)
+            {
+                jointInfo.setHingeMotorVel(actions[actionIdx++] * jointInfo.maxHingeVel);
+            }
+            else
+            {
+                bool[] movableAxis = jointInfo.movableAxis;
 
-            if (!movableAxis.Contains(true))
-                continue;
+                if (!movableAxis.Contains(true))
+                    continue;
 
-            Vector3 angRot = new Vector3(0, 0, 0);
-            if (movableAxis[0])
-                angRot.x = getEuqlides(actions[actionIdx++], jointInfo.angularLimits[0]);
-            if (movableAxis[1])
-                angRot.y = getEuqlides(actions[actionIdx++], jointInfo.angularLimits[1]);
-            if (movableAxis[2])
-                angRot.z = getEuqlides(actions[actionIdx++], jointInfo.angularLimits[2]);
+                float force = (actions[actionIdx++] + 1) / 2;
 
+                Vector3 angRot = new Vector3(0, 0, 0);
+                if (movableAxis[0])
+                    angRot.x = getEuqlides(actions[actionIdx++], jointInfo.angularLimits[0]);
+                if (movableAxis[1])
+                    angRot.y = getEuqlides(actions[actionIdx++], jointInfo.angularLimits[1]);
+                if (movableAxis[2])
+                    angRot.z = getEuqlides(actions[actionIdx++], jointInfo.angularLimits[2]);
 
-            angRot.x = Mathf.Clamp(angRot.x, jointInfo.angularLimits[0][0], jointInfo.angularLimits[0][1]);
-            angRot.y = Mathf.Clamp(angRot.y, jointInfo.angularLimits[1][0], jointInfo.angularLimits[1][1]);
-            angRot.z = Mathf.Clamp(angRot.z, jointInfo.angularLimits[2][0], jointInfo.angularLimits[2][1]);
-            jointInfo.joint.targetRotation = Quaternion.Euler(angRot);
+                angRot.x = Mathf.Clamp(angRot.x, jointInfo.angularLimits[0][0], jointInfo.angularLimits[0][1]);
+                angRot.y = Mathf.Clamp(angRot.y, jointInfo.angularLimits[1][0], jointInfo.angularLimits[1][1]);
+                angRot.z = Mathf.Clamp(angRot.z, jointInfo.angularLimits[2][0], jointInfo.angularLimits[2][1]);
 
-            //if(jointInfo.joint.name == "rthigh") Debug.Log(angRot);
+                jointInfo.setConfigurableForceAndRot(force, angRot);
+            }
 
         }
     }
@@ -92,7 +99,7 @@ public class Humanoid2DActionsAngPos : MonoBehaviour, IActions
             if (movableAxis[2])
                 angVel.z = actions[actionIdx++] * jointInfo.maxVel;
 
-            jointInfo.joint.targetAngularVelocity = angVel;
+            jointInfo.setConfigurableRotVel(angVel);
 
 
         }
@@ -105,6 +112,7 @@ public class Humanoid2DActionsAngPos : MonoBehaviour, IActions
         {
             if (!jointInfo.movableAxis.Contains(true))
                 continue;
+
             actions += jointInfo.movableAxis.Count(b => b);
         }
         return actions;

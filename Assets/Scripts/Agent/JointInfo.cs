@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class JointInfo : MonoBehaviour
 {
-    private static readonly Dictionary<string, float> maxForces = getMaxForcesDict();
 
-    public ConfigurableJoint joint;
-    public float maxForce = 150;
+    public Joint joint;
+    private ConfigurableJoint configurableJoint;
+    private HingeJoint hingeJoint;
+    public bool hinge = true;
+    public float maxForce = 1000;
     public float maxPosSpring;
     public float maxPosDamper;
-    public bool[] movableAxis;
-    public float[][] angularLimits;
+    public bool[] movableAxis = new[] { false, false, false };
+    public float[][] angularLimits = new float[3][];
     public float totalMass;
     public float massMultipler = 5;
     public bool setSettings = false;
@@ -24,16 +26,28 @@ public class JointInfo : MonoBehaviour
     public Vector3 posDoc = new Vector3(0, 0, 0);
 
     public bool debug;
-    public float springMult = .1f;
+    public float springMult = .01f;
 
     public bool setVelSettings = false;
-    public float maxVel = 30;
+    public float medVel = 10;
+    public float maxVel = 20;
+    public float currentMaxVel = 20;
+    public float tiredness = 0;
+
     public float force = 1000;
-    
+    public float maxHingeVel = 800f;
+
 
     void Reset()
     {
         init();
+        if (setSettings)
+        {
+            if (!hinge)
+                SetConfigurableJointSettings();
+            else
+                SetHingeJointSettings();
+        }
     }
 
 
@@ -42,128 +56,202 @@ public class JointInfo : MonoBehaviour
         init();
         if (setSettings)
         {
-            SetSettings();
+            if (!hinge)
+                SetConfigurableJointSettings();
+            else
+                SetHingeJointSettings();
         }
+
+        medVel = maxVel / 2;
+        currentMaxVel = maxVel;
     }
 
     public void init()
     {
-        joint = GetComponent<ConfigurableJoint>();
-        /*
-          foreach (KeyValuePair<string, float> force in maxForces)
-            if (joint.name.Contains(force.Key))
-                maxForce = force.Value;
-         */
-        //maxForce = 100;
-        setJointInfo();
+        if (!hinge)
+        {
+            
+            joint = GetComponent<ConfigurableJoint>();
+            configurableJoint = (ConfigurableJoint)joint;
+        }
+        else
+        {
+            joint = GetComponent<HingeJoint>();
+            hingeJoint = (HingeJoint)joint;
+        }
+
+        Rigidbody[] rigids = joint.GetComponentsInChildren<Rigidbody>();
+        totalMass = rigids.Sum(r => r.mass);
     }
-    
+
     void Update()
+    {
+
+        if (!hinge)
+        {
+            updateConfigurableJoint();
+        }
+
+    }
+
+    public void updateConfigurableJoint()
     {
         if (!setPos)
         {
-            posDoc = joint.targetRotation.eulerAngles;
-        }else
+            posDoc = configurableJoint.targetRotation.eulerAngles;
+        }
+        else
         {
             posDoc.x = Mathf.Clamp(posDoc.x, angularLimits[0][0], angularLimits[0][1]);
             posDoc.y = Mathf.Clamp(posDoc.y, angularLimits[1][0], angularLimits[1][1]);
             posDoc.z = Mathf.Clamp(posDoc.z, angularLimits[2][0], angularLimits[2][1]);
-            joint.targetRotation = Quaternion.Euler(posDoc);
+            configurableJoint.targetRotation = Quaternion.Euler(posDoc);
         }
 
         if (debug)
         {
-            SetSettings();
+            SetConfigurableJointSettings();
             debug = false;
         }
-
-        
     }
 
-    public void SetSettings()
+    public void SetHingeJointSettings()
     {
+        JointMotor motor = hingeJoint.motor;
+        motor.force = maxForce * totalMass;
+        hingeJoint.motor = motor;
+        movableAxis[0] = true;
+        angularLimits[0] = new float[] { hingeJoint.limits.min, hingeJoint.limits.max };
+    }
+
+    public void SetConfigurableJointSettings()
+    {
+        setConfigurableJointInfo();
         if (setVelSettings)
         {
-            maxPosSpring = force;
-            maxPosDamper = force;
+            maxPosSpring = maxForce * totalMass;
+            maxPosDamper = maxForce * totalMass;
         }
         else
         {
 
-        maxPosSpring = maxForce * totalMass;
-        maxPosDamper = maxPosSpring * springMult;
+            maxPosSpring = maxForce * totalMass;
+            maxPosDamper = maxPosSpring * springMult;
         }
 
-        JointDrive jointSlerpDrive = joint.slerpDrive;
+        JointDrive jointSlerpDrive = configurableJoint.slerpDrive;
         jointSlerpDrive.positionSpring = maxPosSpring;
         jointSlerpDrive.positionDamper = maxPosDamper;
-        joint.slerpDrive = jointSlerpDrive;
-        //joint.massScale = totalMass;
+        configurableJoint.slerpDrive = jointSlerpDrive;
+
     }
 
-    public void setJointInfo()
+
+    public void setConfigurableJointInfo()
     {
-        movableAxis = new[] { false, false, false };
-        if (joint.angularXMotion != ConfigurableJointMotion.Locked)
+        if (configurableJoint.angularXMotion != ConfigurableJointMotion.Locked)
             movableAxis[0] = true;
-        if (joint.angularYMotion != ConfigurableJointMotion.Locked)
+        if (configurableJoint.angularYMotion != ConfigurableJointMotion.Locked)
             movableAxis[1] = true;
-        if (joint.angularZMotion != ConfigurableJointMotion.Locked)
+        if (configurableJoint.angularZMotion != ConfigurableJointMotion.Locked)
             movableAxis[2] = true;
 
-        angularLimits = new float[3][];
-        angularLimits[0] = new float[] {0, 0};
-        angularLimits[1] = new float[] {0, 0};
-        angularLimits[2] = new float[] {0, 0};
+
+        angularLimits[0] = new float[] { 0, 0 };
+        angularLimits[1] = new float[] { 0, 0 };
+        angularLimits[2] = new float[] { 0, 0 };
         if (movableAxis[0])
         {
-            angularLimits[0] = new float[] { joint.lowAngularXLimit.limit, joint.highAngularXLimit.limit };
+            angularLimits[0] = new float[] { configurableJoint.lowAngularXLimit.limit, configurableJoint.highAngularXLimit.limit };
         }
         if (movableAxis[1])
         {
-            angularLimits[1] = new float[] { -joint.angularYLimit.limit, joint.angularYLimit.limit };
+            angularLimits[1] = new float[] { -configurableJoint.angularYLimit.limit, configurableJoint.angularYLimit.limit };
         }
         if (movableAxis[2])
         {
-            angularLimits[2] = new float[] { -joint.angularZLimit.limit, joint.angularZLimit.limit };
+            angularLimits[2] = new float[] { -configurableJoint.angularZLimit.limit, configurableJoint.angularZLimit.limit };
         }
 
         xMinMax = angularLimits[0];
         yMinMax = angularLimits[1];
         zMinMax = angularLimits[2];
-
-        Rigidbody[] rigids = joint.GetComponentsInChildren<Rigidbody>();
-        totalMass = rigids.Sum(r => r.mass);
         maxForce = maxForce == 0 ? totalMass * massMultipler : maxForce;
 
     }
 
-    private static Dictionary<string, float> getMaxForcesDict()
+    public void setHingeMotorVel(float motorVel)
     {
-        Dictionary<string, float> maxForces = new Dictionary<string, float>
+        JointMotor motor = hingeJoint.motor;
+        motor.targetVelocity = motorVel;
+        hingeJoint.motor = motor;
+    }
+
+    public void setConfigurableForceAndRot(float force, Vector3 angRot)
+    {
+        JointDrive jointSlerpDrive = configurableJoint.slerpDrive;
+        jointSlerpDrive.positionSpring = force * maxPosSpring;
+        jointSlerpDrive.positionDamper = force * maxPosDamper;
+        configurableJoint.slerpDrive = jointSlerpDrive;
+        setConfigurableRot(angRot);
+    }
+
+    public void setConfigurableRot(Vector3 angRot)
+    {
+        configurableJoint.targetRotation = Quaternion.Euler(angRot);
+    }
+
+    public void resetJointForces()
+    {
+        if (setVelSettings || hinge)
         {
-            ["lwaist"] = 300,
-            ["uwaist"] = 200,
-            ["torso"] = 150,
-            ["head"] = 50,
-            ["upperarm"] = 120,
-            ["lowerarm"] = 80,
-            ["hand"] = 40,
-            ["thigh"] = 400,
-            ["shin"] = 200,
-            ["foot"] = 100
-        };
-        return maxForces;
+            currentMaxVel = maxVel;
+            tiredness = 0;
+        }
+        else
+        {
+            JointDrive jointSlerpDrive = configurableJoint.slerpDrive;
+            jointSlerpDrive.positionSpring = maxPosSpring;
+            jointSlerpDrive.positionDamper = maxPosDamper;
+            configurableJoint.slerpDrive = jointSlerpDrive;
+        }
+    }
+
+    public void resetJointPositions(Vector3 zeros)
+    {
+        if (hinge)
+            return;
+        
+        configurableJoint.targetRotation = Quaternion.Euler(zeros);
+    }
+
+    public void setConfigurableRotVel(Vector3 angVel)
+    {
+        if (angVel.x < 0 && angVel.x > -0.1f * maxVel)
+            angVel.x = 0;
+        if (angVel.x > 0 && angVel.x < 0.1f * maxVel)
+            angVel.x = 0;
+
+        float applyVel = Mathf.Abs(angVel.x);
+        float velTiredness = applyVel - medVel;
+        angVel.x = Mathf.Clamp(angVel.x, -currentMaxVel, currentMaxVel);
+        currentMaxVel -= velTiredness;
+        if (currentMaxVel < 10)
+            currentMaxVel = 10;
+        if (currentMaxVel > maxVel)
+            currentMaxVel = maxVel;
+        tiredness = -(((currentMaxVel - medVel) / medVel) - 1);
+        configurableJoint.targetAngularVelocity = angVel;
     }
 
     public override bool Equals(object other)
     {
-        return other != null && ((JointInfo)other).joint.Equals(joint);
+        return other != null && ((JointInfo)other).configurableJoint.Equals(configurableJoint);
     }
 
     public override int GetHashCode()
     {
-        return joint.GetHashCode();
+        return configurableJoint.GetHashCode();
     }
 
 }

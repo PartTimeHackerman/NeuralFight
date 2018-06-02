@@ -75,9 +75,9 @@ public class Humanoid2DResetPos : MonoBehaviour
         resetTransform();
         resetTransform();
         resetTransform();
-        
 
-        scale = resets < resetsBoundary ? resets / (float) resetsBoundary : 1f;
+
+        scale = resets < resetsBoundary ? resets / (float)resetsBoundary : 1f;
 
         minRotScaled = minRot * scale;
         maxRotScaled = maxRot * scale;
@@ -92,7 +92,7 @@ public class Humanoid2DResetPos : MonoBehaviour
             setRandomJointsPos();
 
         resets++;
-        
+
     }
 
     private void resetTransform()
@@ -129,7 +129,7 @@ public class Humanoid2DResetPos : MonoBehaviour
         foreach (Rigidbody rigidbody in rigids)
         {
             float gotcha = Random.Range(0, 10);
-            if ( gotcha > scale * 20)
+            if (gotcha > scale * 20)
                 continue;
             rn++;
             //float yVel = Random.Range(min, max);
@@ -143,39 +143,39 @@ public class Humanoid2DResetPos : MonoBehaviour
     {
         foreach (JointInfo jointInfo in jointInfos)
         {
-            bool[] movableAxis = jointInfo.movableAxis;
+            if (jointInfo.hinge)
+            {
+                jointInfo.setHingeMotorVel(Random.Range(-1f, 1f) * jointInfo.maxForce);
+            }
+            else
+            {
+                bool[] movableAxis = jointInfo.movableAxis;
 
-            if (!movableAxis.Contains(true))
-                continue;
-
-            
-            JointDrive jointSlerpDrive = jointInfo.joint.slerpDrive;
-            jointSlerpDrive.positionSpring = randomJointsPosForce * jointInfo.maxPosSpring;
-            jointSlerpDrive.positionDamper = 0;
-            jointInfo.joint.slerpDrive = jointSlerpDrive;
-
-            Vector3 angRot = new Vector3(0, 0, 0);
-            if (movableAxis[0])
-                angRot.x = getEuqlides(Random.Range(minRandomJointsPos, maxRandomJointsPos), jointInfo.angularLimits[0]);
-            if (movableAxis[1])
-                angRot.y = getEuqlides(Random.Range(minRandomJointsPos, maxRandomJointsPos), jointInfo.angularLimits[1]);
-            if (movableAxis[2])
-                angRot.z = getEuqlides(Random.Range(minRandomJointsPos, maxRandomJointsPos), jointInfo.angularLimits[2]);
+                if (!movableAxis.Contains(true))
+                    continue;
 
 
-            angRot.x = Mathf.Clamp(angRot.x, jointInfo.angularLimits[0][0], jointInfo.angularLimits[0][1]);
-            angRot.y = Mathf.Clamp(angRot.y, jointInfo.angularLimits[1][0], jointInfo.angularLimits[1][1]);
-            angRot.z = Mathf.Clamp(angRot.z, jointInfo.angularLimits[2][0], jointInfo.angularLimits[2][1]);
-            //jointInfo.joint.transform.rotation = Quaternion.Euler(angRot);
-            jointInfo.joint.targetRotation = Quaternion.Euler(angRot);
+                float force = randomJointsPosForce * jointInfo.maxPosSpring;
 
-            /*
-            jointSlerpDrive = jointInfo.joint.slerpDrive;
-            jointSlerpDrive.positionSpring = jointInfo.maxPosSpring;
-            jointSlerpDrive.positionDamper = jointInfo.maxPosDamper;
-            jointInfo.joint.slerpDrive = jointSlerpDrive;
-            */
-            //if(jointInfo.joint.name == "rthigh") Debug.Log(angRot);
+                Vector3 angRot = new Vector3(0, 0, 0);
+                if (movableAxis[0])
+                    angRot.x = getEuqlides(Random.Range(minRandomJointsPos, maxRandomJointsPos),
+                        jointInfo.angularLimits[0]);
+                if (movableAxis[1])
+                    angRot.y = getEuqlides(Random.Range(minRandomJointsPos, maxRandomJointsPos),
+                        jointInfo.angularLimits[1]);
+                if (movableAxis[2])
+                    angRot.z = getEuqlides(Random.Range(minRandomJointsPos, maxRandomJointsPos),
+                        jointInfo.angularLimits[2]);
+
+
+                angRot.x = Mathf.Clamp(angRot.x, jointInfo.angularLimits[0][0], jointInfo.angularLimits[0][1]);
+                angRot.y = Mathf.Clamp(angRot.y, jointInfo.angularLimits[1][0], jointInfo.angularLimits[1][1]);
+                angRot.z = Mathf.Clamp(angRot.z, jointInfo.angularLimits[2][0], jointInfo.angularLimits[2][1]);
+
+                jointInfo.setConfigurableForceAndRot(force, angRot);
+            }
+
         }
     }
 
@@ -188,10 +188,8 @@ public class Humanoid2DResetPos : MonoBehaviour
             if (!movableAxis.Contains(true))
                 continue;
 
-            JointDrive jointSlerpDrive = jointInfo.joint.slerpDrive;
-            jointSlerpDrive.positionSpring = jointInfo.maxPosSpring;
-            jointSlerpDrive.positionDamper = jointInfo.maxPosDamper;
-            jointInfo.joint.slerpDrive = jointSlerpDrive;
+            jointInfo.resetJointForces();
+
         }
     }
 
@@ -205,27 +203,7 @@ public class Humanoid2DResetPos : MonoBehaviour
             if (!movableAxis.Contains(true))
                 continue;
 
-            
-            jointInfo.joint.targetRotation = Quaternion.Euler(zeros);
-        }
-    }
-
-
-    public void resetJointsPos()
-    {
-        foreach (JointInfo jointInfo in jointInfos)
-        {
-            bool[] movableAxis = jointInfo.movableAxis;
-
-            if (!movableAxis.Contains(true))
-                continue;
-
-            float force = 0f;
-            JointDrive jointSlerpDrive = jointInfo.joint.slerpDrive;
-            jointSlerpDrive.positionSpring = force * jointInfo.maxPosSpring;
-            jointSlerpDrive.positionDamper = force * jointInfo.maxPosDamper;
-            jointInfo.joint.slerpDrive = jointSlerpDrive;
-            
+            jointInfo.resetJointPositions(zeros);
         }
     }
 

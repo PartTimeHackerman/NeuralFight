@@ -47,7 +47,7 @@ public class ActionsAnt : MonoBehaviour, IActions
             angRot.x = Mathf.Clamp(angRot.x, jointInfo.angularLimits[0][0], jointInfo.angularLimits[0][1]);
             angRot.y = Mathf.Clamp(angRot.y, jointInfo.angularLimits[1][0], jointInfo.angularLimits[1][1]);
             angRot.z = Mathf.Clamp(angRot.z, jointInfo.angularLimits[2][0], jointInfo.angularLimits[2][1]);
-            jointInfo.joint.targetRotation = Quaternion.Euler(angRot);
+            jointInfo.setConfigurableRot(angRot);
 
         }
     }

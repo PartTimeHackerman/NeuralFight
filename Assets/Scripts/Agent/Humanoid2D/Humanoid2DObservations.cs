@@ -134,6 +134,12 @@ public class Humanoid2DObservations : MonoBehaviour
         }
 
         //observations.Add(decisionFrequency);
+        foreach (JointInfo jointInfo in bodyParts.jointsInfos)
+        {
+
+            if (jointInfo.setVelSettings)
+                observations.Add(jointInfo.tiredness);
+        }
 
         return observations;
     }

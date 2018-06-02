@@ -40,7 +40,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4564942531858734}
-  - component: {fileID: 114484644371346156}
   - component: {fileID: 114362904805847952}
   - component: {fileID: 114769924249378220}
   - component: {fileID: 114483719085169826}
@@ -102,6 +101,7 @@ GameObject:
   - component: {fileID: 135287547557387744}
   - component: {fileID: 54421303617364278}
   - component: {fileID: 138236624055531358}
+  - component: {fileID: 114419556966289364}
   m_Layer: 0
   m_Name: head
   m_TagString: Untagged
@@ -456,7 +456,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1320150149016422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04160437, y: 0.053, z: -4.8703613}
+  m_LocalPosition: {x: 0.04160437, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4564942531858734}
@@ -525,7 +525,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1153389945127488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.025, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4800109370748456}
@@ -626,7 +626,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1896202554313972}
-  m_LocalRotation: {x: -0, y: -0, z: 6.7762636e-21, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -775,7 +775,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54059475535280358
@@ -790,7 +790,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54123932407018984
@@ -805,7 +805,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54190553484003850
@@ -820,7 +820,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54283778106645128
@@ -835,7 +835,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54307822651698290
@@ -850,7 +850,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54353115070828092
@@ -865,7 +865,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54416044668193476
@@ -880,7 +880,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54421303617364278
@@ -895,7 +895,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54483344025706724
@@ -910,7 +910,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54505875486059290
@@ -925,7 +925,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54630823197401728
@@ -940,7 +940,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54670020047441790
@@ -955,7 +955,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 98
   m_CollisionDetection: 0
 --- !u!54 &54689945520073282
@@ -970,7 +970,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54713914796059028
@@ -985,7 +985,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54809650105271754
@@ -1000,7 +1000,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54916983074785888
@@ -1015,7 +1015,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54936505844916972
@@ -1030,7 +1030,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &114062772066219978
@@ -1045,7 +1045,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 153829485795984678}
-  maxForce: 500
+  hinge: 0
+  maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1065,10 +1066,14 @@ MonoBehaviour:
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
-  springMult: 0.1
+  springMult: 0.01
   setVelSettings: 1
+  medVel: 10
   maxVel: 20
+  currentMaxVel: 20
+  tiredness: 0
   force: 1000
+  maxHingeVel: 800
 --- !u!114 &114071329676605844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1081,7 +1086,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 153603741836208696}
-  maxForce: 500
+  hinge: 0
+  maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1101,10 +1107,14 @@ MonoBehaviour:
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
-  springMult: 0.1
+  springMult: 0.01
   setVelSettings: 1
+  medVel: 10
   maxVel: 20
+  currentMaxVel: 20
+  tiredness: 0
   force: 1000
+  maxHingeVel: 800
 --- !u!114 &114241202901971090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1117,7 +1127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 153629551476541864}
-  maxForce: 500
+  hinge: 0
+  maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1137,10 +1148,14 @@ MonoBehaviour:
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
-  springMult: 0.1
+  springMult: 0.01
   setVelSettings: 1
+  medVel: 10
   maxVel: 20
+  currentMaxVel: 20
+  tiredness: 0
   force: 1000
+  maxHingeVel: 800
 --- !u!114 &114275348991947444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1153,7 +1168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 153633228762304358}
-  maxForce: 300
+  hinge: 0
+  maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1173,10 +1189,14 @@ MonoBehaviour:
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
-  springMult: 0.1
+  springMult: 0.01
   setVelSettings: 1
+  medVel: 10
   maxVel: 20
+  currentMaxVel: 20
+  tiredness: 0
   force: 1000
+  maxHingeVel: 800
 --- !u!114 &114362904805847952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1212,7 +1232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 153482988427808384}
-  maxForce: 300
+  hinge: 0
+  maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1232,10 +1253,28 @@ MonoBehaviour:
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
-  springMult: 0.1
-  setVelSettings: 0
-  maxVel: 30
+  springMult: 0.01
+  setVelSettings: 1
+  medVel: 10
+  maxVel: 20
+  currentMaxVel: 20
+  tiredness: 0
   force: 1000
+  maxHingeVel: 800
+--- !u!114 &114419556966289364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1235590792242818}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01752d8f1a8fe9b48b52115bf383502e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upVel: 2.8
+  limit: 1.62
+  vel: 0
 --- !u!114 &114448047451830780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1248,7 +1287,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 153070694679397082}
-  maxForce: 300
+  hinge: 0
+  maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1268,10 +1308,14 @@ MonoBehaviour:
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
-  springMult: 0.1
+  springMult: 0.01
   setVelSettings: 1
+  medVel: 10
   maxVel: 20
+  currentMaxVel: 20
+  tiredness: 0
   force: 1000
+  maxHingeVel: 800
 --- !u!114 &114464808645026340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1284,7 +1328,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 153619936914193668}
-  maxForce: 150
+  hinge: 0
+  maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1304,10 +1349,14 @@ MonoBehaviour:
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
-  springMult: 0.1
+  springMult: 0.01
   setVelSettings: 1
+  medVel: 10
   maxVel: 20
+  currentMaxVel: 20
+  tiredness: 0
   force: 1000
+  maxHingeVel: 800
 --- !u!114 &114483719085169826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1322,17 +1371,6 @@ MonoBehaviour:
   observationsSpace: 0
   observableRigids: []
   decisionFrequency: 0
---- !u!114 &114484644371346156
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1153389945127488}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fe3dd125d9e2884a9bcac0dfb7240c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114530772836165316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1345,7 +1383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resets: 0
-  resetsBoundary: 1
+  resetsBoundary: 90000
   scale: 0
   minRot: -180
   maxRot: 180
@@ -1372,7 +1410,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 153055718053425878}
-  maxForce: 500
+  hinge: 0
+  maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1392,10 +1431,14 @@ MonoBehaviour:
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
-  springMult: 0.1
+  springMult: 0.01
   setVelSettings: 1
+  medVel: 10
   maxVel: 20
+  currentMaxVel: 20
+  tiredness: 0
   force: 1000
+  maxHingeVel: 800
 --- !u!114 &114767576432359422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1408,7 +1451,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 153032470992990380}
-  maxForce: 300
+  hinge: 0
+  maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1428,10 +1472,14 @@ MonoBehaviour:
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
-  springMult: 0.1
+  springMult: 0.01
   setVelSettings: 1
+  medVel: 10
   maxVel: 20
+  currentMaxVel: 20
+  tiredness: 0
   force: 1000
+  maxHingeVel: 800
 --- !u!114 &114769924249378220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1475,7 +1523,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   reward: 0
-  clearReward: 0
+  lastClearReward: 0
+  COMOverMeanOfFeetsXZReward: 0
+  headGroundDistReward: 0
+  minimizeTorsoXZVelocityReward: 0
+  torsoFromBaseOverMeanOfFeetsYReward: 0
+  torsoOverCOMXZReward: 0
   penalty: 0
   maxPenaltyCount: 100
   maxPenalty: 0.3
@@ -1483,7 +1536,7 @@ MonoBehaviour:
   penaltyThreshold: 0.1
   penaltyStart: 0.5
   step: 0
-  maxStep: 1000
+  maxStep: 500
 --- !u!135 &135061461015761780
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1814,7 +1867,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.27, y: 0.16799998, z: 0.00000017228726}
+  m_ConnectedAnchor: {x: -0.27, y: 0.16799998, z: 9.239125e-10}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 0, z: 0}
   m_XMotion: 0
@@ -1838,7 +1891,7 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 170
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
@@ -1890,7 +1943,7 @@ ConfigurableJoint:
   m_ProjectionMode: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
-  m_ConfiguredInWorldSpace: 0
+  m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -1908,7 +1961,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000029802186, y: -0.48000002, z: -0.00000046379864}
+  m_ConnectedAnchor: {x: 0.00000002980221, y: -0.48000002, z: -0.00000062584877}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -1984,7 +2037,7 @@ ConfigurableJoint:
   m_ProjectionMode: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
-  m_ConfiguredInWorldSpace: 0
+  m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -2002,7 +2055,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000010969076, y: -0.33999997, z: 0.000000096887305}
+  m_ConnectedAnchor: {x: -0.000000010969076, y: -0.33999997, z: 2.9760416e-11}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 0, z: 0}
   m_XMotion: 0
@@ -2078,7 +2131,7 @@ ConfigurableJoint:
   m_ProjectionMode: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
-  m_ConfiguredInWorldSpace: 0
+  m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -2096,7 +2149,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -6.3569955e-10, y: 0.16300008, z: 0.020000132}
+  m_ConnectedAnchor: {x: -6.3569533e-10, y: 0.16299996, z: 0.02}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -2172,7 +2225,7 @@ ConfigurableJoint:
   m_ProjectionMode: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
-  m_ConfiguredInWorldSpace: 0
+  m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -2190,7 +2243,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.086004555, y: 0.0119998455, z: 0.0149998665}
+  m_ConnectedAnchor: {x: 0.086004555, y: 0.0119998455, z: 0.014999853}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 0, z: 0}
   m_XMotion: 0
@@ -2266,7 +2319,7 @@ ConfigurableJoint:
   m_ProjectionMode: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
-  m_ConfiguredInWorldSpace: 0
+  m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -2284,7 +2337,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.27, y: 0.16760004, z: 0.000000094354185}
+  m_ConnectedAnchor: {x: 0.27, y: 0.16760004, z: -6.4071426e-10}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 0, z: 0}
   m_XMotion: 0
@@ -2308,7 +2361,7 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 170
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
@@ -2360,7 +2413,7 @@ ConfigurableJoint:
   m_ProjectionMode: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
-  m_ConfiguredInWorldSpace: 0
+  m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -2378,7 +2431,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.086004555, y: 0.0119998455, z: 0.0149998665}
+  m_ConnectedAnchor: {x: -0.086004555, y: 0.0119998455, z: 0.014999853}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 0, z: 0}
   m_XMotion: 0
@@ -2454,7 +2507,7 @@ ConfigurableJoint:
   m_ProjectionMode: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
-  m_ConfiguredInWorldSpace: 0
+  m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -2472,7 +2525,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000000071649735, y: -0.34000003, z: 0.00000017228719}
+  m_ConnectedAnchor: {x: 0.0000000071649735, y: -0.34000003, z: 9.238372e-10}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 0, z: 0}
   m_XMotion: 0
@@ -2548,7 +2601,7 @@ ConfigurableJoint:
   m_ProjectionMode: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
-  m_ConfiguredInWorldSpace: 0
+  m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -2566,7 +2619,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000001424354, y: -0.48000002, z: -0.00000015671469}
+  m_ConnectedAnchor: {x: -0.0000000014243255, y: -0.48000002, z: -2.5249847e-10}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -2642,7 +2695,7 @@ ConfigurableJoint:
   m_ProjectionMode: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
-  m_ConfiguredInWorldSpace: 0
+  m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
