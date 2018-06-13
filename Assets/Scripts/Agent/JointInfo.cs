@@ -29,13 +29,17 @@ public class JointInfo : MonoBehaviour
     public float springMult = .01f;
 
     public bool setVelSettings = false;
-    public float medVel = 10;
     public float maxVel = 20;
+
+    /*
+    public float medVel = 10;
     public float currentMaxVel = 20;
     public float tiredness = 0;
+    */
 
     public float force = 1000;
     public float maxHingeVel = 800f;
+    public float threshold = .1f;
 
 
     void Reset()
@@ -61,16 +65,17 @@ public class JointInfo : MonoBehaviour
             else
                 SetHingeJointSettings();
         }
-
+        /*
         medVel = maxVel / 2;
         currentMaxVel = maxVel;
+        */
     }
 
     public void init()
     {
         if (!hinge)
         {
-            
+
             joint = GetComponent<ConfigurableJoint>();
             configurableJoint = (ConfigurableJoint)joint;
         }
@@ -203,35 +208,28 @@ public class JointInfo : MonoBehaviour
 
     public void resetJointForces()
     {
-        if (setVelSettings || hinge)
-        {
-            currentMaxVel = maxVel;
-            tiredness = 0;
-        }
-        else
-        {
-            JointDrive jointSlerpDrive = configurableJoint.slerpDrive;
-            jointSlerpDrive.positionSpring = maxPosSpring;
-            jointSlerpDrive.positionDamper = maxPosDamper;
-            configurableJoint.slerpDrive = jointSlerpDrive;
-        }
+
+        JointDrive jointSlerpDrive = configurableJoint.slerpDrive;
+        jointSlerpDrive.positionSpring = maxPosSpring;
+        jointSlerpDrive.positionDamper = maxPosDamper;
+        configurableJoint.slerpDrive = jointSlerpDrive;
     }
 
     public void resetJointPositions(Vector3 zeros)
     {
         if (hinge)
             return;
-        
+
         configurableJoint.targetRotation = Quaternion.Euler(zeros);
     }
 
     public void setConfigurableRotVel(Vector3 angVel)
     {
-        if (angVel.x < 0 && angVel.x > -0.1f * maxVel)
+        if (angVel.x < 0 && angVel.x > -threshold * maxVel)
             angVel.x = 0;
-        if (angVel.x > 0 && angVel.x < 0.1f * maxVel)
+        if (angVel.x > 0 && angVel.x < threshold * maxVel)
             angVel.x = 0;
-
+        /*
         float applyVel = Mathf.Abs(angVel.x);
         float velTiredness = applyVel - medVel;
         angVel.x = Mathf.Clamp(angVel.x, -currentMaxVel, currentMaxVel);
@@ -241,6 +239,7 @@ public class JointInfo : MonoBehaviour
         if (currentMaxVel > maxVel)
             currentMaxVel = maxVel;
         tiredness = -(((currentMaxVel - medVel) / medVel) - 1);
+        */
         configurableJoint.targetAngularVelocity = angVel;
     }
 

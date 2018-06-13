@@ -53,7 +53,6 @@ public class ActionsAngPos : MonoBehaviour, IActions
 
         }
     }
-
     
 
     public int getActionsSpace()

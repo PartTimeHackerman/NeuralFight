@@ -22,7 +22,9 @@ internal class Humanoid2DAgent : Agent
     private bool velReset = false;
     public int steps = 0;
     public int maxSteps = 0;
-    //public int decisionFrequency = 5;
+    public int decisionFrequency = 5;
+    public int decisionFrequencyMin = 5;
+    public int decisionFrequencyMax = 10;
 
     public override void InitializeAgent()
     {
@@ -36,6 +38,7 @@ internal class Humanoid2DAgent : Agent
 
     public override void CollectObservations()
     {
+
         List<float> observations = this.observations.getObservations();
         foreach (var observation in observations) AddVectorObs(observation);
         SetTextObs("Testing " + gameObject.GetInstanceID());
@@ -73,6 +76,11 @@ internal class Humanoid2DAgent : Agent
         List<float> actionsClamped = new List<float>();
         foreach (var var in actions)
             actionsClamped.Add(Mathf.Clamp(var, -1f, 1f));
+        int decFrq = Mathf.RoundToInt(((actionsClamped[actions.Count - 1] + 1) / 2) * (decisionFrequencyMax - decisionFrequencyMin) + decisionFrequencyMin);
+        //agentParameters.numberOfActionsBetweenDecisions = Random.Range(decisionFrequencyMin, decisionFrequencyMax);
+        agentParameters.numberOfActionsBetweenDecisions = decFrq;
+        actionsClamped.RemoveAt(actions.Count-1);
+        
 
         this.actions.applyActions(actionsClamped);
         SetReward(standingReward.getReward());
@@ -88,7 +96,7 @@ internal class Humanoid2DAgent : Agent
     {
 
         //decisionFrequency = (decisionFrequency + 1 > 10) ? 5 : decisionFrequency + 1;
-        //agentParameters.numberOfActionsBetweenDecisions = decisionFrequency;
+        //agentParameters.numberOfActionsBetweenDecisions = Random.Range(5,10);
         //observations.decisionFrequency = decisionFrequency;
         resetPos.ResetPosition();
         resetStepsElapsed = 0;

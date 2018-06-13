@@ -1068,12 +1068,10 @@ MonoBehaviour:
   debug: 0
   springMult: 0.01
   setVelSettings: 1
-  medVel: 10
   maxVel: 20
-  currentMaxVel: 20
-  tiredness: 0
   force: 1000
   maxHingeVel: 800
+  threshold: 0.1
 --- !u!114 &114071329676605844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1109,12 +1107,10 @@ MonoBehaviour:
   debug: 0
   springMult: 0.01
   setVelSettings: 1
-  medVel: 10
   maxVel: 20
-  currentMaxVel: 20
-  tiredness: 0
   force: 1000
   maxHingeVel: 800
+  threshold: 0.1
 --- !u!114 &114241202901971090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1150,12 +1146,10 @@ MonoBehaviour:
   debug: 0
   springMult: 0.01
   setVelSettings: 1
-  medVel: 10
   maxVel: 20
-  currentMaxVel: 20
-  tiredness: 0
   force: 1000
   maxHingeVel: 800
+  threshold: 0.1
 --- !u!114 &114275348991947444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1191,12 +1185,10 @@ MonoBehaviour:
   debug: 0
   springMult: 0.01
   setVelSettings: 1
-  medVel: 10
   maxVel: 20
-  currentMaxVel: 20
-  tiredness: 0
   force: 1000
   maxHingeVel: 800
+  threshold: 0.1
 --- !u!114 &114362904805847952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1220,6 +1212,9 @@ MonoBehaviour:
   resetWaitSteps: 5
   steps: 0
   maxSteps: 0
+  decisionFrequency: 5
+  decisionFrequencyMin: 5
+  decisionFrequencyMax: 30
 --- !u!114 &114379701103631766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1255,12 +1250,10 @@ MonoBehaviour:
   debug: 0
   springMult: 0.01
   setVelSettings: 1
-  medVel: 10
   maxVel: 20
-  currentMaxVel: 20
-  tiredness: 0
   force: 1000
   maxHingeVel: 800
+  threshold: 0.1
 --- !u!114 &114419556966289364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1310,12 +1303,10 @@ MonoBehaviour:
   debug: 0
   springMult: 0.01
   setVelSettings: 1
-  medVel: 10
   maxVel: 20
-  currentMaxVel: 20
-  tiredness: 0
   force: 1000
   maxHingeVel: 800
+  threshold: 0.1
 --- !u!114 &114464808645026340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1351,12 +1342,10 @@ MonoBehaviour:
   debug: 0
   springMult: 0.01
   setVelSettings: 1
-  medVel: 10
   maxVel: 20
-  currentMaxVel: 20
-  tiredness: 0
   force: 1000
   maxHingeVel: 800
+  threshold: 0.1
 --- !u!114 &114483719085169826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1433,12 +1422,10 @@ MonoBehaviour:
   debug: 0
   springMult: 0.01
   setVelSettings: 1
-  medVel: 10
   maxVel: 20
-  currentMaxVel: 20
-  tiredness: 0
   force: 1000
   maxHingeVel: 800
+  threshold: 0.1
 --- !u!114 &114767576432359422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1474,12 +1461,10 @@ MonoBehaviour:
   debug: 0
   springMult: 0.01
   setVelSettings: 1
-  medVel: 10
   maxVel: 20
-  currentMaxVel: 20
-  tiredness: 0
   force: 1000
   maxHingeVel: 800
+  threshold: 0.1
 --- !u!114 &114769924249378220
 MonoBehaviour:
   m_ObjectHideFlags: 1

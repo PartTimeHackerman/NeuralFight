@@ -132,14 +132,7 @@ public class Humanoid2DObservations : MonoBehaviour
         {
             addRootPos(angVel);
         }
-
-        //observations.Add(decisionFrequency);
-        foreach (JointInfo jointInfo in bodyParts.jointsInfos)
-        {
-
-            if (jointInfo.setVelSettings)
-                observations.Add(jointInfo.tiredness);
-        }
+        
 
         return observations;
     }
