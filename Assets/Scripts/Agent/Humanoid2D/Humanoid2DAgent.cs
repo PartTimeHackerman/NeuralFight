@@ -76,8 +76,8 @@ internal class Humanoid2DAgent : Agent
         List<float> actionsClamped = new List<float>();
         foreach (var var in actions)
             actionsClamped.Add(Mathf.Clamp(var, -1f, 1f));
+
         int decFrq = Mathf.RoundToInt(((actionsClamped[actions.Count - 1] + 1) / 2) * (decisionFrequencyMax - decisionFrequencyMin) + decisionFrequencyMin);
-        //agentParameters.numberOfActionsBetweenDecisions = Random.Range(decisionFrequencyMin, decisionFrequencyMax);
         agentParameters.numberOfActionsBetweenDecisions = decFrq;
         actionsClamped.RemoveAt(actions.Count-1);
         

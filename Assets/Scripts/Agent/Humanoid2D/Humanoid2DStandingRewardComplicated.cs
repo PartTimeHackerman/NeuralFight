@@ -24,6 +24,7 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     public float minimizeTorsoXZVelocityReward;
     public float torsoFromBaseOverMeanOfFeetsYReward;
     public float torsoOverCOMXZReward;
+    public float distanceZReward;
 
 
     public float penalty = 0;
@@ -42,7 +43,7 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     private float unpenaltySpeed  = 0;
     private float unpenaltyAdd = 0;
 
-    private readonly int rewards = 5;
+    private readonly int rewards = 6;
 
     public int step = 0;
     public int maxStep = 300;
@@ -104,7 +105,7 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     public float headGroundDist()
     {
         var headYPos = namedParts["head_end"].transform.position.y;
-        var headFromGroundPrec = headYPos / 1.9f;
+        var headFromGroundPrec = Mathf.Clamp(headYPos / 1.9f, 0f, 1f);
         headGroundDistReward = headFromGroundPrec;
         return headFromGroundPrec;
     }
@@ -142,6 +143,27 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
         return Vector2.Distance(meanOfFeets(), namedParts["torso"].transform.position);
     }
 
+    public float DistanceZ()
+    {
+        float reward = 0;
+        float threshold = 0.2f;
+        float maxZDist = 2f;
+        float posZ = namedParts["butt"].transform.position.z;
+        if ((posZ > 0 && posZ < threshold) || (posZ < 0 && posZ > -threshold))
+        {
+            reward = 1;
+        }
+        else
+        {
+            posZ = Mathf.Abs(posZ);
+            reward = Mathf.Abs(posZ / maxZDist - 1);
+        }
+
+        distanceZReward = reward;
+        return reward;
+
+    }
+
     public float getReward()
     {
         COMOverMeanOfFeetsXZ();
@@ -149,10 +171,11 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
         torsoFromBaseOverMeanOfFeetsY();
         minimizeTorsoXZVelocity();
         headGroundDist();
+        DistanceZ();
         minimizeTorsoXZVelocityReward *= headGroundDistReward;
         reward = (COMOverMeanOfFeetsXZReward + torsoOverCOMXZReward + torsoFromBaseOverMeanOfFeetsYReward +
-                 minimizeTorsoXZVelocityReward + headGroundDistReward) / rewards;
-        return reward;
+                 minimizeTorsoXZVelocityReward + headGroundDistReward + distanceZReward) / rewards;
+        return Mathf.Clamp(reward, 0f, 1f);
     }
 
     public float calcPenalty(float clearReward)
