@@ -95,9 +95,9 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     {
         
         var torsoRigid = bodyParts.getNamedRigids()["torso"];
-        var sumVelX = torsoRigid.velocity.x;
-
-        reward = Mathf.Abs(Mathf.Abs(sumVelX)*10-1);
+        var sumVelZ = torsoRigid.velocity.z;
+        float maxVel = 1;
+        reward = Mathf.Clamp((Mathf.Abs(Mathf.Abs(sumVelZ) / maxVel - 1)), 0f, 1f);
         minimizeTorsoXZVelocityReward = reward;
         return reward;
     }
@@ -105,7 +105,12 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     public float headGroundDist()
     {
         var headYPos = namedParts["head_end"].transform.position.y;
-        var headFromGroundPrec = Mathf.Clamp(headYPos / 1.9f, 0f, 1f);
+        var headFromGroundPrec = headYPos / 1.9f;
+        if (headYPos > 1.9f)
+        {
+            headFromGroundPrec = -(1 - headFromGroundPrec)*2;
+        }
+        headFromGroundPrec = Mathf.Clamp(headFromGroundPrec, 0f, 1f);
         headGroundDistReward = headFromGroundPrec;
         return headFromGroundPrec;
     }
@@ -113,9 +118,9 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     public Vector2 meanOfFeets()
     {
         Vector3 rfootPos = namedParts["rfoot_end"].transform.position;
-        Vector2 rfoot= new Vector2(rfootPos.x, rfootPos.y);
+        Vector2 rfoot= new Vector2(rfootPos.z, rfootPos.y);
         Vector3 lfootPos = namedParts["lfoot_end"].transform.position;
-        Vector2 lfoot= new Vector2(lfootPos.x, lfootPos.y);
+        Vector2 lfoot= new Vector2(lfootPos.z, lfootPos.y);
         return (rfoot + lfoot) / 2;
     }
 
@@ -124,7 +129,7 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
         // dist = 0, reward = 1000; dist = 1, reward = 0
         float reward = 0;
         var COM = physics.getCenterOfMass(bodyParts.getRigids());
-        var COMXY = new Vector2(COM.x, COM.y);
+        var COMXY = new Vector2(COM.z, COM.y);
         var feetsMean = meanOfFeets();
         return Vector2.Distance(COMXY, feetsMean);
     }
@@ -132,15 +137,15 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     public float distanceTorsoOverCOMXZ()
     {
         var COM = physics.getCenterOfMass(bodyParts.getRigids());
-        var COMXY = new Vector2(COM.x, COM.y);
+        var COMXY = new Vector2(COM.z, COM.y);
         var torso = namedParts["torso"].transform.position;
-        var torsoXY = new Vector2(torso.x, torso.y);
+        var torsoXY = new Vector2(torso.z, torso.y);
         return Vector2.Distance(COMXY, torsoXY);
     }
 
     public float distanceFeetsTorso()
     {
-        return Vector2.Distance(meanOfFeets(), namedParts["torso"].transform.position);
+        return Vector2.Distance(meanOfFeets(), new Vector2(namedParts["torso"].transform.position.z, namedParts["torso"].transform.position.y));
     }
 
     public float DistanceZ()
@@ -172,7 +177,7 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
         minimizeTorsoXZVelocity();
         headGroundDist();
         DistanceZ();
-        minimizeTorsoXZVelocityReward *= headGroundDistReward;
+        //minimizeTorsoXZVelocityReward *= headGroundDistReward;
         reward = (COMOverMeanOfFeetsXZReward + torsoOverCOMXZReward + torsoFromBaseOverMeanOfFeetsYReward +
                  minimizeTorsoXZVelocityReward + headGroundDistReward + distanceZReward) / rewards;
         return Mathf.Clamp(reward, 0f, 1f);
