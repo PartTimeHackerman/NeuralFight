@@ -5,8 +5,7 @@ using UnityEngine;
 public class JointDebug : MonoBehaviour
 {
 
-
-    public ConfigurableJoint joint;
+    
     public Vector3 jointRotation;
     public Vector3 jointRotationGlobal;
     public Vector3 jointAngularVel;
@@ -18,18 +17,15 @@ public class JointDebug : MonoBehaviour
 
     void Reset()
     {
-        joint = GetComponent<ConfigurableJoint>();
-        joint.GetComponent<Rigidbody>().sleepThreshold = 0;
+        GetComponent<Rigidbody>().sleepThreshold = 0;
     }
     
 	void Update () {
-	    jointRotation = joint.transform.localRotation.eulerAngles;
-	    jointRotationGlobal = joint.transform.rotation.eulerAngles;
-	    jointAngularVel = joint.GetComponent<Rigidbody>().angularVelocity;
-	    jointVel = joint.GetComponent<Rigidbody>().velocity;
-	    posLoc = joint.transform.localPosition;
-	    jointQRot = joint.transform.localRotation;
-
-        joint.targetRotation = Quaternion.Euler(posDoc);
+	    jointRotation = transform.localRotation.eulerAngles;
+	    jointRotationGlobal = transform.rotation.eulerAngles;
+	    jointAngularVel = GetComponent<Rigidbody>().angularVelocity;
+	    jointVel = GetComponent<Rigidbody>().velocity;
+	    posLoc = transform.localPosition;
+	    jointQRot = transform.localRotation;
     }
 }

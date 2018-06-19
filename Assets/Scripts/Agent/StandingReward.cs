@@ -171,7 +171,7 @@ public class StandingReward : MonoBehaviour
 
     public float getReward()
     {
-        //COMOverMeanOfFeetsXZ();
+        //COMOverMeanOfFeetsZ();
         //torsoOverCOMXZ();
         //torsoFromBaseOverMeanOfFeetsY();
         minimizeTorsoXZVelocity();

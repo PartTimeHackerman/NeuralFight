@@ -22,6 +22,7 @@ public class BodyParts : MonoBehaviour
     public int rigidsTotal;
     private Vector3 COM { get; set; }
     public float totalRigidsMass;
+    public float height;
 
     protected void Awake()
     {
@@ -68,6 +69,8 @@ public class BodyParts : MonoBehaviour
                 observableRigids.Add(rigid);
         }
         observableRigids.Add(root);
+
+        height = getHeight();
     }
     
 
@@ -106,5 +109,13 @@ public class BodyParts : MonoBehaviour
     public List<Rigidbody> getRigids()
     {
         return rigids;
+    }
+
+    private float getHeight()
+    {
+        float height = 0;
+        foreach (Rigidbody rigid in rigids)
+            height = rigid.transform.position.y > height ? rigid.transform.position.y : height;
+        return height;
     }
 }

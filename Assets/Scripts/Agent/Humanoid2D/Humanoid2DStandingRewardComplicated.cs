@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
 {
     public bool debug = false;
-    private float baseDistanceFeetsTorso;
+    private float maxDistanceTorsoFeets;
     private float baseDistanceCOMTorso;
     private float baseDistanceFeetsCOM;
     private BodyParts bodyParts;
@@ -25,6 +25,7 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     public float torsoFromBaseOverMeanOfFeetsYReward;
     public float torsoOverCOMXZReward;
     public float distanceZReward;
+    public float minimizeActuationReward;
 
 
     public float penalty = 0;
@@ -37,13 +38,13 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
 
     private float penaltyCount = 0;
     private float penaltyPerPoint = 0;
-    
+
     private float penaltyAdd = 0;
 
-    private float unpenaltySpeed  = 0;
+    private float unpenaltySpeed = 0;
     private float unpenaltyAdd = 0;
 
-    private readonly int rewards = 6;
+    private readonly int rewards = 7;
 
     public int step = 0;
     public int maxStep = 300;
@@ -61,39 +62,54 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
         unpenaltyAdd = unpenaltySpeed / maxPenaltyCount;
 
 
-        baseDistanceCOMTorso = distanceTorsoOverCOMXZ();
-        baseDistanceFeetsCOM = distanceCOMOverMeanOfFeetsXZ();
-        baseDistanceFeetsTorso = distanceFeetsTorso();
+        baseDistanceCOMTorso = namedParts["torso"].transform.position.y - physics.getCenterOfMass(bodyParts.getRigids()).y;
+        baseDistanceFeetsCOM = physics.getCenterOfMass(bodyParts.getRigids()).y - meanOfFeets().y;
+        maxDistanceTorsoFeets = calcDistance(namedParts["torso"], namedParts["rfoot_end"]);
 
         if (debug)
             InvokeRepeating("log", 0.0f, .1f);
     }
 
 
-    public float COMOverMeanOfFeetsXZ()
+    public float COMOverMeanOfFeetsZ()
     {
-        var distPrec = distanceCOMOverMeanOfFeetsXZ() / baseDistanceFeetsCOM;
-        COMOverMeanOfFeetsXZReward = distPrec;
+        Vector2 COM = physics.getCenterOfMass(bodyParts.getRigids());
+        var feetsMean = meanOfFeets();
+        float distPrec = 0;
+        if (COM.y > feetsMean.y)
+            distPrec = Mathf.Abs(Mathf.Abs(feetsMean.x - COM.x) / baseDistanceFeetsCOM - 1);
+        COMOverMeanOfFeetsXZReward = Mathf.Clamp(distPrec, 0f, 1f);
         return distPrec;
     }
 
     public float torsoOverCOMXZ()
     {
-        var distPrec = distanceTorsoOverCOMXZ() / baseDistanceCOMTorso;
-        torsoOverCOMXZReward = distPrec;
+        Vector2 COM = physics.getCenterOfMass(bodyParts.getRigids());
+        Vector3 torso = namedParts["torso"].transform.position;
+        float distPrec = 0;
+        if (torso.y > COM.y)
+            distPrec = Mathf.Abs(Mathf.Abs(COM.x - torso.z) / baseDistanceCOMTorso - 1);
+        torsoOverCOMXZReward = Mathf.Clamp(distPrec, 0f, 1f);
         return distPrec;
     }
 
     public float torsoFromBaseOverMeanOfFeetsY()
     {
-        var distPrec = distanceFeetsTorso() / baseDistanceFeetsTorso;
-        torsoFromBaseOverMeanOfFeetsYReward = distPrec;
-        return distPrec;
+        float distYPrec = 0;
+        /*
+        if (namedParts["torso"].transform.position.y > meanOfFeets().y)
+            distYPrec = Mathf.Abs(Mathf.Abs(meanOfFeets().x - namedParts["torso"].transform.position.z) /
+                                  maxDistanceTorsoFeets - 1);
+       */
+        if (namedParts["torso"].transform.position.y > meanOfFeets().y)
+            distYPrec = Mathf.Abs(namedParts["torso"].transform.position.y - meanOfFeets().y) / maxDistanceTorsoFeets;
+        torsoFromBaseOverMeanOfFeetsYReward = Mathf.Clamp(distYPrec, 0f, 1f);
+        return distYPrec;
     }
 
     public float minimizeTorsoXZVelocity()
     {
-        
+
         var torsoRigid = bodyParts.getNamedRigids()["torso"];
         var sumVelZ = torsoRigid.velocity.z;
         float maxVel = 1;
@@ -108,7 +124,7 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
         var headFromGroundPrec = headYPos / 1.9f;
         if (headYPos > 1.9f)
         {
-            headFromGroundPrec = -(1 - headFromGroundPrec)*2;
+            headFromGroundPrec = -(1 - headFromGroundPrec) * 2;
         }
         headFromGroundPrec = Mathf.Clamp(headFromGroundPrec, 0f, 1f);
         headGroundDistReward = headFromGroundPrec;
@@ -118,69 +134,61 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     public Vector2 meanOfFeets()
     {
         Vector3 rfootPos = namedParts["rfoot_end"].transform.position;
-        Vector2 rfoot= new Vector2(rfootPos.z, rfootPos.y);
+        Vector2 rfoot = new Vector2(rfootPos.z, rfootPos.y);
         Vector3 lfootPos = namedParts["lfoot_end"].transform.position;
-        Vector2 lfoot= new Vector2(lfootPos.z, lfootPos.y);
+        Vector2 lfoot = new Vector2(lfootPos.z, lfootPos.y);
         return (rfoot + lfoot) / 2;
-    }
-
-    public float distanceCOMOverMeanOfFeetsXZ()
-    {
-        // dist = 0, reward = 1000; dist = 1, reward = 0
-        float reward = 0;
-        var COM = physics.getCenterOfMass(bodyParts.getRigids());
-        var COMXY = new Vector2(COM.z, COM.y);
-        var feetsMean = meanOfFeets();
-        return Vector2.Distance(COMXY, feetsMean);
-    }
-
-    public float distanceTorsoOverCOMXZ()
-    {
-        var COM = physics.getCenterOfMass(bodyParts.getRigids());
-        var COMXY = new Vector2(COM.z, COM.y);
-        var torso = namedParts["torso"].transform.position;
-        var torsoXY = new Vector2(torso.z, torso.y);
-        return Vector2.Distance(COMXY, torsoXY);
-    }
-
-    public float distanceFeetsTorso()
-    {
-        return Vector2.Distance(meanOfFeets(), new Vector2(namedParts["torso"].transform.position.z, namedParts["torso"].transform.position.y));
     }
 
     public float DistanceZ()
     {
         float reward = 0;
-        float threshold = 0.2f;
-        float maxZDist = 2f;
-        float posZ = namedParts["butt"].transform.position.z;
-        if ((posZ > 0 && posZ < threshold) || (posZ < 0 && posZ > -threshold))
-        {
+        float threshold = 0.1f;
+        float maxZDist = 1f;
+        float posZ = Mathf.Min(Mathf.Abs(namedParts["butt"].transform.position.z), maxZDist);
+        if (posZ < threshold)
             reward = 1;
-        }
         else
-        {
-            posZ = Mathf.Abs(posZ);
             reward = Mathf.Abs(posZ / maxZDist - 1);
-        }
 
         distanceZReward = reward;
         return reward;
+    }
 
+    public float minimizeActuation()
+    {
+        List<JointInfo> jointInfos = bodyParts.jointsInfos;
+        float maxVel = jointInfos[0].maxVel;
+        int count = jointInfos.Count;
+        float sumVels = 0;
+        foreach (JointInfo jointInfo in jointInfos)
+        {
+            sumVels += Mathf.Abs(jointInfo.configurableJoint.targetAngularVelocity.x);
+        }
+
+        minimizeActuationReward = Mathf.Abs((sumVels / count) / maxVel - 1);
+        return minimizeActuationReward;
     }
 
     public float getReward()
     {
-        COMOverMeanOfFeetsXZ();
+        COMOverMeanOfFeetsZ();
         torsoOverCOMXZ();
         torsoFromBaseOverMeanOfFeetsY();
         minimizeTorsoXZVelocity();
         headGroundDist();
         DistanceZ();
+        minimizeActuation();
         //minimizeTorsoXZVelocityReward *= headGroundDistReward;
-        reward = (COMOverMeanOfFeetsXZReward + torsoOverCOMXZReward + torsoFromBaseOverMeanOfFeetsYReward +
-                 minimizeTorsoXZVelocityReward + headGroundDistReward + distanceZReward) / rewards;
-        return Mathf.Clamp(reward, 0f, 1f);
+        reward = (COMOverMeanOfFeetsXZReward +
+                  torsoOverCOMXZReward +
+                  torsoFromBaseOverMeanOfFeetsYReward +
+                  minimizeTorsoXZVelocityReward +
+                  //headGroundDistReward +
+                  //distanceZReward +
+                  minimizeActuationReward) / 5;
+        reward = Mathf.Clamp(reward, 0f, 1f);
+        return reward;
     }
 
     public float calcPenalty(float clearReward)
@@ -215,7 +223,7 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     public bool terminated(int step)
     {
         this.step = step;
-        bool terminated = step >= maxStep || (this.terminated() && penaltyCount >= maxPenaltyCount) ;
+        bool terminated = step >= maxStep || (this.terminated() && penaltyCount >= maxPenaltyCount);
         if (terminated)
         {
             penaltyCount = 0;
@@ -235,5 +243,10 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     {
         getReward();
         terminated();
+    }
+
+    private float calcDistance(GameObject o1, GameObject o2)
+    {
+        return Vector3.Distance(o1.transform.position, o2.transform.position);
     }
 }

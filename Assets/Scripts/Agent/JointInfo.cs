@@ -7,7 +7,7 @@ public class JointInfo : MonoBehaviour
 {
 
     public Joint joint;
-    private ConfigurableJoint configurableJoint;
+    public ConfigurableJoint configurableJoint;
     private HingeJoint hingeJoint;
     public bool hinge = true;
     public float maxForce = 1000;
