@@ -184,9 +184,9 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
                   torsoOverCOMXZReward +
                   torsoFromBaseOverMeanOfFeetsYReward +
                   minimizeTorsoXZVelocityReward +
-                  //headGroundDistReward +
-                  //distanceZReward +
-                  minimizeActuationReward) / 5;
+                  headGroundDistReward +
+                  distanceZReward +
+                  minimizeActuationReward) / 7;
         reward = Mathf.Clamp(reward, 0f, 1f);
         return reward;
     }

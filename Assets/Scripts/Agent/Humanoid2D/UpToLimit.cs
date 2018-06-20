@@ -18,11 +18,11 @@ public class UpToLimit : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (rb.position.y < limit)
+        if (rb.position.y < limit && rb.velocity.y < 0)
         {
 
             vel = upVel * Mathf.Abs((rb.position.y / limit) - 1);
-            rb.velocity = new Vector3(rb.velocity.x, vel, rb.velocity.z);
+            rb.AddForce(0f, vel, 0f);
         }
 
     }
