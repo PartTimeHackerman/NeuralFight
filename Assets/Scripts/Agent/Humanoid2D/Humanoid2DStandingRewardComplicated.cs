@@ -49,6 +49,8 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     public int step = 0;
     public int maxStep = 300;
 
+    private Vector3 COM;
+
     private void Start()
     {
         bodyParts = GetComponent<BodyParts>();
@@ -73,22 +75,20 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
 
     public float COMOverMeanOfFeetsZ()
     {
-        Vector3 COM = physics.getCenterOfMass(bodyParts.getRigids());
         var feetsMean = meanOfFeets();
         float distPrec = 0;
         if (COM.y > feetsMean.y)
-            distPrec = Mathf.Abs(Mathf.Abs(feetsMean.x - COM.z) / baseDistanceFeetsCOM - 1);
+            distPrec = Mathf.Abs(Mathf.Abs(feetsMean.x - COM.x) / baseDistanceFeetsCOM - 1);
         COMOverMeanOfFeetsXZReward = RewardFunctions.toleranceInvNoBounds(Mathf.Clamp(distPrec, 0f, 1f), .4f, .1f,RewardFunction.LONGTAIL);
         return distPrec;
     }
 
     public float torsoOverCOMXZ()
     {
-        Vector3 COM = physics.getCenterOfMass(bodyParts.getRigids());
         Vector3 torso = namedParts["torso"].transform.position;
         float distPrec = 0;
         if (torso.y > COM.y)
-            distPrec = Mathf.Abs(Mathf.Abs(COM.z - torso.z) / baseDistanceCOMTorso - 1);
+            distPrec = Mathf.Abs(Mathf.Abs(COM.x - torso.x) / baseDistanceCOMTorso - 1);
         torsoOverCOMXZReward = RewardFunctions.toleranceInvNoBounds(Mathf.Clamp(distPrec, 0f, 1f), .4f, .1f, RewardFunction.LONGTAIL);
         return distPrec;
     }
@@ -111,9 +111,9 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     {
 
         var torsoRigid = bodyParts.getNamedRigids()["torso"];
-        var sumVelZ = torsoRigid.velocity.z;
+        var sumVel = Math.Abs(torsoRigid.velocity.x) + Math.Abs(torsoRigid.velocity.y);
         float maxVel = 1;
-        reward = Mathf.Clamp((Mathf.Abs(Mathf.Abs(sumVelZ) / maxVel - 1)), 0f, 1f);
+        reward = Mathf.Clamp((Mathf.Abs(sumVel / maxVel - 1)), 0f, 1f);
         minimizeTorsoXZVelocityReward = RewardFunctions.toleranceInvNoBounds(reward, .4f, .1f, RewardFunction.LONGTAIL);
         return reward;
     }
@@ -134,9 +134,9 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     public Vector2 meanOfFeets()
     {
         Vector3 rfootPos = namedParts["rfoot_end"].transform.position;
-        Vector2 rfoot = new Vector2(rfootPos.z, rfootPos.y);
+        Vector2 rfoot = new Vector2(rfootPos.x, rfootPos.y);
         Vector3 lfootPos = namedParts["lfoot_end"].transform.position;
-        Vector2 lfoot = new Vector2(lfootPos.z, lfootPos.y);
+        Vector2 lfoot = new Vector2(lfootPos.x, lfootPos.y);
         return (rfoot + lfoot) / 2;
     }
 
@@ -145,7 +145,7 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
         float reward = 0;
         float threshold = 0.1f;
         float maxZDist = 1f;
-        float posZ = Mathf.Min(Mathf.Abs(namedParts["butt"].transform.position.z), maxZDist);
+        float posZ = Mathf.Min(Mathf.Abs(namedParts["butt"].transform.position.x), maxZDist);
         if (posZ < threshold)
             reward = 1;
         else
@@ -172,6 +172,7 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
 
     public float getReward()
     {
+        COM = physics.getCenterOfMass(bodyParts.getRigids());
         COMOverMeanOfFeetsZ();
         torsoOverCOMXZ();
         torsoFromBaseOverMeanOfFeetsY();
@@ -185,8 +186,8 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
                   torsoFromBaseOverMeanOfFeetsYReward +
                   minimizeTorsoXZVelocityReward +
                   //headGroundDistReward +
-                  //distanceZReward / 2 +
-                  minimizeActuationReward) / 5f;
+                  distanceZReward +
+                  minimizeActuationReward) / 6f;
         reward = Mathf.Clamp(reward, 0f, 1f);
         return reward;
     }

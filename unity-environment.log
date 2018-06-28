@@ -1,11 +1,2 @@
-27.06.2018 19:57:39
+28.06.2018 22:46:37
  
-Exception
-SocketException: No connection could be made because the target machine actively refused it.
-
-System.Net.Sockets.Socket.Connect (System.Net.IPAddress[] addresses, System.Int32 port) (at <a3bc56cd038446b2ba8027b187001bf8>:0)
-System.Net.Sockets.Socket.Connect (System.String host, System.Int32 port) (at <a3bc56cd038446b2ba8027b187001bf8>:0)
-ExternalCommunicator.InitializeCommunicator () (at Assets/ML-Agents/Scripts/ExternalCommunicator.cs:97)
-Academy.InitializeEnvironment () (at Assets/ML-Agents/Scripts/Academy.cs:238)
-Academy.Awake () (at Assets/ML-Agents/Scripts/Academy.cs:208)
-

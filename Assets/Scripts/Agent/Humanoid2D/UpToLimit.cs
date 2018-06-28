@@ -9,6 +9,7 @@ public class UpToLimit : MonoBehaviour
     public float limit = 1.6f;
     public float vel;
     private Rigidbody rb;
+    public bool pos = true;
 
     void Start()
     {
@@ -18,11 +19,22 @@ public class UpToLimit : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (rb.position.y < limit && rb.velocity.y < 0)
+        if (rb.position.y < limit && rb.velocity.y < 0 && !pos)
         {
 
             vel = upVel * Mathf.Abs((rb.position.y / limit) - 1);
             rb.AddForce(0f, vel, 0f);
+        }
+        else
+        {
+            Vector3 currPos = rb.transform.position;
+            if (currPos.y > limit)
+            {
+                float dist = 1.9f - currPos.y;
+                rb.AddForce(0f, dist * upVel, 0f);
+            }
+
+
         }
 
     }

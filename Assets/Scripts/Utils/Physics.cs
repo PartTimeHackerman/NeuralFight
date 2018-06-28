@@ -49,4 +49,68 @@ public class PhysicsUtils
 
         return sumMassMulAxis / sumMass;
     }
+
+    public Vector3 getCenterOfMassVel(List<Rigidbody> rigits)
+    {
+        var com = new Vector3();
+        com.x = getAxisCenterOfMassVel(rigits, 1);
+        com.y = getAxisCenterOfMassVel(rigits, 2);
+        com.z = getAxisCenterOfMassVel(rigits, 3);
+        return com;
+    }
+
+    private float getAxisCenterOfMassVel(List<Rigidbody> rigits, int axis)
+    {
+        float sumMass = 0;
+        float sumMassMulAxis = 0;
+
+        foreach (var rigidBody in rigits) sumMass += rigidBody.mass;
+
+        switch (axis)
+        {
+            case 1:
+                foreach (var rigidBody in rigits) sumMassMulAxis += rigidBody.mass * rigidBody.velocity.x;
+                break;
+            case 2:
+                foreach (var rigidBody in rigits) sumMassMulAxis += rigidBody.mass * rigidBody.velocity.y;
+                break;
+            case 3:
+                foreach (var rigidBody in rigits) sumMassMulAxis += rigidBody.mass * rigidBody.velocity.z;
+                break;
+        }
+
+        return sumMassMulAxis / sumMass;
+    }
+
+    public Vector3 getCenterOfMassRotVel(List<Rigidbody> rigits)
+    {
+        var com = new Vector3();
+        com.x = getAxisCenterOfMassRotVel(rigits, 1);
+        com.y = getAxisCenterOfMassRotVel(rigits, 2);
+        com.z = getAxisCenterOfMassRotVel(rigits, 3);
+        return com;
+    }
+
+    private float getAxisCenterOfMassRotVel(List<Rigidbody> rigits, int axis)
+    {
+        float sumMass = 0;
+        float sumMassMulAxis = 0;
+
+        foreach (var rigidBody in rigits) sumMass += rigidBody.mass;
+
+        switch (axis)
+        {
+            case 1:
+                foreach (var rigidBody in rigits) sumMassMulAxis += rigidBody.mass * rigidBody.angularVelocity.x;
+                break;
+            case 2:
+                foreach (var rigidBody in rigits) sumMassMulAxis += rigidBody.mass * rigidBody.angularVelocity.y;
+                break;
+            case 3:
+                foreach (var rigidBody in rigits) sumMassMulAxis += rigidBody.mass * rigidBody.angularVelocity.z;
+                break;
+        }
+
+        return sumMassMulAxis / sumMass;
+    }
 }

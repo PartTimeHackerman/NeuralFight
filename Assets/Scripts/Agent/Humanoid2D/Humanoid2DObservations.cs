@@ -14,14 +14,15 @@ public class Humanoid2DObservations : MonoBehaviour
     private PhysicsUtils physics;
     private readonly List<Vector3> positions = new List<Vector3>();
     public List<Rigidbody> observableRigids;
+    public List<Rigidbody> rigids;
     private readonly List<Quaternion> rotations = new List<Quaternion>();
     private readonly List<Vector3> velocity = new List<Vector3>();
     private readonly List<Vector3> angVel = new List<Vector3>();
     public int decisionFrequency = 0;
 
-    private readonly float maxPos = 100;
+    private readonly float maxPos = 10;
     private readonly float maxVel = 100;
-    private readonly float minPos = -100;
+    private readonly float minPos = -10;
     private readonly float minVel = -100;
 
     private void OnEnable()
@@ -30,6 +31,7 @@ public class Humanoid2DObservations : MonoBehaviour
         physics = PhysicsUtils.get();
         parts = bodyParts.getParts();
         observableRigids = bodyParts.ObservableRigids;
+        rigids = bodyParts.getRigids();
 
 
         //InvokeRepeating("Log", 0.0f, 1.0f);
@@ -130,9 +132,10 @@ public class Humanoid2DObservations : MonoBehaviour
 
         foreach (var angVel in getObjectsAngVels())
         {
-            addRootPos(angVel);
+            observations.Add(normVel(angVel.z));
         }
         
+        addCOM();
 
         return observations;
     }
@@ -148,30 +151,42 @@ public class Humanoid2DObservations : MonoBehaviour
     public void addVel(Vector3 vel)
     {
         observations.Add(normVel(vel.x));
-        //observations.Add(normVel(vel.y));
-        observations.Add(normVel(vel.z));
+        observations.Add(normVel(vel.y));
+        //observations.Add(normVel(vel.z));
     }
 
     public void addPos(Vector3 pos)
     {
         observations.Add(pos.x);
-        //observations.Add(pos.y);
-        observations.Add(pos.z);
+        observations.Add(pos.y);
+        //observations.Add(pos.z);
     }
 
     public void addRootPos(Vector3 pos)
     {
         observations.Add(normPos(pos.x));
-        //observations.Add(normPos(pos.y));
+        observations.Add(normPos(pos.y));
         //observations.Add(normPos(pos.z));
     }
 
     public void addEuler(Quaternion quaternion)
     {
         Vector3 rotEul = quaternion.eulerAngles;
-        observations.Add(normEuler(rotEul.x));
+        //observations.Add(normEuler(rotEul.x));
         //observations.Add(normEuler(rotEul.y));
-        //observations.Add(normEuler(rotEul.z));
+        observations.Add(normEuler(rotEul.z));
+    }
+
+    public void addCOM()
+    {
+        Vector3 COM = physics.getCenterOfMass(rigids) - bodyParts.root.transform.position;
+        Vector3 COMVel = physics.getCenterOfMassVel(rigids);
+        Vector3 COMRotVel = physics.getCenterOfMassRotVel(rigids);
+        observations.Add(COM.x);
+        observations.Add(COM.y);
+        observations.Add(COMVel.x);
+        observations.Add(COMVel.y);
+        observations.Add(COMRotVel.z);
     }
 
     public float normPos(float pos)
@@ -181,7 +196,7 @@ public class Humanoid2DObservations : MonoBehaviour
 
     public float normVel(float vel)
     {
-        return (Mathf.Clamp(vel, minVel, maxVel) - minVel) / (maxVel - minVel);
+        return vel;// (Mathf.Clamp(vel, minVel, maxVel) - minVel) / (maxVel - minVel);
     }
 
     public float normEuler(float rot)
