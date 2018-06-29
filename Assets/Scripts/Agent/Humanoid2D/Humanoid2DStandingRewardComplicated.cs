@@ -18,9 +18,9 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     public float reward;
     //public float clearReward;
 
-    public float lastClearReward = 0;
+    private float lastClearReward = 0;
     public float COMOverMeanOfFeetsXZReward;
-    public float headGroundDistReward;
+    private float headGroundDistReward;
     public float minimizeTorsoXZVelocityReward;
     public float torsoFromBaseOverMeanOfFeetsYReward;
     public float torsoOverCOMXZReward;
@@ -77,9 +77,10 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     {
         var feetsMean = meanOfFeets();
         float distPrec = 0;
-        if (COM.y > feetsMean.y)
-            distPrec = Mathf.Abs(Mathf.Abs(feetsMean.x - COM.x) / baseDistanceFeetsCOM - 1);
-        COMOverMeanOfFeetsXZReward = RewardFunctions.toleranceInvNoBounds(Mathf.Clamp(distPrec, 0f, 1f), .4f, .1f,RewardFunction.LONGTAIL);
+        distPrec = Mathf.Abs(Mathf.Abs(feetsMean.x - COM.x) / baseDistanceFeetsCOM - 1);
+        COMOverMeanOfFeetsXZReward = RewardFunctions.toleranceInvNoBounds(Mathf.Clamp(distPrec, 0f, 1f), .4f, .1f, RewardFunction.LONGTAIL);
+        if (COM.y < feetsMean.y)
+            COMOverMeanOfFeetsXZReward *= -1;
         return distPrec;
     }
 
@@ -87,9 +88,10 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     {
         Vector3 torso = namedParts["torso"].transform.position;
         float distPrec = 0;
-        if (torso.y > COM.y)
-            distPrec = Mathf.Abs(Mathf.Abs(COM.x - torso.x) / baseDistanceCOMTorso - 1);
+        distPrec = Mathf.Abs(Mathf.Abs(COM.x - torso.x) / baseDistanceCOMTorso - 1);
         torsoOverCOMXZReward = RewardFunctions.toleranceInvNoBounds(Mathf.Clamp(distPrec, 0f, 1f), .4f, .1f, RewardFunction.LONGTAIL);
+        if (torso.y < COM.y)
+            torsoOverCOMXZReward *= -1;
         return distPrec;
     }
 
@@ -101,9 +103,10 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
             distYPrec = Mathf.Abs(Mathf.Abs(meanOfFeets().x - namedParts["torso"].transform.position.z) /
                                   maxDistanceTorsoFeets - 1);
        */
+        distYPrec = Mathf.Abs(namedParts["torso"].transform.position.y - meanOfFeets().y) / maxDistanceTorsoFeets;
+        torsoFromBaseOverMeanOfFeetsYReward = RewardFunctions.toleranceInvNoBounds(Mathf.Clamp(distYPrec, 0f, 1f), .4f, .1f, RewardFunction.LONGTAIL);
         if (namedParts["torso"].transform.position.y > meanOfFeets().y)
-            distYPrec = Mathf.Abs(namedParts["torso"].transform.position.y - meanOfFeets().y) / maxDistanceTorsoFeets;
-        torsoFromBaseOverMeanOfFeetsYReward = RewardFunctions.toleranceInvNoBounds(Mathf.Clamp(distYPrec, 0f, 1f), .4f, .1f,RewardFunction.LONGTAIL);
+            torsoFromBaseOverMeanOfFeetsYReward *= -1;
         return distYPrec;
     }
 
@@ -112,7 +115,7 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
 
         var torsoRigid = bodyParts.getNamedRigids()["torso"];
         var sumVel = Math.Abs(torsoRigid.velocity.x) + Math.Abs(torsoRigid.velocity.y);
-        float maxVel = 1;
+        float maxVel = 5;
         reward = Mathf.Clamp((Mathf.Abs(sumVel / maxVel - 1)), 0f, 1f);
         minimizeTorsoXZVelocityReward = RewardFunctions.toleranceInvNoBounds(reward, .4f, .1f, RewardFunction.LONGTAIL);
         return reward;
@@ -144,7 +147,7 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
     {
         float reward = 0;
         float threshold = 0.1f;
-        float maxZDist = 1f;
+        float maxZDist = 5f;
         float posZ = Mathf.Min(Mathf.Abs(namedParts["butt"].transform.position.x), maxZDist);
         if (posZ < threshold)
             reward = 1;
@@ -177,10 +180,9 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
         torsoOverCOMXZ();
         torsoFromBaseOverMeanOfFeetsY();
         minimizeTorsoXZVelocity();
-        headGroundDist();
+        //headGroundDist();
         DistanceZ();
         minimizeActuation();
-        minimizeTorsoXZVelocityReward *= COMOverMeanOfFeetsXZReward;
         reward = (COMOverMeanOfFeetsXZReward +
                   torsoOverCOMXZReward +
                   torsoFromBaseOverMeanOfFeetsYReward +

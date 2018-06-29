@@ -23,8 +23,8 @@ internal class Humanoid2DAgent : Agent
     public int steps = 0;
     public int maxSteps = 0;
     public int decisionFrequency = 5;
-    public int decisionFrequencyMin = 5;
-    public int decisionFrequencyMax = 10;
+    public int decisionFrequencyMin = 10;
+    public int decisionFrequencyMax = 20;
 
     public override void InitializeAgent()
     {
@@ -77,11 +77,11 @@ internal class Humanoid2DAgent : Agent
         foreach (var var in actions)
             actionsClamped.Add(Mathf.Clamp(var, -1f, 1f));
 
-        /*
+        
         int decFrq = Mathf.RoundToInt(((actionsClamped[actions.Count - 1] + 1) / 2) * (decisionFrequencyMax - decisionFrequencyMin) + decisionFrequencyMin);
         agentParameters.numberOfActionsBetweenDecisions = decFrq;
         actionsClamped.RemoveAt(actions.Count-1);
-        */
+        
 
         this.actions.applyActions(actionsClamped);
         SetReward(standingReward.getReward());

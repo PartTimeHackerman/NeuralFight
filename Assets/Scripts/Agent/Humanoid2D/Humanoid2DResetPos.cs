@@ -117,7 +117,7 @@ public class Humanoid2DResetPos : MonoBehaviour
 
     public void resetRandomXRot(float min, float max)
     {
-        Quaternion quaternion = Quaternion.Euler(Random.Range(min, max), 0, 0);
+        Quaternion quaternion = Quaternion.Euler(0, 0, Random.Range(min, max));
         transform.rotation = quaternion;
     }
 
@@ -134,7 +134,7 @@ public class Humanoid2DResetPos : MonoBehaviour
             rn++;
             //float yVel = Random.Range(min, max);
             //yVel = yVel < 0 ? yVel * .3f : yVel * 1.5f;
-            Vector3 vel = new Vector3(0, Random.Range(min, max) * .6f, Random.Range(min, max));
+            Vector3 vel = new Vector3(Random.Range(min, max), Random.Range(min, max) * .6f, 0);
             rigidbody.AddForce(vel * rigidbody.mass);
         }
     }
