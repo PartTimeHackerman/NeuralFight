@@ -298,7 +298,7 @@ Prefab:
     - target: {fileID: 114062382130816268, guid: 77a676e19f5d4614d820824de6fff3d3,
         type: 2}
       propertyPath: inferenceConfiguration.timeScale
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114724879922472310, guid: 77a676e19f5d4614d820824de6fff3d3,
         type: 2}
@@ -347,6 +347,58 @@ MonoBehaviour:
   RecurrentOutPlaceholderName: recurrent_out
   VectorObservationPlacholderName: vector_observation
   VisualObservationPlaceholderName: []
+--- !u!1001 &1536166236
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4125113670835126, guid: ee372c3074de18e48b1effee87c1e9b1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.04160437
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125113670835126, guid: ee372c3074de18e48b1effee87c1e9b1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125113670835126, guid: ee372c3074de18e48b1effee87c1e9b1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125113670835126, guid: ee372c3074de18e48b1effee87c1e9b1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125113670835126, guid: ee372c3074de18e48b1effee87c1e9b1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125113670835126, guid: ee372c3074de18e48b1effee87c1e9b1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125113670835126, guid: ee372c3074de18e48b1effee87c1e9b1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125113670835126, guid: ee372c3074de18e48b1effee87c1e9b1, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114301311253855406, guid: ee372c3074de18e48b1effee87c1e9b1,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 588811177}
+    - target: {fileID: 1383315383152946, guid: ee372c3074de18e48b1effee87c1e9b1, type: 2}
+      propertyPath: m_Name
+      value: Humanoid2DRly (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114318091391332590, guid: ee372c3074de18e48b1effee87c1e9b1, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: ee372c3074de18e48b1effee87c1e9b1, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1564336268
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +508,8 @@ Prefab:
       propertyPath: brain
       value: 
       objectReference: {fileID: 588811177}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114318091391332590, guid: ee372c3074de18e48b1effee87c1e9b1, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ee372c3074de18e48b1effee87c1e9b1, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1774285873
