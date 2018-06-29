@@ -190,7 +190,7 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
                   //headGroundDistReward +
                   distanceZReward +
                   minimizeActuationReward) / 6f;
-        reward = Mathf.Clamp(reward, 0f, 1f);
+        reward = Mathf.Clamp(reward, -1f, 1f);
         return reward;
     }
 
