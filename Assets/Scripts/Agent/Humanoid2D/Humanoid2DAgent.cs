@@ -78,9 +78,9 @@ internal class Humanoid2DAgent : Agent
             actionsClamped.Add(Mathf.Clamp(var, -1f, 1f));
 
         
-        int decFrq = Mathf.RoundToInt(((actionsClamped[actions.Count - 1] + 1) / 2) * (decisionFrequencyMax - decisionFrequencyMin) + decisionFrequencyMin);
-        agentParameters.numberOfActionsBetweenDecisions = decFrq;
-        actionsClamped.RemoveAt(actions.Count-1);
+        //int decFrq = Mathf.RoundToInt(((actionsClamped[actions.Count - 1] + 1) / 2) * (decisionFrequencyMax - decisionFrequencyMin) + decisionFrequencyMin);
+        //agentParameters.numberOfActionsBetweenDecisions = decFrq;
+        //actionsClamped.RemoveAt(actions.Count-1);
         
 
         this.actions.applyActions(actionsClamped);
