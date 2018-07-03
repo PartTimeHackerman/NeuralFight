@@ -135,7 +135,7 @@ public class Humanoid2DObservations : MonoBehaviour
             observations.Add(normVel(angVel.z));
         }
         
-        addCOM();
+        //addCOM();
 
         return observations;
     }
