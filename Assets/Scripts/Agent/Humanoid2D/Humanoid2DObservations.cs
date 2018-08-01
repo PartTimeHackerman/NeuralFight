@@ -24,6 +24,7 @@ public class Humanoid2DObservations : MonoBehaviour
     private readonly float maxVel = 100;
     private readonly float minPos = -10;
     private readonly float minVel = -100;
+    private Rigidbody root;
 
     private void OnEnable()
     {
@@ -32,7 +33,7 @@ public class Humanoid2DObservations : MonoBehaviour
         parts = bodyParts.getParts();
         observableRigids = bodyParts.ObservableRigids;
         rigids = bodyParts.getRigids();
-
+        root = bodyParts.root;
 
         //InvokeRepeating("Log", 0.0f, 1.0f);
     }
@@ -68,7 +69,8 @@ public class Humanoid2DObservations : MonoBehaviour
         foreach (var gameObject in observableRigids)
         {
             if (!gameObject.Equals(bodyParts.root))
-                positions.Add(gameObject.transform.localPosition);
+                //positions.Add(gameObject.transform.localPosition);
+                positions.Add(root.transform.InverseTransformPoint(gameObject.transform.position));
         }
         return positions;
     }
@@ -79,7 +81,8 @@ public class Humanoid2DObservations : MonoBehaviour
         foreach (var gameObject in observableRigids)
         {
             if (!gameObject.name.Contains("_end"))
-                rotations.Add(gameObject.transform.localRotation);
+                //rotations.Add(gameObject.transform.localRotation);
+                rotations.Add(Quaternion.Inverse(root.rotation) * gameObject.transform.rotation);
         }
         return rotations;
     }
@@ -135,7 +138,7 @@ public class Humanoid2DObservations : MonoBehaviour
             observations.Add(normVel(angVel.z));
         }
         
-        //addCOM();
+        addCOM();
 
         return observations;
     }

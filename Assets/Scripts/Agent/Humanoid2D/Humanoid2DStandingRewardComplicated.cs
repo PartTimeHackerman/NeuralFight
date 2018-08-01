@@ -105,7 +105,7 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
        */
         distYPrec = Mathf.Abs(namedParts["torso"].transform.position.y - meanOfFeets().y) / maxDistanceTorsoFeets;
         torsoFromBaseOverMeanOfFeetsYReward = RewardFunctions.toleranceInvNoBounds(Mathf.Clamp(distYPrec, 0f, 1f), .4f, .1f, RewardFunction.LONGTAIL);
-        if (namedParts["torso"].transform.position.y > meanOfFeets().y)
+        if (namedParts["torso"].transform.position.y < meanOfFeets().y)
             torsoFromBaseOverMeanOfFeetsYReward *= -1;
         return distYPrec;
     }
@@ -189,8 +189,8 @@ public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward
                   minimizeTorsoXZVelocityReward +
                   //headGroundDistReward +
                   distanceZReward +
-                  minimizeActuationReward) / 6f;
-        reward = Mathf.Clamp(reward, -1f, 1f);
+                  minimizeActuationReward);
+        //reward = Mathf.Clamp(reward, -1f, 1f);
         return reward;
     }
 
