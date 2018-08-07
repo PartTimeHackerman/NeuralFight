@@ -17,6 +17,11 @@ public class CenterOfMassDebug : MonoBehaviour
     public Vector3 COMVel;
     public Vector3 COMRotVel;
 
+    public Rigidbody root;
+    public Vector3 COMRelative;
+    public Vector3 COMVelRelative;
+    public Vector3 COMRotVelRelative;
+
     private void Start()
     {
         parts = GetComponent<BodyParts>();
@@ -64,5 +69,12 @@ public class CenterOfMassDebug : MonoBehaviour
         COMLine1.y += .2f;
         COMLine2.y -= .2f;
         Debug.DrawLine(COMLine1, COMLine2, Color.red);
+
+        if (root != null)
+        {
+            COMRelative = physics.getCenterOfMass(rigids) - root.transform.position;
+            COMVelRelative = root.transform.InverseTransformPoint(COMVelReal);
+            COMRotVelRelative = Quaternion.Inverse(root.rotation) * COMRotVelReal;
+        }
     }
 }

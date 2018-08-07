@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Collections;
 
-public class StandingReward : MonoBehaviour
+public class StandingRewardOld : MonoBehaviour
 {
     public bool debug = false;
     private float baseDistanceFeetsTorso;

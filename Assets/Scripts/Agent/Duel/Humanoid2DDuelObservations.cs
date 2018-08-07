@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class Humanoid2DObservations : MonoBehaviour
+public class Humanoid2DDuelObservations : MonoBehaviour
 {
     public int observationsSpace;
     
@@ -27,6 +27,8 @@ public class Humanoid2DObservations : MonoBehaviour
     private readonly float minVel = -100;
     private Rigidbody root;
 
+    public bool playerOne = true;
+
     private void OnEnable()
     {
         bodyParts = GetComponent<BodyParts>();
@@ -44,26 +46,7 @@ public class Humanoid2DObservations : MonoBehaviour
         observationsSpace = getObservationsSpace();
         
     }
-
-    private void Update()
-    {
-    }
-
-    private Vector3 getPosition(GameObject gameObject)
-    {
-        return gameObject.transform.localPosition;
-    }
-
-    private Quaternion getRotation(GameObject gameObject)
-    {
-        return gameObject.transform.localRotation;
-    }
-
-    private Vector3 getVelocity(GameObject gameObject)
-    {
-        return gameObject.GetComponent<Rigidbody>().velocity;
-    }
-
+    
     public List<Vector3> getObjectsPositions()
     {
         positions.Clear();
@@ -81,7 +64,7 @@ public class Humanoid2DObservations : MonoBehaviour
         rotations.Clear();
         foreach (var gameObject in observableRigids)
         {
-            if (!gameObject.name.Contains("_end"))
+            if (!gameObject.name.Contains("_end") && !gameObject.Equals(root))
                 //rotations.Add(gameObject.transform.localRotation);
                 rotations.Add(Quaternion.Inverse(root.rotation) * gameObject.transform.rotation);
         }
@@ -118,6 +101,7 @@ public class Humanoid2DObservations : MonoBehaviour
         var root = bodyParts.root;
         var rootPos = root.transform.position;
         addRootPos(rootPos);
+        addEuler(root.transform.rotation);
 
         foreach (var position in getObjectsPositions())
         {
@@ -143,19 +127,10 @@ public class Humanoid2DObservations : MonoBehaviour
 
         return observations;
     }
-
-
-    public void addQuaternion(Quaternion quaternion)
-    {
-        observations.Add(quaternion.x);
-        observations.Add(quaternion.y);
-        observations.Add(quaternion.z);
-        observations.Add(quaternion.w);
-    }
-
+   
     public void addVel(Vector3 vel)
     {
-        observations.Add(normVel(vel.x));
+        observations.Add(normVel(playerOne ? vel.x : -vel.x));
         observations.Add(normVel(vel.y));
         //observations.Add(normVel(vel.z));
     }
@@ -169,7 +144,7 @@ public class Humanoid2DObservations : MonoBehaviour
 
     public void addRootPos(Vector3 pos)
     {
-        observations.Add(normPos(pos.x));
+        observations.Add(normPos(playerOne ? pos.x : -pos.x));
         observations.Add(normPos(pos.y));
         //observations.Add(normPos(pos.z));
     }
@@ -184,9 +159,9 @@ public class Humanoid2DObservations : MonoBehaviour
 
     public void addCOM()
     {
-        Vector3 COM = physics.getCenterOfMass(rigids) - bodyParts.root.transform.position;
-        Vector3 COMVel = physics.getCenterOfMassVel(rigids);
-        Vector3 COMRotVel = physics.getCenterOfMassRotVel(rigids);
+        Vector3 COM = physics.getCenterOfMass(rigids) - root.transform.position;
+        Vector3 COMVel = root.transform.InverseTransformPoint(physics.getCenterOfMassVel(rigids));
+        Vector3 COMRotVel = Quaternion.Inverse(root.rotation) * physics.getCenterOfMassRotVel(rigids);
         observations.Add(COM.x);
         observations.Add(COM.y);
         observations.Add(COMVel.x);
@@ -206,8 +181,12 @@ public class Humanoid2DObservations : MonoBehaviour
 
     public float normEuler(float rot)
     {
-        rot = rot % 360;
         return rot / 360f;
+    }
+
+    public void setPlayerOne(bool playerOne)
+    {
+        this.playerOne = playerOne;
     }
 
     public Vector3 getCenterOfMass()
@@ -222,6 +201,8 @@ public class Humanoid2DObservations : MonoBehaviour
         getObjectsVels();
         getObservationsSpace();
     }
+
+
 
 }
 
