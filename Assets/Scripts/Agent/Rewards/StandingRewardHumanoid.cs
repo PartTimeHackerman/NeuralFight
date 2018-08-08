@@ -84,7 +84,7 @@ public class StandingRewardHumanoid : IReward
     {
 
         var torsoRigid = bodyParts.getNamedRigids()["torso"];
-        var sumVel = Math.Abs(torsoRigid.velocity.x) + Math.Abs(torsoRigid.velocity.y);
+        var sumVel = torsoRigid.velocity.sqrMagnitude;
         float maxVel = 10;
         reward = Mathf.Clamp((Mathf.Abs(sumVel / maxVel - 1)), 0f, 1f);
         minimizeTorsoXZVelocityReward = RewardFunctions.toleranceInvNoBounds(reward, .4f, .1f, RewardFunction.LONGTAIL);

@@ -38,6 +38,7 @@ internal class Humanoid2DDuelAgent : Agent
         terminateDuel = GetComponent<TerminateDuel>();
         observations.decisionFrequency = agentParameters.numberOfActionsBetweenDecisions;
 
+        enemyObservations.setPlayerOne(playerOne);
         observations.setPlayerOne(playerOne);
     }
 

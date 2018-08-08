@@ -15,7 +15,7 @@ public class DuelReward : MonoBehaviour
     private StayInMiddleReward stayInMiddleReward;
     private EnemyInMiddleReward enemyInMiddleReward;
     private BodyParts bodyParts;
-    
+
     public float standingRewardVal;
     public float forwardRewardVal;
     public float actuationRewardVal;
@@ -41,12 +41,12 @@ public class DuelReward : MonoBehaviour
 
     public float getReward()
     {
-        standingRewardVal = standingReward.getReward();
-        forwardRewardVal = forwardReward.getReward();
-        actuationRewardVal = actuationReward.getReward();
+        standingRewardVal = standingReward.getReward() * 3f;
+        actuationRewardVal = actuationReward.getReward() * 2;
         stayInMiddleRewardVal = stayInMiddleReward.getReward();
         enemyInMiddleRewardVal = enemyInMiddleReward.getReward();
-        reward = (standingRewardVal + forwardRewardVal + actuationRewardVal + stayInMiddleRewardVal + enemyInMiddleRewardVal) / 5f;
+        forwardRewardVal = forwardReward.getReward() * (enemyInMiddleRewardVal + Mathf.Abs(stayInMiddleRewardVal - 1f));
+        reward = standingRewardVal + forwardRewardVal + actuationRewardVal + stayInMiddleRewardVal + enemyInMiddleRewardVal;
         return reward;
     }
 

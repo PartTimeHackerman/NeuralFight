@@ -11,6 +11,7 @@ public class CenterOfMassDebug : MonoBehaviour
 
     public Vector3 COMReal;
     public Vector3 COMVelReal;
+    public float COMVellMag;
     public Vector3 COMRotVelReal;
 
     public Vector3 COM;
@@ -42,6 +43,7 @@ public class CenterOfMassDebug : MonoBehaviour
         COM = physics.getCenterOfMass(rigids);
         COMVel = physics.getCenterOfMassVel(rigids);
         COMRotVel = physics.getCenterOfMassRotVel(rigids);
+        COMVellMag = COMVel.sqrMagnitude;
 
         COMReal = COM;
         COMVelReal = COMVel;

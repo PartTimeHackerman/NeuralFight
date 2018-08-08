@@ -9,7 +9,7 @@ class TerminateDuel : MonoBehaviour
 {
     public bool debug = false;
     public int arenaLen = 4;
-    public float fallHeight = 1.3f;
+    public float fallHeight = .3f;
     public bool pastArena = false;
     public bool fallen = false;
     public bool terminated = false;
@@ -39,7 +39,8 @@ class TerminateDuel : MonoBehaviour
 
     private bool isFallen()
     {
-        return COM.y < fallHeight;
+        Vector3 headPos = bodyParts.getNamedRigids()["head_end"].transform.position;
+        return COM.y < fallHeight || headPos.y < fallHeight;
     }
 
     public bool isTerminated()

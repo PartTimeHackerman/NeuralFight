@@ -25,19 +25,18 @@ class ForwardReward
 
     public float getReward()
     {
+        COM = physics.getCenterOfMass(bodyParts.getRigids());
         COMVel = physics.getCenterOfMassVel(bodyParts.getRigids());
-
-        //Vector3 rotateV = Vector3.RotateTowards(COM, enemnyCOM, 1, 1);
-        //float velRew = COMVel.x * rotateV.x + COMVel.y * rotateV.y;
-
-        float XDiff = Mathf.Abs(COMOld.x) + COM.x;
-        XDiff = Mathf.Clamp(XDiff, -1f, 1f);
-        COMOld = COM;
-        float XVel = Mathf.Clamp(COMVel.x, -10f, 10f) / 10;
-        reward = XVel;
-        if (COM.x > 0)
-            reward = -reward;
-        
+        COMVel.z = 0;
+        float COMVelMag = COMVel.sqrMagnitude;
+        COMVel += COM;
+        Vector3 eCOM = physics.getCenterOfMass(enemyBodyParts.getRigids());
+        Vector2 vec2 = new Vector2(eCOM.x, eCOM.y);
+        Vector2 vec1 = new Vector2(COMVel.x, COMVel.y);
+        Vector2 vec3 = new Vector2(COM.x, COM.y);
+        float velAng = Vector2.Angle(vec1 - vec3, vec2 - vec3);
+        velAng = Mathf.Abs((velAng / 180f) - 1f);
+        reward = velAng + velAng  * COMVelMag / 10;
         return reward;
 
     }
