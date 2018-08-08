@@ -46,6 +46,7 @@ public class Humanoid2DResetPos : MonoBehaviour
         defRotation = transform.rotation.eulerAngles;
         jointInfos = bodyParts.jointsInfos;
         backUpTransform();
+        ResetPosition();
     }
 
 

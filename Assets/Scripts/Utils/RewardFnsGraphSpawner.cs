@@ -9,29 +9,41 @@ using UnityEngine.Assertions.Comparers;
 class RewardFnsGraphSpawner : MonoBehaviour
 {
 
+    public bool reset = false;
+    public bool autoRun = false;
     public float low = 0f;
     public float up = 0f;
     public float mar = 0f;
     public float valAt1 = 1f;
     public int points = 10;
+    private bool updateMar = false;
+
+    private List<GameObject> objects = new List<GameObject>();
+    private float nextUpdate = .1f;
 
     void Start()
     {
-        float x = 0f;
+        resetPoints();
 
-        /*spawnGraph(x, RewardFunction.GAUSSIAN);
-        for (int i = 1; i <= 11; i++)
+        if (autoRun)
         {
-            double y = RewardFunctions.gaussian(i/10f, .1f);
-            Debug.Log(y);
-            spawnPoint(x + i-1, (float)y*10);
+            mar = 0;
+            valAt1 = -1;
         }
-        x += 11;*/
-        foreach (RewardFunction rewardFunction in Enum.GetValues(typeof(RewardFunction)))
+    }
+
+    void Update()
+    {
+        if (reset)
         {
-            spawnGraph(x, rewardFunction);
-            spawnPoints(x, rewardFunction);
-            x += 11;
+            resetPoints();
+            reset = false;
+        }
+
+        if (Time.time >= nextUpdate && autoRun)
+        {
+            nextUpdate = Time.time + .1f;
+            auto();
         }
     }
 
@@ -39,6 +51,7 @@ class RewardFnsGraphSpawner : MonoBehaviour
     {
         string name = Enum.GetName(typeof(RewardFunction), rewardFunction);
         GameObject graph = GameObject.Instantiate((GameObject)Resources.Load("graph"));
+        objects.Add(graph);
         graph.transform.position = new Vector3(x, 0, 0);
         graph.GetComponentInChildren<TextMesh>().text = name;
     }
@@ -48,7 +61,7 @@ class RewardFnsGraphSpawner : MonoBehaviour
         for (int i = 0; i <= points; i++)
         {
             double y = RewardFunctions.tolerance(i / (float)points, low, up, mar, valAt1, rewardFunction);
-            spawnPoint(x + (i/((float)points/10)), (float)y*10, Color.red);
+            spawnPoint(x + (i / ((float)points / 10)), (float)y * 10, Color.red);
             y = RewardFunctions.toleranceInv(i / (float)points, low, up, mar, valAt1, rewardFunction);
             spawnPoint(x + (i / ((float)points / 10)), (float)y * 10, Color.blue);
         }
@@ -57,9 +70,43 @@ class RewardFnsGraphSpawner : MonoBehaviour
     void spawnPoint(float x, float y, Color color)
     {
         GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        objects.Add(sphere);
         Destroy(sphere.GetComponent<SphereCollider>());
         sphere.transform.localScale = new Vector3(.1f, .1f, .1f);
         sphere.GetComponent<MeshRenderer>().material.color = color;
         sphere.transform.position = new Vector3(x, y, -0.5f);
+    }
+
+    void resetPoints()
+    {
+        foreach (GameObject g in objects)
+        {
+            Destroy(g);
+        }
+        objects.Clear();
+        float x = 0f;
+        foreach (RewardFunction rewardFunction in Enum.GetValues(typeof(RewardFunction)))
+        {
+            spawnGraph(x, rewardFunction);
+            spawnPoints(x, rewardFunction);
+            x += 11;
+        }
+    }
+
+    void auto()
+    {
+        valAt1 = valAt1 + .1f;
+        if (valAt1 >= 1)
+        {
+            updateMar = true;
+        }
+        if (updateMar)
+        {
+            mar = mar + .1f;
+            valAt1 = - 1;
+            updateMar = false;
+        }
+
+        resetPoints();
     }
 }

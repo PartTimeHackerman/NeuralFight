@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class StandingRewardHumanoid : IReward
 {
-    private float maxDistanceTorsoFeets;
+    private float maxDistanceRootFeets;
     private float baseDistanceCOMTorso;
     private float baseDistanceFeetsCOM;
     private BodyParts bodyParts;
@@ -20,16 +20,17 @@ public class StandingRewardHumanoid : IReward
     private float lastClearReward = 0;
     public float COMOverMeanOfFeetsXZReward;
     public float minimizeTorsoXZVelocityReward;
-    public float torsoFromBaseOverMeanOfFeetsYReward;
+    public float rootFromBaseOverMeanOfFeetsYReward;
     public float torsoOverCOMXZReward;
     public float minimizeActuationReward;
-    
 
+    private Rigidbody root;
     private Vector3 COM;
 
     public StandingRewardHumanoid(BodyParts bodyParts)
     {
         this.bodyParts = bodyParts;
+        root = bodyParts.root;
         physics = PhysicsUtils.get();
     }
 
@@ -39,7 +40,7 @@ public class StandingRewardHumanoid : IReward
         
         baseDistanceCOMTorso = namedParts["torso"].transform.position.y - physics.getCenterOfMass(bodyParts.getRigids()).y;
         baseDistanceFeetsCOM = physics.getCenterOfMass(bodyParts.getRigids()).y - meanOfFeets().y;
-        maxDistanceTorsoFeets = calcDistance(namedParts["torso"], namedParts["rfoot_end"]);
+        maxDistanceRootFeets = calcDistance(root.gameObject, namedParts["rfoot_end"]);
     }
 
 
@@ -65,18 +66,19 @@ public class StandingRewardHumanoid : IReward
         return distPrec;
     }
 
-    public float torsoFromBaseOverMeanOfFeetsY()
+    public float rootFromBaseOverMeanOfFeetsY()
     {
         float distYPrec = 0;
         /*
         if (namedParts["torso"].transform.position.y > meanOfFeets().y)
             distYPrec = Mathf.Abs(Mathf.Abs(meanOfFeets().x - namedParts["torso"].transform.position.z) /
-                                  maxDistanceTorsoFeets - 1);
+                                  maxDistanceRootFeets - 1);
        */
-        distYPrec = Mathf.Abs(namedParts["torso"].transform.position.y - meanOfFeets().y) / maxDistanceTorsoFeets;
-        torsoFromBaseOverMeanOfFeetsYReward = RewardFunctions.toleranceInvNoBounds(Mathf.Clamp(distYPrec, 0f, 1f), .4f, .1f, RewardFunction.LONGTAIL);
-        if (namedParts["torso"].transform.position.y < meanOfFeets().y)
-            torsoFromBaseOverMeanOfFeetsYReward *= -1;
+        distYPrec = Mathf.Abs(root.transform.position.y - meanOfFeets().y) / maxDistanceRootFeets;
+        //rootFromBaseOverMeanOfFeetsYReward = RewardFunctions.toleranceInvNoBounds(Mathf.Clamp(distYPrec, 0f, 1f), .4f, .1f, RewardFunction.LONGTAIL);
+        rootFromBaseOverMeanOfFeetsYReward = distYPrec;
+        if (root.transform.position.y < meanOfFeets().y)
+            rootFromBaseOverMeanOfFeetsYReward *= -1;
         return distYPrec;
     }
 
@@ -120,14 +122,14 @@ public class StandingRewardHumanoid : IReward
         COM = physics.getCenterOfMass(bodyParts.getRigids());
         COMOverMeanOfFeetsZ();
         torsoOverCOMXZ();
-        torsoFromBaseOverMeanOfFeetsY();
+        rootFromBaseOverMeanOfFeetsY();
         minimizeTorsoXZVelocity();
         minimizeActuation();
         reward = (COMOverMeanOfFeetsXZReward +
                   torsoOverCOMXZReward +
-                  torsoFromBaseOverMeanOfFeetsYReward +
+                  rootFromBaseOverMeanOfFeetsYReward * 3 +
                   minimizeTorsoXZVelocityReward +
-                  minimizeActuationReward) / 5f ;
+                  minimizeActuationReward) / 7f ;
         reward = Mathf.Clamp(reward, -1f, 1f);
         return reward;
     }

@@ -23,6 +23,8 @@ public class DuelReward : MonoBehaviour
     public float enemyInMiddleRewardVal;
     public float reward;
 
+    public DictionaryStringFloat others = new DictionaryStringFloat();
+
 
     private void Start()
     {
@@ -47,6 +49,13 @@ public class DuelReward : MonoBehaviour
         enemyInMiddleRewardVal = enemyInMiddleReward.getReward();
         forwardRewardVal = forwardReward.getReward() * (enemyInMiddleRewardVal + Mathf.Abs(stayInMiddleRewardVal - 1f));
         reward = standingRewardVal + forwardRewardVal + actuationRewardVal + stayInMiddleRewardVal + enemyInMiddleRewardVal;
+
+        others["rootFromBaseOverMeanOfFeetsYReward"] = standingReward.rootFromBaseOverMeanOfFeetsYReward;
+        others["COMOverMeanOfFeetsXZReward"] = standingReward.COMOverMeanOfFeetsXZReward;
+        others["minimizeTorsoXZVelocityReward"] = standingReward.minimizeTorsoXZVelocityReward;
+        others["torsoOverCOMXZReward"] = standingReward.torsoOverCOMXZReward;
+        others["minimizeActuationReward"] = standingReward.minimizeActuationReward;
+        others["Reward"] = standingReward.reward;
         return reward;
     }
 

@@ -19,13 +19,17 @@ internal class Humanoid2DDuelAgent : Agent
     public TerminateDuel terminateDuel;
     private long startTime;
 
-    public int resetWaitSteps = 5;
+    public int resetWaitSteps = 10;
     private int resetStepsElapsed = 0;
-    private bool velReset = false;
     public int steps = 0;
 
     public bool playerOne = true;
     public Humanoid2DDuelAgent enemyAgent;
+
+    public float sumRewards = 0f;
+    private bool terminateAgent = false;
+    public bool ready = true;
+    public bool terminateSelf = false;
 
     public override void InitializeAgent()
     {
@@ -54,18 +58,9 @@ internal class Humanoid2DDuelAgent : Agent
 
     protected override void MakeRequests(int academyStepCounter)
     {
-        if (resetStepsElapsed > resetWaitSteps && !velReset)
-        {
-            resetPos.resetVel();
-            resetPos.resetJointForces();
-            resetPos.resetJointPositions();
-            velReset = true;
-        }
-
-        resetStepsElapsed++;
         agentParameters.numberOfActionsBetweenDecisions =
             Mathf.Max(agentParameters.numberOfActionsBetweenDecisions, 1);
-        if (!agentParameters.onDemandDecision && resetStepsElapsed > resetWaitSteps)
+        if (!agentParameters.onDemandDecision && ready)
         {
             RequestAction();
             if (academyStepCounter %
@@ -76,8 +71,11 @@ internal class Humanoid2DDuelAgent : Agent
 
     public override void AgentAction(float[] vectorAction, string textAction)
     {
-        if (resetStepsElapsed < resetWaitSteps)
+        /*if (!ready)
+        {
             return;
+        }*/
+
         steps++;
 
         List<float> actions = vectorAction.ToList();
@@ -87,40 +85,45 @@ internal class Humanoid2DDuelAgent : Agent
 
         
         this.actions.applyActions(actionsClamped);
-        SetReward(duelReward.getReward());
+        float reward = duelReward.getReward();
+        sumRewards += reward;
+        SetReward(reward);
 
-        bool terminateSelf = terminateDuel.isTerminated();
-        bool terminateEnemy = enemyAgent.terminateDuel.isTerminated();
-        bool terminate = terminateSelf || terminateEnemy;
+        terminateSelf = false;
+        terminateSelf = terminateDuel.isTerminated();
+        bool terminateEnemy = enemyAgent.terminateSelf;
+        terminateAgent = terminateSelf || terminateEnemy;
 
-        float reward = 0f;
+        float terminateReward = 0f;
 
         if (terminateSelf)
-            reward = -1f;
+            terminateReward = -sumRewards;
 
         if (terminateEnemy)
-            reward = 1f;
+            terminateReward = sumRewards;
 
         if (terminateSelf && terminateEnemy)
-            reward = 0;
+            terminateReward = 0;
 
-        if (terminate)
+        terminateReward /= 10f;
+
+        if (terminateAgent)
         {
-            Done();
-            SetReward(reward);
+            SetReward(terminateReward);
+            sumRewards = 0f;
             steps = 0;
+            terminateAgent = false;
+            resetStepsElapsed = 0;
+            ready = false;
+            resetPos.ResetPosition();
+            ready = true;
+            Done();
         }
     }
 
     public override void AgentReset()
     {
-
-        //decisionFrequency = (decisionFrequency + 1 > 10) ? 5 : decisionFrequency + 1;
-        //agentParameters.numberOfActionsBetweenDecisions = Random.Range(5,10);
-        //observations.decisionFrequency = decisionFrequency;
-        resetPos.ResetPosition();
-        resetStepsElapsed = 0;
-        velReset = false;
+        
     }
    
 }

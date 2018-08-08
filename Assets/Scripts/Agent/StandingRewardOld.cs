@@ -173,14 +173,14 @@ public class StandingRewardOld : MonoBehaviour
     {
         //COMOverMeanOfFeetsZ();
         //torsoOverCOMXZ();
-        //torsoFromBaseOverMeanOfFeetsY();
+        //rootFromBaseOverMeanOfFeetsY();
         minimizeTorsoXZVelocity();
         //headStraight();
         headGroundDist();
         clearReward = (
                   //COMOverMeanOfFeetsXZReward +
                   //torsoOverCOMXZReward +
-                  //torsoFromBaseOverMeanOfFeetsYReward +
+                  //rootFromBaseOverMeanOfFeetsYReward +
                   minimizeTorsoXZVelocityReward +
                   //headStraightReward +
                   headGroundDistReward * 3
