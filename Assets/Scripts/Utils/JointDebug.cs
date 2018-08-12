@@ -23,7 +23,7 @@ public class JointDebug : MonoBehaviour
         GetComponent<Rigidbody>().sleepThreshold = 0;
     }
     
-	void Update () {
+	void LateUpdate () {
 	    jointRotation = setThreshold(transform.localRotation.eulerAngles);
 	    jointRotationGlobal = setThreshold(transform.rotation.eulerAngles);
 	    jointAngularVel = setThreshold(GetComponent<Rigidbody>().angularVelocity);
