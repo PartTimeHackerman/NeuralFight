@@ -29,7 +29,7 @@ class LinuxBuilder : MonoBehaviour
     static void buildLinuxHumanoid2D()
     {
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
-        buildPlayerOptions.scenes = new[] { "Assets/animation.unity" };
+        buildPlayerOptions.scenes = new[] { "Assets/animationn.unity" };
         buildPlayerOptions.locationPathName = "build/sumo.x86_64";
         buildPlayerOptions.target = BuildTarget.StandaloneLinux;
         buildPlayerOptions.options = BuildOptions.EnableHeadlessMode;
