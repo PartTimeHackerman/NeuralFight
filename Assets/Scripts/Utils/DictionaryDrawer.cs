@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if (UNITY_EDITOR) 
+using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -176,3 +177,4 @@ public abstract class DictionaryDrawer<TK, TV> : PropertyDrawer
 
 [CustomPropertyDrawer(typeof(DictionaryStringFloat))]
 public class DictionaryStringFloatDrawer : DictionaryDrawer<string, float> { }
+#endif
