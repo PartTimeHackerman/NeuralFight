@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Assets.Scripts.Agent;
 using UnityEngine;
 
-public class StandingRewardHumanoid : IReward
+public class StandingRewardHumanoid : MonoBehaviour, IReward
 {
     private float maxDistanceRootFeets;
     private float baseDistanceCOMTorso;
@@ -15,7 +15,11 @@ public class StandingRewardHumanoid : IReward
     private Dictionary<string, GameObject> namedParts;
     private PhysicsUtils physics;
 
+    public bool calcAvgReward = false;
     public float reward;
+    public float avgReward = 0f;
+    public float avgRewardSum = 0f;
+    public float avgCounter = 0f;
 
     private float lastClearReward = 0;
     public float COMOverMeanOfFeetsXZReward;
@@ -23,6 +27,7 @@ public class StandingRewardHumanoid : IReward
     public float rootFromBaseOverMeanOfFeetsYReward;
     public float torsoOverCOMXZReward;
     public float minimizeActuationReward;
+
 
     private Rigidbody root;
     private Vector3 COM;
@@ -34,10 +39,30 @@ public class StandingRewardHumanoid : IReward
         physics = PhysicsUtils.get();
     }
 
+    void Start()
+    {
+        this.bodyParts = GetComponent<BodyParts>();
+        root = bodyParts.root;
+        physics = PhysicsUtils.get();
+        Init();
+    }
+
+    void LateFixedUpdate()
+    {
+        if (calcAvgReward)
+        {
+            getReward();
+
+            avgRewardSum += reward;
+            avgCounter++;
+            avgReward = avgRewardSum / avgCounter;
+        }
+    }
+
     public void Init()
     {
         namedParts = bodyParts.getNamedParts();
-        
+
         baseDistanceCOMTorso = namedParts["torso"].transform.position.y - physics.getCenterOfMass(bodyParts.getRigids()).y;
         baseDistanceFeetsCOM = physics.getCenterOfMass(bodyParts.getRigids()).y - meanOfFeets().y;
         maxDistanceRootFeets = calcDistance(root.gameObject, namedParts["rfoot_end"]);
@@ -127,11 +152,19 @@ public class StandingRewardHumanoid : IReward
         minimizeActuation();
         reward = (COMOverMeanOfFeetsXZReward +
                   torsoOverCOMXZReward +
-                  rootFromBaseOverMeanOfFeetsYReward * 3 +
+                  rootFromBaseOverMeanOfFeetsYReward * 2 +
                   minimizeTorsoXZVelocityReward +
-                  minimizeActuationReward) / 7f ;
+                  minimizeActuationReward * 2) / 7f;
         reward = Mathf.Clamp(reward, -1f, 1f);
         return reward;
+    }
+
+    public float getAvgReward()
+    {
+        float avgRew = avgRewardSum / (avgCounter == 0f ? 1 : avgCounter);
+        avgCounter = 0f;
+        avgRewardSum = 0f;
+        return avgRew;
     }
 
     public bool terminated(int step)

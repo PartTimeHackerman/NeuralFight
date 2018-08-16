@@ -19,9 +19,7 @@ class TerminateDuel : MonoBehaviour
 
     private Vector3 COM;
     
-
-
-
+    
     private void Start()
     {
         bodyParts = GetComponent<BodyParts>();
