@@ -65,8 +65,7 @@ internal class StandingAgent : Agent
 
         
         this.actions.applyActions(actionsClamped);
-        if (steps % agentParameters.numberOfActionsBetweenDecisions == 0)
-            rewardAnim = rewards.getAvgReward();
+        rewardAnim = rewards.getReward();
 
         if (float.IsNaN(rewardAnim))
         {
@@ -81,7 +80,7 @@ internal class StandingAgent : Agent
         if (steps > maxSteps || terminateAgent)
         {
             sumRewards = sumRewards > 0 ? sumRewards : 0;
-            SetReward(sumRewards- 1000f);
+            SetReward(sumRewards);
             sumRewards = 0f;
             steps = 0;
             ready = false;
