@@ -67,21 +67,16 @@ internal class StandingAgent : Agent
         this.actions.applyActions(actionsClamped);
         rewardAnim = rewards.getReward();
 
-        if (float.IsNaN(rewardAnim))
-        {
-            Debug.Log(rewardAnim + " rewardAnim is nan");
-        }
-
         bool terminateAgent = terminateFn.isTerminated();
 
-        sumRewards += rewardAnim;
+        //sumRewards += rewardAnim;
         SetReward(rewardAnim);
 
         if (steps > maxSteps || terminateAgent)
         {
-            sumRewards = sumRewards > 0 ? sumRewards : 0;
-            SetReward(sumRewards);
-            sumRewards = 0f;
+            //sumRewards = sumRewards > 0 ? sumRewards : 0;
+            SetReward(rewardAnim);
+            //sumRewards = 0f;
             steps = 0;
             ready = false;
             resetPos.ResetPosition();
