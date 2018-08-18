@@ -7,7 +7,7 @@ using UnityEngine;
 
 class AnimationReward : MonoBehaviour
 {
-
+    public bool calcAvgReward = false;
     public bool debug = false;
     public BodyParts referenceBodyParts;
     public bool isAnimationRef = true;
@@ -45,11 +45,15 @@ class AnimationReward : MonoBehaviour
             rootRot.z = -refRootRot.x;
             root.transform.rotation = Quaternion.Euler(rootRot);
         }
-        getReward();
 
-        avgRewardSum += reward;
-        avgCounter++;
-        avgReward = avgRewardSum / avgCounter;
+        if (calcAvgReward)
+        {
+            getReward();
+
+            avgRewardSum += reward;
+            avgCounter++;
+            avgReward = avgRewardSum / avgCounter;
+        }
     }
 
     void LateUpdate()

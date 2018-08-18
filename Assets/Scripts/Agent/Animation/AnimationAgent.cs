@@ -63,9 +63,9 @@ internal class AnimationAgent : Agent
 
         
         this.actions.applyActions(actionsClamped);
-        if (steps % agentParameters.numberOfActionsBetweenDecisions == 0)
-            rewardAnim = animationReward.getAvgReward();
-
+        //if (steps % agentParameters.numberOfActionsBetweenDecisions == 0)
+        //    rewardAnim = animationReward.getAvgReward();
+        rewardAnim = animationReward.getReward();
         if (float.IsNaN(rewardAnim))
         {
             Debug.Log(rewardAnim + " rewardAnim is nan");
