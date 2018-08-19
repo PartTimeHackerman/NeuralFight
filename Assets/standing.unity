@@ -2996,7 +2996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &192557862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3247,7 +3247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &196705586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3436,7 +3436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &204150645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5470,7 +5470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &253804912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10389,7 +10389,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &546777132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12410,7 +12410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &692390403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14275,7 +14275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &880764099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15729,7 +15729,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1012222233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17536,7 +17536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1123693317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18649,7 +18649,7 @@ MonoBehaviour:
     width: 1280
     height: 720
     qualityLevel: 1
-    timeScale: 50
+    timeScale: 1
     targetFrameRate: -1
 --- !u!114 &1171896726 stripped
 MonoBehaviour:
@@ -20623,7 +20623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1310695700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23695,6 +23695,16 @@ Prefab:
       propertyPath: brain
       value: 
       objectReference: {fileID: 1171896726}
+    - target: {fileID: 114792511440461386, guid: 18ebab616370c714dabb5f5840edad68,
+        type: 2}
+      propertyPath: arenaLen
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114792511440461386, guid: 18ebab616370c714dabb5f5840edad68,
+        type: 2}
+      propertyPath: fallHeight
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18ebab616370c714dabb5f5840edad68, type: 2}
   m_IsPrefabParent: 0
@@ -28131,7 +28141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1928787732
 MonoBehaviour:
   m_ObjectHideFlags: 0
