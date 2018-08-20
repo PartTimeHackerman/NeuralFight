@@ -225,11 +225,12 @@ public class JointInfo : MonoBehaviour
 
     public void setConfigurableRotVel(Vector3 angVel)
     {
+        /*
         if (angVel.x < 0 && angVel.x > -threshold * maxVel)
             angVel.x = 0;
         if (angVel.x > 0 && angVel.x < threshold * maxVel)
             angVel.x = 0;
-        /*
+        
         float applyVel = Mathf.Abs(angVel.x);
         float velTiredness = applyVel - medVel;
         angVel.x = Mathf.Clamp(angVel.x, -currentMaxVel, currentMaxVel);

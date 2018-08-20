@@ -172,8 +172,8 @@ public class WalkFWObservations : MonoBehaviour
     public void addCOM()
     {
         Vector3 COM = physics.getCenterOfMass(rigids) - bodyParts.root.transform.position;
-        Vector3 COMVel = physics.getCenterOfMassVel(rigids);
-        Vector3 COMRotVel = physics.getCenterOfMassRotVel(rigids);
+        Vector3 COMVel = root.transform.InverseTransformPoint(physics.getCenterOfMassVel(rigids));
+        Vector3 COMRotVel = Quaternion.Inverse(root.rotation) * physics.getCenterOfMassRotVel(rigids);
         observations.Add(COM.x);
         observations.Add(COM.y);
         observations.Add(COMVel.x);
