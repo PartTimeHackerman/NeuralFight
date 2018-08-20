@@ -303,8 +303,8 @@ GameObject:
   - component: {fileID: 4974837385881252}
   - component: {fileID: 114429045556879546}
   - component: {fileID: 114823939824007996}
-  - component: {fileID: 114391552918032870}
   - component: {fileID: 114528219478653952}
+  - component: {fileID: 114590255465928096}
   - component: {fileID: 114082316439850292}
   - component: {fileID: 114636379964831720}
   - component: {fileID: 114605513770608942}
@@ -1179,21 +1179,6 @@ MonoBehaviour:
   force: 1000
   maxHingeVel: 800
   threshold: 0.1
---- !u!114 &114391552918032870
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1684127435510588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c33381dd337fa354f927151bca22ba81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  observationsSpace: 0
-  observableRigids: []
-  rigids: []
-  decisionFrequency: 0
 --- !u!114 &114392863763484406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1315,6 +1300,21 @@ MonoBehaviour:
   force: 1000
   maxHingeVel: 800
   threshold: 0.1
+--- !u!114 &114590255465928096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1684127435510588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19d15e1ef6e56142be286ab15c8dae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observationsSpace: 0
+  observableRigids: []
+  rigids: []
+  decisionFrequency: 0
 --- !u!114 &114605513770608942
 MonoBehaviour:
   m_ObjectHideFlags: 1

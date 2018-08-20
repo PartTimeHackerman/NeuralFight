@@ -8,7 +8,7 @@ internal class WalkingFWAgent : Agent
     private ApplicationSettings applicationSettings;
     private IActions actions;
     
-    private StandingObservations observations;
+    private WalkFWObservations observations;
     private Humanoid2DResetPos resetPos;
     private WalkFWReward rewards;
     private TerminateDuel terminateFn;
@@ -22,7 +22,7 @@ internal class WalkingFWAgent : Agent
 
     public override void InitializeAgent()
     {
-        observations = GetComponent<StandingObservations>();
+        observations = GetComponent<WalkFWObservations>();
         rewards = GetComponent<WalkFWReward>();
         actions = GetComponent<Humanoid2DActionsAngPos>();
         resetPos = GetComponent<Humanoid2DResetPos>();
