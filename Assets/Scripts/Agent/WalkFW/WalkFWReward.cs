@@ -26,6 +26,8 @@ class WalkFWReward : MonoBehaviour
         velocityFWReward = new VelocityReward(Vector2.right, 10f, bodyParts.root);
         velocityUPReward = new VelocityReward(Vector2.up, 5f, bodyParts.root);
 
+        standingReward.multipler = new[] {1f, 1f, 3f, 0f, 0f};
+
         standingReward.Init();
 
         if (debug)
@@ -36,7 +38,7 @@ class WalkFWReward : MonoBehaviour
     {
         standingRewardVal = standingReward.getReward();
         velocityRewardVal = velocityFWReward.getReward() - Mathf.Abs(velocityUPReward.getReward());
-        reward = (standingRewardVal + velocityRewardVal * 2) / 3;
+        reward = (standingRewardVal + velocityRewardVal) / 2;
         
         return reward;
     }

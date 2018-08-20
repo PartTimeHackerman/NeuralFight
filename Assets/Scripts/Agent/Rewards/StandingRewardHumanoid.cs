@@ -28,6 +28,7 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
     public float torsoOverCOMXZReward;
     public float minimizeActuationReward;
 
+    public float[] multipler;
 
     private Rigidbody root;
     private Vector3 COM;
@@ -66,6 +67,8 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
         baseDistanceCOMTorso = namedParts["torso"].transform.position.y - physics.getCenterOfMass(bodyParts.getRigids()).y;
         baseDistanceFeetsCOM = physics.getCenterOfMass(bodyParts.getRigids()).y - meanOfFeets().y;
         maxDistanceRootFeets = calcDistance(root.gameObject, namedParts["rfoot_end"]);
+
+        multipler = new float[]{1f, 1f, 1f, 1f, 1f};
     }
 
 
@@ -153,11 +156,11 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
         rootFromBaseOverMeanOfFeetsY();
         minimizeTorsoXZVelocity();
         minimizeActuation();
-        reward = (COMOverMeanOfFeetsXZReward +
-                  torsoOverCOMXZReward +
-                  rootFromBaseOverMeanOfFeetsYReward +
-                  minimizeTorsoXZVelocityReward * 2 +
-                  minimizeActuationReward * 2) / 7f;
+        reward = (COMOverMeanOfFeetsXZReward * multipler[0] +
+                  torsoOverCOMXZReward * multipler[1] +
+                  rootFromBaseOverMeanOfFeetsYReward * multipler[2] +
+                  minimizeTorsoXZVelocityReward * multipler[3] +
+                  minimizeActuationReward * multipler[4]) / multipler.Sum();
         reward = Mathf.Clamp(reward, -1f, 1f);
         return reward;
     }
