@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 33846471537741638}
   - component: {fileID: 136299272174616070}
   - component: {fileID: 54560717575519290}
-  - component: {fileID: 114972152019436370}
   m_Layer: 10
   m_Name: butt
   m_TagString: Untagged
@@ -1230,14 +1229,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d682b784b83d6c4fa15f8a57b6430e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brain: {fileID: 0}
   agentParameters:
     agentCameras: []
     maxStep: 0
-    numberOfActionsBetweenDecisions: 10
-    onDemandDecision: 0
     resetOnDone: 1
-  brain: {fileID: 0}
-  stepCount: 0
+    onDemandDecision: 0
+    numberOfActionsBetweenDecisions: 10
   steps: 0
   maxSteps: 1000
   ready: 1
@@ -1461,7 +1459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   arenaLen: 10000
-  fallHeight: 0.5
+  fallHeight: 0.3
   pastArena: 0
   fallen: 0
   terminated: 0
@@ -1505,21 +1503,6 @@ MonoBehaviour:
   force: 1000
   maxHingeVel: 800
   threshold: 0.1
---- !u!114 &114972152019436370
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1208074087686408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc1bf8de904a584a835f6c685a0e890, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  up: 0
-  dir: 0
-  force: 10000
-  rigidbody: {fileID: 0}
 --- !u!135 &135218913717244506
 SphereCollider:
   m_ObjectHideFlags: 1

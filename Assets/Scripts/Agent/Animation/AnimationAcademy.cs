@@ -1,4 +1,6 @@
-﻿public class AnimationAcademy : Academy
+﻿using MLAgents;
+
+public class AnimationAcademy : Academy
 {
     public override void AcademyReset()
     {

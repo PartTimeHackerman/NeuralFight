@@ -2,14 +2,14 @@
 using System.Linq;
 using UnityEngine;
 
-public class WalkFWObservations : MonoBehaviour
+public class WalkFWObservations : MonoBehaviour, IObservations
 {
     public int observationsSpace;
-    
+
 
     protected BodyParts bodyParts;
     protected List<float> observations = new List<float>();
-
+    protected Dictionary<string, float> observationsNamed = new Dictionary<string, float>();
     private List<GameObject> parts = new List<GameObject>();
     private PhysicsUtils physics;
     private readonly List<Vector3> positions = new List<Vector3>();
@@ -41,7 +41,7 @@ public class WalkFWObservations : MonoBehaviour
     protected virtual void Start()
     {
         observationsSpace = getObservationsSpace();
-        
+
     }
 
     public List<Vector3> getObjectsPositions()
@@ -50,8 +50,12 @@ public class WalkFWObservations : MonoBehaviour
         foreach (var gameObject in observableRigids)
         {
             if (!gameObject.Equals(bodyParts.root))
-                //positions.Add(gameObject.transform.localPosition);
+            {
+                Vector3 pos = root.transform.InverseTransformPoint(gameObject.transform.position);
                 positions.Add(root.transform.InverseTransformPoint(gameObject.transform.position));
+                observationsNamed[gameObject.name + "_pos_x"] = pos.x;
+                observationsNamed[gameObject.name + "_pos_y"] = pos.y;
+            }
         }
         return positions;
     }
@@ -61,9 +65,20 @@ public class WalkFWObservations : MonoBehaviour
         rotations.Clear();
         foreach (var gameObject in observableRigids)
         {
-            if (!gameObject.name.Contains("_end"))
-                //rotations.Add(gameObject.transform.localRotation);
+            if (!gameObject.name.Contains("_end") && !gameObject.Equals(bodyParts.root))
+            {
                 rotations.Add(Quaternion.Inverse(root.rotation) * gameObject.transform.rotation);
+                Quaternion quaternion = Quaternion.Inverse(root.rotation) * gameObject.transform.rotation;
+                Vector3 rotEul = quaternion.eulerAngles;
+                float rotAng = rotEul.z;
+                float rotClamped = 0f;
+                if (rotAng <= 180f)
+                    rotClamped = rotAng / 180f;
+                else
+                    rotClamped = ((rotAng - 180f) / 180f) - 1f;
+                
+                observationsNamed[gameObject.name + "_rot"] = rotClamped;
+            }
         }
         return rotations;
     }
@@ -71,7 +86,14 @@ public class WalkFWObservations : MonoBehaviour
     public List<Vector3> getObjectsVels()
     {
         velocity.Clear();
-        foreach (var rigidbody in observableRigids) velocity.Add(rigidbody.velocity);
+        foreach (var rigidbody in observableRigids)
+        {
+            velocity.Add(rigidbody.velocity);
+            Vector3 vel = normVecVel(rigidbody.velocity);
+            observationsNamed[rigidbody.name + "_vel_x"] = vel.x;
+            observationsNamed[rigidbody.name + "_vel_y"] = vel.y;
+
+        }
         return velocity;
     }
 
@@ -81,25 +103,55 @@ public class WalkFWObservations : MonoBehaviour
         foreach (var rigidbody in observableRigids)
         {
             if (!rigidbody.name.Contains("_end"))
+            {
                 angVel.Add(rigidbody.angularVelocity);
+                float rbAngVel = rigidbody.angularVelocity.z;
+                rbAngVel = (Mathf.Clamp(rbAngVel, minVel, maxVel) - minVel) / (maxVel - minVel);
+                //observations.Add(rbAngVel);
+                observationsNamed[rigidbody.name + "_ang_vel"] = rbAngVel;
+
+            }
         }
         return angVel;
     }
-    
+
     public int getObservationsSpace()
     {
         return getObservations().Count;
     }
 
+    public int getObsSize()
+    {
+        return observationsSpace;
+    }
+
     public virtual List<float> getObservations()
     {
         observations.Clear();
-
-        var root = bodyParts.root;
+        
+        
         var rootPos = root.transform.position;
-        addRootPos(rootPos);
-        addEuler(root.transform.rotation);
+        //addRootPos(rootPos);
+        observationsNamed["root_pos_y"] = normPos(rootPos.y);
+        Quaternion quaternion = root.transform.rotation;
+        //addEuler(quaternion);
+        Vector3 rotEul = quaternion.eulerAngles;
+        float rotAng = rotEul.z;
+        float rotClamped = 0f;
+        if (rotAng <= 180f)
+            rotClamped = rotAng / 180f;
+        else
+            rotClamped = ((rotAng - 180f) / 180f) - 1f;
+        observationsNamed["root_rot"] = rotClamped;
+        
 
+        getObjectsPositions();
+        getObjectsRotations();
+        getObjectsVels();
+        getObjectsAngVels();
+        addCOM();
+
+        /*observations.Clear();
         foreach (var position in getObjectsPositions())
         {
             addPos(position);
@@ -119,10 +171,11 @@ public class WalkFWObservations : MonoBehaviour
         {
             observations.Add(normVel(angVel.z));
         }
-        
-        addCOM();
 
-        return observations;
+        addCOM();*/
+
+
+        return observationsNamed.Select(kv => kv.Value).ToList();
     }
 
 
@@ -158,8 +211,6 @@ public class WalkFWObservations : MonoBehaviour
     public void addEuler(Quaternion quaternion)
     {
         Vector3 rotEul = quaternion.eulerAngles;
-        //observations.Add(normEuler(rotEul.x));
-        //observations.Add(normEuler(rotEul.y));
         float rotAng = rotEul.z;
         float rotClamped = 0f;
         if (rotAng <= 180f)
@@ -172,13 +223,19 @@ public class WalkFWObservations : MonoBehaviour
     public void addCOM()
     {
         Vector3 COM = physics.getCenterOfMass(rigids) - bodyParts.root.transform.position;
-        Vector3 COMVel = root.transform.InverseTransformPoint(physics.getCenterOfMassVel(rigids));
+        //Vector3 COMVel = root.transform.InverseTransformPoint(physics.getCenterOfMassVel(rigids));
+        Vector3 COMVel = physics.getCenterOfMassVel(rigids);
         Vector3 COMRotVel = Quaternion.Inverse(root.rotation) * physics.getCenterOfMassRotVel(rigids);
         observations.Add(COM.x);
         observations.Add(COM.y);
         observations.Add(COMVel.x);
         observations.Add(COMVel.y);
         observations.Add(COMRotVel.z);
+        observationsNamed["com_pos_x"] = COM.x;
+        observationsNamed["com_pos_y"] = COM.y;
+        observationsNamed["com_vel_x"] = COMVel.x;
+        observationsNamed["com_vel_y"] = COMVel.y;
+        observationsNamed["com_ang_vel"] = COMRotVel.z;
     }
 
     public float normPos(float pos)
@@ -191,6 +248,15 @@ public class WalkFWObservations : MonoBehaviour
         return vel;// (Mathf.Clamp(vel, minVel, maxVel) - minVel) / (maxVel - minVel);
     }
 
+    public Vector3 normVecVel(Vector3 vel)
+    {
+        Vector3 nVel = new Vector3();
+        nVel.x = (Mathf.Clamp(vel.x, minVel, maxVel) - minVel) / (maxVel - minVel);
+        nVel.y = (Mathf.Clamp(vel.y, minVel, maxVel) - minVel) / (maxVel - minVel);
+        nVel.z = (Mathf.Clamp(vel.z, minVel, maxVel) - minVel) / (maxVel - minVel);
+        return nVel;
+    }
+
     public float normEuler(float rot)
     {
         rot = rot % 360;
@@ -200,6 +266,16 @@ public class WalkFWObservations : MonoBehaviour
     public Vector3 getCenterOfMass()
     {
         return physics.getCenterOfMass(observableRigids);
+    }
+
+    public void logNamedObs()
+    {
+        string str = "";
+        foreach (KeyValuePair<string, float> keyValuePair in observationsNamed)
+        {
+            str += "[ " + keyValuePair.Key + ": " + keyValuePair.Value + " ] ";
+        }
+        Debug.Log(str);
     }
 
     public void Log()

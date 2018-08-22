@@ -2,41 +2,53 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class ResetParameters : Dictionary<string, float>, ISerializationCallbackReceiver
+namespace MLAgents
 {
-    [SerializeField] private readonly List<ResetParameter> resetParameters = new List<ResetParameter>();
-
-    public void OnBeforeSerialize()
+    [System.Serializable]
+    public class ResetParameters : Dictionary<string, float>, ISerializationCallbackReceiver
     {
-        resetParameters.Clear();
 
-        foreach (KeyValuePair<string, float> pair in this)
+        [System.Serializable]
+        public struct ResetParameter
         {
-            var rp = new ResetParameter();
-            rp.key = pair.Key;
-
-            rp.value = pair.Value;
-            resetParameters.Add(rp);
+            public string key;
+            public float value;
         }
-    }
 
-    public void OnAfterDeserialize()
-    {
-        Clear();
+        [SerializeField] private List<ResetParameter> resetParameters = new List<ResetParameter>();
+
+        public void OnBeforeSerialize()
+        {
+            resetParameters.Clear();
+
+            foreach (KeyValuePair<string, float> pair in this)
+            {
+                ResetParameter rp = new ResetParameter();
+                rp.key = pair.Key;
+
+                rp.value = pair.Value;
+                resetParameters.Add(rp);
+            }
+
+        }
+
+        public void OnAfterDeserialize()
+        {
+            this.Clear();
 
 
-        for (var i = 0; i < resetParameters.Count; i++)
-            if (ContainsKey(resetParameters[i].key))
-                Debug.LogError("The ResetParameters contains the same key twice");
-            else
-                Add(resetParameters[i].key, resetParameters[i].value);
-    }
 
-    [Serializable]
-    public struct ResetParameter
-    {
-        public string key;
-        public float value;
+            for (int i = 0; i < resetParameters.Count; i++)
+            {
+                if (this.ContainsKey(resetParameters[i].key))
+                {
+                    Debug.LogError("The ResetParameters contains the same key twice");
+                }
+                else
+                {
+                    this.Add(resetParameters[i].key, resetParameters[i].value);
+                }
+            }
+        }
     }
 }

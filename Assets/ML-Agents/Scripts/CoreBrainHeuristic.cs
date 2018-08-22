@@ -1,80 +1,100 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+
 #if UNITY_EDITOR
 using UnityEditor;
-
 #endif
 
-/// CoreBrain which decides actions using developer-provided Decision script.
-public class CoreBrainHeuristic : ScriptableObject, CoreBrain
+namespace MLAgents
 {
-    /**< Reference to the brain that uses this CoreBrainHeuristic */
-    public Brain brain;
-
-    [SerializeField] private bool broadcast = true;
-
-    private ExternalCommunicator coord;
-
-    /**< Reference to the Decision component used to decide the actions */
-    public Decision decision;
-
-    /// Create the reference to the brain
-    public void SetBrain(Brain b)
+    /// CoreBrain which decides actions using developer-provided Decision script.
+    public class CoreBrainHeuristic : ScriptableObject, CoreBrain
     {
-        brain = b;
-    }
+        [SerializeField] private bool broadcast = true;
 
-    /// Create the reference to decision
-    public void InitializeCoreBrain(Communicator communicator)
-    {
-        decision = brain.gameObject.GetComponent<Decision>();
+        /**< Reference to the brain that uses this CoreBrainHeuristic */
+        public Brain brain;
 
-        if (communicator == null
-            || !broadcast)
+        MLAgents.Batcher brainBatcher;
+
+        /**< Reference to the Decision component used to decide the actions */
+        public Decision decision;
+
+        /// Create the reference to the brain
+        public void SetBrain(Brain b)
         {
-            coord = null;
+            brain = b;
         }
-        else if (communicator is ExternalCommunicator)
+
+        /// Create the reference to decision
+        public void InitializeCoreBrain(MLAgents.Batcher brainBatcher)
         {
-            coord = (ExternalCommunicator) communicator;
-            coord.SubscribeBrain(brain);
+            decision = brain.gameObject.GetComponent<Decision>();
+
+            if ((brainBatcher == null)
+                || (!broadcast))
+            {
+                this.brainBatcher = null;
+            }
+            else
+            {
+                this.brainBatcher = brainBatcher;
+                ;
+                this.brainBatcher.SubscribeBrain(brain.gameObject.name);
+            }
         }
-    }
 
-    /// Uses the Decision Component to decide that action to take
-    public void DecideAction(Dictionary<Agent, AgentInfo> agentInfo)
-    {
-        if (coord != null) coord.GiveBrainInfo(brain, agentInfo);
+        /// Uses the Decision Component to decide that action to take
+        public void DecideAction(Dictionary<Agent, AgentInfo> agentInfo)
+        {
+            if (brainBatcher != null)
+            {
+                brainBatcher.SendBrainInfo(brain.gameObject.name, agentInfo);
+            }
 
-        if (decision == null)
-            throw new UnityAgentsException("The Brain is set to Heuristic, but no decision script attached to it");
+            if (decision == null)
+            {
+                throw new UnityAgentsException(
+                    "The Brain is set to Heuristic, but no decision script attached to it");
+            }
 
-        foreach (var agent in agentInfo.Keys)
-            agent.UpdateVectorAction(decision.Decide(
-                agentInfo[agent].stackedVectorObservation,
-                agentInfo[agent].visualObservations,
-                agentInfo[agent].reward,
-                agentInfo[agent].done,
-                agentInfo[agent].memories));
+            foreach (Agent agent in agentInfo.Keys)
+            {
+                agent.UpdateVectorAction(decision.Decide(
+                    agentInfo[agent].stackedVectorObservation,
+                    agentInfo[agent].visualObservations,
+                    agentInfo[agent].reward,
+                    agentInfo[agent].done,
+                    agentInfo[agent].memories));
 
-        foreach (var agent in agentInfo.Keys)
-            agent.UpdateMemoriesAction(decision.MakeMemory(
-                agentInfo[agent].stackedVectorObservation,
-                agentInfo[agent].visualObservations,
-                agentInfo[agent].reward,
-                agentInfo[agent].done,
-                agentInfo[agent].memories));
-    }
+            }
 
-    /// Displays an error if no decision component is attached to the brain
-    public void OnInspector()
-    {
+            foreach (Agent agent in agentInfo.Keys)
+            {
+                agent.UpdateMemoriesAction(decision.MakeMemory(
+                    agentInfo[agent].stackedVectorObservation,
+                    agentInfo[agent].visualObservations,
+                    agentInfo[agent].reward,
+                    agentInfo[agent].done,
+                    agentInfo[agent].memories));
+            }
+        }
+
+        /// Displays an error if no decision component is attached to the brain
+        public void OnInspector()
+        {
 #if UNITY_EDITOR
-        EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
-        broadcast = EditorGUILayout.Toggle(new GUIContent("Broadcast",
-            "If checked, the brain will broadcast states and actions to Python."), broadcast);
-        if (brain.gameObject.GetComponent<Decision>() == null)
-            EditorGUILayout.HelpBox("You need to add a 'Decision' component to this gameObject", MessageType.Error);
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+            broadcast = EditorGUILayout.Toggle(new GUIContent("Broadcast",
+                "If checked, the brain will broadcast states and actions to Python."), broadcast);
+            if (brain.gameObject.GetComponent<Decision>() == null)
+            {
+                EditorGUILayout.HelpBox("You need to add a 'Decision' component to this gameObject",
+                    MessageType.Error);
+            }
 #endif
+        }
+
     }
 }

@@ -1,4 +1,6 @@
-﻿public class DuelAcademy : Academy
+﻿using MLAgents;
+
+public class DuelAcademy : Academy
 {
     public override void AcademyReset()
     {

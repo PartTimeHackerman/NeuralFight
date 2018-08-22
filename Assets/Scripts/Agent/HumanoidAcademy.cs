@@ -1,4 +1,6 @@
-﻿public class HumanoidAcademy : Academy
+﻿using MLAgents;
+
+public class HumanoidAcademy : Academy
 {
     public override void AcademyReset()
     {
