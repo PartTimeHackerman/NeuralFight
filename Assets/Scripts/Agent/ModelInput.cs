@@ -14,7 +14,8 @@ class ModelInput : MonoBehaviour
 
     void Start()
     {
-        model = new InternalModel("Models/ppo_WalkFW_5_nss", GetComponent<IObservations>(), GetComponent<IActions>());
+        GetComponent<Observations>().addToRemove(new[] { "root_pos_x" });
+        model = new InternalModel("Models/ppo_WalkFW_1_nss", GetComponent<IObservations>(), GetComponent<IActions>());
     }
 
 

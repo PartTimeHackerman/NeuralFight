@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class StandingRewardHumanoid : MonoBehaviour, IReward
 {
+    public bool debug = false;
     private float maxDistanceRootFeets;
     private float baseDistanceCOMTorso;
     private float baseDistanceFeetsCOM;
@@ -33,6 +34,8 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
     private Rigidbody root;
     private Vector3 COM;
 
+    private ActuationReward actuationReward;
+
     public StandingRewardHumanoid(BodyParts bodyParts)
     {
         this.bodyParts = bodyParts;
@@ -46,6 +49,9 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
         root = bodyParts.root;
         physics = PhysicsUtils.get();
         Init();
+
+        if (debug)
+            InvokeRepeating("getReward", 0.0f, 1f);
     }
 
     void LateFixedUpdate()
@@ -68,6 +74,7 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
         baseDistanceFeetsCOM = physics.getCenterOfMass(bodyParts.getRigids()).y - meanOfFeets().y;
         maxDistanceRootFeets = calcDistance(root.gameObject, namedParts["rfoot_end"]);
 
+        actuationReward = new ActuationReward(bodyParts);
         multipler = new float[]{1f, 1f, 1f, 1f, 1f};
     }
 
@@ -155,7 +162,8 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
         torsoOverCOMXZ();
         rootFromBaseOverMeanOfFeetsY();
         minimizeTorsoXZVelocity();
-        minimizeActuation();
+        //minimizeActuation();
+        minimizeActuationReward = actuationReward.getReward();
         reward = (COMOverMeanOfFeetsXZReward * multipler[0] +
                   torsoOverCOMXZReward * multipler[1] +
                   rootFromBaseOverMeanOfFeetsYReward * multipler[2] +

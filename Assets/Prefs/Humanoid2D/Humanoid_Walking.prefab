@@ -300,10 +300,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4974837385881252}
+  - component: {fileID: 114945960688582636}
   - component: {fileID: 114429045556879546}
   - component: {fileID: 114823939824007996}
+  - component: {fileID: 114612942605558806}
   - component: {fileID: 114528219478653952}
-  - component: {fileID: 114590255465928096}
   - component: {fileID: 114082316439850292}
   - component: {fileID: 114636379964831720}
   - component: {fileID: 114605513770608942}
@@ -1224,7 +1225,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1684127435510588}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d682b784b83d6c4fa15f8a57b6430e2, type: 3}
   m_Name: 
@@ -1237,7 +1238,7 @@ MonoBehaviour:
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 10
   steps: 0
-  maxSteps: 1000
+  maxSteps: 100000
   ready: 1
   sumRewards: 0
 --- !u!114 &114528219478653952
@@ -1298,21 +1299,6 @@ MonoBehaviour:
   force: 1000
   maxHingeVel: 800
   threshold: 0.1
---- !u!114 &114590255465928096
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1684127435510588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c19d15e1ef6e56142be286ab15c8dae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  observationsSpace: 0
-  observableRigids: []
-  rigids: []
-  decisionFrequency: 0
 --- !u!114 &114605513770608942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1364,6 +1350,21 @@ MonoBehaviour:
   force: 1000
   maxHingeVel: 800
   threshold: 0.1
+--- !u!114 &114612942605558806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1684127435510588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9bb3123c1f7af4ab7d9c3e32168cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observationsSpace: 0
+  observableRigids: []
+  rigids: []
+  decisionFrequency: 0
 --- !u!114 &114636379964831720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1466,6 +1467,20 @@ MonoBehaviour:
   pastArena: 0
   fallen: 0
   terminated: 0
+--- !u!114 &114945960688582636
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1684127435510588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b7a6b3254b60143ba6397090f7b836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decFreq: 10
+  step: 0
+  run: 1
 --- !u!114 &114969892175274488
 MonoBehaviour:
   m_ObjectHideFlags: 1

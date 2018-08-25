@@ -9,7 +9,7 @@ internal class StandingAgent : Agent
     private ApplicationSettings applicationSettings;
     private IActions actions;
     
-    private StandingObservations observations;
+    private Observations observations;
     private Humanoid2DResetPos resetPos;
     private StandingRewardHumanoid rewards;
     private TerminateDuel terminateFn;
@@ -23,7 +23,7 @@ internal class StandingAgent : Agent
 
     public override void InitializeAgent()
     {
-        observations = GetComponent<StandingObservations>();
+        observations = GetComponent<Observations>();
         rewards = GetComponent<StandingRewardHumanoid>();
         actions = GetComponent<Humanoid2DActionsAngPos>();
         resetPos = GetComponent<Humanoid2DResetPos>();

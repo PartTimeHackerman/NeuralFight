@@ -8,7 +8,9 @@ using UnityEngine;
 class ActuationReward
 {
     private BodyParts bodyParts;
-    public float reward;
+    public float reward = 0f;
+    private List<float> lastVels;
+    private List<float> newVels = new List<float>();
 
     public ActuationReward(BodyParts bodyParts)
     {
@@ -18,15 +20,44 @@ class ActuationReward
     public float getReward()
     {
         List<JointInfo> jointInfos = bodyParts.jointsInfos;
-        float maxVel = jointInfos[0].maxVel;
-        int count = jointInfos.Count;
-        float sumVels = 0;
+        float maxVel = jointInfos[0].maxVel * 2;
+        float sumVelDiff = 0f;
+        float jointsCount = jointInfos.Count;
+        newVels.Clear();
+
         foreach (JointInfo jointInfo in jointInfos)
+            newVels.Add(jointInfo.configurableJoint.targetAngularVelocity.x);
+
+        if (lastVels == null)
+            lastVels = new List<float>(newVels);
+
+        if (!listsEqual(lastVels, newVels))
         {
-            sumVels += Mathf.Abs(jointInfo.configurableJoint.targetAngularVelocity.x);
+            if (lastVels.Count != newVels.Count)
+                lastVels = newVels;
+
+            for (int i = 0; i < newVels.Count; i++)
+            {
+                sumVelDiff += Mathf.Abs(lastVels[i] - newVels[i]) / maxVel;
+            }
+            reward = Mathf.Abs((sumVelDiff / jointsCount) - 1f);
         }
 
-        reward = Mathf.Abs((sumVels / count) / maxVel - 1);
+        lastVels = new List<float>(newVels);
         return reward;
+    }
+
+    private bool listsEqual(List<float> l1, List<float> l2)
+    {
+        if (l1.Count != l2.Count)
+            return false;
+
+        for (int i = 0; i < l1.Count; i++)
+        {
+            if (!l1[i].Equals(l2[i]))
+                return false;
+        }
+
+        return true;
     }
 }

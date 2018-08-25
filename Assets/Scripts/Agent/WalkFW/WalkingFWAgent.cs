@@ -9,7 +9,7 @@ internal class WalkingFWAgent : Agent
     private ApplicationSettings applicationSettings;
     private IActions actions;
     
-    private WalkFWObservations observations;
+    private Observations observations;
     private Humanoid2DResetPos resetPos;
     private WalkFWReward rewards;
     private TerminateDuel terminateFn;
@@ -23,12 +23,13 @@ internal class WalkingFWAgent : Agent
 
     public override void InitializeAgent()
     {
-        observations = GetComponent<WalkFWObservations>();
+        observations = GetComponent<Observations>();
         rewards = GetComponent<WalkFWReward>();
         actions = GetComponent<Humanoid2DActionsAngPos>();
         resetPos = GetComponent<Humanoid2DResetPos>();
         terminateFn = GetComponent<TerminateDuel>();
-        
+        observations.addToRemove(new[]{"root_pos_x"});
+
         observations.decisionFrequency = agentParameters.numberOfActionsBetweenDecisions;
     }
 

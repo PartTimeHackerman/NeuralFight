@@ -226,11 +226,11 @@ public class WalkFWObservations : MonoBehaviour, IObservations
         //Vector3 COMVel = root.transform.InverseTransformPoint(physics.getCenterOfMassVel(rigids));
         Vector3 COMVel = physics.getCenterOfMassVel(rigids);
         Vector3 COMRotVel = Quaternion.Inverse(root.rotation) * physics.getCenterOfMassRotVel(rigids);
-        observations.Add(COM.x);
-        observations.Add(COM.y);
-        observations.Add(COMVel.x);
-        observations.Add(COMVel.y);
-        observations.Add(COMRotVel.z);
+        //observations.Add(COM.x);
+        //observations.Add(COM.y);
+        //observations.Add(COMVel.x);
+        //observations.Add(COMVel.y);
+        //observations.Add(COMRotVel.z);
         observationsNamed["com_pos_x"] = COM.x;
         observationsNamed["com_pos_y"] = COM.y;
         observationsNamed["com_vel_x"] = COMVel.x;

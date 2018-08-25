@@ -159,7 +159,6 @@ GameObject:
   - component: {fileID: 33107013629341128}
   - component: {fileID: 136245802619454550}
   - component: {fileID: 54639266479471110}
-  - component: {fileID: 114838321028964720}
   m_Layer: 10
   m_Name: butt
   m_TagString: Untagged
@@ -286,7 +285,7 @@ GameObject:
   - component: {fileID: 4885051218198490}
   - component: {fileID: 114126442018371880}
   - component: {fileID: 114418389948480088}
-  - component: {fileID: 114941327572119534}
+  - component: {fileID: 114426371474149364}
   - component: {fileID: 114326836905832130}
   - component: {fileID: 114588454663021166}
   - component: {fileID: 114871277318872878}
@@ -1017,14 +1016,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5fa95a7a1dbbff45bfa0991c0858cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brain: {fileID: 0}
   agentParameters:
     agentCameras: []
     maxStep: 0
-    numberOfActionsBetweenDecisions: 10
-    onDemandDecision: 0
     resetOnDone: 1
-  brain: {fileID: 0}
-  stepCount: 0
+    onDemandDecision: 0
+    numberOfActionsBetweenDecisions: 10
   steps: 0
   maxSteps: 1000
   ready: 1
@@ -1229,6 +1227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5140c47dfc00b4bb686992f6c134c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   calcAvgReward: 0
   reward: 0
   avgReward: 0
@@ -1239,6 +1238,22 @@ MonoBehaviour:
   rootFromBaseOverMeanOfFeetsYReward: 0
   torsoOverCOMXZReward: 0
   minimizeActuationReward: 0
+  multipler: []
+--- !u!114 &114426371474149364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1626407696249042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9bb3123c1f7af4ab7d9c3e32168cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observationsSpace: 0
+  observableRigids: []
+  rigids: []
+  decisionFrequency: 0
 --- !u!114 &114588454663021166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1344,8 +1359,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  arenaLen: 2
-  fallHeight: 0.5
+  arenaLen: 200
+  fallHeight: 0
   pastArena: 0
   fallen: 0
   terminated: 0
@@ -1389,21 +1404,6 @@ MonoBehaviour:
   force: 1000
   maxHingeVel: 800
   threshold: 0.1
---- !u!114 &114838321028964720
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1400052341260832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc1bf8de904a584a835f6c685a0e890, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  up: 0
-  dir: 0
-  force: 10000
-  rigidbody: {fileID: 0}
 --- !u!114 &114860912598516528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1511,21 +1511,6 @@ MonoBehaviour:
   force: 1000
   maxHingeVel: 800
   threshold: 0.1
---- !u!114 &114941327572119534
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1626407696249042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c33381dd337fa354f927151bca22ba81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  observationsSpace: 0
-  observableRigids: []
-  rigids: []
-  decisionFrequency: 0
 --- !u!135 &135486026312024320
 SphereCollider:
   m_ObjectHideFlags: 1
