@@ -1,2 +1,20 @@
-25.08.2018 23:48:59
+26.08.2018 14:11:03
  
+Warning
+You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent().  Alternatively, your script can inherit from ScriptableObject or no base class at all
+UnityEngine.MonoBehaviour:.ctor(MonoBehaviour)
+StandingRewardHumanoid:.ctor(BodyParts) (at Assets/Scripts/Agent/Rewards/StandingRewardHumanoid.cs:39)
+WalkBWReward:Start() (at Assets/Scripts/Agent/WalkBW/WalkBWReward.cs:28)
+
+Warning
+You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent().  Alternatively, your script can inherit from ScriptableObject or no base class at all
+UnityEngine.MonoBehaviour:.ctor(MonoBehaviour)
+VelocityReward:.ctor(Vector2, Single, Rigidbody) (at Assets/Scripts/Agent/Rewards/VelocityReward.cs:17)
+WalkBWReward:Start() (at Assets/Scripts/Agent/WalkBW/WalkBWReward.cs:29)
+
+Warning
+You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent().  Alternatively, your script can inherit from ScriptableObject or no base class at all
+UnityEngine.MonoBehaviour:.ctor(MonoBehaviour)
+VelocityReward:.ctor(Vector2, Single, Rigidbody) (at Assets/Scripts/Agent/Rewards/VelocityReward.cs:17)
+WalkBWReward:Start() (at Assets/Scripts/Agent/WalkBW/WalkBWReward.cs:30)
+
