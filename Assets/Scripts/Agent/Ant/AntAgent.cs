@@ -33,7 +33,7 @@ internal class AntAgent : Agent
 
     public override void CollectObservations()
     {
-        List<float> observations = this.observations.getObservations();
+        List<float> observations = null;//this.observations.getObservations();
         foreach (var observation in observations) AddVectorObs(observation);
         SetTextObs("Testing " + gameObject.GetInstanceID());
     }

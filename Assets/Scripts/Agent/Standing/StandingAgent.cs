@@ -29,7 +29,6 @@ internal class StandingAgent : Agent
         resetPos = GetComponent<Humanoid2DResetPos>();
         terminateFn = GetComponent<TerminateDuel>();
         
-        observations.decisionFrequency = agentParameters.numberOfActionsBetweenDecisions;
     }
 
     public override void CollectObservations()

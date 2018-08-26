@@ -27,12 +27,12 @@ class InternalModel
         
     }
 
-    public void act()
+    public void act(List<float> obs)
     {
         runner = session.GetRunner();
-        float[] obsArr = observations.getObservations().ToArray();
+        float[] obsArr = obs.ToArray();
         //Debug.Log(String.Join(" ",new List<float>(obsArr).ConvertAll(i => i.ToString()).ToArray()));
-        observations.logNamedObs();
+        //observations.logNamedObs();
         float[,] obsMat = Make2DArray(obsArr, 1, obsArr.Length);
         runner.AddInput(graph["policy/obs"][0], obsMat);
         runner.Fetch(graph["policy/action"][0]);

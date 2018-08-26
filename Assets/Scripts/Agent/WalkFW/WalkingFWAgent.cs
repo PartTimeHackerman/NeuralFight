@@ -30,7 +30,6 @@ internal class WalkingFWAgent : Agent
         terminateFn = GetComponent<TerminateDuel>();
         observations.addToRemove(new[]{"root_pos_x"});
 
-        observations.decisionFrequency = agentParameters.numberOfActionsBetweenDecisions;
     }
 
     public override void CollectObservations()

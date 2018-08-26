@@ -29,8 +29,7 @@ internal class WalkingBWAgent : Agent
         resetPos = GetComponent<Humanoid2DResetPos>();
         terminateFn = GetComponent<TerminateDuel>();
         observations.addToRemove(new[]{"root_pos_x"});
-
-        observations.decisionFrequency = agentParameters.numberOfActionsBetweenDecisions;
+        
     }
 
     public override void CollectObservations()
