@@ -19,8 +19,8 @@ class ModelInput : MonoBehaviour
     private JointInfosManager jointInfosManager;
     private IActions actions;
     public float horizontal, vertical;
-
-
+    public SingleJoystick singleJoystick;
+    private Vector3 input;
     void Start()
     {
         jointInfosManager = new JointInfosManager(GetComponent<BodyParts>());
@@ -48,8 +48,11 @@ class ModelInput : MonoBehaviour
 
     private void runRigid()
     {
-        horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
-        vertical = CrossPlatformInputManager.GetAxis("Vertical");
+        //horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+        //horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+        input = singleJoystick.GetInputDirection();
+        horizontal = input.x;
+        vertical = input.y;
         if (Input.anyKey)
         {
             Dictionary<string, float> observationsNamed = obs.getObservationsNamed();
@@ -81,8 +84,9 @@ class ModelInput : MonoBehaviour
 
     private void runElastic()
     {
-        horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
-        vertical = CrossPlatformInputManager.GetAxis("Vertical");
+        input = singleJoystick.GetInputDirection();
+        horizontal = input.x;
+        vertical = input.y;
         List<List<float>> actions = new List<List<float>>();
         if (Input.anyKey)
         {
