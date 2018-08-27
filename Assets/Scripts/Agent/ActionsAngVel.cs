@@ -37,11 +37,11 @@ public class ActionsAngVel : MonoBehaviour, IActions
 
             Vector3 angVel = new Vector3(0, 0, 0);
             if (movableAxis[0])
-                angVel.x = Mathf.Clamp(actions[actionIdx++] * jointInfo.maxPosSpring, -1200, 1200);
+                angVel.x = Mathf.Clamp(actions[actionIdx++] * jointInfo.maxPosSpring, -jointInfo.maxVel, jointInfo.maxVel);
             if (movableAxis[1])
-                angVel.y = Mathf.Clamp(actions[actionIdx++] * jointInfo.maxPosSpring, -12000, 1200);
+                angVel.y = Mathf.Clamp(actions[actionIdx++] * jointInfo.maxPosSpring, -jointInfo.maxVel, jointInfo.maxVel);
             if (movableAxis[2])
-                angVel.z = Mathf.Clamp(actions[actionIdx++] * jointInfo.maxPosSpring, -1200, 1200);
+                angVel.z = Mathf.Clamp(actions[actionIdx++] * jointInfo.maxPosSpring, -jointInfo.maxVel, jointInfo.maxVel);
 
             float sum = Mathf.Abs(angVel.x) + Mathf.Abs(angVel.y) + Mathf.Abs(angVel.y);
             angVel.x *= Mathf.Abs(angVel.x) / sum;
