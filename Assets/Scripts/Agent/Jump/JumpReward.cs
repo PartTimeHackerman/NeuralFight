@@ -27,7 +27,7 @@ class JumpReward : MonoBehaviour
         bodyParts = GetComponent<BodyParts>();
         standingReward = new StandingRewardHumanoid(bodyParts);
         velocityUPReward = new VelocityReward(Vector2.up, 10f, bodyParts.root);
-        velocityLRReward = new VelocityReward(Vector2.right, 5f, bodyParts.root);
+        //velocityLRReward = new VelocityReward(Vector2.right, 10f, bodyParts.root);
 
         standingReward.multipler = new[] { 1f, 1f, 0f, 0f, 0f };
 
@@ -40,7 +40,7 @@ class JumpReward : MonoBehaviour
     public float getReward()
     {
         standingRewardVal = standingReward.getReward();
-        velocityRewardVal = velocityUPReward.getReward() - Mathf.Abs(velocityLRReward.getReward());
+        velocityRewardVal = velocityUPReward.getReward();
         reward = (standingRewardVal + velocityRewardVal * 3f) / 4f;
         #if (UNITY_EDITOR)
         others["torsoOverCOMXZReward"] = standingReward.torsoOverCOMXZReward;
