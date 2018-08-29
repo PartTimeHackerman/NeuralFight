@@ -21,7 +21,7 @@ public class SingleJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
     [Tooltip("When checked, this joystick will stay in a fixed position.")]
     public bool joystickStaysInFixedPosition = false;
     [Tooltip("Sets the maximum distance the handle (knob) stays away from the center of this joystick. If the joystick handle doesn't look or feel right you can change this value. Must be a whole number. Default value is 4.")]
-    public int joystickHandleDistance = 4;
+    public float joystickHandleDistance = 4;
 
     private Image bgImage; // background of the joystick, this is the part of the joystick that recieves input
     private Image joystickKnobImage; // the "knob" part of the joystick, it just moves to provide feedback, it does not receive input from the touch
@@ -64,7 +64,7 @@ public class SingleJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
     public virtual void OnDrag(PointerEventData ped)
     {
         Vector2 localPoint = Vector2.zero; // resets the localPoint out parameter of the RectTransformUtility.ScreenPointToLocalPointInRectangle function on each drag event
-
+        
         // if the point touched on the screen is within the background image of this joystick
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(bgImage.rectTransform, ped.position, ped.pressEventCamera, out localPoint))
         {
@@ -132,6 +132,16 @@ public class SingleJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
     // this event happens when there is a touch down (or mouse pointer down) on the screen
     public virtual void OnPointerDown(PointerEventData ped)
     {
+        var currentPosition = bgImage.rectTransform.position;
+        currentPosition.x += ped.delta.x;
+        currentPosition.y += ped.delta.y;
+
+        // keeps the joystick within the screen
+        currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + bgImage.rectTransform.sizeDelta.x, Screen.width);
+        currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - bgImage.rectTransform.sizeDelta.y);
+
+        // moves the entire joystick along with the drag  
+        bgImage.rectTransform.position = currentPosition;
         OnDrag(ped); // sent the event data to the OnDrag event
     }
 

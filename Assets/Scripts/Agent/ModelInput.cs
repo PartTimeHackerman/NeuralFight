@@ -26,7 +26,7 @@ class ModelInput : MonoBehaviour
         jointInfosManager = new JointInfosManager(GetComponent<BodyParts>());
         obs = GetComponent<Observations>();
         actions = GetComponent<IActions>();
-        modelWalkFW = new InternalModel("Models/ppo_WalkFW_1_nss", GetComponent<IObservations>(), GetComponent<IActions>());
+        modelWalkFW = new InternalModel("Models/ppo_WalkFW_2_nss", GetComponent<IObservations>(), GetComponent<IActions>());
         modelWalkBW = new InternalModel("Models/ppo_WalkBW_1_nss", GetComponent<IObservations>(), GetComponent<IActions>());
         modelStand = new InternalModel("Models/ppo_Standing_1_nss", GetComponent<IObservations>(), GetComponent<IActions>());
     }

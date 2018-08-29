@@ -162,6 +162,11 @@ Prefab:
       propertyPath: singleJoyStickAlwaysVisible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114904199347107462, guid: 5a279364a5ab8974c8eb98a678a209f4,
+        type: 2}
+      propertyPath: scale
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a279364a5ab8974c8eb98a678a209f4, type: 2}
   m_IsPrefabParent: 0
@@ -1088,7 +1093,79 @@ Prefab:
     - target: {fileID: 114566751306686954, guid: 6354bfbbb59d73748bce338947535a46,
         type: 2}
       propertyPath: joystickHandleDistance
-      value: 4
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114566751306686954, guid: 6354bfbbb59d73748bce338947535a46,
+        type: 2}
+      propertyPath: joystickStaysInFixedPosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114290474502948684, guid: 6354bfbbb59d73748bce338947535a46,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711869542394648, guid: 6354bfbbb59d73748bce338947535a46,
+        type: 2}
+      propertyPath: m_ScaleFactor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114484758465458840, guid: 6354bfbbb59d73748bce338947535a46,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6734be157d0434a4ebef6af3648146fd,
+        type: 3}
+    - target: {fileID: 114484758465458840, guid: 6354bfbbb59d73748bce338947535a46,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 223672673692726580, guid: 6354bfbbb59d73748bce338947535a46,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114290474502948684, guid: 6354bfbbb59d73748bce338947535a46,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6734be157d0434a4ebef6af3648146fd,
+        type: 3}
+    - target: {fileID: 114484758465458840, guid: 6354bfbbb59d73748bce338947535a46,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114484758465458840, guid: 6354bfbbb59d73748bce338947535a46,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114484758465458840, guid: 6354bfbbb59d73748bce338947535a46,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114484758465458840, guid: 6354bfbbb59d73748bce338947535a46,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114290474502948684, guid: 6354bfbbb59d73748bce338947535a46,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224009323708298292, guid: 6354bfbbb59d73748bce338947535a46,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224009323708298292, guid: 6354bfbbb59d73748bce338947535a46,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6354bfbbb59d73748bce338947535a46, type: 2}
