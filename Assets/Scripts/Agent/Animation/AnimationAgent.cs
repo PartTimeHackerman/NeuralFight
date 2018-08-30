@@ -21,6 +21,7 @@ internal class AnimationAgent : Agent
     public int resetPosCounter = 0;
     public int resetPosLimit = 2;
     public bool ready = true;
+    public bool posResetted = false;
     private float rewardAnim = 0f;
 
     public override void InitializeAgent()
@@ -83,12 +84,17 @@ internal class AnimationAgent : Agent
 
         this.actions.applyActions(actionsClamped);
         rewardAnim = animationReward.getReward();
-        SetReward(rewardAnim);
+        if (posResetted)
+        {
+            rewardAnim = 0f;
+            posResetted = false;
+        }
+
         if (rewardAnim < 2f)
         {
             resetPos();
         }
-
+        SetReward(rewardAnim);
         if (steps > maxSteps)
         {
             steps = 0;
@@ -120,5 +126,6 @@ internal class AnimationAgent : Agent
         //animationPositioner.setVelocities();
         animationPositioner.setRotationsRigids();
         ready = true;
+        posResetted = true;
     }
 }
