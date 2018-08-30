@@ -84,13 +84,8 @@ internal class AnimationAgent : Agent
 
         this.actions.applyActions(actionsClamped);
         rewardAnim = animationReward.getReward();
-        if (posResetted)
-        {
-            rewardAnim = 0f;
-            posResetted = false;
-        }
 
-        if (rewardAnim < 2f)
+        if (rewardAnim < 1f)
         {
             resetPos();
         }
@@ -126,6 +121,5 @@ internal class AnimationAgent : Agent
         //animationPositioner.setVelocities();
         animationPositioner.setRotationsRigids();
         ready = true;
-        posResetted = true;
     }
 }
