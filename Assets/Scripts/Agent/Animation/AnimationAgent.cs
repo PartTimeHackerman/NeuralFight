@@ -118,5 +118,6 @@ internal class AnimationAgent : Agent
         animationSettings.speed = 0;
         resetJointVels();
         animationPositioner.setVelocities();
+        animationPositioner.setRotationsRigids();
     }
 }
