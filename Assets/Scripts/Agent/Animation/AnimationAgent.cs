@@ -18,7 +18,8 @@ internal class AnimationAgent : Agent
     public int steps = 0;
     public int maxSteps = 100;
     public int actionSteps = 0;
-
+    public int resetPosCounter = 0;
+    public int resetPosLimit = 2;
     public bool ready = true;
     private float rewardAnim = 0f;
 
@@ -44,7 +45,7 @@ internal class AnimationAgent : Agent
     protected override void MakeRequests(int academyStepCounter)
     {
         steps++;
-        if (steps > 3)
+        if (resetPosCounter > resetPosLimit)
         {
             animationSettings.speed = 1;
             ready = true;
@@ -52,6 +53,7 @@ internal class AnimationAgent : Agent
         else
         {
             animationPositioner.setRotationsRigids();
+            resetPosCounter++;
         }
 
         agentParameters.numberOfActionsBetweenDecisions =
@@ -82,16 +84,16 @@ internal class AnimationAgent : Agent
         this.actions.applyActions(actionsClamped);
         rewardAnim = animationReward.getReward();
         SetReward(rewardAnim);
-
-        if (steps > maxSteps || rewardAnim < 2f)
+        if (rewardAnim < 2f)
         {
-            SetReward(rewardAnim);
+            resetPos();
+        }
+
+        if (steps > maxSteps)
+        {
             steps = 0;
             actionSteps = 0;
-            ready = false;
-            animationSettings.speed = 0;
-            resetJointVels();
-            animationPositioner.setVelocities();
+            resetPos();
             Done();
         }
     }
@@ -107,5 +109,14 @@ internal class AnimationAgent : Agent
         {
             jointInfo.setConfigurableRotVel(Vector3.zero);
         }
+    }
+
+    private void resetPos()
+    {
+        resetPosCounter = 0;
+        ready = false;
+        animationSettings.speed = 0;
+        resetJointVels();
+        animationPositioner.setVelocities();
     }
 }
