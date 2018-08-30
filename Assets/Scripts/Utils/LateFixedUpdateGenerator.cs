@@ -30,5 +30,9 @@ public class LateFixedUpdateGenerator : MonoBehaviour
     {
         lateFixedTime += Time.fixedDeltaTime;
         SendMessage("LateFixedUpdate", SendMessageOptions.DontRequireReceiver);
+        foreach (ILateFixedUpdate lateFixedUpdate in GetComponentsInChildren<ILateFixedUpdate>())
+        {
+            lateFixedUpdate.LateFixedUpdate();
+        }
     }
 }

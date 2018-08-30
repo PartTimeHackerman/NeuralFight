@@ -13,8 +13,19 @@ public class UpToLimit : MonoBehaviour
 
     void Start()
     {
+        pos = true;
+        upVel = 10f;
+        limit = 1.6f;
         rb = GetComponent<Rigidbody>();
         //limit = rb.position.y;
+    }
+
+    public UpToLimit(Rigidbody rigidbody, float upVel, float limit)
+    {
+        pos = false;
+        this.upVel = upVel;
+        this.limit = limit;
+        this.rb = rigidbody;
     }
 
     void FixedUpdate()
@@ -37,5 +48,15 @@ public class UpToLimit : MonoBehaviour
 
         }
 
+    }
+
+    public void addVel()
+    {
+        if (rb.position.y < limit)
+        {
+
+            vel = upVel * Mathf.Abs((rb.position.y / limit) - 1);
+            rb.AddForce(0f, vel, 0f);
+        }
     }
 }

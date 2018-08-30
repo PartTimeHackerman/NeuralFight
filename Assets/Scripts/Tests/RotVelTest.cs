@@ -20,5 +20,6 @@ public class RotVelTest : MonoBehaviour
 	void Update ()
 	{
 	    vel = rb.velocity;
+	    rotVel = rb.angularVelocity;
 	}
 }

@@ -77,8 +77,8 @@ public class SingleJoystickTouchController : MonoBehaviour
                 currentPosition.y = p.y - singleJoystickBackgroundImage.rectTransform.sizeDelta.y * scale / 2; // calculates the y position of the single joystick to where the screen was touched
 
                 // keeps this single joystick within the screen
-                currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + singleJoystickBackgroundImage.rectTransform.sizeDelta.x, Screen.width);
-                currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - singleJoystickBackgroundImage.rectTransform.sizeDelta.y);
+                //currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + singleJoystickBackgroundImage.rectTransform.sizeDelta.x, Screen.width);
+                //currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - singleJoystickBackgroundImage.rectTransform.sizeDelta.y);
 
                 singleJoystickBackgroundImage.rectTransform.position = currentPosition; // sets the position of the single joystick to where the screen was touched (limited to the left half of the screen)
 
@@ -105,9 +105,9 @@ public class SingleJoystickTouchController : MonoBehaviour
                         currentPosition.y = myTouches[i].position.y - singleJoystickBackgroundImage.rectTransform.sizeDelta.y; // calculates the y position of the single joystick to where the screen was touched
 
                         // keeps this single joystick within the screen
-                        currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + singleJoystickBackgroundImage.rectTransform.sizeDelta.x, Screen.width);
-                        currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - singleJoystickBackgroundImage.rectTransform.sizeDelta.y);
-
+                        //currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + singleJoystickBackgroundImage.rectTransform.sizeDelta.x, Screen.width);
+                        //currentPosition.x = Mathf.Clamp(currentPosition.x, 0, Screen.width);
+                        //currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - singleJoystickBackgroundImage.rectTransform.sizeDelta.y);
                         singleJoystickBackgroundImage.rectTransform.position = currentPosition; // sets the position of the single joystick to where the screen was touched (limited to the left half of the screen)
 
                         // enables single joystick on touch

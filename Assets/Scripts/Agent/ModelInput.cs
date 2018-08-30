@@ -21,14 +21,19 @@ class ModelInput : MonoBehaviour
     public float horizontal, vertical;
     public SingleJoystick singleJoystick;
     private Vector3 input;
+    private Rigidbody headEnd;
+    private UpToLimit upToLimit;
+
     void Start()
     {
         jointInfosManager = new JointInfosManager(GetComponent<BodyParts>());
         obs = GetComponent<Observations>();
         actions = GetComponent<IActions>();
         modelWalkFW = new InternalModel("Models/ppo_WalkFW_2_nss", GetComponent<IObservations>(), GetComponent<IActions>());
-        modelWalkBW = new InternalModel("Models/ppo_WalkBW_1_nss", GetComponent<IObservations>(), GetComponent<IActions>());
+        modelWalkBW = new InternalModel("Models/ppo_WalkBW_2_nss", GetComponent<IObservations>(), GetComponent<IActions>());
         modelStand = new InternalModel("Models/ppo_Standing_1_nss", GetComponent<IObservations>(), GetComponent<IActions>());
+        headEnd = GetComponent<BodyParts>().getNamedRigids()["head_end"];
+        upToLimit = new UpToLimit(headEnd, 1000f, 1f);
     }
 
 
@@ -36,7 +41,10 @@ class ModelInput : MonoBehaviour
     {
         if (run)
         {
-            if (step >= decFreq)
+            if (Input.anyKey)
+                upToLimit.addVel();
+
+                if (step >= decFreq)
             {
                 runElastic();
                 step = 0;
@@ -158,4 +166,5 @@ class ModelInput : MonoBehaviour
 
         return averaged;
     }
+    
 }

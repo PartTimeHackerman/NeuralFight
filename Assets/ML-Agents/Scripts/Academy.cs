@@ -599,7 +599,7 @@ namespace MLAgents
         /// <summary>
         /// Monobehavior function that dictates each environment step.
         /// </summary>
-        void FixedUpdate()
+        void LateFixedUpdate()
         {
             EnvironmentStep();
         }

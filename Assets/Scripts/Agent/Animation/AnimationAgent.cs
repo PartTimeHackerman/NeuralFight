@@ -8,25 +8,28 @@ internal class AnimationAgent : Agent
 {
     private ApplicationSettings applicationSettings;
     private IActions actions;
-    
-    private Humanoid2DAnimObservations observations;
-    private Humanoid2DResetPos resetPos;
+
+    private Observations observations;
     private AnimationReward animationReward;
-    
+    private AnimationPositioner animationPositioner;
+    public AnimationSettings animationSettings;
+    private BodyParts bodyParts;
+
     public int steps = 0;
     public int maxSteps = 100;
-    
+    public int actionSteps = 0;
+
     public bool ready = true;
     private float rewardAnim = 0f;
 
     public override void InitializeAgent()
     {
-        observations = GetComponent<Humanoid2DAnimObservations>();
+        observations = GetComponent<Observations>();
         animationReward = GetComponent<AnimationReward>();
         actions = GetComponent<Humanoid2DActionsAngPos>();
-        resetPos = GetComponent<Humanoid2DResetPos>();
-        
-        observations.decisionFrequency = agentParameters.numberOfActionsBetweenDecisions;
+        animationPositioner = GetComponent<AnimationPositioner>();
+        bodyParts = GetComponent<BodyParts>();
+        observations.addToRemove(new[] { "root_pos_x" });
         //animationReward.getAvgReward();
     }
 
@@ -40,6 +43,17 @@ internal class AnimationAgent : Agent
 
     protected override void MakeRequests(int academyStepCounter)
     {
+        steps++;
+        if (steps > 3)
+        {
+            animationSettings.speed = 1;
+            ready = true;
+        }
+        else
+        {
+            animationPositioner.setRotationsRigids();
+        }
+
         agentParameters.numberOfActionsBetweenDecisions =
             Mathf.Max(agentParameters.numberOfActionsBetweenDecisions, 1);
         if (!agentParameters.onDemandDecision && ready)
@@ -47,6 +61,7 @@ internal class AnimationAgent : Agent
             RequestAction();
             if (academyStepCounter % agentParameters.numberOfActionsBetweenDecisions == 0)
             {
+                actionSteps++;
                 RequestDecision();
 
             }
@@ -55,39 +70,42 @@ internal class AnimationAgent : Agent
 
     public override void AgentAction(float[] vectorAction, string textAction)
     {
+        if (!ready)
+            return;
 
-        steps++;
         List<float> actions = vectorAction.ToList();
         List<float> actionsClamped = new List<float>();
         foreach (var var in actions)
             actionsClamped.Add(Mathf.Clamp(var, -1f, 1f));
 
-        
-        this.actions.applyActions(actionsClamped);
-        //if (steps % agentParameters.numberOfActionsBetweenDecisions == 0)
-        //    rewardAnim = animationReward.getAvgReward();
-        rewardAnim = animationReward.getReward();
-        if (float.IsNaN(rewardAnim))
-        {
-            Debug.Log(rewardAnim + " rewardAnim is nan");
-        }
 
+        this.actions.applyActions(actionsClamped);
+        rewardAnim = animationReward.getReward();
         SetReward(rewardAnim);
 
-        if (steps > maxSteps)
+        if (steps > maxSteps || rewardAnim < 2f)
         {
             SetReward(rewardAnim);
             steps = 0;
+            actionSteps = 0;
             ready = false;
-            resetPos.ResetPosition();
-            ready = true;
+            animationSettings.speed = 0;
+            resetJointVels();
+            animationPositioner.setVelocities();
             Done();
         }
     }
 
     public override void AgentReset()
     {
-        
+
     }
-   
+
+    private void resetJointVels()
+    {
+        foreach (JointInfo jointInfo in bodyParts.jointsInfos)
+        {
+            jointInfo.setConfigurableRotVel(Vector3.zero);
+        }
+    }
 }

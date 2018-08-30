@@ -119,8 +119,8 @@ public class SingleJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
                     currentPosition.y += ped.delta.y;
 
                     // keeps the joystick within the screen
-                    currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + bgImage.rectTransform.sizeDelta.x, Screen.width);
-                    currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - bgImage.rectTransform.sizeDelta.y);
+                    //currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + bgImage.rectTransform.sizeDelta.x, Screen.width);
+                    //currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - bgImage.rectTransform.sizeDelta.y);
 
                     // moves the entire joystick along with the drag  
                     bgImage.rectTransform.position = currentPosition;
@@ -137,8 +137,8 @@ public class SingleJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
         currentPosition.y += ped.delta.y;
 
         // keeps the joystick within the screen
-        currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + bgImage.rectTransform.sizeDelta.x, Screen.width);
-        currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - bgImage.rectTransform.sizeDelta.y);
+        //currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + bgImage.rectTransform.sizeDelta.x, Screen.width);
+        //currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - bgImage.rectTransform.sizeDelta.y);
 
         // moves the entire joystick along with the drag  
         bgImage.rectTransform.position = currentPosition;
