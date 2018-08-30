@@ -90,7 +90,7 @@ namespace MLAgents
     /// </remarks>
     [HelpURL("https://github.com/Unity-Technologies/ml-agents/blob/master/" +
              "docs/Learning-Environment-Design-Academy.md")]
-    public abstract class Academy : MonoBehaviour, ILateFixedUpdate
+    public abstract class Academy : MonoBehaviour//, ILateFixedUpdate
     {
         private const string kApiVersion = "API-4";
 
@@ -599,7 +599,7 @@ namespace MLAgents
         /// <summary>
         /// Monobehavior function that dictates each environment step.
         /// </summary>
-        public void LateFixedUpdate()
+        public void FixedUpdate()
         {
             EnvironmentStep();
         }
