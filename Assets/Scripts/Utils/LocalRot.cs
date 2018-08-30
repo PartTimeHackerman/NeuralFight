@@ -25,7 +25,9 @@ class LocalRot : MonoBehaviour
         {
             float rot = jointInfo.transform.localRotation.eulerAngles.x;
             rot = rot < 180 ? -rot : (360 - rot);
+            #if (UNITY_EDITOR)
             rots[jointInfo.name] = rot;
+            #endif
         }
     }
 
