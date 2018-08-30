@@ -19,11 +19,11 @@ class AnimationPositioner : MonoBehaviour
     {
         bodyParts = GetComponent<BodyParts>();
         namedRigids = bodyParts.getNamedRigids();
-        refVels = refBodyParts.GetComponentsInChildren<Velocity>().ToList();
+        /*refVels = refBodyParts.GetComponentsInChildren<Velocity>().ToList();
         foreach (Velocity velocity in refVels)
         {
             namedRefVels[velocity.name] = velocity;
-        }
+        }*/
         foreach (JointInfo jointInfo in bodyParts.jointsInfos)
         {
             namedJointInfos[jointInfo.name] = jointInfo;

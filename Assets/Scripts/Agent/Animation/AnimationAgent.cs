@@ -45,16 +45,16 @@ internal class AnimationAgent : Agent
     protected override void MakeRequests(int academyStepCounter)
     {
         steps++;
-        if (resetPosCounter > resetPosLimit)
-        {
-            animationSettings.speed = 1;
-            ready = true;
-        }
-        else
-        {
-            animationPositioner.setRotationsRigids();
-            resetPosCounter++;
-        }
+        /*if (resetPosCounter > resetPosLimit)
+       {
+           //animationSettings.speed = 1;
+           ready = true;
+       }
+       else
+       {
+           animationPositioner.setRotationsRigids();
+           resetPosCounter++;
+       }*/
 
         agentParameters.numberOfActionsBetweenDecisions =
             Mathf.Max(agentParameters.numberOfActionsBetweenDecisions, 1);
@@ -115,9 +115,10 @@ internal class AnimationAgent : Agent
     {
         resetPosCounter = 0;
         ready = false;
-        animationSettings.speed = 0;
+        //animationSettings.speed = 0;
         resetJointVels();
-        animationPositioner.setVelocities();
+        //animationPositioner.setVelocities();
         animationPositioner.setRotationsRigids();
+        ready = true;
     }
 }

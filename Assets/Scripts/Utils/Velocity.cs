@@ -28,7 +28,13 @@ class Velocity : MonoBehaviour, ILateFixedUpdate
     public void LateFixedUpdate()
     {
         velocity = (transform.position - previousPosition) / Time.fixedDeltaTime;
+        getAngVel();
 
+
+    }
+
+    public Vector3 getAngVel()
+    {
         Quaternion deltaRotation = transform.rotation * Quaternion.Inverse(lastRotation);
         float angle = 0.0f;
         Vector3 axis = Vector3.zero;
@@ -42,9 +48,9 @@ class Velocity : MonoBehaviour, ILateFixedUpdate
                 Mathf.DeltaAngle(0, Mathf.Round(deltaRotation.eulerAngles.z)));
             angularVelocity = eulerRotation / Time.fixedDeltaTime * Mathf.Deg2Rad;
         }
-        else 
+        else
             angularVelocity = axis * angle / Time.fixedDeltaTime;
 
-
+        return angularVelocity;
     }
 }
