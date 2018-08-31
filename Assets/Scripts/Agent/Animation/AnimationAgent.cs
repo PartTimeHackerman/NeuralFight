@@ -84,11 +84,17 @@ internal class AnimationAgent : Agent
 
         this.actions.applyActions(actionsClamped);
         rewardAnim = animationReward.getReward();
-
+        
         if (rewardAnim < 1f)
         {
             resetPos();
         }
+
+        if (posResetted)
+        {
+            rewardAnim = 0f;
+        }
+
         SetReward(rewardAnim);
         if (steps > maxSteps)
         {
@@ -120,6 +126,7 @@ internal class AnimationAgent : Agent
         resetJointVels();
         //animationPositioner.setVelocities();
         animationPositioner.setRotationsRigids();
+        posResetted = true;
         ready = true;
     }
 }
