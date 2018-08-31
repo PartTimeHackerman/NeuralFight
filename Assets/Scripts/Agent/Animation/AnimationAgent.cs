@@ -93,8 +93,9 @@ internal class AnimationAgent : Agent
         if (posResetted)
         {
             rewardAnim = 0f;
+            posResetted = false;
         }
-
+         
         SetReward(rewardAnim);
         if (steps > maxSteps)
         {
