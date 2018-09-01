@@ -46,7 +46,7 @@ class ReferenceObservations : MonoBehaviour//, ILateFixedUpdate
     {
         foreach (KeyValuePair<string, Rigidbody> namedRigid in namedRigids)
         {
-            Vector3 vel = (namedRigid.Value.transform.position - previousPositions[namedRigid.Key]) / Time.fixedDeltaTime;
+            Vector3 vel = (namedRigid.Value.transform.position - previousPositions[namedRigid.Key]) / Time.deltaTime;
             vel.z = 0f;
             velocities[namedRigid.Key] = vel;
 
@@ -82,10 +82,10 @@ class ReferenceObservations : MonoBehaviour//, ILateFixedUpdate
                 Mathf.DeltaAngle(0, Mathf.Round(deltaRotation.eulerAngles.x)),
                 Mathf.DeltaAngle(0, Mathf.Round(deltaRotation.eulerAngles.y)),
                 Mathf.DeltaAngle(0, Mathf.Round(deltaRotation.eulerAngles.z)));
-            angVel = eulerRotation / Time.fixedDeltaTime * Mathf.Deg2Rad;
+            angVel = eulerRotation / Time.deltaTime * Mathf.Deg2Rad;
         }
         else
-            angVel = axis * angle / Time.fixedDeltaTime;
+            angVel = axis * angle / Time.deltaTime;
         angVel.x = 0;
         angVel.y = 0;
         angularVelocities[rbName] = angVel;
