@@ -3093,6 +3093,10 @@ Prefab:
       propertyPath: m_Name
       value: Humanoid_Anim (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1323215427112296, guid: 8e4822e793eec024b951e5bda4248b57, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e4822e793eec024b951e5bda4248b57, type: 2}
   m_IsPrefabParent: 0
@@ -3168,6 +3172,10 @@ Prefab:
     - target: {fileID: 1323215427112296, guid: 8e4822e793eec024b951e5bda4248b57, type: 2}
       propertyPath: m_Name
       value: Humanoid_Anim (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323215427112296, guid: 8e4822e793eec024b951e5bda4248b57, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e4822e793eec024b951e5bda4248b57, type: 2}
@@ -3760,7 +3768,6 @@ GameObject:
   - component: {fileID: 1522993882}
   - component: {fileID: 1522993878}
   - component: {fileID: 1522993881}
-  - component: {fileID: 1522993880}
   - component: {fileID: 1522993879}
   m_Layer: 0
   m_Name: Humanoid_2D_Clean_Running
@@ -3800,18 +3807,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   COM: {x: 0, y: 0, z: 0}
---- !u!114 &1522993880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114523115808624618, guid: 9eaf455832062e847853bfe37a1f35a1,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1522993877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cdfc7f9ecf85c24eb6169923f6b53fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1522993881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4495,7 +4490,7 @@ MonoBehaviour:
     width: 80
     height: 80
     qualityLevel: 0
-    timeScale: 2
+    timeScale: 80
     targetFrameRate: -1
   inferenceConfiguration:
     width: 1280

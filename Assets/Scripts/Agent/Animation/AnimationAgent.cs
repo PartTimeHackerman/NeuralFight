@@ -90,14 +90,13 @@ internal class AnimationAgent : Agent
         this.actions.applyActions(actionsClamped);
         if (first)
         {
-            rewardAnim = 0f;
+            rewardAnim = .1f;
             first = false;
         }
         else
         {
             rewardAnim = animationReward.getReward();
         }
-        
         /*if (rewardAnim < 1f)
         {
             resetPos();

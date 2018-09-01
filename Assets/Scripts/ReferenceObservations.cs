@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-class ReferenceObservations : MonoBehaviour, ILateFixedUpdate
+class ReferenceObservations : MonoBehaviour//, ILateFixedUpdate
 {
 
 
@@ -23,6 +23,7 @@ class ReferenceObservations : MonoBehaviour, ILateFixedUpdate
     private Rigidbody root;
     private PhysicsUtils physics;
 
+
     void Start()
     {
         bodyParts = GetComponent<BodyParts>();
@@ -31,7 +32,7 @@ class ReferenceObservations : MonoBehaviour, ILateFixedUpdate
         physics = PhysicsUtils.get();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         foreach (KeyValuePair<string, Rigidbody> namedRigid in namedRigids)
         {
@@ -41,7 +42,7 @@ class ReferenceObservations : MonoBehaviour, ILateFixedUpdate
 
     }
 
-    public void LateFixedUpdate()
+    public void LateUpdate()
     {
         foreach (KeyValuePair<string, Rigidbody> namedRigid in namedRigids)
         {
