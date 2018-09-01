@@ -812,6 +812,10 @@ Prefab:
       propertyPath: m_Name
       value: Humanoid_Anim (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1323215427112296, guid: 8e4822e793eec024b951e5bda4248b57, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e4822e793eec024b951e5bda4248b57, type: 2}
   m_IsPrefabParent: 0
@@ -4491,7 +4495,7 @@ MonoBehaviour:
     width: 80
     height: 80
     qualityLevel: 0
-    timeScale: 80
+    timeScale: 50
     targetFrameRate: -1
   inferenceConfiguration:
     width: 1280
