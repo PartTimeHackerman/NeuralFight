@@ -95,7 +95,7 @@ internal class AnimationAgent : Agent
         }
         else
         {
-            rewardAnim = animationReward.getReward();
+            rewardAnim = animationReward.getReward() + .1f;
         }
         /*if (rewardAnim < 1f)
         {
