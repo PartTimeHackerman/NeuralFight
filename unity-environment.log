@@ -1,2 +1,13 @@
-01.09.2018 15:23:36
+01.09.2018 15:31:48
  
+Exception
+KeyNotFoundException: The given key was not present in the dictionary.
+System.ThrowHelper.ThrowKeyNotFoundException () (at <cfc149f8218b496788d8493c87de777a>:0)
+System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) (at <cfc149f8218b496788d8493c87de777a>:0)
+AnimationReward.poseReward () (at Assets/Scripts/Agent/Animation/AnimationReward.cs:194)
+AnimationReward.getReward () (at Assets/Scripts/Agent/Animation/AnimationReward.cs:97)
+AnimationAgent.AgentAction (System.Single[] vectorAction, System.String textAction) (at Assets/Scripts/Agent/Animation/AnimationAgent.cs:97)
+MLAgents.Agent.AgentStep () (at Assets/ML-Agents/Scripts/Agent.cs:904)
+MLAgents.Academy.EnvironmentStep () (at Assets/ML-Agents/Scripts/Academy.cs:582)
+MLAgents.Academy.FixedUpdate () (at Assets/ML-Agents/Scripts/Academy.cs:604)
+
