@@ -100,6 +100,7 @@ class AnimationReward : MonoBehaviour
         COMRew = COMReward();
         imitationReward = poseRew * .65f + velocityRew * .1f + endRew * .15f + COMRew * .1f;
         imitationReward *= 10f;
+        imitationReward = Mathf.Clamp(imitationReward, -100f, 100f);
         return imitationReward;
     }
 
