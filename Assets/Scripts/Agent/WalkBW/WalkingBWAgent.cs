@@ -12,7 +12,6 @@ internal class WalkingBWAgent : Agent
     private Observations observations;
     private Humanoid2DResetPos resetPos;
     private WalkBWReward rewards;
-    private TerminateDuel terminateFn;
     
     public int steps = 0;
     public int maxSteps = 100;
@@ -27,7 +26,6 @@ internal class WalkingBWAgent : Agent
         rewards = GetComponent<WalkBWReward>();
         actions = GetComponent<Humanoid2DActionsAngPos>();
         resetPos = GetComponent<Humanoid2DResetPos>();
-        terminateFn = GetComponent<TerminateDuel>();
         observations.addToRemove(new[]{"root_pos_x"});
         
     }
@@ -44,7 +42,7 @@ internal class WalkingBWAgent : Agent
     {
         agentParameters.numberOfActionsBetweenDecisions =
             Mathf.Max(agentParameters.numberOfActionsBetweenDecisions, 1);
-        if (!agentParameters.onDemandDecision && ready)
+        if (!agentParameters.onDemandDecision)
         {
             RequestAction();
             if (academyStepCounter % agentParameters.numberOfActionsBetweenDecisions == 0)
@@ -68,20 +66,18 @@ internal class WalkingBWAgent : Agent
         this.actions.applyActions(actionsClamped);
         rewardAnim = rewards.getReward();
 
-        bool terminateAgent = terminateFn.isTerminated();
+        //bool terminateAgent = terminateFn.isTerminated();
 
         //sumRewards += rewardAnim;
         SetReward(rewardAnim);
 
-        if (steps > maxSteps || terminateAgent)
+        if (steps > maxSteps)
         {
             //sumRewards = sumRewards > 0 ? sumRewards : 0;
             SetReward(rewardAnim);
             //sumRewards = 0f;
             steps = 0;
-            ready = false;
             resetPos.ResetPosition();
-            ready = true;
             Done();
         }
     }

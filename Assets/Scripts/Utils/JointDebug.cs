@@ -17,9 +17,6 @@ public class JointDebug : MonoBehaviour
     public Vector3 rotLocRelativeToRoot;
 
     public Quaternion jointQRot;
-    public Vector3 cross;
-    public float up;
-    public float vel = 100f;
     void Reset()
     {
         GetComponent<Rigidbody>().sleepThreshold = 0;
@@ -35,18 +32,7 @@ public class JointDebug : MonoBehaviour
 	    posWrd = transform.position;
 	    rotLocRelativeToRoot = (Quaternion.Inverse(root.rotation) * transform.rotation).eulerAngles;
 	    jointQRot = transform.localRotation;
-
-	    Vector3 dir = root.transform.position - transform.position;
-	    dir.Normalize();
-	    Vector3 side = Vector3.Cross(dir, -transform.right);
-	    cross = Vector3.Cross(dir, side).normalized;
-	    if (transform.position.x > root.transform.position.x)
-	        cross.x *= -1;
-	    cross.y = Mathf.Abs(cross.y);
-	    up = Mathf.Abs(((transform.up.y + 1) / 2) - 1);
-	    cross.x *= up;
-	    cross.y *= up;
-        GetComponent<Rigidbody>().AddForce(cross.x * vel, cross.y * vel , 0);
+        
 
     }
 

@@ -120,7 +120,7 @@ public class Observations : MonoBehaviour, IObservations
     {
         var rootPos = root.transform.position;
         observationsNamed["root_pos_x"] = normPos(rootPos.x);
-        observationsNamed["root_pos_y"] = normPos(rootPos.y);
+        observationsNamed["root_pos_y"] = distToFloor();
         Quaternion quaternion = root.transform.rotation;
         Vector3 rotEul = quaternion.eulerAngles;
         float rotAng = rotEul.z;
@@ -161,7 +161,17 @@ public class Observations : MonoBehaviour, IObservations
         }
     }
 
-  
+    public float distToFloor()
+    {
+        int layerMask = 1 << root.gameObject.layer;
+        layerMask = ~layerMask;
+        RaycastHit hit;
+        if (Physics.Raycast(root.transform.position, Vector3.down, out hit, 1000, layerMask))
+            return hit.distance;
+        else
+            return 0;
+    }
+
     public void addCOM()
     {
         Vector3 COM = physics.getCenterOfMass(rigids) - bodyParts.root.transform.position;

@@ -22,7 +22,7 @@ class ModelInput : MonoBehaviour
     public SingleJoystick singleJoystick;
     private Vector3 input;
     private Rigidbody headEnd;
-    private UpToLimit upToLimit;
+    private VerticalEffector verticalEffector;
 
     void Start()
     {
@@ -33,7 +33,7 @@ class ModelInput : MonoBehaviour
         modelWalkBW = new InternalModel("Models/ppo_WalkBW_2_nss", GetComponent<IObservations>(), GetComponent<IActions>());
         modelStand = new InternalModel("Models/ppo_Standing_1_nss", GetComponent<IObservations>(), GetComponent<IActions>());
         headEnd = GetComponent<BodyParts>().getNamedRigids()["head_end"];
-        upToLimit = new UpToLimit(headEnd, 1000f, 1f);
+        verticalEffector = GetComponent<VerticalEffector>();
     }
 
 
@@ -41,10 +41,7 @@ class ModelInput : MonoBehaviour
     {
         if (run)
         {
-            if (Input.anyKey)
-                upToLimit.addVel();
-
-                if (step >= decFreq)
+            if (step >= decFreq)
             {
                 runElastic();
                 step = 0;
@@ -98,6 +95,7 @@ class ModelInput : MonoBehaviour
         List<List<float>> actions = new List<List<float>>();
         if (Input.anyKey)
         {
+            verticalEffector.enable = true;
             Dictionary<string, float> observationsNamed = obs.getObservationsNamed();
             jointInfosManager.enableJoints();
             if (horizontal > 0f) //if (Input.GetKey("right"))
@@ -130,6 +128,7 @@ class ModelInput : MonoBehaviour
         }
         else
         {
+            verticalEffector.enable = false;
             jointInfosManager.disableJoints();
         }
     }
@@ -156,15 +155,15 @@ class ModelInput : MonoBehaviour
                 averaged[i] += action[i];
             }
         }
-/*
+        /*
 
-        for (int i = 0; i < averaged.Count; i++)
-        {
-            averaged[i] /= actionsCount;
-        }
-*/
+                for (int i = 0; i < averaged.Count; i++)
+                {
+                    averaged[i] /= actionsCount;
+                }
+        */
 
         return averaged;
     }
-    
+
 }
