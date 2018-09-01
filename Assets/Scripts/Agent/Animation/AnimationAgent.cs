@@ -19,11 +19,7 @@ internal class AnimationAgent : Agent
 
     public int steps = 0;
     public int maxSteps = 100;
-    public int actionSteps = 0;
-    public int resetPosCounter = 0;
-    public int resetPosLimit = 2;
     public bool ready = true;
-    public bool posResetted = false;
     private float rewardAnim = 0f;
     private bool first = true;
 
@@ -51,17 +47,6 @@ internal class AnimationAgent : Agent
     protected override void MakeRequests(int academyStepCounter)
     {
         steps++;
-        /*if (resetPosCounter > resetPosLimit)
-       {
-           //animationSettings.speed = 1;
-           ready = true;
-       }
-       else
-       {
-           animationPositioner.setRotationsRigids();
-           resetPosCounter++;
-       }*/
-
         agentParameters.numberOfActionsBetweenDecisions =
             Mathf.Max(agentParameters.numberOfActionsBetweenDecisions, 1);
         if (!agentParameters.onDemandDecision && ready)
@@ -69,7 +54,6 @@ internal class AnimationAgent : Agent
             RequestAction();
             if (academyStepCounter % agentParameters.numberOfActionsBetweenDecisions == 0)
             {
-                actionSteps++;
                 RequestDecision();
 
             }
@@ -95,9 +79,7 @@ internal class AnimationAgent : Agent
         SetReward(rewardAnim);
         if (steps > maxSteps || terminate)
         {
-            SetReward(rewardAnim);
             steps = 0;
-            actionSteps = 0;
             resetPos();
             Done();
         }
@@ -119,13 +101,10 @@ internal class AnimationAgent : Agent
     private void resetPos()
     {
         resetPosition.ResetPosition();
-        resetPosCounter = 0;
         ready = false;
-        //animationSettings.speed = 0;
         resetJointVels();
         //animationPositioner.setVelocities();
         animationPositioner.setRotationsRigids();
-        posResetted = true;
         ready = true;
     }
 }
