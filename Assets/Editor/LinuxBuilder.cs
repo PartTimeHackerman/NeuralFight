@@ -22,7 +22,7 @@ class LinuxBuilder : MonoBehaviour
         buildPlayerOptions.scenes = new[] { "Assets/anim.unity"};
         buildPlayerOptions.locationPathName = "build/sumo.x86_64";
         buildPlayerOptions.target = BuildTarget.StandaloneLinux;
-        buildPlayerOptions.options = BuildOptions.EnableHeadlessMode;
+        buildPlayerOptions.options = BuildOptions.EnableHeadlessMode | BuildOptions.Development | BuildOptions.AllowDebugging;
         BuildPipeline.BuildPlayer(buildPlayerOptions);
     }
 
