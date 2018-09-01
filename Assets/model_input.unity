@@ -320,6 +320,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1151937535709532, guid: deeaf6cd243dd8d4e977eaa2b90d2630,
     type: 2}
   m_PrefabInternal: {fileID: 951501802}
+--- !u!54 &354229734 stripped
+Rigidbody:
+  m_PrefabParentObject: {fileID: 54021422751106616, guid: deeaf6cd243dd8d4e977eaa2b90d2630,
+    type: 2}
+  m_PrefabInternal: {fileID: 951501802}
 --- !u!212 &354229735
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -816,7 +821,7 @@ Prefab:
     - target: {fileID: 54021422751106616, guid: deeaf6cd243dd8d4e977eaa2b90d2630,
         type: 2}
       propertyPath: m_IsKinematic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114842236204623794, guid: deeaf6cd243dd8d4e977eaa2b90d2630,
         type: 2}
@@ -933,6 +938,36 @@ Prefab:
     - {fileID: 33937886844690228, guid: deeaf6cd243dd8d4e977eaa2b90d2630, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: deeaf6cd243dd8d4e977eaa2b90d2630, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &951501803 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1803897349666626, guid: deeaf6cd243dd8d4e977eaa2b90d2630,
+    type: 2}
+  m_PrefabInternal: {fileID: 951501802}
+--- !u!114 &951501804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 951501803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb6294993e2b954d8f27c316883246c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  root: {fileID: 354229734}
+  threshold: 0.1
+  jointRotation: {x: 0, y: 0, z: 0}
+  jointRotationGlobal: {x: 0, y: 0, z: 0}
+  jointAngularVel: {x: 0, y: 0, z: 0}
+  jointVel: {x: 0, y: 0, z: 0}
+  posLoc: {x: 0, y: 0, z: 0}
+  posLocRelativeToRoot: {x: 0, y: 0, z: 0}
+  posWrd: {x: 0, y: 0, z: 0}
+  rotLocRelativeToRoot: {x: 0, y: 0, z: 0}
+  jointQRot: {x: 0, y: 0, z: 0, w: 0}
+  cross: {x: 0, y: 0, z: 0}
+  up: 0
+  vel: 500
 --- !u!1 &957646188
 GameObject:
   m_ObjectHideFlags: 0

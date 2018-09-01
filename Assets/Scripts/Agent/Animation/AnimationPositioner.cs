@@ -9,6 +9,7 @@ class AnimationPositioner : MonoBehaviour
 {
     public BodyParts refBodyParts;
     public bool debug = false;
+    public ReferenceObservations referenceObservations;
     private BodyParts bodyParts;
     private Dictionary<string, JointInfo> namedJointInfos = new Dictionary<string, JointInfo>();
     private Dictionary<string, Rigidbody> namedRigids;
@@ -41,6 +42,7 @@ class AnimationPositioner : MonoBehaviour
 
     public void setRotations()
     {
+
         foreach (JointInfo jointInfo in refBodyParts.jointsInfos)
         {
 
@@ -55,29 +57,18 @@ class AnimationPositioner : MonoBehaviour
 
     public void setRotationsRigids()
     {
-        foreach (KeyValuePair<string, Rigidbody> namedRigid in refBodyParts.getNamedRigids())
+        foreach (KeyValuePair<string, Rigidbody> namedRigid in namedRigids)
         {
-
-            float rot = namedRigid.Value.transform.rotation.eulerAngles.x;
-            rot = rot < 180 ? -rot : (360 - rot);
-            Vector3 modelPartRot = bodyParts.getNamedRigids()[namedRigid.Key].transform.rotation.eulerAngles;
-            modelPartRot.z = rot;
-            bodyParts.getNamedRigids()[namedRigid.Key].transform.rotation = Quaternion.Euler(modelPartRot);
-            //namedJointInfos[jointInfo.name].GetComponent<Rigidbody>().isKinematic = true;
+            namedRigid.Value.transform.rotation = referenceObservations.rbRotations[namedRigid.Key];
         }
     }
 
     public void setVelocities()
     {
-        foreach (KeyValuePair<string, Velocity> namedRefVel in namedRefVels)
+        foreach (KeyValuePair<string, Rigidbody> namedRigid in namedRigids)
         {
-            Vector3 refVel = namedRefVel.Value.velocity;
-            Vector3 refAngVel = namedRefVel.Value.angularVelocity;
-            refVel.z = 0;
-            refAngVel.x = 0;
-            refAngVel.y = 0;
-            //namedRigids[namedRefVel.Key].velocity = refVel;
-            namedRigids[namedRefVel.Key].angularVelocity = refAngVel;
+            //namedRigid.Value.velocity = referenceObservations.velocities[namedRigid.Key];
+            namedRigid.Value.angularVelocity = referenceObservations.angularVelocities[namedRigid.Key];
         }
     }
 }

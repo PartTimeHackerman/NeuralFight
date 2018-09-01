@@ -14,6 +14,8 @@ internal class AnimationAgent : Agent
     private AnimationPositioner animationPositioner;
     public AnimationSettings animationSettings;
     private BodyParts bodyParts;
+    private TerminateDuel terminateFn;
+    private Humanoid2DResetPos resetPosition;
 
     public int steps = 0;
     public int maxSteps = 100;
@@ -23,6 +25,7 @@ internal class AnimationAgent : Agent
     public bool ready = true;
     public bool posResetted = false;
     private float rewardAnim = 0f;
+    private bool first = true;
 
     public override void InitializeAgent()
     {
@@ -32,6 +35,8 @@ internal class AnimationAgent : Agent
         animationPositioner = GetComponent<AnimationPositioner>();
         bodyParts = GetComponent<BodyParts>();
         observations.addToRemove(new[] { "root_pos_x" });
+        terminateFn = GetComponent<TerminateDuel>();
+        resetPosition = GetComponent<Humanoid2DResetPos>();
         //animationReward.getAvgReward();
     }
 
@@ -83,21 +88,26 @@ internal class AnimationAgent : Agent
 
 
         this.actions.applyActions(actionsClamped);
-        rewardAnim = animationReward.getReward();
-        
-        if (rewardAnim < 1f)
+        if (!first)
+        {
+            rewardAnim = animationReward.getReward();
+            first = false;
+        }
+
+        /*if (rewardAnim < 1f)
         {
             resetPos();
-        }
+        }*/
 
         if (posResetted)
         {
-            rewardAnim = 0f;
+            //rewardAnim = 0f;
             posResetted = false;
         }
-         
+
+        bool terminate = terminateFn.isTerminated();
         SetReward(rewardAnim);
-        if (steps > maxSteps)
+        if (steps > maxSteps || terminate)
         {
             steps = 0;
             actionSteps = 0;
@@ -121,11 +131,12 @@ internal class AnimationAgent : Agent
 
     private void resetPos()
     {
+        resetPosition.ResetPosition();
         resetPosCounter = 0;
         ready = false;
         //animationSettings.speed = 0;
         resetJointVels();
-        //animationPositioner.setVelocities();
+        animationPositioner.setVelocities();
         animationPositioner.setRotationsRigids();
         posResetted = true;
         ready = true;

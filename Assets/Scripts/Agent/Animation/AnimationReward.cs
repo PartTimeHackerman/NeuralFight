@@ -10,6 +10,7 @@ class AnimationReward : MonoBehaviour
     public bool calcAvgReward = false;
     public bool debug = false;
     public BodyParts referenceBodyParts;
+    public ReferenceObservations referenceObservations;
     public bool isAnimationRef = true;
     private BodyParts bodyParts;
     private int bodyPartsCount;
@@ -93,11 +94,6 @@ class AnimationReward : MonoBehaviour
 
     public float getReward()
     {
-        rotErr = getRotErr();
-        posErr = getPosErr();
-        reward = (rotErr + posErr) / 2f;
-        reward = RewardFunctions.toleranceInvNoBounds(reward, .4f, .1f, RewardFunction.LONGTAIL);
-
         poseRew = poseReward();
         velocityRew = velocityReward();
         endRew = endReward();
@@ -195,7 +191,7 @@ class AnimationReward : MonoBehaviour
                 continue;
 
             float modelRbRot = getRelativeRot(namedRigid.Value, root, false);
-            float refRbRot = getRelativeRot(referenceBodyParts.getNamedRigids()[namedRigid.Key], refRoot, isAnimationRef);
+            float refRbRot = referenceObservations.relativeRots[namedRigid.Key];
 
             float rotDiff = 0f;
 
@@ -227,7 +223,7 @@ class AnimationReward : MonoBehaviour
                 continue;
 
             float modelRbRot = namedRigid.Value.angularVelocity.z;
-            float refRbRot = referenceBodyParts.getNamedRigids()[namedRigid.Key].GetComponent<Velocity>().angularVelocity.z;
+            float refRbRot = referenceObservations.angularVelocities[namedRigid.Key].z;
 
             float rotDiff = Mathf.Abs(modelRbRot - refRbRot);
 
@@ -247,7 +243,7 @@ class AnimationReward : MonoBehaviour
                 continue;
 
             Vector3 modelRbPos = root.transform.InverseTransformPoint(namedRigid.Value.transform.position);
-            Vector3 refRbPos = refRoot.transform.InverseTransformPoint(referenceBodyParts.getNamedRigids()[namedRigid.Key].transform.position);
+            Vector3 refRbPos = referenceObservations.endPositions[namedRigid.Key];
 
             Vector2 v2Model = new Vector2(modelRbPos.z, modelRbPos.y);
             Vector2 v2Ref = new Vector2(isAnimationRef ? refRbPos.x : refRbPos.z, refRbPos.y);
@@ -263,7 +259,7 @@ class AnimationReward : MonoBehaviour
     private float COMReward()
     {
 
-        Vector3 COM = physics.getCenterOfMass(bodyParts.getRigids()) - bodyParts.root.transform.position;
+        Vector3 COM = referenceObservations.COM;
         Vector3 refCOM = physics.getCenterOfMass(referenceBodyParts.getRigids()) - referenceBodyParts.root.transform.position;
         COM.z = 0;
         refCOM.z = 0;
