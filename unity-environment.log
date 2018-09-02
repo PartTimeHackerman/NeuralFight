@@ -1,4 +1,4 @@
-02.09.2018 15:11:37
+02.09.2018 15:30:36
  
 Warning
 You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent().  Alternatively, your script can inherit from ScriptableObject or no base class at all
@@ -8,10 +8,10 @@ You are trying to create a MonoBehaviour using the 'new' keyword.  This is not a
 0x00000001406DBBF3 (Unity) DebugStringToFile
 0x00000001406DC3D1 (Unity) DebugStringToFile
 0x0000000141440CFA (Unity) MonoBehaviour_CUSTOM_MonoBehaviour
-0x0000000032282A0E (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:.ctor (UnityEngine.MonoBehaviour)
-0x00000000321717AF (Mono JIT Code) [StandingRewardWalkFW.cs:37] StandingRewardWalkFW:.ctor (BodyParts) 
-0x000000003217123F (Mono JIT Code) [WalkFWReward.cs:28] WalkFWReward:Start () 
-0x00000000322826E4 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x000000003241386E (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:.ctor (UnityEngine.MonoBehaviour)
+0x000000003217FD6F (Mono JIT Code) [StandingRewardWalkFW.cs:37] StandingRewardWalkFW:.ctor (BodyParts) 
+0x000000003217F7FF (Mono JIT Code) [WalkFWReward.cs:28] WalkFWReward:Start () 
+0x0000000032412AA4 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
 0x00007FF9AE04436A (mono-2.0-bdwgc) [mini-runtime.c:2620] mono_jit_runtime_invoke 
 0x00007FF9AE249577 (mono-2.0-bdwgc) [object.c:2853] do_runtime_invoke 
 0x00007FF9AE251F7F (mono-2.0-bdwgc) [object.c:2905] mono_runtime_invoke 
@@ -42,10 +42,10 @@ You are trying to create a MonoBehaviour using the 'new' keyword.  This is not a
 0x00000001406DBBF3 (Unity) DebugStringToFile
 0x00000001406DC3D1 (Unity) DebugStringToFile
 0x0000000141440CFA (Unity) MonoBehaviour_CUSTOM_MonoBehaviour
-0x0000000032282A0E (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:.ctor (UnityEngine.MonoBehaviour)
-0x00000000321729C3 (Mono JIT Code) [VelocityReward.cs:18] VelocityReward:.ctor (UnityEngine.Vector2,single,UnityEngine.Rigidbody) 
-0x0000000032171331 (Mono JIT Code) [WalkFWReward.cs:29] WalkFWReward:Start () 
-0x00000000322826E4 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x000000003241386E (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:.ctor (UnityEngine.MonoBehaviour)
+0x00000000321A1113 (Mono JIT Code) [VelocityReward.cs:18] VelocityReward:.ctor (UnityEngine.Vector2,single,UnityEngine.Rigidbody) 
+0x000000003217F8F1 (Mono JIT Code) [WalkFWReward.cs:29] WalkFWReward:Start () 
+0x0000000032412AA4 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
 0x00007FF9AE04436A (mono-2.0-bdwgc) [mini-runtime.c:2620] mono_jit_runtime_invoke 
 0x00007FF9AE249577 (mono-2.0-bdwgc) [object.c:2853] do_runtime_invoke 
 0x00007FF9AE251F7F (mono-2.0-bdwgc) [object.c:2905] mono_runtime_invoke 
@@ -76,10 +76,10 @@ You are trying to create a MonoBehaviour using the 'new' keyword.  This is not a
 0x00000001406DBBF3 (Unity) DebugStringToFile
 0x00000001406DC3D1 (Unity) DebugStringToFile
 0x0000000141440CFA (Unity) MonoBehaviour_CUSTOM_MonoBehaviour
-0x0000000032282A0E (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:.ctor (UnityEngine.MonoBehaviour)
-0x00000000321729C3 (Mono JIT Code) [VelocityReward.cs:18] VelocityReward:.ctor (UnityEngine.Vector2,single,UnityEngine.Rigidbody) 
-0x000000003217141A (Mono JIT Code) [WalkFWReward.cs:30] WalkFWReward:Start () 
-0x00000000322826E4 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x000000003241386E (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:.ctor (UnityEngine.MonoBehaviour)
+0x00000000321A1113 (Mono JIT Code) [VelocityReward.cs:18] VelocityReward:.ctor (UnityEngine.Vector2,single,UnityEngine.Rigidbody) 
+0x000000003217F9DA (Mono JIT Code) [WalkFWReward.cs:30] WalkFWReward:Start () 
+0x0000000032412AA4 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
 0x00007FF9AE04436A (mono-2.0-bdwgc) [mini-runtime.c:2620] mono_jit_runtime_invoke 
 0x00007FF9AE249577 (mono-2.0-bdwgc) [object.c:2853] do_runtime_invoke 
 0x00007FF9AE251F7F (mono-2.0-bdwgc) [object.c:2905] mono_runtime_invoke 
