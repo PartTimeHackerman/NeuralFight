@@ -46,7 +46,8 @@ class WalkFWReward : MonoBehaviour
         others["torsoOverCOMXZReward"] = standingReward.torsoOverCOMXZReward;
         others["COMOverMeanOfFeetsXZReward"] = standingReward.COMOverMeanOfFeetsXZReward;
         #endif
-        reward = Mathf.Clamp(reward, -10f, 10f);
+        reward *= 10f;
+        reward = Mathf.Clamp(reward, -100f, 100f);
         return reward;
     }
 }
