@@ -16,8 +16,7 @@ internal class WalkingFWAgent : Agent
     public int steps = 0;
     public int maxSteps = 100;
     
-    public bool ready = true;
-    private float rewardAnim = 0f;
+    private float reward = 0f;
 
     public override void InitializeAgent()
     {
@@ -62,13 +61,12 @@ internal class WalkingFWAgent : Agent
             actionsClamped.Add(Mathf.Clamp(var, -1f, 1f));
         
         this.actions.applyActions(actionsClamped);
-        rewardAnim = rewards.getReward();
+        reward = rewards.getReward();
         
-        SetReward(rewardAnim);
+        SetReward(reward);
 
         if (steps > maxSteps)
         {
-            SetReward(rewardAnim);
             steps = 0;
             resetPos.ResetPosition();
             Done();

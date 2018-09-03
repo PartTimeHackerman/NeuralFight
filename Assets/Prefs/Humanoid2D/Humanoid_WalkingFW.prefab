@@ -1116,7 +1116,6 @@ MonoBehaviour:
     numberOfActionsBetweenDecisions: 10
   steps: 0
   maxSteps: 1000
-  ready: 1
 --- !u!114 &114217844558359470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1453,15 +1452,15 @@ MonoBehaviour:
   maxRot: 0
   minVel: 0
   maxVel: 0
-  randomJointsPosForce: 1
+  randomJointsPosForce: 0
   reset: 0
   minRotScaled: 0
   maxRotScaled: 0
   minVelScaled: 0
   maxVelScaled: 0
   randomJointsPos: 0
-  minRandomJointsPos: -1
-  maxRandomJointsPos: 1
+  minRandomJointsPos: 0
+  maxRandomJointsPos: 0
 --- !u!114 &114906125215483504
 MonoBehaviour:
   m_ObjectHideFlags: 1
