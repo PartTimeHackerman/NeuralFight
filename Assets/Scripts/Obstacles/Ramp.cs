@@ -10,7 +10,7 @@ class Ramp : MonoBehaviour
     public CapsuleCollider horizontal;
     public CapsuleCollider vertical;
 
-    public float width = 0f, height = 0f;
+    public float width = 0f, height = 0f, totalWidth = 0f;
     public bool setRamp = false;
 
     void Start()
@@ -29,6 +29,7 @@ class Ramp : MonoBehaviour
 
     public void setRampWH()
     {
+        totalWidth = width + vertical.radius;
         setWidth();
         setHeight();
         setHorizontal();

@@ -79,8 +79,8 @@ public class SingleJoystickTouchController : MonoBehaviour
                 // keeps this single joystick within the screen
                 //currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + singleJoystickBackgroundImage.rectTransform.sizeDelta.x, Screen.width);
                 //currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - singleJoystickBackgroundImage.rectTransform.sizeDelta.y);
-
-                singleJoystickBackgroundImage.rectTransform.position = currentPosition; // sets the position of the single joystick to where the screen was touched (limited to the left half of the screen)
+                if (p.x < Screen.width / 2f)
+                    singleJoystickBackgroundImage.rectTransform.position = currentPosition; // sets the position of the single joystick to where the screen was touched (limited to the left half of the screen)
 
 
             }
@@ -108,7 +108,9 @@ public class SingleJoystickTouchController : MonoBehaviour
                         //currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + singleJoystickBackgroundImage.rectTransform.sizeDelta.x, Screen.width);
                         //currentPosition.x = Mathf.Clamp(currentPosition.x, 0, Screen.width);
                         //currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - singleJoystickBackgroundImage.rectTransform.sizeDelta.y);
-                        singleJoystickBackgroundImage.rectTransform.position = currentPosition; // sets the position of the single joystick to where the screen was touched (limited to the left half of the screen)
+
+                        if (myTouches[i].position.x < Screen.width / 2f)
+                            singleJoystickBackgroundImage.rectTransform.position = currentPosition; // sets the position of the single joystick to where the screen was touched (limited to the left half of the screen)
 
                         // enables single joystick on touch
                         singleJoystickBackgroundImage.enabled = true;

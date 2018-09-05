@@ -11,6 +11,7 @@ class Gap : MonoBehaviour
     public BoxCollider back;
 
     public float width = 0f;
+    public float totalWidth = 0f;
 
     public bool set = false;
     
@@ -26,8 +27,9 @@ class Gap : MonoBehaviour
 
     private void setGap()
     {
+        totalWidth = back.transform.localPosition.x;
         Vector3 backPos = back.transform.localPosition;
-        backPos.x = width + 1f;
+        backPos.x = width + 2f;
         back.transform.localPosition = backPos;
     }
 }

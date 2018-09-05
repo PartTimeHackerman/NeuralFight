@@ -23,16 +23,21 @@ class ModelInput : MonoBehaviour
     private Vector3 input;
     private Rigidbody headEnd;
     private VerticalEffector verticalEffector;
+    private BodyParts bodyParts;
+    public float force = 10f;
+    public float jumpforce = 10f;
+    private bool jumped = false;
 
     void Start()
     {
         jointInfosManager = new JointInfosManager(GetComponent<BodyParts>());
         obs = GetComponent<Observations>();
         actions = GetComponent<IActions>();
-        modelWalkFW = new InternalModel("Models/ppo_WalkFW_2_nss", GetComponent<IObservations>(), GetComponent<IActions>());
-        modelWalkBW = new InternalModel("Models/ppo_WalkBW_2_nss", GetComponent<IObservations>(), GetComponent<IActions>());
+        modelWalkFW = new InternalModel("Models/ppo_WalkFWnew_9_nss", GetComponent<IObservations>(), GetComponent<IActions>());
+        modelWalkBW = new InternalModel("Models/ppo_WalkBWnew_1_nss", GetComponent<IObservations>(), GetComponent<IActions>());
         modelStand = new InternalModel("Models/ppo_Standing_1_nss", GetComponent<IObservations>(), GetComponent<IActions>());
         headEnd = GetComponent<BodyParts>().getNamedRigids()["head_end"];
+        bodyParts = GetComponent<BodyParts>();
         verticalEffector = GetComponent<VerticalEffector>();
     }
 
@@ -41,6 +46,19 @@ class ModelInput : MonoBehaviour
     {
         if (run)
         {
+            if (Input.GetKeyDown("space") && canJump())
+            {
+                jump();
+            }
+
+            if (Input.anyKey)
+            {
+                input = singleJoystick.GetInputDirection();
+                horizontal = input.x;
+                vertical = input.y;
+                addVel(input, force, ForceMode.Impulse);
+            }
+
             if (step >= decFreq)
             {
                 runElastic();
@@ -93,8 +111,10 @@ class ModelInput : MonoBehaviour
         horizontal = input.x;
         vertical = input.y;
         List<List<float>> actions = new List<List<float>>();
+
         if (Input.anyKey)
         {
+
             verticalEffector.enable = true;
             Dictionary<string, float> observationsNamed = obs.getObservationsNamed();
             jointInfosManager.enableJoints();
@@ -103,24 +123,31 @@ class ModelInput : MonoBehaviour
                 //jointInfosManager.setJointsJointsForces(horizontal);
                 Dictionary<string, float> observationsNamedNew = new Dictionary<string, float>(observationsNamed);
                 observationsNamedNew.Remove("root_pos_x");
-                actions.Add(getScaledActions(modelWalkFW.getActions(observationsNamedNew.Select(kv => kv.Value).ToList()), horizontal));
+                actions.Add(
+                    getScaledActions(modelWalkFW.getActions(observationsNamedNew.Select(kv => kv.Value).ToList()),
+                        1f)); // horizontal));
             }
             if (horizontal < 0f)//else if (Input.GetKey("left"))
             {
                 //jointInfosManager.setJointsJointsForces(-horizontal);
                 Dictionary<string, float> observationsNamedNew = new Dictionary<string, float>(observationsNamed);
                 observationsNamedNew.Remove("root_pos_x");
-                actions.Add(getScaledActions(modelWalkBW.getActions(observationsNamedNew.Select(kv => kv.Value).ToList()), -horizontal));
+                actions.Add(
+                    getScaledActions(modelWalkBW.getActions(observationsNamedNew.Select(kv => kv.Value).ToList()),
+                        1f)); //-horizontal));
             }
-            if (vertical < 0f)
+            /*if (vertical < 0f)
             {
                 actions.Add(getScaledActions(modelStand.getActions(observationsNamed.Select(kv => kv.Value).ToList()), -vertical));
-            }
+            }*/
 
             if (actions.Count > 0)
             {
                 List<float> avgAction = getAvgActions(actions);
                 float mag = new Vector2(horizontal, vertical).magnitude;
+
+
+                verticalEffector.velocity = mag * 500f;
                 jointInfosManager.setJointsJointsForces(mag);
                 this.actions.applyActions(avgAction);
             }
@@ -128,6 +155,7 @@ class ModelInput : MonoBehaviour
         }
         else
         {
+            verticalEffector.velocity = 0;
             verticalEffector.enable = false;
             jointInfosManager.disableJoints();
         }
@@ -166,4 +194,48 @@ class ModelInput : MonoBehaviour
         return averaged;
     }
 
+    private void addVel(Vector3 direction, float force, ForceMode forceMode)
+    {
+        foreach (Rigidbody rigid in bodyParts.getRigids())
+        {
+            rigid.AddForce(direction * force, forceMode);
+        }
+    }
+
+    private void jump()
+    {
+        addVel(Vector3.up, jumpforce, ForceMode.Impulse);
+        /*bodyParts.namedJoints["lthigh"].setConfigurableRotVel(new Vector3(0f, 0f,-25f));
+        bodyParts.namedJoints["rthigh"].setConfigurableRotVel(new Vector3(0f, 0f,-25f));
+        bodyParts.namedJoints["lshin"].setConfigurableRotVel(new Vector3(0f, 0f,25f));
+        bodyParts.namedJoints["rshin"].setConfigurableRotVel(new Vector3(0f, 0f,25f));*/
+    }
+
+    public float distToFloor(Rigidbody rigidbody)
+    {
+        int layerMask = 1 << rigidbody.gameObject.layer;
+        layerMask = ~layerMask;
+        RaycastHit hit;
+        if (Physics.Raycast(rigidbody.transform.position, Vector3.down, out hit, 1000, layerMask))
+            return hit.distance;
+        else
+            return 0;
+    }
+
+    public bool canJump()
+    {
+        Rigidbody lfoot = bodyParts.getNamedRigids()["lfoot_end"];
+        Rigidbody rfoot = bodyParts.getNamedRigids()["rfoot_end"];
+
+        return distToFloor(lfoot) < .2f || distToFloor(rfoot) < .2f;
+
+    }
+
+    public void JumpSetDownState()
+    { 
+        if (canJump())
+        {
+            jump();
+        }
+    }
 }

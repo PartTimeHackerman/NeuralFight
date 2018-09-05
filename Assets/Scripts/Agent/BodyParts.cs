@@ -8,6 +8,7 @@ public class BodyParts : MonoBehaviour
     private readonly List<ConfigurableJoint> joints = new List<ConfigurableJoint>();
     protected readonly Dictionary<ConfigurableJoint, bool[]> moveableJoints = new Dictionary<ConfigurableJoint, bool[]>();
     public List<JointInfo> jointsInfos = new List<JointInfo>();
+    public Dictionary<string, JointInfo> namedJoints = new Dictionary<string, JointInfo>();
     protected Dictionary<string, GameObject> namedParts = new Dictionary<string, GameObject>();
     private readonly Dictionary<string, Rigidbody> namedRigids = new Dictionary<string, Rigidbody>();
     protected List<GameObject> parts = new List<GameObject>();
@@ -31,6 +32,7 @@ public class BodyParts : MonoBehaviour
         jointsInfos = jointsInfos.OrderBy(joint => joint.joint.name).ToList();
 
         foreach (var joint in jointsArr) joints.Add(joint);
+        foreach (JointInfo jointInfo in jointsInfos) namedJoints[jointInfo.name] = jointInfo;
         foreach (var child in GetComponentsInChildren<Transform>())
         {
             namedParts.Add(child.gameObject.name, child.gameObject);

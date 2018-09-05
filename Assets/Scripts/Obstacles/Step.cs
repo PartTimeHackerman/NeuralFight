@@ -14,6 +14,7 @@ class Step : MonoBehaviour
     public float backRadius = 0f;
 
     public float width = 0f;
+    public float totalWidth = 0f;
     public bool set = false;
 
     public void Start()
@@ -31,12 +32,17 @@ class Step : MonoBehaviour
 
     public void setStep()
     {
+        totalWidth = width + backRadius * 2f + frontRadius * 2f;
         setUpStep(front, frontRadius, true);
         setUpStep(back, backRadius, false);
 
         Vector3 backPos = back.transform.localPosition;
-        backPos.x = width + frontRadius + backRadius;
+        backPos.x = width + frontRadius * 2f  + backRadius;
         back.transform.localPosition = backPos;
+
+        Vector3 movePosFront = front.transform.localPosition;
+        movePosFront.x = frontRadius;
+        front.transform.localPosition = movePosFront;
     }
 
     public void setUpStep(SphereCollider step, float radius, bool front)
@@ -62,11 +68,11 @@ class Step : MonoBehaviour
         boxColliderCenter.x = -radius / 2f;
         boxColliderCenter.y = -radius / 2f;
         boxCollider.center = boxColliderCenter;
-        
+
 
         Vector3 pos = boxCollider.transform.localPosition;
         pos.y = hor ? radius : 0;
-        pos.x = !hor ? ( frnt ? radius : 0) : (frnt ? 0 : radius);
+        pos.x = !hor ? (frnt ? radius : 0) : (frnt ? 0 : radius);
         boxCollider.transform.localPosition = pos;
     }
 

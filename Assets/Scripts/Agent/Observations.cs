@@ -9,7 +9,7 @@ public class Observations : MonoBehaviour, IObservations
     
     protected BodyParts bodyParts;
     protected List<string> obsToRemove = new List<string>();
-    protected Dictionary<string, float> observationsNamed = new Dictionary<string, float>();
+    public Dictionary<string, float> observationsNamed = new Dictionary<string, float>();
     private PhysicsUtils physics;
     public List<Rigidbody> observableRigids;
     public List<Rigidbody> rigids;
