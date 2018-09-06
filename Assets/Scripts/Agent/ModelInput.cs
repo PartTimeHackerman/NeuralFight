@@ -27,7 +27,8 @@ class ModelInput : MonoBehaviour
     public float force = 10f;
     public float jumpforce = 10f;
     private bool jumped = false;
-
+    private Humanoid2DResetPos resetPos;
+    public ObstaclesGenerator obstaclesGenerator;
     void Start()
     {
         jointInfosManager = new JointInfosManager(GetComponent<BodyParts>());
@@ -39,11 +40,17 @@ class ModelInput : MonoBehaviour
         headEnd = GetComponent<BodyParts>().getNamedRigids()["head_end"];
         bodyParts = GetComponent<BodyParts>();
         verticalEffector = GetComponent<VerticalEffector>();
+        resetPos = GetComponent<Humanoid2DResetPos>();
     }
 
 
     void FixedUpdate()
     {
+        if (bodyParts.root.transform.position.y < -2f)
+        {
+            resetPos.ResetPosition();
+            obstaclesGenerator.resetRun();
+        }
         if (run)
         {
             if (Input.GetKeyDown("space") && canJump())
@@ -147,7 +154,7 @@ class ModelInput : MonoBehaviour
                 float mag = new Vector2(horizontal, vertical).magnitude;
 
 
-                verticalEffector.velocity = mag * 500f;
+                verticalEffector.velocity = mag * 1000f;
                 jointInfosManager.setJointsJointsForces(mag);
                 this.actions.applyActions(avgAction);
             }
@@ -216,10 +223,13 @@ class ModelInput : MonoBehaviour
         int layerMask = 1 << rigidbody.gameObject.layer;
         layerMask = ~layerMask;
         RaycastHit hit;
-        if (Physics.Raycast(rigidbody.transform.position, Vector3.down, out hit, 1000, layerMask))
+        if (Physics.Raycast(rigidbody.transform.position, Vector3.down, out hit, Mathf.Infinity, layerMask,
+            QueryTriggerInteraction.Ignore))
+        {
             return hit.distance;
+        }
         else
-            return 0;
+            return Mathf.Infinity;
     }
 
     public bool canJump()

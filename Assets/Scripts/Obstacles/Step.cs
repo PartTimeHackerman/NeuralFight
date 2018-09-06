@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-class Step : MonoBehaviour
+class Step : Obstacle
 {
     public SphereCollider front;
     public SphereCollider back;
@@ -14,7 +15,7 @@ class Step : MonoBehaviour
     public float backRadius = 0f;
 
     public float width = 0f;
-    public float totalWidth = 0f;
+    //public float totalWidth = 0f;
     public bool set = false;
 
     public void Start()
@@ -25,9 +26,17 @@ class Step : MonoBehaviour
     {
         if (set)
         {
-            setStep();
+            setRandom();
             set = false;
         }
+    }
+
+    public override void setRandom()
+    {
+        frontRadius = Random.Range(0.5f, 2f);
+        backRadius = Random.Range(0.5f, 2f);
+        width = Random.Range(0f, 2f);
+        setStep();
     }
 
     public void setStep()
@@ -52,6 +61,7 @@ class Step : MonoBehaviour
         step.transform.position = frontPos;
 
         step.radius = radius;
+        step.GetComponent<SpriteRenderer>().size = new Vector2(radius * 2f, radius * 2f);
 
         setHorVer(step.transform.Find("horizontal").GetComponent<BoxCollider>(), radius, true, front);
         setHorVer(step.transform.Find("vertical").GetComponent<BoxCollider>(), radius, false, front);
@@ -63,6 +73,7 @@ class Step : MonoBehaviour
         boxColliderSize.x = radius;
         boxColliderSize.y = radius;
         boxCollider.size = boxColliderSize;
+        boxCollider.GetComponent<SpriteRenderer>().size = boxColliderSize;
 
         Vector3 boxColliderCenter = boxCollider.center;
         boxColliderCenter.x = -radius / 2f;

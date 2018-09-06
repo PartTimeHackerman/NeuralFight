@@ -166,7 +166,7 @@ public class Observations : MonoBehaviour, IObservations
         int layerMask = 1 << root.gameObject.layer;
         layerMask = ~layerMask;
         RaycastHit hit;
-        if (Physics.Raycast(root.transform.position, Vector3.down, out hit, 1000, layerMask))
+        if (Physics.Raycast(root.transform.position, Vector3.down, out hit, 1000, layerMask, QueryTriggerInteraction.Ignore))
             return hit.distance;
         else
             return 0;
