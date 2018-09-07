@@ -112,7 +112,7 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
         distYPrec = Mathf.Abs(root.transform.position.y - meanOfFeets().y) / maxDistanceRootFeets;
         //rootFromBaseOverMeanOfFeetsYReward = RewardFunctions.toleranceInvNoBounds(Mathf.Clamp(distYPrec, 0f, 1f), .4f, .1f, RewardFunction.LONGTAIL);
         rootFromBaseOverMeanOfFeetsYReward = distYPrec;
-        rootFromBaseOverMeanOfFeetsYReward += .3f;
+        //rootFromBaseOverMeanOfFeetsYReward += .3f;
         rootFromBaseOverMeanOfFeetsYReward = Mathf.Clamp(rootFromBaseOverMeanOfFeetsYReward, -1f, 1f);
         if (root.transform.position.y < meanOfFeets().y)
             rootFromBaseOverMeanOfFeetsYReward *= -1;

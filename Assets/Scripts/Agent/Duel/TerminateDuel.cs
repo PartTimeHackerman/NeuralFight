@@ -8,7 +8,7 @@ using UnityEngine;
 class TerminateDuel : MonoBehaviour
 {
     public bool debug = false;
-    public int arenaLen = 4;
+    public float arenaLen = 4;
     public float fallHeight = .3f;
     public bool pastArena = false;
     public bool fallen = false;
