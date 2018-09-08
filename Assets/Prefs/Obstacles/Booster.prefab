@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 114809054880967630}
   - component: {fileID: 65116612752222152}
   - component: {fileID: 212475755686963818}
+  - component: {fileID: 114881446494248158}
+  - component: {fileID: 114010675685992350}
   m_Layer: 0
   m_Name: Booster
   m_TagString: Untagged
@@ -54,6 +56,7 @@ GameObject:
   - component: {fileID: 4196227382074146}
   - component: {fileID: 65649995730515470}
   - component: {fileID: 212789241704484992}
+  - component: {fileID: 114846159369228634}
   m_Layer: 0
   m_Name: ground
   m_TagString: Untagged
@@ -126,6 +129,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0.5, y: 0, z: 0}
+--- !u!114 &114010675685992350
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1159717673676788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09810423baec614bab776dfd37da523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114809054880967630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -144,6 +159,36 @@ MonoBehaviour:
   friction: 1000
   ground: {fileID: 65649995730515470}
   set: 0
+--- !u!114 &114846159369228634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1433052080405114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75fbdca0a97a7c47b6fdcd61668457b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceColor: {r: 0, g: 0, b: 0, a: 0}
+  whiteBlackMax: 0
+  firstColorHue: 0
+  newHue: 0
+--- !u!114 &114881446494248158
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1159717673676788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75fbdca0a97a7c47b6fdcd61668457b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceColor: {r: 0, g: 0, b: 0, a: 0}
+  whiteBlackMax: 0
+  firstColorHue: 0
+  newHue: 0
 --- !u!212 &212475755686963818
 SpriteRenderer:
   m_ObjectHideFlags: 1

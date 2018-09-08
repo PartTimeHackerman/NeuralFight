@@ -50,10 +50,12 @@ class PooledObstacle
 {
     public ObstaclesPool pool;
     public Obstacle obstacle;
+    public ColorShifterManager colorShifterManager;
 
     public PooledObstacle(ObstaclesPool pool, Obstacle obstacle) {
         this.pool = pool;
         this.obstacle = obstacle;
+        colorShifterManager = obstacle.GetColorShifterManager();
     }
 
     public void poolObstacle()

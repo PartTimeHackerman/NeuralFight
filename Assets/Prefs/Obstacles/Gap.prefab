@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 65163885175239548}
   - component: {fileID: 54019846206027728}
   - component: {fileID: 212189159747321012}
+  - component: {fileID: 114674028187235248}
   m_Layer: 0
   m_Name: back
   m_TagString: Untagged
@@ -38,13 +39,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4601117144803774}
   - component: {fileID: 114228541083130050}
+  - component: {fileID: 114504980883714812}
   m_Layer: 0
   m_Name: Gap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1963142917284624
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,6 +58,7 @@ GameObject:
   - component: {fileID: 65726555590030566}
   - component: {fileID: 54215621435063788}
   - component: {fileID: 212168465358012602}
+  - component: {fileID: 114761356389204274}
   m_Layer: 0
   m_Name: front
   m_TagString: Untagged
@@ -169,11 +172,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c5a130b29c96948b949441095b0690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalWidth: 0
   front: {fileID: 65726555590030566}
   back: {fileID: 65163885175239548}
   width: 0
-  totalWidth: 0
   set: 0
+--- !u!114 &114504980883714812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1949824583533532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09810423baec614bab776dfd37da523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &114674028187235248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146625108505618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75fbdca0a97a7c47b6fdcd61668457b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceColor: {r: 0, g: 0, b: 0, a: 0}
+  whiteBlackMax: 0
+  firstColorHue: 0
+  newHue: 0
+--- !u!114 &114761356389204274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1963142917284624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75fbdca0a97a7c47b6fdcd61668457b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceColor: {r: 0, g: 0, b: 0, a: 0}
+  whiteBlackMax: 0
+  firstColorHue: 0
+  newHue: 0
 --- !u!212 &212168465358012602
 SpriteRenderer:
   m_ObjectHideFlags: 1

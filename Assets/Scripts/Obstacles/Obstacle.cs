@@ -17,4 +17,9 @@ abstract class Obstacle : MonoBehaviour
         objPos.x = xPos;
         transform.position = objPos;
     }
+
+    public ColorShifterManager GetColorShifterManager()
+    {
+        return GetComponent<ColorShifterManager>();
+    }
 }

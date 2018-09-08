@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 136480692478228890}
   - component: {fileID: 54827321016816740}
   - component: {fileID: 212981017526776128}
+  - component: {fileID: 114739704658240444}
   m_Layer: 0
   m_Name: vertical
   m_TagString: Untagged
@@ -38,6 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4112368906192040}
   - component: {fileID: 212735694020268862}
+  - component: {fileID: 114563045376159604}
   m_Layer: 0
   m_Name: EndPointSprite
   m_TagString: Untagged
@@ -56,6 +58,7 @@ GameObject:
   - component: {fileID: 136562297066876368}
   - component: {fileID: 54906547215850182}
   - component: {fileID: 212859063411353148}
+  - component: {fileID: 114953969168326916}
   m_Layer: 0
   m_Name: horizontal
   m_TagString: Untagged
@@ -72,6 +75,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4044097903769990}
   - component: {fileID: 114854270482099192}
+  - component: {fileID: 114001812539883140}
   m_Layer: 0
   m_Name: Ramp
   m_TagString: Untagged
@@ -88,6 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4586640786762162}
   - component: {fileID: 212173375006810654}
+  - component: {fileID: 114090084760965504}
   m_Layer: 0
   m_Name: CoverSprite
   m_TagString: Untagged
@@ -194,6 +199,63 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114001812539883140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1581339614186376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09810423baec614bab776dfd37da523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &114090084760965504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1940266310422544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75fbdca0a97a7c47b6fdcd61668457b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceColor: {r: 0, g: 0, b: 0, a: 0}
+  whiteBlackMax: 0
+  firstColorHue: 0
+  newHue: 0
+--- !u!114 &114563045376159604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1163058683353402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75fbdca0a97a7c47b6fdcd61668457b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceColor: {r: 0, g: 0, b: 0, a: 0}
+  whiteBlackMax: 0
+  firstColorHue: 0
+  newHue: 0
+--- !u!114 &114739704658240444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1022522277338018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75fbdca0a97a7c47b6fdcd61668457b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceColor: {r: 0, g: 0, b: 0, a: 0}
+  whiteBlackMax: 0
+  firstColorHue: 0
+  newHue: 0
 --- !u!114 &114854270482099192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,14 +267,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c71b58bff92f94694a494f548bd0bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalWidth: 0
   horizontal: {fileID: 136562297066876368}
   vertical: {fileID: 136480692478228890}
   endPointSprite: {fileID: 1163058683353402}
   coverSprite: {fileID: 1940266310422544}
   width: 1
   height: 1
-  totalWidth: 0
   setRamp: 0
+--- !u!114 &114953969168326916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1480354980971778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75fbdca0a97a7c47b6fdcd61668457b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceColor: {r: 0, g: 0, b: 0, a: 0}
+  whiteBlackMax: 0
+  firstColorHue: 0
+  newHue: 0
 --- !u!136 &136480692478228890
 CapsuleCollider:
   m_ObjectHideFlags: 1

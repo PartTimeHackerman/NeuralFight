@@ -20,6 +20,7 @@ class ObstaclesGenerator : MonoBehaviour
 
     private Queue<PooledObstacle> activeObstacles = new Queue<PooledObstacle>();
     private float lastObstacleXPos = 0f;
+    private PooledObstacle lastObstacle;
     private bool running = false;
 
 
@@ -37,11 +38,11 @@ class ObstaclesGenerator : MonoBehaviour
             {
                 activeObstacles.Dequeue();
                 firstObstacle.poolObstacle();
-                PooledObstacle newObstacle = getRandomObstacle();
+                /*PooledObstacle newObstacle = getRandomObstacle();
                 newObstacle.obstacle.setRandom();
                 newObstacle.obstacle.setXPosition(lastObstacleXPos);
                 lastObstacleXPos = newObstacle.obstacle.transform.position.x + newObstacle.obstacle.totalWidth;
-                activeObstacles.Enqueue(newObstacle);
+                activeObstacles.Enqueue(newObstacle);*/
             }
 
             if (lastObstacleXPos - playerRoot.transform.position.x < maxDist)
@@ -50,6 +51,10 @@ class ObstaclesGenerator : MonoBehaviour
                 newObstacle.obstacle.setRandom();
                 newObstacle.obstacle.setXPosition(lastObstacleXPos);
                 lastObstacleXPos = newObstacle.obstacle.transform.position.x + newObstacle.obstacle.totalWidth;
+                lastObstacle = firstObstacle;
+                ColorShifterManager newColorShifterManager = newObstacle.colorShifterManager;
+                ColorShifterManager lastColorShifterManager = lastObstacle.colorShifterManager;
+                newColorShifterManager.setColors(lastColorShifterManager.color);
                 activeObstacles.Enqueue(newObstacle);
 
             }

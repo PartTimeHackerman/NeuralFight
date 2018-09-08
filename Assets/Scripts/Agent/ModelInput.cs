@@ -41,11 +41,14 @@ class ModelInput : MonoBehaviour
         bodyParts = GetComponent<BodyParts>();
         verticalEffector = GetComponent<VerticalEffector>();
         resetPos = GetComponent<Humanoid2DResetPos>();
+
+        ColorShifter.maxDist = 1000f;
     }
 
 
     void FixedUpdate()
     {
+        ColorShifter.currentDist = bodyParts.root.transform.position.x;
         if (bodyParts.root.transform.position.y < -2f)
         {
             resetPos.ResetPosition();
