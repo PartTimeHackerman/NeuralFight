@@ -44,14 +44,7 @@ public class SingleJoystickTouchController : MonoBehaviour
             singleJoystickHandleImage.enabled = singleJoyStickAlwaysVisible; // sets single joystick handle (knob) image to be always visible or not
         }
 
-        singleJoystick.transform.localScale = new Vector3(scale, scale, 1);
-    }
-
-    void Update()
-    {
-        // can move code from FixedUpdate() to Update() if your controlled object does not use physics
-        // can move code from Update() to FixedUpdate() if your controlled object does use physics
-        // can see which one works best for your project
+        singleJoystick.transform.localScale = new Vector3(scale, scale, scale);
     }
 
     void FixedUpdate()
@@ -75,7 +68,9 @@ public class SingleJoystickTouchController : MonoBehaviour
                 var currentPosition = singleJoystickBackgroundImage.rectTransform.position; // gets the current position of the single joystick
                 currentPosition.x = p.x + singleJoystickBackgroundImage.rectTransform.sizeDelta.x * scale / 2; // calculates the x position of the single joystick to where the screen was touched
                 currentPosition.y = p.y - singleJoystickBackgroundImage.rectTransform.sizeDelta.y * scale / 2; // calculates the y position of the single joystick to where the screen was touched
-
+                //currentPosition.z = 1f;
+                //currentPosition = Camera.main.ScreenToWorldPoint(currentPosition);
+                //currentPosition.z = 10f;
                 // keeps this single joystick within the screen
                 //currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + singleJoystickBackgroundImage.rectTransform.sizeDelta.x, Screen.width);
                 //currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - singleJoystickBackgroundImage.rectTransform.sizeDelta.y);
@@ -85,7 +80,7 @@ public class SingleJoystickTouchController : MonoBehaviour
 
             }
 
-            
+
 
             Touch[] myTouches = Input.touches; // gets all the touches and stores them in an array
 
@@ -101,9 +96,11 @@ public class SingleJoystickTouchController : MonoBehaviour
                     if (singleJoystick.joystickStaysInFixedPosition == false)
                     {
                         var currentPosition = singleJoystickBackgroundImage.rectTransform.position; // gets the current position of the single joystick
+                        currentPosition.z = 0f;
                         currentPosition.x = myTouches[i].position.x + singleJoystickBackgroundImage.rectTransform.sizeDelta.x; // calculates the x position of the single joystick to where the screen was touched
                         currentPosition.y = myTouches[i].position.y - singleJoystickBackgroundImage.rectTransform.sizeDelta.y; // calculates the y position of the single joystick to where the screen was touched
-
+                        //currentPosition = Camera.main.ScreenToWorldPoint(currentPosition);
+                        //currentPosition.z = 100f;
                         // keeps this single joystick within the screen
                         //currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + singleJoystickBackgroundImage.rectTransform.sizeDelta.x, Screen.width);
                         //currentPosition.x = Mathf.Clamp(currentPosition.x, 0, Screen.width);
@@ -135,8 +132,8 @@ public class SingleJoystickTouchController : MonoBehaviour
                     }
                 }
 
+                
 
-                // if this touch has ended (finger is up and now off of the screen), for this particular touch 
                 if (myTouches[i].phase == TouchPhase.Ended)
                 {
                     // if this touch is the touch that began on the left half of the screen
@@ -152,7 +149,8 @@ public class SingleJoystickTouchController : MonoBehaviour
         else
         {
             RectTransform rt = singleJoystick.GetComponent(typeof(RectTransform)) as RectTransform;
-            singleJoystickBackgroundImage.rectTransform.position = new Vector3(rt.sizeDelta.x * 1.6f, rt.sizeDelta.y * .1f, 50);
+            //singleJoystickBackgroundImage.rectTransform.position = Camera.main.ScreenToWorldPoint(new Vector3(rt.sizeDelta.x * 1.6f, rt.sizeDelta.y * .1f, 0));
+            singleJoystickBackgroundImage.rectTransform.position = new Vector3(rt.sizeDelta.x * 1.6f, rt.sizeDelta.y * .1f, 0);
         }
     }
 }

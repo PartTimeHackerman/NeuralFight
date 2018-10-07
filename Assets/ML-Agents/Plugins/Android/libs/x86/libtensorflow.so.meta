@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: bebac1f079b0e4d6bbd41bdf5e8bdc42
-timeCreated: 1501546596
-licenseType: Free
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -15,7 +13,7 @@ PluginImporter:
     second:
       enabled: 0
       settings:
-        Exclude Android: 0
+        Exclude Android: 1
         Exclude Editor: 1
         Exclude Linux: 1
         Exclude Linux64: 1
@@ -26,7 +24,7 @@ PluginImporter:
   - first:
       Android: Android
     second:
-      enabled: 1
+      enabled: 0
       settings:
         CPU: x86
   - first:
@@ -66,6 +64,12 @@ PluginImporter:
       enabled: 0
       settings:
         CPU: x86_64
+  - first:
+      Standalone: OSXUniversal
+    second:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
   - first:
       Standalone: Win
     second:

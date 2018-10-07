@@ -18,8 +18,9 @@ class Step : Obstacle
     //public float totalWidth = 0f;
     public bool set = false;
 
-    public void Start()
+    public void OnEnable()
     {
+        type = ObstacleType.STEP;
     }
 
     public void FixedUpdate()
@@ -37,6 +38,7 @@ class Step : Obstacle
         backRadius = Random.Range(0.5f, 2f);
         width = Random.Range(0f, 2f);
         setStep();
+        base.setRandom();
     }
 
     public void setStep()
@@ -71,13 +73,13 @@ class Step : Obstacle
     {
         Vector3 boxColliderSize = boxCollider.size;
         boxColliderSize.x = radius;
-        boxColliderSize.y = radius;
+        //boxColliderSize.y = radius;
         boxCollider.size = boxColliderSize;
         boxCollider.GetComponent<SpriteRenderer>().size = boxColliderSize;
 
         Vector3 boxColliderCenter = boxCollider.center;
         boxColliderCenter.x = -radius / 2f;
-        boxColliderCenter.y = -radius / 2f;
+        //boxColliderCenter.y = -radius / 2f;
         boxCollider.center = boxColliderCenter;
 
 

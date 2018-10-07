@@ -15,7 +15,11 @@ class Gap : Obstacle
     //public float totalWidth = 0f;
 
     public bool set = false;
-    
+
+    void OnEnable()
+    {
+        type = ObstacleType.GAP;
+    }
 
     public void FixedUpdate()
     {
@@ -30,6 +34,7 @@ class Gap : Obstacle
     {
         width = Random.Range(0.5f, 5f);
         setGap();
+        base.setRandom();
     }
 
     private void setGap()

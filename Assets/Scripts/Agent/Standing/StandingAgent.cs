@@ -12,7 +12,7 @@ internal class StandingAgent : Agent
     private Observations observations;
     private Humanoid2DResetPos resetPos;
     private StandingRewardHumanoid rewards;
-    private TerminateDuel terminateFn;
+    private Terminator terminateFn;
     
     public int steps = 0;
     public int maxSteps = 100;
@@ -27,7 +27,7 @@ internal class StandingAgent : Agent
         rewards = GetComponent<StandingRewardHumanoid>();
         actions = GetComponent<Humanoid2DActionsAngPos>();
         resetPos = GetComponent<Humanoid2DResetPos>();
-        terminateFn = GetComponent<TerminateDuel>();
+        terminateFn = GetComponent<Terminator>();
         
     }
 

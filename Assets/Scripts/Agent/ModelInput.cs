@@ -29,6 +29,7 @@ class ModelInput : MonoBehaviour
     private bool jumped = false;
     private Humanoid2DResetPos resetPos;
     public ObstaclesGenerator obstaclesGenerator;
+    public bool jumping = false;
     void Start()
     {
         jointInfosManager = new JointInfosManager(GetComponent<BodyParts>());
@@ -37,18 +38,17 @@ class ModelInput : MonoBehaviour
         modelWalkFW = new InternalModel("Models/ppo_WalkFWnew_9_nss", GetComponent<IObservations>(), GetComponent<IActions>());
         modelWalkBW = new InternalModel("Models/ppo_WalkBWnew_1_nss", GetComponent<IObservations>(), GetComponent<IActions>());
         modelStand = new InternalModel("Models/ppo_Standing_1_nss", GetComponent<IObservations>(), GetComponent<IActions>());
-        headEnd = GetComponent<BodyParts>().getNamedRigids()["head_end"];
+        //headEnd = GetComponent<BodyParts>().getNamedRigids()["head_end"];
         bodyParts = GetComponent<BodyParts>();
         verticalEffector = GetComponent<VerticalEffector>();
         resetPos = GetComponent<Humanoid2DResetPos>();
-
-        ColorShifter.maxDist = 1000f;
     }
 
 
     void FixedUpdate()
     {
-        ColorShifter.currentDist = bodyParts.root.transform.position.x;
+
+        GroupColorChanger.currentDist = bodyParts.root.transform.position.x;
         if (bodyParts.root.transform.position.y < -2f)
         {
             resetPos.ResetPosition();
@@ -56,7 +56,8 @@ class ModelInput : MonoBehaviour
         }
         if (run)
         {
-            if (Input.GetKeyDown("space") && canJump())
+            jumping = Input.GetKey("space");
+            if (jumping && canJump())
             {
                 jump();
             }
@@ -78,43 +79,7 @@ class ModelInput : MonoBehaviour
 
         }
     }
-
-    private void runRigid()
-    {
-        //horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
-        //horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
-        input = singleJoystick.GetInputDirection();
-        horizontal = input.x;
-        vertical = input.y;
-        if (Input.anyKey)
-        {
-            Dictionary<string, float> observationsNamed = obs.getObservationsNamed();
-            jointInfosManager.enableJoints();
-            if (horizontal > 0f) //if (Input.GetKey("right"))
-            {
-                jointInfosManager.setJointsJointsForces(horizontal);
-                observationsNamed.Remove("root_pos_x");
-                modelWalkFW.act(observationsNamed.Select(kv => kv.Value).ToList());
-            }
-            else if (horizontal < 0f)//else if (Input.GetKey("left"))
-            {
-                jointInfosManager.setJointsJointsForces(-horizontal);
-                observationsNamed.Remove("root_pos_x");
-                modelWalkBW.act(observationsNamed.Select(kv => kv.Value).ToList());
-            }
-            else if (vertical < 0f)
-            {
-                modelStand.act(observationsNamed.Select(kv => kv.Value).ToList());
-            }
-
-        }
-        else
-        {
-            jointInfosManager.disableJoints();
-        }
-
-    }
-
+    
     private void runElastic()
     {
         input = singleJoystick.GetInputDirection();
@@ -204,12 +169,14 @@ class ModelInput : MonoBehaviour
         return averaged;
     }
 
-    private void addVel(Vector3 direction, float force, ForceMode forceMode)
+    public void addVel(Vector3 direction, float force, ForceMode forceMode)
     {
-        foreach (Rigidbody rigid in bodyParts.getRigids())
+        /*foreach (Rigidbody rigid in bodyParts.getRigids())
         {
             rigid.AddForce(direction * force, forceMode);
-        }
+        }*/
+        bodyParts.root.AddForce(direction * force, forceMode);
+        bodyParts.getNamedRigids()["head"].AddForce(direction * force, forceMode);
     }
 
     private void jump()

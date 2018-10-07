@@ -14,7 +14,7 @@ internal class AnimationAgent : Agent
     private AnimationPositioner animationPositioner;
     public AnimationSettings animationSettings;
     private BodyParts bodyParts;
-    private TerminateDuel terminateFn;
+    private Terminator terminateFn;
     private Humanoid2DResetPos resetPosition;
 
     public int steps = 0;
@@ -31,7 +31,7 @@ internal class AnimationAgent : Agent
         animationPositioner = GetComponent<AnimationPositioner>();
         bodyParts = GetComponent<BodyParts>();
         observations.addToRemove(new[] { "root_pos_x" });
-        terminateFn = GetComponent<TerminateDuel>();
+        terminateFn = GetComponent<Terminator>();
         resetPosition = GetComponent<Humanoid2DResetPos>();
         //animationReward.getAvgReward();
     }

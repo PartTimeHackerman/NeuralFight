@@ -14,13 +14,14 @@ class Ramp : Obstacle
     public GameObject coverSprite;
     private SpriteRenderer horizontalSpriteRenderer;
     private SpriteRenderer verticalSpriteRenderer;
-
+    public BoxCollider ground;
 
     public float width = 0f, height = 0f;
     public bool setRamp = false;
 
     void OnEnable()
     {
+        type = ObstacleType.RAMP;
         horizontalSpriteRenderer = horizontal.GetComponent<SpriteRenderer>();
         verticalSpriteRenderer = vertical.GetComponent<SpriteRenderer>();
         
@@ -41,6 +42,7 @@ class Ramp : Obstacle
         width = Random.Range(1f, 10f);
         height = Random.Range(0.5f, width * .66f);
         setRampWH();
+        base.setRandom();
     }
 
     public void setRampWH()
@@ -54,9 +56,10 @@ class Ramp : Obstacle
         endPointSprite.transform.localPosition = endPointPos;
 
         Vector3 coverPos = vertical.transform.localPosition;
-        coverSprite.transform.position = coverPos;
+        coverSprite.transform.localPosition = coverPos;
         Vector3 coverSize = new Vector3(width, height, 0f);
         coverSprite.GetComponent<SpriteRenderer>().size = coverSize;
+        setGround();
     }
 
     public void setWidth()
@@ -98,6 +101,21 @@ class Ramp : Obstacle
         Vector3 horAng = horizontal.transform.rotation.eulerAngles;
         horAng.z = horizontalAngle;
         horizontal.transform.rotation = Quaternion.Euler(horAng);
+    }
+
+    private void setGround()
+    {
+        float width = this.width + .2f;
+        Vector3 size = ground.size;
+        size.x = width;
+        ground.size = size;
+        Vector3 center = ground.center;
+        center.x = width / 2f;
+        ground.center = center;
+        SpriteRenderer sprite = ground.GetComponent<SpriteRenderer>();
+        Vector2 spriteSize = sprite.size;
+        spriteSize.x = width;
+        sprite.size = spriteSize;
     }
 
 }

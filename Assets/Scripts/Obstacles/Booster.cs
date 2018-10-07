@@ -21,11 +21,12 @@ class Booster : Obstacle
 
     void OnEnable()
     {
+        type = ObstacleType.BOOST;
         boost = GetComponent<BoxCollider>();
         setRandom();
         groundMaterial = new PhysicMaterial("ground");
         groundMaterial.frictionCombine = PhysicMaterialCombine.Minimum;
-        ground.material = groundMaterial;
+        //ground.material = groundMaterial;
     }
 
     public void FixedUpdate()
@@ -39,10 +40,12 @@ class Booster : Obstacle
 
     public override void setRandom()
     {
+        
         force = Random.Range(0f, 100f);
         width = Random.Range(2f, 15f);
         friction = Random.Range(0f, 1000f);
         setBooster();
+        base.setRandom();
     }
 
     private void setBooster()
@@ -56,9 +59,9 @@ class Booster : Obstacle
         boost.size = boostSize;
         ground.size = size;
         ground.GetComponent<SpriteRenderer>().size = size;
-        Vector3 boosterSpriteSize = GetComponent<SpriteRenderer>().size;
+        /*Vector3 boosterSpriteSize = GetComponent<SpriteRenderer>().size;
         boosterSpriteSize.x = width;
-        GetComponent<SpriteRenderer>().size = boosterSpriteSize;
+        GetComponent<SpriteRenderer>().size = boosterSpriteSize;*/
         Vector3 center = ground.center;
         center.x = width / 2f;
         Vector3 boostCenter = boost.center;
@@ -69,12 +72,12 @@ class Booster : Obstacle
         groundColor.r = friction / 1000f;
         ground.GetComponent<SpriteRenderer>().color = groundColor;
 
-        Color boosterColor = GetComponent<SpriteRenderer>().color;
+        /*Color boosterColor = GetComponent<SpriteRenderer>().color;
         boosterColor.a = force / 100f;
-        GetComponent<SpriteRenderer>().color = boosterColor;
+        GetComponent<SpriteRenderer>().color = boosterColor;*/
 
-        ground.material.staticFriction = friction;
-        ground.material.dynamicFriction = friction;
+        //ground.material.staticFriction = friction;
+        //ground.material.dynamicFriction = friction;
 
     }
 

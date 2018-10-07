@@ -22,8 +22,7 @@ public class SingleJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
     public bool joystickStaysInFixedPosition = false;
     [Tooltip("Sets the maximum distance the handle (knob) stays away from the center of this joystick. If the joystick handle doesn't look or feel right you can change this value. Must be a whole number. Default value is 4.")]
     public float joystickHandleDistance = 4;
-
-    public RectTransform handleParticlesTransform;
+    
     private Image bgImage; // background of the joystick, this is the part of the joystick that recieves input
     private Image joystickKnobImage; // the "knob" part of the joystick, it just moves to provide feedback, it does not receive input from the touch
     private Vector3 inputVector; // normalized direction vector that will be ouput from this joystick, it can be accessed from outside this class using the public function GetInputDirection() defined in this class, this vector can be used to control your game object ex. a player character or any desired game object
@@ -108,7 +107,6 @@ public class SingleJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
             joystickKnobImage.rectTransform.anchoredPosition =
              new Vector3(inputVector.x * (bgImage.rectTransform.sizeDelta.x / joystickHandleDistance),
                          inputVector.y * (bgImage.rectTransform.sizeDelta.y / joystickHandleDistance));
-            handleParticlesTransform.anchoredPosition = joystickKnobImage.rectTransform.anchoredPosition;
 
             // if the joystick is not set to stay in a fixed position
             if (joystickStaysInFixedPosition == false)
@@ -119,7 +117,6 @@ public class SingleJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
                     var currentPosition = bgImage.rectTransform.position;
                     currentPosition.x += ped.delta.x;
                     currentPosition.y += ped.delta.y;
-
                     // keeps the joystick within the screen
                     //currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + bgImage.rectTransform.sizeDelta.x, Screen.width);
                     //currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - bgImage.rectTransform.sizeDelta.y);
@@ -137,7 +134,7 @@ public class SingleJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
         var currentPosition = bgImage.rectTransform.position;
         currentPosition.x += ped.delta.x;
         currentPosition.y += ped.delta.y;
-
+        currentPosition.z = 0f;
         // keeps the joystick within the screen
         //currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + bgImage.rectTransform.sizeDelta.x, Screen.width);
         //currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - bgImage.rectTransform.sizeDelta.y);
@@ -152,7 +149,7 @@ public class SingleJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
     {
         inputVector = Vector3.zero; // resets the inputVector so that output will no longer affect movement of the game object (example, a player character or any desired game object)
         joystickKnobImage.rectTransform.anchoredPosition = Vector3.zero; // resets the handle ("knob") of this joystick back to the center
-        handleParticlesTransform.anchoredPosition = Vector3.zero;
+        
     }
 
     // ouputs the direction vector, use this public function from another script to control movement of a game object (such as a player character or any desired game object)

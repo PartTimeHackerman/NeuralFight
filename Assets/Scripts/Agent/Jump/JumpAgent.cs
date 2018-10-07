@@ -12,7 +12,7 @@ internal class JumpAgent : Agent
     private Observations observations;
     private Humanoid2DResetPos resetPos;
     private JumpReward rewards;
-    private TerminateDuel terminateFn;
+    private Terminator terminateFn;
     
     public int steps = 0;
     public int maxSteps = 100;
@@ -27,7 +27,7 @@ internal class JumpAgent : Agent
         rewards = GetComponent<JumpReward>();
         actions = GetComponent<Humanoid2DActionsAngPos>();
         resetPos = GetComponent<Humanoid2DResetPos>();
-        terminateFn = GetComponent<TerminateDuel>();
+        terminateFn = GetComponent<Terminator>();
         observations.addToRemove(new[]{"root_pos_x"});
 
     }

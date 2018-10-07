@@ -17,7 +17,7 @@ internal class Humanoid2DDuelAgent : Agent
     private Humanoid2DResetPos resetPos;
     private DuelReward duelReward;
     private DuelEnemyObservations enemyObservations;
-    public TerminateDuel terminateDuel;
+    public Terminator Terminator;
     private long startTime;
 
     public int resetWaitSteps = 10;
@@ -40,7 +40,7 @@ internal class Humanoid2DDuelAgent : Agent
         resetPos = GetComponent<Humanoid2DResetPos>();
         pausePos = GetComponent<PausePos>();
         enemyObservations = GetComponent<DuelEnemyObservations>();
-        terminateDuel = GetComponent<TerminateDuel>();
+        Terminator = GetComponent<Terminator>();
         observations.decisionFrequency = agentParameters.numberOfActionsBetweenDecisions;
 
         enemyObservations.setPlayerOne(playerOne);
@@ -91,7 +91,7 @@ internal class Humanoid2DDuelAgent : Agent
         SetReward(reward);
 
         terminateSelf = false;
-        terminateSelf = terminateDuel.isTerminated();
+        terminateSelf = Terminator.isTerminated();
         bool terminateEnemy = enemyAgent.terminateSelf;
         terminateAgent = terminateSelf || terminateEnemy;
 

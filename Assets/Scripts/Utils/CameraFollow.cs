@@ -61,7 +61,7 @@ class CameraFollow : MonoBehaviour
 
         float cameraX = objPos.x + xOffset;
         float cameraY = camPosY + yOffset;
-        transform.position = new Vector3(cameraX, cameraY, -10f);
+        transform.position = new Vector3(cameraX, cameraY, transform.position.z);
     }
 
 

@@ -9,23 +9,30 @@ using Random = UnityEngine.Random;
 
 class ObstaclesGenerator : MonoBehaviour
 {
-    public ObstaclesPool rampPool;
-    public ObstaclesPool stepPool;
-    public ObstaclesPool gapPool;
-    public ObstaclesPool boostPool;
-    public GameObject playerRoot;
+    public Pool<Ramp> rampPool;
+    public Pool<Step> stepPool;
+    public Pool<Gap> gapPool;
+    public Pool<Booster> boostPool;
+    public Pool<Cannon> cannonPool;
+
+    public Rigidbody playerRoot;
 
     public float minDist = -100f;
     public float maxDist = 100f;
 
-    private Queue<PooledObstacle> activeObstacles = new Queue<PooledObstacle>();
+    private Queue<Obstacle> activeObstacles = new Queue<Obstacle>();
     private float lastObstacleXPos = 0f;
-    private PooledObstacle lastObstacle;
+    private Obstacle lastObstacle;
     private bool running = false;
 
 
     void Start()
     {
+        rampPool = ObjectsPool.getPool<Ramp>();
+        stepPool = ObjectsPool.getPool<Step>();
+        gapPool = ObjectsPool.getPool<Gap>();
+        boostPool = ObjectsPool.getPool<Booster>();
+        cannonPool = ObjectsPool.getPool<Cannon>();
         resetRun();
     }
 
@@ -33,11 +40,11 @@ class ObstaclesGenerator : MonoBehaviour
     {
         if (running)
         {
-            PooledObstacle firstObstacle = activeObstacles.Peek();
-            if (playerRoot.transform.position.x - firstObstacle.obstacle.transform.position.x > maxDist)
+            Obstacle firstObstacle = activeObstacles.Peek();
+            if (playerRoot.transform.position.x - firstObstacle.transform.position.x > maxDist)
             {
                 activeObstacles.Dequeue();
-                firstObstacle.poolObstacle();
+                firstObstacle.push();
                 /*PooledObstacle newObstacle = getRandomObstacle();
                 newObstacle.obstacle.setRandom();
                 newObstacle.obstacle.setXPosition(lastObstacleXPos);
@@ -47,14 +54,14 @@ class ObstaclesGenerator : MonoBehaviour
 
             if (lastObstacleXPos - playerRoot.transform.position.x < maxDist)
             {
-                PooledObstacle newObstacle = getRandomObstacle();
-                newObstacle.obstacle.setRandom();
-                newObstacle.obstacle.setXPosition(lastObstacleXPos);
-                lastObstacleXPos = newObstacle.obstacle.transform.position.x + newObstacle.obstacle.totalWidth;
-                lastObstacle = firstObstacle;
-                ColorShifterManager newColorShifterManager = newObstacle.colorShifterManager;
-                ColorShifterManager lastColorShifterManager = lastObstacle.colorShifterManager;
-                newColorShifterManager.setColors(lastColorShifterManager.color);
+                Obstacle newObstacle = getRandomObstacle();
+                newObstacle.setRandom();
+                newObstacle.setXPosition(lastObstacleXPos);
+                lastObstacleXPos = newObstacle.transform.position.x + newObstacle.totalWidth;
+                //ColorShifterManager newColorShifterManager = newObstacle.colorShifterManager;
+                //ColorShifterManager lastColorShifterManager = lastObstacle.colorShifterManager;
+                lastObstacle = newObstacle;
+                //newColorShifterManager.setColors(lastColorShifterManager.color);
                 activeObstacles.Enqueue(newObstacle);
 
             }
@@ -67,33 +74,68 @@ class ObstaclesGenerator : MonoBehaviour
     {
         running = false;
         dequeueAllObstacles();
-        PooledObstacle boost = boostPool.getObstacle();
-        boost.obstacle.setRandom();
-        boost.obstacle.setXPosition(0f);
-        lastObstacleXPos = boost.obstacle.transform.position.x + boost.obstacle.totalWidth;
+        Obstacle boost = boostPool.Pop();
+        boost.setRandom();
+        boost.setXPosition(0f);
+        lastObstacleXPos = boost.transform.position.x + boost.totalWidth;
+        lastObstacle = boost;
         activeObstacles.Enqueue(boost);
         running = true;
     }
 
     private void dequeueAllObstacles()
     {
-        foreach (PooledObstacle activeObstacle in activeObstacles)
+        foreach (Obstacle activeObstacle in activeObstacles)
         {
-            activeObstacle.poolObstacle();
+            activeObstacle.push();
         }
         activeObstacles.Clear();
     }
 
-    private PooledObstacle getRandomObstacle()
+    private Obstacle getRandomObstacle()
     {
-        switch (Random.Range(0, 4))
+        ObstacleType type = getRandomTypeWeighted();
+        switch (type)
         {
-            case 0: return rampPool.getObstacle();
-            case 1: return stepPool.getObstacle();
-            case 2: return gapPool.getObstacle();
-            case 3: return boostPool.getObstacle();
-            default: return rampPool.getObstacle();
+            case ObstacleType.RAMP: return rampPool.Pop();
+            case ObstacleType.STEP: return stepPool.Pop();
+            case ObstacleType.GAP: return gapPool.Pop();
+            case ObstacleType.BOOST: return boostPool.Pop();
+            case ObstacleType.CANNON:
+                {
+                    Obstacle cannon = cannonPool.Pop();
+                    ((Cannon) cannon).target = playerRoot;
+                    return cannon;
+                }
+            default: return rampPool.Pop();
         }
+    }
+
+    private ObstacleType getRandomType()
+    {
+        Array values = Enum.GetValues(typeof(ObstacleType));
+        List<ObstacleType> types = values.OfType<ObstacleType>().ToList();
+        ObstacleType type = (ObstacleType)values.GetValue(Random.Range(0, types.Count));
+        if (type == lastObstacle.type)
+        {
+            type = getRandomType();
+        }
+        return type;
+    }
+    private ObstacleType getRandomTypeWeighted()
+    {
+        var weights = new Dictionary<ObstacleType, float>();
+        weights.Add(ObstacleType.RAMP, 100f);
+        weights.Add(ObstacleType.STEP, 100f);
+        weights.Add(ObstacleType.GAP, 100f);
+        weights.Add(ObstacleType.BOOST, 100f);
+        weights.Add(ObstacleType.CANNON, 10f);
+        ObstacleType type = WeightedRandomizer.From(weights).TakeOne();
+        if (type == lastObstacle.type)
+        {
+            type = getRandomType();
+        }
+        return type;
     }
 
 

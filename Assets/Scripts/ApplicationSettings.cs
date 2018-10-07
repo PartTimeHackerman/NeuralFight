@@ -5,13 +5,12 @@ public class ApplicationSettings : MonoBehaviour
 {
     private static ApplicationSettings instance;
 
-    public int FPS = 30;
+    public int FPS = 60;
     public float timeScale = 1;
 
     private void Awake()
     {
-        if (instance == null)
-        {
+        if (instance == null) { 
             instance = this;
             DontDestroyOnLoad(gameObject);
         }

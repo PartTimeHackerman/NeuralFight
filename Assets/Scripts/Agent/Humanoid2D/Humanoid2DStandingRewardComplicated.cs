@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Assets.Scripts.Agent;
 using UnityEngine;
-using UnityEngine.Collections;
 using Random = UnityEngine.Random;
 
 public class Humanoid2DStandingRewardComplicated : MonoBehaviour, IReward

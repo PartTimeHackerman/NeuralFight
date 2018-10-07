@@ -8,11 +8,15 @@ using UnityEngine;
 class ObstaclesPool : MonoBehaviour
 {
     public Obstacle obstacle;
+    public ObstacleType poolType;
     public int amount;
     private Queue<PooledObstacle> obstaclesQueue = new Queue<PooledObstacle>();
 
     void OnEnable()
     {
+        Obstacle obj = (Obstacle)Instantiate(obstacle);
+        poolType = obj.type;
+        Destroy(obj.gameObject);
         for (int i = 0; i < amount; i++)
         {
             addObstacle();
@@ -22,6 +26,7 @@ class ObstaclesPool : MonoBehaviour
     private void addObstacle()
     {
         Obstacle obj = (Obstacle)Instantiate(obstacle);
+        DontDestroyOnLoad(obj);
         obj.gameObject.SetActive(false);
         PooledObstacle pooledObstacle = new PooledObstacle(this, obj);
         obstaclesQueue.Enqueue(pooledObstacle);
@@ -55,7 +60,6 @@ class PooledObstacle
     public PooledObstacle(ObstaclesPool pool, Obstacle obstacle) {
         this.pool = pool;
         this.obstacle = obstacle;
-        colorShifterManager = obstacle.GetColorShifterManager();
     }
 
     public void poolObstacle()
@@ -64,4 +68,5 @@ class PooledObstacle
         pool.poolObstacle(this);
     }
 }
+
 
