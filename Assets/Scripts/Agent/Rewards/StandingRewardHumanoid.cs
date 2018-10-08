@@ -18,9 +18,9 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
 
     public bool calcAvgReward = false;
     public float reward;
-    public float avgReward = 0f;
-    public float avgRewardSum = 0f;
-    public float avgCounter = 0f;
+    private float avgReward = 0f;
+    private float avgRewardSum = 0f;
+    private float avgCounter = 0f;
 
     private float lastClearReward = 0;
     public float COMOverMeanOfFeetsXZReward;
@@ -101,7 +101,7 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
         return distPrec;
     }
 
-    public float rootFromBaseOverMeanOfFeetsY()
+    public virtual float rootFromBaseOverMeanOfFeetsY()
     {
         float distYPrec = 0;
         /*

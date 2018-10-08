@@ -35,28 +35,28 @@ class Terminator : MonoBehaviour
         return Mathf.Abs(COM.x) > arenaLen;
     }
 
-    private bool isFallen()
+    private bool isFallen(Vector3 COM)
     {
         //Vector3 headPos = bodyParts.getNamedRigids()["head_end"].transform.position;
         //return COM.y < fallHeight || headPos.y < fallHeight; test2
-        return distToFloor(bodyParts.getNamedRigids()["head_end"]) < fallHeight;
+        return distToFloor(COM) < fallHeight;
     }
 
     public bool isTerminated()
     {
         COM = physicsUtils.getCenterOfMass(bodyParts.getRigids());
         pastArena = isPastArena();
-        fallen = isFallen();
+        fallen = isFallen(COM);
         terminated = pastArena || fallen;
         return terminated;
     }
     
-    public float distToFloor(Rigidbody rigidbody)
+    private float distToFloor(Vector3 pos)
     {
-        int layerMask = 1 << rigidbody.gameObject.layer;
+        int layerMask = 1 << bodyParts.root.gameObject.layer;
         layerMask = ~layerMask;
         RaycastHit hit;
-        if (Physics.Raycast(rigidbody.transform.position, Vector3.down, out hit, Mathf.Infinity, layerMask,
+        if (Physics.Raycast(pos, Vector3.down, out hit, Mathf.Infinity, layerMask,
             QueryTriggerInteraction.Ignore))
         {
             return hit.distance;
