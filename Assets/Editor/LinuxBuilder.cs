@@ -40,7 +40,7 @@ class LinuxBuilder : MonoBehaviour
     static string[] getMLScenes()
     {
         List<string> paths = new List<string>();
-        paths.Add("Assets/MLScenes/sceneChooser.unity");
+        paths.Add("Assets/sceneChooser.unity");
         DirectoryInfo dir = new DirectoryInfo("Assets/MLScenes");
         FileInfo[] info = dir.GetFiles("*.unity");
         for (int i = 0; i < info.Length; i++)
