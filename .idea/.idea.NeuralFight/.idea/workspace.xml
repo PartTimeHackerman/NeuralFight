@@ -2,23 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="159b53ff-75ce-40a4-a89e-d09d9ef77c9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/Crouching.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/Crouching/CrouchingAcademy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/Crouching/CrouchingAcademy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/Crouching/CrouchingAgent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/Crouching/CrouchingAgent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/Rewards/CrouchingReward.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/Rewards/CrouchingReward.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/SceneChooser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/SceneChooser.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuralFight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NeuralFight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuralFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NeuralFight/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Editor/LinuxBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LinuxBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Physics Materials/Ending.physicMaterial" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Physics Materials/Ending.physicMaterial" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefs/Humanoid2D/Humanoid_Standing.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefs/Humanoid2D/Humanoid_Standing.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Agent/Duel/Terminator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/Duel/Terminator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Agent/Rewards/StandingRewardHumanoid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/Rewards/StandingRewardHumanoid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/model_input.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/model_input.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/standing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/standing.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/crouching.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/crouching.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/duel.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/duel.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/jump.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/jump.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/standing.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/standing.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/walk_bw.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/walk_bw.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/walk_fw.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/walk_fw.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/unity-environment.log" beforeDir="false" afterPath="$PROJECT_DIR$/unity-environment.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,32 +31,35 @@
     <session id="1829523119">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.20" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="11" />
+          <entry key="cs" value="13" />
           <entry key="js" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="11" />
+          <entry key="C#" value="13" />
           <entry key="JavaScript" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="168" />
+          <entry key="cs" value="502" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="168" />
+          <entry key="C#" value="502" />
         </counts>
       </usages-collector>
     </session>
@@ -64,48 +67,142 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Rewards/CrouchingReward.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Editor/LinuxBuilder.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+            <state relative-caret-position="540">
+              <caret line="43" column="63" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="63" />
               <folding>
-                <marker date="1538936550725" expanded="true" signature="73:442" ph="{...}" />
-                <marker date="1538936550725" expanded="true" signature="141:153" ph="{...}" />
-                <marker date="1538936550725" expanded="true" signature="211:440" ph="{...}" />
+                <marker date="1539105502282" expanded="false" signature="6:170" ph="..." />
+                <marker date="1539105502282" expanded="true" signature="206:1685" ph="{...}" />
+                <marker date="1539105502282" expanded="true" signature="282:316" ph="{...}" />
+                <marker date="1539105502282" expanded="true" signature="346:801" ph="{...}" />
+                <marker date="1539105502282" expanded="true" signature="841:1256" ph="{...}" />
+                <marker date="1539105502282" expanded="true" signature="1291:1683" ph="{...}" />
+                <marker date="1539105502282" expanded="true" signature="1566:1644" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/HeadlessTest.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/ML-Agents/Scripts/Academy.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="3555">
+              <caret line="242" column="40" selection-start-line="232" selection-start-column="12" selection-end-line="242" selection-end-column="40" />
               <folding>
-                <marker date="1527091688700" expanded="true" signature="72:1139" ph="{...}" />
-                <marker date="1527091688700" expanded="true" signature="103:216" ph="{...}" />
-                <marker date="1527091688700" expanded="true" signature="251:364" ph="{...}" />
-                <marker date="1527091688700" expanded="true" signature="397:508" ph="{...}" />
-                <marker date="1527091688700" expanded="true" signature="541:652" ph="{...}" />
-                <marker date="1527091688700" expanded="true" signature="693:812" ph="{...}" />
-                <marker date="1527091688700" expanded="true" signature="854:974" ph="{...}" />
-                <marker date="1527091688700" expanded="true" signature="1014:1132" ph="{...}" />
+                <marker date="1535650284578" expanded="false" signature="6:124" ph="..." />
+                <marker date="1535650284578" expanded="true" signature="134:812" ph="/* Welcome to Unity Machine Learning Agents (ML-Agents). ... */" />
+                <marker date="1535650284578" expanded="true" signature="839:1123" ph="/// Wraps the environment-level parameters that are provided within the ... " />
+                <marker date="1535650284578" expanded="true" signature="1191:2854" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="1759:2480" ph="/// Initializes a new instance of the ... " />
+                <marker date="1535650284578" expanded="true" signature="2624:2848" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="2860:3828" ph="/// An Academy is where Agent objects go to train their behaviors. More  ... " />
+                <marker date="1535650284578" expanded="true" signature="3833:3967" ph="[...]" />
+                <marker date="1535650284578" expanded="true" signature="4037:23442" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="4175:4454" ph="[...]" />
+                <marker date="1535650284578" expanded="true" signature="4511:4643" ph="[...]" />
+                <marker date="1535650284578" expanded="true" signature="4800:4933" ph="[...]" />
+                <marker date="1535650284578" expanded="true" signature="5067:5565" ph="/// &lt;summary&gt; ... " />
+                <marker date="1535650284578" expanded="true" signature="5599:5714" ph="[...]" />
+                <marker date="1535650284578" expanded="true" signature="5822:6008" ph="/// Boolean flag indicating whether a communicator is accessible by the ... " />
+                <marker date="1535650284578" expanded="true" signature="6049:6250" ph="/// Keeps track of the id of the last communicator message received. ... " />
+                <marker date="1535650284578" expanded="true" signature="6313:6608" ph="/// If true, the Academy will use inference settings. This field is ... " />
+                <marker date="1535650284578" expanded="true" signature="6651:6878" ph="/// The done flag of the academy. When set to true, the academy will ... " />
+                <marker date="1535650284578" expanded="true" signature="6907:7007" ph="/// Whether the academy has reached the maximum number of steps for the ... " />
+                <marker date="1535650284578" expanded="true" signature="7046:7163" ph="/// The number of episodes completed by the environment. Incremented ... " />
+                <marker date="1535650284578" expanded="true" signature="7199:7392" ph="/// The number of steps completed within the current episide. Incremented ... " />
+                <marker date="1535650284578" expanded="true" signature="7425:7626" ph="/// Flag that indicates whether the inference/training mode of the ... " />
+                <marker date="1535650284578" expanded="true" signature="8037:8506" ph="/* The Academy uses a series of events to communicate with agents and ... */" />
+                <marker date="1535650284578" expanded="true" signature="8570:8876" ph="/* Signals to all the agents at each environment step along with the ... */" />
+                <marker date="1535650284578" expanded="true" signature="8954:9130" ph="/* Signals to all the agents at each environment step so they can reset ... */" />
+                <marker date="1535650284578" expanded="true" signature="9193:9336" ph="/* Signals to all the agents at each environment step so they can send ... */" />
+                <marker date="1535650284578" expanded="true" signature="9397:9512" ph="/* Signals to all the agents at each environment step so they can act if ... */" />
+                <marker date="1535650284578" expanded="true" signature="9692:9989" ph="/// Monobehavior function called at the very beginning of environment ... " />
+                <marker date="1535650284578" expanded="true" signature="10010:10067" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="10162:10520" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="10318:10468" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="10373:10454" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="10530:10650" ph="/// Initializes the environment, configures it and initialized the Academy. ... " />
+                <marker date="1535650284578" expanded="true" signature="10695:14648" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="10996:11229" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="11148:11213" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="11242:11490" ph="/* If it fails, we check if there are any external brains in the scene ... */" />
+                <marker date="1535650284578" expanded="true" signature="11521:11970" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="11701:11956" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="11869:11936" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="12140:12227" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="12266:13926" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="12607:13025" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="13225:13415" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="13940:14121" ph="/* If a communicator is enabled/provided, then we assume we are in ... */" />
+                <marker date="1535650284578" expanded="true" signature="14434:14543" ph="/* Configure the environment using the configurations provided by ... */" />
+                <marker date="1535650284578" expanded="true" signature="14723:14970" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="14980:15172" ph="/// Configures the environment settings depending on the training/inference ... " />
+                <marker date="1535650284578" expanded="true" signature="15208:15548" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="15247:15384" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="15401:15538" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="15558:15822" ph="/// Helper method for initializing the environment based on the provided ... " />
+                <marker date="1535650284578" expanded="true" signature="15902:16219" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="16229:16457" ph="/// Initializes the academy and environment. Called during the waking-up ... " />
+                <marker date="1535650284578" expanded="true" signature="16505:16525" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="16535:16648" ph="/// Specifies the academy behavior at every step of the environment. ... " />
+                <marker date="1535650284578" expanded="true" signature="16690:16710" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="16720:16874" ph="/// Specifies the academy behavior when being reset (i.e. at the completion ... " />
+                <marker date="1535650284578" expanded="true" signature="16917:16937" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="16947:17165" ph="/// Returns the &lt;see cref=&quot;isInference&quot;/&gt; flag. ... " />
+                <marker date="1535650284578" expanded="true" signature="17202:17254" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="17264:17655" ph="/// Sets the &lt;see cref=&quot;isInference&quot;/&gt; flag to the provided value. If ... " />
+                <marker date="1535650284578" expanded="true" signature="17708:18117" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="17767:18107" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="17847:18056" ph="/* This signals to the academy that at the next environment step ... */" />
+                <marker date="1535650284578" expanded="true" signature="18127:18293" ph="/// Returns the current episode counter. ... " />
+                <marker date="1535650284578" expanded="true" signature="18330:18383" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="18393:18584" ph="/// Returns the current step counter (within the current epside). ... " />
+                <marker date="1535650284578" expanded="true" signature="18618:18668" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="18678:18754" ph="/// Sets the done flag to true. ... " />
+                <marker date="1535650284578" expanded="true" signature="18781:18826" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="18836:19042" ph="/// Returns whether or not the academy is done. ... " />
+                <marker date="1535650284578" expanded="true" signature="19071:19116" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="19126:19338" ph="/// Returns whether or not the communicator is on. ... " />
+                <marker date="1535650284578" expanded="true" signature="19377:19434" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="19444:19657" ph="/// Forces the full reset. The done flags are not affected. Is either  ... " />
+                <marker date="1535650284578" expanded="true" signature="19688:19809" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="19819:19980" ph="/// Performs a single environment update to the Academy, Brain and Agent ... " />
+                <marker date="1535650284578" expanded="true" signature="20011:22044" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="20051:20157" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="20288:21395" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="20509:21078" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="20713:20952" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="20814:20930" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="21196:21381" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="21436:21499" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="21557:21648" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="21790:21854" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="22054:22149" ph="/// Resets the environment, including the Academy. ... " />
+                <marker date="1535650284578" expanded="true" signature="22181:22346" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="22356:22463" ph="/// Monobehavior function that dictates each environment step. ... " />
+                <marker date="1535650284578" expanded="true" signature="22497:22548" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="22558:22894" ph="/// Helper method that retrieves the Brain objects that are currently ... " />
+                <marker date="1535650284578" expanded="true" signature="22951:23436" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="23120:23398" ph="{...}" />
+                <marker date="1535650284578" expanded="true" signature="23309:23384" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Editor/LinuxBuilder.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Utils/SceneChooser.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+            <state relative-caret-position="345">
+              <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
               <folding>
-                <marker date="1539016680683" expanded="false" signature="6:153" ph="..." />
-                <marker date="1539016680683" expanded="true" signature="189:1261" ph="{...}" />
-                <marker date="1539016680683" expanded="true" signature="265:299" ph="{...}" />
-                <marker date="1539016680683" expanded="true" signature="329:804" ph="{...}" />
-                <marker date="1539016680683" expanded="true" signature="844:1259" ph="{...}" />
+                <marker date="1539109771906" expanded="false" signature="6:70" ph="..." />
+                <marker date="1539109771906" expanded="true" signature="113:556" ph="{...}" />
+                <marker date="1539109771906" expanded="true" signature="140:221" ph="{...}" />
+                <marker date="1539109771906" expanded="true" signature="255:554" ph="{...}" />
+                <marker date="1539109771906" expanded="true" signature="391:514" ph="{...}" />
+                <marker date="1539109771906" expanded="true" signature="439:504" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -114,10 +211,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/ApplicationSettings.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-108">
+            <state relative-caret-position="225">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <marker date="1537881709722" expanded="false" signature="6:32" ph="..." />
-                <marker date="1537881709722" expanded="true" signature="82:1191" ph="{...}" />
                 <marker date="1537881709722" expanded="true" signature="217:473" ph="{...}" />
                 <marker date="1537881709722" expanded="true" signature="254:338" ph="{...}" />
                 <marker date="1537881709722" expanded="true" signature="539:727" ph="{...}" />
@@ -259,27 +356,44 @@
     <findStrings>
       <find>ray</find>
       <find>spritesha</find>
+      <find>port</find>
+      <find>System.Environment.GetCommandLineArgs</find>
     </findStrings>
+    <dirStrings>
+      <dir>C:\NeuralFight\NeuralFight\Assets\Scripts</dir>
+      <dir>C:\NeuralFight\NeuralFight\Assets\ML-Agents</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Observations.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Rewards/CrouchingReward.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Color/GroupColorManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ML-Agents/Scripts/Academy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent/JointInfosManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent/BodyParts.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/HSBColor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/SpriteShadows.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Duel/Terminator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Editor/LinuxBuilder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/DictionaryDrawer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent/ModelInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent/InternalModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Rewards/CrouchingReward.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Color/GroupColorManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ML-Agents/Scripts/CoreBrainInternal.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/JoystickInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/SceneChooser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ApplicationSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Standing/StandingAcademy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Rewards/StandingRewardHumanoid.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/SpriteShadows.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ML-Agents/Scripts/RpcCommunicator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/RewardFunctions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Standing/StandingAgent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Duel/Terminator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UnityMainThreadDispatcher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Standing/StandingObservations.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Editor/LinuxBuilder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent/ModelInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obstacles/Cannon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ML-Agents/Scripts/SocketCommunicator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Crouching/CrouchingAcademy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Crouching/CrouchingAgent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HeadlessTest.cs" root0="FORCE_HIGHLIGHTING" />
@@ -292,7 +406,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/Crouching/CrouchingAcademy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/Crouching/CrouchingAgent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/Rewards/CrouchingReward.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Scenes.cs" />
         <option value="$PROJECT_DIR$/Assets/Editor/LinuxBuilder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/SceneChooser.cs" />
       </list>
     </option>
   </component>
@@ -313,6 +429,33 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="UnityExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+              <item name="Utils" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Packages" type="4e2708dd:PackagesRoot" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-hidden-items" value="false" />
+      </pane>
       <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
@@ -336,27 +479,6 @@
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
-      </pane>
-      <pane id="UnityExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Project" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
-            </path>
-            <path>
-              <item name="Project" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
-              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="e068e287:UnityExplorerRootNode" />
-              <item name="packages" type="4e2708dd:PackagesRoot" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <option name="show-hidden-items" value="false" />
       </pane>
     </panes>
   </component>
@@ -406,12 +528,15 @@
       <option name="presentableId" value="Default" />
       <updated>1538924297202</updated>
       <workItem from="1538924305920" duration="7573000" />
-      <workItem from="1539008355132" duration="1604000" />
+      <workItem from="1539008355132" duration="2238000" />
+      <workItem from="1539096355128" duration="926000" />
+      <workItem from="1539102906091" duration="3973000" />
+      <workItem from="1539171070042" duration="590000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9177000" />
+    <option name="totallyTimeSpent" value="15300000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -426,7 +551,7 @@
     <frame x="-1448" y="168" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24713467" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25787964" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -478,27 +603,153 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1455">
           <caret line="103" column="4" selection-start-line="103" selection-start-column="4" selection-end-line="103" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/physics assets/PivotJointBuilder.js" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Rewards/CrouchingReward.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/HeadlessTest.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Editor/LinuxBuilder.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="43" column="63" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="63" />
           <folding>
-            <marker date="1538935645519" expanded="false" signature="6:162" ph="..." />
-            <marker date="1538935645519" expanded="true" signature="224:6605" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="1124:1241" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="1259:1480" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="1508:1706" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="1541:1700" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="1730:2213" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="2254:2667" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="2702:3120" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="3177:4078" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="3221:3472" ph="/* if (namedParts[&quot;torso&quot;].transform.position.y &gt; meanOfFeets().y) ... */" />
-            <marker date="1538935645519" expanded="true" signature="4122:4545" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="4579:4891" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="4929:5388" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="5157:5264" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="5418:6118" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="6151:6313" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="6351:6385" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="6415:6449" ph="{...}" />
-            <marker date="1538935645519" expanded="true" signature="6511:6602" ph="{...}" />
+            <marker date="1539105502282" expanded="false" signature="6:170" ph="..." />
+            <marker date="1539105502282" expanded="true" signature="206:1685" ph="{...}" />
+            <marker date="1539105502282" expanded="true" signature="282:316" ph="{...}" />
+            <marker date="1539105502282" expanded="true" signature="346:801" ph="{...}" />
+            <marker date="1539105502282" expanded="true" signature="841:1256" ph="{...}" />
+            <marker date="1539105502282" expanded="true" signature="1291:1683" ph="{...}" />
+            <marker date="1539105502282" expanded="true" signature="1566:1644" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ML-Agents/Scripts/Academy.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3555">
+          <caret line="242" column="40" selection-start-line="232" selection-start-column="12" selection-end-line="242" selection-end-column="40" />
+          <folding>
+            <marker date="1535650284578" expanded="false" signature="6:124" ph="..." />
+            <marker date="1535650284578" expanded="true" signature="134:812" ph="/* Welcome to Unity Machine Learning Agents (ML-Agents). ... */" />
+            <marker date="1535650284578" expanded="true" signature="839:1123" ph="/// Wraps the environment-level parameters that are provided within the ... " />
+            <marker date="1535650284578" expanded="true" signature="1191:2854" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="1759:2480" ph="/// Initializes a new instance of the ... " />
+            <marker date="1535650284578" expanded="true" signature="2624:2848" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="2860:3828" ph="/// An Academy is where Agent objects go to train their behaviors. More  ... " />
+            <marker date="1535650284578" expanded="true" signature="3833:3967" ph="[...]" />
+            <marker date="1535650284578" expanded="true" signature="4037:23442" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="4175:4454" ph="[...]" />
+            <marker date="1535650284578" expanded="true" signature="4511:4643" ph="[...]" />
+            <marker date="1535650284578" expanded="true" signature="4800:4933" ph="[...]" />
+            <marker date="1535650284578" expanded="true" signature="5067:5565" ph="/// &lt;summary&gt; ... " />
+            <marker date="1535650284578" expanded="true" signature="5599:5714" ph="[...]" />
+            <marker date="1535650284578" expanded="true" signature="5822:6008" ph="/// Boolean flag indicating whether a communicator is accessible by the ... " />
+            <marker date="1535650284578" expanded="true" signature="6049:6250" ph="/// Keeps track of the id of the last communicator message received. ... " />
+            <marker date="1535650284578" expanded="true" signature="6313:6608" ph="/// If true, the Academy will use inference settings. This field is ... " />
+            <marker date="1535650284578" expanded="true" signature="6651:6878" ph="/// The done flag of the academy. When set to true, the academy will ... " />
+            <marker date="1535650284578" expanded="true" signature="6907:7007" ph="/// Whether the academy has reached the maximum number of steps for the ... " />
+            <marker date="1535650284578" expanded="true" signature="7046:7163" ph="/// The number of episodes completed by the environment. Incremented ... " />
+            <marker date="1535650284578" expanded="true" signature="7199:7392" ph="/// The number of steps completed within the current episide. Incremented ... " />
+            <marker date="1535650284578" expanded="true" signature="7425:7626" ph="/// Flag that indicates whether the inference/training mode of the ... " />
+            <marker date="1535650284578" expanded="true" signature="8037:8506" ph="/* The Academy uses a series of events to communicate with agents and ... */" />
+            <marker date="1535650284578" expanded="true" signature="8570:8876" ph="/* Signals to all the agents at each environment step along with the ... */" />
+            <marker date="1535650284578" expanded="true" signature="8954:9130" ph="/* Signals to all the agents at each environment step so they can reset ... */" />
+            <marker date="1535650284578" expanded="true" signature="9193:9336" ph="/* Signals to all the agents at each environment step so they can send ... */" />
+            <marker date="1535650284578" expanded="true" signature="9397:9512" ph="/* Signals to all the agents at each environment step so they can act if ... */" />
+            <marker date="1535650284578" expanded="true" signature="9692:9989" ph="/// Monobehavior function called at the very beginning of environment ... " />
+            <marker date="1535650284578" expanded="true" signature="10010:10067" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="10162:10520" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="10318:10468" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="10373:10454" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="10530:10650" ph="/// Initializes the environment, configures it and initialized the Academy. ... " />
+            <marker date="1535650284578" expanded="true" signature="10695:14648" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="10996:11229" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="11148:11213" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="11242:11490" ph="/* If it fails, we check if there are any external brains in the scene ... */" />
+            <marker date="1535650284578" expanded="true" signature="11521:11970" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="11701:11956" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="11869:11936" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="12140:12227" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="12266:13926" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="12607:13025" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="13225:13415" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="13940:14121" ph="/* If a communicator is enabled/provided, then we assume we are in ... */" />
+            <marker date="1535650284578" expanded="true" signature="14434:14543" ph="/* Configure the environment using the configurations provided by ... */" />
+            <marker date="1535650284578" expanded="true" signature="14723:14970" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="14980:15172" ph="/// Configures the environment settings depending on the training/inference ... " />
+            <marker date="1535650284578" expanded="true" signature="15208:15548" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="15247:15384" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="15401:15538" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="15558:15822" ph="/// Helper method for initializing the environment based on the provided ... " />
+            <marker date="1535650284578" expanded="true" signature="15902:16219" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="16229:16457" ph="/// Initializes the academy and environment. Called during the waking-up ... " />
+            <marker date="1535650284578" expanded="true" signature="16505:16525" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="16535:16648" ph="/// Specifies the academy behavior at every step of the environment. ... " />
+            <marker date="1535650284578" expanded="true" signature="16690:16710" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="16720:16874" ph="/// Specifies the academy behavior when being reset (i.e. at the completion ... " />
+            <marker date="1535650284578" expanded="true" signature="16917:16937" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="16947:17165" ph="/// Returns the &lt;see cref=&quot;isInference&quot;/&gt; flag. ... " />
+            <marker date="1535650284578" expanded="true" signature="17202:17254" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="17264:17655" ph="/// Sets the &lt;see cref=&quot;isInference&quot;/&gt; flag to the provided value. If ... " />
+            <marker date="1535650284578" expanded="true" signature="17708:18117" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="17767:18107" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="17847:18056" ph="/* This signals to the academy that at the next environment step ... */" />
+            <marker date="1535650284578" expanded="true" signature="18127:18293" ph="/// Returns the current episode counter. ... " />
+            <marker date="1535650284578" expanded="true" signature="18330:18383" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="18393:18584" ph="/// Returns the current step counter (within the current epside). ... " />
+            <marker date="1535650284578" expanded="true" signature="18618:18668" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="18678:18754" ph="/// Sets the done flag to true. ... " />
+            <marker date="1535650284578" expanded="true" signature="18781:18826" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="18836:19042" ph="/// Returns whether or not the academy is done. ... " />
+            <marker date="1535650284578" expanded="true" signature="19071:19116" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="19126:19338" ph="/// Returns whether or not the communicator is on. ... " />
+            <marker date="1535650284578" expanded="true" signature="19377:19434" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="19444:19657" ph="/// Forces the full reset. The done flags are not affected. Is either  ... " />
+            <marker date="1535650284578" expanded="true" signature="19688:19809" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="19819:19980" ph="/// Performs a single environment update to the Academy, Brain and Agent ... " />
+            <marker date="1535650284578" expanded="true" signature="20011:22044" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="20051:20157" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="20288:21395" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="20509:21078" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="20713:20952" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="20814:20930" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="21196:21381" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="21436:21499" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="21557:21648" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="21790:21854" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="22054:22149" ph="/// Resets the environment, including the Academy. ... " />
+            <marker date="1535650284578" expanded="true" signature="22181:22346" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="22356:22463" ph="/// Monobehavior function that dictates each environment step. ... " />
+            <marker date="1535650284578" expanded="true" signature="22497:22548" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="22558:22894" ph="/// Helper method that retrieves the Brain objects that are currently ... " />
+            <marker date="1535650284578" expanded="true" signature="22951:23436" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="23120:23398" ph="{...}" />
+            <marker date="1535650284578" expanded="true" signature="23309:23384" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ApplicationSettings.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <marker date="1537881709722" expanded="false" signature="6:32" ph="..." />
+            <marker date="1537881709722" expanded="true" signature="217:473" ph="{...}" />
+            <marker date="1537881709722" expanded="true" signature="254:338" ph="{...}" />
+            <marker date="1537881709722" expanded="true" signature="539:727" ph="{...}" />
+            <marker date="1537881709722" expanded="true" signature="777:1043" ph="{...}" />
+            <marker date="1537881709722" expanded="true" signature="1077:1122" ph="{...}" />
+            <marker date="1537881709722" expanded="true" signature="1152:1189" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -615,67 +866,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/physics assets/PivotJointBuilder.js">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Utils/SceneChooser.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="95" column="60" lean-forward="true" selection-start-line="95" selection-start-column="60" selection-end-line="95" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ApplicationSettings.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
+        <state relative-caret-position="345">
+          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
           <folding>
-            <marker date="1537881709722" expanded="false" signature="6:32" ph="..." />
-            <marker date="1537881709722" expanded="true" signature="82:1191" ph="{...}" />
-            <marker date="1537881709722" expanded="true" signature="217:473" ph="{...}" />
-            <marker date="1537881709722" expanded="true" signature="254:338" ph="{...}" />
-            <marker date="1537881709722" expanded="true" signature="539:727" ph="{...}" />
-            <marker date="1537881709722" expanded="true" signature="777:1043" ph="{...}" />
-            <marker date="1537881709722" expanded="true" signature="1077:1122" ph="{...}" />
-            <marker date="1537881709722" expanded="true" signature="1152:1189" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Rewards/CrouchingReward.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
-          <folding>
-            <marker date="1538936550725" expanded="true" signature="73:442" ph="{...}" />
-            <marker date="1538936550725" expanded="true" signature="141:153" ph="{...}" />
-            <marker date="1538936550725" expanded="true" signature="211:440" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/HeadlessTest.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1527091688700" expanded="true" signature="72:1139" ph="{...}" />
-            <marker date="1527091688700" expanded="true" signature="103:216" ph="{...}" />
-            <marker date="1527091688700" expanded="true" signature="251:364" ph="{...}" />
-            <marker date="1527091688700" expanded="true" signature="397:508" ph="{...}" />
-            <marker date="1527091688700" expanded="true" signature="541:652" ph="{...}" />
-            <marker date="1527091688700" expanded="true" signature="693:812" ph="{...}" />
-            <marker date="1527091688700" expanded="true" signature="854:974" ph="{...}" />
-            <marker date="1527091688700" expanded="true" signature="1014:1132" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Editor/LinuxBuilder.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
-          <folding>
-            <marker date="1539016680683" expanded="false" signature="6:153" ph="..." />
-            <marker date="1539016680683" expanded="true" signature="189:1261" ph="{...}" />
-            <marker date="1539016680683" expanded="true" signature="265:299" ph="{...}" />
-            <marker date="1539016680683" expanded="true" signature="329:804" ph="{...}" />
-            <marker date="1539016680683" expanded="true" signature="844:1259" ph="{...}" />
+            <marker date="1539109771906" expanded="false" signature="6:70" ph="..." />
+            <marker date="1539109771906" expanded="true" signature="113:556" ph="{...}" />
+            <marker date="1539109771906" expanded="true" signature="140:221" ph="{...}" />
+            <marker date="1539109771906" expanded="true" signature="255:554" ph="{...}" />
+            <marker date="1539109771906" expanded="true" signature="391:514" ph="{...}" />
+            <marker date="1539109771906" expanded="true" signature="439:504" ph="{...}" />
           </folding>
         </state>
       </provider>

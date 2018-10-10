@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ class LinuxBuilder : MonoBehaviour
     {
 
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
-        buildPlayerOptions.scenes = new[] { "Assets/crouching.unity"};
+        buildPlayerOptions.scenes = getMLScenes();
         buildPlayerOptions.locationPathName = "build/sumo.x86_64";
         buildPlayerOptions.target = BuildTarget.StandaloneLinux;
         buildPlayerOptions.options = BuildOptions.EnableHeadlessMode;// | BuildOptions.Development | BuildOptions.AllowDebugging;
@@ -34,5 +35,19 @@ class LinuxBuilder : MonoBehaviour
         buildPlayerOptions.target = BuildTarget.StandaloneLinux;
         buildPlayerOptions.options = BuildOptions.EnableHeadlessMode;
         BuildPipeline.BuildPlayer(buildPlayerOptions);
+    }
+
+    static string[] getMLScenes()
+    {
+        List<string> paths = new List<string>();
+        paths.Add("Assets/MLScenes/sceneChooser.unity");
+        DirectoryInfo dir = new DirectoryInfo("Assets/MLScenes");
+        FileInfo[] info = dir.GetFiles("*.unity");
+        for (int i = 0; i < info.Length; i++)
+        {
+            paths.Add("Assets/MLScenes/" + info[i].Name);
+        }
+
+        return paths.ToArray();
     }
 }
