@@ -46,8 +46,13 @@ class LinuxBuilder : MonoBehaviour
         for (int i = 0; i < info.Length; i++)
         {
             paths.Add("Assets/MLScenes/" + info[i].Name);
+            
         }
 
+        foreach (var path in paths)
+        {
+            Debug.Log(path);
+        }
         return paths.ToArray();
     }
 }
