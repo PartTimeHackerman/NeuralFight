@@ -21,6 +21,6 @@ public class SceneChooser : MonoBehaviour
             }
         }
 
-        return scene + ".unity";
+        return scene;
     }
 }
