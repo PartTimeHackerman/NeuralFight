@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38074008, b: 0.35872707, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731716, g: 0.13414739, b: 0.12107863, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -113,515 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &136918023
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (14)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &170361924
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!114 &216752718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 943466ab374444748a364f9d6c3e2fe2, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  broadcast: 1
-  brain: {fileID: 0}
---- !u!1001 &225379608
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (28)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &297648753
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (25)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &314577781
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (23)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &371691055
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (26)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &374283078
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (18)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &526204059
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 29
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (27)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &526493750
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (31)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &548617721
+--- !u!1001 &112037444
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -669,14 +161,10 @@ Prefab:
       propertyPath: m_Name
       value: Humanoid_Jumping (16)
       objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &552229856
+--- !u!1001 &144892915
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -713,7 +201,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
         type: 2}
@@ -722,16 +210,12 @@ Prefab:
       objectReference: {fileID: 1854459548}
     - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_Name
-      value: Humanoid_Jumping (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+      value: Humanoid_Jumping (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &592920229
+--- !u!1001 &145931045
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -768,7 +252,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
         type: 2}
@@ -777,11 +261,628 @@ Prefab:
       objectReference: {fileID: 1854459548}
     - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_Name
-      value: Humanoid_Jumping (1)
+      value: Humanoid_Jumping (13)
       objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &154634204
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1854459548}
+    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_Jumping (9)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &190551320
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1854459548}
+    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_Jumping (27)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!114 &216752718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943466ab374444748a364f9d6c3e2fe2, type: 3}
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  broadcast: 1
+  brain: {fileID: 0}
+--- !u!1001 &273207163
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1854459548}
+    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_Jumping (26)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &321417993
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1854459548}
+    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_Jumping (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &348225010
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1854459548}
+    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_Jumping (10)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &388275849
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1854459548}
+    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_Jumping (15)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &451046355
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1854459548}
+    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_Jumping (28)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &572786062
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1854459548}
+    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_Jumping (23)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &581914033
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1854459548}
+    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_Jumping (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &605622550
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1854459548}
+    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_Jumping (29)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &638862647
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1854459548}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &667493694
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1854459548}
+    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_Jumping (21)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
@@ -871,6 +972,57 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 672640889}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &675900184
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1854459548}
+    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_Jumping (18)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!114 &736246382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -894,171 +1046,6 @@ MonoBehaviour:
   ActionPlaceholderName: policy/action
   PreviousActionPlaceholderName: prev_action
   brain: {fileID: 0}
---- !u!1001 &765687742
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (32)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &807873181
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (30)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &886800812
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1001 &902305218
 Prefab:
   m_ObjectHideFlags: 0
@@ -1141,7 +1128,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4419974757956938, guid: 8f1136e1ab6144b43a9bb8c60de17919,
     type: 2}
   m_PrefabInternal: {fileID: 902305218}
---- !u!1001 &934460681
+--- !u!114 &995867620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35813a1be64e144f887d7d5f15b963fa, type: 3}
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  brain: {fileID: 0}
+--- !u!1001 &1033800443
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1178,7 +1177,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
         type: 2}
@@ -1187,16 +1186,12 @@ Prefab:
       objectReference: {fileID: 1854459548}
     - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_Name
-      value: Humanoid_Jumping (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+      value: Humanoid_Jumping (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &951886324
+--- !u!1001 &1166685960
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1233,7 +1228,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_RootOrder
-      value: 24
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
         type: 2}
@@ -1242,71 +1237,12 @@ Prefab:
       objectReference: {fileID: 1854459548}
     - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_Name
-      value: Humanoid_Jumping (22)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+      value: Humanoid_Jumping (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &980068110
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &991551685
+--- !u!1001 &1179077626
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1354,14 +1290,10 @@ Prefab:
       propertyPath: m_Name
       value: Humanoid_Jumping (17)
       objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &994548553
+--- !u!1001 &1269988619
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1398,7 +1330,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_RootOrder
-      value: 31
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
         type: 2}
@@ -1407,28 +1339,12 @@ Prefab:
       objectReference: {fileID: 1854459548}
     - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_Name
-      value: Humanoid_Jumping (29)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+      value: Humanoid_Jumping (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &995867620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35813a1be64e144f887d7d5f15b963fa, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  brain: {fileID: 0}
---- !u!1001 &1132521769
+--- !u!1001 &1365557702
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1465,7 +1381,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
         type: 2}
@@ -1474,16 +1390,12 @@ Prefab:
       objectReference: {fileID: 1854459548}
     - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_Name
-      value: Humanoid_Jumping (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+      value: Humanoid_Jumping (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1160201355
+--- !u!1001 &1429392416
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1520,7 +1432,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
         type: 2}
@@ -1529,181 +1441,12 @@ Prefab:
       objectReference: {fileID: 1854459548}
     - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_Name
-      value: Humanoid_Jumping (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+      value: Humanoid_Jumping (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1206735576
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (21)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &1219350264
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &1221884080
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &1268887751
+--- !u!1001 &1431865360
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1751,61 +1494,10 @@ Prefab:
       propertyPath: m_Name
       value: Humanoid_Jumping (19)
       objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1408106495
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &1500011300
+--- !u!1001 &1473441553
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1853,14 +1545,10 @@ Prefab:
       propertyPath: m_Name
       value: Humanoid_Jumping (20)
       objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1687110299
+--- !u!1001 &1512630981
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1897,7 +1585,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_RootOrder
-      value: 26
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
         type: 2}
@@ -1906,16 +1594,12 @@ Prefab:
       objectReference: {fileID: 1854459548}
     - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_Name
-      value: Humanoid_Jumping (24)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+      value: Humanoid_Jumping (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1716684448
+--- !u!1001 &1644678105
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1952,7 +1636,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
         type: 2}
@@ -1961,66 +1645,7 @@ Prefab:
       objectReference: {fileID: 1854459548}
     - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_Name
-      value: Humanoid_Jumping (15)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &1754362650
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+      value: Humanoid_Jumping (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
@@ -2147,17 +1772,17 @@ MonoBehaviour:
     width: 80
     height: 80
     qualityLevel: 1
-    timeScale: 1
+    timeScale: 80
     targetFrameRate: -1
   inferenceConfiguration:
     width: 1280
     height: 720
     qualityLevel: 1
-    timeScale: 1
+    timeScale: 80
     targetFrameRate: -1
   resetParameters:
     resetParameters: []
---- !u!1001 &2084762127
+--- !u!1001 &1950430630
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2194,7 +1819,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
         type: 2}
@@ -2203,11 +1828,160 @@ Prefab:
       objectReference: {fileID: 1854459548}
     - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
       propertyPath: m_Name
-      value: Humanoid_Jumping (13)
+      value: Humanoid_Jumping (22)
       objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &1960195806
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1854459548}
+    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_Jumping (14)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &1962978659
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1854459548}
+    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_Jumping (24)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &2083913157
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1854459548}
+    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_Jumping (25)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
@@ -2229,58 +2003,3 @@ MonoBehaviour:
   discretePlayerActions: []
   defaultAction: 0
   brain: {fileID: 0}
---- !u!1001 &2120732746
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376130939675280, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114418568177753058, guid: 9e58235862d8a314c923f91a7aa2a7fd,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1854459548}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_Jumping (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261631336941324, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e58235862d8a314c923f91a7aa2a7fd, type: 2}
-  m_IsPrefabAsset: 0
