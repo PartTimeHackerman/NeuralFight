@@ -73,6 +73,7 @@ public class BodyParts : MonoBehaviour
         observableRigids.Add(root);
 
         height = getHeight();
+
     }
     
 

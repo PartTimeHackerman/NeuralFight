@@ -487,14 +487,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1261631336941324}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4288241250116078}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4389335258247322
 Transform:
   m_ObjectHideFlags: 1
@@ -647,8 +647,8 @@ Rigidbody:
   m_GameObject: {fileID: 1590739943696250}
   serializedVersion: 2
   m_Mass: 2
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -662,8 +662,8 @@ Rigidbody:
   m_GameObject: {fileID: 1615134857437552}
   serializedVersion: 2
   m_Mass: 12
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -677,12 +677,12 @@ Rigidbody:
   m_GameObject: {fileID: 1390627476830928}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 56
   m_CollisionDetection: 2
 --- !u!54 &54068374253812382
 Rigidbody:
@@ -692,8 +692,8 @@ Rigidbody:
   m_GameObject: {fileID: 1164391192412700}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -707,8 +707,8 @@ Rigidbody:
   m_GameObject: {fileID: 1427396292808340}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -722,8 +722,8 @@ Rigidbody:
   m_GameObject: {fileID: 1542216028416458}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -737,8 +737,8 @@ Rigidbody:
   m_GameObject: {fileID: 1756209119042138}
   serializedVersion: 2
   m_Mass: 2
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -752,8 +752,8 @@ Rigidbody:
   m_GameObject: {fileID: 1282306214382452}
   serializedVersion: 2
   m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -767,13 +767,13 @@ Rigidbody:
   m_GameObject: {fileID: 1627841624794780}
   serializedVersion: 2
   m_Mass: 15
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 56
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!54 &54465189098622988
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -782,12 +782,12 @@ Rigidbody:
   m_GameObject: {fileID: 1303514682293368}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 56
   m_CollisionDetection: 2
 --- !u!54 &54481608259960768
 Rigidbody:
@@ -797,8 +797,8 @@ Rigidbody:
   m_GameObject: {fileID: 1694065155177488}
   serializedVersion: 2
   m_Mass: 2
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -812,13 +812,13 @@ Rigidbody:
   m_GameObject: {fileID: 1282719537293632}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
+  m_Constraints: 56
+  m_CollisionDetection: 2
 --- !u!54 &54617803765262164
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -827,12 +827,12 @@ Rigidbody:
   m_GameObject: {fileID: 1825661043847052}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 56
   m_CollisionDetection: 2
 --- !u!54 &54724442366724498
 Rigidbody:
@@ -842,8 +842,8 @@ Rigidbody:
   m_GameObject: {fileID: 1081737211876628}
   serializedVersion: 2
   m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -857,12 +857,12 @@ Rigidbody:
   m_GameObject: {fileID: 1540688276988256}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 56
   m_CollisionDetection: 2
 --- !u!54 &54850654822649268
 Rigidbody:
@@ -872,8 +872,8 @@ Rigidbody:
   m_GameObject: {fileID: 1013862966985782}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -887,8 +887,8 @@ Rigidbody:
   m_GameObject: {fileID: 1095966712615404}
   serializedVersion: 2
   m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -902,8 +902,8 @@ Rigidbody:
   m_GameObject: {fileID: 1258547246639454}
   serializedVersion: 2
   m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -922,7 +922,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joint: {fileID: 153919143705489810}
   configurableJoint: {fileID: 0}
-  hinge: 0
   maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
@@ -939,16 +938,12 @@ MonoBehaviour:
   zMinMax:
   - 0
   - 0
-  conAxis: -1
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
   springMult: 0.01
-  setVelSettings: 1
+  setVelSettings: 0
   maxVel: 25
-  force: 1000
-  maxHingeVel: 800
-  threshold: 0.1
 --- !u!114 &114072258178499920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -997,7 +992,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joint: {fileID: 153504308701674616}
   configurableJoint: {fileID: 0}
-  hinge: 0
   maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
@@ -1014,16 +1008,12 @@ MonoBehaviour:
   zMinMax:
   - 0
   - 0
-  conAxis: -1
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
   springMult: 0.01
-  setVelSettings: 1
+  setVelSettings: 0
   maxVel: 25
-  force: 1000
-  maxHingeVel: 800
-  threshold: 0.1
 --- !u!114 &114185515043838356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1037,7 +1027,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joint: {fileID: 153078644563562182}
   configurableJoint: {fileID: 0}
-  hinge: 0
   maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
@@ -1054,16 +1043,12 @@ MonoBehaviour:
   zMinMax:
   - 0
   - 0
-  conAxis: -1
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
   springMult: 0.01
-  setVelSettings: 1
+  setVelSettings: 0
   maxVel: 25
-  force: 1000
-  maxHingeVel: 800
-  threshold: 0.1
 --- !u!114 &114193005254995666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1104,7 +1089,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joint: {fileID: 153716855089535784}
   configurableJoint: {fileID: 0}
-  hinge: 0
   maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
@@ -1121,16 +1105,12 @@ MonoBehaviour:
   zMinMax:
   - 0
   - 0
-  conAxis: -1
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
   springMult: 0.01
-  setVelSettings: 1
+  setVelSettings: 0
   maxVel: 25
-  force: 1000
-  maxHingeVel: 800
-  threshold: 0.1
 --- !u!114 &114308906877864792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1144,7 +1124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 54001075450934432}
   referenceRb: {fileID: 54461116084046888}
-  velocity: 500
+  velocity: 1000
   enable: 1
 --- !u!114 &114418568177753058
 MonoBehaviour:
@@ -1181,7 +1161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joint: {fileID: 153309043533947700}
   configurableJoint: {fileID: 0}
-  hinge: 0
   maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
@@ -1198,16 +1177,12 @@ MonoBehaviour:
   zMinMax:
   - 0
   - 0
-  conAxis: -1
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
   springMult: 0.01
-  setVelSettings: 1
+  setVelSettings: 0
   maxVel: 25
-  force: 1000
-  maxHingeVel: 800
-  threshold: 0.1
 --- !u!114 &114752437815076264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1221,7 +1196,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joint: {fileID: 153261174963246722}
   configurableJoint: {fileID: 0}
-  hinge: 0
   maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
@@ -1238,16 +1212,12 @@ MonoBehaviour:
   zMinMax:
   - 0
   - 0
-  conAxis: -1
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
   springMult: 0.01
-  setVelSettings: 1
+  setVelSettings: 0
   maxVel: 25
-  force: 1000
-  maxHingeVel: 800
-  threshold: 0.1
 --- !u!114 &114807706153865882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1278,7 +1248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionsSpace: 0
-  VelPos: 1
+  VelPos: 0
 --- !u!114 &114848209363106240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1292,7 +1262,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joint: {fileID: 153601344186339484}
   configurableJoint: {fileID: 0}
-  hinge: 0
   maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
@@ -1309,16 +1278,12 @@ MonoBehaviour:
   zMinMax:
   - 0
   - 0
-  conAxis: -1
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
   springMult: 0.01
-  setVelSettings: 1
+  setVelSettings: 0
   maxVel: 25
-  force: 1000
-  maxHingeVel: 800
-  threshold: 0.1
 --- !u!114 &114852737458028170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1332,7 +1297,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joint: {fileID: 153497203214683482}
   configurableJoint: {fileID: 0}
-  hinge: 0
   maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
@@ -1349,16 +1313,12 @@ MonoBehaviour:
   zMinMax:
   - 0
   - 0
-  conAxis: -1
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
   springMult: 0.01
-  setVelSettings: 1
+  setVelSettings: 0
   maxVel: 25
-  force: 1000
-  maxHingeVel: 800
-  threshold: 0.1
 --- !u!114 &114859592773452964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1386,7 +1346,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joint: {fileID: 153365402940602358}
   configurableJoint: {fileID: 0}
-  hinge: 0
   maxForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
@@ -1403,16 +1362,12 @@ MonoBehaviour:
   zMinMax:
   - 0
   - 0
-  conAxis: -1
   setPos: 0
   posDoc: {x: 0, y: 0, z: 0}
   debug: 0
   springMult: 0.01
-  setVelSettings: 1
+  setVelSettings: 0
   maxVel: 25
-  force: 1000
-  maxHingeVel: 800
-  threshold: 0.1
 --- !u!135 &135039267070545622
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1720,7 +1675,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!153 &153187881213314292
@@ -1814,7 +1769,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!153 &153261174963246722
@@ -1908,7 +1863,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!153 &153294203977002830
@@ -2002,7 +1957,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!153 &153309043533947700
@@ -2096,7 +2051,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!153 &153365402940602358
@@ -2190,7 +2145,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!153 &153441675667544586
@@ -2284,7 +2239,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!153 &153497203214683482
@@ -2378,7 +2333,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!153 &153504308701674616
@@ -2472,7 +2427,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!153 &153571359011522718
@@ -2566,7 +2521,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!153 &153601344186339484
@@ -2660,7 +2615,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!153 &153716855089535784
@@ -2754,7 +2709,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!153 &153764194088726588
@@ -2942,7 +2897,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!153 &153812982026861946
@@ -3036,7 +2991,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!153 &153901317320687306
@@ -3130,7 +3085,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!153 &153919143705489810
@@ -3224,6 +3179,6 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1

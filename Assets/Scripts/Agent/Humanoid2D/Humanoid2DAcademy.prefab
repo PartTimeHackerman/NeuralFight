@@ -8,18 +8,18 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
+  m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1523056437703016}
-  m_IsPrefabParent: 1
+  m_IsPrefabAsset: 1
 --- !u!1 &1523056437703016
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4803165972389338}
-  - component: {fileID: 114062382130816268}
+  - component: {fileID: 114965260578733208}
   m_Layer: 0
   m_Name: Humanoid2DAcademy
   m_TagString: Untagged
@@ -30,14 +30,14 @@ GameObject:
 --- !u!1 &1526800604881494
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4383938888756372}
   - component: {fileID: 114724879922472310}
   m_Layer: 0
-  m_Name: Humanoid2DBrain
+  m_Name: JumpBrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ GameObject:
 --- !u!4 &4383938888756372
 Transform:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1526800604881494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -59,7 +59,7 @@ Transform:
 --- !u!4 &4803165972389338
 Transform:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1523056437703016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -70,34 +70,10 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114062382130816268
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1523056437703016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58814a2857aad0f4cb8010442d17cf1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSteps: 0
-  trainingConfiguration:
-    width: 80
-    height: 80
-    qualityLevel: 0
-    timeScale: 100
-    targetFrameRate: -1
-  inferenceConfiguration:
-    width: 80
-    height: 80
-    qualityLevel: 0
-    timeScale: 1
-    targetFrameRate: -1
 --- !u!114 &114724879922472310
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1526800604881494}
   m_Enabled: 1
@@ -106,8 +82,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brainParameters:
-    cameraResolutions: []
+    vectorObservationSize: 84
     numStackedVectorObservations: 1
+    vectorActionSize: 9
+    cameraResolutions: []
     vectorActionDescriptions:
     - 
     - 
@@ -118,9 +96,7 @@ MonoBehaviour:
     - 
     - 
     - 
-    vectorActionSize: 9
     vectorActionSpaceType: 1
-    vectorObservationSize: 80
     vectorObservationSpaceType: 1
   brainType: 2
   CoreBrains:
@@ -128,4 +104,30 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  instanceID: -1132
+  instanceID: 207712
+--- !u!114 &114965260578733208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1523056437703016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4837ebad66cb2424b8f731aff87a6da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSteps: 0
+  trainingConfiguration:
+    width: 80
+    height: 80
+    qualityLevel: 0
+    timeScale: 80
+    targetFrameRate: 30
+  inferenceConfiguration:
+    width: 1280
+    height: 720
+    qualityLevel: 0
+    timeScale: 80
+    targetFrameRate: 30
+  resetParameters:
+    resetParameters: []

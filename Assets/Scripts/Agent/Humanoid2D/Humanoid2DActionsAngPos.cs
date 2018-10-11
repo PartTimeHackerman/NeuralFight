@@ -39,18 +39,12 @@ public class Humanoid2DActionsAngPos : MonoBehaviour, IActions
 
         foreach (JointInfo jointInfo in jointInfos)
         {
-            if (jointInfo.hinge)
-            {
-                jointInfo.setHingeMotorVel(actions[actionIdx++] * jointInfo.maxHingeVel);
-            }
-            else
-            {
                 bool[] movableAxis = jointInfo.movableAxis;
 
                 if (!movableAxis.Contains(true))
                     continue;
 
-                float force = (actions[actionIdx++] + 1) / 2;
+                float force = 1;//(actions[actionIdx++] + 1) / 2;
 
                 Vector3 angRot = new Vector3(0, 0, 0);
                 if (movableAxis[0])
@@ -64,8 +58,7 @@ public class Humanoid2DActionsAngPos : MonoBehaviour, IActions
                 angRot.y = Mathf.Clamp(angRot.y, jointInfo.angularLimits[1][0], jointInfo.angularLimits[1][1]);
                 angRot.z = Mathf.Clamp(angRot.z, jointInfo.angularLimits[2][0], jointInfo.angularLimits[2][1]);
 
-                jointInfo.setConfigurableForceAndRot(force, angRot);
-            }
+                jointInfo.setConfigurableForceAndRot(angRot);
 
         }
     }
