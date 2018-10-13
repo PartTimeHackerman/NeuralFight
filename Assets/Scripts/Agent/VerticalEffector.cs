@@ -11,6 +11,7 @@ class VerticalEffector : MonoBehaviour
     public Rigidbody referenceRb;
     public float velocity;
     public bool enable = false;
+    public bool debug = false;
     private Vector3 dir;
     private Vector3 cross;
     private Vector3 side;
@@ -36,9 +37,13 @@ class VerticalEffector : MonoBehaviour
         up = Mathf.Abs(((rigidbody.transform.up.y + 1) / 2) - 1);
         cross.x *= up;
         cross.y *= up;
-        rigidbody.AddForce(cross.x * velocity, cross.y * velocity, 0);
-        referenceRb.AddForce(-cross.x * velocity, -cross.y * velocity, 0);
-        
+        Vector2 crossVel = new Vector2(cross.x * velocity, cross.y * velocity);
+        rigidbody.AddForce(crossVel);
+        referenceRb.AddForce(-crossVel);
+        if (debug)
+        {
+            Debug.DrawRay(rigidbody.transform.position, crossVel * .01f);
+            Debug.DrawRay(referenceRb.transform.position, -crossVel * .01f);
+        }
     }
-
 }

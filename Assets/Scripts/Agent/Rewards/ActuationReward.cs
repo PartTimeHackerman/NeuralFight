@@ -9,41 +9,92 @@ class ActuationReward
 {
     private BodyParts bodyParts;
     public float reward = 0f;
-    private List<float> lastVels;
-    private List<float> newVels = new List<float>();
+    public bool vel = false;
+    private List<float> lastRot;
+    private List<float> newRot = new List<float>();
+    private List<float> limitsSum;
 
-    public ActuationReward(BodyParts bodyParts)
+    public ActuationReward(BodyParts bodyParts, bool vel)
     {
+        this.vel = vel;
         this.bodyParts = bodyParts;
+        if (!vel)
+        {
+            limitsSum = new List<float>();
+            foreach (JointInfo jointInfo in bodyParts.jointsInfos)
+            {
+                limitsSum.Add(Mathf.Abs(jointInfo.joint.lowAngularXLimit.limit) +
+                              jointInfo.joint.highAngularXLimit.limit);
+            }
+        }
     }
 
     public float getReward()
+    {
+        if (vel)
+            return getRewardVel();
+        else
+            return getRewardTargetRotation();
+    }
+
+    public float getRewardVel()
     {
         List<JointInfo> jointInfos = bodyParts.jointsInfos;
         float maxVel = jointInfos[0].maxVel * 2;
         float sumVelDiff = 0f;
         float jointsCount = jointInfos.Count;
-        newVels.Clear();
+        newRot.Clear();
 
         foreach (JointInfo jointInfo in jointInfos)
-            newVels.Add(jointInfo.configurableJoint.targetAngularVelocity.x);
+            newRot.Add(jointInfo.configurableJoint.targetAngularVelocity.x);
 
-        if (lastVels == null)
-            lastVels = new List<float>(newVels);
+        if (lastRot == null)
+            lastRot = new List<float>(newRot);
 
-        if (!listsEqual(lastVels, newVels))
+        if (!listsEqual(lastRot, newRot))
         {
-            if (lastVels.Count != newVels.Count)
-                lastVels = newVels;
+            if (lastRot.Count != newRot.Count)
+                lastRot = newRot;
 
-            for (int i = 0; i < newVels.Count; i++)
+            for (int i = 0; i < newRot.Count; i++)
             {
-                sumVelDiff += Mathf.Abs(lastVels[i] - newVels[i]) / maxVel;
+                sumVelDiff += Mathf.Abs(lastRot[i] - newRot[i]) / maxVel;
             }
+
             reward = Mathf.Abs((sumVelDiff / jointsCount) - 1f);
         }
 
-        lastVels = new List<float>(newVels);
+        lastRot = new List<float>(newRot);
+        return reward;
+    }
+
+    public float getRewardTargetRotation()
+    {
+        List<JointInfo> jointInfos = bodyParts.jointsInfos;
+        float sumVelDiff = 0f;
+        float jointsCount = jointInfos.Count;
+        newRot.Clear();
+
+        foreach (JointInfo jointInfo in jointInfos)
+            newRot.Add(jointInfo.currentRot);
+
+        if (lastRot == null)
+            lastRot = new List<float>(newRot);
+
+        if (!listsEqual(lastRot, newRot))
+        {
+            if (lastRot.Count != newRot.Count)
+                lastRot = newRot;
+
+            for (int i = 0; i < newRot.Count; i++)
+            {
+                sumVelDiff += Mathf.Abs(Mathf.DeltaAngle(lastRot[i], newRot[i])) / limitsSum[i];
+            }
+
+            reward = Mathf.Abs((sumVelDiff / jointsCount) - 1f);
+        }
+
+        lastRot = new List<float>(newRot);
         return reward;
     }
 

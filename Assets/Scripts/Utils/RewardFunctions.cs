@@ -7,7 +7,6 @@ using UnityEngine;
 
 public static class RewardFunctions
 {
-
     public static double gaussian(double x, float valueAt1)
     {
         double scale = Math.Sqrt(-2f * Mathf.Log(valueAt1));
@@ -53,7 +52,7 @@ public static class RewardFunctions
         return 1 - Math.Pow(Math.Tanh(x * scale), 2);
     }
 
-    
+
     ///<summary>
     ///Returns 1 when `x` falls inside the bounds, between 0 and 1 otherwise.
     ///Args:
@@ -79,7 +78,8 @@ public static class RewardFunctions
     ///ValueError: If `bounds[0] > bounds[1]`.
     ///ValueError: If `margin` is negative.
     ///</summary>
-    public static double tolerance(double x, float lower, float upper, float margin, float valueAtMargin, RewardFunction rewardFunction)
+    public static double tolerance(double x, float lower, float upper, float margin, float valueAtMargin,
+        RewardFunction rewardFunction)
     {
         if (lower > upper)
             throw new Exception("Lower bound must be <= upper bound.");
@@ -96,12 +96,17 @@ public static class RewardFunctions
         {
             d = (x < lower ? lower - x : x - upper) / margin;
             value = inBounds ? 1.0 : fnByName(d, valueAtMargin, rewardFunction);
+
+            /// 0 at 0
+            double rem = fnByName(1d / margin, valueAtMargin, rewardFunction) * x;
+            value -= rem;
         }
 
         return value;
     }
 
-    public static double toleranceInv(double x, float lower, float upper, float margin, float valueAtMargin, RewardFunction rewardFunction)
+    public static double toleranceInv(double x, float lower, float upper, float margin, float valueAtMargin,
+        RewardFunction rewardFunction)
     {
         x = Math.Abs(x - 1f);
         return tolerance(x, lower, upper, margin, valueAtMargin, rewardFunction);
@@ -109,7 +114,7 @@ public static class RewardFunctions
 
     public static float toleranceInvNoBounds(double x, float margin, float valueAtMargin, RewardFunction rewardFunction)
     {
-        return (float)toleranceInv(x, 0f, 0f, margin, valueAtMargin, rewardFunction);
+        return (float) toleranceInv(x, 0f, 0f, margin, valueAtMargin, rewardFunction);
     }
 
     private static double fnByName(double x, float valueAt1, RewardFunction rewardFunction)
@@ -126,7 +131,6 @@ public static class RewardFunctions
             default: return 0;
         }
     }
-
 }
 
 public enum RewardFunction

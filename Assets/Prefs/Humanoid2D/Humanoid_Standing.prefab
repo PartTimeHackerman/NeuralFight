@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 114385512377148454}
   - component: {fileID: 114792511440461386}
   - component: {fileID: 114483353775870762}
+  - component: {fileID: 114515268603393574}
   m_Layer: 0
   m_Name: Humanoid_Standing
   m_TagString: Untagged
@@ -945,6 +946,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!114 &114049128554603712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -980,6 +982,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!114 &114126442018371880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1037,6 +1040,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!114 &114182291802460508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1072,6 +1076,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!114 &114326836905832130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1136,6 +1141,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!114 &114418389948480088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1185,6 +1191,25 @@ MonoBehaviour:
   referenceRb: {fileID: 54561454382684946}
   velocity: 1000
   enable: 0
+  debug: 0
+--- !u!114 &114515268603393574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1626407696249042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bff1136f94445d6bb7fff1527d939d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyParts: {fileID: 114326836905832130}
+  waitMin: 0.1
+  waitMax: 3
+  velsMult: {x: 1, y: 0.5}
+  force: {x: -50, y: 50}
+  forceMode: 2
+  debug: 0
 --- !u!114 &114588454663021166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1233,6 +1258,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!114 &114687634591625246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1268,6 +1294,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!114 &114700128470443774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1303,6 +1330,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!114 &114792511440461386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1315,8 +1343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  arenaLen: 1.5
-  fallHeight: 0.5
+  arenaLen: 111
+  fallHeight: 0
   pastArena: 0
   fallen: 0
   terminated: 0
@@ -1332,12 +1360,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resets: 0
-  resetsBoundary: 0
+  resetsBoundary: 100
   scale: 0
-  minRot: 0
-  maxRot: 0
-  minVel: 0
-  maxVel: 0
+  minRot: -180
+  maxRot: 180
+  minVel: -20
+  maxVel: 20
   randomJointsPosForce: 1
   reset: 0
   minRotScaled: 0
@@ -1382,6 +1410,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!135 &135156878762184638
 SphereCollider:
   m_ObjectHideFlags: 1

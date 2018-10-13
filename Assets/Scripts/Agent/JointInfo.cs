@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class JointInfo : MonoBehaviour
 {
-    public Joint joint;
+    public ConfigurableJoint joint;
     public ConfigurableJoint configurableJoint;
     public float maxForce = 1000;
     public float maxPosSpring;
@@ -25,6 +25,7 @@ public class JointInfo : MonoBehaviour
 
     public bool setVelSettings = false;
     public float maxVel = 20;
+    public float currentRot = 0f;
 
 
     void Reset()
@@ -147,6 +148,7 @@ public class JointInfo : MonoBehaviour
         jointSlerpDrive.positionSpring = force * maxPosSpring;
         jointSlerpDrive.positionDamper = force * maxPosDamper;
         configurableJoint.slerpDrive = jointSlerpDrive;*/
+        currentRot = angRot.x;
         setConfigurableRot(angRot);
     }
 

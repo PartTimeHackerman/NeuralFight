@@ -32,7 +32,7 @@ public class DuelReward : MonoBehaviour
         bodyParts = GetComponent<BodyParts>();
         standingReward = new StandingRewardHumanoid(bodyParts);
         forwardReward = new ForwardReward(bodyParts, enemyBodyParts);
-        actuationReward = new ActuationReward(bodyParts);
+        actuationReward = new ActuationReward(bodyParts, false);
         stayInMiddleReward = new StayInMiddleReward(bodyParts, 4f);
         enemyInMiddleReward = new EnemyInMiddleReward(enemyBodyParts, 4f);
 

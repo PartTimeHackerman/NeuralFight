@@ -14,6 +14,7 @@ public class BodyParts : MonoBehaviour
     protected List<GameObject> parts = new List<GameObject>();
     private readonly List<Rigidbody> rigids = new List<Rigidbody>();
     private readonly List<Rigidbody> observableRigids = new List<Rigidbody>();
+    public readonly List<Rigidbody> endingRigids = new List<Rigidbody>();
 
     public List<Rigidbody> ObservableRigids => observableRigids;
 
@@ -67,6 +68,9 @@ public class BodyParts : MonoBehaviour
 
         foreach (Rigidbody rigid in rigids)
         {
+            if (rigid.name.Contains("_end"))
+                endingRigids.Add(rigid);
+            
             if(rigid.GetComponent<JointInfo>() != null || rigid.name.Contains("_end"))
                 observableRigids.Add(rigid);
         }

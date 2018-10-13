@@ -74,7 +74,7 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
         baseDistanceFeetsCOM = physics.getCenterOfMass(bodyParts.getRigids()).y - meanOfFeets().y;
         maxDistanceRootFeets = calcDistance(root.gameObject, namedParts["rfoot_end"]);
 
-        actuationReward = new ActuationReward(bodyParts);
+        actuationReward = new ActuationReward(bodyParts, false);
         multipler = new float[]{1f, 1f, 1f, 1f, 1f};
     }
 
@@ -152,7 +152,7 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
                   minimizeTorsoXZVelocityReward * multipler[3] +
                   minimizeActuationReward * multipler[4]) / multipler.Sum();
         reward = Mathf.Clamp(reward, -1f, 1f);
-        reward = RewardFunctions.toleranceInvNoBounds(reward, .4f, .1f, RewardFunction.LONGTAIL);
+        reward = RewardFunctions.toleranceInvNoBounds(reward, 1f, .1f, RewardFunction.LONGTAIL);
         return reward;
     }
 

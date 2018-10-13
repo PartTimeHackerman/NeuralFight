@@ -7,6 +7,16 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="AS_ModernMenu1" t="Include">
+          <e p="README.cs" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="CheckMusicVolume.cs" t="Include" />
+            <e p="CheckOptions.cs" t="Include" />
+            <e p="CheckSFXVolume.cs" t="Include" />
+            <e p="MainMenuNew.cs" t="Include" />
+            <e p="OptionsMenuNew.cs" t="Include" />
+          </e>
+        </e>
         <e p="Editor" t="Include">
           <e p="AgentEditor.cs" t="Include" />
           <e p="BrainEditor.cs" t="Include" />
@@ -318,6 +328,7 @@
             <e p="ModelInput.cs" t="Include" />
             <e p="Observations.cs" t="Include" />
             <e p="PausePos.cs" t="Include" />
+            <e p="RandomEffector.cs" t="Include" />
             <e p="ResetPos.cs" t="Include" />
             <e p="Rewards" t="Include">
               <e p="ActuationReward.cs" t="Include" />

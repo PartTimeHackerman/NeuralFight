@@ -135,7 +135,7 @@ public class Humanoid2DResetPos : MonoBehaviour
             //float yVel = Random.Range(min, max);
             //yVel = yVel < 0 ? yVel * .3f : yVel * 1.5f;
             Vector3 vel = new Vector3(Random.Range(min, max), Random.Range(min, max) * .6f, 0);
-            rigidbody.AddForce(vel * rigidbody.mass);
+            rigidbody.AddForce(vel, ForceMode.VelocityChange);
         }
     }
 

@@ -28,6 +28,7 @@ internal class StandingAgent : Agent
         actions = GetComponent<Humanoid2DActionsAngPos>();
         resetPos = GetComponent<Humanoid2DResetPos>();
         terminateFn = GetComponent<Terminator>();
+        observations.addToRemove(new[]{"root_pos_x"});
         
     }
 

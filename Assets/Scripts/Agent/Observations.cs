@@ -106,6 +106,46 @@ public class Observations : MonoBehaviour, IObservations
         }
     }
 
+    public void getObjPosRotVelAngVel()
+    {
+        for (int i = observableRigids.Count - 1; i >= 0; i--)
+        {
+            Rigidbody rigidbody = observableRigids[i];
+            if (!rigidbody.Equals(bodyParts.root))
+            {
+                Vector3 pos = root.transform.InverseTransformPoint(rigidbody.transform.position);
+                observationsNamed[rigidbody.name + "_pos_x"] = pos.x;
+                observationsNamed[rigidbody.name + "_pos_y"] = pos.y;
+            }
+            
+            if (!rigidbody.name.Contains("_end") && !rigidbody.Equals(bodyParts.root))
+            {
+                Quaternion quaternion = Quaternion.Inverse(root.rotation) * rigidbody.transform.rotation;
+                Vector3 rotEul = quaternion.eulerAngles;
+                float rotAng = rotEul.z;
+                float rotClamped = 0f;
+                if (rotAng <= 180f)
+                    rotClamped = rotAng / 180f;
+                else
+                    rotClamped = ((rotAng - 180f) / 180f) - 1f;
+
+                observationsNamed[rigidbody.name + "_rot"] = rotClamped;
+            }
+            
+            Vector3 vel = normVecVel(rigidbody.velocity);
+            observationsNamed[rigidbody.name + "_vel_x"] = vel.x;
+            observationsNamed[rigidbody.name + "_vel_y"] = vel.y;
+            
+            if (!rigidbody.name.Contains("_end"))
+            {
+                float rbAngVel = rigidbody.angularVelocity.z;
+                rbAngVel = (Mathf.Clamp(rbAngVel, minVel, maxVel) - minVel) / (maxVel - minVel);
+                observationsNamed[rigidbody.name + "_ang_vel"] = rbAngVel;
+
+            }
+        }
+    }
+
     public int getObservationsSpace()
     {
         return getObservations().Count;
@@ -132,10 +172,7 @@ public class Observations : MonoBehaviour, IObservations
         observationsNamed["root_rot"] = rotClamped;
 
 
-        getObjectsPositions();
-        getObjectsRotations();
-        getObjectsVels();
-        getObjectsAngVels();
+        getObjPosRotVelAngVel();
         addCOM();
         
         removeParts();
@@ -174,14 +211,17 @@ public class Observations : MonoBehaviour, IObservations
 
     public void addCOM()
     {
-        Vector3 COM = physics.getCenterOfMass(rigids) - bodyParts.root.transform.position;
-        Vector3 COMVel = physics.getCenterOfMassVel(rigids);
-        Vector3 COMRotVel = Quaternion.Inverse(root.rotation) * physics.getCenterOfMassRotVel(rigids);
+        Vector3 COM;
+        Vector3 COMVel;
+        Vector3 COMAngVel;
+        physics.getCenterOfMassAll(rigids, out COM, out COMVel, out COMAngVel);
+        COM = COM - bodyParts.root.transform.position;
+        COMAngVel = Quaternion.Inverse(root.rotation) * COMAngVel;
         observationsNamed["com_pos_x"] = COM.x;
         observationsNamed["com_pos_y"] = COM.y;
         observationsNamed["com_vel_x"] = COMVel.x;
         observationsNamed["com_vel_y"] = COMVel.y;
-        observationsNamed["com_ang_vel"] = COMRotVel.z;
+        observationsNamed["com_ang_vel"] = COMAngVel.z;
     }
 
     public float normPos(float pos)
