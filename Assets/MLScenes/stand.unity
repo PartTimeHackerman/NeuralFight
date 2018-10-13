@@ -230,6 +230,10 @@ Prefab:
       propertyPath: brain
       value: 
       objectReference: {fileID: 1171896726}
+    - target: {fileID: 1626407696249042, guid: 18ebab616370c714dabb5f5840edad68, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ebab616370c714dabb5f5840edad68, type: 2}
   m_IsPrefabAsset: 0
@@ -293,6 +297,18 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ebab616370c714dabb5f5840edad68, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &192676737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35813a1be64e144f887d7d5f15b963fa, type: 3}
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  brain: {fileID: 1171896726}
 --- !u!114 &194580128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1519,14 +1535,14 @@ MonoBehaviour:
   trainingConfiguration:
     width: 80
     height: 80
-    qualityLevel: 1
-    timeScale: 50
+    qualityLevel: 0
+    timeScale: 100
     targetFrameRate: -1
   inferenceConfiguration:
     width: 1280
     height: 720
-    qualityLevel: 1
-    timeScale: 50
+    qualityLevel: 0
+    timeScale: 100
     targetFrameRate: -1
   resetParameters:
     resetParameters: []
@@ -1656,6 +1672,23 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ebab616370c714dabb5f5840edad68, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1291230214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e9bda8f3cf1492fa74926a530f6f70, type: 3}
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  broadcast: 1
+  keyContinuousPlayerActions: []
+  axisContinuousPlayerActions: []
+  discretePlayerActions: []
+  defaultAction: 0
+  brain: {fileID: 0}
 --- !u!1001 &1317236285
 Prefab:
   m_ObjectHideFlags: 0
@@ -2076,6 +2109,19 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ebab616370c714dabb5f5840edad68, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1589327210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943466ab374444748a364f9d6c3e2fe2, type: 3}
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  broadcast: 1
+  brain: {fileID: 0}
 --- !u!1001 &1618258464
 Prefab:
   m_ObjectHideFlags: 0
@@ -2376,6 +2422,29 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ebab616370c714dabb5f5840edad68, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1929341475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b23992c8eb17439887f5e944bf04a40, type: 3}
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  broadcast: 1
+  graphModel: {fileID: 0}
+  graphScope: 
+  graphPlaceholders: []
+  BatchSizePlaceholderName: batch_size
+  VectorObservationPlacholderName: vector_observation
+  RecurrentInPlaceholderName: recurrent_in
+  RecurrentOutPlaceholderName: recurrent_out
+  VisualObservationPlaceholderName: []
+  ActionPlaceholderName: action
+  PreviousActionPlaceholderName: prev_action
+  brain: {fileID: 0}
 --- !u!1001 &1958580412
 Prefab:
   m_ObjectHideFlags: 0
@@ -2413,6 +2482,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4419974757956938, guid: 8f1136e1ab6144b43a9bb8c60de17919, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23272354372816848, guid: 8f1136e1ab6144b43a9bb8c60de17919,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23106956278900084, guid: 8f1136e1ab6144b43a9bb8c60de17919,
+        type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
