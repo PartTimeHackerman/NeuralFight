@@ -212,8 +212,8 @@ GameObject:
   - component: {fileID: 114343741098209412}
   - component: {fileID: 114818191228173280}
   - component: {fileID: 114880301194726788}
-  - component: {fileID: 114016521829348284}
   - component: {fileID: 114379493500921766}
+  - component: {fileID: 114688542284277980}
   m_Layer: 0
   m_Name: Humanoid_WalkingFW
   m_TagString: Untagged
@@ -909,17 +909,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &114016521829348284
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1793406786267074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cdfc7f9ecf85c24eb6169923f6b53fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114164862279517978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -939,7 +928,7 @@ MonoBehaviour:
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 10
   steps: 0
-  maxSteps: 10000
+  maxSteps: 1000
 --- !u!114 &114199963548438714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -975,6 +964,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!114 &114225892501160862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1010,6 +1000,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!114 &114290245286981432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1045,6 +1036,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!114 &114338455326809496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1080,6 +1072,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!114 &114343741098209412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1113,6 +1106,7 @@ MonoBehaviour:
   referenceRb: {fileID: 54246125406244276}
   velocity: 1000
   enable: 0
+  debug: 0
 --- !u!114 &114380207487118534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1148,6 +1142,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!114 &114384863772372204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1197,6 +1192,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!114 &114414007707697486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1232,6 +1228,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!114 &114678470817771006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1267,6 +1264,25 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
+--- !u!114 &114688542284277980
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1793406786267074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bff1136f94445d6bb7fff1527d939d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyParts: {fileID: 114343741098209412}
+  waitMin: 0.1
+  waitMax: 3
+  velsMult: {x: 1, y: 0.5}
+  force: {x: -50, y: 50}
+  forceMode: 2
+  debug: 0
 --- !u!114 &114818191228173280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1333,6 +1349,7 @@ MonoBehaviour:
   springMult: 0.01
   setVelSettings: 0
   maxVel: 25
+  currentRot: 0
 --- !u!114 &114880301194726788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1345,12 +1362,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resets: 0
-  resetsBoundary: 0
+  resetsBoundary: 100
   scale: 0
-  minRot: 0
-  maxRot: 0
-  minVel: 0
-  maxVel: 0
+  minRot: -180
+  maxRot: 180
+  minVel: -20
+  maxVel: 20
   randomJointsPosForce: 0
   reset: 0
   minRotScaled: 0
