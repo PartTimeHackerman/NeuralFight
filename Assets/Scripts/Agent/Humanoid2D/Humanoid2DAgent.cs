@@ -14,7 +14,7 @@ internal class Humanoid2DAgent : Agent
 
     private Humanoid2DObservations observations;
     private PausePos pausePos;
-    private Humanoid2DResetPos resetPos;
+    private ResetPos resetPos;
     private IReward standingReward;
     private long startTime;
 
@@ -31,8 +31,8 @@ internal class Humanoid2DAgent : Agent
     {
         observations = GetComponent<Humanoid2DObservations>();
         standingReward = GetComponent<Humanoid2DStandingRewardComplicated>();
-        actions = GetComponent<Humanoid2DActionsAngPos>();
-        resetPos = GetComponent<Humanoid2DResetPos>();
+        actions = GetComponent<ActionsAngPos>();
+        resetPos = GetComponent<ResetPos>();
         pausePos = GetComponent<PausePos>();
         observations.decisionFrequency = agentParameters.numberOfActionsBetweenDecisions;
     }

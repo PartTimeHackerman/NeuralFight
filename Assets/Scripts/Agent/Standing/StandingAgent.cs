@@ -10,7 +10,7 @@ internal class StandingAgent : Agent
     private IActions actions;
     
     private Observations observations;
-    private Humanoid2DResetPos resetPos;
+    private ResetPos resetPos;
     private StandingRewardHumanoid rewards;
     private Terminator terminateFn;
     
@@ -25,8 +25,8 @@ internal class StandingAgent : Agent
     {
         observations = GetComponent<Observations>();
         rewards = GetComponent<StandingRewardHumanoid>();
-        actions = GetComponent<Humanoid2DActionsAngPos>();
-        resetPos = GetComponent<Humanoid2DResetPos>();
+        actions = GetComponent<ActionsAngPos>();
+        resetPos = GetComponent<ResetPos>();
         terminateFn = GetComponent<Terminator>();
         observations.addToRemove(new[]{"root_pos_x"});
         

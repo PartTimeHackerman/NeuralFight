@@ -14,7 +14,7 @@ internal class Humanoid2DDuelAgent : Agent
 
     private Humanoid2DDuelObservations observations;
     private PausePos pausePos;
-    private Humanoid2DResetPos resetPos;
+    private ResetPos resetPos;
     private DuelReward duelReward;
     private DuelEnemyObservations enemyObservations;
     public Terminator Terminator;
@@ -36,8 +36,8 @@ internal class Humanoid2DDuelAgent : Agent
     {
         observations = GetComponent<Humanoid2DDuelObservations>();
         duelReward = GetComponent<DuelReward>();
-        actions = GetComponent<Humanoid2DActionsAngPos>();
-        resetPos = GetComponent<Humanoid2DResetPos>();
+        actions = GetComponent<ActionsAngPos>();
+        resetPos = GetComponent<ResetPos>();
         pausePos = GetComponent<PausePos>();
         enemyObservations = GetComponent<DuelEnemyObservations>();
         Terminator = GetComponent<Terminator>();

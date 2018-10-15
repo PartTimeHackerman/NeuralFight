@@ -10,7 +10,7 @@ internal class WalkingFWAgent : Agent
     private IActions actions;
     
     private Observations observations;
-    private Humanoid2DResetPos resetPos;
+    private ResetPos resetPos;
     private WalkFWReward rewards;
     
     public int steps = 0;
@@ -22,8 +22,8 @@ internal class WalkingFWAgent : Agent
     {
         observations = GetComponent<Observations>();
         rewards = GetComponent<WalkFWReward>();
-        actions = GetComponent<Humanoid2DActionsAngPos>();
-        resetPos = GetComponent<Humanoid2DResetPos>();
+        actions = GetComponent<ActionsAngPos>();
+        resetPos = GetComponent<ResetPos>();
         observations.addToRemove(new[]{"root_pos_x"});
 
     }

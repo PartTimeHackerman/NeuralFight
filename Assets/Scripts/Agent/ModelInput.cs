@@ -27,7 +27,7 @@ class ModelInput : MonoBehaviour
     public float force = 10f;
     public float jumpforce = 10f;
     private bool jumped = false;
-    private Humanoid2DResetPos resetPos;
+    private ResetPos resetPos;
     public ObstaclesGenerator obstaclesGenerator;
     public bool jumping = false;
     void Start()
@@ -41,7 +41,7 @@ class ModelInput : MonoBehaviour
         //headEnd = GetComponent<BodyParts>().getNamedRigids()["head_end"];
         bodyParts = GetComponent<BodyParts>();
         verticalEffector = GetComponent<VerticalEffector>();
-        resetPos = GetComponent<Humanoid2DResetPos>();
+        resetPos = GetComponent<ResetPos>();
     }
 
 

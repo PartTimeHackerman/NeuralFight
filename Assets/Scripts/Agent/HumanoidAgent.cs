@@ -13,7 +13,7 @@ internal class HumanoidAgent : Agent
 
     private Observations observations;
     private PausePos pausePos;
-    private ResetPos resetPos;
+    private ResetPosOLD _resetPosOld;
     private StandingRewardOld _standingRewardOld;
     private long startTime;
 
@@ -27,8 +27,8 @@ internal class HumanoidAgent : Agent
     {
         observations = GetComponent<Observations>();
         _standingRewardOld = GetComponent<StandingRewardOld>();
-        actions = GetComponent<ActionsAngPos>();
-        resetPos = GetComponent<ResetPos>();
+        actions = GetComponent<ActionsAngPosOLD>();
+        _resetPosOld = GetComponent<ResetPosOLD>();
         pausePos = GetComponent<PausePos>();
     }
 
@@ -43,7 +43,7 @@ internal class HumanoidAgent : Agent
     {
         if (resetStepsElapsed > resetWaitSteps && !velReset)
         {
-            resetPos.resetVel();
+            _resetPosOld.resetVel();
             velReset = true;
         }
 
@@ -88,7 +88,7 @@ internal class HumanoidAgent : Agent
 
     public override void AgentReset()
     {
-        resetPos.ResetPosition();
+        _resetPosOld.ResetPosition();
         resetStepsElapsed = 0;
         velReset = false;
     }

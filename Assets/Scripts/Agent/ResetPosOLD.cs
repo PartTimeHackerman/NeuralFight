@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class ResetPos : MonoBehaviour
+public class ResetPosOLD : MonoBehaviour
 {
     private bool backupped = false;
     private BodyParts bodyParts;

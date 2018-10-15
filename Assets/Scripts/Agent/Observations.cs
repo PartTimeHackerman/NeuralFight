@@ -18,7 +18,7 @@ public class Observations : MonoBehaviour, IObservations
     private readonly float maxVel = 100;
     private readonly float minPos = -10;
     private readonly float minVel = -100;
-    private Rigidbody root;
+    protected Rigidbody root;
 /*
 
     public Observations(BodyParts bodyParts)

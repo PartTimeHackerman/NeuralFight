@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class ActionsAngPos : MonoBehaviour, IActions
+public class ActionsAngPosOLD : MonoBehaviour, IActions
 {
     public int actionsSpace;
 

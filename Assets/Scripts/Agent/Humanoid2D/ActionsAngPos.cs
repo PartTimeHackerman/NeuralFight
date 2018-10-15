@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class Humanoid2DActionsAngPos : MonoBehaviour, IActions
+public class ActionsAngPos : MonoBehaviour, IActions
 {
     public int actionsSpace;
     public bool VelPos = false;

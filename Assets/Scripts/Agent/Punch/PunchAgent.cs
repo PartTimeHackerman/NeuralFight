@@ -4,30 +4,35 @@ using Assets.Scripts.Agent;
 using MLAgents;
 using UnityEngine;
 
-internal class CrouchingAgent : Agent
+internal class PunchAgent : Agent
 {
-    private ApplicationSettings applicationSettings;
     private IActions actions;
-    
-    private Observations observations;
+    private PunchObservations observations;
     private ResetPos resetPos;
-    private StandingRewardHumanoid rewards;
-    private Terminator terminateFn;
+    private PunchReward rewards;
+    private PunchTerminator terminateFn;
+    private PunchPointSpawner punchPointSpawner;
+
+    private Vector3 pointPos;
     
     public int steps = 0;
     public int maxSteps = 100;
     
     public bool ready = true;
-    private float rewardAnim = 0f;
+    private float agentReward = 0f;
     public float sumRewards = 0f;
 
     public override void InitializeAgent()
     {
-        observations = GetComponent<Observations>();
-        rewards = GetComponent<StandingRewardHumanoid>();
+        observations = GetComponent<PunchObservations>();
+        rewards = GetComponent<PunchReward>();
         actions = GetComponent<ActionsAngPos>();
         resetPos = GetComponent<ResetPos>();
-        terminateFn = GetComponent<Terminator>();
+        terminateFn = GetComponent<PunchTerminator>();
+        punchPointSpawner = GetComponent<PunchPointSpawner>();
+        pointPos = punchPointSpawner.spawnRandom();
+        observations.punchTarget = punchPointSpawner.point.transform;
+        observations.addToRemove(new[]{"root_pos_x", "root_pos_y"});
         
     }
 
@@ -63,23 +68,24 @@ internal class CrouchingAgent : Agent
         foreach (var var in actions)
             actionsClamped.Add(Mathf.Clamp(var, -1f, 1f));
 
-        
         this.actions.applyActions(actionsClamped);
-        rewardAnim = rewards.getReward();
 
-        bool terminateAgent = terminateFn.isTerminated();
+        agentReward = rewards.getReward(pointPos);
+        bool terminateAgent = terminateFn.isTerminated(pointPos);
 
-        //sumRewards += rewardAnim;
-        SetReward(rewardAnim);
+        SetReward(agentReward);
 
         if (steps > maxSteps || terminateAgent)
         {
-            //sumRewards = sumRewards > 0 ? sumRewards : 0;
-            SetReward(rewardAnim);
-            //sumRewards = 0f;
+            SetReward(agentReward);
+            if (terminateAgent)
+            {
+                SetReward(agentReward * 10f);
+            }
             steps = 0;
             ready = false;
             resetPos.ResetPosition();
+            pointPos = punchPointSpawner.spawnRandom();
             ready = true;
             Done();
         }

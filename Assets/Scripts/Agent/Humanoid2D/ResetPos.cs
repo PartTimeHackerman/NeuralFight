@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class Humanoid2DResetPos : MonoBehaviour
+public class ResetPos : MonoBehaviour
 {
     private bool backupped = false;
     private BodyParts bodyParts;
@@ -118,7 +118,7 @@ public class Humanoid2DResetPos : MonoBehaviour
     public void resetRandomXRot(float min, float max)
     {
         Quaternion quaternion = Quaternion.Euler(0, 0, Random.Range(min, max));
-        transform.rotation = quaternion;
+        bodyParts.root.rotation = quaternion;
     }
 
     public void addRandomVel(float min, float max)

@@ -264,7 +264,7 @@
         <e p="Scripts" t="Include">
           <e p="Agent" t="Include">
             <e p="Actions.cs" t="Include" />
-            <e p="ActionsAngPos.cs" t="Include" />
+            <e p="ActionsAngPosOLD.cs" t="Include" />
             <e p="ActionsAngVel.cs" t="Include" />
             <e p="Animation" t="Include">
               <e p="AnimationAcademy.cs" t="Include" />
@@ -301,15 +301,15 @@
               <e p="Terminator.cs" t="Include" />
             </e>
             <e p="Humanoid2D" t="Include">
+              <e p="ActionsAngPos.cs" t="Include" />
               <e p="ButtUpRot.cs" t="Include" />
               <e p="Humanoid2DAcademy.cs" t="Include" />
-              <e p="Humanoid2DActionsAngPos.cs" t="Include" />
               <e p="Humanoid2DAgent.cs" t="Include" />
               <e p="Humanoid2DObservations.cs" t="Include" />
-              <e p="Humanoid2DResetPos.cs" t="Include" />
               <e p="Humanoid2DStandingReward.cs" t="Include" />
               <e p="Humanoid2DStandingRewardComplicated.cs" t="Include" />
               <e p="LockXY.cs" t="Include" />
+              <e p="ResetPos.cs" t="Include" />
               <e p="UpToLimit.cs" t="Include" />
             </e>
             <e p="HumanoidAcademy.cs" t="Include" />
@@ -328,8 +328,16 @@
             <e p="ModelInput.cs" t="Include" />
             <e p="Observations.cs" t="Include" />
             <e p="PausePos.cs" t="Include" />
+            <e p="Punch" t="Include">
+              <e p="PunchAgent.cs" t="Include" />
+              <e p="PunchObservations.cs" t="Include" />
+              <e p="PunchPointRotObservation.cs" t="Include" />
+              <e p="PunchPointSpawner.cs" t="Include" />
+              <e p="PunchReward.cs" t="Include" />
+              <e p="PunchTerminator.cs" t="Include" />
+            </e>
             <e p="RandomEffector.cs" t="Include" />
-            <e p="ResetPos.cs" t="Include" />
+            <e p="ResetPosOLD.cs" t="Include" />
             <e p="Rewards" t="Include">
               <e p="ActuationReward.cs" t="Include" />
               <e p="CrouchingReward.cs" t="Include" />

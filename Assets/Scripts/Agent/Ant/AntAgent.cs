@@ -13,7 +13,7 @@ internal class AntAgent : Agent
 
     private ObservationsAnt observations;
     private PausePos pausePos;
-    private ResetPos resetPos;
+    private ResetPosOLD _resetPosOld;
     private AntReward standingReward;
     private long startTime;
 
@@ -27,7 +27,7 @@ internal class AntAgent : Agent
         observations = GetComponent<ObservationsAnt>();
         standingReward = GetComponent<AntReward>();
         actions = GetComponent<ActionsAnt>();
-        resetPos = GetComponent<ResetPos>();
+        _resetPosOld = GetComponent<ResetPosOLD>();
         pausePos = GetComponent<PausePos>();
     }
 
@@ -42,8 +42,8 @@ internal class AntAgent : Agent
     {
         if (resetStepsElapsed > resetWaitSteps && !velReset)
         {
-            resetPos.resetVel();
-            resetPos.resetJointForces();
+            _resetPosOld.resetVel();
+            _resetPosOld.resetJointForces();
             velReset = true;
         }
 
@@ -84,7 +84,7 @@ internal class AntAgent : Agent
 
     public override void AgentReset()
     {
-        resetPos.ResetPosition();
+        _resetPosOld.ResetPosition();
         resetStepsElapsed = 0;
         velReset = false;
     }
