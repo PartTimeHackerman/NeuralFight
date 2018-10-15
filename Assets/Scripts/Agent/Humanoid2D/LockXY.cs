@@ -33,17 +33,19 @@ class LockXY : MonoBehaviour
 
     void LateUpdate()
     {
-        for (int i = rigids.Count - 1; i >= 0; i--)
+
+        foreach (Rigidbody rigid in rigids)
         {
-            Rigidbody rigid = rigids[i];
-            //Vector3 angVel = rigid.angularVelocity;
+
+            Vector3 angVel = rigid.angularVelocity;
             Quaternion angRot = rigid.rotation;
-            //angVel.z = 0;
-            //angVel.y = 0;
-            angRot.x = 0f;
-            angRot.y = 0f;
-            //rigid.angularVelocity = angVel;
-            rigid.transform.rotation = angRot;
+            Vector3 angRotEuler = angRot.eulerAngles;
+            angVel.z = 0;
+            angVel.y = 0;
+            angRotEuler.z = 0;
+            angRotEuler.y = 90;
+            rigid.angularVelocity = angVel;
+            rigid.transform.rotation = Quaternion.Euler(angRotEuler);
 
             //float z = rigid.rotation.eulerAngles.z;
             //rigid.transform.Rotate(0, 0, -z);

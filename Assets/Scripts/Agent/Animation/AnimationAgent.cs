@@ -30,7 +30,7 @@ internal class AnimationAgent : Agent
         actions = GetComponent<ActionsAngPos>();
         animationPositioner = GetComponent<AnimationPositioner>();
         bodyParts = GetComponent<BodyParts>();
-        observations.addToRemove(new[] { "root_pos_x" });
+        observations.addToRemove(new[] {"root_pos_x"});
         terminateFn = GetComponent<Terminator>();
         resetPosition = GetComponent<ResetPos>();
         //animationReward.getAvgReward();
@@ -38,7 +38,6 @@ internal class AnimationAgent : Agent
 
     public override void CollectObservations()
     {
-
         List<float> observations = this.observations.getObservations();
 
         foreach (var observation in observations) AddVectorObs(observation);
@@ -55,7 +54,6 @@ internal class AnimationAgent : Agent
             if (academyStepCounter % agentParameters.numberOfActionsBetweenDecisions == 0)
             {
                 RequestDecision();
-
             }
         }
     }
@@ -87,7 +85,6 @@ internal class AnimationAgent : Agent
 
     public override void AgentReset()
     {
-
     }
 
     private void resetJointVels()

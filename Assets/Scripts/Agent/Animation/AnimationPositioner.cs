@@ -8,8 +8,9 @@ using UnityEngine;
 class AnimationPositioner : MonoBehaviour
 {
     public BodyParts refBodyParts;
-    public bool debug = false;
     public ReferenceObservations referenceObservations;
+    public bool staticAnimation = false;
+    public bool debug = false;
     private BodyParts bodyParts;
     private Dictionary<string, JointInfo> namedJointInfos = new Dictionary<string, JointInfo>();
     private Dictionary<string, Rigidbody> namedRigids;
@@ -31,6 +32,18 @@ class AnimationPositioner : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (staticAnimation)
+        {
+            float refButtRotZ = refBodyParts.root.rotation.eulerAngles.x;
+            Vector3 buttRot = bodyParts.root.rotation.eulerAngles;
+            buttRot.z = -refButtRotZ;
+            bodyParts.root.rotation = Quaternion.Euler(buttRot);
+            bodyParts.root.position = refBodyParts.root.position;
+        }
+    }
+
     void LateFixedUpdate()
     {
         if (debug)
@@ -42,10 +55,8 @@ class AnimationPositioner : MonoBehaviour
 
     public void setRotations()
     {
-
         foreach (JointInfo jointInfo in refBodyParts.jointsInfos)
         {
-
             float rot = jointInfo.transform.rotation.eulerAngles.x;
             rot = rot < 180 ? -rot : (360 - rot);
             Vector3 modelPartRot = namedJointInfos[jointInfo.name].transform.rotation.eulerAngles;
