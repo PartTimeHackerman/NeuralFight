@@ -213,7 +213,6 @@ GameObject:
   - component: {fileID: 114818191228173280}
   - component: {fileID: 114880301194726788}
   - component: {fileID: 114379493500921766}
-  - component: {fileID: 114688542284277980}
   m_Layer: 0
   m_Name: Humanoid_WalkingFW
   m_TagString: Untagged
@@ -1265,24 +1264,6 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
---- !u!114 &114688542284277980
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1793406786267074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bff1136f94445d6bb7fff1527d939d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodyParts: {fileID: 114343741098209412}
-  waitMin: 0.1
-  waitMax: 3
-  velsMult: {x: 1, y: 0.5}
-  force: {x: -50, y: 50}
-  forceMode: 2
-  debug: 0
 --- !u!114 &114818191228173280
 MonoBehaviour:
   m_ObjectHideFlags: 1
