@@ -1,12 +1,18 @@
-15.10.2018 20:33:59
+16.10.2018 18:16:49
  
 Exception
 KeyNotFoundException: The given key was not present in the dictionary.
 System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) (at <f2e6809acb14476a81f399aeb800f8f2>:0)
-AnimationReward.poseReward () (at Assets/Scripts/Agent/Animation/AnimationReward.cs:195)
-AnimationReward.getReward () (at Assets/Scripts/Agent/Animation/AnimationReward.cs:97)
+AnimationReward.poseReward () (at Assets/Scripts/Agent/Animation/AnimationReward.cs:89)
+AnimationReward.getReward () (at Assets/Scripts/Agent/Animation/AnimationReward.cs:52)
 AnimationAgent.AgentAction (System.Single[] vectorAction, System.String textAction) (at Assets/Scripts/Agent/Animation/AnimationAgent.cs:73)
 MLAgents.Agent.AgentStep () (at Assets/ML-Agents/Scripts/Agent.cs:904)
 MLAgents.Academy.EnvironmentStep () (at Assets/ML-Agents/Scripts/Academy.cs:582)
 MLAgents.Academy.FixedUpdate () (at Assets/ML-Agents/Scripts/Academy.cs:604)
+
+Exception
+KeyNotFoundException: The given key was not present in the dictionary.
+System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) (at <f2e6809acb14476a81f399aeb800f8f2>:0)
+AnimationReward.poseReward () (at Assets/Scripts/Agent/Animation/AnimationReward.cs:89)
+AnimationReward.getReward () (at Assets/Scripts/Agent/Animation/AnimationReward.cs:52)
 

@@ -984,21 +984,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   calcAvgReward: 0
-  debug: 0
+  debug: 1
   referenceBodyParts: {fileID: 0}
   referenceObservations: {fileID: 0}
   isAnimationRef: 1
-  rotErr: 0
-  posErr: 0
-  reward: 0
-  avgReward: 0
-  avgRewardSum: 0
-  avgCounter: 0
   poseRew: 0
   velocityRew: 0
   endRew: 0
   COMRew: 0
   imitationReward: 0
+  posErrSum: 0
+  velErrSum: 0
+  endPosErrSum: 0
+  comPosErr: 0
+  posErrExp: -1
+  velErrExp: -0.000001
+  endPosErrExp: -1
+  comPosExp: -1
 --- !u!114 &114136682328903566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1381,7 +1383,7 @@ MonoBehaviour:
     maxStep: 0
     resetOnDone: 1
     onDemandDecision: 0
-    numberOfActionsBetweenDecisions: 10
+    numberOfActionsBetweenDecisions: 5
   animationSettings: {fileID: 0}
   steps: 0
   maxSteps: 1000
