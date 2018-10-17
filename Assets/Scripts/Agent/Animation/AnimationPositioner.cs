@@ -42,28 +42,46 @@ class AnimationPositioner : MonoBehaviour
             bodyParts.root.rotation = Quaternion.Euler(buttRot);
             bodyParts.root.position = refBodyParts.root.position;
         }
+
+        if (debug)
+        {
+            
+            setRotations();
+            debug = false;
+        }
     }
 
     void LateFixedUpdate()
     {
-        if (debug)
-        {
-            setRotations();
-            setVelocities();
-        }
     }
 
     public void setRotations()
     {
+        bodyParts.root.isKinematic = true;
+        float refButtRotZ = refBodyParts.root.rotation.eulerAngles.x;
+        Vector3 buttRot = bodyParts.root.rotation.eulerAngles;
+        buttRot.z = -refButtRotZ;
+        bodyParts.root.rotation = Quaternion.Euler(buttRot);
+        Vector3 refRootPos = refBodyParts.root.position;
+        refRootPos.x = 0;
+        refRootPos.z = 0;
+        bodyParts.root.position = refRootPos;
         foreach (JointInfo jointInfo in refBodyParts.jointsInfos)
         {
-            float rot = jointInfo.transform.rotation.eulerAngles.x;
+            float rot = jointInfo.transform.localRotation.eulerAngles.x;
             rot = rot < 180 ? -rot : (360 - rot);
-            Vector3 modelPartRot = namedJointInfos[jointInfo.name].transform.rotation.eulerAngles;
+            JointInfo modelJointInfo = namedJointInfos[jointInfo.name];
+            Vector3 modelPartRot = modelJointInfo.transform.localRotation.eulerAngles;
             modelPartRot.z = rot;
-            namedJointInfos[jointInfo.name].transform.rotation = Quaternion.Euler(modelPartRot);
+            modelJointInfo.transform.localRotation = Quaternion.Euler(modelPartRot);
+
+            //set target rot
+            float tarRot = jointInfo.isBackwards ? rot: -rot;
+            modelJointInfo.setConfigurableRot(new Vector3(tarRot, 0f, 0f));
+
             //namedJointInfos[jointInfo.name].GetComponent<Rigidbody>().isKinematic = true;
         }
+        bodyParts.root.isKinematic = false;
     }
 
     public void setRotationsRigids()

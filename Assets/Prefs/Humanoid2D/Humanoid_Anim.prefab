@@ -128,6 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4243324776434160}
   - component: {fileID: 114984870662233370}
+  - component: {fileID: 114702872728836362}
   - component: {fileID: 114127594277911620}
   - component: {fileID: 114942196190220542}
   - component: {fileID: 114786400843774216}
@@ -400,7 +401,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1323215427112296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.117, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4969145431415088}
@@ -890,7 +891,7 @@ Rigidbody:
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 1
@@ -972,6 +973,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114127594277911620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -984,7 +986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   calcAvgReward: 0
-  debug: 1
+  debug: 0
   referenceBodyParts: {fileID: 0}
   referenceObservations: {fileID: 0}
   isAnimationRef: 1
@@ -998,7 +1000,7 @@ MonoBehaviour:
   endPosErrSum: 0
   comPosErr: 0
   posErrExp: -1
-  velErrExp: -0.000001
+  velErrExp: -0.00001
   endPosErrExp: -1
   comPosExp: -1
 --- !u!114 &114136682328903566
@@ -1037,6 +1039,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114184318664497908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1073,6 +1076,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114220131576659038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1109,6 +1113,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114221270232153180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1145,6 +1150,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114225260460263642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1158,7 +1164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   arenaLen: 10000000
-  fallHeight: 0.3
+  fallHeight: 0.4
   pastArena: 0
   fallen: 0
   terminated: 0
@@ -1198,6 +1204,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114363065449285742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1252,6 +1259,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114531498013432572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1288,6 +1296,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114679155877463516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1301,6 +1310,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionsSpace: 0
   VelPos: 0
+--- !u!114 &114702872728836362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1323215427112296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4627cbd6cf4a6aa08908ffa3a1bcf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  reward: 0
+  standingRewardVal: 0
+  velocityRewardVal: 0
+  animationRewardVal: 0
+  others:
+    keys: []
+    values: []
 --- !u!114 &114739679522892390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1337,6 +1365,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114786400843774216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1350,7 +1379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refBodyParts: {fileID: 0}
   referenceObservations: {fileID: 0}
-  staticAnimation: 1
+  staticAnimation: 0
   debug: 0
 --- !u!114 &114942196190220542
 MonoBehaviour:
@@ -1383,7 +1412,7 @@ MonoBehaviour:
     maxStep: 0
     resetOnDone: 1
     onDemandDecision: 0
-    numberOfActionsBetweenDecisions: 5
+    numberOfActionsBetweenDecisions: 10
   animationSettings: {fileID: 0}
   steps: 0
   maxSteps: 1000

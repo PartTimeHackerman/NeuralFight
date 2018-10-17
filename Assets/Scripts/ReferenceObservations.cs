@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,13 +31,18 @@ class ReferenceObservations : MonoBehaviour//, ILateFixedUpdate
         namedRigids = bodyParts.getNamedRigids();
         root = bodyParts.root;
         physics = PhysicsUtils.get();
+        foreach (KeyValuePair<string, Rigidbody> namedRigid in namedRigids)
+        {
+            //previousPositions[namedRigid.Key] = namedRigid.Value.transform.position;
+            lastRotations[namedRigid.Key] = namedRigid.Value.transform.rotation;
+        }
     }
 
     void Update()
     {
         foreach (KeyValuePair<string, Rigidbody> namedRigid in namedRigids)
         {
-            previousPositions[namedRigid.Key] = namedRigid.Value.transform.position;
+            //previousPositions[namedRigid.Key] = namedRigid.Value.transform.position;
             lastRotations[namedRigid.Key] = namedRigid.Value.transform.rotation;
         }
 
@@ -46,24 +52,24 @@ class ReferenceObservations : MonoBehaviour//, ILateFixedUpdate
     {
         foreach (KeyValuePair<string, Rigidbody> namedRigid in namedRigids)
         {
-            Vector3 vel = (namedRigid.Value.transform.position - previousPositions[namedRigid.Key]) / Time.deltaTime;
-            vel.z = 0f;
-            velocities[namedRigid.Key] = vel;
-
+            
             getAngVel(namedRigid.Key);
             relativeRots[namedRigid.Key] = getRelativeRot(namedRigid.Value, root, true);
 
             if (namedRigid.Key.Contains("_end"))
                 endPositions[namedRigid.Key] = root.transform.InverseTransformPoint(namedRigid.Value.transform.position);
+            
+            //Vector3 vel = (namedRigid.Value.transform.position - previousPositions[namedRigid.Key]) / Time.deltaTime;
+            //vel.z = 0f;
+            //velocities[namedRigid.Key] = vel;
+            
+            //float rot = namedRigid.Value.transform.rotation.eulerAngles.x;
+            //rot = rot < 180 ? -rot : (360 - rot);
+            //Vector3 rbRot = Vector3.zero;
+            //rbRot.z = rot;
+            //rbRotations[namedRigid.Key] = Quaternion.Euler(rbRot);
 
-            float rot = namedRigid.Value.transform.rotation.eulerAngles.x;
-            rot = rot < 180 ? -rot : (360 - rot);
-            Vector3 rbRot = Vector3.zero;
-            rbRot.z = rot;
-            rbRotations[namedRigid.Key] = Quaternion.Euler(rbRot);
-
-
-            COM = physics.getCenterOfMass(bodyParts.getRigids()) - bodyParts.root.transform.position;
+            //COM = physics.getCenterOfMass(bodyParts.getRigids()) - bodyParts.root.transform.position;
         }
 
     }
@@ -98,10 +104,7 @@ class ReferenceObservations : MonoBehaviour//, ILateFixedUpdate
         float rotClamped = 0f;
         Vector3 rot = (Quaternion.Inverse(root.rotation) * rigidbody.transform.rotation).eulerAngles;
 
-        if (isRef)
-            rotAng = rot.x;
-        else
-            rotAng = rot.z;
+        rotAng = isRef ? rot.x : rot.z;
 
         if (rotAng <= 180f)
             rotClamped = rotAng / 180f;

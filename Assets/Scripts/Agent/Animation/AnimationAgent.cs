@@ -10,7 +10,7 @@ internal class AnimationAgent : Agent
     private IActions actions;
 
     private Observations observations;
-    private AnimationReward animationReward;
+    private AnimRunFWReward animationReward;
     private AnimationPositioner animationPositioner;
     public AnimationSettings animationSettings;
     private BodyParts bodyParts;
@@ -26,7 +26,7 @@ internal class AnimationAgent : Agent
     public override void InitializeAgent()
     {
         observations = GetComponent<Observations>();
-        animationReward = GetComponent<AnimationReward>();
+        animationReward = GetComponent<AnimRunFWReward>();
         actions = GetComponent<ActionsAngPos>();
         animationPositioner = GetComponent<AnimationPositioner>();
         bodyParts = GetComponent<BodyParts>();
@@ -87,21 +87,11 @@ internal class AnimationAgent : Agent
     {
     }
 
-    private void resetJointVels()
-    {
-        foreach (JointInfo jointInfo in bodyParts.jointsInfos)
-        {
-            jointInfo.setConfigurableRotVel(Vector3.zero);
-        }
-    }
-
     private void resetPos()
     {
         resetPosition.ResetPosition();
         ready = false;
-        resetJointVels();
-        //animationPositioner.setVelocities();
-        animationPositioner.setRotationsRigids();
+        animationPositioner.setRotations();
         ready = true;
     }
 }

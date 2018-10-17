@@ -1,18 +1,124 @@
-16.10.2018 18:16:49
+17.10.2018 16:17:24
  
-Exception
-KeyNotFoundException: The given key was not present in the dictionary.
-System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) (at <f2e6809acb14476a81f399aeb800f8f2>:0)
-AnimationReward.poseReward () (at Assets/Scripts/Agent/Animation/AnimationReward.cs:89)
-AnimationReward.getReward () (at Assets/Scripts/Agent/Animation/AnimationReward.cs:52)
-AnimationAgent.AgentAction (System.Single[] vectorAction, System.String textAction) (at Assets/Scripts/Agent/Animation/AnimationAgent.cs:73)
-MLAgents.Agent.AgentStep () (at Assets/ML-Agents/Scripts/Agent.cs:904)
-MLAgents.Academy.EnvironmentStep () (at Assets/ML-Agents/Scripts/Academy.cs:582)
-MLAgents.Academy.FixedUpdate () (at Assets/ML-Agents/Scripts/Academy.cs:604)
+Warning
+You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
+0x00000001415381D8 (Unity) StackWalker::GetCurrentCallstack
+0x000000014153E716 (Unity) StackWalker::ShowCallstack
+0x000000014140D4EB (Unity) GetStacktrace
+0x00000001408B1580 (Unity) DebugStringToFile
+0x0000000140BB6875 (Unity) MonoBehaviour::ConstructorCheck
+0x000000014192B606 (Unity) MonoBehaviour_CUSTOM_ConstructorCheck
+0x000000003336DC0E (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
+0x000000003336D89B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
+0x000000002FB19A2B (Mono JIT Code) [StandingRewardHumanoid.cs:40] StandingRewardHumanoid:.ctor (BodyParts) 
+0x000000002FB1940B (Mono JIT Code) [AnimRunFWReward.cs:29] AnimRunFWReward:Start () 
+0x000000003336D5D8 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x00007FF8D6DEA65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
+0x00007FF8D6D71B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
+0x00007FF8D6D7AB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
+0x0000000140C0734A (Unity) scripting_method_invoke
+0x0000000140BFF710 (Unity) ScriptingInvocation::Invoke
+0x0000000140BBB668 (Unity) MonoBehaviour::InvokeMethodOrCoroutineChecked
+0x0000000140BBB7FA (Unity) MonoBehaviour::InvokeMethodOrCoroutineChecked
+0x0000000140BBFBC7 (Unity) MonoBehaviour::Start
+0x0000000140BB7749 (Unity) MonoBehaviour::DelayedStartCall
+0x00000001406F29B7 (Unity) DelayedCallManager::Update
+0x0000000140969F4C (Unity) `InitPlayerLoopCallbacks'::`2'::EarlyUpdateScriptRunDelayedStartupFrameRegistrator::Forward
+0x0000000140969887 (Unity) ExecutePlayerLoop
+0x0000000140969936 (Unity) ExecutePlayerLoop
+0x000000014096C11C (Unity) PlayerLoop
+0x000000014144CB3A (Unity) PlayerLoopController::UpdateScene
+0x000000014143B5ED (Unity) PlayerLoopController::EnterPlayMode
+0x0000000141447BD8 (Unity) PlayerLoopController::SetIsPlaying
+0x000000014144B18D (Unity) Application::TickTimer
+0x00000001415E9ED5 (Unity) MainMessageLoop
+0x00000001415EC2C8 (Unity) WinMain
+0x000000014243127A (Unity) __scrt_common_main_seh
+0x00007FF912353034 (KERNEL32) BaseThreadInitThunk
+0x00007FF9125E1461 (ntdll) RtlUserThreadStart
+
+Warning
+You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
+0x00000001415381D8 (Unity) StackWalker::GetCurrentCallstack
+0x000000014153E716 (Unity) StackWalker::ShowCallstack
+0x000000014140D4EB (Unity) GetStacktrace
+0x00000001408B1580 (Unity) DebugStringToFile
+0x0000000140BB6875 (Unity) MonoBehaviour::ConstructorCheck
+0x000000014192B606 (Unity) MonoBehaviour_CUSTOM_ConstructorCheck
+0x000000003336DC0E (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
+0x000000003336D89B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
+0x000000002FB1B1F3 (Mono JIT Code) [VelocityReward.cs:18] VelocityReward:.ctor (UnityEngine.Vector2,single,UnityEngine.Rigidbody) 
+0x000000002FB1950B (Mono JIT Code) [AnimRunFWReward.cs:30] AnimRunFWReward:Start () 
+0x000000003336D5D8 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x00007FF8D6DEA65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
+0x00007FF8D6D71B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
+0x00007FF8D6D7AB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
+0x0000000140C0734A (Unity) scripting_method_invoke
+0x0000000140BFF710 (Unity) ScriptingInvocation::Invoke
+0x0000000140BBB668 (Unity) MonoBehaviour::InvokeMethodOrCoroutineChecked
+0x0000000140BBB7FA (Unity) MonoBehaviour::InvokeMethodOrCoroutineChecked
+0x0000000140BBFBC7 (Unity) MonoBehaviour::Start
+0x0000000140BB7749 (Unity) MonoBehaviour::DelayedStartCall
+0x00000001406F29B7 (Unity) DelayedCallManager::Update
+0x0000000140969F4C (Unity) `InitPlayerLoopCallbacks'::`2'::EarlyUpdateScriptRunDelayedStartupFrameRegistrator::Forward
+0x0000000140969887 (Unity) ExecutePlayerLoop
+0x0000000140969936 (Unity) ExecutePlayerLoop
+0x000000014096C11C (Unity) PlayerLoop
+0x000000014144CB3A (Unity) PlayerLoopController::UpdateScene
+0x000000014143B5ED (Unity) PlayerLoopController::EnterPlayMode
+0x0000000141447BD8 (Unity) PlayerLoopController::SetIsPlaying
+0x000000014144B18D (Unity) Application::TickTimer
+0x00000001415E9ED5 (Unity) MainMessageLoop
+0x00000001415EC2C8 (Unity) WinMain
+0x000000014243127A (Unity) __scrt_common_main_seh
+0x00007FF912353034 (KERNEL32) BaseThreadInitThunk
+0x00007FF9125E1461 (ntdll) RtlUserThreadStart
+
+Warning
+You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
+0x00000001415381D8 (Unity) StackWalker::GetCurrentCallstack
+0x000000014153E716 (Unity) StackWalker::ShowCallstack
+0x000000014140D4EB (Unity) GetStacktrace
+0x00000001408B1580 (Unity) DebugStringToFile
+0x0000000140BB6875 (Unity) MonoBehaviour::ConstructorCheck
+0x000000014192B606 (Unity) MonoBehaviour_CUSTOM_ConstructorCheck
+0x000000003336DC0E (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
+0x000000003336D89B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
+0x000000002FB1B1F3 (Mono JIT Code) [VelocityReward.cs:18] VelocityReward:.ctor (UnityEngine.Vector2,single,UnityEngine.Rigidbody) 
+0x000000002FB195FB (Mono JIT Code) [AnimRunFWReward.cs:31] AnimRunFWReward:Start () 
+0x000000003336D5D8 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x00007FF8D6DEA65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
+0x00007FF8D6D71B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
+0x00007FF8D6D7AB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
+0x0000000140C0734A (Unity) scripting_method_invoke
+0x0000000140BFF710 (Unity) ScriptingInvocation::Invoke
+0x0000000140BBB668 (Unity) MonoBehaviour::InvokeMethodOrCoroutineChecked
+0x0000000140BBB7FA (Unity) MonoBehaviour::InvokeMethodOrCoroutineChecked
+0x0000000140BBFBC7 (Unity) MonoBehaviour::Start
+0x0000000140BB7749 (Unity) MonoBehaviour::DelayedStartCall
+0x00000001406F29B7 (Unity) DelayedCallManager::Update
+0x0000000140969F4C (Unity) `InitPlayerLoopCallbacks'::`2'::EarlyUpdateScriptRunDelayedStartupFrameRegistrator::Forward
+0x0000000140969887 (Unity) ExecutePlayerLoop
+0x0000000140969936 (Unity) ExecutePlayerLoop
+0x000000014096C11C (Unity) PlayerLoop
+0x000000014144CB3A (Unity) PlayerLoopController::UpdateScene
+0x000000014143B5ED (Unity) PlayerLoopController::EnterPlayMode
+0x0000000141447BD8 (Unity) PlayerLoopController::SetIsPlaying
+0x000000014144B18D (Unity) Application::TickTimer
+0x00000001415E9ED5 (Unity) MainMessageLoop
+0x00000001415EC2C8 (Unity) WinMain
+0x000000014243127A (Unity) __scrt_common_main_seh
+0x00007FF912353034 (KERNEL32) BaseThreadInitThunk
+0x00007FF9125E1461 (ntdll) RtlUserThreadStart
 
 Exception
 KeyNotFoundException: The given key was not present in the dictionary.
 System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) (at <f2e6809acb14476a81f399aeb800f8f2>:0)
-AnimationReward.poseReward () (at Assets/Scripts/Agent/Animation/AnimationReward.cs:89)
-AnimationReward.getReward () (at Assets/Scripts/Agent/Animation/AnimationReward.cs:52)
+AnimationReward.setRewards () (at Assets/Scripts/Agent/Animation/AnimationReward.cs:92)
+AnimationReward.getReward () (at Assets/Scripts/Agent/Animation/AnimationReward.cs:55)
+AnimRunFWReward.getReward () (at Assets/Scripts/Agent/Animation/AnimRunFWReward.cs:45)
+AnimationAgent.AgentAction (System.Single[] vectorAction, System.String textAction) (at Assets/Scripts/Agent/Animation/AnimationAgent.cs:73)
+MLAgents.Agent.AgentStep () (at Assets/ML-Agents/Scripts/Agent.cs:904)
+MLAgents.Academy.EnvironmentStep () (at Assets/ML-Agents/Scripts/Academy.cs:582)
+MLAgents.Academy.FixedUpdate () (at Assets/ML-Agents/Scripts/Academy.cs:604)
 

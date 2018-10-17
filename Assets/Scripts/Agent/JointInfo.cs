@@ -26,7 +26,7 @@ public class JointInfo : MonoBehaviour
     public bool setVelSettings = false;
     public float maxVel = 20;
     public float currentRot = 0f;
-
+    public bool isBackwards = false;
 
     void Reset()
     {
@@ -42,6 +42,7 @@ public class JointInfo : MonoBehaviour
         init();
         if (setSettings)
             SetConfigurableJointSettings();
+        isBackwards = joint.axis.z < 0f;
         /*
         medVel = maxVel / 2;
         currentMaxVel = maxVel;
