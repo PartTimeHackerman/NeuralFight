@@ -35,6 +35,9 @@ class ReferenceObservations : MonoBehaviour//, ILateFixedUpdate
         {
             //previousPositions[namedRigid.Key] = namedRigid.Value.transform.position;
             lastRotations[namedRigid.Key] = namedRigid.Value.transform.rotation;
+            relativeRots[namedRigid.Key] = 0f;
+            endPositions[namedRigid.Key] = Vector3.zero;
+            angularVelocities[namedRigid.Key] = Vector3.zero;
         }
     }
 
