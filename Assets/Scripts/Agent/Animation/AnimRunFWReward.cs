@@ -43,7 +43,7 @@ class AnimRunFWReward : MonoBehaviour
         standingRewardVal = standingReward.getReward();
         velocityRewardVal = velocityFWReward.getReward() - Mathf.Abs(velocityUPReward.getReward());
         animationRewardVal = animationReward.getReward();
-        reward = (standingRewardVal + velocityRewardVal * 3 + animationRewardVal * 3) / 7f;
+        reward = (standingRewardVal + velocityRewardVal * 5 + animationRewardVal * 2) / 8f;
         #if (UNITY_EDITOR)
         others["torsoOverCOMXZReward"] = standingReward.torsoOverCOMXZReward;
         others["COMOverMeanOfFeetsXZReward"] = standingReward.COMOverMeanOfFeetsXZReward;
