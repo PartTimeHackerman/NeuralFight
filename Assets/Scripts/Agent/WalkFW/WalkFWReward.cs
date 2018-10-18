@@ -40,11 +40,14 @@ class WalkFWReward : MonoBehaviour
     {
         standingRewardVal = standingReward.getReward();
         velocityRewardVal = velocityFWReward.getReward() - Mathf.Abs(velocityUPReward.getReward());
+        if (velocityRewardVal > 0f)
+            velocityRewardVal =
+                RewardFunctions.toleranceInvNoBounds(velocityRewardVal, 1f, .1f, RewardFunction.LONGTAIL);
         reward = standingRewardVal * .2f + velocityRewardVal * .8f;
-        #if (UNITY_EDITOR)
+#if (UNITY_EDITOR)
         others["torsoOverCOMXZReward"] = standingReward.torsoOverCOMXZReward;
         others["COMOverMeanOfFeetsXZReward"] = standingReward.COMOverMeanOfFeetsXZReward;
-        #endif
+#endif
         //reward *= 10f;
         //reward = Mathf.Clamp(reward, -100f, 100f);
         return reward;
