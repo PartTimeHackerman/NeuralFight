@@ -212,7 +212,6 @@ GameObject:
   - component: {fileID: 114343741098209412}
   - component: {fileID: 114818191228173280}
   - component: {fileID: 114880301194726788}
-  - component: {fileID: 114379493500921766}
   m_Layer: 0
   m_Name: Humanoid_WalkingFW
   m_TagString: Untagged
@@ -471,7 +470,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1793406786267074}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4782600940074690}
@@ -571,7 +570,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1888162388797494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.025, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4332148208510570}
@@ -646,8 +645,8 @@ Rigidbody:
   m_GameObject: {fileID: 1666179858425578}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -661,8 +660,8 @@ Rigidbody:
   m_GameObject: {fileID: 1008236198523038}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -676,8 +675,8 @@ Rigidbody:
   m_GameObject: {fileID: 1888162388797494}
   serializedVersion: 2
   m_Mass: 15
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -691,8 +690,8 @@ Rigidbody:
   m_GameObject: {fileID: 1304111557575312}
   serializedVersion: 2
   m_Mass: 12
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -706,8 +705,8 @@ Rigidbody:
   m_GameObject: {fileID: 1036353645636968}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -721,8 +720,8 @@ Rigidbody:
   m_GameObject: {fileID: 1576308635532804}
   serializedVersion: 2
   m_Mass: 5
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -736,8 +735,8 @@ Rigidbody:
   m_GameObject: {fileID: 1904562734929854}
   serializedVersion: 2
   m_Mass: 5
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -751,8 +750,8 @@ Rigidbody:
   m_GameObject: {fileID: 1790546210611406}
   serializedVersion: 2
   m_Mass: 5
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -766,8 +765,8 @@ Rigidbody:
   m_GameObject: {fileID: 1867069375488390}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -781,8 +780,8 @@ Rigidbody:
   m_GameObject: {fileID: 1906526752185316}
   serializedVersion: 2
   m_Mass: 5
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -796,8 +795,8 @@ Rigidbody:
   m_GameObject: {fileID: 1728799593008380}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -811,8 +810,8 @@ Rigidbody:
   m_GameObject: {fileID: 1382481032049502}
   serializedVersion: 2
   m_Mass: 2
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -826,8 +825,8 @@ Rigidbody:
   m_GameObject: {fileID: 1009664475371098}
   serializedVersion: 2
   m_Mass: 2
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -841,8 +840,8 @@ Rigidbody:
   m_GameObject: {fileID: 1810997920326684}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -856,8 +855,8 @@ Rigidbody:
   m_GameObject: {fileID: 1965510629358254}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -871,8 +870,8 @@ Rigidbody:
   m_GameObject: {fileID: 1851779996275722}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -886,8 +885,8 @@ Rigidbody:
   m_GameObject: {fileID: 1840023203309240}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -901,8 +900,8 @@ Rigidbody:
   m_GameObject: {fileID: 1366774938508480}
   serializedVersion: 2
   m_Mass: 2
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -964,6 +963,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114225892501160862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1000,6 +1000,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114290245286981432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1036,6 +1037,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114338455326809496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1072,6 +1074,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114343741098209412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1090,22 +1093,6 @@ MonoBehaviour:
   rigidsTotal: 0
   totalRigidsMass: 0
   height: 0
---- !u!114 &114379493500921766
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1793406786267074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610d4d1119822ad4aab44f4ad0ca6f44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbody: {fileID: 54722133133132510}
-  referenceRb: {fileID: 54246125406244276}
-  velocity: 1000
-  enable: 0
-  debug: 0
 --- !u!114 &114380207487118534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1142,6 +1129,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114384863772372204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1192,6 +1180,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114414007707697486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1228,6 +1217,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114678470817771006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1264,6 +1254,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114818191228173280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1331,6 +1322,7 @@ MonoBehaviour:
   setVelSettings: 0
   maxVel: 25
   currentRot: 0
+  isBackwards: 0
 --- !u!114 &114880301194726788
 MonoBehaviour:
   m_ObjectHideFlags: 1

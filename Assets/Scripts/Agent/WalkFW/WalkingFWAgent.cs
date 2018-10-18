@@ -25,7 +25,6 @@ internal class WalkingFWAgent : Agent
         actions = GetComponent<ActionsAngPos>();
         resetPos = GetComponent<ResetPos>();
         observations.addToRemove(new[]{"root_pos_x"});
-
     }
 
     public override void CollectObservations()

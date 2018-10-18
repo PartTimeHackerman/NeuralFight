@@ -8,7 +8,7 @@ using UnityEngine;
 class WalkFWReward : MonoBehaviour
 {
     public bool debug = false;
-    private StandingRewardWalkFW standingReward;
+    private StandingRewardHumanoid standingReward;
     private VelocityReward velocityFWReward;
     private VelocityReward velocityUPReward;
     private BodyParts bodyParts;
@@ -24,7 +24,7 @@ class WalkFWReward : MonoBehaviour
     private void Start()
     {
         bodyParts = GetComponent<BodyParts>();
-        standingReward = new StandingRewardWalkFW(bodyParts);
+        standingReward = new StandingRewardHumanoid(bodyParts);
         velocityFWReward = new VelocityReward(Vector2.right, 10f, bodyParts.root);
         velocityUPReward = new VelocityReward(Vector2.up, 10f, bodyParts.root);
 
@@ -40,7 +40,7 @@ class WalkFWReward : MonoBehaviour
     {
         standingRewardVal = standingReward.getReward();
         velocityRewardVal = velocityFWReward.getReward() - Mathf.Abs(velocityUPReward.getReward());
-        reward = (standingRewardVal + velocityRewardVal * 3) / 4f;
+        reward = standingRewardVal * .2f + velocityRewardVal * .8f;
         #if (UNITY_EDITOR)
         others["torsoOverCOMXZReward"] = standingReward.torsoOverCOMXZReward;
         others["COMOverMeanOfFeetsXZReward"] = standingReward.COMOverMeanOfFeetsXZReward;
