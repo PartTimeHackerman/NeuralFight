@@ -6,7 +6,10 @@ using UnityEngine;
 public class BodyParts : MonoBehaviour
 {
     private readonly List<ConfigurableJoint> joints = new List<ConfigurableJoint>();
-    protected readonly Dictionary<ConfigurableJoint, bool[]> moveableJoints = new Dictionary<ConfigurableJoint, bool[]>();
+
+    protected readonly Dictionary<ConfigurableJoint, bool[]> moveableJoints =
+        new Dictionary<ConfigurableJoint, bool[]>();
+
     public List<JointInfo> jointsInfos = new List<JointInfo>();
     public Dictionary<string, JointInfo> namedJoints = new Dictionary<string, JointInfo>();
     protected Dictionary<string, GameObject> namedParts = new Dictionary<string, GameObject>();
@@ -14,7 +17,7 @@ public class BodyParts : MonoBehaviour
     protected List<GameObject> parts = new List<GameObject>();
     private readonly List<Rigidbody> rigids = new List<Rigidbody>();
     private readonly List<Rigidbody> observableRigids = new List<Rigidbody>();
-    public readonly List<Rigidbody> endingRigids = new List<Rigidbody>();
+    public readonly List<Transform> endings = new List<Transform>();
 
     public List<Rigidbody> ObservableRigids => observableRigids;
 
@@ -38,6 +41,8 @@ public class BodyParts : MonoBehaviour
         {
             namedParts.Add(child.gameObject.name, child.gameObject);
             parts.Add(child.gameObject);
+            if (child.name.Contains("_end"))
+                endings.Add(child);
         }
 
         Rigidbody[] rigidsArr = GetComponentsInChildren<Rigidbody>();
@@ -53,7 +58,7 @@ public class BodyParts : MonoBehaviour
         Dictionary<ConfigurableJoint, bool[]> movableJoints = getMovableJoints();
         foreach (var joint in getJoints())
         {
-            bool[] movableAxis = { false, false, false };
+            bool[] movableAxis = {false, false, false};
             if (joint.angularXMotion != ConfigurableJointMotion.Locked)
                 movableAxis[0] = true;
             if (joint.angularYMotion != ConfigurableJointMotion.Locked)
@@ -64,22 +69,19 @@ public class BodyParts : MonoBehaviour
             if (movableAxis.Contains(true))
                 movableJoints[joint] = movableAxis;
         }
+
         totalRigidsMass = rigids.Sum(r => r.mass);
 
         foreach (Rigidbody rigid in rigids)
         {
-            if (rigid.name.Contains("_end"))
-                endingRigids.Add(rigid);
-            
-            if(rigid.GetComponent<JointInfo>() != null || rigid.name.Contains("_end"))
+            if (rigid.GetComponent<JointInfo>() != null)
                 observableRigids.Add(rigid);
         }
-        observableRigids.Add(root);
+        //observableRigids.Add(root);
 
         height = getHeight();
-
     }
-    
+
 
     private void Start()
     {

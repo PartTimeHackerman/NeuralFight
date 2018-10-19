@@ -6,7 +6,7 @@ using UnityEngine;
 public class Observations : MonoBehaviour, IObservations
 {
     public int observationsSpace;
-    
+
     protected BodyParts bodyParts;
     protected List<string> obsToRemove = new List<string>();
     public Dictionary<string, float> observationsNamed = new Dictionary<string, float>();
@@ -18,6 +18,7 @@ public class Observations : MonoBehaviour, IObservations
     private readonly float maxVel = 100;
     private readonly float minPos = -10;
     private readonly float minVel = -100;
+
     protected Rigidbody root;
 /*
 
@@ -45,65 +46,41 @@ public class Observations : MonoBehaviour, IObservations
     protected virtual void Start()
     {
         observationsSpace = getObservationsSpace();
-
     }
 
-    public void getObjectsPositions()
+    public void getObjectPosition(Transform transform)
     {
-        foreach (var gameObject in observableRigids)
-        {
-            if (!gameObject.Equals(bodyParts.root))
-            {
-                Vector3 pos = root.transform.InverseTransformPoint(gameObject.transform.position);
-                observationsNamed[gameObject.name + "_pos_x"] = pos.x;
-                observationsNamed[gameObject.name + "_pos_y"] = pos.y;
-            }
-        }
+        Vector3 pos = root.transform.InverseTransformPoint(transform.position);
+        observationsNamed[transform.name + "_pos_x"] = pos.x;
+        observationsNamed[transform.name + "_pos_y"] = pos.y;
     }
 
-    public void getObjectsRotations()
+    public void getObjectRotation(Rigidbody rigidbody)
     {
-        foreach (var gameObject in observableRigids)
-        {
-            if (!gameObject.name.Contains("_end") && !gameObject.Equals(bodyParts.root))
-            {
-                Quaternion quaternion = Quaternion.Inverse(root.rotation) * gameObject.transform.rotation;
-                Vector3 rotEul = quaternion.eulerAngles;
-                float rotAng = rotEul.z;
-                float rotClamped = 0f;
-                if (rotAng <= 180f)
-                    rotClamped = rotAng / 180f;
-                else
-                    rotClamped = ((rotAng - 180f) / 180f) - 1f;
+        Quaternion quaternion = Quaternion.Inverse(root.rotation) * rigidbody.transform.rotation;
+        Vector3 rotEul = quaternion.eulerAngles;
+        float rotAng = rotEul.z;
+        float rotClamped = 0f;
+        if (rotAng <= 180f)
+            rotClamped = rotAng / 180f;
+        else
+            rotClamped = ((rotAng - 180f) / 180f) - 1f;
 
-                observationsNamed[gameObject.name + "_rot"] = rotClamped;
-            }
-        }
+        observationsNamed[rigidbody.name + "_rot"] = rotClamped;
     }
 
-    public void getObjectsVels()
+    public void getObjectVel(Rigidbody rigidbody)
     {
-        foreach (var rigidbody in observableRigids)
-        {
-            Vector3 vel = normVecVel(rigidbody.velocity);
-            observationsNamed[rigidbody.name + "_vel_x"] = vel.x;
-            observationsNamed[rigidbody.name + "_vel_y"] = vel.y;
-
-        }
+        Vector3 vel = normVecVel(rigidbody.velocity);
+        observationsNamed[rigidbody.name + "_vel_x"] = vel.x;
+        observationsNamed[rigidbody.name + "_vel_y"] = vel.y;
     }
 
-    public void getObjectsAngVels()
+    public void getObjectAngVel(Rigidbody rigidbody)
     {
-        foreach (var rigidbody in observableRigids)
-        {
-            if (!rigidbody.name.Contains("_end"))
-            {
-                float rbAngVel = rigidbody.angularVelocity.z;
-                rbAngVel = (Mathf.Clamp(rbAngVel, minVel, maxVel) - minVel) / (maxVel - minVel);
-                observationsNamed[rigidbody.name + "_ang_vel"] = rbAngVel;
-
-            }
-        }
+        float rbAngVel = rigidbody.angularVelocity.z;
+        rbAngVel = (Mathf.Clamp(rbAngVel, minVel, maxVel) - minVel) / (maxVel - minVel);
+        observationsNamed[rigidbody.name + "_ang_vel"] = rbAngVel;
     }
 
     public void getObjPosRotVelAngVel()
@@ -111,39 +88,18 @@ public class Observations : MonoBehaviour, IObservations
         for (int i = observableRigids.Count - 1; i >= 0; i--)
         {
             Rigidbody rigidbody = observableRigids[i];
-            if (!rigidbody.Equals(bodyParts.root))
-            {
-                Vector3 pos = root.transform.InverseTransformPoint(rigidbody.transform.position);
-                observationsNamed[rigidbody.name + "_pos_x"] = pos.x;
-                observationsNamed[rigidbody.name + "_pos_y"] = pos.y;
-            }
-            
-            if (!rigidbody.name.Contains("_end") && !rigidbody.Equals(bodyParts.root))
-            {
-                Quaternion quaternion = Quaternion.Inverse(root.rotation) * rigidbody.transform.rotation;
-                Vector3 rotEul = quaternion.eulerAngles;
-                float rotAng = rotEul.z;
-                float rotClamped = 0f;
-                if (rotAng <= 180f)
-                    rotClamped = rotAng / 180f;
-                else
-                    rotClamped = ((rotAng - 180f) / 180f) - 1f;
-
-                observationsNamed[rigidbody.name + "_rot"] = rotClamped;
-            }
-            
-            Vector3 vel = normVecVel(rigidbody.velocity);
-            observationsNamed[rigidbody.name + "_vel_x"] = vel.x;
-            observationsNamed[rigidbody.name + "_vel_y"] = vel.y;
-            
-            if (!rigidbody.name.Contains("_end"))
-            {
-                float rbAngVel = rigidbody.angularVelocity.z;
-                rbAngVel = (Mathf.Clamp(rbAngVel, minVel, maxVel) - minVel) / (maxVel - minVel);
-                observationsNamed[rigidbody.name + "_ang_vel"] = rbAngVel;
-
-            }
+            getObjectPosition(rigidbody.transform);
+            getObjectRotation(rigidbody);
+            getObjectVel(rigidbody);
+            getObjectAngVel(rigidbody);
         }
+
+        foreach (Transform ending in bodyParts.endings)
+        {
+            getObjectPosition(ending);
+        }
+
+        getObjectVel(root);
     }
 
     public int getObservationsSpace()
@@ -174,8 +130,9 @@ public class Observations : MonoBehaviour, IObservations
 
         getObjPosRotVelAngVel();
         addCOM();
-        
+
         removeParts();
+        removeInfsAndNans(observationsNamed);
         return observationsNamed;
     }
 
@@ -203,7 +160,8 @@ public class Observations : MonoBehaviour, IObservations
         int layerMask = 1 << root.gameObject.layer;
         layerMask = ~layerMask;
         RaycastHit hit;
-        if (Physics.Raycast(root.transform.position, Vector3.down, out hit, 1000, layerMask, QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(root.transform.position, Vector3.down, out hit, 1000, layerMask,
+            QueryTriggerInteraction.Ignore))
             return hit.distance;
         else
             return 0;
@@ -237,7 +195,7 @@ public class Observations : MonoBehaviour, IObservations
         nVel.z = (Mathf.Clamp(vel.z, minVel, maxVel) - minVel) / (maxVel - minVel);
         return nVel;
     }
-    
+
     public void logNamedObs()
     {
         string str = "";
@@ -245,16 +203,24 @@ public class Observations : MonoBehaviour, IObservations
         {
             str += "[ " + keyValuePair.Key + ": " + keyValuePair.Value + " ] ";
         }
+
         Debug.Log(str);
+    }
+
+    private void removeInfsAndNans(Dictionary<string, float> obs)
+    {
+        foreach (KeyValuePair<string, float> keyValuePair in obs)
+        {
+            float v = keyValuePair.Value;
+            if (float.IsNaN(v) || float.IsInfinity(v) || float.IsNegativeInfinity(v) || float.IsPositiveInfinity(v))
+            {
+                obs[keyValuePair.Key] = 0f;
+            }
+        }
     }
 
     public void Log()
     {
-        getObjectsPositions();
-        getObjectsRotations();
-        getObjectsVels();
         getObservationsSpace();
     }
-
 }
-
