@@ -22,7 +22,6 @@ public class ActionsAngPos : MonoBehaviour, IActions
     {
         if (VelPos)
         {
-            applyPos(actions);
             applyVel(actions);
         }
         else

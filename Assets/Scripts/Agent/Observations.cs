@@ -130,7 +130,6 @@ public class Observations : MonoBehaviour, IObservations
 
         getObjPosRotVelAngVel();
         addCOM();
-
         removeParts();
         removeInfsAndNans(observationsNamed);
         return observationsNamed;
