@@ -21,7 +21,10 @@ public class ActionsAngPos : MonoBehaviour, IActions
     public void applyActions(List<float> actions)
     {
         if (VelPos)
+        {
+            applyPos(actions);
             applyVel(actions);
+        }
         else
             applyPos(actions);
     }
