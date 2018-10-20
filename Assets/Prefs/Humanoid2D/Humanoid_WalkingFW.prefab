@@ -1179,7 +1179,7 @@ MonoBehaviour:
     maxStep: 0
     resetOnDone: 1
     onDemandDecision: 0
-    numberOfActionsBetweenDecisions: 5
+    numberOfActionsBetweenDecisions: 10
   steps: 0
   maxSteps: 1000
 --- !u!114 &114274800036552064
@@ -1480,9 +1480,6 @@ MonoBehaviour:
   reward: 0
   standingRewardVal: 0
   velocityRewardVal: 0
-  others:
-    keys: []
-    values: []
 --- !u!114 &114873281744606030
 MonoBehaviour:
   m_ObjectHideFlags: 1
