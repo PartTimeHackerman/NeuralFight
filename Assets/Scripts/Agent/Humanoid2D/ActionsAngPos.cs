@@ -39,27 +39,26 @@ public class ActionsAngPos : MonoBehaviour, IActions
 
         foreach (JointInfo jointInfo in jointInfos)
         {
-                bool[] movableAxis = jointInfo.movableAxis;
+            bool[] movableAxis = jointInfo.movableAxis;
 
-                if (!movableAxis.Contains(true))
-                    continue;
+            if (!movableAxis.Contains(true))
+                continue;
 
-                float force = 1;//(actions[actionIdx++] + 1) / 2;
+            float force = 1; //(actions[actionIdx++] + 1) / 2;
 
-                Vector3 angRot = new Vector3(0, 0, 0);
-                if (movableAxis[0])
-                    angRot.x = getEuqlides(actions[actionIdx++], jointInfo.angularLimits[0]);
-                if (movableAxis[1])
-                    angRot.y = getEuqlides(actions[actionIdx++], jointInfo.angularLimits[1]);
-                if (movableAxis[2])
-                    angRot.z = getEuqlides(actions[actionIdx++], jointInfo.angularLimits[2]);
+            Vector3 angRot = new Vector3(0, 0, 0);
+            if (movableAxis[0])
+                angRot.x = getEuqlides(actions[actionIdx++], jointInfo.angularLimits[0]);
+            if (movableAxis[1])
+                angRot.y = getEuqlides(actions[actionIdx++], jointInfo.angularLimits[1]);
+            if (movableAxis[2])
+                angRot.z = getEuqlides(actions[actionIdx++], jointInfo.angularLimits[2]);
 
-                angRot.x = Mathf.Clamp(angRot.x, jointInfo.angularLimits[0][0], jointInfo.angularLimits[0][1]);
-                angRot.y = Mathf.Clamp(angRot.y, jointInfo.angularLimits[1][0], jointInfo.angularLimits[1][1]);
-                angRot.z = Mathf.Clamp(angRot.z, jointInfo.angularLimits[2][0], jointInfo.angularLimits[2][1]);
+            angRot.x = Mathf.Clamp(angRot.x, jointInfo.angularLimits[0][0], jointInfo.angularLimits[0][1]);
+            angRot.y = Mathf.Clamp(angRot.y, jointInfo.angularLimits[1][0], jointInfo.angularLimits[1][1]);
+            angRot.z = Mathf.Clamp(angRot.z, jointInfo.angularLimits[2][0], jointInfo.angularLimits[2][1]);
 
-                jointInfo.setConfigurableForceAndRot(angRot);
-
+            jointInfo.setConfigurableForceAndRot(angRot);
         }
     }
 
@@ -80,7 +79,7 @@ public class ActionsAngPos : MonoBehaviour, IActions
 
             if (!movableAxis.Contains(true))
                 continue;
-            
+
             Vector3 angVel = new Vector3(0, 0, 0);
             if (movableAxis[0])
             {
@@ -93,8 +92,6 @@ public class ActionsAngPos : MonoBehaviour, IActions
                 angVel.z = actions[actionIdx++] * jointInfo.maxVel;
 
             jointInfo.setConfigurableRotVel(angVel);
-
-
         }
     }
 
@@ -108,11 +105,13 @@ public class ActionsAngPos : MonoBehaviour, IActions
 
             actions += jointInfo.movableAxis.Count(b => b);
         }
+
         return actions;
     }
 
     private float getEuqlides(float action, float[] limits)
     {
-        return action < 0 ? -action * limits[0] : action * limits[1];
+        //return action < 0 ? -action * limits[0] : action * limits[1];
+        return ((limits[1] - limits[0]) * ((action + 1f) / 2f))+ limits[0];
     }
 }

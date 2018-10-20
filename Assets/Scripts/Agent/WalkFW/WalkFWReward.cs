@@ -16,10 +16,6 @@ class WalkFWReward : MonoBehaviour
     public float standingRewardVal;
     public float velocityRewardVal;
 
-#if (UNITY_EDITOR)
-    public DictionaryStringFloat others = new DictionaryStringFloat();
-#endif
-
 
     private void Start()
     {
@@ -41,15 +37,9 @@ class WalkFWReward : MonoBehaviour
         standingRewardVal = standingReward.getReward();
         velocityRewardVal = velocityFWReward.getReward() - Mathf.Abs(velocityUPReward.getReward());
         if (velocityRewardVal > 0f)
-            velocityRewardVal =
-                RewardFunctions.toleranceInvNoBounds(velocityRewardVal, 1f, .1f, RewardFunction.LONGTAIL);
+            velocityRewardVal = RewardFunctions.toleranceInvNoBounds(velocityRewardVal, 1f, .1f, RewardFunction.LONGTAIL);
         reward = standingRewardVal * .2f + velocityRewardVal * .8f;
-#if (UNITY_EDITOR)
-        others["torsoOverCOMXZReward"] = standingReward.torsoOverCOMXZReward;
-        others["COMOverMeanOfFeetsXZReward"] = standingReward.COMOverMeanOfFeetsXZReward;
-#endif
-        //reward *= 10f;
-        //reward = Mathf.Clamp(reward, -100f, 100f);
+        reward = Mathf.Clamp(reward, -1f, 1f);
         return reward;
     }
 }

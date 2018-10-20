@@ -5,12 +5,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuralFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NeuralFight/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MLScenes/stand.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MLScenes/stand.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MLScenes/walk_fw.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MLScenes/walk_fw.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefs/Humanoid2D/Humanoid_Default_New.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefs/Humanoid2D/Humanoid_Default_New.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefs/Humanoid2D/Humanoid_Sprited.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefs/Humanoid2D/Humanoid_Sprited.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefs/Humanoid2D/Humanoid_Standing.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefs/Humanoid2D/Humanoid_Standing.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefs/Humanoid2D/Humanoid_WalkingFW.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefs/Humanoid2D/Humanoid_WalkingFW.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/agent_editor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/agent_editor.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Agent/BodyParts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/BodyParts.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Agent/Observations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/Observations.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkingFWAgent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkingFWAgent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Agent/Humanoid2D/ActionsAngPos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/Humanoid2D/ActionsAngPos.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkFWReward.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkFWReward.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/PSD/bodypart.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/PSD/bodypart.psd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unity-environment.log" beforeDir="false" afterPath="$PROJECT_DIR$/unity-environment.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,36 +28,36 @@
           <entry key="project.closed" value="13" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.13" value="4" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.20" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="109" />
+          <entry key="cs" value="110" />
           <entry key="js" value="2" />
           <entry key="prefab" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="109" />
+          <entry key="C#" value="110" />
           <entry key="JavaScript" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="5738" />
+          <entry key="cs" value="5854" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="5738" />
+          <entry key="C#" value="5854" />
         </counts>
       </usages-collector>
     </session>
@@ -126,11 +128,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Observations.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1962">
+            <state relative-caret-position="687">
               <caret line="209" column="25" selection-start-line="209" selection-start-column="25" selection-end-line="209" selection-end-column="25" />
               <folding>
                 <marker date="1539958515444" expanded="false" signature="6:85" ph="..." />
-                <marker date="1539958515444" expanded="true" signature="143:6680" ph="{...}" />
                 <marker date="1539958515444" expanded="true" signature="677:1053" ph="/* public Observations(BodyParts bodyParts) ... */" />
                 <marker date="1539958515444" expanded="true" signature="1082:1305" ph="{...}" />
                 <marker date="1539958515444" expanded="true" signature="1341:1405" ph="{...}" />
@@ -166,40 +167,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkFWReward.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="420">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
               <folding>
-                <marker date="1539893707297" expanded="false" signature="6:134" ph="..." />
-                <marker date="1539893707297" expanded="true" signature="170:1792" ph="{...}" />
-                <marker date="1539893707297" expanded="true" signature="599:1054" ph="{...}" />
-                <marker date="1539893707297" expanded="true" signature="1084:1790" ph="{...}" />
-                <marker date="1539893707297" expanded="true" signature="1692:1761" ph="/* reward *= 10f; ... */" />
+                <marker date="1540038113278" expanded="false" signature="6:134" ph="..." />
+                <marker date="1540038113278" expanded="true" signature="170:1453" ph="{...}" />
+                <marker date="1540038113278" expanded="true" signature="501:956" ph="{...}" />
+                <marker date="1540038113278" expanded="true" signature="986:1451" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/BodyParts.cs">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Humanoid2D/ActionsAngPos.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="42" column="40" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+            <state relative-caret-position="582">
+              <caret line="113" column="71" selection-start-line="113" selection-start-column="71" selection-end-line="113" selection-end-column="71" />
               <folding>
-                <marker date="1539958426803" expanded="false" signature="6:101" ph="..." />
-                <marker date="1539958426803" expanded="true" signature="141:4122" ph="{...}" />
-                <marker date="1539958426803" expanded="true" signature="1297:3202" ph="{...}" />
-                <marker date="1539958426803" expanded="true" signature="1759:1970" ph="{...}" />
-                <marker date="1539958426803" expanded="true" signature="2086:2197" ph="{...}" />
-                <marker date="1539958426803" expanded="true" signature="2402:2908" ph="{...}" />
-                <marker date="1539958426803" expanded="true" signature="3005:3127" ph="{...}" />
-                <marker date="1539958426803" expanded="true" signature="3229:3347" ph="{...}" />
-                <marker date="1539958426803" expanded="true" signature="3387:3421" ph="{...}" />
-                <marker date="1539958426803" expanded="true" signature="3490:3533" ph="{...}" />
-                <marker date="1539958426803" expanded="true" signature="3592:3631" ph="{...}" />
-                <marker date="1539958426803" expanded="true" signature="3690:3730" ph="{...}" />
-                <marker date="1539958426803" expanded="true" signature="3778:3813" ph="{...}" />
-                <marker date="1539958426803" expanded="true" signature="3853:3888" ph="{...}" />
-                <marker date="1539958426803" expanded="true" signature="3919:4120" ph="{...}" />
+                <marker date="1540041160281" expanded="false" signature="6:71" ph="..." />
+                <marker date="1540041160281" expanded="true" signature="125:3387" ph="{...}" />
+                <marker date="1540041160281" expanded="true" signature="288:433" ph="{...}" />
+                <marker date="1540041160281" expanded="true" signature="485:592" ph="{...}" />
+                <marker date="1540041160281" expanded="true" signature="640:1933" ph="{...}" />
+                <marker date="1540041160281" expanded="true" signature="742:860" ph="{...}" />
+                <marker date="1540041160281" expanded="true" signature="913:1927" ph="{...}" />
+                <marker date="1540041160281" expanded="true" signature="1981:2843" ph="{...}" />
+                <marker date="1540041160281" expanded="true" signature="2083:2201" ph="{...}" />
+                <marker date="1540041160281" expanded="true" signature="2254:2837" ph="{...}" />
+                <marker date="1540041160281" expanded="true" signature="2476:2572" ph="{...}" />
+                <marker date="1540041160281" expanded="true" signature="2877:3164" ph="{...}" />
+                <marker date="1540041160281" expanded="true" signature="2971:3133" ph="{...}" />
+                <marker date="1540041160281" expanded="true" signature="3225:3385" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -234,11 +233,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkingFWAgent.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="54" column="16" lean-forward="true" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+            <state relative-caret-position="-243">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <marker date="1539961279388" expanded="false" signature="6:115" ph="..." />
                 <marker date="1539961279388" expanded="true" signature="154:2245" ph="{...}" />
@@ -443,7 +442,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/Standing/StandingAgent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Physics.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/ActionsAngPosOLD.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Agent/Humanoid2D/ActionsAngPos.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/Punch/StandingAgent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/ResetPosOLD.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/Humanoid2D/ResetPos.cs" />
@@ -464,11 +462,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ReferenceObservations.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/Animation/AnimRunFWReward.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/DragRigidbody.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkFWReward.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/BodyParts.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/Observations.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/JointInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkingFWAgent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkFWReward.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Agent/Humanoid2D/ActionsAngPos.cs" />
       </list>
     </option>
   </component>
@@ -650,12 +649,13 @@
       <workItem from="1539777989992" duration="9296000" />
       <workItem from="1539857285587" duration="6182000" />
       <workItem from="1539886336430" duration="1555000" />
-      <workItem from="1539954415343" duration="4058000" />
+      <workItem from="1539954415343" duration="4657000" />
+      <workItem from="1540034966950" duration="2197000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93485000" />
+    <option name="totallyTimeSpent" value="96281000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -670,7 +670,7 @@
     <frame x="-1448" y="168" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27148998" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27507162" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -870,13 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Humanoid2D/ActionsAngPos.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/ResetPosOLD.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1040,6 +1033,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/BodyParts.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="42" column="40" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+          <folding>
+            <marker date="1539958426803" expanded="false" signature="6:101" ph="..." />
+            <marker date="1539958426803" expanded="true" signature="1297:3202" ph="{...}" />
+            <marker date="1539958426803" expanded="true" signature="1759:1970" ph="{...}" />
+            <marker date="1539958426803" expanded="true" signature="2086:2197" ph="{...}" />
+            <marker date="1539958426803" expanded="true" signature="2402:2908" ph="{...}" />
+            <marker date="1539958426803" expanded="true" signature="3005:3127" ph="{...}" />
+            <marker date="1539958426803" expanded="true" signature="3229:3347" ph="{...}" />
+            <marker date="1539958426803" expanded="true" signature="3387:3421" ph="{...}" />
+            <marker date="1539958426803" expanded="true" signature="3490:3533" ph="{...}" />
+            <marker date="1539958426803" expanded="true" signature="3592:3631" ph="{...}" />
+            <marker date="1539958426803" expanded="true" signature="3690:3730" ph="{...}" />
+            <marker date="1539958426803" expanded="true" signature="3778:3813" ph="{...}" />
+            <marker date="1539958426803" expanded="true" signature="3853:3888" ph="{...}" />
+            <marker date="1539958426803" expanded="true" signature="3919:4120" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Rewards/StandingRewardHumanoid.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1620">
@@ -1114,47 +1130,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/HumanoidAgent.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkingFWAgent.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+        <state relative-caret-position="-243">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
-            <marker date="1539610452562" expanded="false" signature="6:87" ph="..." />
-            <marker date="1539610452562" expanded="true" signature="125:2971" ph="{...}" />
-            <marker date="1539610452562" expanded="true" signature="680:958" ph="{...}" />
-            <marker date="1539610452562" expanded="true" signature="1006:1228" ph="{...}" />
-            <marker date="1539610452562" expanded="true" signature="1294:1892" ph="{...}" />
-            <marker date="1539610452562" expanded="true" signature="1361:1447" ph="{...}" />
-            <marker date="1539610452562" expanded="true" signature="1695:1886" ph="{...}" />
-            <marker date="1539610452562" expanded="true" signature="1971:2569" ph="{...}" />
-            <marker date="1539610452562" expanded="true" signature="2473:2563" ph="{...}" />
-            <marker date="1539610452562" expanded="true" signature="2608:2715" ph="{...}" />
-            <marker date="1539610452562" expanded="true" signature="2757:2969" ph="{...}" />
-            <marker date="1539610452562" expanded="true" signature="2849:2935" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/BodyParts.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="42" column="40" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
-          <folding>
-            <marker date="1539958426803" expanded="false" signature="6:101" ph="..." />
-            <marker date="1539958426803" expanded="true" signature="141:4122" ph="{...}" />
-            <marker date="1539958426803" expanded="true" signature="1297:3202" ph="{...}" />
-            <marker date="1539958426803" expanded="true" signature="1759:1970" ph="{...}" />
-            <marker date="1539958426803" expanded="true" signature="2086:2197" ph="{...}" />
-            <marker date="1539958426803" expanded="true" signature="2402:2908" ph="{...}" />
-            <marker date="1539958426803" expanded="true" signature="3005:3127" ph="{...}" />
-            <marker date="1539958426803" expanded="true" signature="3229:3347" ph="{...}" />
-            <marker date="1539958426803" expanded="true" signature="3387:3421" ph="{...}" />
-            <marker date="1539958426803" expanded="true" signature="3490:3533" ph="{...}" />
-            <marker date="1539958426803" expanded="true" signature="3592:3631" ph="{...}" />
-            <marker date="1539958426803" expanded="true" signature="3690:3730" ph="{...}" />
-            <marker date="1539958426803" expanded="true" signature="3778:3813" ph="{...}" />
-            <marker date="1539958426803" expanded="true" signature="3853:3888" ph="{...}" />
-            <marker date="1539958426803" expanded="true" signature="3919:4120" ph="{...}" />
+            <marker date="1539961279388" expanded="false" signature="6:115" ph="..." />
+            <marker date="1539961279388" expanded="true" signature="154:2245" ph="{...}" />
+            <marker date="1539961279388" expanded="true" signature="518:830" ph="{...}" />
+            <marker date="1539961279388" expanded="true" signature="878:1040" ph="{...}" />
+            <marker date="1539961279388" expanded="true" signature="1106:1501" ph="{...}" />
+            <marker date="1539961279388" expanded="true" signature="1292:1495" ph="{...}" />
+            <marker date="1539961279388" expanded="true" signature="1422:1485" ph="{...}" />
+            <marker date="1539961279388" expanded="true" signature="1580:2192" ph="{...}" />
+            <marker date="1539961279388" expanded="true" signature="2019:2186" ph="{...}" />
+            <marker date="1539961279388" expanded="true" signature="2231:2243" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1197,11 +1187,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Observations.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1962">
+        <state relative-caret-position="687">
           <caret line="209" column="25" selection-start-line="209" selection-start-column="25" selection-end-line="209" selection-end-column="25" />
           <folding>
             <marker date="1539958515444" expanded="false" signature="6:85" ph="..." />
-            <marker date="1539958515444" expanded="true" signature="143:6680" ph="{...}" />
             <marker date="1539958515444" expanded="true" signature="677:1053" ph="/* public Observations(BodyParts bodyParts) ... */" />
             <marker date="1539958515444" expanded="true" signature="1082:1305" ph="{...}" />
             <marker date="1539958515444" expanded="true" signature="1341:1405" ph="{...}" />
@@ -1233,35 +1222,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkFWReward.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/HumanoidAgent.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="30">
+          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
           <folding>
-            <marker date="1539893707297" expanded="false" signature="6:134" ph="..." />
-            <marker date="1539893707297" expanded="true" signature="170:1792" ph="{...}" />
-            <marker date="1539893707297" expanded="true" signature="599:1054" ph="{...}" />
-            <marker date="1539893707297" expanded="true" signature="1084:1790" ph="{...}" />
-            <marker date="1539893707297" expanded="true" signature="1692:1761" ph="/* reward *= 10f; ... */" />
+            <marker date="1539610452562" expanded="false" signature="6:87" ph="..." />
+            <marker date="1539610452562" expanded="true" signature="125:2971" ph="{...}" />
+            <marker date="1539610452562" expanded="true" signature="680:958" ph="{...}" />
+            <marker date="1539610452562" expanded="true" signature="1006:1228" ph="{...}" />
+            <marker date="1539610452562" expanded="true" signature="1294:1892" ph="{...}" />
+            <marker date="1539610452562" expanded="true" signature="1361:1447" ph="{...}" />
+            <marker date="1539610452562" expanded="true" signature="1695:1886" ph="{...}" />
+            <marker date="1539610452562" expanded="true" signature="1971:2569" ph="{...}" />
+            <marker date="1539610452562" expanded="true" signature="2473:2563" ph="{...}" />
+            <marker date="1539610452562" expanded="true" signature="2608:2715" ph="{...}" />
+            <marker date="1539610452562" expanded="true" signature="2757:2969" ph="{...}" />
+            <marker date="1539610452562" expanded="true" signature="2849:2935" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkingFWAgent.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkFWReward.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="54" column="16" lean-forward="true" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+        <state relative-caret-position="420">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
-            <marker date="1539961279388" expanded="false" signature="6:115" ph="..." />
-            <marker date="1539961279388" expanded="true" signature="154:2245" ph="{...}" />
-            <marker date="1539961279388" expanded="true" signature="518:830" ph="{...}" />
-            <marker date="1539961279388" expanded="true" signature="878:1040" ph="{...}" />
-            <marker date="1539961279388" expanded="true" signature="1106:1501" ph="{...}" />
-            <marker date="1539961279388" expanded="true" signature="1292:1495" ph="{...}" />
-            <marker date="1539961279388" expanded="true" signature="1422:1485" ph="{...}" />
-            <marker date="1539961279388" expanded="true" signature="1580:2192" ph="{...}" />
-            <marker date="1539961279388" expanded="true" signature="2019:2186" ph="{...}" />
-            <marker date="1539961279388" expanded="true" signature="2231:2243" ph="{...}" />
+            <marker date="1540038113278" expanded="false" signature="6:134" ph="..." />
+            <marker date="1540038113278" expanded="true" signature="170:1453" ph="{...}" />
+            <marker date="1540038113278" expanded="true" signature="501:956" ph="{...}" />
+            <marker date="1540038113278" expanded="true" signature="986:1451" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Humanoid2D/ActionsAngPos.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="113" column="71" selection-start-line="113" selection-start-column="71" selection-end-line="113" selection-end-column="71" />
+          <folding>
+            <marker date="1540041160281" expanded="false" signature="6:71" ph="..." />
+            <marker date="1540041160281" expanded="true" signature="125:3387" ph="{...}" />
+            <marker date="1540041160281" expanded="true" signature="288:433" ph="{...}" />
+            <marker date="1540041160281" expanded="true" signature="485:592" ph="{...}" />
+            <marker date="1540041160281" expanded="true" signature="640:1933" ph="{...}" />
+            <marker date="1540041160281" expanded="true" signature="742:860" ph="{...}" />
+            <marker date="1540041160281" expanded="true" signature="913:1927" ph="{...}" />
+            <marker date="1540041160281" expanded="true" signature="1981:2843" ph="{...}" />
+            <marker date="1540041160281" expanded="true" signature="2083:2201" ph="{...}" />
+            <marker date="1540041160281" expanded="true" signature="2254:2837" ph="{...}" />
+            <marker date="1540041160281" expanded="true" signature="2476:2572" ph="{...}" />
+            <marker date="1540041160281" expanded="true" signature="2877:3164" ph="{...}" />
+            <marker date="1540041160281" expanded="true" signature="2971:3133" ph="{...}" />
+            <marker date="1540041160281" expanded="true" signature="3225:3385" ph="{...}" />
           </folding>
         </state>
       </provider>
