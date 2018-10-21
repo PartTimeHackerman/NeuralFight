@@ -7,8 +7,12 @@ public class MeshSize : MonoBehaviour
     public float ScaleY = 1.0f;
     public float ScaleZ = 1.0f;
     public bool RecalculateNormals = false;
+    public Color color = Color.white;
     private Vector3[] _baseVertices;
     private Renderer _renderer;
+    private Vector3 colliderPivot;
+    
+    
     void Awake()
     {
         _renderer = GetComponent<Renderer>();
@@ -16,7 +20,12 @@ public class MeshSize : MonoBehaviour
 
     void Reset()
     {
+        var mesh = GetComponent<MeshFilter>().mesh;
+        if (_baseVertices == null)
+            _baseVertices = mesh.vertices;
+        
         BoxCollider collider = GetComponent<BoxCollider>();
+        colliderPivot = collider.center;
         ScaleX = collider.size.x;
         ScaleY = collider.size.y;
         ScaleZ = collider.size.z;
@@ -27,20 +36,19 @@ public class MeshSize : MonoBehaviour
     {
         setColor();
     }
-
+    
     void setSize()
     {
         var mesh = GetComponent<MeshFilter>().mesh;
-        if (_baseVertices == null)
-            _baseVertices = mesh.vertices;
         var vertices = new Vector3[_baseVertices.Length];
         for (var i = 0; i < vertices.Length; i++)
         {
             var vertex = _baseVertices[i];
-            vertex.x = vertex.x * ScaleX;
-            vertex.y = vertex.y * ScaleY;
-            vertex.z = vertex.z * ScaleZ;
-            vertices[i] = vertex;
+            var newVertex = vertices[i];
+            newVertex.x = (vertex.x * ScaleX) + colliderPivot.x;
+            newVertex.y = (vertex.y * ScaleY) + colliderPivot.y;
+            newVertex.z = (vertex.z * ScaleZ) + colliderPivot.z;
+            vertices[i] = newVertex;
         }
 
         mesh.vertices = vertices;
@@ -51,6 +59,7 @@ public class MeshSize : MonoBehaviour
 
     void setColor()
     {
-        _renderer.material.SetColor("_Color", Random.ColorHSV());
+        //_renderer.material.SetColor("_Color", new HSBColor(Random.Range(0f, 1f),1f,1f,1f).ToColor());
+        _renderer.material.SetColor("_Color", color);
     }
 }
