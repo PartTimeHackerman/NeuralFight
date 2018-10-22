@@ -5,9 +5,9 @@ using UnityEngine;
 public class ActionsAngPos : MonoBehaviour, IActions
 {
     public int actionsSpace;
-    public bool VelPos = false;
-    private BodyParts bodyParts;
-    private List<JointInfo> jointInfos;
+    protected bool VelPos = false;
+    protected BodyParts bodyParts;
+    protected List<JointInfo> jointInfos;
 
 
     private void Start()
@@ -28,7 +28,7 @@ public class ActionsAngPos : MonoBehaviour, IActions
             applyPos(actions);
     }
 
-    private void applyPos(List<float> actions)
+    protected virtual void applyPos(List<float> actions)
     {
         var actionIdx = 0;
         var size = actions.Count;
@@ -60,7 +60,7 @@ public class ActionsAngPos : MonoBehaviour, IActions
             angRot.y = Mathf.Clamp(angRot.y, jointInfo.angularLimits[1][0], jointInfo.angularLimits[1][1]);
             angRot.z = Mathf.Clamp(angRot.z, jointInfo.angularLimits[2][0], jointInfo.angularLimits[2][1]);
 
-            jointInfo.setConfigurableForceAndRot(angRot);
+            jointInfo.setConfigurableRot(angRot);
         }
     }
 
@@ -97,7 +97,7 @@ public class ActionsAngPos : MonoBehaviour, IActions
         }
     }
 
-    public int getActionsSpace()
+    public virtual int getActionsSpace()
     {
         var actions = 0;
         foreach (JointInfo jointInfo in bodyParts.jointsInfos)
@@ -111,9 +111,11 @@ public class ActionsAngPos : MonoBehaviour, IActions
         return actions;
     }
 
-    private float getEuqlides(float action, float[] limits)
+    protected float getEuqlides(float action, float[] limits)
     {
+        float rot = Mathf.Lerp(limits[0], limits[1], (action + 1f) * .5f);
+        return rot;
         //return action < 0 ? -action * limits[0] : action * limits[1];
-        return ((limits[1] - limits[0]) * ((action + 1f) / 2f))+ limits[0];
+        //return ((limits[1] - limits[0]) * ((action + 1f) / 2f))+ limits[0];
     }
 }

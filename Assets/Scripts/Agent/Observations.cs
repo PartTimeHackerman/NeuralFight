@@ -14,9 +14,9 @@ public class Observations : MonoBehaviour, IObservations
     public List<Rigidbody> observableRigids;
     public List<Rigidbody> rigids;
 
-    private readonly float maxPos = 10;
+    private readonly float maxPos = 100;
     private readonly float maxVel = 100;
-    private readonly float minPos = -10;
+    private readonly float minPos = -100;
     private readonly float minVel = -100;
 
     protected Rigidbody root;
@@ -79,7 +79,7 @@ public class Observations : MonoBehaviour, IObservations
     public void getObjectAngVel(Rigidbody rigidbody)
     {
         float rbAngVel = rigidbody.angularVelocity.z;
-        rbAngVel = (Mathf.Clamp(rbAngVel, minVel, maxVel) - minVel) / (maxVel - minVel);
+        rbAngVel = Mathf.Clamp(rbAngVel, minVel, maxVel);
         observationsNamed[rigidbody.name + "_ang_vel"] = rbAngVel;
     }
 
@@ -189,9 +189,12 @@ public class Observations : MonoBehaviour, IObservations
     public Vector3 normVecVel(Vector3 vel)
     {
         Vector3 nVel = new Vector3();
-        nVel.x = (Mathf.Clamp(vel.x, minVel, maxVel) - minVel) / (maxVel - minVel);
-        nVel.y = (Mathf.Clamp(vel.y, minVel, maxVel) - minVel) / (maxVel - minVel);
-        nVel.z = (Mathf.Clamp(vel.z, minVel, maxVel) - minVel) / (maxVel - minVel);
+        //nVel.x = (Mathf.Clamp(vel.x, minVel, maxVel) - minVel) / (maxVel - minVel);
+        //nVel.y = (Mathf.Clamp(vel.y, minVel, maxVel) - minVel) / (maxVel - minVel);
+        //nVel.z = (Mathf.Clamp(vel.z, minVel, maxVel) - minVel) / (maxVel - minVel);
+        nVel.x = Mathf.Clamp(vel.x, minVel, maxVel);
+        nVel.y = Mathf.Clamp(vel.y, minVel, maxVel);
+        nVel.z = Mathf.Clamp(vel.z, minVel, maxVel);
         return nVel;
     }
 

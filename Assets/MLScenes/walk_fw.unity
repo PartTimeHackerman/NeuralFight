@@ -113,18 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &58494361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35813a1be64e144f887d7d5f15b963fa, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  brain: {fileID: 1451944132}
 --- !u!1001 &85954229
 Prefab:
   m_ObjectHideFlags: 0
@@ -162,7 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -185,7 +173,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &138832532
+--- !u!114 &379638800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,7 +182,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41e9bda8f3cf1492fa74926a530f6f70, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   broadcast: 1
   keyContinuousPlayerActions: []
@@ -239,7 +227,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -299,7 +287,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -359,7 +347,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -419,7 +407,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -479,7 +467,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -539,7 +527,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -599,7 +587,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -659,7 +647,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -719,7 +707,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -729,66 +717,6 @@ Prefab:
     - target: {fileID: 1132506226884134, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_Name
       value: Humanoid_WalkingFW_3D (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1132506226884134, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809771231125654, guid: ef9c0bfd3334d2c4493371304fe9b009,
-        type: 2}
-      propertyPath: resetsBoundary
-      value: 1000
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &1102105620
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1451944132}
-    - target: {fileID: 1132506226884134, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_WalkingFW_3D (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1132506226884134, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_IsActive
@@ -839,7 +767,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -899,7 +827,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -959,7 +887,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -1019,7 +947,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -1079,7 +1007,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -1109,6 +1037,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114724879922472310, guid: 77a676e19f5d4614d820824de6fff3d3,
+        type: 2}
+      propertyPath: brainParameters.vectorActionDescriptions.Array.size
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4803165972389338, guid: 77a676e19f5d4614d820824de6fff3d3, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.04160437
@@ -1145,26 +1078,26 @@ Prefab:
         type: 2}
       propertyPath: CoreBrains.Array.data[0]
       value: 
-      objectReference: {fileID: 138832532}
+      objectReference: {fileID: 379638800}
     - target: {fileID: 114724879922472310, guid: 77a676e19f5d4614d820824de6fff3d3,
         type: 2}
       propertyPath: CoreBrains.Array.data[1]
       value: 
-      objectReference: {fileID: 1592015112}
+      objectReference: {fileID: 1685994843}
     - target: {fileID: 114724879922472310, guid: 77a676e19f5d4614d820824de6fff3d3,
         type: 2}
       propertyPath: CoreBrains.Array.data[2]
       value: 
-      objectReference: {fileID: 58494361}
+      objectReference: {fileID: 2076438448}
     - target: {fileID: 114724879922472310, guid: 77a676e19f5d4614d820824de6fff3d3,
         type: 2}
       propertyPath: CoreBrains.Array.data[3]
       value: 
-      objectReference: {fileID: 2025625689}
+      objectReference: {fileID: 1546010275}
     - target: {fileID: 114724879922472310, guid: 77a676e19f5d4614d820824de6fff3d3,
         type: 2}
       propertyPath: brainParameters.vectorObservationSize
-      value: 73
+      value: 91
       objectReference: {fileID: 0}
     - target: {fileID: 1523056437703016, guid: 77a676e19f5d4614d820824de6fff3d3, type: 2}
       propertyPath: m_IsActive
@@ -1178,7 +1111,7 @@ Prefab:
     - target: {fileID: 114724879922472310, guid: 77a676e19f5d4614d820824de6fff3d3,
         type: 2}
       propertyPath: instanceID
-      value: -2249794
+      value: -4972
       objectReference: {fileID: 0}
     - target: {fileID: 1523056437703016, guid: 77a676e19f5d4614d820824de6fff3d3, type: 2}
       propertyPath: m_Name
@@ -1217,6 +1150,11 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724879922472310, guid: 77a676e19f5d4614d820824de6fff3d3,
+        type: 2}
+      propertyPath: brainParameters.vectorActionSize
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114062382130816268, guid: 77a676e19f5d4614d820824de6fff3d3, type: 2}
@@ -1265,7 +1203,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -1288,7 +1226,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &1592015112
+--- !u!114 &1546010275
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1296,10 +1234,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 943466ab374444748a364f9d6c3e2fe2, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_Script: {fileID: 11500000, guid: 8b23992c8eb17439887f5e944bf04a40, type: 3}
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   broadcast: 1
+  graphModel: {fileID: 4900000, guid: 2edd39f27a19de4489620ee60c51e60e, type: 3}
+  graphScope: 
+  graphPlaceholders: []
+  BatchSizePlaceholderName: batch_size
+  VectorObservationPlacholderName: policy/obs
+  RecurrentInPlaceholderName: recurrent_in
+  RecurrentOutPlaceholderName: recurrent_out
+  VisualObservationPlaceholderName: []
+  ActionPlaceholderName: policy/action
+  PreviousActionPlaceholderName: prev_action
   brain: {fileID: 1451944132}
 --- !u!1001 &1597404375
 Prefab:
@@ -1338,7 +1286,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -1361,67 +1309,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1757484108
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
-        type: 2}
-      propertyPath: brain
-      value: 
-      objectReference: {fileID: 1451944132}
-    - target: {fileID: 1132506226884134, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_Name
-      value: Humanoid_WalkingFW_3D (18)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1132506226884134, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809771231125654, guid: ef9c0bfd3334d2c4493371304fe9b009,
-        type: 2}
-      propertyPath: resetsBoundary
-      value: 1000
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &1851761306
+--- !u!1001 &1654627888
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1465,6 +1353,83 @@ Prefab:
       propertyPath: brain
       value: 
       objectReference: {fileID: 1451944132}
+    - target: {fileID: 1132506226884134, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_WalkingFW_3D (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!114 &1685994843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943466ab374444748a364f9d6c3e2fe2, type: 3}
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  broadcast: 1
+  brain: {fileID: 1451944132}
+--- !u!1001 &1757484108
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
+        type: 2}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1451944132}
+    - target: {fileID: 1132506226884134, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
+      propertyPath: m_Name
+      value: Humanoid_WalkingFW_3D (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132506226884134, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114809771231125654, guid: ef9c0bfd3334d2c4493371304fe9b009,
+        type: 2}
+      propertyPath: resetsBoundary
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
   m_IsPrefabAsset: 0
@@ -1505,7 +1470,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379029404605084, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 114241658082249452, guid: ef9c0bfd3334d2c4493371304fe9b009,
         type: 2}
@@ -1528,7 +1493,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef9c0bfd3334d2c4493371304fe9b009, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &2025625689
+--- !u!114 &2076438448
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1536,20 +1501,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b23992c8eb17439887f5e944bf04a40, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_Script: {fileID: 11500000, guid: 35813a1be64e144f887d7d5f15b963fa, type: 3}
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  broadcast: 1
-  graphModel: {fileID: 4900000, guid: 2edd39f27a19de4489620ee60c51e60e, type: 3}
-  graphScope: 
-  graphPlaceholders: []
-  BatchSizePlaceholderName: batch_size
-  VectorObservationPlacholderName: policy/obs
-  RecurrentInPlaceholderName: recurrent_in
-  RecurrentOutPlaceholderName: recurrent_out
-  VisualObservationPlaceholderName: []
-  ActionPlaceholderName: policy/action
-  PreviousActionPlaceholderName: prev_action
   brain: {fileID: 1451944132}
 --- !u!1001 &2146886495
 Prefab:

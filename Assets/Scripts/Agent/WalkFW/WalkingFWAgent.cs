@@ -9,11 +9,12 @@ internal class WalkingFWAgent : Agent
     private ApplicationSettings applicationSettings;
     private IActions actions;
 
-    private Observations observations;
+    private ObservationsWithActions observations;
     private ResetPos resetPos;
     private WalkFWReward rewards;
     private Terminator terminator;
 
+    private bool newDecisionStep = false;
     public int steps = 0;
     public int maxSteps = 100;
 
@@ -21,9 +22,9 @@ internal class WalkingFWAgent : Agent
 
     public override void InitializeAgent()
     {
-        observations = GetComponent<Observations>();
+        observations = GetComponent<ObservationsWithActions>();
         rewards = GetComponent<WalkFWReward>();
-        actions = GetComponent<ActionsAngPos>();
+        actions = GetComponent<ActionsAngPosStrength>();
         resetPos = GetComponent<ResetPos>();
         terminator = GetComponent<Terminator>();
         observations.addToRemove(new[] {"root_pos_x"});
@@ -46,6 +47,7 @@ internal class WalkingFWAgent : Agent
             if (academyStepCounter % agentParameters.numberOfActionsBetweenDecisions == 0)
             {
                 RequestDecision();
+                newDecisionStep = true;
             }
         }
     }
@@ -53,20 +55,25 @@ internal class WalkingFWAgent : Agent
     public override void AgentAction(float[] vectorAction, string textAction)
     {
         steps++;
-        List<float> actions = vectorAction.ToList();
-        List<float> actionsClamped = new List<float>();
-        foreach (var var in actions)
-            actionsClamped.Add(Mathf.Clamp(var, -1f, 1f));
+        if (newDecisionStep)
+        {
+            List<float> actions = vectorAction.ToList();
+            List<float> actionsClamped = new List<float>();
+            foreach (var var in actions)
+                actionsClamped.Add(Mathf.Clamp(var, -1f, 1f));
 
-        this.actions.applyActions(actionsClamped);
+            this.actions.applyActions(actionsClamped);
+            observations.setLastActions(actions);
+            newDecisionStep = false;
+        }
+        
         agentReward = rewards.getReward();
         bool ter = terminator.isTerminated();
-        SetReward(agentReward);
+        AddReward(agentReward);
 
         if (steps > maxSteps || ter)
         {
-            if (ter)
-                SetReward(agentReward - 1f);
+            //if (ter) SetReward(agentReward - 1f);
             steps = 0;
             resetPos.ResetPosition();
             Done();
