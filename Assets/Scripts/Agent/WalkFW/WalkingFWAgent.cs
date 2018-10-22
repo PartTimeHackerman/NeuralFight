@@ -69,7 +69,7 @@ internal class WalkingFWAgent : Agent
         
         agentReward = rewards.getReward();
         bool ter = terminator.isTerminated();
-        AddReward(agentReward);
+        SetReward(agentReward);
 
         if (steps > maxSteps || ter)
         {
