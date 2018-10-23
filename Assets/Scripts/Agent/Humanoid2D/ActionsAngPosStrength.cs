@@ -22,7 +22,7 @@ public class ActionsAngPosStrength : ActionsAngPos
             if (!movableAxis.Contains(true))
                 continue;
 
-            float force = 1; //(actions[actionIdx++] + 1) / 2;
+            float force = ((actions[actionIdx++] + 1f) * .5f);
 
             Vector3 angRot = new Vector3(0, 0, 0);
             if (movableAxis[0])
@@ -32,11 +32,11 @@ public class ActionsAngPosStrength : ActionsAngPos
             if (movableAxis[2])
                 angRot.z = getEuqlides(actions[actionIdx++], jointInfo.angularLimits[2]);
 
-            angRot.x = Mathf.Clamp(angRot.x, jointInfo.angularLimits[0][0], jointInfo.angularLimits[0][1]);
-            angRot.y = Mathf.Clamp(angRot.y, jointInfo.angularLimits[1][0], jointInfo.angularLimits[1][1]);
-            angRot.z = Mathf.Clamp(angRot.z, jointInfo.angularLimits[2][0], jointInfo.angularLimits[2][1]);
+            //angRot.x = Mathf.Clamp(angRot.x, jointInfo.angularLimits[0][0], jointInfo.angularLimits[0][1]);
+            //angRot.y = Mathf.Clamp(angRot.y, jointInfo.angularLimits[1][0], jointInfo.angularLimits[1][1]);
+            //angRot.z = Mathf.Clamp(angRot.z, jointInfo.angularLimits[2][0], jointInfo.angularLimits[2][1]);
 
-            jointInfo.setConfigurableForceAndRot(actions[actionIdx++], angRot);
+            jointInfo.setConfigurableForceAndRot(force, angRot);
         }
     }
 

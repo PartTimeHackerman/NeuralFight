@@ -36,8 +36,8 @@ class WalkFWReward : MonoBehaviour
     {
         standingRewardVal = standingReward.getReward();
         velocityRewardVal = velocityFWReward.getReward() - Mathf.Abs(velocityUPReward.getReward());
-        reward = standingRewardVal * .3f + velocityRewardVal * .7f;
-        //reward = Mathf.Clamp(reward * 10f, -10f, 10f);
+        reward = standingRewardVal * .4f + velocityRewardVal * .5f;
+        reward = Mathf.Clamp(reward, 0f, 1f);
         return reward;
     }
 }

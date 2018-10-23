@@ -20,6 +20,12 @@ public class Observations : MonoBehaviour, IObservations
     private readonly float minVel = -100;
 
     protected Rigidbody root;
+
+#if (UNITY_EDITOR)
+    public bool debug = false;
+    public DictionaryStringFloat observationsDebug = new DictionaryStringFloat();
+#endif
+
 /*
 
     public Observations(BodyParts bodyParts)
@@ -46,6 +52,10 @@ public class Observations : MonoBehaviour, IObservations
     protected virtual void Start()
     {
         observationsSpace = getObservationsSpace();
+#if (UNITY_EDITOR)
+        if (debug)
+            InvokeRepeating("getObservations", 0f, .1f);
+#endif
     }
 
     public void getObjectPosition(Transform transform)
@@ -71,16 +81,26 @@ public class Observations : MonoBehaviour, IObservations
 
     public void getObjectVel(Rigidbody rigidbody)
     {
-        Vector3 vel = normVecVel(rigidbody.velocity);
-        observationsNamed[rigidbody.name + "_vel_x"] = vel.x;
-        observationsNamed[rigidbody.name + "_vel_y"] = vel.y;
+        //Vector3 vel = normVecVel(rigidbody.velocity);
+        //observationsNamed[rigidbody.name + "_vel_x"] = vel.x;
+        //observationsNamed[rigidbody.name + "_vel_y"] = vel.y;
+        observationsNamed[rigidbody.name + "_vel_x"] = rigidbody.velocity.x;
+        observationsNamed[rigidbody.name + "_vel_y"] = rigidbody.velocity.y;
     }
 
     public void getObjectAngVel(Rigidbody rigidbody)
     {
         float rbAngVel = rigidbody.angularVelocity.z;
-        rbAngVel = Mathf.Clamp(rbAngVel, minVel, maxVel);
+        //rbAngVel = Mathf.Clamp(rbAngVel, minVel, maxVel);
         observationsNamed[rigidbody.name + "_ang_vel"] = rbAngVel;
+    }
+
+    public void getEndingsGroundDist()
+    {
+        foreach (var ending in bodyParts.endings)
+        {
+            observationsNamed[ending.name + "_gd"] = distToFloor(ending);
+        }
     }
 
     public void getObjPosRotVelAngVel()
@@ -116,7 +136,7 @@ public class Observations : MonoBehaviour, IObservations
     {
         var rootPos = root.transform.position;
         observationsNamed["root_pos_x"] = normPos(rootPos.x);
-        observationsNamed["root_pos_y"] = distToFloor();
+        observationsNamed["root_pos_y"] = distToFloor(root.transform);
         Quaternion quaternion = root.transform.rotation;
         Vector3 rotEul = quaternion.eulerAngles;
         float rotAng = rotEul.z;
@@ -130,8 +150,19 @@ public class Observations : MonoBehaviour, IObservations
 
         getObjPosRotVelAngVel();
         addCOM();
+        getEndingsGroundDist();
         removeParts();
         removeInfsAndNans(observationsNamed);
+
+#if (UNITY_EDITOR)
+        if (debug)
+        {
+            foreach (KeyValuePair<string, float> keyValuePair in observationsNamed)
+            {
+                observationsDebug[keyValuePair.Key] = keyValuePair.Value;
+            }
+        }
+#endif
         return observationsNamed;
     }
 
@@ -154,16 +185,20 @@ public class Observations : MonoBehaviour, IObservations
         }
     }
 
-    public float distToFloor()
+    public float distToFloor(Transform transform)
     {
-        int layerMask = 1 << root.gameObject.layer;
+        int layerMask = 1 << transform.gameObject.layer;
         layerMask = ~layerMask;
         RaycastHit hit;
-        if (Physics.Raycast(root.transform.position, Vector3.down, out hit, 1000, layerMask,
-            QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1000, layerMask, QueryTriggerInteraction.Ignore))
+        {
+            //Debug.DrawRay(transform.position, Vector3.down * hit.distance);
             return hit.distance;
+        }
         else
+        {
             return 0;
+        }
     }
 
     public void addCOM()

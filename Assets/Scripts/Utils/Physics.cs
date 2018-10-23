@@ -28,7 +28,7 @@ public class PhysicsUtils
         for (int i = rigids.Count - 1; i >= 0; i--)
         {
             Rigidbody rb = rigids[i];
-            com += rb.transform.position * rb.mass;
+            com += rb.transform.TransformPoint(rb.centerOfMass) * rb.mass;
             comVel += rb.velocity * rb.mass;
             comAngVel += rb.angularVelocity * rb.mass;
             massSum += rb.mass;
@@ -47,7 +47,7 @@ public class PhysicsUtils
         for (int i = rigids.Count - 1; i >= 0; i--)
         {
             Rigidbody rb = rigids[i];
-            com += rb.transform.position * rb.mass;
+            com += rb.transform.TransformPoint(rb.centerOfMass) * rb.mass;
             massSum += rb.mass;
         }
         

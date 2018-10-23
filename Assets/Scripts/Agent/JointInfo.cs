@@ -94,10 +94,10 @@ public class JointInfo : MonoBehaviour
         }
         else
         {
-           // maxPosSpring = maxForce * totalMass;
-            //maxPosDamper = (maxForce * totalMass) / 20f;
-            maxPosSpring = 10000f;
-            maxPosDamper = 50f;
+            maxPosSpring = maxForce * totalMass;
+            maxPosDamper = (maxForce * totalMass) / 20f;
+            //maxPosSpring = 10000f;
+            //maxPosDamper = 50f;
         }
 
         JointDrive jointSlerpDrive = configurableJoint.slerpDrive;
@@ -147,13 +147,13 @@ public class JointInfo : MonoBehaviour
 
     public void setConfigurableForceAndRot(float force, Vector3 angRot)
     {
+        currentRot = angRot.x;
+        setConfigurableRot(angRot);
         JointDrive jointSlerpDrive = configurableJoint.slerpDrive;
         jointSlerpDrive.positionSpring = maxPosSpring;
         jointSlerpDrive.positionDamper = maxPosDamper;
-        jointSlerpDrive.maximumForce = ((force + 1f) * .5f) * maxSlerpForce;
+        jointSlerpDrive.maximumForce = force * maxSlerpForce;
         configurableJoint.slerpDrive = jointSlerpDrive;
-        currentRot = angRot.x;
-        setConfigurableRot(angRot);
     }
 
     public void setConfigurableRot(Vector3 angRot)

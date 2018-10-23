@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 114094446520004044}
   - component: {fileID: 114809771231125654}
   - component: {fileID: 114555364822179512}
+  - component: {fileID: 114033923282518808}
   m_Layer: 0
   m_Name: Humanoid_WalkingFW_3D
   m_TagString: Untagged
@@ -931,7 +932,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 1
@@ -1370,6 +1371,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.088, y: 0.088, z: 0.088}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114033923282518808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1132506226884134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9434145ab1bb463494d94a44ae5db1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114094446520004044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1422,7 +1434,7 @@ MonoBehaviour:
   joint: {fileID: 153668784382049716}
   configurableJoint: {fileID: 0}
   maxForce: 1000
-  maxSlerpForce: 2000
+  maxSlerpForce: 10000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1460,7 +1472,7 @@ MonoBehaviour:
   joint: {fileID: 153565907556474928}
   configurableJoint: {fileID: 0}
   maxForce: 1000
-  maxSlerpForce: 2000
+  maxSlerpForce: 10000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1513,6 +1525,10 @@ MonoBehaviour:
   observationsSpace: 0
   observableRigids: []
   rigids: []
+  debug: 0
+  observationsDebug:
+    keys: []
+    values: []
 --- !u!114 &114523064575041988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1527,7 +1543,7 @@ MonoBehaviour:
   joint: {fileID: 153273264474034958}
   configurableJoint: {fileID: 0}
   maxForce: 1000
-  maxSlerpForce: 2000
+  maxSlerpForce: 10000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1564,7 +1580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   arenaLen: 10000
-  fallHeight: 0
+  fallHeight: 0.4
   pastArena: 0
   fallen: 0
   terminated: 0
@@ -1582,7 +1598,7 @@ MonoBehaviour:
   joint: {fileID: 153798063053861442}
   configurableJoint: {fileID: 0}
   maxForce: 1000
-  maxSlerpForce: 2000
+  maxSlerpForce: 10000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1620,7 +1636,7 @@ MonoBehaviour:
   joint: {fileID: 153224066078799088}
   configurableJoint: {fileID: 0}
   maxForce: 1000
-  maxSlerpForce: 2000
+  maxSlerpForce: 10000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1658,7 +1674,7 @@ MonoBehaviour:
   joint: {fileID: 153362384918812282}
   configurableJoint: {fileID: 0}
   maxForce: 1000
-  maxSlerpForce: 2000
+  maxSlerpForce: 10000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1723,7 +1739,7 @@ MonoBehaviour:
   joint: {fileID: 153312245596319892}
   configurableJoint: {fileID: 0}
   maxForce: 1000
-  maxSlerpForce: 2000
+  maxSlerpForce: 10000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1773,7 +1789,7 @@ MonoBehaviour:
   joint: {fileID: 153045113091646448}
   configurableJoint: {fileID: 0}
   maxForce: 1000
-  maxSlerpForce: 2000
+  maxSlerpForce: 10000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
@@ -1811,7 +1827,7 @@ MonoBehaviour:
   joint: {fileID: 153495875772029068}
   configurableJoint: {fileID: 0}
   maxForce: 1000
-  maxSlerpForce: 2000
+  maxSlerpForce: 10000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 010000
