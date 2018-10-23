@@ -9,7 +9,7 @@ internal class WalkingFWAgent : Agent
     private ApplicationSettings applicationSettings;
     private IActions actions;
 
-    private ObservationsWithActions observations;
+    private Observations observations;
     private ResetPos resetPos;
     private WalkFWReward rewards;
     private Terminator terminator;
@@ -22,7 +22,7 @@ internal class WalkingFWAgent : Agent
 
     public override void InitializeAgent()
     {
-        observations = GetComponent<ObservationsWithActions>();
+        observations = GetComponent<Observations>();
         rewards = GetComponent<WalkFWReward>();
         actions = GetComponent<ActionsAngPosStrength>();
         resetPos = GetComponent<ResetPos>();
@@ -63,14 +63,13 @@ internal class WalkingFWAgent : Agent
                 actionsClamped.Add(Mathf.Clamp(var, -1f, 1f));
 
             this.actions.applyActions(actionsClamped);
-            observations.setLastActions(actions);
             newDecisionStep = false;
         }
         
         agentReward = rewards.getReward();
         bool ter = terminator.isTerminated();
-        SetReward(agentReward);
-
+        AddReward(agentReward);
+        
         if (steps > maxSteps || ter)
         {
             //if (ter) SetReward(agentReward - 1f);

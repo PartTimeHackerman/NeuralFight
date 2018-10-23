@@ -172,7 +172,7 @@ public class Observations : MonoBehaviour, IObservations
         Vector3 COMVel;
         Vector3 COMAngVel;
         physics.getCenterOfMassAll(rigids, out COM, out COMVel, out COMAngVel);
-        COM = COM - bodyParts.root.transform.position;
+        COM = root.transform.InverseTransformPoint(COM);
         COMAngVel = Quaternion.Inverse(root.rotation) * COMAngVel;
         observationsNamed["com_pos_x"] = COM.x;
         observationsNamed["com_pos_y"] = COM.y;

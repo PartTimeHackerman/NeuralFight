@@ -104,8 +104,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4379029404605084}
   - component: {fileID: 114241658082249452}
+  - component: {fileID: 114455587540927578}
   - component: {fileID: 114308275538002956}
-  - component: {fileID: 114702669707181526}
   - component: {fileID: 114911127609426368}
   - component: {fileID: 114094446520004044}
   - component: {fileID: 114809771231125654}
@@ -1499,6 +1499,20 @@ MonoBehaviour:
   reward: 0
   standingRewardVal: 0
   velocityRewardVal: 0
+--- !u!114 &114455587540927578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1132506226884134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9bb3123c1f7af4ab7d9c3e32168cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observationsSpace: 0
+  observableRigids: []
+  rigids: []
 --- !u!114 &114523064575041988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1550,7 +1564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   arenaLen: 10000
-  fallHeight: 0.3
+  fallHeight: 0.4
   pastArena: 0
   fallen: 0
   terminated: 0
@@ -1668,20 +1682,6 @@ MonoBehaviour:
   maxVel: 15
   currentRot: 0
   isBackwards: 0
---- !u!114 &114702669707181526
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1132506226884134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90504c2ef1e24268847c00eadc73fc84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  observationsSpace: 0
-  observableRigids: []
-  rigids: []
 --- !u!114 &114809771231125654
 MonoBehaviour:
   m_ObjectHideFlags: 1
