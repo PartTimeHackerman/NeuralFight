@@ -4,7 +4,7 @@ using Assets.Scripts.Agent;
 using MLAgents;
 using UnityEngine;
 
-internal class WalkingFWAgent : Agent
+internal class WalkingFWAgent : Agent, IAgent
 {
     private ApplicationSettings applicationSettings;
     private IActions actions;
@@ -17,7 +17,7 @@ internal class WalkingFWAgent : Agent
     private bool newDecisionStep = false;
     public int steps = 0;
     public int maxSteps = 100;
-
+    public int episodes = 0;
     private float agentReward = 0f;
 
     public override void InitializeAgent()
@@ -76,10 +76,16 @@ internal class WalkingFWAgent : Agent
             steps = 0;
             resetPos.ResetPosition();
             Done();
+            episodes++;
         }
     }
 
     public override void AgentReset()
     {
+    }
+    
+    public int getEpisodes()
+    {
+        return episodes;
     }
 }
