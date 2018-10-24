@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActionsAngPos : MonoBehaviour, IActions
 {
     public int actionsSpace;
-    protected bool VelPos = false;
+    public bool VelPos = false;
     protected BodyParts bodyParts;
     protected List<JointInfo> jointInfos;
 

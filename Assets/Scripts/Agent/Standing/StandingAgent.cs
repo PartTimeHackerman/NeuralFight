@@ -4,7 +4,7 @@ using Assets.Scripts.Agent;
 using MLAgents;
 using UnityEngine;
 
-internal class StandingAgent : Agent
+internal class StandingAgent : Agent, IAgent
 {
     private ApplicationSettings applicationSettings;
     private IActions actions;
@@ -20,7 +20,8 @@ internal class StandingAgent : Agent
     public bool ready = true;
     private float rewardAnim = 0f;
     public float sumRewards = 0f;
-
+    private bool newDecisionStep = false;
+    public int episodes = 0;
     public override void InitializeAgent()
     {
         observations = GetComponent<Observations>();
@@ -50,7 +51,7 @@ internal class StandingAgent : Agent
             if (academyStepCounter % agentParameters.numberOfActionsBetweenDecisions == 0)
             {
                 RequestDecision();
-
+                newDecisionStep = true;
             }
         }
     }
@@ -59,30 +60,33 @@ internal class StandingAgent : Agent
     {
 
         steps++;
-        List<float> actions = vectorAction.ToList();
-        List<float> actionsClamped = new List<float>();
-        foreach (var var in actions)
-            actionsClamped.Add(Mathf.Clamp(var, -1f, 1f));
+        if (newDecisionStep)
+        {
+            List<float> actions = vectorAction.ToList();
+            List<float> actionsClamped = new List<float>();
+            foreach (var var in actions)
+                actionsClamped.Add(Mathf.Clamp(var, -1f, 1f));
+            this.actions.applyActions(actionsClamped);
+        }
 
-        
-        this.actions.applyActions(actionsClamped);
         rewardAnim = rewards.getReward();
 
         bool terminateAgent = terminateFn.isTerminated();
 
         //sumRewards += rewardAnim;
-        SetReward(rewardAnim);
+        AddReward(rewardAnim);
 
         if (steps > maxSteps || terminateAgent)
         {
             //sumRewards = sumRewards > 0 ? sumRewards : 0;
-            SetReward(rewardAnim);
+            //SetReward(rewardAnim);
             //sumRewards = 0f;
             steps = 0;
             ready = false;
             resetPos.ResetPosition();
             ready = true;
             Done();
+            episodes++;
         }
     }
 
@@ -92,5 +96,8 @@ internal class StandingAgent : Agent
     }
 
 
-   
+    public int getEpisodes()
+    {
+        return episodes;
+    }
 }

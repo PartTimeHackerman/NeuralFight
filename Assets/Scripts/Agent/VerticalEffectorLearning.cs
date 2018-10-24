@@ -5,27 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-class VerticalEffector : MonoBehaviour
+class VerticalEffectorLearning : VerticalEffector
 {
-    public Rigidbody rigidbody;
-    public Rigidbody referenceRb;
-    public float velocity;
-    public bool enable = false;
-    public bool debug = false;
-    protected Vector3 dir;
-    protected Vector3 cross;
-    protected Vector3 side;
-    protected float up;
-
-    void FixedUpdate()
+    public float currVelocity = 0f;
+    private IAgent agent;
+    public int episodesBoundary = 1000;
+    
+    void Start()
     {
-        if (enable)
-        {
-            addForce();
-        }
+        agent = GetComponent<IAgent>();
     }
 
-    public virtual void addForce()
+    public override void addForce()
     {
         dir = referenceRb.transform.position - rigidbody.transform.position;
         dir.Normalize();
@@ -37,6 +28,7 @@ class VerticalEffector : MonoBehaviour
         up = Mathf.Abs(((rigidbody.transform.up.y + 1) / 2) - 1);
         cross.x *= up;
         cross.y *= up;
+        currVelocity = Mathf.Lerp(velocity, 0, agent.getEpisodes() / (float) episodesBoundary);
         Vector2 crossVel = new Vector2(cross.x * velocity, cross.y * velocity);
         rigidbody.AddForce(crossVel);
         referenceRb.AddForce(-crossVel);

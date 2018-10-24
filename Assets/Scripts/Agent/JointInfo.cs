@@ -28,6 +28,7 @@ public class JointInfo : MonoBehaviour
     public float maxVel = 20;
     public float currentRot = 0f;
     public bool isBackwards = false;
+    public float currentForce = 0f;
 
     void Reset()
     {
@@ -154,6 +155,7 @@ public class JointInfo : MonoBehaviour
         jointSlerpDrive.positionDamper = maxPosDamper;
         jointSlerpDrive.maximumForce = force * maxSlerpForce;
         configurableJoint.slerpDrive = jointSlerpDrive;
+        currentForce = force;
     }
 
     public void setConfigurableRot(Vector3 angRot)

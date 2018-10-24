@@ -88,7 +88,7 @@ class ActuationReward
 
             for (int i = 0; i < newRot.Count; i++)
             {
-                sumVelDiff += Mathf.Abs(Mathf.DeltaAngle(lastRot[i], newRot[i])) / limitsSum[i];
+                sumVelDiff += (Mathf.Abs(Mathf.DeltaAngle(lastRot[i], newRot[i])) / limitsSum[i]) * jointInfos[i].currentForce;
             }
 
             reward = Mathf.Abs((sumVelDiff / jointsCount) - 1f);
