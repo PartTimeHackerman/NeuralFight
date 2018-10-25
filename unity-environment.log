@@ -1,4 +1,4 @@
-24.10.2018 18:20:32
+25.10.2018 20:16:54
  
 Warning
 You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
@@ -8,14 +8,14 @@ You are trying to create a MonoBehaviour using the 'new' keyword.  This is not a
 0x00000001408B1580 (Unity) DebugStringToFile
 0x0000000140BB6875 (Unity) MonoBehaviour::ConstructorCheck
 0x000000014192B606 (Unity) MonoBehaviour_CUSTOM_ConstructorCheck
-0x00000000332AEC3E (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
-0x00000000332AE9EB (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
-0x0000000032C99E8B (Mono JIT Code) [StandingRewardHumanoid.cs:40] StandingRewardHumanoid:.ctor (BodyParts) 
-0x0000000032C998EB (Mono JIT Code) [WalkFWReward.cs:23] WalkFWReward:Start () 
-0x00000000332AE688 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
-0x00007FF8DCB2A65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
-0x00007FF8DCAB1B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
-0x00007FF8DCABAB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
+0x00000000372FE69E (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
+0x00000000372FE44B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
+0x00000000367457EB (Mono JIT Code) [StandingRewardHumanoid.cs:40] StandingRewardHumanoid:.ctor (BodyParts) 
+0x000000003674524B (Mono JIT Code) [WalkBWReward.cs:24] WalkBWReward:Start () 
+0x00000000372FE188 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x00007FFBEA7CA65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
+0x00007FFBEA751B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
+0x00007FFBEA75AB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
 0x0000000140C0734A (Unity) scripting_method_invoke
 0x0000000140BFF710 (Unity) ScriptingInvocation::Invoke
 0x0000000140BBB668 (Unity) MonoBehaviour::InvokeMethodOrCoroutineChecked
@@ -30,12 +30,12 @@ You are trying to create a MonoBehaviour using the 'new' keyword.  This is not a
 0x000000014144CB3A (Unity) PlayerLoopController::UpdateScene
 0x000000014143B5ED (Unity) PlayerLoopController::EnterPlayMode
 0x0000000141447BD8 (Unity) PlayerLoopController::SetIsPlaying
-0x0000000141449C91 (Unity) Application::TickTimer
+0x000000014144B18D (Unity) Application::TickTimer
 0x00000001415E9ED5 (Unity) MainMessageLoop
 0x00000001415EC2C8 (Unity) WinMain
 0x000000014243127A (Unity) __scrt_common_main_seh
-0x00007FF912353034 (KERNEL32) BaseThreadInitThunk
-0x00007FF9125E1461 (ntdll) RtlUserThreadStart
+0x00007FFC22153034 (KERNEL32) BaseThreadInitThunk
+0x00007FFC22421461 (ntdll) RtlUserThreadStart
 
 Warning
 You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
@@ -45,14 +45,14 @@ You are trying to create a MonoBehaviour using the 'new' keyword.  This is not a
 0x00000001408B1580 (Unity) DebugStringToFile
 0x0000000140BB6875 (Unity) MonoBehaviour::ConstructorCheck
 0x000000014192B606 (Unity) MonoBehaviour_CUSTOM_ConstructorCheck
-0x00000000332AEC3E (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
-0x00000000332AE9EB (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
-0x0000000032C9B653 (Mono JIT Code) [VelocityReward.cs:18] VelocityReward:.ctor (UnityEngine.Vector2,single,UnityEngine.Rigidbody) 
-0x0000000032C999EB (Mono JIT Code) [WalkFWReward.cs:24] WalkFWReward:Start () 
-0x00000000332AE688 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
-0x00007FF8DCB2A65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
-0x00007FF8DCAB1B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
-0x00007FF8DCABAB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
+0x00000000372FE69E (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
+0x00000000372FE44B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
+0x0000000036746FB3 (Mono JIT Code) [VelocityReward.cs:18] VelocityReward:.ctor (UnityEngine.Vector2,single,UnityEngine.Rigidbody) 
+0x000000003674534B (Mono JIT Code) [WalkBWReward.cs:25] WalkBWReward:Start () 
+0x00000000372FE188 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x00007FFBEA7CA65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
+0x00007FFBEA751B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
+0x00007FFBEA75AB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
 0x0000000140C0734A (Unity) scripting_method_invoke
 0x0000000140BFF710 (Unity) ScriptingInvocation::Invoke
 0x0000000140BBB668 (Unity) MonoBehaviour::InvokeMethodOrCoroutineChecked
@@ -67,12 +67,12 @@ You are trying to create a MonoBehaviour using the 'new' keyword.  This is not a
 0x000000014144CB3A (Unity) PlayerLoopController::UpdateScene
 0x000000014143B5ED (Unity) PlayerLoopController::EnterPlayMode
 0x0000000141447BD8 (Unity) PlayerLoopController::SetIsPlaying
-0x0000000141449C91 (Unity) Application::TickTimer
+0x000000014144B18D (Unity) Application::TickTimer
 0x00000001415E9ED5 (Unity) MainMessageLoop
 0x00000001415EC2C8 (Unity) WinMain
 0x000000014243127A (Unity) __scrt_common_main_seh
-0x00007FF912353034 (KERNEL32) BaseThreadInitThunk
-0x00007FF9125E1461 (ntdll) RtlUserThreadStart
+0x00007FFC22153034 (KERNEL32) BaseThreadInitThunk
+0x00007FFC22421461 (ntdll) RtlUserThreadStart
 
 Warning
 You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
@@ -82,14 +82,14 @@ You are trying to create a MonoBehaviour using the 'new' keyword.  This is not a
 0x00000001408B1580 (Unity) DebugStringToFile
 0x0000000140BB6875 (Unity) MonoBehaviour::ConstructorCheck
 0x000000014192B606 (Unity) MonoBehaviour_CUSTOM_ConstructorCheck
-0x00000000332AEC3E (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
-0x00000000332AE9EB (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
-0x0000000032C9B653 (Mono JIT Code) [VelocityReward.cs:18] VelocityReward:.ctor (UnityEngine.Vector2,single,UnityEngine.Rigidbody) 
-0x0000000032C99ADB (Mono JIT Code) [WalkFWReward.cs:25] WalkFWReward:Start () 
-0x00000000332AE688 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
-0x00007FF8DCB2A65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
-0x00007FF8DCAB1B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
-0x00007FF8DCABAB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
+0x00000000372FE69E (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
+0x00000000372FE44B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
+0x0000000036746FB3 (Mono JIT Code) [VelocityReward.cs:18] VelocityReward:.ctor (UnityEngine.Vector2,single,UnityEngine.Rigidbody) 
+0x000000003674543B (Mono JIT Code) [WalkBWReward.cs:26] WalkBWReward:Start () 
+0x00000000372FE188 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x00007FFBEA7CA65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
+0x00007FFBEA751B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
+0x00007FFBEA75AB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
 0x0000000140C0734A (Unity) scripting_method_invoke
 0x0000000140BFF710 (Unity) ScriptingInvocation::Invoke
 0x0000000140BBB668 (Unity) MonoBehaviour::InvokeMethodOrCoroutineChecked
@@ -104,10 +104,10 @@ You are trying to create a MonoBehaviour using the 'new' keyword.  This is not a
 0x000000014144CB3A (Unity) PlayerLoopController::UpdateScene
 0x000000014143B5ED (Unity) PlayerLoopController::EnterPlayMode
 0x0000000141447BD8 (Unity) PlayerLoopController::SetIsPlaying
-0x0000000141449C91 (Unity) Application::TickTimer
+0x000000014144B18D (Unity) Application::TickTimer
 0x00000001415E9ED5 (Unity) MainMessageLoop
 0x00000001415EC2C8 (Unity) WinMain
 0x000000014243127A (Unity) __scrt_common_main_seh
-0x00007FF912353034 (KERNEL32) BaseThreadInitThunk
-0x00007FF9125E1461 (ntdll) RtlUserThreadStart
+0x00007FFC22153034 (KERNEL32) BaseThreadInitThunk
+0x00007FFC22421461 (ntdll) RtlUserThreadStart
 

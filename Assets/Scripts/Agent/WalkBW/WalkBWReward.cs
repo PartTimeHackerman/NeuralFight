@@ -17,16 +17,12 @@ class WalkBWReward : MonoBehaviour
     public float standingRewardVal;
     public float velocityRewardVal;
 
-    #if (UNITY_EDITOR)
-    public DictionaryStringFloat others = new DictionaryStringFloat();
-    #endif
-
 
     private void Start()
     {
         bodyParts = GetComponent<BodyParts>();
         standingReward = new StandingRewardHumanoid(bodyParts);
-        velocityFWReward = new VelocityReward(Vector2.left, 10f, bodyParts.root);
+        velocityFWReward = new VelocityReward(Vector2.left, 5f, bodyParts.root);
         velocityUPReward = new VelocityReward(Vector2.up, 10f, bodyParts.root);
 
         standingReward.multipler = new[] { 1f, 1f, 0f, 0f, 0f };
@@ -41,12 +37,8 @@ class WalkBWReward : MonoBehaviour
     {
         standingRewardVal = standingReward.getReward();
         velocityRewardVal = velocityFWReward.getReward() - Mathf.Abs(velocityUPReward.getReward());
-        reward = (standingRewardVal + velocityRewardVal * 3f) / 4f;
-        #if (UNITY_EDITOR)
-        others["torsoOverCOMXZReward"] = standingReward.torsoOverCOMXZReward;
-        others["COMOverMeanOfFeetsXZReward"] = standingReward.COMOverMeanOfFeetsXZReward;
-        #endif
-
+        reward = standingRewardVal * .33f + velocityRewardVal * .67f;
+        reward = Mathf.Clamp(reward, -1f, 1f);
         return reward;
     }
 }
