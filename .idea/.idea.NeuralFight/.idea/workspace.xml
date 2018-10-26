@@ -5,10 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuralFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NeuralFight/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MLScenes/walk_bw.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MLScenes/walk_bw.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MLScenes/walk_fw.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MLScenes/walk_fw.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New Terrain 4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Terrain 4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/city.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/city.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Agent/WalkBW/WalkBWReward.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/WalkBW/WalkBWReward.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Agent/WalkBW/WalkingBWAgent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/WalkBW/WalkingBWAgent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Agent/VerticalEffectorLearning.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Agent/VerticalEffectorLearning.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unity-environment.log" beforeDir="false" afterPath="$PROJECT_DIR$/unity-environment.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,63 +18,56 @@
     <session id="1829523119">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="19" />
+          <entry key="project.closed" value="20" />
           <entry key="project.open.time.10" value="5" />
           <entry key="project.open.time.11" value="4" />
           <entry key="project.open.time.12" value="4" />
           <entry key="project.open.time.13" value="5" />
-          <entry key="project.open.time.14" value="3" />
+          <entry key="project.open.time.14" value="4" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.20" value="1" />
-          <entry key="project.opened" value="24" />
+          <entry key="project.opened" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="150" />
+          <entry key="cs" value="151" />
           <entry key="js" value="2" />
           <entry key="prefab" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="150" />
+          <entry key="C#" value="151" />
           <entry key="JavaScript" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="7904" />
+          <entry key="cs" value="7909" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="7904" />
+          <entry key="C#" value="7909" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/Standing/StandingAgent.cs">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/VerticalEffectorLearning.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1410">
-              <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="101" selection-end-column="5" />
+            <state relative-caret-position="435">
+              <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
               <folding>
-                <marker date="1540364976164" expanded="false" signature="6:115" ph="..." />
-                <marker date="1540364976164" expanded="true" signature="681:1012" ph="{...}" />
-                <marker date="1540364976164" expanded="true" signature="1060:1223" ph="{...}" />
-                <marker date="1540364976164" expanded="true" signature="1289:1733" ph="{...}" />
-                <marker date="1540364976164" expanded="true" signature="1484:1727" ph="{...}" />
-                <marker date="1540364976164" expanded="true" signature="1614:1717" ph="{...}" />
-                <marker date="1540364976164" expanded="true" signature="1812:2692" ph="{...}" />
-                <marker date="1540364976164" expanded="true" signature="1865:2161" ph="{...}" />
-                <marker date="1540364976164" expanded="true" signature="2380:2686" ph="{...}" />
-                <marker date="1540364976164" expanded="true" signature="2403:2518" ph="/* sumRewards = sumRewards &gt; 0 ? sumRewards : 0; ... */" />
-                <marker date="1540364976164" expanded="true" signature="2731:2752" ph="{...}" />
-                <marker date="1540364976164" expanded="true" signature="2783:2820" ph="{...}" />
+                <marker date="1540576274876" expanded="false" signature="6:134" ph="..." />
+                <marker date="1540576274876" expanded="true" signature="185:1343" ph="{...}" />
+                <marker date="1540576274876" expanded="true" signature="311:363" ph="{...}" />
+                <marker date="1540576274876" expanded="true" signature="400:1341" ph="{...}" />
+                <marker date="1540576274876" expanded="true" signature="1164:1335" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -90,7 +80,6 @@
               <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <marker date="1540397799093" expanded="false" signature="6:115" ph="..." />
-                <marker date="1540397799093" expanded="true" signature="162:2575" ph="{...}" />
                 <marker date="1540397799093" expanded="true" signature="596:916" ph="{...}" />
                 <marker date="1540397799093" expanded="true" signature="964:1126" ph="{...}" />
                 <marker date="1540397799093" expanded="true" signature="1192:1627" ph="{...}" />
@@ -109,11 +98,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/WalkBW/WalkingBWAgent.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
+            <state relative-caret-position="315">
               <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
               <folding>
                 <marker date="1540491064941" expanded="false" signature="6:115" ph="..." />
-                <marker date="1540491064941" expanded="true" signature="162:2555" ph="{...}" />
                 <marker date="1540491064941" expanded="true" signature="596:916" ph="{...}" />
                 <marker date="1540491064941" expanded="true" signature="964:1126" ph="{...}" />
                 <marker date="1540491064941" expanded="true" signature="1192:1627" ph="{...}" />
@@ -129,11 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/WalkBW/WalkBWReward.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+            <state relative-caret-position="150">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
               <folding>
                 <marker date="1540491368972" expanded="false" signature="6:134" ph="..." />
                 <marker date="1540491368972" expanded="true" signature="170:1297" ph="{...}" />
@@ -151,7 +139,6 @@
               <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="40" selection-end-column="22" />
               <folding>
                 <marker date="1540397995867" expanded="false" signature="6:134" ph="..." />
-                <marker date="1540397995867" expanded="true" signature="170:1295" ph="{...}" />
                 <marker date="1540397995867" expanded="true" signature="501:955" ph="{...}" />
                 <marker date="1540397995867" expanded="true" signature="985:1293" ph="{...}" />
               </folding>
@@ -444,11 +431,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/Standing/StandingAgent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/RandomEffector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/VerticalEffector.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Agent/VerticalEffectorLearning.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkingFWAgent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkFWReward.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/WalkBW/WalkingBWAgent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Agent/WalkBW/WalkBWReward.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Agent/VerticalEffectorLearning.cs" />
       </list>
     </option>
   </component>
@@ -652,12 +639,13 @@
       <workItem from="1540296062578" duration="10936000" />
       <workItem from="1540363374514" duration="4130000" />
       <workItem from="1540397738894" duration="852000" />
-      <workItem from="1540490944146" duration="437000" />
+      <workItem from="1540490944146" duration="1503000" />
+      <workItem from="1540576061586" duration="212000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136796000" />
+    <option name="totallyTimeSpent" value="138074000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -672,7 +660,7 @@
     <frame x="-1448" y="168" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28438395" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28868195" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1038,25 +1026,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-          <folding>
-            <marker date="1540365153412" expanded="false" signature="6:78" ph="..." />
-            <marker date="1540365153412" expanded="true" signature="555:686" ph="{...}" />
-            <marker date="1540365153412" expanded="true" signature="717:1299" ph="{...}" />
-            <marker date="1540365153412" expanded="true" signature="744:1293" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/VerticalEffectorLearning.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <marker date="1540365682459" expanded="false" signature="6:134" ph="..." />
-            <marker date="1540365682459" expanded="true" signature="311:363" ph="{...}" />
-            <marker date="1540365682459" expanded="true" signature="400:1331" ph="{...}" />
-            <marker date="1540365682459" expanded="true" signature="1154:1325" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1064,19 +1033,84 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1410">
           <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="101" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/VerticalEffectorLearning.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
           <folding>
-            <marker date="1540364976164" expanded="false" signature="6:115" ph="..." />
-            <marker date="1540364976164" expanded="true" signature="681:1012" ph="{...}" />
-            <marker date="1540364976164" expanded="true" signature="1060:1223" ph="{...}" />
-            <marker date="1540364976164" expanded="true" signature="1289:1733" ph="{...}" />
-            <marker date="1540364976164" expanded="true" signature="1484:1727" ph="{...}" />
-            <marker date="1540364976164" expanded="true" signature="1614:1717" ph="{...}" />
-            <marker date="1540364976164" expanded="true" signature="1812:2692" ph="{...}" />
-            <marker date="1540364976164" expanded="true" signature="1865:2161" ph="{...}" />
-            <marker date="1540364976164" expanded="true" signature="2380:2686" ph="{...}" />
-            <marker date="1540364976164" expanded="true" signature="2403:2518" ph="/* sumRewards = sumRewards &gt; 0 ? sumRewards : 0; ... */" />
-            <marker date="1540364976164" expanded="true" signature="2731:2752" ph="{...}" />
-            <marker date="1540364976164" expanded="true" signature="2783:2820" ph="{...}" />
+            <marker date="1540576274876" expanded="false" signature="6:134" ph="..." />
+            <marker date="1540576274876" expanded="true" signature="185:1343" ph="{...}" />
+            <marker date="1540576274876" expanded="true" signature="311:363" ph="{...}" />
+            <marker date="1540576274876" expanded="true" signature="400:1341" ph="{...}" />
+            <marker date="1540576274876" expanded="true" signature="1164:1335" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkingFWAgent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <marker date="1540397799093" expanded="false" signature="6:115" ph="..." />
+            <marker date="1540397799093" expanded="true" signature="596:916" ph="{...}" />
+            <marker date="1540397799093" expanded="true" signature="964:1126" ph="{...}" />
+            <marker date="1540397799093" expanded="true" signature="1192:1627" ph="{...}" />
+            <marker date="1540397799093" expanded="true" signature="1378:1621" ph="{...}" />
+            <marker date="1540397799093" expanded="true" signature="1508:1611" ph="{...}" />
+            <marker date="1540397799093" expanded="true" signature="1706:2451" ph="{...}" />
+            <marker date="1540397799093" expanded="true" signature="1758:2092" ph="{...}" />
+            <marker date="1540397799093" expanded="true" signature="2268:2445" ph="{...}" />
+            <marker date="1540397799093" expanded="true" signature="2490:2502" ph="{...}" />
+            <marker date="1540397799093" expanded="true" signature="2536:2573" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/WalkBW/WalkingBWAgent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+          <folding>
+            <marker date="1540491064941" expanded="false" signature="6:115" ph="..." />
+            <marker date="1540491064941" expanded="true" signature="596:916" ph="{...}" />
+            <marker date="1540491064941" expanded="true" signature="964:1126" ph="{...}" />
+            <marker date="1540491064941" expanded="true" signature="1192:1627" ph="{...}" />
+            <marker date="1540491064941" expanded="true" signature="1378:1621" ph="{...}" />
+            <marker date="1540491064941" expanded="true" signature="1508:1611" ph="{...}" />
+            <marker date="1540491064941" expanded="true" signature="1706:2435" ph="{...}" />
+            <marker date="1540491064941" expanded="true" signature="1758:2092" ph="{...}" />
+            <marker date="1540491064941" expanded="true" signature="2252:2429" ph="{...}" />
+            <marker date="1540491064941" expanded="true" signature="2474:2486" ph="{...}" />
+            <marker date="1540491064941" expanded="true" signature="2516:2553" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/WalkBW/WalkBWReward.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <marker date="1540491368972" expanded="false" signature="6:134" ph="..." />
+            <marker date="1540491368972" expanded="true" signature="170:1297" ph="{...}" />
+            <marker date="1540491368972" expanded="true" signature="502:957" ph="{...}" />
+            <marker date="1540491368972" expanded="true" signature="987:1295" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkFWReward.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="40" selection-end-column="22" />
+          <folding>
+            <marker date="1540397995867" expanded="false" signature="6:134" ph="..." />
+            <marker date="1540397995867" expanded="true" signature="501:955" ph="{...}" />
+            <marker date="1540397995867" expanded="true" signature="985:1293" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1177,74 +1211,6 @@
             <marker date="1540364366169" expanded="true" signature="2451:2607" ph="{...}" />
             <marker date="1540364366169" expanded="true" signature="2817:3043" ph="{...}" />
             <marker date="1540364366169" expanded="true" signature="2927:3015" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkingFWAgent.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <marker date="1540397799093" expanded="false" signature="6:115" ph="..." />
-            <marker date="1540397799093" expanded="true" signature="162:2575" ph="{...}" />
-            <marker date="1540397799093" expanded="true" signature="596:916" ph="{...}" />
-            <marker date="1540397799093" expanded="true" signature="964:1126" ph="{...}" />
-            <marker date="1540397799093" expanded="true" signature="1192:1627" ph="{...}" />
-            <marker date="1540397799093" expanded="true" signature="1378:1621" ph="{...}" />
-            <marker date="1540397799093" expanded="true" signature="1508:1611" ph="{...}" />
-            <marker date="1540397799093" expanded="true" signature="1706:2451" ph="{...}" />
-            <marker date="1540397799093" expanded="true" signature="1758:2092" ph="{...}" />
-            <marker date="1540397799093" expanded="true" signature="2268:2445" ph="{...}" />
-            <marker date="1540397799093" expanded="true" signature="2490:2502" ph="{...}" />
-            <marker date="1540397799093" expanded="true" signature="2536:2573" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/WalkFW/WalkFWReward.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="40" selection-end-column="22" />
-          <folding>
-            <marker date="1540397995867" expanded="false" signature="6:134" ph="..." />
-            <marker date="1540397995867" expanded="true" signature="170:1295" ph="{...}" />
-            <marker date="1540397995867" expanded="true" signature="501:955" ph="{...}" />
-            <marker date="1540397995867" expanded="true" signature="985:1293" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/WalkBW/WalkingBWAgent.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-          <folding>
-            <marker date="1540491064941" expanded="false" signature="6:115" ph="..." />
-            <marker date="1540491064941" expanded="true" signature="162:2555" ph="{...}" />
-            <marker date="1540491064941" expanded="true" signature="596:916" ph="{...}" />
-            <marker date="1540491064941" expanded="true" signature="964:1126" ph="{...}" />
-            <marker date="1540491064941" expanded="true" signature="1192:1627" ph="{...}" />
-            <marker date="1540491064941" expanded="true" signature="1378:1621" ph="{...}" />
-            <marker date="1540491064941" expanded="true" signature="1508:1611" ph="{...}" />
-            <marker date="1540491064941" expanded="true" signature="1706:2435" ph="{...}" />
-            <marker date="1540491064941" expanded="true" signature="1758:2092" ph="{...}" />
-            <marker date="1540491064941" expanded="true" signature="2252:2429" ph="{...}" />
-            <marker date="1540491064941" expanded="true" signature="2474:2486" ph="{...}" />
-            <marker date="1540491064941" expanded="true" signature="2516:2553" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Agent/WalkBW/WalkBWReward.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <marker date="1540491368972" expanded="false" signature="6:134" ph="..." />
-            <marker date="1540491368972" expanded="true" signature="170:1297" ph="{...}" />
-            <marker date="1540491368972" expanded="true" signature="502:957" ph="{...}" />
-            <marker date="1540491368972" expanded="true" signature="987:1295" ph="{...}" />
           </folding>
         </state>
       </provider>

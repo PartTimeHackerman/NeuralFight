@@ -28,8 +28,8 @@ class VerticalEffectorLearning : VerticalEffector
         up = Mathf.Abs(((rigidbody.transform.up.y + 1) / 2) - 1);
         cross.x *= up;
         cross.y *= up;
-        currVelocity = Mathf.Lerp(velocity, 0, agent.getEpisodes() / (float) episodesBoundary);
-        Vector2 crossVel = new Vector2(cross.x * velocity, cross.y * velocity);
+        currVelocity = Mathf.Lerp(velocity, 0f, agent.getEpisodes() / (float) episodesBoundary);
+        Vector2 crossVel = new Vector2(cross.x * currVelocity , cross.y * currVelocity);
         rigidbody.AddForce(crossVel);
         referenceRb.AddForce(-crossVel);
         if (debug)
