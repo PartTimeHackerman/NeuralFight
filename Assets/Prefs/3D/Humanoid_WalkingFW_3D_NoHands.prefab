@@ -1542,7 +1542,7 @@ MonoBehaviour:
   force: {x: -50, y: 50}
   forceMode: 2
   debug: 0
-  episodesBoundary: 1
+  episodesBoundary: 1000
   randForce: {x: 0, y: 0}
 --- !u!114 &114376163154354398
 MonoBehaviour:
@@ -1558,10 +1558,10 @@ MonoBehaviour:
   rigidbody: {fileID: 54548007068946896}
   referenceRb: {fileID: 54424976772357642}
   velocity: 2000
-  enable: 0
+  enable: 1
   debug: 0
   currVelocity: 0
-  episodesBoundary: 1
+  episodesBoundary: 1000
 --- !u!114 &114572894053269658
 MonoBehaviour:
   m_ObjectHideFlags: 1
