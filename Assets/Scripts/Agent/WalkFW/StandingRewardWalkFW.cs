@@ -144,7 +144,7 @@ public class StandingRewardWalkFW : MonoBehaviour, IReward
         float sumVels = 0;
         foreach (JointInfo jointInfo in jointInfos)
         {
-            sumVels += Mathf.Abs(jointInfo.configurableJoint.targetAngularVelocity.x);
+            sumVels += Mathf.Abs(jointInfo.joint.targetAngularVelocity.x);
         }
 
         minimizeActuationReward = Mathf.Abs((sumVels / count) / maxVel - 1);

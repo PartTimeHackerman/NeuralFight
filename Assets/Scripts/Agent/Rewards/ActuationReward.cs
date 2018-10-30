@@ -46,7 +46,7 @@ class ActuationReward
         newRot.Clear();
 
         foreach (JointInfo jointInfo in jointInfos)
-            newRot.Add(jointInfo.configurableJoint.targetAngularVelocity.x);
+            newRot.Add(jointInfo.joint.targetAngularVelocity.x);
 
         if (lastRot == null)
             lastRot = new List<float>(newRot);

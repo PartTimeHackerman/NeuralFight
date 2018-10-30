@@ -6,7 +6,6 @@ using UnityEngine;
 public class JointInfo : MonoBehaviour
 {
     public ConfigurableJoint joint;
-    public ConfigurableJoint configurableJoint;
     public float maxForce = 1000;
     public float maxSlerpForce = 1000;
     public float maxPosSpring;
@@ -53,7 +52,6 @@ public class JointInfo : MonoBehaviour
     public void init()
     {
         joint = GetComponent<ConfigurableJoint>();
-        configurableJoint = (ConfigurableJoint) joint;
         Rigidbody[] rigids = joint.GetComponentsInChildren<Rigidbody>();
         totalMass = rigids.Sum(r => r.mass);
     }
@@ -67,14 +65,14 @@ public class JointInfo : MonoBehaviour
     {
         if (!setPos)
         {
-            posDoc = configurableJoint.targetRotation.eulerAngles;
+            posDoc = joint.targetRotation.eulerAngles;
         }
         else
         {
             posDoc.x = Mathf.Clamp(posDoc.x, angularLimits[0][0], angularLimits[0][1]);
             posDoc.y = Mathf.Clamp(posDoc.y, angularLimits[1][0], angularLimits[1][1]);
             posDoc.z = Mathf.Clamp(posDoc.z, angularLimits[2][0], angularLimits[2][1]);
-            configurableJoint.targetRotation = Quaternion.Euler(posDoc);
+            joint.targetRotation = Quaternion.Euler(posDoc);
         }
 
         if (debug)
@@ -101,20 +99,20 @@ public class JointInfo : MonoBehaviour
             //maxPosDamper = 50f;
         }
 
-        JointDrive jointSlerpDrive = configurableJoint.slerpDrive;
+        JointDrive jointSlerpDrive = joint.slerpDrive;
         jointSlerpDrive.positionSpring = maxPosSpring;
         jointSlerpDrive.positionDamper = maxPosDamper;
-        configurableJoint.slerpDrive = jointSlerpDrive;
+        joint.slerpDrive = jointSlerpDrive;
     }
 
 
     public void setConfigurableJointInfo()
     {
-        if (configurableJoint.angularXMotion != ConfigurableJointMotion.Locked)
+        if (joint.angularXMotion != ConfigurableJointMotion.Locked)
             movableAxis[0] = true;
-        if (configurableJoint.angularYMotion != ConfigurableJointMotion.Locked)
+        if (joint.angularYMotion != ConfigurableJointMotion.Locked)
             movableAxis[1] = true;
-        if (configurableJoint.angularZMotion != ConfigurableJointMotion.Locked)
+        if (joint.angularZMotion != ConfigurableJointMotion.Locked)
             movableAxis[2] = true;
 
 
@@ -124,19 +122,19 @@ public class JointInfo : MonoBehaviour
         if (movableAxis[0])
         {
             angularLimits[0] = new float[]
-                {configurableJoint.lowAngularXLimit.limit, configurableJoint.highAngularXLimit.limit};
+                {joint.lowAngularXLimit.limit, joint.highAngularXLimit.limit};
         }
 
         if (movableAxis[1])
         {
             angularLimits[1] = new float[]
-                {-configurableJoint.angularYLimit.limit, configurableJoint.angularYLimit.limit};
+                {-joint.angularYLimit.limit, joint.angularYLimit.limit};
         }
 
         if (movableAxis[2])
         {
             angularLimits[2] = new float[]
-                {-configurableJoint.angularZLimit.limit, configurableJoint.angularZLimit.limit};
+                {-joint.angularZLimit.limit, joint.angularZLimit.limit};
         }
 
         xMinMax = angularLimits[0];
@@ -150,30 +148,30 @@ public class JointInfo : MonoBehaviour
     {
         currentRot = angRot.x;
         setConfigurableRot(angRot);
-        JointDrive jointSlerpDrive = configurableJoint.slerpDrive;
+        JointDrive jointSlerpDrive = joint.slerpDrive;
         jointSlerpDrive.positionSpring = maxPosSpring;
         jointSlerpDrive.positionDamper = maxPosDamper;
         jointSlerpDrive.maximumForce = force * maxSlerpForce;
-        configurableJoint.slerpDrive = jointSlerpDrive;
+        joint.slerpDrive = jointSlerpDrive;
         currentForce = force;
     }
 
     public void setConfigurableRot(Vector3 angRot)
     {
-        configurableJoint.targetRotation = Quaternion.Euler(angRot);
+        joint.targetRotation = Quaternion.Euler(angRot);
     }
 
     public void resetJointForces()
     {
-        JointDrive jointSlerpDrive = configurableJoint.slerpDrive;
+        JointDrive jointSlerpDrive = joint.slerpDrive;
         jointSlerpDrive.positionSpring = maxPosSpring;
         jointSlerpDrive.positionDamper = maxPosDamper;
-        configurableJoint.slerpDrive = jointSlerpDrive;
+        joint.slerpDrive = jointSlerpDrive;
     }
 
     public void resetJointPositions(Vector3 zeros)
     {
-        configurableJoint.targetRotation = Quaternion.Euler(zeros);
+        joint.targetRotation = Quaternion.Euler(zeros);
     }
 
     public void setConfigurableRotVel(Vector3 angVel)
@@ -194,16 +192,16 @@ public class JointInfo : MonoBehaviour
             currentMaxVel = maxVel;
         tiredness = -(((currentMaxVel - medVel) / medVel) - 1);
         */
-        configurableJoint.targetAngularVelocity = angVel;
+        joint.targetAngularVelocity = angVel;
     }
 
     public override bool Equals(object other)
     {
-        return other != null && ((JointInfo) other).configurableJoint.Equals(configurableJoint);
+        return other != null && ((JointInfo) other).joint.Equals(joint);
     }
 
     public override int GetHashCode()
     {
-        return configurableJoint.GetHashCode();
+        return joint.GetHashCode();
     }
 }

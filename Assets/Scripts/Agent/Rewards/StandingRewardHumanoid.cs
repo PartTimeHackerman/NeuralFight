@@ -70,12 +70,18 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
     {
         namedParts = bodyParts.getNamedParts();
 
-        baseDistanceCOMTorso = namedParts["torso"].transform.position.y - physics.getCenterOfMass(bodyParts.getRigids()).y;
+        baseDistanceCOMTorso =
+            namedParts["torso"].transform.position.y - physics.getCenterOfMass(bodyParts.getRigids()).y;
         baseDistanceFeetsCOM = physics.getCenterOfMass(bodyParts.getRigids()).y - meanOfFeets().y;
         maxDistanceRootFeets = calcDistance(root.gameObject, namedParts["rfoot_end"]);
 
         actuationReward = new ActuationReward(bodyParts, false);
-        multipler = new float[]{1f, 1f, 1f, 1f, 1f};
+        multipler = multipler ?? new float[] {1f, 1f, 1f, 1f, 1f};
+    }
+
+    public void setMultipler(float[] multipler)
+    {
+        this.multipler = multipler;
     }
 
 
@@ -118,7 +124,6 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
 
     public float minimizeTorsoXZVelocity()
     {
-
         var torsoRigid = bodyParts.getNamedRigids()["torso"];
         var sumVel = torsoRigid.velocity.sqrMagnitude;
         float maxVel = 10;
@@ -136,7 +141,7 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
         Vector2 lfoot = new Vector2(lfootPos.x, lfootPos.y);
         return (rfoot + lfoot) / 2;
     }
-    
+
     public float getReward()
     {
         COM = physics.getCenterOfMass(bodyParts.getRigids());
@@ -145,7 +150,7 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
         rootFromBaseOverMeanOfFeetsY();
         minimizeTorsoXZVelocity();
         minimizeActuationReward = actuationReward.getReward();
-        
+
         reward = (COMOverMeanOfFeetsXZReward * multipler[0] +
                   torsoOverCOMXZReward * multipler[1] +
                   rootFromBaseOverMeanOfFeetsYReward * multipler[2] +
@@ -178,5 +183,4 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
     {
         return Vector3.Distance(o1.transform.position, o2.transform.position);
     }
-
 }

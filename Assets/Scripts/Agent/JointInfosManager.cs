@@ -20,10 +20,10 @@ class JointInfosManager
     {
         foreach (JointInfo jointInfo in jointInfos)
         {
-            JointDrive jointSlerpDrive = jointInfo.configurableJoint.slerpDrive;
+            JointDrive jointSlerpDrive = jointInfo.joint.slerpDrive;
             jointSlerpDrive.positionSpring = 0f;
             jointSlerpDrive.positionDamper = 0f;
-            jointInfo.configurableJoint.slerpDrive = jointSlerpDrive;
+            jointInfo.joint.slerpDrive = jointSlerpDrive;
         }
     }
 
@@ -39,10 +39,10 @@ class JointInfosManager
     {
         foreach (JointInfo jointInfo in jointInfos)
         {
-            JointDrive jointSlerpDrive = jointInfo.configurableJoint.slerpDrive;
+            JointDrive jointSlerpDrive = jointInfo.joint.slerpDrive;
             jointSlerpDrive.positionSpring = jointInfo.maxForce * jointInfo.totalMass;
             jointSlerpDrive.positionDamper = jointInfo.maxForce * jointInfo.totalMass * force;
-            jointInfo.configurableJoint.slerpDrive = jointSlerpDrive;
+            jointInfo.joint.slerpDrive = jointSlerpDrive;
         }
     }
 

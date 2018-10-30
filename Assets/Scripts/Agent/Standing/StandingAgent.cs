@@ -22,6 +22,7 @@ internal class StandingAgent : Agent, IAgent
     public float sumRewards = 0f;
     private bool newDecisionStep = false;
     public int episodes = 0;
+    
     public override void InitializeAgent()
     {
         observations = GetComponent<Observations>();
@@ -30,7 +31,7 @@ internal class StandingAgent : Agent, IAgent
         resetPos = GetComponent<ResetPos>();
         terminateFn = GetComponent<Terminator>();
         observations.addToRemove(new[]{"root_pos_x"});
-        
+        rewards.multipler = new float[]{1f, 1f, 2f, 1f, 1f};
     }
 
     public override void CollectObservations()
