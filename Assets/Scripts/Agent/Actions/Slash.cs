@@ -14,54 +14,31 @@ public class Slash : AgentAction
     public int maxFrames = 30;
     public int framesElapsed = 0;
     
-    public bool push = false;
-    public bool done = true;
-    void Start()
+    
+    protected override void TakeAction()
     {
-        BodyParts = GetComponent<BodyParts>();
-
-        foreach (KeyValuePair<string,JointInfo> keyValuePair in BodyParts.namedJoints)
+        framesElapsed++;
+        if (framesElapsed < readyFrames)
         {
-            if (keyValuePair.Key.Contains("upper")) upperArm = keyValuePair.Value;
-            if (keyValuePair.Key.Contains("lower")) lowerArm = keyValuePair.Value;
+            ActionGetReady();
         }
 
-        root = BodyParts.root.transform;
-    }
-
-    void FixedUpdate()
-    {
-        ActionSlash();
-    }
-
-    private void ActionSlash()
-    {
-        if (push)
+        if (framesElapsed > upperFrames)
         {
-            done = false;
-            framesElapsed++;
-            if (framesElapsed < readyFrames)
-            {
-                ActionGetReady();
-            }
+            ActionSlashUpper();
+        }
+        if (framesElapsed > lowerFrames)
+        {
+            ActionSlashLower();
+        }
 
-            if (framesElapsed > upperFrames)
-            {
-                ActionSlashUpper();
-            }
-            if (framesElapsed > lowerFrames)
-            {
-                ActionSlashLower();
-            }
-
-            if ( framesElapsed > maxFrames)
-            {
-                framesElapsed = 0;
-                //push = false;
-                done = true;
-            }
+        if ( framesElapsed > maxFrames)
+        {
+            framesElapsed = 0;
+            done = true;
         }
     }
+    
 
     private void ActionGetReady()
     {

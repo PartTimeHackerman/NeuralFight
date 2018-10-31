@@ -12,31 +12,8 @@ public class StabPush : AgentAction
     public int maxFrames = 30;
     public int framesElapsed = 0;
     
-    public bool push = false;
-    public bool done = true;
-    void Start()
+    protected override void TakeAction()
     {
-        BodyParts = GetComponent<BodyParts>();
-
-        foreach (KeyValuePair<string,JointInfo> keyValuePair in BodyParts.namedJoints)
-        {
-            if (keyValuePair.Key.Contains("upper")) upperArm = keyValuePair.Value;
-            if (keyValuePair.Key.Contains("lower")) lowerArm = keyValuePair.Value;
-        }
-
-        root = BodyParts.root.transform;
-    }
-
-    void FixedUpdate()
-    {
-        ActionStabPush();
-    }
-
-    private void ActionStabPush()
-    {
-        if (push)
-        {
-            done = false;
             framesElapsed++;
             if (framesElapsed < readyFrames)
             {
@@ -55,10 +32,8 @@ public class StabPush : AgentAction
             if ( framesElapsed > maxFrames)
             {
                 framesElapsed = 0;
-                push = false;
                 done = true;
             }
-        }
     }
 
     private void ActionGetReady()
