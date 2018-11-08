@@ -20,7 +20,9 @@ public class BodyParts : MonoBehaviour
     public readonly List<Transform> endings = new List<Transform>();
 
     public List<Rigidbody> ObservableRigids => observableRigids;
-
+    public Dictionary<string, BodyPart> namedObservableBodyParts = new Dictionary<string, BodyPart>();
+    
+    
     public Rigidbody root;
     public int jointsTotal;
     public int partsTotal;
@@ -74,10 +76,17 @@ public class BodyParts : MonoBehaviour
 
         foreach (Rigidbody rigid in rigids)
         {
-            if (rigid.GetComponent<JointInfo>() != null)
+            if (rigid.GetComponent<JointInfo>() != null && rigid.GetComponent<JointInfo>().useNeural)
                 observableRigids.Add(rigid);
         }
         //observableRigids.Add(root);
+
+        List<BodyPart> bodyParts = GetComponentsInChildren<BodyPart>().ToList();
+        foreach (BodyPart bodyPart in bodyParts)
+        {
+            if (bodyPart.GetComponent<JointInfo>() != null && bodyPart.GetComponent<JointInfo>().useNeural)
+                namedObservableBodyParts[bodyPart.name] = bodyPart;
+        }
 
         height = getHeight();
     }

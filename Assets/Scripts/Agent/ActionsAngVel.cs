@@ -49,7 +49,7 @@ public class ActionsAngVel : MonoBehaviour, IActions
             angVel.z *= Mathf.Abs(angVel.z) / sum;
 
             //if (jointInfo.conAxis >= 0) angVel[jointInfo.conAxis] /= 10;
-            jointInfo.setConfigurableRotVel(angVel);
+            //jointInfo.setConfigurableRotVel(angVel);
 
         }
     }

@@ -27,6 +27,10 @@ class VerticalEffector : MonoBehaviour
 
     public virtual void addForce()
     {
+        if (rigidbody.CompareTag("detached") || referenceRb.CompareTag("detached"))
+        {
+            return;
+        }
         dir = referenceRb.transform.position - rigidbody.transform.position;
         dir.Normalize();
         side = Vector3.Cross(dir, -rigidbody.transform.right);

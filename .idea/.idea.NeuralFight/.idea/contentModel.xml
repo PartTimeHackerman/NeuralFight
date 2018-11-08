@@ -273,8 +273,10 @@
           </e>
         </e>
         <e p="Prefs" t="Include">
-          <e p="HumanoidRigged" t="Include">
-            <e p="README.txt" t="Include" />
+          <e p="OLD" t="Include">
+            <e p="HumanoidRigged" t="Include">
+              <e p="README.txt" t="Include" />
+            </e>
           </e>
         </e>
         <e p="ProCore" t="Include">
@@ -543,19 +545,6 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Agent" t="Include">
-            <e p="Actions" t="Include">
-              <e p="AgentAction.cs" t="Include" />
-              <e p="Aim.cs" t="Include" />
-              <e p="Block.cs" t="Include" />
-              <e p="Slash.cs" t="Include" />
-              <e p="StabPush.cs" t="Include" />
-              <e p="TwoHandedAction.cs" t="Include" />
-              <e p="TwoHandedAim.cs" t="Include" />
-              <e p="TwoHandedSlash.cs" t="Include" />
-              <e p="TwoHandTakerMelee.cs" t="Include" />
-              <e p="TwoHandTakerRanged.cs" t="Include" />
-              <e p="WeaponTwoHanded.cs" t="Include" />
-            </e>
             <e p="Actions.cs" t="Include" />
             <e p="ActionsAngPosOLD.cs" t="Include" />
             <e p="ActionsAngVel.cs" t="Include" />
@@ -576,6 +565,10 @@
               <e p="AntReward.cs" t="Include" />
               <e p="ObservationsAnt.cs" t="Include" />
               <e p="UpperLegsCollidingWithSurface.cs" t="Include" />
+            </e>
+            <e p="Body" t="Include">
+              <e p="BodyPart.cs" t="Include" />
+              <e p="Hitbox.cs" t="Include" />
             </e>
             <e p="BodyParts.cs" t="Include" />
             <e p="Crouching" t="Include">
@@ -615,16 +608,31 @@
             <e p="IObservations.cs" t="Include" />
             <e p="IReward.cs" t="Include" />
             <e p="JointInfo.cs" t="Include" />
+            <e p="JointInfoOLD.cs" t="Include" />
             <e p="JointInfosManager.cs" t="Include" />
             <e p="Jump" t="Include">
               <e p="JumpAgent.cs" t="Include" />
               <e p="JumpReward.cs" t="Include" />
             </e>
             <e p="JumpButton.cs" t="Include" />
+            <e p="Locomotion" t="Include">
+              <e p="LocomotionAction.cs" t="Include" />
+              <e p="LocomotionManager.cs" t="Include" />
+              <e p="LocomotyionType.cs" t="Include" />
+            </e>
             <e p="ModelInput.cs" t="Include" />
-            <e p="Observations.cs" t="Include" />
+            <e p="Observations" t="Include">
+              <e p="ObservablePart.cs" t="Include" />
+              <e p="Observations.cs" t="Include" />
+              <e p="ObservationsArray.cs" t="Include" />
+            </e>
             <e p="ObservationsWithActions.cs" t="Include" />
             <e p="PausePos.cs" t="Include" />
+            <e p="Player" t="Include">
+              <e p="IWaiter.cs" t="Include" />
+              <e p="Player.cs" t="Include" />
+              <e p="PlayerObservations.cs" t="Include" />
+            </e>
             <e p="Punch" t="Include">
               <e p="PunchAgent.cs" t="Include" />
               <e p="PunchObservations.cs" t="Include" />
@@ -661,6 +669,37 @@
               <e p="StandingRewardWalkFW.cs" t="Include" />
               <e p="WalkFWReward.cs" t="Include" />
               <e p="WalkingFWAgent.cs" t="Include" />
+            </e>
+            <e p="Weapon" t="Include">
+              <e p="ArmWeapon.cs" t="Include" />
+              <e p="DamagingPart.cs" t="Include" />
+              <e p="EquipTwoHandedWeapon.cs" t="Include" />
+              <e p="Weapon.cs" t="Include" />
+              <e p="WeaponAttack.cs" t="Include" />
+              <e p="WeaponBlock.cs" t="Include" />
+              <e p="WeaponEquipper.cs" t="Include" />
+              <e p="WeaponHand.cs" t="Include" />
+              <e p="WeaponHolder.cs" t="Include" />
+              <e p="WeaponsContainer.cs" t="Include" />
+              <e p="WeaponTwoHanded.cs" t="Include" />
+              <e p="WeaponType.cs" t="Include" />
+            </e>
+            <e p="WeaponActions" t="Include">
+              <e p="ActionsContainer.cs" t="Include" />
+              <e p="ActionsEquipper.cs" t="Include" />
+              <e p="Aim.cs" t="Include" />
+              <e p="Block.cs" t="Include" />
+              <e p="HandAction.cs" t="Include" />
+              <e p="LongBlock.cs" t="Include" />
+              <e p="OneHandedAction.cs" t="Include" />
+              <e p="Slash.cs" t="Include" />
+              <e p="Stab.cs" t="Include" />
+              <e p="TwoHandedAction.cs" t="Include" />
+              <e p="TwoHandedAim.cs" t="Include" />
+              <e p="TwoHandedLongBlock.cs" t="Include" />
+              <e p="TwoHandedSlash.cs" t="Include" />
+              <e p="TwoHandedStab.cs" t="Include" />
+              <e p="WeaponAction.cs" t="Include" />
             </e>
           </e>
           <e p="ApplicationSettings.cs" t="Include" />
@@ -744,6 +783,7 @@
             <e p="SpriteShadows.cs" t="Include" />
             <e p="VelDebug.cs" t="Include" />
             <e p="Velocity.cs" t="Include" />
+            <e p="Waiter.cs" t="Include" />
             <e p="WeightedRandomizer.cs" t="Include" />
           </e>
         </e>

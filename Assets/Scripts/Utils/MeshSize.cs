@@ -59,7 +59,7 @@ public class MeshSize : MonoBehaviour
 
     void setColor()
     {
-        //_renderer.material.SetColor("_Color", new HSBColor(Random.Range(0f, 1f),1f,1f,1f).ToColor());
-        _renderer.material.SetColor("_Color", color);
+        _renderer.material.SetColor("_Color", new HSBColor(Random.Range(0f, 1f),1f,1f,1f).ToColor());
+        //_renderer.material.SetColor("_Color", color);
     }
 }

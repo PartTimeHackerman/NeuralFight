@@ -7,13 +7,21 @@ public class ActionsAngPos : MonoBehaviour, IActions
     public int actionsSpace;
     public bool VelPos = false;
     protected BodyParts bodyParts;
-    protected List<JointInfo> jointInfos;
+    public List<JointInfo> jointInfos = new List<JointInfo>();
+    public List<JointInfo> allJointInfos;
 
 
     private void Start()
     {
         bodyParts = GetComponent<BodyParts>();
-        jointInfos = bodyParts.jointsInfos;
+        allJointInfos = bodyParts.jointsInfos;
+        foreach (JointInfo jointInfo in allJointInfos)
+        {
+            if (jointInfo.useNeural)
+            {
+                jointInfos.Add(jointInfo);
+            }
+        }
         actionsSpace = getActionsSpace();
     }
 
@@ -93,7 +101,7 @@ public class ActionsAngPos : MonoBehaviour, IActions
             if (movableAxis[2])
                 angVel.z = actions[actionIdx++] * jointInfo.maxVel;
 
-            jointInfo.setConfigurableRotVel(angVel);
+            //jointInfo.setConfigurableRotVel(angVel);
         }
     }
 

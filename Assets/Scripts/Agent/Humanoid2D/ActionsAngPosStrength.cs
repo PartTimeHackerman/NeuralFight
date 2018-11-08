@@ -46,7 +46,7 @@ public class ActionsAngPosStrength : ActionsAngPos
         var actions = 0;
         foreach (JointInfo jointInfo in bodyParts.jointsInfos)
         {
-            if (!jointInfo.movableAxis.Contains(true))
+            if (!jointInfo.movableAxis.Contains(true) || !jointInfo.useNeural)
                 continue;
 
             actions += jointInfo.movableAxis.Count(b => b);

@@ -6,6 +6,9 @@ using UnityEngine;
 public class JointInfo : MonoBehaviour
 {
     public ConfigurableJoint joint;
+    public bool useNeural = true;
+    public bool isEnabled = true;
+
     public float maxForce = 1000;
     public float maxSlerpForce = 1000;
     public float maxPosSpring;
@@ -31,43 +34,64 @@ public class JointInfo : MonoBehaviour
 
     void Reset()
     {
-        init();
-        if (setSettings)
-            SetConfigurableJointSettings();
+        Init();
     }
-
 
     void Start()
     {
-        init();
-        if (setSettings)
-            SetConfigurableJointSettings();
-        isBackwards = joint.axis.z < 0f;
-        /*
-        medVel = maxVel / 2;
-        currentMaxVel = maxVel;
-        */
+        Init();
     }
 
-    public void init()
+    public void Init()
     {
         joint = GetComponent<ConfigurableJoint>();
         Rigidbody[] rigids = joint.GetComponentsInChildren<Rigidbody>();
         totalMass = rigids.Sum(r => r.mass);
+        setConfigurableJointInfo();
+        if (setSettings)
+            SetConfigurableJointSettings();
+        isBackwards = joint.axis.z < 0f;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         updateConfigurableJoint();
     }
 
+    public void setConfigurableForceAndRot(float force, Vector3 angRot)
+    {
+        if (!isEnabled)
+        {
+            return;
+        }
+        currentRot = angRot.x;
+        setConfigurableRot(angRot);
+        JointDrive jointSlerpDrive = joint.slerpDrive;
+        jointSlerpDrive.positionSpring = maxPosSpring;
+        jointSlerpDrive.positionDamper = maxPosDamper;
+        jointSlerpDrive.maximumForce = force * maxSlerpForce;
+        joint.slerpDrive = jointSlerpDrive;
+        currentForce = force;
+    }
+
+    public void setConfigurableRot(Vector3 angRot)
+    {
+        joint.targetRotation = Quaternion.Euler(angRot);
+    }
+
+    public void Disable()
+    {
+        isEnabled = false;
+        JointDrive jointSlerpDrive = joint.slerpDrive;
+        jointSlerpDrive.positionSpring = 0f;
+        jointSlerpDrive.positionDamper = 0f;
+        jointSlerpDrive.maximumForce = 0f;
+        joint.slerpDrive = jointSlerpDrive;
+    }
+
     public void updateConfigurableJoint()
     {
-        if (!setPos)
-        {
-            posDoc = joint.targetRotation.eulerAngles;
-        }
-        else
+        if (setPos)
         {
             posDoc.x = Mathf.Clamp(posDoc.x, angularLimits[0][0], angularLimits[0][1]);
             posDoc.y = Mathf.Clamp(posDoc.y, angularLimits[1][0], angularLimits[1][1]);
@@ -85,19 +109,8 @@ public class JointInfo : MonoBehaviour
 
     public void SetConfigurableJointSettings()
     {
-        setConfigurableJointInfo();
-        if (setVelSettings)
-        {
-            maxPosSpring = maxForce * totalMass;
-            maxPosDamper = maxForce * totalMass;
-        }
-        else
-        {
-            maxPosSpring = maxForce * totalMass;
-            maxPosDamper = (maxForce * totalMass) / 20f;
-            //maxPosSpring = 10000f;
-            //maxPosDamper = 50f;
-        }
+        maxPosSpring = maxForce * totalMass;
+        maxPosDamper = (maxForce * totalMass) / 20f;
 
         JointDrive jointSlerpDrive = joint.slerpDrive;
         jointSlerpDrive.positionSpring = maxPosSpring;
@@ -144,23 +157,6 @@ public class JointInfo : MonoBehaviour
     }
 
 
-    public void setConfigurableForceAndRot(float force, Vector3 angRot)
-    {
-        currentRot = angRot.x;
-        setConfigurableRot(angRot);
-        JointDrive jointSlerpDrive = joint.slerpDrive;
-        jointSlerpDrive.positionSpring = maxPosSpring;
-        jointSlerpDrive.positionDamper = maxPosDamper;
-        jointSlerpDrive.maximumForce = force * maxSlerpForce;
-        joint.slerpDrive = jointSlerpDrive;
-        currentForce = force;
-    }
-
-    public void setConfigurableRot(Vector3 angRot)
-    {
-        joint.targetRotation = Quaternion.Euler(angRot);
-    }
-
     public void resetJointForces()
     {
         JointDrive jointSlerpDrive = joint.slerpDrive;
@@ -172,27 +168,6 @@ public class JointInfo : MonoBehaviour
     public void resetJointPositions(Vector3 zeros)
     {
         joint.targetRotation = Quaternion.Euler(zeros);
-    }
-
-    public void setConfigurableRotVel(Vector3 angVel)
-    {
-        /*
-        if (angVel.x < 0 && angVel.x > -threshold * maxVel)
-            angVel.x = 0;
-        if (angVel.x > 0 && angVel.x < threshold * maxVel)
-            angVel.x = 0;
-        
-        float applyVel = Mathf.Abs(angVel.x);
-        float velTiredness = applyVel - medVel;
-        angVel.x = Mathf.Clamp(angVel.x, -currentMaxVel, currentMaxVel);
-        currentMaxVel -= velTiredness;
-        if (currentMaxVel < 10)
-            currentMaxVel = 10;
-        if (currentMaxVel > maxVel)
-            currentMaxVel = maxVel;
-        tiredness = -(((currentMaxVel - medVel) / medVel) - 1);
-        */
-        joint.targetAngularVelocity = angVel;
     }
 
     public override bool Equals(object other)
