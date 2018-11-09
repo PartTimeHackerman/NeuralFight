@@ -19,26 +19,37 @@ public class WeaponEquipper : MonoBehaviour
     {
         if (equip)
         {
-            switch (WeaponHand)
-            {
-                case WeaponHand.RIGHT:
-                    if (LeftArmWeapon.Weapon == Weapon)
-                        LeftArmWeapon.Weapon = null;
-                    RightArmWeapon.Weapon = Weapon;
-                    break;
-                case WeaponHand.LEFT:
-                    if (RightArmWeapon.Weapon == Weapon)
-                        RightArmWeapon.Weapon = null;
-                    LeftArmWeapon.Weapon = Weapon;
-                    break;
-                case WeaponHand.BOTH:
-                    BothArmsWeapon.Weapon = Weapon;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-            equip = false;
-            Weapon = null;
+            EquipWeapon(WeaponHand, Weapon);
         }
+    }
+
+    public void EquipWeapon(WeaponHand weaponHand, Weapon weapon)
+    {
+        WeaponHand = weaponHand;
+        Weapon = weapon;
+        
+        switch (WeaponHand)
+        {
+            case WeaponHand.RIGHT:
+                if (LeftArmWeapon.Weapon == Weapon)
+                    LeftArmWeapon.Weapon = null;
+                //Weapon.WeaponHand = WeaponHand.RIGHT;
+                RightArmWeapon.Weapon = Weapon;
+                break;
+            case WeaponHand.LEFT:
+                if (RightArmWeapon.Weapon == Weapon)
+                    RightArmWeapon.Weapon = null;
+                //Weapon.WeaponHand = WeaponHand.LEFT;
+                LeftArmWeapon.Weapon = Weapon;
+                break;
+            case WeaponHand.BOTH:
+                //Weapon.WeaponHand = WeaponHand.BOTH;
+                BothArmsWeapon.Weapon = Weapon;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+        equip = false;
+        Weapon = null;
     }
 }

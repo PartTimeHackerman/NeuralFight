@@ -7,7 +7,7 @@ public class Hitbox : MonoBehaviour
     public void OnDamagingCollision(Collision collision, float damage)
     {
         ContactPoint contact = collision.contacts[0];
-        float collisionVel = collision.relativeVelocity.sqrMagnitude;
+        float collisionVel = Mathf.Min(collision.relativeVelocity.sqrMagnitude / 10f, 1f);
         Vector3 contactPoint = contact.point;
         
         //Debug.Log("Vel: " + collisionVel + " Contacts: " + collision.contacts.Length + " Point:" + contactPoint);

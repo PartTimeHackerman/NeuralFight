@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     private Dictionary<BodyPart, float> StaminaPrecentages = new Dictionary<BodyPart, float>();
     private BodyParts BodyParts;
     public Observations BodyObservations;
+    public WeaponEquipper WeaponEquipper;
 
     private void Start()
     {
@@ -66,6 +67,9 @@ public class Player : MonoBehaviour
     {
         hp = hp > CurrentMaxHP ? CurrentMaxHP : hp;
         sp = sp > CurrentMaxSP ? CurrentMaxSP : sp;
+        ActionsContainer.rightHand.setCanBeUsed(sp);
+        ActionsContainer.leftHand.setCanBeUsed(sp);
+        //ActionsContainer.bothHands.setCanBeUsed(sp);
     }
 
     private void ChangeHp(float hp, float oldHp, float diffHp)
@@ -102,7 +106,7 @@ public class Player : MonoBehaviour
         
         ActionsContainer.rightHand.setCanBeUsed(sp);
         ActionsContainer.leftHand.setCanBeUsed(sp);
-        ActionsContainer.bothHands.setCanBeUsed(sp);
+        //ActionsContainer.bothHands.setCanBeUsed(sp);
     }
 
     public void DisableBodyPart(BodyPart bodyPart)

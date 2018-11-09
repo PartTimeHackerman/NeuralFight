@@ -11,12 +11,13 @@ class VerticalEffector : MonoBehaviour
     public Rigidbody referenceRb;
     public float velocity;
     public bool enable = false;
+    public bool left = true;
     public bool debug = false;
     protected Vector3 dir;
     protected Vector3 cross;
     protected Vector3 side;
     protected float up;
-
+    
     void FixedUpdate()
     {
         if (enable)
@@ -33,7 +34,10 @@ class VerticalEffector : MonoBehaviour
         }
         dir = referenceRb.transform.position - rigidbody.transform.position;
         dir.Normalize();
-        side = Vector3.Cross(dir, -rigidbody.transform.right);
+        if (left)
+            side = Vector3.Cross(dir, -rigidbody.transform.right);
+        else
+            side = Vector3.Cross(dir, rigidbody.transform.right);
         cross = Vector3.Cross(dir, side).normalized;
         if (rigidbody.transform.position.x > referenceRb.transform.position.x)
             cross.x *= -1;

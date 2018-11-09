@@ -108,7 +108,7 @@ public class BodyPart : MonoBehaviour
     public void Disable()
     {
         if (gameObject.name.Equals("butt")) return;
-        Debug.Log(gameObject.name + " Disabled");
+        //Debug.Log(gameObject.name + " Disabled");
         DisableChildren();
         /*
          foreach (BodyPart bodyPart in childrensBodyParts)
@@ -129,7 +129,7 @@ public class BodyPart : MonoBehaviour
             WeaponHolder weaponHolder = child.GetComponent<WeaponHolder>();
             if (weaponHolder != null)
             {
-                GameObject weaponGO = weaponHolder.ArmWeapon.Weapon.weaponRb.gameObject;
+                GameObject weaponGO = weaponHolder.ArmWeapon.Weapon.Rigidbody.gameObject;
                 weaponGO.layer = LayerMask.NameToLayer("Detached");
                 StartCoroutine(Waiter.WaitForSeconds(1, () => { }, () =>
                 {

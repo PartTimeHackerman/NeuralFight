@@ -22,7 +22,7 @@ public class StayInMiddleReward
 
     public float getReward()
     {
-        COM = physicsUtils.getCenterOfMass(bodyParts.getRigids());
+        COM = bodyParts.root.position;//physicsUtils.getCenterOfMass(bodyParts.getRigids());
 
         if (Mathf.Abs(COM.x) > arenaLen)
             return 0f;

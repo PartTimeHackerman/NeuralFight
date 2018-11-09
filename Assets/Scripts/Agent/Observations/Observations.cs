@@ -271,7 +271,7 @@ public class Observations : MonoBehaviour, IObservations
         }
     }
 
-    public float distToFloor(Transform transform)
+    public static float distToFloor(Transform transform)
     {
         int layerMask = 1 << transform.gameObject.layer;
         layerMask = ~layerMask;

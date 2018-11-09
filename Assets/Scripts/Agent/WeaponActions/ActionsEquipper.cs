@@ -6,6 +6,7 @@ public class ActionsEquipper : MonoBehaviour
     public ActionsContainer ActionsContainer;
     public WeaponsContainer WeaponsContainer;
     
+/*
 
     public void equipActions()
     {
@@ -75,4 +76,6 @@ public class ActionsEquipper : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
     }
+    */
+
 }

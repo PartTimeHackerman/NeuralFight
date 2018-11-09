@@ -46,7 +46,7 @@ public class ResetPos : MonoBehaviour
         defRotation = transform.rotation.eulerAngles;
         jointInfos = bodyParts.jointsInfos;
         backUpTransform();
-        ResetPosition();
+        //ResetPosition();
     }
 
 

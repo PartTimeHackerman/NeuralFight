@@ -32,6 +32,8 @@ public class ArmWeapon : MonoBehaviour
     private ConfigurableJoint lJoint;
     private bool unEquip = false;
 
+    private Rigidbody equippingRb;
+    
     protected virtual void Start()
     {
         OnChangeWeapon += equipWeapon;
@@ -63,7 +65,7 @@ public class ArmWeapon : MonoBehaviour
         weapon.transform.parent = gameObject.transform;
         Action first = () => { setWeaponPos(weapon); };
         Action second = () => { setWeaponJoints(weapon); };
-        StartCoroutine(Waiter.WaitForFrames(3, first, second));
+        StartCoroutine(Waiter.WaitForFrames(1, first, second));
     }
 
     public void unEquipWeapon(Weapon oldWeapon)
@@ -88,12 +90,14 @@ public class ArmWeapon : MonoBehaviour
             {
                 weaponPos = rHandRb.transform.position;
                 weaponRot = rHandRb.rotation;
+                equippingRb = rHandRb;
                 break;
             }
             case WeaponHand.LEFT:
             {
                 weaponPos = lHandRb.transform.position;
                 weaponRot = lHandRb.rotation;
+                equippingRb = lHandRb;
                 break;
             }
             case WeaponHand.BOTH:
@@ -102,6 +106,7 @@ public class ArmWeapon : MonoBehaviour
                 rHandPosWep.z = 0f;
                 weaponPos = rHandPosWep;
                 weaponRot = rHandRb.rotation;
+                equippingRb = rHandRb;
 
                 Vector3 lHandPosWep = rHandRb.transform.position;
                 lHandPosWep.z = lHandRb.transform.position.z;
@@ -110,11 +115,23 @@ public class ArmWeapon : MonoBehaviour
             }
         }
 
-        weapon.grip.isKinematic = true;
-        weapon.grip.position = weaponPos;
+        foreach (var child in weapon.GetComponentsInChildren<Transform>())
+        {
+            child.gameObject.layer = rHandRb.gameObject.layer;
+        }
+        equippingRb.isKinematic = true;
+        weapon.Rigidbody.isKinematic = true;
+        weapon.transform.position = weaponPos;
         Vector3 rot = weaponRot.eulerAngles;
-        rot.z -= 90f;
-        weapon.grip.rotation = Quaternion.Euler(rot);
+        if (weapon.WeaponDirection == WeaponDirection.UP)
+        {
+            rot.z -= 90f;
+        }
+        if (weapon.WeaponDirection == WeaponDirection.FORWARD)
+        {
+            rot.z -= 180f;
+        }
+        weapon.transform.rotation = Quaternion.Euler(rot);
     }
 
 
@@ -124,23 +141,24 @@ public class ArmWeapon : MonoBehaviour
         {
             case WeaponHand.RIGHT:
             {
-                rJoint = addConfigurableJoint(rHandRb, weapon.grip);
+                rJoint = addConfigurableJoint(rHandRb, weapon.Rigidbody);
                 break;
             }
             case WeaponHand.LEFT:
             {
-                lJoint = addConfigurableJoint(lHandRb, weapon.grip);
+                lJoint = addConfigurableJoint(lHandRb, weapon.Rigidbody);
                 break;
             }
             case WeaponHand.BOTH:
             {
-                rJoint = addConfigurableJoint(rHandRb, weapon.grip);
-                lJoint = addConfigurableJoint(lHandRb, weapon.grip);
+                rJoint = addConfigurableJoint(rHandRb, weapon.Rigidbody);
+                lJoint = addConfigurableJoint(lHandRb, weapon.Rigidbody);
                 break;
             }
         }
+        weapon.Rigidbody.isKinematic = false;
+        equippingRb.isKinematic = false;
 
-        weapon.grip.isKinematic = false;
     }
 
     private ConfigurableJoint addConfigurableJoint(Rigidbody from, Rigidbody to)

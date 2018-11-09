@@ -588,6 +588,12 @@
               <e p="Humanoid2DDuelObservations.cs" t="Include" />
               <e p="Terminator.cs" t="Include" />
             </e>
+            <e p="Fight" t="Include">
+              <e p="FightPlayerActions.cs" t="Include" />
+              <e p="FightPlayerObservations.cs" t="Include" />
+              <e p="FightPlayerReward.cs" t="Include" />
+              <e p="RandomWeaponEquipper.cs" t="Include" />
+            </e>
             <e p="Humanoid2D" t="Include">
               <e p="ActionsAngPos.cs" t="Include" />
               <e p="ActionsAngPosStrength.cs" t="Include" />
@@ -673,10 +679,10 @@
             <e p="Weapon" t="Include">
               <e p="ArmWeapon.cs" t="Include" />
               <e p="DamagingPart.cs" t="Include" />
-              <e p="EquipTwoHandedWeapon.cs" t="Include" />
               <e p="Weapon.cs" t="Include" />
               <e p="WeaponAttack.cs" t="Include" />
               <e p="WeaponBlock.cs" t="Include" />
+              <e p="WeaponDirection.cs" t="Include" />
               <e p="WeaponEquipper.cs" t="Include" />
               <e p="WeaponHand.cs" t="Include" />
               <e p="WeaponHolder.cs" t="Include" />
@@ -694,6 +700,7 @@
               <e p="OneHandedAction.cs" t="Include" />
               <e p="Slash.cs" t="Include" />
               <e p="Stab.cs" t="Include" />
+              <e p="TwoHandAction.cs" t="Include" />
               <e p="TwoHandedAction.cs" t="Include" />
               <e p="TwoHandedAim.cs" t="Include" />
               <e p="TwoHandedLongBlock.cs" t="Include" />

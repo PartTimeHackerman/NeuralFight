@@ -6,6 +6,7 @@ public class ObservationsArray : Observations
 {
     private float[] obs;
     private int i = 0;
+    public bool left = true;
 
     private int gather = 0;
 
@@ -31,13 +32,13 @@ public class ObservationsArray : Observations
     public override void setObjectVel(Rigidbody rigidbody)
     {
         Vector3 vel = getObjectVel(rigidbody);
-        obs[i++] = vel.x;
+        obs[i++] = left ? vel.x : -vel.x;
         obs[i++] = vel.y;
     }
 
     public override void setObjectAngVel(Rigidbody rigidbody)
     {
-        obs[i++] = getObjectAngVel(rigidbody);
+        obs[i++] = left ? getObjectAngVel(rigidbody):-getObjectAngVel(rigidbody);
     }
 
     public override void getEndingsGroundDist()
@@ -62,7 +63,8 @@ public class ObservationsArray : Observations
             rotClamped = rotAng / 180f;
         else
             rotClamped = ((rotAng - 180f) / 180f) - 1f;
-        obs[i++] = rotClamped;
+        
+        obs[i++] = left ? rotClamped : -rotClamped;
 
 
         getObjPosRotVelAngVel();
@@ -84,7 +86,7 @@ public class ObservationsArray : Observations
         COMAngVel = Quaternion.Inverse(root.rotation) * COMAngVel;
         obs[i++] = COM.x;
         obs[i++] = COM.y;
-        obs[i++] = COMVel.x;
+        obs[i++] = left ? COMVel.x :-COMVel.x;
         obs[i++] = COMVel.y;
         obs[i++] = COMAngVel.z;
     }

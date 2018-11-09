@@ -38,7 +38,7 @@ class CameraFollow : MonoBehaviour
             zoom += objPos.y;
         }
 
-        distToFloor = obs.distToFloor(obj.transform);
+        distToFloor = Observations.distToFloor(obj.transform);
         if (distToFloor <= 0)
         {
             distToFloor = objPos.y;

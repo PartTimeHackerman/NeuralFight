@@ -85,7 +85,7 @@ public class HandAction : MonoBehaviour, IWaiter
         active = false;
     }
 
-    public void equipAction(Weapon newWeapon, Weapon oldWeapon)
+    public virtual void equipAction(Weapon newWeapon, Weapon oldWeapon)
     {
         unEquipAction();
         if (newWeapon != null)
@@ -101,21 +101,21 @@ public class HandAction : MonoBehaviour, IWaiter
         switch (weapon.WeaponAttack)
         {
             case WeaponAttack.PUSH:
-                if (weapon.WeaponHand == WeaponHand.BOTH)
-                    return typeof(TwoHandedStab);
-                else
+                //if (weapon.WeaponHand == WeaponHand.BOTH)
+                //    return typeof(TwoHandedStab);
+                //else
                     return typeof(Stab);
                 break;
             case WeaponAttack.SLASH:
-                if (weapon.WeaponHand == WeaponHand.BOTH)
-                    return typeof(TwoHandedSlash);
-                else
+                //if (weapon.WeaponHand == WeaponHand.BOTH)
+                //    return typeof(TwoHandedSlash);
+                //else
                     return typeof(Slash);
                 break;
             case WeaponAttack.AIM:
-                if (weapon.WeaponHand == WeaponHand.BOTH)
-                    return typeof(TwoHandedAim);
-                else
+                //if (weapon.WeaponHand == WeaponHand.BOTH)
+                //    return typeof(TwoHandedAim);
+                //else
                     return typeof(Aim);
                 break;
             default:

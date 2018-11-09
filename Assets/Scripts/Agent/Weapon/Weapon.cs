@@ -7,21 +7,19 @@ public class Weapon : MonoBehaviour
     public float damage = 0f;
     public float SPReq = 0f;
     
-    public Rigidbody weaponRb;
-    public Rigidbody grip;
+    public Rigidbody Rigidbody;
+    public DamagingPart DamagingPart;
     
     public bool OneHanded = true;
+    public WeaponHand DefaultWeaponHand;
+    public WeaponDirection WeaponDirection;
     public WeaponHand WeaponHand;
     public WeaponAttack WeaponAttack;
     public WeaponBlock WeaponBlock;
 
     void Awake()
     {
-        foreach (Rigidbody child in GetComponentsInChildren<Rigidbody>())
-        {
-            if (child.name.Contains("grip")) grip = child;
-            if (child.name.Contains("hitbox")) weaponRb = child;
-            
-        }
+        Rigidbody = GetComponent<Rigidbody>();
+        DamagingPart.damage = damage;
     }
 }
