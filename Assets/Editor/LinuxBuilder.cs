@@ -22,7 +22,7 @@ class LinuxBuilder : MonoBehaviour
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
         buildPlayerOptions.scenes = getMLScenes();
         buildPlayerOptions.locationPathName = "build/sumo.x86_64";
-        buildPlayerOptions.target = BuildTarget.StandaloneLinux;
+        buildPlayerOptions.target = BuildTarget.StandaloneLinux64;
         buildPlayerOptions.options = BuildOptions.EnableHeadlessMode;// | BuildOptions.Development | BuildOptions.AllowDebugging;
         BuildPipeline.BuildPlayer(buildPlayerOptions);
     }
