@@ -48,7 +48,7 @@ public class BodyPart : MonoBehaviour
     public List<BodyPart> childrensBodyParts;
     public Rigidbody Rigidbody;
     private ConfigurableJoint Joint;
-    private JointInfo JointInfo;
+    public JointInfo JointInfo;
 
     public Player Player;
     public bool setHp;
@@ -67,23 +67,23 @@ public class BodyPart : MonoBehaviour
         HealthPoints = MaxHP;
         Rigidbody = GetComponent<Rigidbody>();
         //StaminaPoints = MaxSP;
-        StartCoroutine(RegenerateHpSp());
+        //StartCoroutine(RegenerateHpSp());
     }
 
     private void HPSetter(float value)
     {
-        if (Math.Abs(healthPoints - value) < .001f) return;
-        if (value > MaxHP) value = MaxHP;
+        if (Math.Abs(healthPoints - value) < .0001f) return;
+        if (value >= MaxHP) value = MaxHP;
         //if (value < 0) value = 0f;
-        if (value >= 0)
-        {
-            float diffrence = value < 0 ? healthPoints : healthPoints - value;
-            OnChangeHealth?.Invoke(value, healthPoints, diffrence);
-        }
+        //if (value >= 0)
+        //{
+        float diffrence = healthPoints - value; //value < 0 ? healthPoints : healthPoints - value;
+        OnChangeHealth?.Invoke(value, healthPoints, diffrence);
+        //}
 
         healthPoints = value;
         if (healthPoints <= 0 && partEnabled) Disable();
-        if (healthPoints <= -MaxHP && !partDetached) Detach();
+        //if (healthPoints <= -MaxHP && !partDetached) Detach();
     }
 
     private void FixedUpdate()
@@ -108,8 +108,28 @@ public class BodyPart : MonoBehaviour
     public void Disable()
     {
         if (gameObject.name.Equals("butt")) return;
-        //Debug.Log(gameObject.name + " Disabled");
-        DisableChildren();
+        Player.DisableBodyPart(this);
+        partEnabled = false;
+        if (JointInfo != null)
+        {
+            if (JointInfo.enabled) JointInfo.Disable();
+        }
+        /*
+         foreach (BodyPart bodyPart in childrensBodyParts)
+        {
+            bodyPart.DisableChildren();
+        }
+        */
+    }
+    
+    public void Enable()
+    {
+        healthPoints = MaxHP;
+        partEnabled = true;
+        if (JointInfo != null)
+        {
+            JointInfo.Enable();
+        }
         /*
          foreach (BodyPart bodyPart in childrensBodyParts)
         {
@@ -149,19 +169,15 @@ public class BodyPart : MonoBehaviour
         partDetached = true;
     }
 
-    public void DisableChildren()
+    /*public void DisableChildren()
     {
         Player.DisableBodyPart(this);
         partEnabled = false;
-        //gameObject.layer = LayerMask.NameToLayer("Default");
-        //healthPoints = 0f;
-        //StaminaPoints = 0f;
-
         if (JointInfo != null)
         {
             if (JointInfo.enabled) JointInfo.Disable();
         }
-    }
+    }*/
 
     public void DisableJoints()
     {
@@ -169,12 +185,19 @@ public class BodyPart : MonoBehaviour
             Destroy(Joint);
     }
 
+    public void ResetPart()
+    {
+    }
+
     private IEnumerator RegenerateHpSp()
     {
-        while (partEnabled)
+        while (true)
         {
-            HealthPoints += HpRegen / 10f;
-            //StaminaPoints += SpRegen;
+            if (partEnabled)
+            {
+                HealthPoints += HpRegen / 10f;
+            }
+
             yield return new WaitForSeconds(.1f);
         }
     }

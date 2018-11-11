@@ -19,16 +19,17 @@ public class Player : MonoBehaviour
     }
 
     public float sp = 0f;
-    
+
     public float HpRegen;
     public float SpRegen;
-    
+
     public float SP
     {
         get { return sp; }
 
         set { SPSetter(value); }
     }
+
     public GameObject Body;
     public bool died = false;
 
@@ -39,28 +40,41 @@ public class Player : MonoBehaviour
     private BodyParts BodyParts;
     public Observations BodyObservations;
     public WeaponEquipper WeaponEquipper;
+    public bool left = true;
 
     private void Start()
     {
         Parts = Body.GetComponentsInChildren<BodyPart>().ToList();
         BodyParts = Body.GetComponent<BodyParts>();
+        ResetPlayer();
         foreach (BodyPart bodyPart in Parts)
         {
+            bodyPart.OnChangeHealth += ChangeHp;
+        }
+        StartCoroutine(RegenerateHpSp());
+    }
+
+    public void ResetPlayer()
+    {
+        died = false;
+        MaxHP = 0;
+        MaxSP = 0;
+        HpRegen = 0;
+        SpRegen = 0;
+        foreach (BodyPart bodyPart in Parts)
+        {
+            bodyPart.Enable();
             bodyPart.Player = this;
             MaxHP += bodyPart.MaxHP;
             MaxSP += bodyPart.MaxSP;
             HpRegen += bodyPart.HpRegen;
             SpRegen += bodyPart.SpRegen;
-            bodyPart.OnChangeHealth += ChangeHp;
-            //bodyPart.OnChangeStamina += ChangeSP;
         }
 
         CurrentMaxHP = MaxHP;
         CurrentMaxSP = MaxSP;
         HP = MaxHP;
         SP = MaxHP;
-        BodyObservations.addToRemove(new[] {"root_pos_x"});
-        StartCoroutine(RegenerateHpSp());
     }
 
     private void FixedUpdate()
@@ -86,24 +100,23 @@ public class Player : MonoBehaviour
     {
         this.sp = this.sp - diffSp < 0f ? 0f : this.sp - diffSp;
         this.sp = this.sp < CurrentMaxSP ? this.sp : CurrentMaxSP;
-
     }
 
     private void HPSetter(float value)
     {
         if (Math.Abs(hp - value) < .001f) return;
-        if (value > CurrentMaxHP ) value = CurrentMaxHP;
+        if (value > CurrentMaxHP) value = CurrentMaxHP;
         if (value < 0) value = 0f;
         hp = value;
     }
-    
+
     private void SPSetter(float value)
     {
         if (Math.Abs(sp - value) < .001f) return;
         if (value > CurrentMaxSP) value = CurrentMaxSP;
         if (value < 0) value = 0;
         sp = value;
-        
+
         ActionsContainer.rightHand.setCanBeUsed(sp);
         ActionsContainer.leftHand.setCanBeUsed(sp);
         //ActionsContainer.bothHands.setCanBeUsed(sp);
@@ -116,7 +129,7 @@ public class Player : MonoBehaviour
         HpRegen -= bodyPart.HpRegen;
         SpRegen -= bodyPart.SpRegen;
     }
-    
+
     private void OnDie()
     {
         died = true;
@@ -128,10 +141,13 @@ public class Player : MonoBehaviour
 
     private IEnumerator RegenerateHpSp()
     {
-        while (!died)
+        while (true)
         {
-            //HP += HpRegen;
-            SP += SpRegen / 10f;
+            if (!died)
+            {
+                SP += SpRegen / 10f;
+                HP += HpRegen / 10f;
+            }
             yield return new WaitForSeconds(.1f);
         }
     }

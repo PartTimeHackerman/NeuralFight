@@ -44,6 +44,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1066179591798602
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4067375858219550}
+  - component: {fileID: 114677035106544774}
+  m_Layer: 0
+  m_Name: Nothing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1092415015554794
 GameObject:
   m_ObjectHideFlags: 1
@@ -84,8 +100,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4762746700489722}
-  - component: {fileID: 114598709772342078}
+  - component: {fileID: 114372052516364222}
   - component: {fileID: 114872316228567136}
+  - component: {fileID: 114574288700085076}
   m_Layer: 0
   m_Name: WalkForward
   m_TagString: Untagged
@@ -120,7 +137,7 @@ GameObject:
   - component: {fileID: 114404084754801348}
   - component: {fileID: 114793714025079854}
   m_Layer: 0
-  m_Name: Stand
+  m_Name: Crouch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,8 +203,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244774560312434}
-  - component: {fileID: 114528716988749330}
+  - component: {fileID: 114678513169938482}
   - component: {fileID: 114690881217787344}
+  - component: {fileID: 114320858971809402}
   m_Layer: 0
   m_Name: WalkBackward
   m_TagString: Untagged
@@ -389,6 +407,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1504710797191314
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4556153781584520}
+  - component: {fileID: 114484771425788538}
+  - component: {fileID: 114098039485379338}
+  m_Layer: 0
+  m_Name: Stand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1507817924325234
 GameObject:
   m_ObjectHideFlags: 1
@@ -402,6 +437,22 @@ GameObject:
   m_Layer: 10
   m_Name: rshin_connection
   m_TagString: hitbox
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1514564373209006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4476447753560946}
+  - component: {fileID: 114139769594638078}
+  m_Layer: 0
+  m_Name: RandomWeaponEquipper
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -432,8 +483,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4650926059076290}
   - component: {fileID: 65018273016594814}
-  - component: {fileID: 54371726076751102}
-  - component: {fileID: 153081819071161602}
   - component: {fileID: 114482214104922426}
   m_Layer: 10
   m_Name: lhand_end
@@ -693,8 +742,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4926039437710206}
   - component: {fileID: 65160163710581790}
-  - component: {fileID: 54345126329566756}
-  - component: {fileID: 153518420040027978}
   - component: {fileID: 114604570310596692}
   m_Layer: 10
   m_Name: rhand_end
@@ -802,6 +849,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4763978002125520}
+  - component: {fileID: 114360200718678666}
+  - component: {fileID: 114613329079879850}
+  - component: {fileID: 114021639604589346}
+  - component: {fileID: 114495779639599170}
+  - component: {fileID: 114361142570956782}
   m_Layer: 0
   m_Name: Fighter
   m_TagString: Untagged
@@ -891,6 +943,19 @@ Transform:
   m_Father: {fileID: 4124751813524714}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4067375858219550
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1066179591798602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4437945669158598}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4120248401536932
 Transform:
   m_ObjectHideFlags: 1
@@ -962,7 +1027,7 @@ Transform:
   m_Children:
   - {fileID: 4124751813524714}
   m_Father: {fileID: 4763978002125520}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4172638022520756
 Transform:
@@ -1015,7 +1080,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4437945669158598}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4269774551547132
 Transform:
@@ -1095,12 +1160,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1187179903941140}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4437945669158598}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4361476200071160
 Transform:
@@ -1171,10 +1236,25 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4556153781584520}
   - {fileID: 4349886461561710}
   - {fileID: 4762746700489722}
   - {fileID: 4244774560312434}
+  - {fileID: 4067375858219550}
   m_Father: {fileID: 4520275062538046}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4476447753560946
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1514564373209006}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.71922696, y: 0.87354356, z: 10.341641}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4763978002125520}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4481420739015968
@@ -1259,7 +1339,7 @@ Transform:
   m_GameObject: {fileID: 1415573641992294}
   m_LocalRotation: {x: 0.0000018099952, y: -0.000000043711896, z: 0.00000028088036,
     w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: -0.08}
+  m_LocalPosition: {x: 0, y: -0, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4316631955520498}
@@ -1275,7 +1355,7 @@ Transform:
   m_GameObject: {fileID: 1290053734067584}
   m_LocalRotation: {x: 0.0000018099952, y: -0.000000043711896, z: 0.00000028088036,
     w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0.08}
+  m_LocalPosition: {x: 0, y: -0, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4667872730452390}
@@ -1283,6 +1363,19 @@ Transform:
   m_Father: {fileID: 4124751813524714}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: -179.99998}
+--- !u!4 &4556153781584520
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1504710797191314}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4437945669158598}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4559866838413132
 Transform:
   m_ObjectHideFlags: 1
@@ -1302,7 +1395,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1129187495347044}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1310,7 +1403,7 @@ Transform:
   - {fileID: 4520275062538046}
   - {fileID: 4328870737249126}
   m_Father: {fileID: 4763978002125520}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4650926059076290
 Transform:
@@ -1380,7 +1473,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4437945669158598}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4763978002125520
 Transform:
@@ -1389,9 +1482,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1969210761623518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4476447753560946}
   - {fileID: 4589612050788760}
   - {fileID: 4154666506694936}
   m_Father: {fileID: 0}
@@ -1566,7 +1660,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!54 &54253823967147292
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1596,22 +1690,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
---- !u!54 &54345126329566756
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1767567691897984}
-  serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!54 &54369605430098434
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1626,22 +1705,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
---- !u!54 &54371726076751102
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1562010766909202}
-  serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!54 &54531184194367192
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1656,7 +1720,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!54 &54581694129194368
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1671,7 +1735,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!54 &54612796499937604
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1686,7 +1750,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!54 &54659331090809368
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1701,7 +1765,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!54 &54745534370109080
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1716,7 +1780,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!54 &54770491448554842
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1731,7 +1795,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!54 &54911081036162278
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1746,7 +1810,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!54 &54913647398987830
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1761,7 +1825,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!54 &54918046689185450
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1776,7 +1840,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!65 &65001453775766690
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2213,6 +2277,22 @@ MonoBehaviour:
   currentRot: 0
   isBackwards: 0
   currentForce: 0
+--- !u!114 &114021639604589346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1969210761623518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d505476112024db29b74bd70c8689db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 114239459284449934}
+  RightHandAction: {fileID: 114184214173714612}
+  LeftHandAction: {fileID: 114112217837406740}
+  BodyParts: {fileID: 114922434069519398}
+  observations: []
 --- !u!114 &114026438322708696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2254,6 +2334,8 @@ MonoBehaviour:
   HandAction: {fileID: 114184214173714612}
   rHandRb: {fileID: 0}
   lHandRb: {fileID: 0}
+  rArmRb: {fileID: 0}
+  lArmRb: {fileID: 0}
 --- !u!114 &114065530680511868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2265,10 +2347,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea07ea5f8ab04b2dab6716f62defe15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 10
-  MaxSP: 10
-  HpRegen: 1
-  SpRegen: 1
+  MaxHP: 15
+  MaxSP: 15
+  HpRegen: 0
+  SpRegen: 2
   healthPoints: 0
   partEnabled: 1
   partDetached: 0
@@ -2278,6 +2360,7 @@ MonoBehaviour:
   - {fileID: 114482214104922426}
   childrensBodyParts: []
   Rigidbody: {fileID: 0}
+  JointInfo: {fileID: 0}
   Player: {fileID: 0}
   setHp: 0
 --- !u!114 &114076445518827650
@@ -2298,6 +2381,23 @@ MonoBehaviour:
   LeftArmWeapon: {fileID: 114813729973025206}
   BothArmsWeapon: {fileID: 114737821074562540}
   equip: 0
+--- !u!114 &114098039485379338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1504710797191314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610d4d1119822ad4aab44f4ad0ca6f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 54745534370109080}
+  referenceRb: {fileID: 54253823967147292}
+  velocity: 1000
+  enable: 0
+  left: 1
+  debug: 0
 --- !u!114 &114112217837406740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2320,6 +2420,23 @@ MonoBehaviour:
   active: 0
   Player: {fileID: 114239459284449934}
   attackWep: 0
+--- !u!114 &114139769594638078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1514564373209006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d3e8d58eae44dca38f057669540802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 114239459284449934}
+  OneHandedWeapons:
+  - {fileID: 114781444268602782, guid: 181ad4e7ea165674da942c039064b911, type: 2}
+  - {fileID: 114260355145607556, guid: c9f701306480396409ba4ae7a800927d, type: 2}
+  - {fileID: 114643611419174996, guid: 028c48504ea8d0c43a962bd7d0347a72, type: 2}
+  equip: 0
 --- !u!114 &114140080656940866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2352,7 +2469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHP: 30
   MaxSP: 30
-  HpRegen: 3
+  HpRegen: 0
   SpRegen: 3
   healthPoints: 0
   partEnabled: 1
@@ -2363,6 +2480,7 @@ MonoBehaviour:
   - {fileID: 114026438322708696}
   childrensBodyParts: []
   Rigidbody: {fileID: 0}
+  JointInfo: {fileID: 0}
   Player: {fileID: 0}
   setHp: 0
 --- !u!114 &114174827260339584
@@ -2388,10 +2506,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea07ea5f8ab04b2dab6716f62defe15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 15
-  MaxSP: 15
-  HpRegen: 1.5
-  SpRegen: 1.5
+  MaxHP: 30
+  MaxSP: 30
+  HpRegen: 0
+  SpRegen: 3
   healthPoints: 0
   partEnabled: 1
   partDetached: 0
@@ -2399,6 +2517,7 @@ MonoBehaviour:
   - {fileID: 114241372275670542}
   childrensBodyParts: []
   Rigidbody: {fileID: 0}
+  JointInfo: {fileID: 0}
   Player: {fileID: 0}
   setHp: 0
 --- !u!114 &114184214173714612
@@ -2447,6 +2566,7 @@ MonoBehaviour:
   ActionsContainer: {fileID: 114502367147307946}
   BodyObservations: {fileID: 114140080656940866}
   WeaponEquipper: {fileID: 114076445518827650}
+  left: 1
 --- !u!114 &114240683258307686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2618,10 +2738,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea07ea5f8ab04b2dab6716f62defe15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 20
-  MaxSP: 20
-  HpRegen: 2
-  SpRegen: 2
+  MaxHP: 15
+  MaxSP: 15
+  HpRegen: 0
+  SpRegen: 1.5
   healthPoints: 0
   partEnabled: 1
   partDetached: 0
@@ -2629,6 +2749,7 @@ MonoBehaviour:
   - {fileID: 114412097000211902}
   childrensBodyParts: []
   Rigidbody: {fileID: 0}
+  JointInfo: {fileID: 0}
   Player: {fileID: 0}
   setHp: 0
 --- !u!114 &114318219158451070
@@ -2643,6 +2764,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BodyPart: {fileID: 114419590878091514}
+--- !u!114 &114320858971809402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271244824155812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aeb6cb3b28e4333bf9b06d371ab2954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BodyParts: {fileID: 114922434069519398}
+  LocomotyionType: 3
+  left: 1
+  velocity: 0.1
+  enable: 0
 --- !u!114 &114322476680196330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2667,6 +2804,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BodyPart: {fileID: 114747221129139022}
+--- !u!114 &114360200718678666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1969210761623518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f412d32b8a4d0082556bef4cbb06cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brain: {fileID: 0}
+  agentParameters:
+    agentCameras: []
+    maxStep: 0
+    resetOnDone: 1
+    onDemandDecision: 0
+    numberOfActionsBetweenDecisions: 30
+  Resetter: {fileID: 0}
+  Player: {fileID: 114239459284449934}
+  resetPos: {fileID: 114805670252673020}
+  enemyObservations: {fileID: 0}
+  RandomWeaponEquipper: {fileID: 114139769594638078}
+  resetWaitSteps: 10
+  steps: 0
+  playerOne: 1
+  enemyAgent: {fileID: 0}
+  sumRewards: 0
+  terminateAgent: 0
+  ready: 1
+  terminateSelf: 0
+--- !u!114 &114361142570956782
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1969210761623518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7aafdc539574e5499f8c0b933089424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BodyParts: {fileID: 114922434069519398}
+  EnemyBodyParts: {fileID: 0}
+  Player: {fileID: 114239459284449934}
+  EnemyPlayer: {fileID: 0}
+  Walls: {fileID: 0}
+  forwardRewardVal: 0
+  stayInMiddleRewardVal: 0
+  enemyInMiddleRewardVal: 0
+  standingRewardVal: 0
+  HpRewardVal: 0
+  enemyHpRewardVal: 0
+  timeRewardVal: 0
+  inFrontOfEnemyVal: 0
+  reward: 0
+  debug: 0
 --- !u!114 &114362720277943206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2707,6 +2901,23 @@ MonoBehaviour:
   currentRot: 0
   isBackwards: 0
   currentForce: 0
+--- !u!114 &114372052516364222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1132415196274892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ffc649833c428cb02e362d9f07ca8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decFreq: 5
+  step: 0
+  LocomotyionType: 2
+  run: 0
+  Observations: {fileID: 114140080656940866}
+  ActionsAngPosStrength: {fileID: 114283088183006552}
 --- !u!114 &114387563700089132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2735,8 +2946,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decFreq: 5
   step: 0
-  LocomotyionType: 0
-  run: 1
+  LocomotyionType: 1
+  run: 0
   Observations: {fileID: 114140080656940866}
   ActionsAngPosStrength: {fileID: 114283088183006552}
 --- !u!114 &114412097000211902
@@ -2762,10 +2973,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea07ea5f8ab04b2dab6716f62defe15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 10
-  MaxSP: 10
-  HpRegen: 1
-  SpRegen: 1
+  MaxHP: 20
+  MaxSP: 20
+  HpRegen: 0
+  SpRegen: 2
   healthPoints: 0
   partEnabled: 1
   partDetached: 0
@@ -2775,6 +2986,7 @@ MonoBehaviour:
   - {fileID: 114542658937995254}
   childrensBodyParts: []
   Rigidbody: {fileID: 0}
+  JointInfo: {fileID: 0}
   Player: {fileID: 0}
   setHp: 0
 --- !u!114 &114430674718421088
@@ -2792,7 +3004,7 @@ MonoBehaviour:
   useNeural: 0
   isEnabled: 1
   maxForce: 1000
-  maxSlerpForce: 10000
+  maxSlerpForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 000000
@@ -2853,6 +3065,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BodyPart: {fileID: 114065530680511868}
+--- !u!114 &114484771425788538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1504710797191314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2fa0e88d1914792a1251e05bb1ad0c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decFreq: 5
+  step: 0
+  LocomotyionType: 0
+  run: 0
+  Observations: {fileID: 114140080656940866}
+  ActionsAngPosStrength: {fileID: 114283088183006552}
+--- !u!114 &114495779639599170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1969210761623518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74b576a91c604a529be8f210e844d952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionsSpace: 9
+  RightHandAction: {fileID: 114184214173714612}
+  LeftHandAction: {fileID: 114112217837406740}
+  EnemyBodyParts: {fileID: 0}
+  Stand: {fileID: 114484771425788538}
+  Crouch: {fileID: 114404084754801348}
+  WalkFW: {fileID: 114372052516364222}
+  WalkBW: {fileID: 114678513169938482}
+  Nothing: {fileID: 114677035106544774}
+  LocomotionActions: []
 --- !u!114 &114502367147307946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2882,7 +3132,7 @@ MonoBehaviour:
   useNeural: 0
   isEnabled: 1
   maxForce: 1000
-  maxSlerpForce: 10000
+  maxSlerpForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 000000
@@ -2913,23 +3163,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BodyPart: {fileID: 114662996172617786}
---- !u!114 &114528716988749330
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1271244824155812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2fa0e88d1914792a1251e05bb1ad0c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  decFreq: 5
-  step: 0
-  LocomotyionType: 2
-  run: 0
-  Observations: {fileID: 114140080656940866}
-  ActionsAngPosStrength: {fileID: 114283088183006552}
 --- !u!114 &114542658937995254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2942,7 +3175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BodyPart: {fileID: 114419590878091514}
---- !u!114 &114598709772342078
+--- !u!114 &114574288700085076
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2950,15 +3183,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1132415196274892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2fa0e88d1914792a1251e05bb1ad0c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 3aeb6cb3b28e4333bf9b06d371ab2954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decFreq: 5
-  step: 0
-  LocomotyionType: 1
-  run: 0
-  Observations: {fileID: 114140080656940866}
-  ActionsAngPosStrength: {fileID: 114283088183006552}
+  BodyParts: {fileID: 114922434069519398}
+  LocomotyionType: 2
+  left: 1
+  velocity: 0.1
+  enable: 0
 --- !u!114 &114604570310596692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2988,6 +3220,25 @@ MonoBehaviour:
   pastArena: 0
   fallen: 0
   terminated: 0
+--- !u!114 &114613329079879850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1969210761623518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050ae59a025c427bbbf5775119a5a054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 114239459284449934}
+  RightHandAction: {fileID: 114184214173714612}
+  LeftHandAction: {fileID: 114112217837406740}
+  BodyParts: {fileID: 114922434069519398}
+  EnemyBodyParts: {fileID: 0}
+  observations: []
+  observationsSpace: 0
+  enemyObservations: {fileID: 0}
 --- !u!114 &114627635725247514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3023,10 +3274,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea07ea5f8ab04b2dab6716f62defe15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 15
-  MaxSP: 15
-  HpRegen: 1.5
-  SpRegen: 1.5
+  MaxHP: 30
+  MaxSP: 30
+  HpRegen: 0
+  SpRegen: 3
   healthPoints: 0
   partEnabled: 1
   partDetached: 0
@@ -3034,6 +3285,7 @@ MonoBehaviour:
   - {fileID: 114663715918234282}
   childrensBodyParts: []
   Rigidbody: {fileID: 0}
+  JointInfo: {fileID: 0}
   Player: {fileID: 0}
   setHp: 0
 --- !u!114 &114662996172617786
@@ -3049,7 +3301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHP: 20
   MaxSP: 20
-  HpRegen: 2
+  HpRegen: 0
   SpRegen: 2
   healthPoints: 0
   partEnabled: 1
@@ -3058,6 +3310,7 @@ MonoBehaviour:
   - {fileID: 114527153100555324}
   childrensBodyParts: []
   Rigidbody: {fileID: 0}
+  JointInfo: {fileID: 0}
   Player: {fileID: 0}
   setHp: 0
 --- !u!114 &114663715918234282
@@ -3090,6 +3343,41 @@ MonoBehaviour:
   rigidsTotal: 0
   totalRigidsMass: 0
   height: 0
+--- !u!114 &114677035106544774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1066179591798602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd74705095b4ee0af8406686d7add65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decFreq: 5
+  step: 0
+  LocomotyionType: 4
+  run: 0
+  Observations: {fileID: 0}
+  ActionsAngPosStrength: {fileID: 0}
+  BodyParts: {fileID: 114922434069519398}
+--- !u!114 &114678513169938482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271244824155812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ffc649833c428cb02e362d9f07ca8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decFreq: 5
+  step: 0
+  LocomotyionType: 3
+  run: 0
+  Observations: {fileID: 114140080656940866}
+  ActionsAngPosStrength: {fileID: 114283088183006552}
 --- !u!114 &114684600221092806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3123,7 +3411,7 @@ MonoBehaviour:
   useNeural: 0
   isEnabled: 1
   maxForce: 1000
-  maxSlerpForce: 10000
+  maxSlerpForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 000000
@@ -3212,6 +3500,8 @@ MonoBehaviour:
   HandAction: {fileID: 114932062985993080}
   rHandRb: {fileID: 0}
   lHandRb: {fileID: 0}
+  rArmRb: {fileID: 0}
+  lArmRb: {fileID: 0}
 --- !u!114 &114738174238383914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3235,10 +3525,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea07ea5f8ab04b2dab6716f62defe15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 10
-  MaxSP: 10
-  HpRegen: 1
-  SpRegen: 1
+  MaxHP: 15
+  MaxSP: 15
+  HpRegen: 0
+  SpRegen: 2
   healthPoints: 0
   partEnabled: 1
   partDetached: 0
@@ -3248,6 +3538,7 @@ MonoBehaviour:
   - {fileID: 114604570310596692}
   childrensBodyParts: []
   Rigidbody: {fileID: 0}
+  JointInfo: {fileID: 0}
   Player: {fileID: 0}
   setHp: 0
 --- !u!114 &114752628087562614
@@ -3273,9 +3564,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea07ea5f8ab04b2dab6716f62defe15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 15
-  MaxSP: 15
-  HpRegen: 1.5
+  MaxHP: 20
+  MaxSP: 20
+  HpRegen: 0
   SpRegen: 1.5
   healthPoints: 0
   partEnabled: 1
@@ -3285,6 +3576,7 @@ MonoBehaviour:
   - {fileID: 114752628087562614}
   childrensBodyParts: []
   Rigidbody: {fileID: 0}
+  JointInfo: {fileID: 0}
   Player: {fileID: 0}
   setHp: 0
 --- !u!114 &114789763799244028
@@ -3302,7 +3594,7 @@ MonoBehaviour:
   useNeural: 0
   isEnabled: 1
   maxForce: 1000
-  maxSlerpForce: 10000
+  maxSlerpForce: 1000
   maxPosSpring: 0
   maxPosDamper: 0
   movableAxis: 000000
@@ -3382,6 +3674,8 @@ MonoBehaviour:
   HandAction: {fileID: 114112217837406740}
   rHandRb: {fileID: 0}
   lHandRb: {fileID: 0}
+  rArmRb: {fileID: 0}
+  lArmRb: {fileID: 0}
 --- !u!114 &114834150724670256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3462,10 +3756,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea07ea5f8ab04b2dab6716f62defe15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 10
-  MaxSP: 10
-  HpRegen: 1
-  SpRegen: 1
+  MaxHP: 20
+  MaxSP: 20
+  HpRegen: 0
+  SpRegen: 2
   healthPoints: 0
   partEnabled: 1
   partDetached: 0
@@ -3475,6 +3769,7 @@ MonoBehaviour:
   - {fileID: 114629681171403192}
   childrensBodyParts: []
   Rigidbody: {fileID: 0}
+  JointInfo: {fileID: 0}
   Player: {fileID: 0}
   setHp: 0
 --- !u!114 &114922434069519398
@@ -3506,9 +3801,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea07ea5f8ab04b2dab6716f62defe15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 15
-  MaxSP: 15
-  HpRegen: 1.5
+  MaxHP: 20
+  MaxSP: 20
+  HpRegen: 0
   SpRegen: 1.5
   healthPoints: 0
   partEnabled: 1
@@ -3518,6 +3813,7 @@ MonoBehaviour:
   - {fileID: 114240683258307686}
   childrensBodyParts: []
   Rigidbody: {fileID: 0}
+  JointInfo: {fileID: 0}
   Player: {fileID: 0}
   setHp: 0
 --- !u!114 &114927522795878422
@@ -3578,7 +3874,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1000}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -4.441354e-10, y: 0.039999977, z: 0.13}
+  m_ConnectedAnchor: {x: 0.00000005636654, y: 0.039999977, z: 0.13}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 0, z: 0}
   m_XMotion: 0
@@ -3672,7 +3968,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1000}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -3.9674397e-10, y: -0.4, z: -7.1054275e-16}
+  m_ConnectedAnchor: {x: -0.000000054413455, y: -0.4, z: -7.1054195e-16}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 0, z: 0}
   m_XMotion: 0
@@ -3756,100 +4052,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &153081819071161602
-ConfigurableJoint:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1562010766909202}
-  m_ConnectedBody: {fileID: 54612796499937604}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 4.6308424e-10, y: -0.34, z: -0.0000000026822633}
-  serializedVersion: 2
-  m_SecondaryAxis: {x: 0, y: 1, z: 0}
-  m_XMotion: 0
-  m_YMotion: 0
-  m_ZMotion: 0
-  m_AngularXMotion: 0
-  m_AngularYMotion: 0
-  m_AngularZMotion: 0
-  m_LinearLimitSpring:
-    spring: 0
-    damper: 0
-  m_LinearLimit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_AngularXLimitSpring:
-    spring: 0
-    damper: 0
-  m_LowAngularXLimit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_HighAngularXLimit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_AngularYZLimitSpring:
-    spring: 0
-    damper: 0
-  m_AngularYLimit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_AngularZLimit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_TargetPosition: {x: 0, y: 0, z: 0}
-  m_TargetVelocity: {x: 0, y: 0, z: 0}
-  m_XDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_YDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_ZDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 1
-  m_AngularXDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_AngularYZDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_SlerpDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_ProjectionMode: 1
-  m_ProjectionDistance: 0
-  m_ProjectionAngle: 180
-  m_ConfiguredInWorldSpace: 0
-  m_SwapBodies: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 0
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!153 &153146608794519864
 ConfigurableJoint:
   m_ObjectHideFlags: 1
@@ -3860,7 +4062,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: -1000}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: -0.08}
+  m_ConnectedAnchor: {x: 0, y: 0, z: -0.1}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 0, z: 0}
   m_XMotion: 0
@@ -3954,7 +4156,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: -1000}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.011, y: 0.19200003, z: 0}
+  m_ConnectedAnchor: {x: 0.011000037, y: 0.19200003, z: 0}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -4048,7 +4250,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1000}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -4.39643e-10, y: -0.4, z: -7.1054275e-16}
+  m_ConnectedAnchor: {x: 0.000000026568712, y: -0.4, z: -7.105431e-16}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 0, z: 0}
   m_XMotion: 0
@@ -4142,7 +4344,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 6.8551386e-14, y: 0.15380001, z: 2.220446e-16}
+  m_ConnectedAnchor: {x: 0.00000003725297, y: 0.15380001, z: 1.4432899e-15}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -4236,7 +4438,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.105, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 1.4271941e-13, y: 0.342, z: 7.8231066e-10}
+  m_ConnectedAnchor: {x: 0.000000037253045, y: 0.342, z: 7.8230533e-10}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -4330,7 +4532,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 3.5315213e-14, y: 0.1636, z: 0}
+  m_ConnectedAnchor: {x: 0.00000003725294, y: 0.1636, z: 1.179612e-15}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -4414,100 +4616,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!153 &153518420040027978
-ConfigurableJoint:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1767567691897984}
-  m_ConnectedBody: {fileID: 54581694129194368}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 4.20187e-10, y: -0.34, z: -0.0000000026822633}
-  serializedVersion: 2
-  m_SecondaryAxis: {x: 0, y: 1, z: 0}
-  m_XMotion: 0
-  m_YMotion: 0
-  m_ZMotion: 0
-  m_AngularXMotion: 0
-  m_AngularYMotion: 0
-  m_AngularZMotion: 0
-  m_LinearLimitSpring:
-    spring: 0
-    damper: 0
-  m_LinearLimit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_AngularXLimitSpring:
-    spring: 0
-    damper: 0
-  m_LowAngularXLimit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_HighAngularXLimit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_AngularYZLimitSpring:
-    spring: 0
-    damper: 0
-  m_AngularYLimit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_AngularZLimit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_TargetPosition: {x: 0, y: 0, z: 0}
-  m_TargetVelocity: {x: 0, y: 0, z: 0}
-  m_XDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_YDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_ZDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 1
-  m_AngularXDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_AngularYZDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_SlerpDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_ProjectionMode: 1
-  m_ProjectionDistance: 0
-  m_ProjectionAngle: 180
-  m_ConfiguredInWorldSpace: 0
-  m_SwapBodies: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 0
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!153 &153628675209152524
 ConfigurableJoint:
   m_ObjectHideFlags: 1
@@ -4518,7 +4626,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1000}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.5, z: -4.95902e-10}
+  m_ConnectedAnchor: {x: -0.000000042461863, y: -0.5, z: -4.95902e-10}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -4612,7 +4720,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1000}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.5, z: -4.95902e-10}
+  m_ConnectedAnchor: {x: -0.000000042461863, y: -0.5, z: -4.95902e-10}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -4706,7 +4814,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1000}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 4.4428816e-10, y: 0.039999977, z: -0.13}
+  m_ConnectedAnchor: {x: 0.000000018139417, y: 0.039999977, z: -0.13}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 0, z: 0}
   m_XMotion: 0
@@ -4800,7 +4908,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: -1000}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0.08}
+  m_ConnectedAnchor: {x: 0, y: 0, z: 0.1}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 0, z: 0}
   m_XMotion: 0

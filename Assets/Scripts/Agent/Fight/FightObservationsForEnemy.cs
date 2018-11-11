@@ -2,18 +2,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class FightPlayerObservations : MonoBehaviour
+public class FightObservationsForEnemy : MonoBehaviour
 {
     public Player Player;
     public HandAction RightHandAction;
     public HandAction LeftHandAction;
     public BodyParts BodyParts;
-    public BodyParts EnemyBodyParts;
     public List<float> observations = new List<float>();
-    public int observationsSpace;
     private PhysicsUtils physics;
-    public FightObservationsForEnemy enemyObservations;
-    
+
     void Start()
     {
         //observationsSpace = GetObservations(true).Count();
@@ -23,11 +20,9 @@ public class FightPlayerObservations : MonoBehaviour
     public List<float> GetObservations(bool asLeft)
     {
         observations.Clear();
-        observations.Add(GameTimer.get().Elapsed / 30f);
         AddHpSp();
         AddActions();
         AddParts(asLeft);
-        observations.AddRange(enemyObservations.GetObservations(asLeft));
         return observations;
     }
 
@@ -99,7 +94,5 @@ public class FightPlayerObservations : MonoBehaviour
         observations.Add(asLeft ? COMVel.x : -COMVel.x);
         observations.Add(COMVel.y);
         observations.Add(COMAngVel.z);
-        
-        observations.Add(Vector3.Distance(BodyParts.root.position, EnemyBodyParts.root.position));
     }
 }

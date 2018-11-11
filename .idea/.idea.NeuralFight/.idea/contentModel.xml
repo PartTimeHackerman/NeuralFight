@@ -569,6 +569,7 @@
             <e p="Body" t="Include">
               <e p="BodyPart.cs" t="Include" />
               <e p="Hitbox.cs" t="Include" />
+              <e p="Parts.cs" t="Include" />
             </e>
             <e p="BodyParts.cs" t="Include" />
             <e p="Crouching" t="Include">
@@ -589,10 +590,17 @@
               <e p="Terminator.cs" t="Include" />
             </e>
             <e p="Fight" t="Include">
+              <e p="FightAcademy.cs" t="Include" />
+              <e p="FightObservationsForEnemy.cs" t="Include" />
               <e p="FightPlayerActions.cs" t="Include" />
+              <e p="FightPlayerAgent.cs" t="Include" />
               <e p="FightPlayerObservations.cs" t="Include" />
               <e p="FightPlayerReward.cs" t="Include" />
+              <e p="GameTimer.cs" t="Include" />
               <e p="RandomWeaponEquipper.cs" t="Include" />
+              <e p="Resetter.cs" t="Include" />
+              <e p="WallMover.cs" t="Include" />
+              <e p="Walls.cs" t="Include" />
             </e>
             <e p="Humanoid2D" t="Include">
               <e p="ActionsAngPos.cs" t="Include" />
@@ -625,6 +633,8 @@
               <e p="LocomotionAction.cs" t="Include" />
               <e p="LocomotionManager.cs" t="Include" />
               <e p="LocomotyionType.cs" t="Include" />
+              <e p="MovableLocomotionAction.cs" t="Include" />
+              <e p="NothingLocomoctionAction.cs" t="Include" />
             </e>
             <e p="ModelInput.cs" t="Include" />
             <e p="Observations" t="Include">
@@ -665,6 +675,7 @@
               <e p="StandingObservations.cs" t="Include" />
             </e>
             <e p="StandingRewardOld.cs" t="Include" />
+            <e p="VelocityEffector.cs" t="Include" />
             <e p="VerticalEffector.cs" t="Include" />
             <e p="VerticalEffectorLearning.cs" t="Include" />
             <e p="WalkBW" t="Include">

@@ -25,8 +25,10 @@ public class ArmWeapon : MonoBehaviour
     public BodyParts BodyParts;
     public HandAction HandAction;
 
-    public Rigidbody rHandRb;
-    public Rigidbody lHandRb;
+    public Transform rHandRb;
+    public Transform lHandRb;
+    public Rigidbody rArmRb;
+    public Rigidbody lArmRb;
 
     private ConfigurableJoint rJoint;
     private ConfigurableJoint lJoint;
@@ -38,10 +40,17 @@ public class ArmWeapon : MonoBehaviour
     {
         OnChangeWeapon += equipWeapon;
         OnChangeWeapon += HandAction.equipAction;
-        foreach (KeyValuePair<string, Rigidbody> keyValuePair in BodyParts.getNamedRigids())
+        foreach (Transform ending in BodyParts.endings)
         {
-            if (keyValuePair.Key.Contains("rhand")) rHandRb = keyValuePair.Value;
-            if (keyValuePair.Key.Contains("lhand")) lHandRb = keyValuePair.Value;
+            if (ending.name.Contains("rhand")) rHandRb = ending;
+            if (ending.name.Contains("lhand")) lHandRb = ending;
+        }
+
+        foreach (KeyValuePair<string,Rigidbody> keyValuePair in BodyParts.getNamedRigids())
+        {
+            if (keyValuePair.Key.Contains("rlower")) rArmRb = keyValuePair.Value;
+            if (keyValuePair.Key.Contains("llower")) lArmRb = keyValuePair.Value;
+
         }
     }
 
@@ -62,7 +71,7 @@ public class ArmWeapon : MonoBehaviour
             return;
         }
         weapon = newWeapon;
-        weapon.transform.parent = gameObject.transform;
+        //weapon.transform.parent = gameObject.transform;
         Action first = () => { setWeaponPos(weapon); };
         Action second = () => { setWeaponJoints(weapon); };
         StartCoroutine(Waiter.WaitForFrames(1, first, second));
@@ -90,14 +99,16 @@ public class ArmWeapon : MonoBehaviour
             {
                 weaponPos = rHandRb.transform.position;
                 weaponRot = rHandRb.rotation;
-                equippingRb = rHandRb;
+                equippingRb = rArmRb;
+                weapon.transform.parent = rHandRb.transform;
                 break;
             }
             case WeaponHand.LEFT:
             {
                 weaponPos = lHandRb.transform.position;
                 weaponRot = lHandRb.rotation;
-                equippingRb = lHandRb;
+                equippingRb = lArmRb;
+                weapon.transform.parent = lHandRb.transform;
                 break;
             }
             case WeaponHand.BOTH:
@@ -106,7 +117,7 @@ public class ArmWeapon : MonoBehaviour
                 rHandPosWep.z = 0f;
                 weaponPos = rHandPosWep;
                 weaponRot = rHandRb.rotation;
-                equippingRb = rHandRb;
+                equippingRb = rArmRb;
 
                 Vector3 lHandPosWep = rHandRb.transform.position;
                 lHandPosWep.z = lHandRb.transform.position.z;
@@ -141,18 +152,18 @@ public class ArmWeapon : MonoBehaviour
         {
             case WeaponHand.RIGHT:
             {
-                rJoint = addConfigurableJoint(rHandRb, weapon.Rigidbody);
+                rJoint = addConfigurableJoint(rArmRb, weapon.Rigidbody);
                 break;
             }
             case WeaponHand.LEFT:
             {
-                lJoint = addConfigurableJoint(lHandRb, weapon.Rigidbody);
+                lJoint = addConfigurableJoint(lArmRb, weapon.Rigidbody);
                 break;
             }
             case WeaponHand.BOTH:
             {
-                rJoint = addConfigurableJoint(rHandRb, weapon.Rigidbody);
-                lJoint = addConfigurableJoint(lHandRb, weapon.Rigidbody);
+                rJoint = addConfigurableJoint(rArmRb, weapon.Rigidbody);
+                lJoint = addConfigurableJoint(lArmRb, weapon.Rigidbody);
                 break;
             }
         }
@@ -174,9 +185,14 @@ public class ArmWeapon : MonoBehaviour
         joint.rotationDriveMode = RotationDriveMode.Slerp;
         joint.projectionMode = JointProjectionMode.PositionAndRotation;
         joint.projectionDistance = 0f;
-        joint.massScale = .1f;
-        joint.connectedMassScale = 10f;
+        //joint.massScale = .1f;
+        //joint.connectedMassScale = 10f;
         joint.enablePreprocessing = false;
+
+        JointDrive slerp =  joint.slerpDrive;
+        slerp.positionSpring = 10000f;
+        slerp.positionDamper = 1000f;
+        joint.slerpDrive = slerp;
         return joint;
     }
 }

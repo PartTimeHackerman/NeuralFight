@@ -17,7 +17,7 @@ class VerticalEffector : MonoBehaviour
     protected Vector3 cross;
     protected Vector3 side;
     protected float up;
-    
+
     void FixedUpdate()
     {
         if (enable)
@@ -32,15 +32,33 @@ class VerticalEffector : MonoBehaviour
         {
             return;
         }
+
+        float velocity = this.velocity;
         dir = referenceRb.transform.position - rigidbody.transform.position;
         dir.Normalize();
         if (left)
+        {
+            if (rigidbody.transform.position.x < referenceRb.transform.position.x)
+            {
+                velocity = Mathf.Min(velocity * 3.3f, 10000f);
+            }
             side = Vector3.Cross(dir, -rigidbody.transform.right);
+        }
         else
+        {
+            if (rigidbody.transform.position.x > referenceRb.transform.position.x)
+            {
+                velocity = Mathf.Min(velocity * 3.3f, 10000f);
+            }
             side = Vector3.Cross(dir, rigidbody.transform.right);
+        }
+
         cross = Vector3.Cross(dir, side).normalized;
         if (rigidbody.transform.position.x > referenceRb.transform.position.x)
             cross.x *= -1;
+
+
+
         cross.y = Mathf.Abs(cross.y);
         up = Mathf.Abs(((rigidbody.transform.up.y + 1) / 2) - 1);
         cross.x *= up;

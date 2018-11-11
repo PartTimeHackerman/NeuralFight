@@ -68,6 +68,7 @@ internal class StandingAgent : Agent, IAgent
             foreach (var var in actions)
                 actionsClamped.Add(Mathf.Clamp(var, -1f, 1f));
             this.actions.applyActions(actionsClamped);
+            newDecisionStep = false;
         }
 
         rewardAnim = rewards.getReward();

@@ -31,6 +31,18 @@ public class StayInMiddleReward
         return reward;
 
     }
+    
+    public float getReward(float arenaLen)
+    {
+        COM = bodyParts.root.position;//physicsUtils.getCenterOfMass(bodyParts.getRigids());
+
+        if (Mathf.Abs(COM.x) > arenaLen)
+            return 0f;
+
+        reward = Mathf.Abs(Mathf.Abs(COM.x) / arenaLen - 1);
+        return reward;
+
+    }
 
 
 }

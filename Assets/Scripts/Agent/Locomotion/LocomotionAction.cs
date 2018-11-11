@@ -15,13 +15,13 @@ public class LocomotionAction : MonoBehaviour
 
     private List<float> observations;
     
-    void Start()
+    protected virtual void Start()
     {
         SetUpModel();
         verticalEffector = GetComponent<VerticalEffector>();
     }
     
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         verticalEffector.enable = run;
         if (run)
@@ -36,7 +36,7 @@ public class LocomotionAction : MonoBehaviour
         }
     }
 
-    private void RunModel()
+    protected virtual  void RunModel()
     {
         //List<float> observations = Observations.getObservations();
         List<float> actions = model.getActions(observations);
@@ -44,13 +44,16 @@ public class LocomotionAction : MonoBehaviour
 
     }
 
-    private void SetUpModel()
+    protected virtual void SetUpModel()
     {
         string modelPath = "Models/";
         switch (LocomotyionType)
         {
             case LocomotyionType.STAND:
                 modelPath += "Stand";
+                break;
+            case LocomotyionType.CROUCH:
+                modelPath += "Crouch";
                 break;
             case LocomotyionType.WALK_FORWARD:
                 modelPath += "Walk_Forward";

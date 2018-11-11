@@ -4,6 +4,24 @@ using UnityEngine;
 public class HandAction : MonoBehaviour, IWaiter
 {
     public Transform target;
+
+    public Transform Target
+    {
+        get { return target; }
+        set
+        {
+            target = value;
+            if (attack != null)
+            {
+                attack.target = target;
+            }
+            if (block != null)
+            {
+                block.target = target;
+            }
+        }
+    }
+
     public float SPReq;
     public BodyParts BodyParts;
     public WeaponAction attack;
@@ -30,6 +48,15 @@ public class HandAction : MonoBehaviour, IWaiter
         if (active && used)
         {
             block.activate = !attack.activate;
+
+            if (attack.activate)
+            {
+                weapon.DamagingPart.damage = weapon.damage;
+            }
+            else
+            {
+                weapon.DamagingPart.damage = weapon.damage / 10f;
+            }
         }
 
         if (attackWep)

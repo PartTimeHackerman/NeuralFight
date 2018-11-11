@@ -26,4 +26,11 @@ class EnemyInMiddleReward
         reward = Mathf.Abs(COM.x) / arenaLen;
         return reward;
     }
+    
+    public float getReward(float arenaLen)
+    {
+        COM = bodyParts.root.position;
+        reward = Mathf.Abs(COM.x) / arenaLen;
+        return reward;
+    }
 }

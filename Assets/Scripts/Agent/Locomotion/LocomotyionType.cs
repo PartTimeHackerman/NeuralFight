@@ -1,6 +1,8 @@
 public enum LocomotyionType
 {
     STAND,
+    CROUCH,
     WALK_FORWARD,
-    WALK_BACKWARD
+    WALK_BACKWARD,
+    NOTHING
 }

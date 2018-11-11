@@ -88,6 +88,12 @@ public class JointInfo : MonoBehaviour
         jointSlerpDrive.maximumForce = 0f;
         joint.slerpDrive = jointSlerpDrive;
     }
+    
+    public void Enable()
+    {
+        isEnabled = true;
+        resetJointForces();
+    }
 
     public void updateConfigurableJoint()
     {

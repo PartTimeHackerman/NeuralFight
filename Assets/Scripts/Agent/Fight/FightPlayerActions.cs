@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class FightPlayerActions : MonoBehaviour
 {
-    public int actionsSpace = 5;
+    public int actionsSpace = 9;
     public HandAction RightHandAction;
     public HandAction LeftHandAction;
+    public BodyParts EnemyBodyParts;
 
     public LocomotionAction Stand;
+    public LocomotionAction Crouch;
     public LocomotionAction WalkFW;
     public LocomotionAction WalkBW;
+    public LocomotionAction Nothing;
     
     public List<LocomotionAction> LocomotionActions = new List<LocomotionAction>();
 
     void Start()
     {
         LocomotionActions.Add(Stand);
+        LocomotionActions.Add(Crouch);
         LocomotionActions.Add(WalkFW);
         LocomotionActions.Add(WalkBW);
+        LocomotionActions.Add(Nothing);
     }
     public void setActions(List<float> actions)
     {
-        if (actions.Count != 5)
+        if (actions.Count != actionsSpace)
         {
             Debug.Log("Wrong actions size " + actions.Count);
             return;
@@ -37,8 +42,11 @@ public class FightPlayerActions : MonoBehaviour
         {
             LeftHandAction.Attack();
         }
+
+        RightHandAction.Target = PartsMethods.GetTransformFromAction(actions[2], EnemyBodyParts);
+        LeftHandAction.Target = PartsMethods.GetTransformFromAction(actions[3], EnemyBodyParts);
         
-        setLocomotionActions(new List<float>(actions).GetRange(2, actions.Count - 1).ToList());
+        setLocomotionActions(new List<float>(actions).GetRange(4, 4).ToList());
     }
     
     private void setLocomotionActions(List<float> actions)
