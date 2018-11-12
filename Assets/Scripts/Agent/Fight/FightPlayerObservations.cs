@@ -28,6 +28,7 @@ public class FightPlayerObservations : MonoBehaviour
         AddActions();
         AddParts(asLeft);
         observations.AddRange(enemyObservations.GetObservations(asLeft));
+        removeInfsAndNans(observations);
         return observations;
     }
 
@@ -101,5 +102,17 @@ public class FightPlayerObservations : MonoBehaviour
         observations.Add(COMAngVel.z);
         
         observations.Add(Vector3.Distance(BodyParts.root.position, EnemyBodyParts.root.position));
+    }
+    
+    private void removeInfsAndNans(List<float> obs)
+    {
+        for (int i = obs.Count - 1; i >= 0; i--)
+        {
+            float v = obs[i];
+            if (float.IsNaN(v) || float.IsInfinity(v) || float.IsNegativeInfinity(v) || float.IsPositiveInfinity(v))
+            {
+                obs[i] = 0f;
+            }
+        }
     }
 }
