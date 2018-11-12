@@ -85,7 +85,7 @@ public class HandAction : MonoBehaviour, IWaiter
 
     public void Attack()
     {
-        if (canBeUsed)
+        if (canBeUsed && active)
         {
             OnActivate?.Invoke(this, SPReq);
             attack.activate = true;
