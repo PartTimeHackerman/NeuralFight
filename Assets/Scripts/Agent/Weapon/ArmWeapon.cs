@@ -92,7 +92,7 @@ public class ArmWeapon : MonoBehaviour
     {
         Vector3 weaponPos = new Vector3();
         Quaternion weaponRot = new Quaternion();
-
+        
         switch (WeaponHand)
         {
             case WeaponHand.RIGHT:
@@ -142,6 +142,9 @@ public class ArmWeapon : MonoBehaviour
         {
             rot.z -= 180f;
         }
+
+        float baseRotZ = weapon.transform.rotation.eulerAngles.z;
+        rot.z += baseRotZ;
         weapon.transform.rotation = Quaternion.Euler(rot);
     }
 
@@ -185,14 +188,16 @@ public class ArmWeapon : MonoBehaviour
         joint.rotationDriveMode = RotationDriveMode.Slerp;
         joint.projectionMode = JointProjectionMode.PositionAndRotation;
         joint.projectionDistance = 0f;
-        //joint.massScale = .1f;
+        
+        //joint.massScale = .1f;r
         //joint.connectedMassScale = 10f;
-        joint.enablePreprocessing = false;
+        //joint.enablePreprocessing = false;
 
         JointDrive slerp =  joint.slerpDrive;
         slerp.positionSpring = 10000f;
-        slerp.positionDamper = 1000f;
+        slerp.positionDamper = 10000f;
         joint.slerpDrive = slerp;
+        joint.projectionAngle = 0f;
         return joint;
     }
 }

@@ -23,9 +23,9 @@ public class FightPlayerObservations : MonoBehaviour
     public List<float> GetObservations(bool asLeft)
     {
         observations.Clear();
-        observations.Add(GameTimer.get().Elapsed / 30f);
+        observations.Add(GameTimer.get().Elapsed / 60f);
         AddHpSp();
-        AddActions();
+        //AddActions();
         AddParts(asLeft);
         observations.AddRange(enemyObservations.GetObservations(asLeft));
         removeInfsAndNans(observations);

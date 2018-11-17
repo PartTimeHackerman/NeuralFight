@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum Parts
@@ -20,21 +21,115 @@ public enum Parts
 
 public static class PartsMethods
 {
-    public static Transform GetTransformFromAction(float value, BodyParts bodyParts)
+    private static List<Parts> AllParts = new List<Parts>();
+    private static List<Parts> RightParts = new List<Parts>();
+    private static List<Parts> LeftParts = new List<Parts>();
+    private static List<Parts> MiddleParts = new List<Parts>();
+
+    static PartsMethods()
     {
-        Parts part = getPartFromAction(value);
+        foreach (Parts part in (Parts[]) Enum.GetValues(typeof(Parts)))
+        {
+            switch (part)
+            {
+                case Parts.BUTT:
+                    AllParts.Add(part);
+                    RightParts.Add(part);
+                    LeftParts.Add(part);
+                    MiddleParts.Add(part);
+                    break;
+                case Parts.L_WAIST:
+                    AllParts.Add(part);
+                    RightParts.Add(part);
+                    LeftParts.Add(part);
+                    MiddleParts.Add(part);
+                    break;
+                case Parts.U_WAIST:
+                    AllParts.Add(part);
+                    RightParts.Add(part);
+                    LeftParts.Add(part);
+                    MiddleParts.Add(part);
+                    break;
+                case Parts.TORSO:
+                    AllParts.Add(part);
+                    RightParts.Add(part);
+                    LeftParts.Add(part);
+                    MiddleParts.Add(part);
+                    break;
+                case Parts.HEAD:
+                    AllParts.Add(part);
+                    RightParts.Add(part);
+                    LeftParts.Add(part);
+                    MiddleParts.Add(part);
+                    break;
+                case Parts.R_UPPER_ARM:
+                    AllParts.Add(part);
+                    RightParts.Add(part);
+                    break;
+                case Parts.R_LOWER_ARM:
+                    AllParts.Add(part);
+                    RightParts.Add(part);
+                    break;
+                case Parts.L_UPPER_ARM:
+                    AllParts.Add(part);
+                    LeftParts.Add(part);
+                    break;
+                case Parts.L_LOWER_ARM:
+                    AllParts.Add(part);
+                    LeftParts.Add(part);
+                    break;
+                case Parts.R_THIGH:
+                    AllParts.Add(part);
+                    RightParts.Add(part);
+                    MiddleParts.Add(part);
+                    break;
+                case Parts.R_SHIN:
+                    AllParts.Add(part);
+                    RightParts.Add(part);
+                    MiddleParts.Add(part);
+                    break;
+                case Parts.L_THIGH:
+                    AllParts.Add(part);
+                    LeftParts.Add(part);
+                    MiddleParts.Add(part);
+                    break;
+                case Parts.L_SHIN:
+                    AllParts.Add(part);
+                    LeftParts.Add(part);
+                    MiddleParts.Add(part);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+    }
+
+    public static Transform GetTransformFromAction(float value, BodyParts bodyParts, WeaponHand weaponHand)
+    {
+        Parts part = getPartFromAction(value, weaponHand);
         return GetTransformFromPart(part, bodyParts);
     }
 
-    
-    public static Parts getPartFromAction(float value)
+
+    public static Parts getPartFromAction(float value, WeaponHand weaponHand)
     {
         float normVal = (value + 1f) * .5f;
-        normVal *= 12f;
-
-        int intVal = (int)Mathf.Round(normVal);
-    
-        return (Parts)intVal;
+        Parts part;
+        switch (weaponHand)
+        {
+            case WeaponHand.RIGHT:
+                part = LeftParts[Mathf.RoundToInt(Mathf.Lerp(0, LeftParts.Count - 1, normVal))];
+                break;
+            case WeaponHand.LEFT:
+                part = RightParts[Mathf.RoundToInt(Mathf.Lerp(0, RightParts.Count - 1, normVal))];
+                break;
+            case WeaponHand.BOTH:
+                part = MiddleParts[Mathf.RoundToInt(Mathf.Lerp(0, MiddleParts.Count - 1, normVal))];
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(weaponHand), weaponHand, null);
+        }
+        return part;
     }
 
     public static Transform GetTransformFromPart(Parts part, BodyParts bodyParts)
@@ -85,6 +180,7 @@ public static class PartsMethods
                 bodyPart = bodyParts.getNamedRigids()["butt"].transform;
                 break;
         }
+
         return bodyPart;
     }
 }

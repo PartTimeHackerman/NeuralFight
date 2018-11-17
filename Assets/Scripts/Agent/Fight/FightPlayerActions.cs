@@ -1,10 +1,11 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class FightPlayerActions : MonoBehaviour
 {
-    public int actionsSpace = 9;
+    public int actionsSpace = 1;
     public HandAction RightHandAction;
     public HandAction LeftHandAction;
     public BodyParts EnemyBodyParts;
@@ -16,7 +17,7 @@ public class FightPlayerActions : MonoBehaviour
     public LocomotionAction Nothing;
     
     public List<LocomotionAction> LocomotionActions = new List<LocomotionAction>();
-
+    public LocomotyionType currentAction = LocomotyionType.STAND;
     void Start()
     {
         LocomotionActions.Add(Stand);
@@ -32,22 +33,39 @@ public class FightPlayerActions : MonoBehaviour
             Debug.Log("Wrong actions size " + actions.Count);
             return;
         }
+        
+        /*
 
         if (actions[0] > 0f)
         {
-            RightHandAction.Attack();
+            //RightHandAction.Attack();
         }
         
         if (actions[1] > 0f)
         {
-            LeftHandAction.Attack();
+            //LeftHandAction.Attack();
         }
 
-        RightHandAction.Target = PartsMethods.GetTransformFromAction(actions[2], EnemyBodyParts);
-        LeftHandAction.Target = PartsMethods.GetTransformFromAction(actions[3], EnemyBodyParts);
-        
-        setLocomotionActions(new List<float>(actions).GetRange(4, 4).ToList());
+        //RightHandAction.Target = PartsMethods.GetTransformFromAction(actions[2], EnemyBodyParts, WeaponHand.RIGHT);
+        //LeftHandAction.Target = PartsMethods.GetTransformFromAction(actions[3], EnemyBodyParts, WeaponHand.LEFT);
+        */
+        setLocomotionActions(actions[0]);
+        //setLocomotionActions(actions);
     }
+    private void  setLocomotionActions(float value)
+    {
+        float normVal = (value + 1f) * .5f;
+        normVal *= 4f;
+
+        int intVal = (int)Mathf.Round(normVal);
+    
+        currentAction = (LocomotyionType)intVal;
+        for (int i = 0; i < LocomotionActions.Count; i++)
+        {
+            LocomotionActions[i].run = LocomotionActions[i].LocomotyionType == currentAction;
+        }
+    }
+    
     
     private void setLocomotionActions(List<float> actions)
     {
@@ -68,7 +86,6 @@ public class FightPlayerActions : MonoBehaviour
         {
             LocomotionActions[i].run = i == highestAction;
         }
-        
 
     }
 

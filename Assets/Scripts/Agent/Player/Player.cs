@@ -41,11 +41,24 @@ public class Player : MonoBehaviour
     public Observations BodyObservations;
     public WeaponEquipper WeaponEquipper;
     public bool left = true;
+    
+    public event ChangeHealth OnChangeHealth;
+    public delegate void ChangeHealth(float currentHP, float maxHP);
+    
+    public event ChangeStamina OnChangeStamina;
+    public delegate void ChangeStamina(float currentSP, float maxSP);
+
+    public HitNumber HitNumberPref;
+    public HitNumber HitNumber;
+    
 
     private void Start()
     {
         Parts = Body.GetComponentsInChildren<BodyPart>().ToList();
         BodyParts = Body.GetComponent<BodyParts>();
+        HitNumber = Instantiate(HitNumberPref);
+        HitNumber.Player1 = !left;
+        HitNumber.setParent(BodyParts.getNamedParts()["head"].transform);
         ResetPlayer();
         foreach (BodyPart bodyPart in Parts)
         {
@@ -75,6 +88,8 @@ public class Player : MonoBehaviour
         CurrentMaxSP = MaxSP;
         HP = MaxHP;
         SP = MaxHP;
+        OnChangeHealth?.Invoke(this.hp, MaxHP);
+        OnChangeStamina?.Invoke(sp, MaxSP);
     }
 
     private void FixedUpdate()
@@ -90,6 +105,8 @@ public class Player : MonoBehaviour
     {
         this.hp = this.hp - diffHp < 0f ? 0f : this.hp - diffHp;
         this.hp = this.hp < CurrentMaxHP ? this.hp : CurrentMaxHP;
+        OnChangeHealth?.Invoke(this.hp, MaxHP);
+        HitNumber.Anim(diffHp);
         if (this.hp <= 0)
         {
             OnDie();
@@ -116,7 +133,7 @@ public class Player : MonoBehaviour
         if (value > CurrentMaxSP) value = CurrentMaxSP;
         if (value < 0) value = 0;
         sp = value;
-
+        OnChangeStamina?.Invoke(sp, MaxSP);
         ActionsContainer.rightHand.setCanBeUsed(sp);
         ActionsContainer.leftHand.setCanBeUsed(sp);
         //ActionsContainer.bothHands.setCanBeUsed(sp);
@@ -124,8 +141,8 @@ public class Player : MonoBehaviour
 
     public void DisableBodyPart(BodyPart bodyPart)
     {
-        CurrentMaxHP -= bodyPart.MaxHP;
-        CurrentMaxSP -= bodyPart.MaxSP;
+        //CurrentMaxHP -= bodyPart.MaxHP;
+        //CurrentMaxSP -= bodyPart.MaxSP;
         HpRegen -= bodyPart.HpRegen;
         SpRegen -= bodyPart.SpRegen;
     }

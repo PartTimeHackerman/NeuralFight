@@ -21,7 +21,7 @@ public class FightObservationsForEnemy : MonoBehaviour
     {
         observations.Clear();
         AddHpSp();
-        AddActions();
+        //AddActions();
         AddParts(asLeft);
         return observations;
     }

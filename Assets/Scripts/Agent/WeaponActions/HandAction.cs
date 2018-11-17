@@ -15,6 +15,7 @@ public class HandAction : MonoBehaviour, IWaiter
             {
                 attack.target = target;
             }
+
             if (block != null)
             {
                 block.target = target;
@@ -33,14 +34,21 @@ public class HandAction : MonoBehaviour, IWaiter
     public bool active = false;
     private bool used = false;
     public Player Player;
-    
+
     public event Activate OnActivate;
+
     public delegate void Activate(HandAction handAction, float sp);
 
     public bool attackWep = false;
 
+    private Transform TorsoTransform;
+    public float baseDist;
+
     public virtual void Start()
     {
+        TorsoTransform = Player.Body.GetComponent<BodyParts>().getNamedParts()["torso"].transform;
+        Transform hand = Player.Body.GetComponent<BodyParts>().getNamedParts()["rhand_end"].transform;
+        baseDist = Vector3.Distance(TorsoTransform.position, hand.position);
     }
 
     void FixedUpdate()
@@ -56,6 +64,17 @@ public class HandAction : MonoBehaviour, IWaiter
             else
             {
                 weapon.DamagingPart.damage = weapon.damage / 10f;
+                Vector3 torsoPos = TorsoTransform.position;
+                torsoPos.z = 0f;
+                Vector3 targetPos = target.position;
+                targetPos.z = 0f;
+                float distance = Vector3.Distance(torsoPos, targetPos);
+                //if (Math.Abs(Mathf.Clamp(distance, weapon.MinAttackDistance, weapon.MaxAttackDistance) - distance) < .001f)
+                //{
+                if (distance >= weapon.MinAttackDistance && distance <= weapon.MaxAttackDistance)
+                 {
+                    Attack();
+                }
             }
         }
 
@@ -131,19 +150,19 @@ public class HandAction : MonoBehaviour, IWaiter
                 //if (weapon.WeaponHand == WeaponHand.BOTH)
                 //    return typeof(TwoHandedStab);
                 //else
-                    return typeof(Stab);
+                return typeof(Stab);
                 break;
             case WeaponAttack.SLASH:
                 //if (weapon.WeaponHand == WeaponHand.BOTH)
                 //    return typeof(TwoHandedSlash);
                 //else
-                    return typeof(Slash);
+                return typeof(Slash);
                 break;
             case WeaponAttack.AIM:
                 //if (weapon.WeaponHand == WeaponHand.BOTH)
                 //    return typeof(TwoHandedAim);
                 //else
-                    return typeof(Aim);
+                return typeof(Aim);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();

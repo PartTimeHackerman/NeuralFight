@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1252735459176568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.4856861, y: 0.8544005, z: -0.12999736}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4470871031909272}
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df505e3af4e4317b65951755dd19cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0.6
 --- !u!114 &114781444268602782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,3 +158,5 @@ MonoBehaviour:
   WeaponHand: 0
   WeaponAttack: 0
   WeaponBlock: 0
+  MinAttackDistance: 0
+  MaxAttackDistance: 1.5

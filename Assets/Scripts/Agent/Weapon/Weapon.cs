@@ -17,6 +17,9 @@ public class Weapon : MonoBehaviour
     public WeaponAttack WeaponAttack;
     public WeaponBlock WeaponBlock;
 
+    public float MinAttackDistance;
+    public float MaxAttackDistance;
+
     void Awake()
     {
         Rigidbody = GetComponent<Rigidbody>();

@@ -3,6 +3,12 @@ using UnityEngine;
 public class Hitbox : MonoBehaviour
 {
     public BodyPart BodyPart;
+    //public static Pool<HitNumber> HitNumberPool;
+
+    private void Start()
+    {
+        //HitNumberPool = ObjectsPool.getPool<HitNumber>((item) => { }, (item) => { });
+    }
 
     public void OnDamagingCollision(Collision collision, float damage)
     {
@@ -13,6 +19,8 @@ public class Hitbox : MonoBehaviour
         //Debug.Log("Vel: " + collisionVel + " Contacts: " + collision.contacts.Length + " Point:" + contactPoint);
         //Debug.DrawRay(contact.point, contact.normal, Color.white);
         float hitDamage = (collisionVel * damage);
+        //HitNumber hitNumber = HitNumberPool.Pop();
+        //hitNumber.Animate(hitDamage, contactPoint, gameObject.layer == LayerMask.NameToLayer("Player2"));
         //Debug.Log(hitDamage);
         BodyPart.HealthPoints -= hitDamage;
     }
