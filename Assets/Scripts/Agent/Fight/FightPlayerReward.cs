@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class FightPlayerReward : MonoBehaviour
 {
-    public BodyParts BodyParts;
-    public BodyParts EnemyBodyParts;
-    public Player Player;
-    public Player EnemyPlayer;
+    private BodyParts BodyParts;
+    private BodyParts EnemyBodyParts;
+    private Player Player;
+    private Player EnemyPlayer;
     public Walls Walls;
     private ForwardReward forwardReward;
     private StayInMiddleReward stayInMiddleReward;
@@ -27,6 +27,16 @@ public class FightPlayerReward : MonoBehaviour
 
     private void Start()
     {
+        
+    }
+
+    public void SetUp(FightPlayerAgent player, FightPlayerAgent enemy)
+    {
+        Player = player.PlayerFighter.Player;
+        EnemyPlayer = enemy.PlayerFighter.Player;
+        BodyParts = player.PlayerFighter.BodyParts;
+        EnemyBodyParts = enemy.PlayerFighter.BodyParts;
+        
         standingReward = new StandingRewardHumanoid(BodyParts);
         //forwardReward = new ForwardReward(BodyParts, EnemyBodyParts);
         stayInMiddleReward = new StayInMiddleReward(BodyParts, 10f);
@@ -36,7 +46,7 @@ public class FightPlayerReward : MonoBehaviour
         if (debug)
             InvokeRepeating("getReward", 0.0f, .1f);
     }
-
+    
     public float getReward()
     {
         stayInMiddleRewardVal = stayInMiddleReward.getReward(Walls.getCurrentPos());

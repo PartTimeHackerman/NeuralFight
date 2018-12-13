@@ -23,8 +23,14 @@ class InternalModel
         graph = new TFGraph();
         graph.Import(graphModel.bytes);
         session = new TFSession(graph);
-        
-        
+    }
+    
+    public InternalModel(string graphName)
+    {
+        graphModel = Resources.Load(graphName) as TextAsset;
+        graph = new TFGraph();
+        graph.Import(graphModel.bytes);
+        session = new TFSession(graph);
     }
 
     public List<float> getActions(List<float> obs)

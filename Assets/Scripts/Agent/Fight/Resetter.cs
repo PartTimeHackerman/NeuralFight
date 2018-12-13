@@ -1,6 +1,6 @@
 using UnityEngine;
 
-class Resetter : MonoBehaviour
+public class Resetter : MonoBehaviour
 {
     public float Elapsed;
     public Walls Walls;
@@ -38,5 +38,6 @@ class Resetter : MonoBehaviour
         agentsTerminated = false;
         GameTimer.get().Elapsed = 0;
         Walls.ResetWalls();
+        Walls.StartWalls();
     }
 }

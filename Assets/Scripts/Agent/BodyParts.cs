@@ -18,9 +18,11 @@ public class BodyParts : MonoBehaviour
     private readonly List<Rigidbody> rigids = new List<Rigidbody>();
     private readonly List<Rigidbody> observableRigids = new List<Rigidbody>();
     public readonly List<Transform> endings = new List<Transform>();
+    public List<GameObject> editableParts = new List<GameObject>();
 
     public List<Rigidbody> ObservableRigids => observableRigids;
     public Dictionary<string, BodyPart> namedObservableBodyParts = new Dictionary<string, BodyPart>();
+    public Dictionary<string, BodyPart> AllBodyParts = new Dictionary<string, BodyPart>();
     
     
     public Rigidbody root;
@@ -39,8 +41,20 @@ public class BodyParts : MonoBehaviour
 
         foreach (var joint in jointsArr) joints.Add(joint);
         foreach (JointInfo jointInfo in jointsInfos) namedJoints[jointInfo.name] = jointInfo;
+        foreach (JointInfo jointInfo in jointsInfos)
+        {
+            if (!jointInfo.name.Contains("lwaist"))
+            {
+                editableParts.Add(jointInfo.gameObject);
+            }
+        }
+
         foreach (var child in GetComponentsInChildren<Transform>())
         {
+            if (child.GetComponent<MeshRenderer>() != null || child.name.Contains("mesh"))
+            {
+                continue;
+            }
             namedParts.Add(child.gameObject.name, child.gameObject);
             parts.Add(child.gameObject);
             if (child.name.Contains("_end"))
@@ -70,12 +84,14 @@ public class BodyParts : MonoBehaviour
 
             if (movableAxis.Contains(true))
                 movableJoints[joint] = movableAxis;
+
         }
 
         totalRigidsMass = rigids.Sum(r => r.mass);
 
         foreach (Rigidbody rigid in rigids)
         {
+            
             if (rigid.GetComponent<JointInfo>() != null && rigid.GetComponent<JointInfo>().useNeural)
                 observableRigids.Add(rigid);
         }
@@ -84,11 +100,14 @@ public class BodyParts : MonoBehaviour
         List<BodyPart> bodyParts = GetComponentsInChildren<BodyPart>().ToList();
         foreach (BodyPart bodyPart in bodyParts)
         {
+            AllBodyParts[bodyPart.name] = bodyPart;
             if (bodyPart.GetComponent<JointInfo>() != null && bodyPart.GetComponent<JointInfo>().useNeural)
                 namedObservableBodyParts[bodyPart.name] = bodyPart;
         }
 
         height = getHeight();
+        
+        setKinematic(true);
     }
 
 
@@ -97,6 +116,27 @@ public class BodyParts : MonoBehaviour
         partsTotal = parts.Count;
         rigidsTotal = rigids.Count;
         jointsTotal = joints.Count;
+    }
+
+    public void setKinematic(bool kinematic)
+    {
+        foreach (Rigidbody rigid in rigids)
+        {
+            rigid.isKinematic = kinematic;
+        }
+    }
+    
+    public void SetEnableJoints(bool enable)
+    {
+        List<BodyPart> parts = namedObservableBodyParts.Values.ToList();
+        foreach (BodyPart bodyPart in parts)
+        {
+            if (bodyPart.partEnabled)
+            {
+                if (bodyPart.JointInfo.isEnabled && !enable) bodyPart.JointInfo.Disable();
+                if (!bodyPart.JointInfo.isEnabled && enable) bodyPart.JointInfo.Enable();
+            }
+        }
     }
 
     public List<GameObject> getParts()

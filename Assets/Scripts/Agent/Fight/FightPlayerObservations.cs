@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class FightPlayerObservations : MonoBehaviour
 {
-    public Player Player;
-    public HandAction RightHandAction;
-    public HandAction LeftHandAction;
-    public BodyParts BodyParts;
+    private Player Player;
+    private HandAction RightHandAction;
+    private HandAction LeftHandAction;
+    private BodyParts BodyParts;
     public BodyParts EnemyBodyParts;
+    public FightObservationsForEnemy enemyObservations;
     public List<float> observations = new List<float>();
     public int observationsSpace;
     private PhysicsUtils physics;
-    public FightObservationsForEnemy enemyObservations;
-    
+
     void Start()
     {
         //observationsSpace = GetObservations(true).Count();
         physics = PhysicsUtils.get();
+    }
+
+    public void SetUp(FightPlayerAgent player, FightPlayerAgent enemy)
+    {
+        Player = player.PlayerFighter.Player;
+        RightHandAction = player.PlayerFighter.RightArmWeapon.HandAction;
+        LeftHandAction = player.PlayerFighter.LeftArmWeapon.HandAction;
+        BodyParts = player.PlayerFighter.BodyParts;
+        EnemyBodyParts = enemy.PlayerFighter.BodyParts;
     }
 
     public List<float> GetObservations(bool asLeft)

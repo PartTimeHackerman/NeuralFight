@@ -14,7 +14,7 @@ public class ValBar : MonoBehaviour
     public float BarSpeed = 10f;
     public int frameUpdate = 3;
     private float MaxBarWidth;
-    private float NewCurrVal;
+    protected float NewCurrVal;
     private bool start = false;
     
     protected virtual void Start()

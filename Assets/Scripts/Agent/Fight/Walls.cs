@@ -19,5 +19,20 @@ public class Walls : MonoBehaviour
     {
         left.ResetWall();
         right.ResetWall();
+        
+        left.run = false;
+        right.run = false;
+    }
+
+    public void StartWalls()
+    {
+        left.StartMoving();
+        right.StartMoving();
+    }
+    
+    public void StopWalls()
+    {
+        left.StopMoving();
+        right.StopMoving();
     }
 }

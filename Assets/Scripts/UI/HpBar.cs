@@ -1,10 +1,19 @@
+using UnityEngine;
+
 public class HpBar : ValBar
 {
-    protected override void Start()
+    public void SetPlayer(Player player)
     {
-        MaxVal.text = ThousandsConverter.ToKs(Player.MaxHP);
-        CurrVal.text = ThousandsConverter.ToKs(Player.MaxHP);
+        if (Player != null)
+        {
+            Player.OnChangeHealth -= SetVals;
+        }
+
+        Player = player;
+        SetVals(Player.HP, player.MaxHP);
         Player.OnChangeHealth += SetVals;
-        base.Start();
+        Vector2 barSize = LerpBar.rectTransform.sizeDelta;
+        barSize.x = NewCurrVal;
+        LerpBar.rectTransform.sizeDelta = barSize;
     }
 }

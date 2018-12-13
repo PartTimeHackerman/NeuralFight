@@ -1481,8 +1481,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1969210761623518}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.5000001, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4476447753560946}
@@ -2329,13 +2329,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
-  WeaponHand: 0
-  BodyParts: {fileID: 114684600221092806}
   HandAction: {fileID: 114184214173714612}
-  rHandRb: {fileID: 0}
-  lHandRb: {fileID: 0}
-  rArmRb: {fileID: 0}
-  lArmRb: {fileID: 0}
+  Hand: {fileID: 4926039437710206}
+  Arm: {fileID: 54581694129194368}
 --- !u!114 &114065530680511868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2374,12 +2370,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8477f3f7579d45eb99c8130ff7de02a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BodyParts: {fileID: 114684600221092806}
   Weapon: {fileID: 0}
   WeaponHand: 1
   RightArmWeapon: {fileID: 114040425235317348}
   LeftArmWeapon: {fileID: 114813729973025206}
-  BothArmsWeapon: {fileID: 114737821074562540}
   equip: 0
 --- !u!114 &114098039485379338
 MonoBehaviour:
@@ -2420,6 +2414,7 @@ MonoBehaviour:
   active: 0
   Player: {fileID: 114239459284449934}
   attackWep: 0
+  baseDist: 0
 --- !u!114 &114139769594638078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2542,6 +2537,7 @@ MonoBehaviour:
   active: 0
   Player: {fileID: 114239459284449934}
   attackWep: 0
+  baseDist: 0
 --- !u!114 &114239459284449934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2567,6 +2563,9 @@ MonoBehaviour:
   BodyObservations: {fileID: 114140080656940866}
   WeaponEquipper: {fileID: 114076445518827650}
   left: 1
+  HitNumberPref: {fileID: 114753962263371296, guid: ada8c3b137afa154683ef95d1f86e87b,
+    type: 2}
+  HitNumber: {fileID: 0}
 --- !u!114 &114240683258307686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2859,6 +2858,7 @@ MonoBehaviour:
   enemyHpRewardVal: 0
   timeRewardVal: 0
   inFrontOfEnemyVal: 0
+  distToEnemyVal: 0
   reward: 0
   debug: 0
 --- !u!114 &114362720277943206
@@ -3047,6 +3047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jointsInfos: []
+  editableParts: []
   root: {fileID: 54293991686004898}
   jointsTotal: 0
   partsTotal: 0
@@ -3093,7 +3094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b576a91c604a529be8f210e844d952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionsSpace: 9
+  actionsSpace: 1
   RightHandAction: {fileID: 114184214173714612}
   LeftHandAction: {fileID: 114112217837406740}
   EnemyBodyParts: {fileID: 0}
@@ -3103,6 +3104,7 @@ MonoBehaviour:
   WalkBW: {fileID: 114678513169938482}
   Nothing: {fileID: 114677035106544774}
   LocomotionActions: []
+  currentAction: 0
 --- !u!114 &114502367147307946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3337,6 +3339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jointsInfos: []
+  editableParts: []
   root: {fileID: 54293991686004898}
   jointsTotal: 0
   partsTotal: 0
@@ -3390,6 +3393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jointsInfos: []
+  editableParts: []
   root: {fileID: 54293991686004898}
   jointsTotal: 0
   partsTotal: 0
@@ -3495,13 +3499,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
-  WeaponHand: 2
-  BodyParts: {fileID: 114684600221092806}
   HandAction: {fileID: 114932062985993080}
-  rHandRb: {fileID: 0}
-  lHandRb: {fileID: 0}
-  rArmRb: {fileID: 0}
-  lArmRb: {fileID: 0}
+  Hand: {fileID: 0}
+  Arm: {fileID: 0}
 --- !u!114 &114738174238383914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3669,13 +3669,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
-  WeaponHand: 1
-  BodyParts: {fileID: 114684600221092806}
   HandAction: {fileID: 114112217837406740}
-  rHandRb: {fileID: 0}
-  lHandRb: {fileID: 0}
-  rArmRb: {fileID: 0}
-  lArmRb: {fileID: 0}
+  Hand: {fileID: 4650926059076290}
+  Arm: {fileID: 54612796499937604}
 --- !u!114 &114834150724670256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3784,6 +3780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jointsInfos: []
+  editableParts: []
   root: {fileID: 54253823967147292}
   jointsTotal: 0
   partsTotal: 0
@@ -3850,6 +3847,7 @@ MonoBehaviour:
   active: 0
   Player: {fileID: 114239459284449934}
   attackWep: 0
+  baseDist: 0
   LeftBodyParts: {fileID: 114664822501370478}
   RightBodyParts: {fileID: 114477941984834562}
 --- !u!114 &114994746912746314

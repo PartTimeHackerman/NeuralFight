@@ -1,8 +1,10 @@
-﻿namespace UnityEngine.UI.Extensions.Examples
+﻿using System;
+
+namespace FancyScrollView
 {
     public class Example03ScrollViewContext
     {
-        public System.Action<Example03ScrollViewCell> OnPressedCell;
+        public Action<Example03ScrollViewCell> OnPressedCell;
         public int SelectedIndex;
     }
 }

@@ -5,16 +5,19 @@ using MLAgents;
 using UnityEditor;
 using UnityEngine;
 
-internal class FightPlayerAgent : Agent
+public class FightPlayerAgent : Agent
 {
     public Resetter Resetter;
     public Player Player;
+    public Fighter PlayerFighter;
+    private Fighter EnemyFighter;
     private FightPlayerActions actions;
 
     private FightPlayerObservations observations;
     public ResetPos resetPos;
     private FightPlayerReward duelReward;
-    public FightPlayerObservations enemyObservations;
+    private FightPlayerObservations enemyObservations;
+    private FightObservationsForEnemy observationsForEnemy;
     public RandomWeaponEquipper RandomWeaponEquipper;
     private long startTime;
 
@@ -34,16 +37,32 @@ internal class FightPlayerAgent : Agent
     public override void InitializeAgent()
     {
         observations = GetComponent<FightPlayerObservations>();
+        observationsForEnemy = GetComponent<FightObservationsForEnemy>();
         duelReward = GetComponent<FightPlayerReward>();
         actions = GetComponent<FightPlayerActions>();
-        StartCoroutine(Waiter.WaitForFrames(1, () => { }, () => { RandomWeaponEquipper.Equip(); observations.observationsSpace = observations.GetObservations(playerOne).Count;}));
         
+        enemyObservations = enemyAgent.observations;
+        
+        observations.SetUp(this, enemyAgent);
+        observationsForEnemy.SetUp(this);
+        
+        duelReward.SetUp(this, enemyAgent);
+        StartCoroutine(Waiter.WaitForFrames(2, () => { }, () =>
+        {
+            actions.SetUp(this,enemyAgent);
+            EnemyFighter = enemyAgent.PlayerFighter;
+            RandomWeaponEquipper.Equip(PlayerFighter); 
+            observations.observationsSpace = observations.GetObservations(playerOne).Count;
+            PlayerFighter.SetSide(PlayerFighter.Left);
+            PlayerFighter.SetEnemy(EnemyFighter);
+            PlayerFighter.StartFight();
+            PlayerFighter.FightAction.run = false;
+        }));
     }
 
     public override void CollectObservations()
     {
         List<float> observations = this.observations.GetObservations(playerOne);
-        List<float> enemyObservations = this.enemyObservations.GetObservations(playerOne);
 
         foreach (var observation in observations) AddVectorObs(observation);
         //foreach (var observation in enemyObservations) AddVectorObs(observation);
@@ -99,7 +118,7 @@ internal class FightPlayerAgent : Agent
             ready = false;
             Player.ResetPlayer();
             resetPos.ResetPosition();
-            RandomWeaponEquipper.Equip();
+            RandomWeaponEquipper.Equip(PlayerFighter);
             ready = true;
             Done();
         }

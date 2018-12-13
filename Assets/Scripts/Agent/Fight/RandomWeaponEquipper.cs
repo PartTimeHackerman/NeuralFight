@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class RandomWeaponEquipper : MonoBehaviour
 {
-    public Player Player;
     public List<Weapon> OneHandedWeapons = new List<Weapon>();
     private WeaponEquipper WeaponEquipper;
     public bool equip = false;
 
     void Start()
     {
-        WeaponEquipper = Player.WeaponEquipper;
         //StartCoroutine(Waiter.WaitForFrames(1, () => { }, Equip));
     }
 
@@ -19,19 +17,21 @@ public class RandomWeaponEquipper : MonoBehaviour
     {
         if (equip)
         {
-            Equip();
+            //Equip();
             equip = false;
         }
     }
 
-    public void Equip()
+    public void Equip(Fighter fighter)
     {
         Weapon right = Instantiate(OneHandedWeapons[Random.Range(0, OneHandedWeapons.Count)]);
         Weapon left = Instantiate(OneHandedWeapons[Random.Range(0, OneHandedWeapons.Count)]);
-        Weapon rightOldWeapon = WeaponEquipper.RightArmWeapon.weapon;
-        Weapon leftOldWeapon = WeaponEquipper.LeftArmWeapon.weapon;
-        WeaponEquipper.EquipWeapon(WeaponHand.RIGHT, right);
-        WeaponEquipper.EquipWeapon(WeaponHand.LEFT, left);
+        
+        Weapon rightOldWeapon = fighter.RightArmWeapon.weapon;
+        Weapon leftOldWeapon = fighter.LeftArmWeapon.weapon;
+
+        fighter.RightArmWeapon.Weapon = right;
+        fighter.LeftArmWeapon.Weapon = left;
 
         if (rightOldWeapon != null)
         {

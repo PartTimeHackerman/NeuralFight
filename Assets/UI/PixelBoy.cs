@@ -19,12 +19,20 @@ public class PixelBoy : MonoBehaviour
             enabled = false;
             return;
         }
+        
+        float ratio = ((float)cam.pixelHeight / (float)cam.pixelWidth);
+        w = Screen.width / 2;
+        h = Mathf.RoundToInt(w * ratio);
     }
+    
     void Update() {
+        /*
 
         float ratio = ((float)cam.pixelHeight / (float)cam.pixelWidth);
+        w = Screen.width / 2;
         h = Mathf.RoundToInt(w * ratio);
-        
+        */
+
     }
     void OnRenderImage(RenderTexture source, RenderTexture destination)
     {

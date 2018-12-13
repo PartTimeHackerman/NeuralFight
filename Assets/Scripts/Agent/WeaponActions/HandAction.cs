@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class HandAction : MonoBehaviour, IWaiter
+public class HandAction : MonoBehaviour
 {
     public Transform target;
 
@@ -59,11 +59,11 @@ public class HandAction : MonoBehaviour, IWaiter
 
             if (attack.activate)
             {
-                weapon.DamagingPart.damage = weapon.damage;
+                weapon.DamagingPart.damage = weapon.Damage;
             }
             else
             {
-                weapon.DamagingPart.damage = weapon.damage / 10f;
+                weapon.DamagingPart.damage = weapon.Damage / 10f;
                 Vector3 torsoPos = TorsoTransform.position;
                 torsoPos.z = 0f;
                 Vector3 targetPos = target.position;
@@ -99,7 +99,7 @@ public class HandAction : MonoBehaviour, IWaiter
 
         this.block.deactivateOnDone = false;
         OnActivate += Player.ActivateWeaponAction;
-        StartCoroutine(Waiter.WaitForFrames(10, () => { }, () => { setActive(true); }));
+        //StartCoroutine(Waiter.WaitForFrames(10, () => { }, () => { setActive(true); }));
     }
 
     public void Attack()
@@ -116,6 +116,7 @@ public class HandAction : MonoBehaviour, IWaiter
         if (canBeUsed)
         {
             this.active = active;
+            weapon.SetDamaging(active);
         }
     }
 
@@ -128,7 +129,7 @@ public class HandAction : MonoBehaviour, IWaiter
     {
         if (this.attack != null) Destroy(this.attack);
         if (this.block != null) Destroy(this.block);
-        active = false;
+        //active = false;
     }
 
     public virtual void equipAction(Weapon newWeapon, Weapon oldWeapon)

@@ -7,7 +7,7 @@ public class NothingLocomoctionAction : LocomotionAction
     public BodyParts BodyParts;
     private List<BodyPart> Parts;
 
-    private bool Enabled = false;
+    private bool Enabled = true;
     
     protected override void Start()
     {

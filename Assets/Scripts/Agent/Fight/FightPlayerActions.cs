@@ -6,8 +6,8 @@ using UnityEngine;
 public class FightPlayerActions : MonoBehaviour
 {
     public int actionsSpace = 1;
-    public HandAction RightHandAction;
-    public HandAction LeftHandAction;
+    private HandAction RightHandAction;
+    private HandAction LeftHandAction;
     public BodyParts EnemyBodyParts;
 
     public LocomotionAction Stand;
@@ -26,6 +26,14 @@ public class FightPlayerActions : MonoBehaviour
         LocomotionActions.Add(WalkBW);
         LocomotionActions.Add(Nothing);
     }
+    
+    public void SetUp(FightPlayerAgent player, FightPlayerAgent enemy)
+    {
+        RightHandAction = player.PlayerFighter.RightArmWeapon.HandAction;
+        LeftHandAction = player.PlayerFighter.LeftArmWeapon.HandAction;
+        EnemyBodyParts = enemy.PlayerFighter.BodyParts;
+    }
+    
     public void setActions(List<float> actions)
     {
         if (actions.Count != actionsSpace)
@@ -55,12 +63,12 @@ public class FightPlayerActions : MonoBehaviour
     private void  setLocomotionActions(float value)
     {
         float normVal = (value + 1f) * .5f;
-        normVal *= 4f;
+        normVal *= 3f;
 
         int intVal = (int)Mathf.Round(normVal);
     
         currentAction = (LocomotyionType)intVal;
-        for (int i = 0; i < LocomotionActions.Count; i++)
+        for (int i = 0; i < 4; i++)
         {
             LocomotionActions[i].run = LocomotionActions[i].LocomotyionType == currentAction;
         }

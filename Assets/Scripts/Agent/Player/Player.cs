@@ -41,16 +41,23 @@ public class Player : MonoBehaviour
     public Observations BodyObservations;
     public WeaponEquipper WeaponEquipper;
     public bool left = true;
-    
+
     public event ChangeHealth OnChangeHealth;
+
     public delegate void ChangeHealth(float currentHP, float maxHP);
-    
+
     public event ChangeStamina OnChangeStamina;
+
     public delegate void ChangeStamina(float currentSP, float maxSP);
+
+    public event Died OnDied;
+
+    public delegate void Died(Player player);
 
     public HitNumber HitNumberPref;
     public HitNumber HitNumber;
-    
+
+    public Fighter Fighter;
 
     private void Start()
     {
@@ -64,6 +71,7 @@ public class Player : MonoBehaviour
         {
             bodyPart.OnChangeHealth += ChangeHp;
         }
+
         StartCoroutine(RegenerateHpSp());
     }
 
@@ -76,7 +84,7 @@ public class Player : MonoBehaviour
         SpRegen = 0;
         foreach (BodyPart bodyPart in Parts)
         {
-            bodyPart.Enable();
+            bodyPart.ResetPart();
             bodyPart.Player = this;
             MaxHP += bodyPart.MaxHP;
             MaxSP += bodyPart.MaxSP;
@@ -88,7 +96,7 @@ public class Player : MonoBehaviour
         CurrentMaxSP = MaxSP;
         HP = MaxHP;
         SP = MaxHP;
-        OnChangeHealth?.Invoke(this.hp, MaxHP);
+        OnChangeHealth?.Invoke(hp, MaxHP);
         OnChangeStamina?.Invoke(sp, MaxSP);
     }
 
@@ -149,10 +157,15 @@ public class Player : MonoBehaviour
 
     private void OnDie()
     {
-        died = true;
-        foreach (JointInfo jointsInfo in BodyParts.jointsInfos)
+        if (!died)
         {
-            jointsInfo.Disable();
+            died = true;
+            foreach (JointInfo jointsInfo in BodyParts.jointsInfos)
+            {
+                jointsInfo.Disable();
+            }
+
+            OnDied?.Invoke(this);
         }
     }
 
@@ -165,6 +178,7 @@ public class Player : MonoBehaviour
                 SP += SpRegen / 10f;
                 HP += HpRegen / 10f;
             }
+
             yield return new WaitForSeconds(.1f);
         }
     }

@@ -37,7 +37,7 @@ public class JointInfo : MonoBehaviour
         Init();
     }
 
-    void Start()
+    void Awake()
     {
         Init();
     }
@@ -52,11 +52,13 @@ public class JointInfo : MonoBehaviour
             SetConfigurableJointSettings();
         isBackwards = joint.axis.z < 0f;
     }
+/*
 
     void FixedUpdate()
     {
         updateConfigurableJoint();
     }
+*/
 
     public void setConfigurableForceAndRot(float force, Vector3 angRot)
     {

@@ -21,6 +21,17 @@ public class BodyPart : MonoBehaviour
         set { HPSetter(value); }
     }
 
+    public FighterPart fighterPart;
+    public FighterPart FighterPart
+    {
+        get { return fighterPart; }
+        set
+        {
+            fighterPart = value;
+            FighterPart.Equip(this);
+        }
+    }
+
     public event ChangeHealth OnChangeHealth;
 
     public delegate void ChangeHealth(float newHP, float oldHP, float diffHP);
@@ -52,6 +63,9 @@ public class BodyPart : MonoBehaviour
 
     public Player Player;
     public bool setHp;
+    
+    public List<Rigidbody> Rigidbodies = new List<Rigidbody>();
+    public MaterialChangerManager MaterialChangerManager;
 
     private void Start()
     {
@@ -85,15 +99,6 @@ public class BodyPart : MonoBehaviour
         if (healthPoints <= 0 && partEnabled) Disable();
         //if (healthPoints <= -MaxHP && !partDetached) Detach();
     }
-
-    private void FixedUpdate()
-    {
-        if (setHp)
-        {
-            HealthPoints -= 17;
-            setHp = false;
-        }
-    }
 /*
 
     private void SPSetter(float value)
@@ -114,6 +119,7 @@ public class BodyPart : MonoBehaviour
         {
             if (JointInfo.enabled) JointInfo.Disable();
         }
+
         /*
          foreach (BodyPart bodyPart in childrensBodyParts)
         {
@@ -121,21 +127,27 @@ public class BodyPart : MonoBehaviour
         }
         */
     }
-    
+
     public void Enable()
     {
-        healthPoints = MaxHP;
         partEnabled = true;
         if (JointInfo != null)
         {
             JointInfo.Enable();
         }
+
         /*
          foreach (BodyPart bodyPart in childrensBodyParts)
         {
             bodyPart.DisableChildren();
         }
         */
+    }
+
+    public void ResetPart()
+    {
+        healthPoints = MaxHP;
+        Enable();
     }
 
     public void Detach()
@@ -183,10 +195,6 @@ public class BodyPart : MonoBehaviour
     {
         if (Joint != null)
             Destroy(Joint);
-    }
-
-    public void ResetPart()
-    {
     }
 
     private IEnumerator RegenerateHpSp()

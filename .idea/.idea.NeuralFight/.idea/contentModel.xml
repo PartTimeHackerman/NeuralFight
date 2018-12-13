@@ -17,6 +17,369 @@
             <e p="OptionsMenuNew.cs" t="Include" />
           </e>
         </e>
+        <e p="Barebones" t="Include">
+          <e p="Contributions" t="Include">
+            <e p="EmilsConnectionTest" t="Include">
+              <e p="EmilsTestClient.cs" t="Include" />
+              <e p="EmilsTestServer.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Credits.txt" t="Include" />
+          <e p="Demos" t="Include">
+            <e p="Basics" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="BasicsClientConnector.cs" t="Include" />
+                <e p="BasicsMsfStarterUi.cs" t="Include" />
+                <e p="BasicsSpawnerStarterUi.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Common" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="DemoPlayerProfiles.cs" t="Include" />
+                <e p="RoomConnector.cs" t="Include" />
+                <e p="SimpleAccessHandler.cs" t="Include" />
+                <e p="UnetGameRoom.cs" t="Include" />
+                <e p="UnetGameTerminator.cs" t="Include" />
+                <e p="UnetMsfPlayer.cs" t="Include" />
+                <e p="UnetRoomConnector.cs" t="Include" />
+                <e p="UnetServerStarter.cs" t="Include" />
+              </e>
+            </e>
+            <e p="MiniGame" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="MiniCoin.cs" t="Include" />
+                <e p="MiniGameUi.cs" t="Include" />
+                <e p="MiniNetworkManager.cs" t="Include" />
+                <e p="MiniPlayerController.cs" t="Include" />
+              </e>
+            </e>
+            <e p="QuickSetup" t="Include">
+              <e p="Editor" t="Include">
+                <e p="MsfQuickBuild.cs" t="Include" />
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="QuickGameServerScene.cs" t="Include" />
+              </e>
+            </e>
+            <e p="RoomsDemo" t="Include">
+              <e p="Scenes" t="Include">
+                <e p="Scenes Information.txt" t="Include" />
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="DemoFactoriesSetup.cs" t="Include" />
+                <e p="DemoMainScene.cs" t="Include" />
+                <e p="DemoMasterScene.cs" t="Include" />
+                <e p="DemoMasterSpawnerScene.cs" t="Include" />
+                <e p="DemoSelectScene.cs" t="Include" />
+                <e p="DemoSpawnerScene.cs" t="Include" />
+                <e p="NetworkManagerSample.cs" t="Include" />
+                <e p="SimpleBootstrapper.cs" t="Include" />
+              </e>
+            </e>
+            <e p="WorldsDemo" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="TeleportRequestPacket.cs" t="Include" />
+                <e p="WorldDemoLoadingScene.cs" t="Include" />
+                <e p="WorldDemoMainScene.cs" t="Include" />
+                <e p="WorldDemoModule.cs" t="Include" />
+                <e p="WorldDemoOpCodes.cs" t="Include" />
+                <e p="WorldDemoZoneRoom.cs" t="Include" />
+                <e p="ZonePortal.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Msf" t="Include">
+            <e p="Editor" t="Include">
+              <e p="HelpBoxDrawer.cs" t="Include" />
+              <e p="SceneFieldPropertyDrawer.cs" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="Client" t="Include">
+                <e p="ConnectionToMaster.cs" t="Include" />
+              </e>
+              <e p="Database" t="Include">
+                <e p="MsfDbAccessorFactory.cs" t="Include" />
+              </e>
+              <e p="Events" t="Include">
+                <e p="EventsChannel.cs" t="Include" />
+              </e>
+              <e p="Mail" t="Include">
+                <e p="Mailer.cs" t="Include" />
+                <e p="SmtpMailer.cs" t="Include" />
+              </e>
+              <e p="MasterServer" t="Include">
+                <e p="MasterServerBehaviour.cs" t="Include" />
+              </e>
+              <e p="Modules" t="Include">
+                <e p="Authentication" t="Include">
+                  <e p="AuthModule.cs" t="Include" />
+                  <e p="IAccountData.cs" t="Include" />
+                  <e p="IAuthDatabase.cs" t="Include" />
+                  <e p="IPasswordResetData.cs" t="Include" />
+                  <e p="IUserExtension.cs" t="Include" />
+                  <e p="MsfAuthClient.cs" t="Include" />
+                  <e p="MsfAuthServer.cs" t="Include" />
+                  <e p="Packets" t="Include">
+                    <e p="AccountInfoPacket.cs" t="Include" />
+                    <e p="PeerAccountInfoPacket.cs" t="Include" />
+                  </e>
+                  <e p="PasswordChangeData.cs" t="Include" />
+                  <e p="UserExtension.cs" t="Include" />
+                </e>
+                <e p="Chat" t="Include">
+                  <e p="ChatChannel.cs" t="Include" />
+                  <e p="ChatModule.cs" t="Include" />
+                  <e p="ChatUserExtension.cs" t="Include" />
+                  <e p="MsfChatClient.cs" t="Include" />
+                  <e p="Packets" t="Include">
+                    <e p="ChatMessagePacket.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="Common" t="Include">
+                  <e p="IntPairPacket.cs" t="Include" />
+                  <e p="StringPairPacket.cs" t="Include" />
+                </e>
+                <e p="Lobbies" t="Include">
+                  <e p="DemoLobbyFactories.cs" t="Include" />
+                  <e p="ILobby.cs" t="Include" />
+                  <e p="ILobbyFactory.cs" t="Include" />
+                  <e p="ILobbyListener.cs" t="Include" />
+                  <e p="Implementations" t="Include">
+                    <e p="BaseLobby.cs" t="Include" />
+                    <e p="BaseLobbyAuto.cs" t="Include" />
+                  </e>
+                  <e p="JoinedLobby.cs" t="Include" />
+                  <e p="LobbiesModule.cs" t="Include" />
+                  <e p="LobbyConfig.cs" t="Include" />
+                  <e p="LobbyFactoryAnonymous.cs" t="Include" />
+                  <e p="LobbyMember.cs" t="Include" />
+                  <e p="LobbyState.cs" t="Include" />
+                  <e p="LobbyTeam.cs" t="Include" />
+                  <e p="LobbyUserExtension.cs" t="Include" />
+                  <e p="MsfLobbiesClient.cs" t="Include" />
+                  <e p="MsfLobbiesServer.cs" t="Include" />
+                  <e p="Packets" t="Include">
+                    <e p="LobbyChatPacket.cs" t="Include" />
+                    <e p="LobbyDataPacket.cs" t="Include" />
+                    <e p="LobbyJoinTeamPacket.cs" t="Include" />
+                    <e p="LobbyMemberData.cs" t="Include" />
+                    <e p="LobbyMemberPropChangePacket.cs" t="Include" />
+                    <e p="LobbyPropertiesSetPacket.cs" t="Include" />
+                    <e p="LobbyPropertyData.cs" t="Include" />
+                    <e p="LobbyTeamData.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="Matchmaker" t="Include">
+                  <e p="GameInfoPacket.cs" t="Include" />
+                  <e p="GameInfoType.cs" t="Include" />
+                  <e p="IGamesProvider.cs" t="Include" />
+                  <e p="MatchmakerModule.cs" t="Include" />
+                  <e p="MsfMatchmakerClient.cs" t="Include" />
+                </e>
+                <e p="Profiles" t="Include">
+                  <e p="IObservableProperty.cs" t="Include" />
+                  <e p="IProfilesDatabase.cs" t="Include" />
+                  <e p="MsfProfilesClient.cs" t="Include" />
+                  <e p="MsfProfilesServer.cs" t="Include" />
+                  <e p="ObservableBase.cs" t="Include" />
+                  <e p="ObservableDictionary.cs" t="Include" />
+                  <e p="ObservableDictionaryInt.cs" t="Include" />
+                  <e p="ObservableDictStringFloat.cs" t="Include" />
+                  <e p="ObservableDictStringInt.cs" t="Include" />
+                  <e p="ObservableFloat.cs" t="Include" />
+                  <e p="ObservableInt.cs" t="Include" />
+                  <e p="ObservableProfile.cs" t="Include" />
+                  <e p="ObservableServerProfile.cs" t="Include" />
+                  <e p="ObservableString.cs" t="Include" />
+                  <e p="ProfileExtension.cs" t="Include" />
+                  <e p="ProfilesModule.cs" t="Include" />
+                </e>
+                <e p="Rooms" t="Include">
+                  <e p="MsfRoomsClient.cs" t="Include" />
+                  <e p="MsfRoomsServer.cs" t="Include" />
+                  <e p="Packets" t="Include">
+                    <e p="PlayerLeftRoomPacket.cs" t="Include" />
+                    <e p="RoomAccessPacket.cs" t="Include" />
+                    <e p="RoomAccessProvideCheckPacket.cs" t="Include" />
+                    <e p="RoomAccessRequestPacket.cs" t="Include" />
+                    <e p="RoomAccessValidatePacket.cs" t="Include" />
+                    <e p="SaveRoomOptionsPacket.cs" t="Include" />
+                    <e p="UsernameAndPeerIdPacket.cs" t="Include" />
+                  </e>
+                  <e p="RegisteredRoom.cs" t="Include" />
+                  <e p="RoomController.cs" t="Include" />
+                  <e p="RoomOptions.cs" t="Include" />
+                  <e p="RoomsModule.cs" t="Include" />
+                </e>
+                <e p="Spawner" t="Include">
+                  <e p="MsfSpawnersClient.cs" t="Include" />
+                  <e p="MsfSpawnersServer.cs" t="Include" />
+                  <e p="Packets" t="Include">
+                    <e p="ClientsSpawnRequestPacket.cs" t="Include" />
+                    <e p="KillSpawnedProcessPacket.cs" t="Include" />
+                    <e p="RegisterSpawnedProcessPacket.cs" t="Include" />
+                    <e p="SpawnedProcessStartedPacket.cs" t="Include" />
+                    <e p="SpawnFinalizationPacket.cs" t="Include" />
+                    <e p="SpawnRequestPacket.cs" t="Include" />
+                    <e p="SpawnStatusUpdatePacket.cs" t="Include" />
+                  </e>
+                  <e p="RegisteredSpawner.cs" t="Include" />
+                  <e p="SpawnerBehaviour.cs" t="Include" />
+                  <e p="SpawnerController.cs" t="Include" />
+                  <e p="SpawnerOptions.cs" t="Include" />
+                  <e p="SpawnersModule.cs" t="Include" />
+                  <e p="SpawnRequestController.cs" t="Include" />
+                  <e p="SpawnStatus.cs" t="Include" />
+                  <e p="SpawnTask.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Msf" t="Include">
+                <e p="Msf.cs" t="Include" />
+                <e p="MsfArgs.cs" t="Include" />
+                <e p="MsfBaseClient.cs" t="Include" />
+                <e p="MsfClient.cs" t="Include" />
+                <e p="MsfConcurrency.cs" t="Include" />
+                <e p="MsfRuntime.cs" t="Include" />
+                <e p="MsfSecurity.cs" t="Include" />
+                <e p="MsfServer.cs" t="Include" />
+                <e p="SuccessCallback.cs" t="Include" />
+              </e>
+              <e p="MsfDictKeys.cs" t="Include" />
+              <e p="MsfOpCodes.cs" t="Include" />
+              <e p="MsfPropCodes.cs" t="Include" />
+              <e p="Server" t="Include">
+                <e p="IServer.cs" t="Include" />
+                <e p="IServerModule.cs" t="Include" />
+                <e p="PeerSecurityExtension.cs" t="Include" />
+                <e p="ServerBehaviour.cs" t="Include" />
+                <e p="ServerModuleBehaviour.cs" t="Include" />
+              </e>
+              <e p="Utils" t="Include">
+                <e p="HelpBox.cs" t="Include" />
+                <e p="HelpBoxType.cs" t="Include" />
+                <e p="SceneField.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="MSF README.txt" t="Include" />
+          <e p="MSF ReleaseNotes.txt" t="Include" />
+          <e p="MsfDatabaseImplementations" t="Include">
+            <e p="LiteDBV2" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="AuthDbLdb.cs" t="Include" />
+                <e p="LiteDbFactory.cs" t="Include" />
+                <e p="ProfilesDatabaseLdb.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="MsfUiSamples" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Auth" t="Include">
+                <e p="AuthUiController.cs" t="Include" />
+                <e p="EmailConfirmUi.cs" t="Include" />
+                <e p="LoginFormData.cs" t="Include" />
+                <e p="LoginUi.cs" t="Include" />
+                <e p="PasswordResetUi.cs" t="Include" />
+                <e p="QuickAuthUi.cs" t="Include" />
+                <e p="RegisterUi.cs" t="Include" />
+              </e>
+              <e p="Chat" t="Include">
+                <e p="ChatUi.cs" t="Include" />
+              </e>
+              <e p="ClientConnectionStatusUi.cs" t="Include" />
+              <e p="DialogBoxUi.cs" t="Include" />
+              <e p="Draggable.cs" t="Include" />
+              <e p="LoadingUi.cs" t="Include" />
+              <e p="LoadingUiItem.cs" t="Include" />
+              <e p="Lobbies" t="Include">
+                <e p="LobbyChatUi.cs" t="Include" />
+                <e p="LobbyCreateUi.cs" t="Include" />
+                <e p="LobbyPropController.cs" t="Include" />
+                <e p="LobbyPropControllersUi.cs" t="Include" />
+                <e p="LobbyTeamUi.cs" t="Include" />
+                <e p="LobbyUi.cs" t="Include" />
+                <e p="LobbyUserUi.cs" t="Include" />
+              </e>
+              <e p="MsfHud.cs" t="Include" />
+              <e p="MsfUi.cs" t="Include" />
+              <e p="MsfUiDestroyer.cs" t="Include" />
+              <e p="Rooms" t="Include">
+                <e p="CreateGameProgressUi.cs" t="Include" />
+                <e p="CreateGameUi.cs" t="Include" />
+                <e p="GamesListUi.cs" t="Include" />
+                <e p="GamesListUiItem.cs" t="Include" />
+              </e>
+              <e p="RotatingImageUi.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Networking" t="Include">
+            <e p="Plugins" t="Include">
+              <e p="WebSocket.cs" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="BarebonesTopology.cs" t="Include" />
+              <e p="BaseClientSocket.cs" t="Include" />
+              <e p="BasePeer.cs" t="Include" />
+              <e p="BmUpdateRunner.cs" t="Include" />
+              <e p="BNetworkReader.cs" t="Include" />
+              <e p="BNetworkWriter.cs" t="Include" />
+              <e p="BTimer.cs" t="Include" />
+              <e p="ClientSocketUnet.cs" t="Include" />
+              <e p="ClientSocketWs.cs" t="Include" />
+              <e p="ConnectionStatus.cs" t="Include" />
+              <e p="DeliveryMethod.cs" t="Include" />
+              <e p="IClientSocket.cs" t="Include" />
+              <e p="IIncommingMessage.cs" t="Include" />
+              <e p="IMessage.cs" t="Include" />
+              <e p="IMessageFactory.cs" t="Include" />
+              <e p="IMsgDispatcher.cs" t="Include" />
+              <e p="IncomingMessage.cs" t="Include" />
+              <e p="IPacketHandler.cs" t="Include" />
+              <e p="IPeer.cs" t="Include" />
+              <e p="ISerializablePacket.cs" t="Include" />
+              <e p="IServerSocket.cs" t="Include" />
+              <e p="Message.cs" t="Include" />
+              <e p="MessageFactory.cs" t="Include" />
+              <e p="MessageFlag.cs" t="Include" />
+              <e p="MessageHelper.cs" t="Include" />
+              <e p="PacketHandler.cs" t="Include" />
+              <e p="PeerUnet.cs" t="Include" />
+              <e p="PeerWs.cs" t="Include" />
+              <e p="ResponseStatus.cs" t="Include" />
+              <e p="SerializablePacket.cs" t="Include" />
+              <e p="SerializationExtensions.cs" t="Include" />
+              <e p="Serializer.cs" t="Include" />
+              <e p="ServerSocketUnet.cs" t="Include" />
+              <e p="ServerSocketWs.cs" t="Include" />
+              <e p="Utils" t="Include">
+                <e p="Conversion" t="Include">
+                  <e p="BigEndianBitConverter.cs" t="Include" />
+                  <e p="DoubleConverter.cs" t="Include" />
+                  <e p="EndianBitConverter.cs" t="Include" />
+                  <e p="Endianness.cs" t="Include" />
+                  <e p="LittleEndianBitConverter.cs" t="Include" />
+                </e>
+                <e p="IO" t="Include">
+                  <e p="EndianBinaryReader.cs" t="Include" />
+                  <e p="EndianBinaryWriter.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="Plugins" t="Include">
+            <e p="JSONObject.cs" t="Include" />
+          </e>
+          <e p="Utils" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="BmAutoEnabler.cs" t="Include" />
+              <e p="BmHelper.cs" t="Include" />
+              <e p="GenericPool.cs" t="Include" />
+              <e p="GenericUiList.cs" t="Include" />
+              <e p="GUIConsole.cs" t="Include" />
+              <e p="SafeCoroutine.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="BOXOPHOBIC" t="Include">
           <e p="Skybox Cubemap Extended" t="Include">
             <e p="Shaders" t="Include">
@@ -29,6 +392,36 @@
             <e p="README.txt" t="Include" />
           </e>
         </e>
+        <e p="Demigiant" t="Include">
+          <e p="DOTween" t="Include">
+            <e p="Modules" t="Include">
+              <e p="DOTweenModuleAudio.cs" t="Include" />
+              <e p="DOTweenModulePhysics.cs" t="Include" />
+              <e p="DOTweenModulePhysics2D.cs" t="Include" />
+              <e p="DOTweenModuleSprite.cs" t="Include" />
+              <e p="DOTweenModuleUI.cs" t="Include" />
+              <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+              <e p="DOTweenModuleUtils.cs" t="Include" />
+            </e>
+            <e p="README.txt" t="Include" />
+          </e>
+        </e>
+        <e p="DOTween Examples" t="Include">
+          <e p="Basics.cs" t="Include" />
+          <e p="CustomPlugin Example" t="Include">
+            <e p="CustomPluginExampleBrain.cs" t="Include" />
+            <e p="CustomRange.cs" t="Include" />
+            <e p="CustomRangePlugin.cs" t="Include" />
+          </e>
+          <e p="Example Assets" t="Include">
+            <e p="DragTarget.cs" t="Include" />
+          </e>
+          <e p="Follow.cs" t="Include" />
+          <e p="Materials.cs" t="Include" />
+          <e p="Paths.cs" t="Include" />
+          <e p="Sequences.cs" t="Include" />
+          <e p="UGUI.cs" t="Include" />
+        </e>
         <e p="Editor" t="Include">
           <e p="AgentEditor.cs" t="Include" />
           <e p="BrainEditor.cs" t="Include" />
@@ -39,6 +432,25 @@
           <e p="MLAgentsEditModeTest.cs" t="Include" />
           <e p="ResetParameterDrawer.cs" t="Include" />
           <e p="SetPivot.cs" t="Include" />
+        </e>
+        <e p="FancyScrollView" t="Include">
+          <e p="Examples" t="Include">
+            <e p="04_FocusOn" t="Include">
+              <e p="Example04CellDto.cs" t="Include" />
+              <e p="Example04Scene.cs" t="Include" />
+              <e p="Example04ScrollView.cs" t="Include" />
+              <e p="Example04ScrollViewCell.cs" t="Include" />
+              <e p="Example04ScrollViewContext.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="ScrollPositionControllerEditor.cs" t="Include" />
+            </e>
+            <e p="FancyScrollView.cs" t="Include" />
+            <e p="FancyScrollViewCell.cs" t="Include" />
+            <e p="ScrollPositionController.cs" t="Include" />
+          </e>
         </e>
         <e p="FbxExporters" t="Include">
           <e p="Editor" t="Include">
@@ -58,6 +470,64 @@
               <e p="Vertex_Color_Unlit.shader" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="GameSparks" t="Include">
+          <e p="Editor" t="Include">
+            <e p="GameSparksEditorFormUpload.cs" t="Include" />
+            <e p="GameSparksPopUp.cs" t="Include" />
+            <e p="GameSparksRestApi.cs" t="Include" />
+            <e p="GameSparksRestWindow.cs" t="Include" />
+            <e p="GameSparksSettingsEditor.cs" t="Include" />
+            <e p="GameSparksUnityInspector.cs" t="Include" />
+          </e>
+          <e p="GameSparksRTUnity.cs" t="Include" />
+          <e p="GameSparksSettings.cs" t="Include" />
+          <e p="GameSparksUnity.cs" t="Include" />
+          <e p="link.xml" t="Include" />
+          <e p="Platforms" t="Include">
+            <e p="DefaultPlatform.cs" t="Include" />
+            <e p="IControlledTimer.cs" t="Include" />
+            <e p="IControlledWebSocket.cs" t="Include" />
+            <e p="Native" t="Include">
+              <e p="detail" t="Include">
+                <e p="GameSparksNative.cs" t="Include" />
+                <e p="GameSparksNativePINVOKE.cs" t="Include" />
+                <e p="NativeWebSocket.cs" t="Include" />
+              </e>
+              <e p="NativePlatform.cs" t="Include" />
+              <e p="NativeWebSocket.cs" t="Include" />
+            </e>
+            <e p="PlatformBase.cs" t="Include" />
+            <e p="TimerController.cs" t="Include" />
+            <e p="UnityTimer.cs" t="Include" />
+            <e p="WebGL" t="Include">
+              <e p="SimpleJson2.cs" t="Include" />
+              <e p="WebGLPlatform.cs" t="Include" />
+              <e p="WebGLWebSocket.cs" t="Include" />
+            </e>
+            <e p="WebSocketController.cs" t="Include" />
+          </e>
+          <e p="Plugins" t="Include">
+            <e p="GameSparksRT.xml" t="Include" />
+            <e p="Metro" t="Include">
+              <e p="GameSparksRT.xml" t="Include" />
+            </e>
+          </e>
+          <e p="README.txt" t="Include" />
+          <e p="TestUI" t="Include">
+            <e p="GameSparksTestUI.cs" t="Include" />
+          </e>
+        </e>
+        <e p="GGEZ" t="Include">
+          <e p="PerfectPixelCamera" t="Include">
+            <e p="README.txt" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="PerfectPixelCamera.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="JsonDotNet" t="Include">
+          <e p="link.xml" t="Include" />
         </e>
         <e p="ML-Agents" t="Include">
           <e p="Scripts" t="Include">
@@ -101,6 +571,55 @@
             <e p="UnityAgentsException.cs" t="Include" />
           </e>
         </e>
+        <e p="Mosframe" t="Include">
+          <e p="Common" t="Include">
+            <e p="HtmlColor.cs" t="Include" />
+            <e p="RichText.cs" t="Include" />
+            <e p="ScrollbarHandleSize.cs" t="Include" />
+          </e>
+          <e p="Examples" t="Include">
+            <e p="Item.cs" t="Include" />
+            <e p="Item2.cs" t="Include" />
+            <e p="RealTimeInsertItemExample.cs" t="Include" />
+          </e>
+          <e p="extensions" t="Include">
+            <e p="GameObjectEx.cs" t="Include" />
+            <e p="RectTransformEx.cs" t="Include" />
+          </e>
+          <e p="README.txt" t="Include" />
+          <e p="ScrollView" t="Include">
+            <e p="DynamicHScrollView.cs" t="Include" />
+            <e p="DynamicScrollView.cs" t="Include" />
+            <e p="DynamicScrollViewItem.cs" t="Include" />
+            <e p="DynamicScrollViewItemExample.cs" t="Include" />
+            <e p="DynamicVScrollView.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Nakama" t="Include">
+          <e p="Snippets" t="Include">
+            <e p="AccountAndUsers.cs" t="Include" />
+            <e p="AuthenticateWithDevice.cs" t="Include" />
+            <e p="SessionWithPlayerPrefs.cs" t="Include" />
+            <e p="SimpleSocket.cs" t="Include" />
+            <e p="SocketDebugger.cs" t="Include" />
+          </e>
+          <e p="UnityLogger.cs" t="Include" />
+        </e>
+        <e p="OutlineEffect" t="Include">
+          <e p="Demo" t="Include">
+            <e p="MaterialSwitcher.cs" t="Include" />
+            <e p="OutlineAnimation.cs" t="Include" />
+            <e p="Rotate.cs" t="Include" />
+            <e p="Toggle.cs" t="Include" />
+          </e>
+          <e p="LinkedSet.cs" t="Include" />
+          <e p="Outline.cs" t="Include" />
+          <e p="OutlineEffect.cs" t="Include" />
+          <e p="Resources" t="Include">
+            <e p="OutlineBufferShader.shader" t="Include" />
+            <e p="OutlineShader.shader" t="Include" />
+          </e>
+        </e>
         <e p="packages" t="ExcludeRecursive">
           <e p="Newtonsoft.Json.11.0.2" t="Include">
             <e p="lib" t="Include">
@@ -108,6 +627,16 @@
                 <e p="Newtonsoft.Json.xml" t="Include" />
               </e>
             </e>
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="BetterStreamingAssets" t="Include">
+            <e p="BSA_BetterStreamingAssets.cs" t="Include" />
+            <e p="BSA_PathUtil.cs" t="Include" />
+            <e p="BSA_SubReadOnlyStream.cs" t="Include" />
+            <e p="BSA_TestSceneGUI.cs" t="Include" />
+            <e p="BSA_ZipArchive.cs" t="Include" />
+            <e p="README.txt" t="Include" />
           </e>
         </e>
         <e p="PostProcessing" t="Include">
@@ -538,6 +1067,55 @@
             </e>
           </e>
         </e>
+        <e p="QuickSave" t="Include">
+          <e p="Core" t="Include">
+            <e p="Helpers" t="Include">
+              <e p="TypeHelper.cs" t="Include" />
+            </e>
+            <e p="Models" t="Include">
+              <e p="Bounds.cs" t="Include" />
+              <e p="Color.cs" t="Include" />
+              <e p="Color32.cs" t="Include" />
+              <e p="Matrix4x4.cs" t="Include" />
+              <e p="Quaternion.cs" t="Include" />
+              <e p="Rect.cs" t="Include" />
+              <e p="Sprite.cs" t="Include" />
+              <e p="Texture2D.cs" t="Include" />
+              <e p="Vector2.cs" t="Include" />
+              <e p="Vector3.cs" t="Include" />
+              <e p="Vector4.cs" t="Include" />
+            </e>
+            <e p="Security" t="Include">
+              <e p="Cryptography.cs" t="Include" />
+              <e p="CryptographyMono.cs" t="Include" />
+              <e p="CryptographyUWP.cs" t="Include" />
+              <e p="ICryptography.cs" t="Include" />
+            </e>
+            <e p="Serialisers" t="Include">
+              <e p="IJsonSerialiser.cs" t="Include" />
+              <e p="JsonSerialiser.cs" t="Include" />
+              <e p="JsonSerialiserMono.cs" t="Include" />
+              <e p="JsonSerialiserUWP.cs" t="Include" />
+            </e>
+            <e p="Storage" t="Include">
+              <e p="FileAccess.cs" t="Include" />
+              <e p="FileAccessMono.cs" t="Include" />
+              <e p="FileAccessUWP.cs" t="Include" />
+              <e p="IFileAccess.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Example" t="Include">
+            <e p="ExampleSceneManagerController.cs" t="Include" />
+          </e>
+          <e p="QuickSaveException.cs" t="Include" />
+          <e p="QuickSaveRaw.cs" t="Include" />
+          <e p="QuickSaveReader.cs" t="Include" />
+          <e p="QuickSaveRoot.cs" t="Include" />
+          <e p="QuickSaveSettings.cs" t="Include" />
+          <e p="QuickSaveWriter.cs" t="Include" />
+          <e p="README.txt" t="Include" />
+          <e p="SecurityMode.cs" t="Include" />
+        </e>
         <e p="Raw Mocap Data" t="Include">
           <e p="Animations" t="Include">
             <e p="_CompleteAnimationList.txt" t="Include" />
@@ -566,10 +1144,19 @@
               <e p="ObservationsAnt.cs" t="Include" />
               <e p="UpperLegsCollidingWithSurface.cs" t="Include" />
             </e>
+            <e p="Arena" t="Include">
+              <e p="Arena.cs" t="Include" />
+              <e p="ArenaCameraFollow.cs" t="Include" />
+              <e p="ArenaFighterChooser.cs" t="Include" />
+              <e p="ArenaMatch.cs" t="Include" />
+              <e p="ArenaPlayer.cs" t="Include" />
+              <e p="ArenaUIAnimations.cs" t="Include" />
+              <e p="FighterArenaSetter.cs" t="Include" />
+            </e>
             <e p="Body" t="Include">
               <e p="BodyPart.cs" t="Include" />
               <e p="Hitbox.cs" t="Include" />
-              <e p="Parts.cs" t="Include" />
+              <e p="Part.cs" t="Include" />
             </e>
             <e p="BodyParts.cs" t="Include" />
             <e p="Crouching" t="Include">
@@ -591,6 +1178,7 @@
             </e>
             <e p="Fight" t="Include">
               <e p="FightAcademy.cs" t="Include" />
+              <e p="FightAction.cs" t="Include" />
               <e p="FightObservationsForEnemy.cs" t="Include" />
               <e p="FightPlayerActions.cs" t="Include" />
               <e p="FightPlayerAgent.cs" t="Include" />
@@ -601,6 +1189,36 @@
               <e p="Resetter.cs" t="Include" />
               <e p="WallMover.cs" t="Include" />
               <e p="Walls.cs" t="Include" />
+            </e>
+            <e p="Fighter" t="Include">
+              <e p="Fighter.cs" t="Include" />
+              <e p="FighterDefaultPosition.cs" t="Include" />
+            </e>
+            <e p="FighterEditor" t="Include">
+              <e p="Collections" t="Include">
+                <e p="FighterPartsCollection.cs" t="Include" />
+                <e p="FightersCollection.cs" t="Include" />
+                <e p="ScrollListItem.cs" t="Include" />
+                <e p="WeaponsCollection.cs" t="Include" />
+              </e>
+              <e p="DistanceEquipper.cs" t="Include" />
+              <e p="EditableMesh.cs" t="Include" />
+              <e p="EditablePart.cs" t="Include" />
+              <e p="EditorDebugger.cs" t="Include" />
+              <e p="EndMesh.cs" t="Include" />
+              <e p="EnemyFighterLoader.cs" t="Include" />
+              <e p="FighterChooser.cs" t="Include" />
+              <e p="FighterCreator.cs" t="Include" />
+              <e p="FighterEditor.cs" t="Include" />
+              <e p="FighterNum.cs" t="Include" />
+              <e p="FighterSaverLoader.cs" t="Include" />
+              <e p="MeshSizeChanger.cs" t="Include" />
+              <e p="PartDistanceEquipper.cs" t="Include" />
+              <e p="PartEditor.cs" t="Include" />
+              <e p="PartsEditor.cs" t="Include" />
+              <e p="Positioner.cs" t="Include" />
+              <e p="SizeChanger.cs" t="Include" />
+              <e p="WeaponInfo.cs" t="Include" />
             </e>
             <e p="Humanoid2D" t="Include">
               <e p="ActionsAngPos.cs" t="Include" />
@@ -618,9 +1236,50 @@
             <e p="HumanoidAcademy.cs" t="Include" />
             <e p="HumanoidAgent.cs" t="Include" />
             <e p="IAgent.cs" t="Include" />
+            <e p="Instancers" t="Include">
+              <e p="FighterPartInstancer.cs" t="Include" />
+              <e p="JsonObjects" t="Include">
+                <e p="FighterPartJson.cs" t="Include" />
+                <e p="ItemJson.cs" t="Include" />
+                <e p="JsonList.cs" t="Include" />
+                <e p="PosRot.cs" t="Include" />
+                <e p="WeaponJson.cs" t="Include" />
+              </e>
+              <e p="WeaponInstancer.cs" t="Include" />
+            </e>
             <e p="InternalModel.cs" t="Include" />
             <e p="IObservations.cs" t="Include" />
             <e p="IReward.cs" t="Include" />
+            <e p="Item" t="Include">
+              <e p="Item.cs" t="Include" />
+              <e p="ItemMaterial.cs" t="Include" />
+              <e p="ItemType.cs" t="Include" />
+              <e p="MaterialChanger.cs" t="Include" />
+              <e p="MaterialChangerManager.cs" t="Include" />
+              <e p="Modification" t="Include">
+                <e p="BodyPartModoficationType.cs" t="Include" />
+                <e p="ModificationType.cs" t="Include" />
+                <e p="WeaponModificationType.cs" t="Include" />
+              </e>
+              <e p="Part" t="Include">
+                <e p="FighterPart.cs" t="Include" />
+                <e p="PartType.cs" t="Include" />
+              </e>
+              <e p="Weapon" t="Include">
+                <e p="ArmWeapon.cs" t="Include" />
+                <e p="DamagingPart.cs" t="Include" />
+                <e p="Weapon.cs" t="Include" />
+                <e p="WeaponAttack.cs" t="Include" />
+                <e p="WeaponBlock.cs" t="Include" />
+                <e p="WeaponDirection.cs" t="Include" />
+                <e p="WeaponEquipper.cs" t="Include" />
+                <e p="WeaponHand.cs" t="Include" />
+                <e p="WeaponHolder.cs" t="Include" />
+                <e p="WeaponsContainer.cs" t="Include" />
+                <e p="WeaponTwoHanded.cs" t="Include" />
+                <e p="WeaponType.cs" t="Include" />
+              </e>
+            </e>
             <e p="JointInfo.cs" t="Include" />
             <e p="JointInfoOLD.cs" t="Include" />
             <e p="JointInfosManager.cs" t="Include" />
@@ -637,6 +1296,7 @@
               <e p="NothingLocomoctionAction.cs" t="Include" />
             </e>
             <e p="ModelInput.cs" t="Include" />
+            <e p="ObjectsPositions.cs" t="Include" />
             <e p="Observations" t="Include">
               <e p="ObservablePart.cs" t="Include" />
               <e p="Observations.cs" t="Include" />
@@ -687,20 +1347,6 @@
               <e p="WalkFWReward.cs" t="Include" />
               <e p="WalkingFWAgent.cs" t="Include" />
             </e>
-            <e p="Weapon" t="Include">
-              <e p="ArmWeapon.cs" t="Include" />
-              <e p="DamagingPart.cs" t="Include" />
-              <e p="Weapon.cs" t="Include" />
-              <e p="WeaponAttack.cs" t="Include" />
-              <e p="WeaponBlock.cs" t="Include" />
-              <e p="WeaponDirection.cs" t="Include" />
-              <e p="WeaponEquipper.cs" t="Include" />
-              <e p="WeaponHand.cs" t="Include" />
-              <e p="WeaponHolder.cs" t="Include" />
-              <e p="WeaponsContainer.cs" t="Include" />
-              <e p="WeaponTwoHanded.cs" t="Include" />
-              <e p="WeaponType.cs" t="Include" />
-            </e>
             <e p="WeaponActions" t="Include">
               <e p="ActionsContainer.cs" t="Include" />
               <e p="ActionsEquipper.cs" t="Include" />
@@ -731,6 +1377,10 @@
             <e p="ParticleColorChanger.cs" t="Include" />
             <e p="SpriteColorChanger.cs" t="Include" />
           </e>
+          <e p="ExampleScriptsAndClasses" t="Include">
+            <e p="TestClass.cs" t="Include" />
+            <e p="TestScript.cs" t="Include" />
+          </e>
           <e p="HeadlessTest.cs" t="Include" />
           <e p="Input" t="Include">
             <e p="DoubleInput.cs" t="Include" />
@@ -756,6 +1406,34 @@
             <e p="Step.cs" t="Include" />
           </e>
           <e p="ReferenceObservations.cs" t="Include" />
+          <e p="Serialization" t="Include">
+            <e p="Attributes" t="Include">
+              <e p="DontSaveField.cs" t="Include" />
+            </e>
+            <e p="Non-Mono Classes" t="Include">
+              <e p="ObjectComponent.cs" t="Include" />
+              <e p="SceneData.cs" t="Include" />
+              <e p="SceneObject.cs" t="Include" />
+            </e>
+            <e p="ObjectIdentifier.cs" t="Include" />
+            <e p="SaveLoad.cs" t="Include" />
+            <e p="SaveLoadMenu.cs" t="Include" />
+            <e p="Surrogates" t="Include">
+              <e p="ColorSurrogate.cs" t="Include" />
+              <e p="GameObjectSurrogate.cs" t="Include" />
+              <e p="QuaternionSurrogate.cs" t="Include" />
+              <e p="SurrogatesReadMe.txt" t="Include" />
+              <e p="Texture2DSurrogate.cs" t="Include" />
+              <e p="TransformSurrogate.cs" t="Include" />
+              <e p="Vector3Surrogate.cs" t="Include" />
+            </e>
+            <e p="Utilities" t="Include">
+              <e p="TypeSystem.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Server" t="Include">
+            <e p="NakamaClient.cs" t="Include" />
+          </e>
           <e p="SwipeArea.cs" t="Include" />
           <e p="Tests" t="Include">
             <e p="RotVelTest.cs" t="Include" />
@@ -765,6 +1443,7 @@
             <e p="CustomOutline.cs" t="Include" />
             <e p="HitNumber.cs" t="Include" />
             <e p="HpBar.cs" t="Include" />
+            <e p="PlayerHUD.cs" t="Include" />
             <e p="RelativeAnimPos.cs" t="Include" />
             <e p="SpBar.cs" t="Include" />
             <e p="ValBar.cs" t="Include" />
@@ -776,6 +1455,7 @@
             <e p="CenterOfMassDebug.cs" t="Include" />
             <e p="ConfigurableJointExtension.cs" t="Include" />
             <e p="DebugPosRotVel.cs" t="Include" />
+            <e p="DefaultDataLoader.cs" t="Include" />
             <e p="DictionaryDrawer.cs" t="Include" />
             <e p="DragRigidbody.cs" t="Include" />
             <e p="Epoch.cs" t="Include" />
@@ -800,6 +1480,7 @@
             <e p="RectPosSetter.cs" t="Include" />
             <e p="RewardFnsGraphSpawner.cs" t="Include" />
             <e p="RewardFunctions.cs" t="Include" />
+            <e p="SaveTest.cs" t="Include" />
             <e p="SceneChooser.cs" t="Include" />
             <e p="SerializableDictionary.cs" t="Include" />
             <e p="SimplePoolUtils.cs" t="Include" />
@@ -818,9 +1499,19 @@
           <e p="CheapGlow.shader" t="Include" />
           <e p="ChromaticAberration.cs" t="Include" />
           <e p="ChromaticAberration.shader" t="Include" />
+          <e p="CustomOutline-CameraIndependent.shader" t="Include" />
+          <e p="CustomOutline-ConstantWidth.shader" t="Include" />
+          <e p="CustomOutline.shader" t="Include" />
+          <e p="GlowShader.shader" t="Include" />
+          <e p="Mask.shader" t="Include" />
+          <e p="Mask2.shader" t="Include" />
+          <e p="Masked.shader" t="Include" />
           <e p="MobileShader.shader" t="Include" />
+          <e p="Outline.shader" t="Include" />
+          <e p="SetRenderQueue.cs" t="Include" />
           <e p="SpriteOutline.cs" t="Include" />
           <e p="Sprites-Outline.shader" t="Include" />
+          <e p="UniformOutline.shader" t="Include" />
         </e>
         <e p="Simple UI" t="Include">
           <e p="Fonts" t="Include">
@@ -952,6 +1643,9 @@
         </e>
         <e p="UI" t="Include">
           <e p="PixelBoy.cs" t="Include" />
+          <e p="PixUIAssetPack" t="Include">
+            <e p="README.txt" t="Include" />
+          </e>
         </e>
         <e p="unity-ui-extensions" t="Include">
           <e p="Editor" t="Include">

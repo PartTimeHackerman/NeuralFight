@@ -22,13 +22,11 @@ public class ApplicationSettings : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    /*private void Update()
     {
-        if (Application.targetFrameRate != FPS)
-            Application.targetFrameRate = FPS;
-        if (Time.timeScale != timeScale)
-            Time.timeScale = timeScale;
-    }
+        if (Application.targetFrameRate != FPS) Application.targetFrameRate = FPS;
+        if (Time.timeScale != timeScale) Time.timeScale = timeScale;
+    }*/
 
     public static ApplicationSettings Instance()
     {

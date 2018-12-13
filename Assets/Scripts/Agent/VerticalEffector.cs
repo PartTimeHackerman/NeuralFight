@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-class VerticalEffector : MonoBehaviour
+public class VerticalEffector : MonoBehaviour
 {
     public Rigidbody rigidbody;
     public Rigidbody referenceRb;

@@ -1,10 +1,20 @@
+using UnityEngine;
+
 public class SpBar : ValBar
 {
-    protected override void Start()
+    
+    public void SetPlayer(Player player)
     {
-        MaxVal.text = ThousandsConverter.ToKs(Player.MaxSP);
-        CurrVal.text = ThousandsConverter.ToKs(Player.MaxSP);
+        if (Player != null)
+        {
+            Player.OnChangeStamina -= SetVals;
+        }
+
+        Player = player;
+        SetVals(Player.SP, Player.MaxSP);
+        Vector2 barSize = LerpBar.rectTransform.sizeDelta;
+        barSize.x = NewCurrVal;
+        LerpBar.rectTransform.sizeDelta = barSize;
         Player.OnChangeStamina += SetVals;
-        base.Start();
     }
 }

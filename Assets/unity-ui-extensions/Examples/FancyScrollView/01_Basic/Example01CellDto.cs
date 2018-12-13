@@ -1,4 +1,4 @@
-﻿namespace UnityEngine.UI.Extensions.Examples
+﻿namespace FancyScrollView
 {
     public class Example01CellDto
     {
