@@ -1,4 +1,4 @@
-13.12.2018 19:31:52
+14.12.2018 14:48:31
  
 Warning
 You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
@@ -8,17 +8,17 @@ You are trying to create a MonoBehaviour using the 'new' keyword.  This is not a
 0x00000001408B1580 (Unity) DebugStringToFile
 0x0000000140BB6875 (Unity) MonoBehaviour::ConstructorCheck
 0x000000014192B606 (Unity) MonoBehaviour_CUSTOM_ConstructorCheck
-0x000000003845E8DE (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
-0x000000003845E56B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
-0x00000000383D57BB (Mono JIT Code) [StandingRewardHumanoid.cs:40] StandingRewardHumanoid:.ctor (BodyParts) 
-0x00000000383D52B3 (Mono JIT Code) [FightPlayerReward.cs:40] FightPlayerReward:SetUp (FightPlayerAgent,FightPlayerAgent) 
-0x00000000383D4BD3 (Mono JIT Code) [FightPlayerAgent.cs:50] FightPlayerAgent:InitializeAgent () 
-0x00000000383D2B1A (Mono JIT Code) [Agent.cs:302] MLAgents.Agent:OnEnableHelper (MLAgents.Academy) 
-0x00000000383D1C4B (Mono JIT Code) [Agent.cs:267] MLAgents.Agent:OnEnable () 
-0x000000003845D7C8 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
-0x00007FFE2913A65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
-0x00007FFE290C1B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
-0x00007FFE290CAB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
+0x00000000007CDCFE (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
+0x00000000007CD98B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
+0x00000000398E2BBB (Mono JIT Code) [StandingRewardHumanoid.cs:40] StandingRewardHumanoid:.ctor (BodyParts) 
+0x00000000398E26B3 (Mono JIT Code) [FightPlayerReward.cs:40] FightPlayerReward:SetUp (FightPlayerAgent,FightPlayerAgent) 
+0x00000000398E1FD3 (Mono JIT Code) [FightPlayerAgent.cs:50] FightPlayerAgent:InitializeAgent () 
+0x00000000398DF84A (Mono JIT Code) [Agent.cs:302] MLAgents.Agent:OnEnableHelper (MLAgents.Academy) 
+0x00000000398DECFB (Mono JIT Code) [Agent.cs:267] MLAgents.Agent:OnEnable () 
+0x00000000007CD528 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x00007FFE1706A65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
+0x00007FFE16FF1B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
+0x00007FFE16FFAB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
 0x0000000140C0734A (Unity) scripting_method_invoke
 0x0000000140BFF710 (Unity) ScriptingInvocation::Invoke
 0x0000000140BB5418 (Unity) MonoBehaviour::CallMethodIfAvailable
@@ -48,337 +48,17 @@ You are trying to create a MonoBehaviour using the 'new' keyword.  This is not a
 0x00000001408B1580 (Unity) DebugStringToFile
 0x0000000140BB6875 (Unity) MonoBehaviour::ConstructorCheck
 0x000000014192B606 (Unity) MonoBehaviour_CUSTOM_ConstructorCheck
-0x000000003845E8DE (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
-0x000000003845E56B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
-0x00000000383D57BB (Mono JIT Code) [StandingRewardHumanoid.cs:40] StandingRewardHumanoid:.ctor (BodyParts) 
-0x00000000383D52B3 (Mono JIT Code) [FightPlayerReward.cs:40] FightPlayerReward:SetUp (FightPlayerAgent,FightPlayerAgent) 
-0x00000000383D4BD3 (Mono JIT Code) [FightPlayerAgent.cs:50] FightPlayerAgent:InitializeAgent () 
-0x00000000383D2B1A (Mono JIT Code) [Agent.cs:302] MLAgents.Agent:OnEnableHelper (MLAgents.Academy) 
-0x00000000383D1C4B (Mono JIT Code) [Agent.cs:267] MLAgents.Agent:OnEnable () 
-0x000000003845D7C8 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
-0x00007FFE2913A65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
-0x00007FFE290C1B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
-0x00007FFE290CAB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
-0x0000000140C0734A (Unity) scripting_method_invoke
-0x0000000140BFF710 (Unity) ScriptingInvocation::Invoke
-0x0000000140BB5418 (Unity) MonoBehaviour::CallMethodIfAvailable
-0x0000000140BB495B (Unity) MonoBehaviour::AddToManager
-0x0000000140BB4D87 (Unity) MonoBehaviour::AwakeFromLoad
-0x0000000140C6271A (Unity) AwakeFromLoadQueue::InvokePersistentManagerAwake
-0x0000000140C651D0 (Unity) AwakeFromLoadQueue::PersistentManagerAwakeFromLoad
-0x00000001409B508D (Unity) LoadSceneOperation::CompleteAwakeSequence
-0x00000001409B5AA4 (Unity) LoadSceneOperation::IntegrateMainThread
-0x00000001409B93F0 (Unity) PreloadManager::UpdatePreloadingSingleStep
-0x00000001409B9ECA (Unity) PreloadManager::WaitForAllAsyncOperationsToComplete
-0x0000000140E61F03 (Unity) EditorSceneManager::RestoreSceneBackups
-0x000000014143B590 (Unity) PlayerLoopController::EnterPlayMode
-0x0000000141447BD8 (Unity) PlayerLoopController::SetIsPlaying
-0x000000014144B18D (Unity) Application::TickTimer
-0x00000001415E9ED5 (Unity) MainMessageLoop
-0x00000001415EC2C8 (Unity) WinMain
-0x000000014243127A (Unity) __scrt_common_main_seh
-0x00007FFE4E003034 (KERNEL32) BaseThreadInitThunk
-0x00007FFE4E8C3691 (ntdll) RtlUserThreadStart
-
-Warning
-You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
-0x00000001415381D8 (Unity) StackWalker::GetCurrentCallstack
-0x000000014153E716 (Unity) StackWalker::ShowCallstack
-0x000000014140D4EB (Unity) GetStacktrace
-0x00000001408B1580 (Unity) DebugStringToFile
-0x0000000140BB6875 (Unity) MonoBehaviour::ConstructorCheck
-0x000000014192B606 (Unity) MonoBehaviour_CUSTOM_ConstructorCheck
-0x000000003845E8DE (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
-0x000000003845E56B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
-0x00000000383D57BB (Mono JIT Code) [StandingRewardHumanoid.cs:40] StandingRewardHumanoid:.ctor (BodyParts) 
-0x00000000383D52B3 (Mono JIT Code) [FightPlayerReward.cs:40] FightPlayerReward:SetUp (FightPlayerAgent,FightPlayerAgent) 
-0x00000000383D4BD3 (Mono JIT Code) [FightPlayerAgent.cs:50] FightPlayerAgent:InitializeAgent () 
-0x00000000383D2B1A (Mono JIT Code) [Agent.cs:302] MLAgents.Agent:OnEnableHelper (MLAgents.Academy) 
-0x00000000383D1C4B (Mono JIT Code) [Agent.cs:267] MLAgents.Agent:OnEnable () 
-0x000000003845D7C8 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
-0x00007FFE2913A65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
-0x00007FFE290C1B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
-0x00007FFE290CAB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
-0x0000000140C0734A (Unity) scripting_method_invoke
-0x0000000140BFF710 (Unity) ScriptingInvocation::Invoke
-0x0000000140BB5418 (Unity) MonoBehaviour::CallMethodIfAvailable
-0x0000000140BB495B (Unity) MonoBehaviour::AddToManager
-0x0000000140BB4D87 (Unity) MonoBehaviour::AwakeFromLoad
-0x0000000140C6271A (Unity) AwakeFromLoadQueue::InvokePersistentManagerAwake
-0x0000000140C651D0 (Unity) AwakeFromLoadQueue::PersistentManagerAwakeFromLoad
-0x00000001409B508D (Unity) LoadSceneOperation::CompleteAwakeSequence
-0x00000001409B5AA4 (Unity) LoadSceneOperation::IntegrateMainThread
-0x00000001409B93F0 (Unity) PreloadManager::UpdatePreloadingSingleStep
-0x00000001409B9ECA (Unity) PreloadManager::WaitForAllAsyncOperationsToComplete
-0x0000000140E61F03 (Unity) EditorSceneManager::RestoreSceneBackups
-0x000000014143B590 (Unity) PlayerLoopController::EnterPlayMode
-0x0000000141447BD8 (Unity) PlayerLoopController::SetIsPlaying
-0x000000014144B18D (Unity) Application::TickTimer
-0x00000001415E9ED5 (Unity) MainMessageLoop
-0x00000001415EC2C8 (Unity) WinMain
-0x000000014243127A (Unity) __scrt_common_main_seh
-0x00007FFE4E003034 (KERNEL32) BaseThreadInitThunk
-0x00007FFE4E8C3691 (ntdll) RtlUserThreadStart
-
-Warning
-You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
-0x00000001415381D8 (Unity) StackWalker::GetCurrentCallstack
-0x000000014153E716 (Unity) StackWalker::ShowCallstack
-0x000000014140D4EB (Unity) GetStacktrace
-0x00000001408B1580 (Unity) DebugStringToFile
-0x0000000140BB6875 (Unity) MonoBehaviour::ConstructorCheck
-0x000000014192B606 (Unity) MonoBehaviour_CUSTOM_ConstructorCheck
-0x000000003845E8DE (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
-0x000000003845E56B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
-0x00000000383D57BB (Mono JIT Code) [StandingRewardHumanoid.cs:40] StandingRewardHumanoid:.ctor (BodyParts) 
-0x00000000383D52B3 (Mono JIT Code) [FightPlayerReward.cs:40] FightPlayerReward:SetUp (FightPlayerAgent,FightPlayerAgent) 
-0x00000000383D4BD3 (Mono JIT Code) [FightPlayerAgent.cs:50] FightPlayerAgent:InitializeAgent () 
-0x00000000383D2B1A (Mono JIT Code) [Agent.cs:302] MLAgents.Agent:OnEnableHelper (MLAgents.Academy) 
-0x00000000383D1C4B (Mono JIT Code) [Agent.cs:267] MLAgents.Agent:OnEnable () 
-0x000000003845D7C8 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
-0x00007FFE2913A65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
-0x00007FFE290C1B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
-0x00007FFE290CAB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
-0x0000000140C0734A (Unity) scripting_method_invoke
-0x0000000140BFF710 (Unity) ScriptingInvocation::Invoke
-0x0000000140BB5418 (Unity) MonoBehaviour::CallMethodIfAvailable
-0x0000000140BB495B (Unity) MonoBehaviour::AddToManager
-0x0000000140BB4D87 (Unity) MonoBehaviour::AwakeFromLoad
-0x0000000140C6271A (Unity) AwakeFromLoadQueue::InvokePersistentManagerAwake
-0x0000000140C651D0 (Unity) AwakeFromLoadQueue::PersistentManagerAwakeFromLoad
-0x00000001409B508D (Unity) LoadSceneOperation::CompleteAwakeSequence
-0x00000001409B5AA4 (Unity) LoadSceneOperation::IntegrateMainThread
-0x00000001409B93F0 (Unity) PreloadManager::UpdatePreloadingSingleStep
-0x00000001409B9ECA (Unity) PreloadManager::WaitForAllAsyncOperationsToComplete
-0x0000000140E61F03 (Unity) EditorSceneManager::RestoreSceneBackups
-0x000000014143B590 (Unity) PlayerLoopController::EnterPlayMode
-0x0000000141447BD8 (Unity) PlayerLoopController::SetIsPlaying
-0x000000014144B18D (Unity) Application::TickTimer
-0x00000001415E9ED5 (Unity) MainMessageLoop
-0x00000001415EC2C8 (Unity) WinMain
-0x000000014243127A (Unity) __scrt_common_main_seh
-0x00007FFE4E003034 (KERNEL32) BaseThreadInitThunk
-0x00007FFE4E8C3691 (ntdll) RtlUserThreadStart
-
-Warning
-You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
-0x00000001415381D8 (Unity) StackWalker::GetCurrentCallstack
-0x000000014153E716 (Unity) StackWalker::ShowCallstack
-0x000000014140D4EB (Unity) GetStacktrace
-0x00000001408B1580 (Unity) DebugStringToFile
-0x0000000140BB6875 (Unity) MonoBehaviour::ConstructorCheck
-0x000000014192B606 (Unity) MonoBehaviour_CUSTOM_ConstructorCheck
-0x000000003845E8DE (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
-0x000000003845E56B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
-0x00000000383D57BB (Mono JIT Code) [StandingRewardHumanoid.cs:40] StandingRewardHumanoid:.ctor (BodyParts) 
-0x00000000383D52B3 (Mono JIT Code) [FightPlayerReward.cs:40] FightPlayerReward:SetUp (FightPlayerAgent,FightPlayerAgent) 
-0x00000000383D4BD3 (Mono JIT Code) [FightPlayerAgent.cs:50] FightPlayerAgent:InitializeAgent () 
-0x00000000383D2B1A (Mono JIT Code) [Agent.cs:302] MLAgents.Agent:OnEnableHelper (MLAgents.Academy) 
-0x00000000383D1C4B (Mono JIT Code) [Agent.cs:267] MLAgents.Agent:OnEnable () 
-0x000000003845D7C8 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
-0x00007FFE2913A65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
-0x00007FFE290C1B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
-0x00007FFE290CAB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
-0x0000000140C0734A (Unity) scripting_method_invoke
-0x0000000140BFF710 (Unity) ScriptingInvocation::Invoke
-0x0000000140BB5418 (Unity) MonoBehaviour::CallMethodIfAvailable
-0x0000000140BB495B (Unity) MonoBehaviour::AddToManager
-0x0000000140BB4D87 (Unity) MonoBehaviour::AwakeFromLoad
-0x0000000140C6271A (Unity) AwakeFromLoadQueue::InvokePersistentManagerAwake
-0x0000000140C651D0 (Unity) AwakeFromLoadQueue::PersistentManagerAwakeFromLoad
-0x00000001409B508D (Unity) LoadSceneOperation::CompleteAwakeSequence
-0x00000001409B5AA4 (Unity) LoadSceneOperation::IntegrateMainThread
-0x00000001409B93F0 (Unity) PreloadManager::UpdatePreloadingSingleStep
-0x00000001409B9ECA (Unity) PreloadManager::WaitForAllAsyncOperationsToComplete
-0x0000000140E61F03 (Unity) EditorSceneManager::RestoreSceneBackups
-0x000000014143B590 (Unity) PlayerLoopController::EnterPlayMode
-0x0000000141447BD8 (Unity) PlayerLoopController::SetIsPlaying
-0x000000014144B18D (Unity) Application::TickTimer
-0x00000001415E9ED5 (Unity) MainMessageLoop
-0x00000001415EC2C8 (Unity) WinMain
-0x000000014243127A (Unity) __scrt_common_main_seh
-0x00007FFE4E003034 (KERNEL32) BaseThreadInitThunk
-0x00007FFE4E8C3691 (ntdll) RtlUserThreadStart
-
-Warning
-You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
-0x00000001415381D8 (Unity) StackWalker::GetCurrentCallstack
-0x000000014153E716 (Unity) StackWalker::ShowCallstack
-0x000000014140D4EB (Unity) GetStacktrace
-0x00000001408B1580 (Unity) DebugStringToFile
-0x0000000140BB6875 (Unity) MonoBehaviour::ConstructorCheck
-0x000000014192B606 (Unity) MonoBehaviour_CUSTOM_ConstructorCheck
-0x000000003845E8DE (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
-0x000000003845E56B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
-0x00000000383D57BB (Mono JIT Code) [StandingRewardHumanoid.cs:40] StandingRewardHumanoid:.ctor (BodyParts) 
-0x00000000383D52B3 (Mono JIT Code) [FightPlayerReward.cs:40] FightPlayerReward:SetUp (FightPlayerAgent,FightPlayerAgent) 
-0x00000000383D4BD3 (Mono JIT Code) [FightPlayerAgent.cs:50] FightPlayerAgent:InitializeAgent () 
-0x00000000383D2B1A (Mono JIT Code) [Agent.cs:302] MLAgents.Agent:OnEnableHelper (MLAgents.Academy) 
-0x00000000383D1C4B (Mono JIT Code) [Agent.cs:267] MLAgents.Agent:OnEnable () 
-0x000000003845D7C8 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
-0x00007FFE2913A65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
-0x00007FFE290C1B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
-0x00007FFE290CAB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
-0x0000000140C0734A (Unity) scripting_method_invoke
-0x0000000140BFF710 (Unity) ScriptingInvocation::Invoke
-0x0000000140BB5418 (Unity) MonoBehaviour::CallMethodIfAvailable
-0x0000000140BB495B (Unity) MonoBehaviour::AddToManager
-0x0000000140BB4D87 (Unity) MonoBehaviour::AwakeFromLoad
-0x0000000140C6271A (Unity) AwakeFromLoadQueue::InvokePersistentManagerAwake
-0x0000000140C651D0 (Unity) AwakeFromLoadQueue::PersistentManagerAwakeFromLoad
-0x00000001409B508D (Unity) LoadSceneOperation::CompleteAwakeSequence
-0x00000001409B5AA4 (Unity) LoadSceneOperation::IntegrateMainThread
-0x00000001409B93F0 (Unity) PreloadManager::UpdatePreloadingSingleStep
-0x00000001409B9ECA (Unity) PreloadManager::WaitForAllAsyncOperationsToComplete
-0x0000000140E61F03 (Unity) EditorSceneManager::RestoreSceneBackups
-0x000000014143B590 (Unity) PlayerLoopController::EnterPlayMode
-0x0000000141447BD8 (Unity) PlayerLoopController::SetIsPlaying
-0x000000014144B18D (Unity) Application::TickTimer
-0x00000001415E9ED5 (Unity) MainMessageLoop
-0x00000001415EC2C8 (Unity) WinMain
-0x000000014243127A (Unity) __scrt_common_main_seh
-0x00007FFE4E003034 (KERNEL32) BaseThreadInitThunk
-0x00007FFE4E8C3691 (ntdll) RtlUserThreadStart
-
-Warning
-You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
-0x00000001415381D8 (Unity) StackWalker::GetCurrentCallstack
-0x000000014153E716 (Unity) StackWalker::ShowCallstack
-0x000000014140D4EB (Unity) GetStacktrace
-0x00000001408B1580 (Unity) DebugStringToFile
-0x0000000140BB6875 (Unity) MonoBehaviour::ConstructorCheck
-0x000000014192B606 (Unity) MonoBehaviour_CUSTOM_ConstructorCheck
-0x000000003845E8DE (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
-0x000000003845E56B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
-0x00000000383D57BB (Mono JIT Code) [StandingRewardHumanoid.cs:40] StandingRewardHumanoid:.ctor (BodyParts) 
-0x00000000383D52B3 (Mono JIT Code) [FightPlayerReward.cs:40] FightPlayerReward:SetUp (FightPlayerAgent,FightPlayerAgent) 
-0x00000000383D4BD3 (Mono JIT Code) [FightPlayerAgent.cs:50] FightPlayerAgent:InitializeAgent () 
-0x00000000383D2B1A (Mono JIT Code) [Agent.cs:302] MLAgents.Agent:OnEnableHelper (MLAgents.Academy) 
-0x00000000383D1C4B (Mono JIT Code) [Agent.cs:267] MLAgents.Agent:OnEnable () 
-0x000000003845D7C8 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
-0x00007FFE2913A65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
-0x00007FFE290C1B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
-0x00007FFE290CAB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
-0x0000000140C0734A (Unity) scripting_method_invoke
-0x0000000140BFF710 (Unity) ScriptingInvocation::Invoke
-0x0000000140BB5418 (Unity) MonoBehaviour::CallMethodIfAvailable
-0x0000000140BB495B (Unity) MonoBehaviour::AddToManager
-0x0000000140BB4D87 (Unity) MonoBehaviour::AwakeFromLoad
-0x0000000140C6271A (Unity) AwakeFromLoadQueue::InvokePersistentManagerAwake
-0x0000000140C651D0 (Unity) AwakeFromLoadQueue::PersistentManagerAwakeFromLoad
-0x00000001409B508D (Unity) LoadSceneOperation::CompleteAwakeSequence
-0x00000001409B5AA4 (Unity) LoadSceneOperation::IntegrateMainThread
-0x00000001409B93F0 (Unity) PreloadManager::UpdatePreloadingSingleStep
-0x00000001409B9ECA (Unity) PreloadManager::WaitForAllAsyncOperationsToComplete
-0x0000000140E61F03 (Unity) EditorSceneManager::RestoreSceneBackups
-0x000000014143B590 (Unity) PlayerLoopController::EnterPlayMode
-0x0000000141447BD8 (Unity) PlayerLoopController::SetIsPlaying
-0x000000014144B18D (Unity) Application::TickTimer
-0x00000001415E9ED5 (Unity) MainMessageLoop
-0x00000001415EC2C8 (Unity) WinMain
-0x000000014243127A (Unity) __scrt_common_main_seh
-0x00007FFE4E003034 (KERNEL32) BaseThreadInitThunk
-0x00007FFE4E8C3691 (ntdll) RtlUserThreadStart
-
-Warning
-You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
-0x00000001415381D8 (Unity) StackWalker::GetCurrentCallstack
-0x000000014153E716 (Unity) StackWalker::ShowCallstack
-0x000000014140D4EB (Unity) GetStacktrace
-0x00000001408B1580 (Unity) DebugStringToFile
-0x0000000140BB6875 (Unity) MonoBehaviour::ConstructorCheck
-0x000000014192B606 (Unity) MonoBehaviour_CUSTOM_ConstructorCheck
-0x000000003845E8DE (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
-0x000000003845E56B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
-0x00000000383D57BB (Mono JIT Code) [StandingRewardHumanoid.cs:40] StandingRewardHumanoid:.ctor (BodyParts) 
-0x00000000383D52B3 (Mono JIT Code) [FightPlayerReward.cs:40] FightPlayerReward:SetUp (FightPlayerAgent,FightPlayerAgent) 
-0x00000000383D4BD3 (Mono JIT Code) [FightPlayerAgent.cs:50] FightPlayerAgent:InitializeAgent () 
-0x00000000383D2B1A (Mono JIT Code) [Agent.cs:302] MLAgents.Agent:OnEnableHelper (MLAgents.Academy) 
-0x00000000383D1C4B (Mono JIT Code) [Agent.cs:267] MLAgents.Agent:OnEnable () 
-0x000000003845D7C8 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
-0x00007FFE2913A65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
-0x00007FFE290C1B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
-0x00007FFE290CAB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
-0x0000000140C0734A (Unity) scripting_method_invoke
-0x0000000140BFF710 (Unity) ScriptingInvocation::Invoke
-0x0000000140BB5418 (Unity) MonoBehaviour::CallMethodIfAvailable
-0x0000000140BB495B (Unity) MonoBehaviour::AddToManager
-0x0000000140BB4D87 (Unity) MonoBehaviour::AwakeFromLoad
-0x0000000140C6271A (Unity) AwakeFromLoadQueue::InvokePersistentManagerAwake
-0x0000000140C651D0 (Unity) AwakeFromLoadQueue::PersistentManagerAwakeFromLoad
-0x00000001409B508D (Unity) LoadSceneOperation::CompleteAwakeSequence
-0x00000001409B5AA4 (Unity) LoadSceneOperation::IntegrateMainThread
-0x00000001409B93F0 (Unity) PreloadManager::UpdatePreloadingSingleStep
-0x00000001409B9ECA (Unity) PreloadManager::WaitForAllAsyncOperationsToComplete
-0x0000000140E61F03 (Unity) EditorSceneManager::RestoreSceneBackups
-0x000000014143B590 (Unity) PlayerLoopController::EnterPlayMode
-0x0000000141447BD8 (Unity) PlayerLoopController::SetIsPlaying
-0x000000014144B18D (Unity) Application::TickTimer
-0x00000001415E9ED5 (Unity) MainMessageLoop
-0x00000001415EC2C8 (Unity) WinMain
-0x000000014243127A (Unity) __scrt_common_main_seh
-0x00007FFE4E003034 (KERNEL32) BaseThreadInitThunk
-0x00007FFE4E8C3691 (ntdll) RtlUserThreadStart
-
-Warning
-You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
-0x00000001415381D8 (Unity) StackWalker::GetCurrentCallstack
-0x000000014153E716 (Unity) StackWalker::ShowCallstack
-0x000000014140D4EB (Unity) GetStacktrace
-0x00000001408B1580 (Unity) DebugStringToFile
-0x0000000140BB6875 (Unity) MonoBehaviour::ConstructorCheck
-0x000000014192B606 (Unity) MonoBehaviour_CUSTOM_ConstructorCheck
-0x000000003845E8DE (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
-0x000000003845E56B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
-0x00000000383D57BB (Mono JIT Code) [StandingRewardHumanoid.cs:40] StandingRewardHumanoid:.ctor (BodyParts) 
-0x00000000383D52B3 (Mono JIT Code) [FightPlayerReward.cs:40] FightPlayerReward:SetUp (FightPlayerAgent,FightPlayerAgent) 
-0x00000000383D4BD3 (Mono JIT Code) [FightPlayerAgent.cs:50] FightPlayerAgent:InitializeAgent () 
-0x00000000383D2B1A (Mono JIT Code) [Agent.cs:302] MLAgents.Agent:OnEnableHelper (MLAgents.Academy) 
-0x00000000383D1C4B (Mono JIT Code) [Agent.cs:267] MLAgents.Agent:OnEnable () 
-0x000000003845D7C8 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
-0x00007FFE2913A65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
-0x00007FFE290C1B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
-0x00007FFE290CAB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
-0x0000000140C0734A (Unity) scripting_method_invoke
-0x0000000140BFF710 (Unity) ScriptingInvocation::Invoke
-0x0000000140BB5418 (Unity) MonoBehaviour::CallMethodIfAvailable
-0x0000000140BB495B (Unity) MonoBehaviour::AddToManager
-0x0000000140BB4D87 (Unity) MonoBehaviour::AwakeFromLoad
-0x0000000140C6271A (Unity) AwakeFromLoadQueue::InvokePersistentManagerAwake
-0x0000000140C651D0 (Unity) AwakeFromLoadQueue::PersistentManagerAwakeFromLoad
-0x00000001409B508D (Unity) LoadSceneOperation::CompleteAwakeSequence
-0x00000001409B5AA4 (Unity) LoadSceneOperation::IntegrateMainThread
-0x00000001409B93F0 (Unity) PreloadManager::UpdatePreloadingSingleStep
-0x00000001409B9ECA (Unity) PreloadManager::WaitForAllAsyncOperationsToComplete
-0x0000000140E61F03 (Unity) EditorSceneManager::RestoreSceneBackups
-0x000000014143B590 (Unity) PlayerLoopController::EnterPlayMode
-0x0000000141447BD8 (Unity) PlayerLoopController::SetIsPlaying
-0x000000014144B18D (Unity) Application::TickTimer
-0x00000001415E9ED5 (Unity) MainMessageLoop
-0x00000001415EC2C8 (Unity) WinMain
-0x000000014243127A (Unity) __scrt_common_main_seh
-0x00007FFE4E003034 (KERNEL32) BaseThreadInitThunk
-0x00007FFE4E8C3691 (ntdll) RtlUserThreadStart
-
-Warning
-You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
-0x00000001415381D8 (Unity) StackWalker::GetCurrentCallstack
-0x000000014153E716 (Unity) StackWalker::ShowCallstack
-0x000000014140D4EB (Unity) GetStacktrace
-0x00000001408B1580 (Unity) DebugStringToFile
-0x0000000140BB6875 (Unity) MonoBehaviour::ConstructorCheck
-0x000000014192B606 (Unity) MonoBehaviour_CUSTOM_ConstructorCheck
-0x000000003845E8DE (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
-0x000000003845E56B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
-0x00000000383D57BB (Mono JIT Code) [StandingRewardHumanoid.cs:40] StandingRewardHumanoid:.ctor (BodyParts) 
-0x00000000383D52B3 (Mono JIT Code) [FightPlayerReward.cs:40] FightPlayerReward:SetUp (FightPlayerAgent,FightPlayerAgent) 
-0x00000000383D4BD3 (Mono JIT Code) [FightPlayerAgent.cs:50] FightPlayerAgent:InitializeAgent () 
-0x00000000383D2B1A (Mono JIT Code) [Agent.cs:302] MLAgents.Agent:OnEnableHelper (MLAgents.Academy) 
-0x00000000383D1C4B (Mono JIT Code) [Agent.cs:267] MLAgents.Agent:OnEnable () 
-0x000000003845D7C8 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
-0x00007FFE2913A65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
-0x00007FFE290C1B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
-0x00007FFE290CAB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
+0x00000000007CDCFE (Mono JIT Code) (wrapper managed-to-native) UnityEngine.MonoBehaviour:ConstructorCheck (UnityEngine.Object)
+0x00000000007CD98B (Mono JIT Code) [MonoBehaviour.bindings.cs:20] UnityEngine.MonoBehaviour:.ctor () 
+0x00000000398E2BBB (Mono JIT Code) [StandingRewardHumanoid.cs:40] StandingRewardHumanoid:.ctor (BodyParts) 
+0x00000000398E26B3 (Mono JIT Code) [FightPlayerReward.cs:40] FightPlayerReward:SetUp (FightPlayerAgent,FightPlayerAgent) 
+0x00000000398E1FD3 (Mono JIT Code) [FightPlayerAgent.cs:50] FightPlayerAgent:InitializeAgent () 
+0x00000000398DF84A (Mono JIT Code) [Agent.cs:302] MLAgents.Agent:OnEnableHelper (MLAgents.Academy) 
+0x00000000398DECFB (Mono JIT Code) [Agent.cs:267] MLAgents.Agent:OnEnable () 
+0x00000000007CD528 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x00007FFE1706A65B (mono-2.0-bdwgc) [mini-runtime.c:2809] mono_jit_runtime_invoke 
+0x00007FFE16FF1B72 (mono-2.0-bdwgc) [object.c:2915] do_runtime_invoke 
+0x00007FFE16FFAB5F (mono-2.0-bdwgc) [object.c:2962] mono_runtime_invoke 
 0x0000000140C0734A (Unity) scripting_method_invoke
 0x0000000140BFF710 (Unity) ScriptingInvocation::Invoke
 0x0000000140BB5418 (Unity) MonoBehaviour::CallMethodIfAvailable
