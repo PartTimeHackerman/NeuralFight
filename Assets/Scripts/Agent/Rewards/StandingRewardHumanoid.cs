@@ -85,13 +85,12 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
     }
 
 
-    public float COMOverMeanOfFeetsZ()
+    public float COMOverMeanOfFeetsX()
     {
         var feetsMean = meanOfFeets();
         float distPrec = 0;
         distPrec = Mathf.Abs(Mathf.Abs(feetsMean.x - COM.x) / baseDistanceFeetsCOM - 1);
         COMOverMeanOfFeetsXZReward = Mathf.Clamp(distPrec, 0f, 1f);
-        //COMOverMeanOfFeetsXZReward = RewardFunctions.toleranceInvNoBounds(COMOverMeanOfFeetsXZReward, .4f, .1f, RewardFunction.LONGTAIL);
         if (COM.y < feetsMean.y)
             COMOverMeanOfFeetsXZReward *= -1;
         return distPrec;
@@ -103,7 +102,6 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
         float distPrec = 0;
         distPrec = Mathf.Abs(Mathf.Abs(COM.x - torso.x) / baseDistanceCOMTorso - 1);
         torsoOverCOMXZReward = Mathf.Clamp(distPrec, 0f, 1f);
-        //torsoOverCOMXZReward = RewardFunctions.toleranceInvNoBounds(torsoOverCOMXZReward, .4f, .1f, RewardFunction.LONGTAIL);
         if (torso.y < COM.y)
             torsoOverCOMXZReward *= -1;
         return distPrec;
@@ -114,8 +112,6 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
         float distYPrec = 0;
         distYPrec = Mathf.Abs(root.transform.position.y - meanOfFeets().y) / maxDistanceRootFeets;
         rootFromBaseOverMeanOfFeetsYReward = Mathf.Clamp(distYPrec, 0f, 1f);
-        //rootFromBaseOverMeanOfFeetsYReward = RewardFunctions.toleranceInvNoBounds(rootFromBaseOverMeanOfFeetsYReward, .4f, .1f, RewardFunction.LONGTAIL);
-        //rootFromBaseOverMeanOfFeetsYReward += .3f;
         rootFromBaseOverMeanOfFeetsYReward = Mathf.Clamp(rootFromBaseOverMeanOfFeetsYReward, -1f, 1f);
         if (root.transform.position.y < meanOfFeets().y)
             rootFromBaseOverMeanOfFeetsYReward *= -1;
@@ -129,7 +125,6 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
         float maxVel = 10;
         sumVel = Mathf.Clamp(sumVel, 0f, maxVel);
         minimizeTorsoXZVelocityReward = Mathf.Clamp((Mathf.Abs(sumVel / maxVel - 1)), 0f, 1f);
-        //minimizeTorsoXZVelocityReward = RewardFunctions.toleranceInvNoBounds(minimizeTorsoXZVelocityReward, .4f, .1f, RewardFunction.LONGTAIL);
         return minimizeTorsoXZVelocityReward;
     }
 
@@ -145,7 +140,7 @@ public class StandingRewardHumanoid : MonoBehaviour, IReward
     public float getReward()
     {
         COM = physics.getCenterOfMass(bodyParts.getRigids());
-        COMOverMeanOfFeetsZ();
+        COMOverMeanOfFeetsX();
         torsoOverCOMXZ();
         rootFromBaseOverMeanOfFeetsY();
         minimizeTorsoXZVelocity();

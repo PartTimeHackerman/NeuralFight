@@ -191,9 +191,7 @@ GameObject:
   - component: {fileID: 4996935549806458}
   - component: {fileID: 114522734625928086}
   - component: {fileID: 65786216246345912}
-  - component: {fileID: 114137998689354966}
   - component: {fileID: 114609162846131764}
-  - component: {fileID: 114570468691815602}
   m_Layer: 10
   m_Name: rlowerarm
   m_TagString: hitbox
@@ -647,18 +645,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BodyPart: {fileID: 0}
---- !u!114 &114137998689354966
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1971992473514760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24a882fd8edd4748b28597c3b97fa0db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BodyPart: {fileID: 0}
 --- !u!114 &114160056724851570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -705,19 +691,6 @@ MonoBehaviour:
   MaxSP: 0
   HpRegen: 0
   SpRegen: 0
---- !u!114 &114570468691815602
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1971992473514760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7750fd09c804a878ac5c3b90c4de976, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EditableMesh: {fileID: 114060222712425554}
-  EndMesh: {fileID: 114005748250890766}
 --- !u!114 &114609162846131764
 MonoBehaviour:
   m_ObjectHideFlags: 1

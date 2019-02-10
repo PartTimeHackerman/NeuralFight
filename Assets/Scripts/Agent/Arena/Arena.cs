@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,14 +11,15 @@ public class Arena : MonoBehaviour
     private Fighter EnemyFighter;
 
     public FightersCollection FightersCollection;
+    public FightersCollection EnemyFightersCollection;
 
-    public EnemyFighterLoader EnemyFighterLoader;
     public FighterArenaSetter FighterArenaSetter;
     public ArenaFighterChooser ArenaFighterChooser;
 
     public PlayerHUD PlayerHUD;
     public PlayerHUD EnemyHUD;
     public Button StartButton;
+    public Button BackButton;
     public Button SetUpButton;
     public ArenaUIAnimations ArenaUiAnimations;
     public Walls Walls;
@@ -49,7 +51,7 @@ public class Arena : MonoBehaviour
         }
     }
 
-    private ArenaPlayer arenaPlayer;
+    private ArenaPlayer arenaPlayer = new ArenaPlayer();
 
     public ArenaPlayer ArenaPlayer
     {
@@ -57,7 +59,7 @@ public class Arena : MonoBehaviour
         set { arenaPlayer = value; }
     }
 
-    private ArenaPlayer arenaEnemy;
+    private ArenaPlayer arenaEnemy = new ArenaPlayer();
 
     public ArenaPlayer ArenaEnemy
     {
@@ -66,11 +68,25 @@ public class Arena : MonoBehaviour
     }
 
     public int Round = 1;
+    public Canvas ArenaUICanvas;
+
+
+    public static event MatchEnd OnMatchEnd;
+
+    public delegate void MatchEnd(UserPlayer winner, UserPlayer loser);
+
+    public static event ExitArena OnArenaExit;
+
+    public delegate void ExitArena();
+
+    public UserPlayer Player;
+    public UserPlayer Enemy;
 
     private void Start()
     {
         StartButton.onClick.AddListener(StartFight);
-        SetUpButton.onClick.AddListener(SetUpArena);
+        //SetUpButton.onClick.AddListener(SetUpArena);
+        BackButton.onClick.AddListener(Endfight);
         ArenaFighterChooser.OnChooseFighter += f =>
         {
             PlayerFighter = f;
@@ -78,12 +94,15 @@ public class Arena : MonoBehaviour
         };
     }
 
-    public void SetUpArena()
+
+    public void SetUpArena(UserPlayer player, UserPlayer enemy)
     {
+        Player = player;
+        Enemy = enemy;
         SetUpButton.GetComponent<Image>().color = new HSBColor(.5f, 1, 1).ToColor();
 
-        ArenaPlayer = new ArenaPlayer(this, "Player", FightersCollection.Fighters, PlayerHUD);
-        ArenaEnemy = new ArenaPlayer(this, "Enemy", EnemyFighterLoader.EnemyFighters, EnemyHUD);
+        ArenaPlayer.SetPlayer(this, Player, FightersCollection.Fighters, PlayerHUD);
+        ArenaEnemy.SetPlayer(this, Enemy, EnemyFightersCollection.Fighters, EnemyHUD);
         ArenaPlayer.IsPlayer = true;
         ArenaUiAnimations.SetUp();
         SetUpRound();
@@ -93,7 +112,8 @@ public class Arena : MonoBehaviour
     {
         PlayerFighter = ArenaPlayer.GetFirstAvaiableFighter();
         EnemyFighter = ArenaEnemy.GetFirstAvaiableFighter();
-
+        PlayerFighter.Player.SP = PlayerFighter.Player.MaxSP;
+        EnemyFighter.Player.SP = EnemyFighter.Player.MaxSP;
         Transform PlayerButt = PlayerFighter.BodyParts.root.transform;
         Transform EnemyButt = EnemyFighter.BodyParts.root.transform;
         ArenaCameraFollow.SetTransforms(PlayerButt, EnemyButt);
@@ -159,18 +179,21 @@ public class Arena : MonoBehaviour
         ArenaUiAnimations.EnableTimer(false);
         Fighter winnerFighter = winner.CurrentFighter;
         Fighter loserFighter = loser.CurrentFighter;
-        winnerFighter.StopFight();
+        winnerFighter.StopFightWinner();
         loserFighter.StopFight();
-        loserFighter.Player.ResetPlayer();
+        //loserFighter.Player.ResetPlayer();
         winnerFighter.Player.SP = winnerFighter.Player.MaxSP;
         Walls.StopWalls();
-        ArenaCameraFollow.ResetPosition();
-        
+
         if (ArenaPlayer.HasAnyAvaiableFighters() && ArenaEnemy.HasAnyAvaiableFighters())
         {
             ArenaUiAnimations.EndRound(Round, winner.PlayerName);
+
             Action roundEnded = () =>
             {
+                
+                Walls.ResetWalls();
+                ArenaCameraFollow.ResetPosition();
                 winnerFighter.ResetFighter();
                 loserFighter.ResetFighter();
                 Round++;
@@ -182,6 +205,7 @@ public class Arena : MonoBehaviour
         }
         else
         {
+            winnerFighter.StopFight();
             ArenaPlayer matchWinner;
             ArenaPlayer matchLoser;
             matchWinner = ArenaPlayer.WonFights == 3 ? ArenaPlayer : ArenaEnemy;
@@ -195,5 +219,63 @@ public class Arena : MonoBehaviour
         ArenaUiAnimations.EndMatch(winner.PlayerName);
         Debug.LogFormat("Arena match ended {2} : {3}, Winner: {0}, Rounds: {1}", winner.PlayerName, Round,
             winner.WonFights, loser.WonFights);
+        if (!winner.Player.PlayerID.Equals(loser.Player.PlayerID))
+        {
+            PlayerEvents.MatchEnd(winner.Player, loser.Player, winner.WonFights, loser.WonFights);
+            AddItem(winner.Player, loser.Player);
+            
+        }
+        OnMatchEnd?.Invoke(winner.Player, loser.Player);
+    }
+
+
+    private void Endfight()
+    {
+        ArenaCameraFollow.StopFollow();
+        ArenaUiAnimations.ExitArena();
+        CleanUp();
+        OnArenaExit?.Invoke();
+    }
+
+    private void CleanUp()
+    {
+        
+        Round = 1;
+        Walls.ResetWalls();
+        foreach (KeyValuePair<FighterNum, Fighter> keyValuePair in ArenaPlayer.Fighters)
+        {
+            keyValuePair.Value.ResetFighterTotal();
+        }
+
+        foreach (KeyValuePair<FighterNum, Fighter> keyValuePair in ArenaEnemy.Fighters)
+        {
+            keyValuePair.Value.ResetFighterTotal();
+        }
+    }
+
+    private void AddItem(UserPlayer winner, UserPlayer loser)
+    {
+        bool playerWins = winner.PlayerID.Equals(Auth.UserId);
+        Item item = null;
+        if (playerWins)
+        {
+            item = ItemsGenerator.Get().GenerateItem(EnemyCollections.Get().AverageItemsLevel);
+        }
+        else
+        {
+            item = ItemsGenerator.Get().GenerateItem(PlayerCollections.Get().AverageItemsLevel);
+        }
+
+        if (item.GetType() == typeof(Weapon))
+        {
+            PlayerCollections.Get().PlayerWeaponsCollection.AddWeapon((Weapon) item);
+            Storage.SaveWeapon((Weapon) item);
+        }
+        else
+        {
+            PlayerCollections.Get().PlayerFighterPartsCollection.AddFighterPart((FighterPart) item);
+            Storage.SaveFighterPart((FighterPart) item);
+        }
+        ArenaUiAnimations.ReceiveItem(item);
     }
 }

@@ -18,7 +18,7 @@ public class FighterArenaSetter : MonoBehaviour
 
         foreach (GameObject part in fighter.BodyParts.getParts())
         {
-            float partDist = Observations.distToFloor(part.transform);
+            float partDist = distToFloor(part.transform);
             minPartDist = partDist < minPartDist ? partDist : minPartDist;
         }
 
@@ -38,7 +38,7 @@ public class FighterArenaSetter : MonoBehaviour
 
         foreach (GameObject part in fighter.BodyParts.getParts())
         {
-            float partDist = Observations.distToFloor(part.transform);
+            float partDist = distToFloor(part.transform);
             minPartDist = partDist < minPartDist ? partDist : minPartDist;
         }
 
@@ -47,5 +47,21 @@ public class FighterArenaSetter : MonoBehaviour
         initPos.x = 1.5f;
 
         fighter.transform.position = initPos;
+    }
+    
+    public static float distToFloor(Transform transform)
+    {
+        int layerMask = 1 << LayerMask.NameToLayer("Ground");
+        //layerMask = ~layerMask;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1000, layerMask, QueryTriggerInteraction.Ignore))
+        {
+            //Debug.DrawRay(transform.position, Vector3.down * hit.distance);
+            return hit.distance;
+        }
+        else
+        {
+            return 0;
+        }
     }
 }

@@ -17,6 +17,14 @@ public class FightObservationsForEnemy : MonoBehaviour
         physics = PhysicsUtils.get();
     }
     
+    public void SetUp(Fighter player)
+    {
+        Player = player.Player;
+        RightHandAction = player.RightArmWeapon.HandAction;
+        LeftHandAction = player.LeftArmWeapon.HandAction;
+        BodyParts = player.BodyParts;
+    }
+    
     public void SetUp(FightPlayerAgent player)
     {
         Player = player.PlayerFighter.Player;

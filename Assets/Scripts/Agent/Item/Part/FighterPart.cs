@@ -48,9 +48,10 @@ public class FighterPart : Item
         bodyPart.MaxSP = MaxSP;
         bodyPart.HpRegen = HpRegen;
         bodyPart.SpRegen = SpRegen;
-        
+
         bodyPart.MaterialChangerManager.ChangeMaterial(ItemMaterial);
-        
+        gameObject.transform.parent = bodyPart.Player.Fighter.FighterParts;
+        gameObject.transform.position = ObjectsPositions.PlayerPartsPos;
     }
 
     public void UnEquip()
@@ -61,11 +62,7 @@ public class FighterPart : Item
 
     public void SetUpPart()
     {
-        ItemMaterial = ItemMaterial.GetMaterialByType(ItemMaterialType);
-        MaxHP = BaseMaxHP * ItemMaterial.HpMod;
-        MaxSP = BaseMaxSP * ItemMaterial.SpMod;
-        HpRegen = BaseHpRegen * ItemMaterial.HpRegenMod;
-        SpRegen = BaseSpRegen * ItemMaterial.SpRegenMod;
+        SetUpStats();
 
         foreach (Transform basePart in GetComponentsInChildren<Transform>())
         {
@@ -80,6 +77,21 @@ public class FighterPart : Item
         {
             materialChanger.ChangeMaterial(ItemMaterial);
         }
+    }
+
+    public void SetUpStats()
+    {
+        ItemMaterial = ItemMaterial.GetMaterialByType(ItemMaterialType);
+        MaxHP = BaseMaxHP * ItemMaterial.HpMod * (1 + (Level * .1f));
+        MaxSP = BaseMaxSP * ItemMaterial.SpMod * (1 + (Level * .1f));
+        HpRegen = BaseHpRegen * ItemMaterial.HpRegenMod * (1 + (Level * .1f));
+        SpRegen = BaseSpRegen * ItemMaterial.SpRegenMod * (1 + (Level * .1f));
+    }
+    
+    public override void Upgrade(int level)
+    {
+        Level = level;
+        SetUpStats();
     }
 
     public FighterPartJson GetJsonClass()

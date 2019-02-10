@@ -14,6 +14,7 @@ public class RandomEffector : MonoBehaviour
     public bool debug = false;
     public int episodesBoundary = 1000;
     public Vector2 randForce;
+    
     private void Start()
     {
         rigids = bodyParts.getRigids();

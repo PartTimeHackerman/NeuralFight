@@ -18,7 +18,7 @@ public class ObservationsWithActions : Observations
         base.Start();
     }
 
-    public override List<float> getObservations()
+    public override List<float> GetObservations()
     {
         getObservationsNamed();
         List<float> observations = observationsNamed.Select(kv => kv.Value).ToList();

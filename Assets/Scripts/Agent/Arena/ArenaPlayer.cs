@@ -14,12 +14,37 @@ public class ArenaPlayer
     public bool IsPlayer = false;
     public Fighter CurrentFighter;
 
-    public ArenaPlayer(Arena arena, string playerName, Dictionary<FighterNum, Fighter> fighters, PlayerHUD playerHud)
+    public UserPlayer Player;
+    
+    /*
+    public ArenaPlayer(Arena arena, UserPlayer userPlayer, Dictionary<FighterNum, Fighter> fighters, PlayerHUD playerHud)
     {
+        Player = userPlayer;
         Arena = arena;
-        PlayerName = playerName;
+        PlayerName = userPlayer.UserName;
         Fighters = fighters;
         PlayerHud = playerHud;
+        
+        PlayerHud.Star1.enabled = false;
+        PlayerHud.Star2.enabled = false;
+        PlayerHud.Star3.enabled = false;
+    }
+    */
+
+    public void SetPlayer(Arena arena, UserPlayer userPlayer, Dictionary<FighterNum, Fighter> fighters, PlayerHUD playerHud)
+    {
+        Player = userPlayer;
+        Arena = arena;
+        PlayerName = userPlayer.UserName;
+        Fighters = fighters;
+        PlayerHud = playerHud;
+
+        WonFights = 0;
+        PlayerHud.Star1.enabled = false;
+        PlayerHud.Star2.enabled = false;
+        PlayerHud.Star3.enabled = false;
+        CurrentFighter = null;
+        AvaiableFighters = new[] {true, true, true};
     }
 
     public bool HasAnyAvaiableFighters()

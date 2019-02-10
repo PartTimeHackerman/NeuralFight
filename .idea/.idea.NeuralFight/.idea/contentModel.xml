@@ -1152,6 +1152,8 @@
               <e p="ArenaPlayer.cs" t="Include" />
               <e p="ArenaUIAnimations.cs" t="Include" />
               <e p="FighterArenaSetter.cs" t="Include" />
+              <e p="ItemHighlighter.cs" t="Include" />
+              <e p="ItemReceiver.cs" t="Include" />
             </e>
             <e p="Body" t="Include">
               <e p="BodyPart.cs" t="Include" />
@@ -1159,6 +1161,24 @@
               <e p="Part.cs" t="Include" />
             </e>
             <e p="BodyParts.cs" t="Include" />
+            <e p="Collections" t="Include">
+              <e p="Enemy" t="Include">
+                <e p="EnemyCollections.cs" t="Include" />
+                <e p="EnemyFighterPartsCollection.cs" t="Include" />
+                <e p="EnemyFightersCollection.cs" t="Include" />
+                <e p="EnemyWeaponsCollection.cs" t="Include" />
+              </e>
+              <e p="FighterPartsCollection.cs" t="Include" />
+              <e p="FightersCollection.cs" t="Include" />
+              <e p="Player" t="Include">
+                <e p="PlayerCollections.cs" t="Include" />
+                <e p="PlayerFighterPartsCollection.cs" t="Include" />
+                <e p="PlayerFightersCollection.cs" t="Include" />
+                <e p="PlayerWeaponsCollection.cs" t="Include" />
+              </e>
+              <e p="ScrollListItem.cs" t="Include" />
+              <e p="WeaponsCollection.cs" t="Include" />
+            </e>
             <e p="Crouching" t="Include">
               <e p="CrouchingAcademy.cs" t="Include" />
               <e p="CrouchingAgent.cs" t="Include" />
@@ -1195,29 +1215,27 @@
               <e p="FighterDefaultPosition.cs" t="Include" />
             </e>
             <e p="FighterEditor" t="Include">
-              <e p="Collections" t="Include">
-                <e p="FighterPartsCollection.cs" t="Include" />
-                <e p="FightersCollection.cs" t="Include" />
-                <e p="ScrollListItem.cs" t="Include" />
-                <e p="WeaponsCollection.cs" t="Include" />
-              </e>
-              <e p="DistanceEquipper.cs" t="Include" />
               <e p="EditableMesh.cs" t="Include" />
               <e p="EditablePart.cs" t="Include" />
               <e p="EditorDebugger.cs" t="Include" />
+              <e p="EditorMenu.cs" t="Include" />
               <e p="EndMesh.cs" t="Include" />
               <e p="EnemyFighterLoader.cs" t="Include" />
               <e p="FighterChooser.cs" t="Include" />
               <e p="FighterCreator.cs" t="Include" />
               <e p="FighterEditor.cs" t="Include" />
               <e p="FighterNum.cs" t="Include" />
+              <e p="FighterPartInfo.cs" t="Include" />
               <e p="FighterSaverLoader.cs" t="Include" />
+              <e p="FighterStats.cs" t="Include" />
+              <e p="ItemUpgrader.cs" t="Include" />
               <e p="MeshSizeChanger.cs" t="Include" />
               <e p="PartDistanceEquipper.cs" t="Include" />
               <e p="PartEditor.cs" t="Include" />
               <e p="PartsEditor.cs" t="Include" />
               <e p="Positioner.cs" t="Include" />
               <e p="SizeChanger.cs" t="Include" />
+              <e p="WeaponDistanceEquipper.cs" t="Include" />
               <e p="WeaponInfo.cs" t="Include" />
             </e>
             <e p="Humanoid2D" t="Include">
@@ -1239,6 +1257,8 @@
             <e p="Instancers" t="Include">
               <e p="FighterPartInstancer.cs" t="Include" />
               <e p="JsonObjects" t="Include">
+                <e p="EquippedFighterPartJson.cs" t="Include" />
+                <e p="FighterJSON.cs" t="Include" />
                 <e p="FighterPartJson.cs" t="Include" />
                 <e p="ItemJson.cs" t="Include" />
                 <e p="JsonList.cs" t="Include" />
@@ -1253,6 +1273,7 @@
             <e p="Item" t="Include">
               <e p="Item.cs" t="Include" />
               <e p="ItemMaterial.cs" t="Include" />
+              <e p="ItemsGenerator.cs" t="Include" />
               <e p="ItemType.cs" t="Include" />
               <e p="MaterialChanger.cs" t="Include" />
               <e p="MaterialChangerManager.cs" t="Include" />
@@ -1295,6 +1316,17 @@
               <e p="MovableLocomotionAction.cs" t="Include" />
               <e p="NothingLocomoctionAction.cs" t="Include" />
             </e>
+            <e p="Main" t="Include">
+              <e p="CurrentMenu.cs" t="Include" />
+              <e p="Leaderboard" t="Include">
+                <e p="Leaderboard.cs" t="Include" />
+                <e p="Playerrecord.cs" t="Include" />
+              </e>
+              <e p="MainMenu.cs" t="Include" />
+              <e p="MainUI.cs" t="Include" />
+              <e p="MenuChooser.cs" t="Include" />
+              <e p="Treadmill.cs" t="Include" />
+            </e>
             <e p="ModelInput.cs" t="Include" />
             <e p="ObjectsPositions.cs" t="Include" />
             <e p="Observations" t="Include">
@@ -1329,6 +1361,16 @@
               <e p="VelocityReward.cs" t="Include" />
             </e>
             <e p="RigidBodyCOMSetter.cs" t="Include" />
+            <e p="Server" t="Include">
+              <e p="Auth.cs" t="Include" />
+              <e p="EnemiesGenerator.cs" t="Include" />
+              <e p="EquipmentGetter.cs" t="Include" />
+              <e p="GameSparksManager.cs" t="Include" />
+              <e p="PlayerEvents.cs" t="Include" />
+              <e p="Server.cs" t="Include" />
+              <e p="Storage.cs" t="Include" />
+              <e p="UserPlayer.cs" t="Include" />
+            </e>
             <e p="Standing" t="Include">
               <e p="StandingAcademy.cs" t="Include" />
               <e p="StandingAgent.cs" t="Include" />
@@ -1459,6 +1501,7 @@
             <e p="DictionaryDrawer.cs" t="Include" />
             <e p="DragRigidbody.cs" t="Include" />
             <e p="Epoch.cs" t="Include" />
+            <e p="FighterGenerator.cs" t="Include" />
             <e p="FPSDisplay.cs" t="Include" />
             <e p="GameObjectFollow.cs" t="Include" />
             <e p="HSBColor.cs" t="Include" />

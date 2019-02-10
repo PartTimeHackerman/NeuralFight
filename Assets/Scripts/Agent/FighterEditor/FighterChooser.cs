@@ -20,6 +20,7 @@ public class FighterChooser : MonoBehaviour
         Button1.onClick.AddListener(() => SetFighter(FighterNum.F1));
         Button2.onClick.AddListener(() => SetFighter(FighterNum.F2));
         Button3.onClick.AddListener(() => SetFighter(FighterNum.F3));
+
     }
 
     public void SetFighter(FighterNum fighterNum)
@@ -33,12 +34,12 @@ public class FighterChooser : MonoBehaviour
             }
             else
             {
-                FighterEditor.FighterSaverLoader.SaveFighter(fighter.Value);
-                fighter.Value.transform.position = new Vector3(-200f, -100f, 0f);
+                //FighterEditor.FighterSaverLoader.SaveFighter(fighter.Value);
+                fighter.Value.transform.position = ObjectsPositions.PlayerFightersPos;
             }
         }
         
-        choosedFighter.transform.position = new Vector3(-2f, .5f, -1.33f);
+        //choosedFighter.transform.position = new Vector3(-2f, .5f, -1.33f);
         FighterEditor.SetFighter(choosedFighter);
         OnChooseFighter?.Invoke(choosedFighter);
     }

@@ -135,7 +135,6 @@ public class PartEditor : MonoBehaviour
         childrens.Remove(part.transform);
 
         Transform end = childrens[0];
-
         float baseSize = Part.GetPartByName(part.name).BaseSize;
         float minSize = baseSize * .6f;
         float maxSize = baseSize * 1.5f;

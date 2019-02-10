@@ -40,15 +40,20 @@ public class ArenaCameraFollow : MonoBehaviour
     {
         Follow = true;
     }
+    
+    public void StopFollow()
+    {
+        Follow = false;
+    }
 
     void Update()
     {
         if (ResetPos)
         {
-            Vector3.Slerp(camera.transform.position, BasePosition, Time.deltaTime * CameraSpeed);
-            if ((BasePosition - camera.transform.position).magnitude <= 0.05f)
+            Vector3 CamResetPos = Vector3.Slerp(camera.transform.position, BasePosition, Time.deltaTime * CameraSpeed);
+            camera.transform.position = CamResetPos;
+            if (Vector3.Distance(BasePosition, camera.transform.position) <= 0.05f)
             {
-                camera.transform.position = BasePosition;
                 ResetPos = false;
             }
         }

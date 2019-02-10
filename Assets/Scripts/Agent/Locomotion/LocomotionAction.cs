@@ -28,7 +28,7 @@ public class LocomotionAction : MonoBehaviour
         {
             if (step >= decFreq)
             {
-                observations = Observations.getObservations();
+                observations = Observations.GetObservations();
                 RunModel();
                 step = 0;
             }

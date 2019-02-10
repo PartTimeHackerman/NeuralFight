@@ -19,13 +19,12 @@ public class FightAction : MonoBehaviour
             SetUpModel();
         }
 
-        public void SetEnemy(Fighter fighter)
+        public void SetUp(Fighter fighter, Fighter enemyFighter)
         {
-            obsSelf.EnemyBodyParts = fighter.BodyParts;
-            obsSelf.enemyObservations = fighter.FightAction.obsForEnemy;
-
-            act.EnemyBodyParts = fighter.BodyParts;
-            
+            obsSelf.SetUp(fighter, enemyFighter);
+            obsSelf.EnemyBodyParts = enemyFighter.BodyParts;
+            obsSelf.enemyObservations = enemyFighter.FightAction.obsForEnemy;
+            act.EnemyBodyParts = enemyFighter.BodyParts;
         }
 
         protected virtual void FixedUpdate()

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class BodyPart : MonoBehaviour
 {
+    public BodyPartType BodyPartType;
     public float MaxHP;
     public float MaxSP;
 
@@ -22,11 +23,17 @@ public class BodyPart : MonoBehaviour
     }
 
     public FighterPart fighterPart;
+
     public FighterPart FighterPart
     {
         get { return fighterPart; }
         set
         {
+            if (fighterPart != null)
+            {
+                fighterPart.Equipped = false;
+            }
+
             fighterPart = value;
             FighterPart.Equip(this);
         }
@@ -63,7 +70,7 @@ public class BodyPart : MonoBehaviour
 
     public Player Player;
     public bool setHp;
-    
+
     public List<Rigidbody> Rigidbodies = new List<Rigidbody>();
     public MaterialChangerManager MaterialChangerManager;
 
@@ -92,6 +99,7 @@ public class BodyPart : MonoBehaviour
         //if (value >= 0)
         //{
         float diffrence = healthPoints - value; //value < 0 ? healthPoints : healthPoints - value;
+        MaterialChangerManager.ChangeDamagedColor(healthPoints / MaxHP);
         OnChangeHealth?.Invoke(value, healthPoints, diffrence);
         //}
 
@@ -147,6 +155,7 @@ public class BodyPart : MonoBehaviour
     public void ResetPart()
     {
         healthPoints = MaxHP;
+        MaterialChangerManager.ChangeDamagedColor(1);
         Enable();
     }
 

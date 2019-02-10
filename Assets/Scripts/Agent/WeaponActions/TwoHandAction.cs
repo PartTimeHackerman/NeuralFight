@@ -5,7 +5,7 @@ public class TwoHandAction : HandAction
     public BodyParts LeftBodyParts;
     public BodyParts RightBodyParts;
 
-    public override void equipAction(Weapon newWeapon, Weapon oldWeapon)
+    public override void EquipAction(Weapon newWeapon, Weapon oldWeapon)
     {
         if (newWeapon.WeaponAttack == WeaponAttack.AIM)
         {
@@ -24,6 +24,6 @@ public class TwoHandAction : HandAction
             }
             Debug.Log("r");
         }
-        base.equipAction(newWeapon, oldWeapon);
+        base.EquipAction(newWeapon, oldWeapon);
     }
 }

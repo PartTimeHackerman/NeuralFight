@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using cakeslice;
 
-public class Item : MonoBehaviour
+public abstract class Item : MonoBehaviour
 {
-    public int ID = 0;
+    public string ID = "";
     public string Name;
     public string Description;
     public ItemType ItemType;
@@ -28,6 +28,7 @@ public class Item : MonoBehaviour
     public string Json;
 
 
+    
     public virtual void Awake()
     {
         ItemMaterial = ItemMaterial.GetMaterialByType(ItemMaterialType);
@@ -39,6 +40,8 @@ public class Item : MonoBehaviour
         Outlines.ForEach( o => o.enabled = enable);
     }
 
+    public abstract void Upgrade(int level);
+    
     public void SetMeshMaterial()
     {
         foreach (Renderer meshRenderer in gameObject.GetComponentsInChildren<Renderer>())

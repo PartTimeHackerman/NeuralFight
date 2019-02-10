@@ -3,7 +3,7 @@ using System;
 [Serializable]
 public class ItemJson
 {
-    public int ID;
+    public string ID;
     public string Name;
     public string Description;
     public ItemType ItemType;

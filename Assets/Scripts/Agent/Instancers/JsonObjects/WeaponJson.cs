@@ -16,6 +16,7 @@ public class WeaponJson : ItemJson
         return new WeaponJson
             {
                 ID = weapon.ID, 
+                Level = weapon.Level,
                 Description = weapon.Description, 
                 ItemType = weapon.ItemType,
                 ItemMaterialType = weapon.ItemMaterialType,
@@ -29,6 +30,7 @@ public class WeaponJson : ItemJson
     public static void SetFromJson(WeaponJson weaponJson, Weapon weapon)
     {
         weapon.ID = weaponJson.ID;
+        weapon.Level = weaponJson.Level;
         weapon.Description = weaponJson.Description;
         weapon.ItemType = weaponJson.ItemType;
         weapon.ItemMaterialType = weaponJson.ItemMaterialType;

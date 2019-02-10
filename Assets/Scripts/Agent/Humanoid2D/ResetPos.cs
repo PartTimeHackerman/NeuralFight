@@ -164,7 +164,7 @@ public class ResetPos : MonoBehaviour
             angRot.y = Mathf.Clamp(angRot.y, jointInfo.angularLimits[1][0], jointInfo.angularLimits[1][1]);
             angRot.z = Mathf.Clamp(angRot.z, jointInfo.angularLimits[2][0], jointInfo.angularLimits[2][1]);
 
-            jointInfo.setConfigurableForceAndRot(1f, angRot);
+            jointInfo.SetConfigurableForceAndRot(1f, angRot);
         }
     }
 

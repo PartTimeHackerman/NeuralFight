@@ -23,6 +23,7 @@ public class BodyParts : MonoBehaviour
     public List<Rigidbody> ObservableRigids => observableRigids;
     public Dictionary<string, BodyPart> namedObservableBodyParts = new Dictionary<string, BodyPart>();
     public Dictionary<string, BodyPart> AllBodyParts = new Dictionary<string, BodyPart>();
+    public Dictionary<BodyPartType, BodyPart> AllNamedBodyParts = new Dictionary<BodyPartType, BodyPart>();
     
     
     public Rigidbody root;
@@ -101,13 +102,14 @@ public class BodyParts : MonoBehaviour
         foreach (BodyPart bodyPart in bodyParts)
         {
             AllBodyParts[bodyPart.name] = bodyPart;
+            AllNamedBodyParts[bodyPart.BodyPartType] = bodyPart;
             if (bodyPart.GetComponent<JointInfo>() != null && bodyPart.GetComponent<JointInfo>().useNeural)
                 namedObservableBodyParts[bodyPart.name] = bodyPart;
         }
 
         height = getHeight();
         
-        setKinematic(true);
+        SetKinematic(true);
     }
 
 
@@ -118,7 +120,7 @@ public class BodyParts : MonoBehaviour
         jointsTotal = joints.Count;
     }
 
-    public void setKinematic(bool kinematic)
+    public void SetKinematic(bool kinematic)
     {
         foreach (Rigidbody rigid in rigids)
         {

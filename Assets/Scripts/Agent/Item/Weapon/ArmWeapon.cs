@@ -13,7 +13,7 @@ public class ArmWeapon : MonoBehaviour
         set
         {
             if (weapon == value) return;
-            equipWeapon(value, weapon);
+            EquipWeapon(value, weapon);
             OnChangeWeapon?.Invoke(value, weapon);
             weapon = value;
         }
@@ -37,26 +37,26 @@ public class ArmWeapon : MonoBehaviour
     protected virtual void Awake()
     {
         //OnChangeWeapon += equipWeapon;
-        OnChangeWeapon += HandAction.equipAction;
+        OnChangeWeapon += HandAction.EquipAction;
     }
 
     private void FixedUpdate()
     {
         if (unEquip)
         {
-            unEquipWeapon(weapon);
+            UnEquipWeapon(weapon);
         }
     }
 
 
     public void ReEquipWeapon()
     {
-        equipWeapon(weapon, weapon);
+        EquipWeapon(weapon, weapon);
     }
 
-    public void equipWeapon(Weapon newWeapon, Weapon oldWeapon)
+    public void EquipWeapon(Weapon newWeapon, Weapon oldWeapon)
     {
-        unEquipWeapon(oldWeapon);
+        UnEquipWeapon(oldWeapon);
         if (newWeapon == null)
         {
             return;
@@ -70,7 +70,7 @@ public class ArmWeapon : MonoBehaviour
         StartCoroutine(Waiter.WaitForFrames(1, first, second));
     }
 
-    public void unEquipWeapon(Weapon oldWeapon)
+    public void UnEquipWeapon(Weapon oldWeapon)
     {
         if (oldWeapon != null)
         {

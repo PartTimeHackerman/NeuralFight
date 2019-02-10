@@ -47,7 +47,7 @@ public class JointInfo : MonoBehaviour
         joint = GetComponent<ConfigurableJoint>();
         Rigidbody[] rigids = joint.GetComponentsInChildren<Rigidbody>();
         totalMass = rigids.Sum(r => r.mass);
-        setConfigurableJointInfo();
+        SetConfigurableJointInfo();
         if (setSettings)
             SetConfigurableJointSettings();
         isBackwards = joint.axis.z < 0f;
@@ -60,7 +60,7 @@ public class JointInfo : MonoBehaviour
     }
 */
 
-    public void setConfigurableForceAndRot(float force, Vector3 angRot)
+    public void SetConfigurableForceAndRot(float force, Vector3 angRot)
     {
         if (!isEnabled)
         {
@@ -127,7 +127,7 @@ public class JointInfo : MonoBehaviour
     }
 
 
-    public void setConfigurableJointInfo()
+    public void SetConfigurableJointInfo()
     {
         if (joint.angularXMotion != ConfigurableJointMotion.Locked)
             movableAxis[0] = true;

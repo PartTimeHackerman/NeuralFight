@@ -64,7 +64,6 @@ public class Part
                 return part;
             }
         }
-
         return null;
     }
 
@@ -72,4 +71,19 @@ public class Part
     {
         return Name;
     }
+}
+
+public enum BodyPartType
+{
+    BUTT,
+    TORSO,
+    HEAD,
+    R_UPPER_ARM,
+    R_LOWER_ARM,
+    L_UPPER_ARM,
+    L_LOWER_ARM,
+    R_THIGH,
+    R_SHIN,
+    L_THIGH,
+    L_SHIN
 }

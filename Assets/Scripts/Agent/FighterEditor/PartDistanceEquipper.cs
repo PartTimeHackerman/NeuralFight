@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PartDistanceEquipper : MonoBehaviour
 {
-    public FighterPartsCollection FighterPartsCollection;
+    public PlayerFighterPartsCollection FighterPartsCollection;
     public float minDist = 1f;
     public FighterSaverLoader FighterSaverLoader;
     private Fighter Fighter;
@@ -32,9 +32,12 @@ public class PartDistanceEquipper : MonoBehaviour
                     part.EnableOutlines(false);
                     BodyPartToEquip.FighterPart = part;
                     Destroy(itemToEquip.gameObject);
-
+                    Storage.SaveFighterPart(oldPart);
+                    Storage.SaveFighterPart(part);
+                    Storage.SaveFighter(Fighter);
+                    
                     FighterPartsCollection.AddToScrollList(oldPart);
-                    FighterSaverLoader.SaveFighter(Fighter);
+                    //FighterSaverLoader.SaveFighter(Fighter);
                     itemToEquip = null;
                     BodyPartToEquip = null;
                 }

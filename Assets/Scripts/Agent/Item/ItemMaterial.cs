@@ -6,7 +6,7 @@ public class ItemMaterial
 {
     public static readonly ItemMaterial WOOD = new ItemMaterial("Wood", .8f, 1.2f, 1.2f, .8f, .8f, .8f, .8f);
     public static readonly ItemMaterial ROCK = new ItemMaterial("Rock", 1.2f, .8f, .8f, 1.2f, 1.1f, 1.1f, 1.3f);
-    public static readonly ItemMaterial STEEL = new ItemMaterial("Steel", 1.1f, 1.1f, .9f, 9f, 1.2f, 1.2f, 1.1f);
+    public static readonly ItemMaterial STEEL = new ItemMaterial("Steel", 1.1f, 1.1f, .9f, .9f, 1.2f, 1.2f, 1.1f);
 
     public static IEnumerable<ItemMaterial> Values
     {

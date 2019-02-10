@@ -84,7 +84,7 @@ public class Observations : MonoBehaviour, IObservations
         observationsSpace = getObservationsSpace();
 #if (UNITY_EDITOR)
         if (debug)
-            InvokeRepeating("getObservations", 0f, .1f);
+            InvokeRepeating("GetObservations", 0f, .1f);
 #endif
         
     }
@@ -181,7 +181,7 @@ public class Observations : MonoBehaviour, IObservations
         observationsNamed[AngVelStr[rigidbody.gameObject]] = rbAngVel;
     }
 
-    public virtual void getEndingsGroundDist()
+    public virtual void GetEndingsGroundDist()
     {
         foreach (var ending in bodyParts.endings)
         {
@@ -189,7 +189,7 @@ public class Observations : MonoBehaviour, IObservations
         }
     }
 
-    public void getObjPosRotVelAngVel()
+    public void GetObjPosRotVelAngVel()
     {
         for (int i = observableRigids.Count - 1; i >= 0; i--)
         {
@@ -210,7 +210,7 @@ public class Observations : MonoBehaviour, IObservations
 
     public int getObservationsSpace()
     {
-        return getObservations().Count;
+        return GetObservations().Count;
     }
 
     public int getObsSize()
@@ -234,9 +234,9 @@ public class Observations : MonoBehaviour, IObservations
         observationsNamed["root_rot"] = rotClamped;
 
 
-        getObjPosRotVelAngVel();
-        addCOM();
-        getEndingsGroundDist();
+        GetObjPosRotVelAngVel();
+        GetCOM();
+        GetEndingsGroundDist();
         removeParts();
         removeInfsAndNans(observationsNamed);
 
@@ -252,7 +252,7 @@ public class Observations : MonoBehaviour, IObservations
         return observationsNamed;
     }
 
-    public virtual List<float> getObservations()
+    public virtual List<float> GetObservations()
     {
         getObservationsNamed();
         return observationsNamed.Select(kv => kv.Value).ToList();
@@ -287,7 +287,7 @@ public class Observations : MonoBehaviour, IObservations
         }
     }
 
-    public virtual void addCOM()
+    public virtual void GetCOM()
     {
         Vector3 COM;
         Vector3 COMVel;

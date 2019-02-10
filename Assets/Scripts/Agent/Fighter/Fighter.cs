@@ -9,6 +9,7 @@ public class Fighter : MonoBehaviour
     public ArmWeapon LeftArmWeapon;
     public FighterNum FighterNum;
     public FightAction FightAction;
+    public Transform FighterParts;
     public Player Player;
     public List<LocomotionAction> LocomotionActions = new List<LocomotionAction>();
     public List<VerticalEffector> VerticalEffectors = new List<VerticalEffector>();
@@ -20,7 +21,7 @@ public class Fighter : MonoBehaviour
 
     public void StartFight()
     {
-        BodyParts.setKinematic(false);
+        BodyParts.SetKinematic(false);
         RightArmWeapon.HandAction.setActive(true);
         LeftArmWeapon.HandAction.setActive(true);
         FightAction.run = true;
@@ -35,6 +36,15 @@ public class Fighter : MonoBehaviour
         SetEnableFighter(false);
         LocomotionActions.ForEach(a => a.run = false);
     }
+    
+    public void StopFightWinner()
+    {
+        RightArmWeapon.HandAction.setActive(false);
+        LeftArmWeapon.HandAction.setActive(false);
+        //FightAction.run = false;
+        //SetEnableFighter(false);
+        //LocomotionActions.ForEach(a => a.run = false);
+    }
 
     public void SetEnableFighter(bool enable)
     {
@@ -46,7 +56,16 @@ public class Fighter : MonoBehaviour
         StopFight();
         FighterDefaultPositioner.ResetPosition();
         transform.position = Player.left ? ObjectsPositions.PlayerFightersPos : ObjectsPositions.EnemyFightersPos;
-        BodyParts.setKinematic(true);
+        BodyParts.SetKinematic(true);
+    }
+    
+    public void ResetFighterTotal()
+    {
+        StopFight();
+        FighterDefaultPositioner.ResetPosition();
+        transform.position = Player.left ? ObjectsPositions.PlayerFightersPos : ObjectsPositions.EnemyFightersPos;
+        BodyParts.SetKinematic(true);
+        Player.ResetPlayer();
     }
 
     public void SetSide(bool left)
@@ -61,6 +80,6 @@ public class Fighter : MonoBehaviour
     {
         RightArmWeapon.HandAction.Target = enemy.BodyParts.getNamedParts()["torso"].transform;
         LeftArmWeapon.HandAction.Target = enemy.BodyParts.getNamedParts()["torso"].transform;
-        FightAction.SetEnemy(enemy);
+        FightAction.SetUp(this, enemy);
     }
 }

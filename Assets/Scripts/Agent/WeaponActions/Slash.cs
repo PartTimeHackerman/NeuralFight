@@ -45,20 +45,20 @@ public class Slash : OneHandedAction
         float rotation = getRotation();
         float upperRot = Mathf.Clamp(-rotation - upperArmReadyAng, upperArm.angularLimits[0][0], upperArm.angularLimits[0][1]);
         float lowerRot = lowerArmReadyAng;
-        upperArm.setConfigurableForceAndRot(strength, new Vector3(upperRot, 0f, 0f));
-        lowerArm.setConfigurableForceAndRot(strength, new Vector3(lowerRot, 0f, 0f));
+        upperArm.SetConfigurableForceAndRot(strength, new Vector3(upperRot, 0f, 0f));
+        lowerArm.SetConfigurableForceAndRot(strength, new Vector3(lowerRot, 0f, 0f));
     }
     
     private void ActionSlashUpper()
     {
         float rotation = getRotation();
         float upperRot = Mathf.Clamp(-rotation - upperArmSlashAng, upperArm.angularLimits[0][0], upperArm.angularLimits[0][1]);
-        upperArm.setConfigurableForceAndRot(strength, new Vector3(upperRot, 0f, 0f));
+        upperArm.SetConfigurableForceAndRot(strength, new Vector3(upperRot, 0f, 0f));
     }
     
     private void ActionSlashLower()
     {
-        lowerArm.setConfigurableForceAndRot(strength, new Vector3(lowerArmSlashAng, 0f, 0f));
+        lowerArm.SetConfigurableForceAndRot(strength, new Vector3(lowerArmSlashAng, 0f, 0f));
     }
 
 }

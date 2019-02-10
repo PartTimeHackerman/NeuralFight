@@ -18,6 +18,7 @@ public class FighterPartJson : ItemJson
         return new FighterPartJson
         {
             ID = fighterPart.ID,
+            Level = fighterPart.Level,
             Description = fighterPart.Description,
             Name = fighterPart.Name,
             ItemType = fighterPart.ItemType,
@@ -34,6 +35,7 @@ public class FighterPartJson : ItemJson
     public static void SetFromJson(FighterPartJson fighterPartJson, FighterPart fighterPart)
     {
         fighterPart.ID = fighterPartJson.ID;
+        fighterPart.Level = fighterPartJson.Level;
         fighterPart.Description = fighterPartJson.Description;
         fighterPart.ItemType = fighterPartJson.ItemType;
         fighterPart.ItemMaterialType = fighterPartJson.ItemMaterialType;

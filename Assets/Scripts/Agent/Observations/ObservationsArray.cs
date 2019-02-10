@@ -41,7 +41,7 @@ public class ObservationsArray : Observations
         obs[i++] = left ? getObjectAngVel(rigidbody):-getObjectAngVel(rigidbody);
     }
 
-    public override void getEndingsGroundDist()
+    public override void GetEndingsGroundDist()
     {
         foreach (var ending in bodyParts.endings)
         {
@@ -49,7 +49,7 @@ public class ObservationsArray : Observations
         }
     }
 
-    public override List<float> getObservations()
+    public override List<float> GetObservations()
     {
         i = 0;
         var rootPos = root.transform.position;
@@ -67,16 +67,16 @@ public class ObservationsArray : Observations
         obs[i++] = left ? rotClamped : -rotClamped;
 
 
-        getObjPosRotVelAngVel();
+        GetObjPosRotVelAngVel();
 
-        addCOM();
+        GetCOM();
 
-        getEndingsGroundDist();
+        GetEndingsGroundDist();
 
         return obs.ToList();
     }
 
-    public override void addCOM()
+    public override void GetCOM()
     {
         Vector3 COM;
         Vector3 COMVel;

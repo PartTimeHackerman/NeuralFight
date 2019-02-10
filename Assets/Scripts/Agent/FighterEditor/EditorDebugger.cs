@@ -5,7 +5,7 @@ public class EditorDebugger : MonoBehaviour
     public WeaponEquipper WeaponEquipper;
     public PartsEditor PartsEditor;
     public FighterSaverLoader FighterSaverLoader;
-    public DistanceEquipper DistanceEquipper;
+    public WeaponDistanceEquipper WeaponDistanceEquipper;
     public PartDistanceEquipper PartDistanceEquipper;
 
     public Fighter Fighter;
@@ -26,7 +26,7 @@ public class EditorDebugger : MonoBehaviour
         WeaponEquipper.SetFighter(fighter);
         PartsEditor.SetFighter(fighter);
         FighterSaverLoader.SetFighter(fighter);
-        DistanceEquipper.SetFighter(fighter);
+        WeaponDistanceEquipper.SetFighter(fighter);
         PartDistanceEquipper.SetFighter(fighter);
         fighter.transform.position = new Vector3(-1f, 1f, -2.7f);
     }

@@ -6,7 +6,7 @@ public class MaterialChangerManager : MonoBehaviour
 {
     private List<MaterialChanger> MaterialChangers;
 
-    private void Start()
+    private void Awake()
     {
         MaterialChangers = GetComponentsInChildren<MaterialChanger>().ToList();
     }
@@ -16,6 +16,14 @@ public class MaterialChangerManager : MonoBehaviour
         foreach (MaterialChanger materialChanger in MaterialChangers)
         {
             materialChanger.ChangeMaterial(itemMaterial);
+        }
+    }
+    
+    public void ChangeDamagedColor(float damage)
+    {
+        foreach (MaterialChanger materialChanger in MaterialChangers)
+        {
+            materialChanger.ChangeDamagedColor(damage);
         }
     }
 }

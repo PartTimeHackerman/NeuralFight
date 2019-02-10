@@ -34,9 +34,7 @@ public class Positioner : MonoBehaviour
     void OnMouseUp()
     {
         active = false;
+        PlayerCollections.Get().SaveFighters();
     }
-    
-    
-    
 
 }

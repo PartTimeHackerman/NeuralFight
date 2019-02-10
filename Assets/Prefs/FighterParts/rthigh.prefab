@@ -88,9 +88,7 @@ GameObject:
   - component: {fileID: 4706448358904142}
   - component: {fileID: 114076576830413628}
   - component: {fileID: 65649227208960110}
-  - component: {fileID: 114512954886050310}
   - component: {fileID: 114078405392028412}
-  - component: {fileID: 114071806985450482}
   m_Layer: 10
   m_Name: rthigh
   m_TagString: hitbox
@@ -490,19 +488,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.14, y: 0.5, z: 0.25}
   m_Center: {x: 0, y: -0.25, z: -0.06}
---- !u!114 &114071806985450482
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1377360557495428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7750fd09c804a878ac5c3b90c4de976, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EditableMesh: {fileID: 114441411416378760}
-  EndMesh: {fileID: 114998354606435168}
 --- !u!114 &114076576830413628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -635,18 +620,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpOffset: 0.17
   DownOffset: 0.07
---- !u!114 &114512954886050310
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1377360557495428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24a882fd8edd4748b28597c3b97fa0db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BodyPart: {fileID: 0}
 --- !u!114 &114998354606435168
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -41,20 +41,20 @@ public class Stab : OneHandedAction
         float rotation = getRotation();
         float upperRot = Mathf.Clamp(-rotation - upperArmAng, upperArm.angularLimits[0][0], upperArm.angularLimits[0][1]);
         float lowerRot = lowerArmAng;
-        upperArm.setConfigurableForceAndRot(strength, new Vector3(upperRot, 0f, 0f));
-        lowerArm.setConfigurableForceAndRot(strength, new Vector3(lowerRot, 0f, 0f));
+        upperArm.SetConfigurableForceAndRot(strength, new Vector3(upperRot, 0f, 0f));
+        lowerArm.SetConfigurableForceAndRot(strength, new Vector3(lowerRot, 0f, 0f));
     }
     
     private void ActionStabUpper()
     {
         float rotation = getRotation();
         float upperRot = Mathf.Clamp(-rotation + 90f, upperArm.angularLimits[0][0], upperArm.angularLimits[0][1]);
-        upperArm.setConfigurableForceAndRot(strength, new Vector3(upperRot, 0f, 0f));
+        upperArm.SetConfigurableForceAndRot(strength, new Vector3(upperRot, 0f, 0f));
     }
     
     private void ActionStabLower()
     {
-        lowerArm.setConfigurableForceAndRot(strength, new Vector3(0f, 0f, 0f));
+        lowerArm.SetConfigurableForceAndRot(strength, new Vector3(0f, 0f, 0f));
     }
 
 }

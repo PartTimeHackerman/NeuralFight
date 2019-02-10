@@ -18,6 +18,7 @@ public class FightPlayerObservations : MonoBehaviour
     {
         //observationsSpace = GetObservations(true).Count();
         physics = PhysicsUtils.get();
+        
     }
 
     public void SetUp(FightPlayerAgent player, FightPlayerAgent enemy)
@@ -29,6 +30,16 @@ public class FightPlayerObservations : MonoBehaviour
         EnemyBodyParts = enemy.PlayerFighter.BodyParts;
     }
 
+    public void SetUp(Fighter player, Fighter enemy)
+    {
+        Player = player.Player;
+        RightHandAction = player.RightArmWeapon.HandAction;
+        LeftHandAction = player.LeftArmWeapon.HandAction;
+        BodyParts = player.BodyParts;
+        EnemyBodyParts = enemy.BodyParts;
+        enemyObservations.SetUp(player);
+    }
+    
     public List<float> GetObservations(bool asLeft)
     {
         observations.Clear();

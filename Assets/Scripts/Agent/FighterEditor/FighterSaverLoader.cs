@@ -9,6 +9,7 @@ public class FighterSaverLoader : MonoBehaviour
     public Fighter fighter;
     public WeaponEquipper WeaponEquipper;
     public WeaponsCollection WeaponsCollection;
+    public FighterPartsCollection FighterPartsCollection;
     public bool saveB;
     public bool loadB;
 
@@ -41,7 +42,7 @@ public class FighterSaverLoader : MonoBehaviour
         }
     }
 
-    public void SaveFighter(Fighter fighter)
+    public void SaveFighterOLD(Fighter fighter)
     {
         Dictionary<string, PosRot> prs = new Dictionary<string, PosRot>();
 
@@ -61,7 +62,15 @@ public class FighterSaverLoader : MonoBehaviour
         writer.Commit();
     }
 
-    public void LoadFighter(Fighter fighter)
+    public void SaveFighter(Fighter fighter)
+    {
+        FighterJSON fighterJson = FighterJSON.FighterToJSON(fighter);
+        QuickSaveWriter writer = QuickSaveWriter.Create(fighter.FighterNum.ToString(), settings);
+        writer.Write("fighter", JsonUtility.ToJson(fighterJson));
+        writer.Commit();
+    }
+
+    public void LoadFighterOLD(Fighter fighter)
     {
         Dictionary<string, PosRot> prs = new Dictionary<string, PosRot>();
         QuickSaveReader reader = QuickSaveReader.Create(fighter.FighterNum.ToString(), settings);
@@ -90,12 +99,19 @@ public class FighterSaverLoader : MonoBehaviour
         fighter.FighterDefaultPositioner = new FighterDefaultPositioner(fighter, prs);
         fighter.FighterDefaultPositioner.ResetPosition();
 
-        int rightWeaponId = reader.Read<int>("rightWeapon");
+        string rightWeaponId = reader.Read<string>("rightWeapon");
         Weapon rightWeapon = WeaponsCollection.AllWeapons[rightWeaponId];
         WeaponEquipper.EquipWeapon(fighter.RightArmWeapon, rightWeapon);
-        
-        int leftWeaponId = reader.Read<int>("leftWeapon");
+
+        string leftWeaponId = reader.Read<string>("leftWeapon");
         Weapon leftWeapon = WeaponsCollection.AllWeapons[leftWeaponId];
         WeaponEquipper.EquipWeapon(fighter.LeftArmWeapon, leftWeapon);
+    }
+
+    public void LoadFighter(Fighter fighter)
+    {
+        QuickSaveReader reader = QuickSaveReader.Create(fighter.FighterNum.ToString(), settings);
+        FighterJSON fighterJson = JsonUtility.FromJson<FighterJSON>(reader.Read<string>("fighter"));
+        FighterJSON.JSONTOFighter(fighterJson, fighter, WeaponsCollection, FighterPartsCollection);
     }
 }

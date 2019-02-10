@@ -44,6 +44,8 @@ public class HandAction : MonoBehaviour
     private Transform TorsoTransform;
     public float baseDist;
 
+    public int AttackDelayFrames = 0;
+
     public virtual void Start()
     {
         TorsoTransform = Player.Body.GetComponent<BodyParts>().getNamedParts()["torso"].transform;
@@ -72,8 +74,9 @@ public class HandAction : MonoBehaviour
                 //if (Math.Abs(Mathf.Clamp(distance, weapon.MinAttackDistance, weapon.MaxAttackDistance) - distance) < .001f)
                 //{
                 if (distance >= weapon.MinAttackDistance && distance <= weapon.MaxAttackDistance)
-                 {
-                    Attack();
+                {
+                    Waiter.Get().WaitForFramesC(AttackDelayFrames, () => { }, Attack);
+                    //Attack();
                 }
             }
         }
@@ -85,7 +88,7 @@ public class HandAction : MonoBehaviour
         }
     }
 
-    public void setAttackBlockActions(Type attack, Type block)
+    public void SetAttackBlockActions(Type attack, Type block)
     {
         used = true;
         this.attack = (WeaponAction) gameObject.AddComponent(attack);
@@ -113,11 +116,8 @@ public class HandAction : MonoBehaviour
 
     public void setActive(bool active)
     {
-        if (canBeUsed)
-        {
-            this.active = active;
-            weapon.SetDamaging(active);
-        }
+        this.active = active;
+        weapon.SetDamaging(active);
     }
 
     public void setCanBeUsed(float SP)
@@ -132,14 +132,14 @@ public class HandAction : MonoBehaviour
         //active = false;
     }
 
-    public virtual void equipAction(Weapon newWeapon, Weapon oldWeapon)
+    public virtual void EquipAction(Weapon newWeapon, Weapon oldWeapon)
     {
         unEquipAction();
         if (newWeapon != null)
         {
             weapon = newWeapon;
             SPReq = weapon.SPReq;
-            setAttackBlockActions(getAttackAction(weapon), getBlockAction(weapon));
+            SetAttackBlockActions(getAttackAction(weapon), getBlockAction(weapon));
         }
     }
 

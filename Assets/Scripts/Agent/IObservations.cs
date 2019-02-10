@@ -3,7 +3,7 @@
 internal interface IObservations
 {
 
-    List<float> getObservations();
+    List<float> GetObservations();
     int getObsSize();
     void logNamedObs();
 }

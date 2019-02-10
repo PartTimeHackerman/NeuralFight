@@ -129,8 +129,6 @@ GameObject:
   - component: {fileID: 4381345419451254}
   - component: {fileID: 114668486953016532}
   - component: {fileID: 65408145666213860}
-  - component: {fileID: 114911954235079066}
-  - component: {fileID: 114253328813047288}
   m_Layer: 10
   m_Name: rshin
   m_TagString: hitbox
@@ -671,19 +669,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Indexes: 020000000300000002000000
   Renderer: {fileID: 0}
---- !u!114 &114253328813047288
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1383237627435704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7750fd09c804a878ac5c3b90c4de976, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EditableMesh: {fileID: 114301237361140492}
-  EndMesh: {fileID: 114079207792660080}
 --- !u!114 &114301237361140492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -767,18 +752,6 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1136590482473246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24a882fd8edd4748b28597c3b97fa0db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BodyPart: {fileID: 0}
---- !u!114 &114911954235079066
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1383237627435704}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24a882fd8edd4748b28597c3b97fa0db, type: 3}

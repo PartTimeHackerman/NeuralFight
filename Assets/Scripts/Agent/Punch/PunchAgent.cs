@@ -39,7 +39,7 @@ internal class PunchAgent : Agent
     public override void CollectObservations()
     {
 
-        List<float> observations = this.observations.getObservations();
+        List<float> observations = this.observations.GetObservations();
 
         foreach (var observation in observations) AddVectorObs(observation);
     }

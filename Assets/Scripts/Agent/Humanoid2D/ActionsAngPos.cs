@@ -33,10 +33,10 @@ public class ActionsAngPos : MonoBehaviour, IActions
             applyVel(actions);
         }
         else
-            applyPos(actions);
+            ApplyPos(actions);
     }
 
-    protected virtual void applyPos(List<float> actions)
+    protected virtual void ApplyPos(List<float> actions)
     {
         var actionIdx = 0;
         var size = actions.Count;

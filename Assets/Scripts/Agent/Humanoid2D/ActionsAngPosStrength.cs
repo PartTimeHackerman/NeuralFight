@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ActionsAngPosStrength : ActionsAngPos
 {
-    protected override void applyPos(List<float> actions)
+    protected override void ApplyPos(List<float> actions)
     {
         var actionIdx = 0;
         var size = actions.Count;
@@ -36,7 +36,7 @@ public class ActionsAngPosStrength : ActionsAngPos
             //angRot.y = Mathf.Clamp(angRot.y, jointInfo.angularLimits[1][0], jointInfo.angularLimits[1][1]);
             //angRot.z = Mathf.Clamp(angRot.z, jointInfo.angularLimits[2][0], jointInfo.angularLimits[2][1]);
 
-            jointInfo.setConfigurableForceAndRot(force, angRot);
+            jointInfo.SetConfigurableForceAndRot(force, angRot);
         }
     }
 
